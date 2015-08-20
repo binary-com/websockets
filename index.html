@@ -53,9 +53,9 @@
         <div data-schema="config/v1/ticks/receive.json"></div>
     </div>
     <script charset="utf-8">
-        require.config({ baseUrl: ".."});
+        require.config({ baseUrl: "."});
         require(["docson/docson", "lib/jquery"], function(docson) {
-            docson.templateBaseUrl="../docson";
+            docson.templateBaseUrl="docson";
             $('[data-schema]').each(function() {
                 var $this = $(this);
                 $.get($this.attr('data-schema'), function(schema) {
