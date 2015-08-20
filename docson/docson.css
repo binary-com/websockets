@@ -14,24 +14,13 @@
  * limitations under the License.
  */
 
-.docson {
-    font-family: 'Droid Sans',verdana,helvetica;
-    font-size: 13px;
-    padding: 6px 6px 6px 6px;
-}
-
 .docson .box {
     position: relative;
     float: left;
     background-color:rgba(255, 255, 255, 0.2);
     border: 1px solid lightgrey;
     border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
     padding-bottom: 10px;
-    -moz-box-shadow:    1px 1px 1px darkgray;
-    -webkit-box-shadow: 1px 1px 1px darkgray;
-    box-shadow:         1px 1px 1px darkgray;
 }
 
 .docson .expand-button {
@@ -473,4 +462,3 @@
     color: #080;
     font-style: italic;
 }
-
