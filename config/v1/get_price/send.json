@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "proposal": {
+      "type": "integer",
+      "default": "1"
+    },
+    "amount_val": {
+      "type": "number",
+      "default": "10.0"
+    },
+    "basis": {
+      "type": "string",
+      "default": "payout"
+    },
+    "contract_type": {
+      "type": "string",
+      "default": "CALL"
+    },
+    "currency": {
+      "type": "string",
+      "default": "USD"
+    },
+    "duration": {
+      "type": "string",
+      "default": "900"
+    },
+    "duration_unit": {
+      "type": "string",
+      "default": "s"
+    },
+    "symbol": {
+      "type": "string",
+      "default": "R_100"
+    }
+  },
+  "required": [
+    "proposal",
+    "amount_val",
+    "basis",
+    "contract_type",
+    "currency",
+    "duration",
+    "duration_unit",
+    "symbol"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "authorize": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "default": "exmaple@example.com"
+        },
+        "currency": {
+          "type": "string",
+          "default": "USD"
+        },
+        "balance": {
+          "type": "number",
+          "default": "10377.9900"
+        },
+        "loginid": {
+          "type": "string",
+          "default": "VRTC573035"
+        },
+        "fullname": {
+          "type": "string",
+          "default": "fullname"
+        }
+      },
+      "required": [
+        "email",
+        "currency",
+        "balance",
+        "loginid",
+        "fullname"
+      ]
+    },
+    "echo_req": {
+      "type": "object",
+      "properties": {
+        "authorize": {
+          "type": "string",
+          "default": "ABCDABCDABCDABCDABCDABCDABCDABCD"
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "default": "authorize"
+    }
+  },
+  "required": [
+    "authorize",
+    "echo_req",
+    "msg_type"
+  ]
+}

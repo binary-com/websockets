@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Buy a Contract Receive",
+  "description": "A message with transaction results is received.",
+  "properties": {
+    "echo_req": {
+      "type": "object",
+      "title": "Echo request",
+      "description": "Echo of the request made.",
+      "properties": {
+        "price": {
+          "type": "number",
+          "default": "5.14"
+        },
+        "buy": {
+          "type": "string",
+          "default": "13eed61e5930031ad24908576f5be4e7"
+        }
+      },
+      "required": [
+        "price",
+        "buy"
+      ]
+    },
+    "open_receipt": {
+      "type": "object",
+      "title": "Echo request",
+      "description": "Echo of the request made.",
+      "properties": {
+        "balance_after": {
+          "type": "number",
+          "default": "9984.8400",
+          "description":"It is the new account balance after completion of the purchase"
+        	  
+        },
+        "longcode": {
+          "type": "string",
+          "default": "USD 10.00 payout if Random 50 Index is strictly higher than entry spot at 15 minutes after contract start time.",
+          "description":"It is the description of contract purchased"
+        	  
+        },
+        "start_time": {
+          "type": "integer",
+          "default": 1439432307,
+          "description":"It is an epoch value showing the expected start time of the contract."
+          
+        },
+        "fmb_id": {
+          "type": "integer",
+          "default": "299",
+          "description":"is a binary.com internal contract identifier."
+        	  
+        },
+        "buy_price": {
+          "type": "number",
+          "default": "5.14",
+          "description":"It is the actual effected purchase price."
+        },
+        "purchase_time": {
+          "type": "integer",
+          "default": 1439432307,
+          "description":"is an epoch value showing the transaction purchase time."
+        },
+        "trx_id": {
+          "type": "integer",
+          "default": "519",
+          "description":"It is a binary.com internal transaction identifier."
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "default": "open_receipt",
+      "description":"Message with transaction results."
+    }
+  },
+  "required": [
+    "echo_req",
+    "open_receipt",
+    "msg_type"
+  ]
+}

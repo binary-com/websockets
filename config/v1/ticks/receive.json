@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "echo_req": {
+      "type": "object",
+      "properties": {
+        "ticks": {
+          "type": "string",
+          "default": "R_100"
+        },
+        "end": {
+          "type": "string",
+          "default": "END"
+        }
+      },
+      "required": [
+        "ticks",
+        "end"
+      ]
+    },
+    "history": {
+      "type": "object",
+      "properties": {
+        "times": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number",
+              "default": "1.0"
+            }
+          ]
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "default": "history"
+    }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}

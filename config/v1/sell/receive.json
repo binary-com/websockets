@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Sell a Contract Receive",
+  "description": "A message with transaction results is received.",
+  "properties": {
+    "echo_req": {
+      "type": "object",
+      "title": "Echo request",
+      "description": "Echo of the request made.",
+      "properties": {
+        "price": {
+          "type": "number",
+          "default": "5.14"
+        },
+        "sell": {
+          "type": "string",
+          "default": "04802d3982343118d2f80ef0065def6c"
+        }
+      },
+      "required": [
+        "price",
+        "sell"
+      ]
+    },
+    "close_receipt": {
+      "type": "object",
+      "title": "Echo request",
+      "description": "Echo of the request made.",
+      "properties": {
+        "balance_after": {
+          "type": "number",
+          "default": "3853.5200",
+          "description":"It is the new account balance after completion of the sale."
+        },
+        "fmb_id": {
+          "type": "integer",
+          "default": "3973987168",
+          "description":"It is the binary.com internal contract identifier for the sold contract."
+        },
+        "sold_for": {
+          "type": "number",
+          "default": "5.67",
+          "description": "It is the actual effected sale price."
+        },
+        "trx_id": {
+          "type": "integer",
+          "default": "7802331968",
+          "description":"It is a binary.com internal transaction identifier for the sale transaction."
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "default": "close_receipt",
+      "description":"Message with transaction results."
+    	  
+    }
+  },
+  "required": [
+    "echo_req",
+    "close_receipt",
+    "msg_type"
+  ]
+}
