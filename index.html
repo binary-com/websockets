@@ -3,8 +3,125 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'/>
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin,vietnamese,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css' />
     <link rel='stylesheet' href='http://borisyankov.github.io/binary-static/css/binary.css' />
+    <link rel="stylesheet" href="../docson/docson.css">
+    <script src="../lib/require.js"></script>
 </head>
 <body>
     <h1>Binary Developers</h1>
+    <div id="doc"></div>
+    <script charset="utf-8">
+        require.config({ baseUrl: ".."});
+        require(["docson/docson", "lib/jquery"], function(docson) {
+            $(function() {
+                var schema =
+                {
+                    "id": "Invoice",
+                    "description": "Represents the _document_ sent to the customer for payment.",
+                    "properties": {
+                        "customer": {
+                            "description": "---\nWho will pay?\nNot me!",
+                            "type": "string",
+                            "maxLength": 25
+                        },
+                        "tags": {
+                            "additionalProperties": {
+                                "type": "number"
+                            }
+                        },
+                        "lines": {
+                            "description": "Invoice content ",
+                            "type": "array",
+                            "minItems": 4,
+                            "maxItems": 4,
+                            "items": {
+                                "$ref": "InvoiceLine"
+                            }
+                        },
+                        "dimension": {
+                            "description": "Total dimension of the order ",
+                            "$ref": "Dimension"
+                        },
+                        "props": {
+                            "properties": {
+                                "key": {
+                                    "type": "string",
+                                    "pattern": "[a-z][0-9]_"
+                                },
+                                "value" : {
+                                    "type": "string"
+                                }
+                            }
+
+                        }
+                    },
+                    "required": [ "customer" ],
+                    "InvoiceLine": {
+                        "id": "InvoiceLine",
+                        "properties": {
+                            "product": {
+                                "$ref": "Product"
+                            },
+                            "quantity": {
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "Dimension": {
+                        "id": "Dimension",
+                        "properties": {
+                            "width": {
+                                "description": "Width in cm ",
+                                "type": "number",
+                                "minimum": 2,
+                                "exclusiveMinimum": true
+                            },
+                            "height": {
+                                "description": "Height in cm ",
+                                "type": "number",
+                                "format": "int64",
+                                "default": 0
+                            },
+                            "length": {
+                                "description": "Length in cm ",
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "Product": {
+                        "id": "Product",
+                        "properties": {
+                            "name": {
+                                "description": "Uniquely defines the product ",
+                                "type": "string"
+                            },
+                            "dimension": {
+                                "description": "How big it is ",
+                                "$ref": "Dimension"
+                            },
+                            "category": {
+                                "description": "Classification ",
+                                "$ref": "Category"
+                            }
+                        }
+                    },
+                    "Category": {
+                        "id": "Category",
+                        "properties": {
+                            "name": {
+                                "description": "Uniquely identifies the category ",
+                                "type": "string"
+                            },
+                            "level": {
+                                "description": "Classification level from 1 to 5 (highest) ",
+                                "type": "number"
+                            }
+                        }
+                    }
+                }
+                docson.templateBaseUrl="../docson";
+                docson.doc("doc", schema);
+            });
+        });
+    </script>
 </body>
 </html>
