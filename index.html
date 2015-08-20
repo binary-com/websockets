@@ -7,120 +7,61 @@
     <script src="lib/require.js"></script>
 </head>
 <body>
-    <h1>Binary Developers</h1>
-    <div id="doc"></div>
+    <div id="content">
+        <h1><img alt="Binary" style="padding-bottom: .5rem" src="https://static.binary.com/images/pages/binary-symbol-logo.svg"> Developers</h1>
+
+        <h2>Authorize</h2>
+        <h3>Send</h3>
+        <div data-schema="config/v1/authorize/send.json"></div>
+        <h3>Receive</h3>
+        <div data-schema="config/v1/authorize/receive.json"></div>
+
+        <h2>Buy</h2>
+        <h3>Send</h3>
+        <div data-schema="config/v1/buy/send.json"></div>
+        <h3>Receive</h3>
+        <div data-schema="config/v1/buy/receive.json"></div>
+
+        <h2>Sell</h2>
+        <h3>Send</h3>
+        <div data-schema="config/v1/sell/send.json"></div>
+        <h3>Receive</h3>
+        <div data-schema="config/v1/sell/receive.json"></div>
+
+        <h2>Get Price</h2>
+        <h3>Send</h3>
+        <div data-schema="config/v1/get_price/send.json"></div>
+        <h3>Receive</h3>
+        <div data-schema="config/v1/get_price/receive.json"></div>
+
+        <h2>Portfolio</h2>
+        <h3>Send</h3>
+        <div data-schema="config/v1/portfolio/send.json"></div>
+        <h3>Receive</h3>
+        <div data-schema="config/v1/portfolio/receive.json"></div>
+
+        <h2>Tick</h2>
+        <h3>Send</h3>
+        <div data-schema="config/v1/tick/send.json"></div>
+        <h3>Receive</h3>
+        <div data-schema="config/v1/tick/receive.json"></div>
+
+        <h2>Ticks</h2>
+        <h3>Send</h3>
+        <div data-schema="config/v1/ticks/send.json"></div>
+        <h3>Receive</h3>
+        <div data-schema="config/v1/ticks/receive.json"></div>
+    </div>
     <script charset="utf-8">
         require.config({ baseUrl: ".."});
         require(["docson/docson", "lib/jquery"], function(docson) {
-            $(function() {
-                var schema =
-                {
-                    "id": "Invoice",
-                    "description": "Represents the _document_ sent to the customer for payment.",
-                    "properties": {
-                        "customer": {
-                            "description": "---\nWho will pay?\nNot me!",
-                            "type": "string",
-                            "maxLength": 25
-                        },
-                        "tags": {
-                            "additionalProperties": {
-                                "type": "number"
-                            }
-                        },
-                        "lines": {
-                            "description": "Invoice content ",
-                            "type": "array",
-                            "minItems": 4,
-                            "maxItems": 4,
-                            "items": {
-                                "$ref": "InvoiceLine"
-                            }
-                        },
-                        "dimension": {
-                            "description": "Total dimension of the order ",
-                            "$ref": "Dimension"
-                        },
-                        "props": {
-                            "properties": {
-                                "key": {
-                                    "type": "string",
-                                    "pattern": "[a-z][0-9]_"
-                                },
-                                "value" : {
-                                    "type": "string"
-                                }
-                            }
-
-                        }
-                    },
-                    "required": [ "customer" ],
-                    "InvoiceLine": {
-                        "id": "InvoiceLine",
-                        "properties": {
-                            "product": {
-                                "$ref": "Product"
-                            },
-                            "quantity": {
-                                "type": "number"
-                            }
-                        }
-                    },
-                    "Dimension": {
-                        "id": "Dimension",
-                        "properties": {
-                            "width": {
-                                "description": "Width in cm ",
-                                "type": "number",
-                                "minimum": 2,
-                                "exclusiveMinimum": true
-                            },
-                            "height": {
-                                "description": "Height in cm ",
-                                "type": "number",
-                                "format": "int64",
-                                "default": 0
-                            },
-                            "length": {
-                                "description": "Length in cm ",
-                                "type": "number"
-                            }
-                        }
-                    },
-                    "Product": {
-                        "id": "Product",
-                        "properties": {
-                            "name": {
-                                "description": "Uniquely defines the product ",
-                                "type": "string"
-                            },
-                            "dimension": {
-                                "description": "How big it is ",
-                                "$ref": "Dimension"
-                            },
-                            "category": {
-                                "description": "Classification ",
-                                "$ref": "Category"
-                            }
-                        }
-                    },
-                    "Category": {
-                        "id": "Category",
-                        "properties": {
-                            "name": {
-                                "description": "Uniquely identifies the category ",
-                                "type": "string"
-                            },
-                            "level": {
-                                "description": "Classification level from 1 to 5 (highest) ",
-                                "type": "number"
-                            }
-                        }
-                    }
-                }
-                docson.templateBaseUrl="../docson";
-                docson.doc("doc", schema);
-            });
+            docson.templateBaseUrl="../docson";
+            $('[data-schema]').each(function() {
+                var $this = $(this);
+                $.get($this.attr('data-schema'), function(schema) {
+                    docson.doc($this, schema);
+                });
+            })
         });
     </script>
 </body>
