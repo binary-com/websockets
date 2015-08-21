@@ -7,23 +7,23 @@
       "properties": {
         "email": {
           "type": "string",
-          "default": "exmaple@example.com"
+          "description": "example@example.com"
         },
         "currency": {
           "type": "string",
-          "default": "USD"
+          "description": "USD"
         },
         "balance": {
           "type": "number",
-          "default": "10377.9900"
+          "description": "10377.9900"
         },
         "loginid": {
           "type": "string",
-          "default": "VRTC573035"
+          "description": "VRTC573035"
         },
         "fullname": {
           "type": "string",
-          "default": "fullname"
+          "description": "fullname"
         }
       },
       "required": [
@@ -35,17 +35,12 @@
       ]
     },
     "echo_req": {
-      "type": "object",
-      "properties": {
-        "authorize": {
-          "type": "string",
-          "default": "ABCDABCDABCDABCDABCDABCDABCDABCD"
-        }
-      }
+      "title":"Echo request",
+      "description":"Echo of the request made."
     },
     "msg_type": {
       "type": "string",
-      "default": "authorize"
+      "description": "authorize"
     }
   },
   "required": [

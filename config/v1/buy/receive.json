@@ -5,23 +5,8 @@
   "description": "A message with transaction results is received.",
   "properties": {
     "echo_req": {
-      "type": "object",
-      "title": "Echo request",
-      "description": "Echo of the request made.",
-      "properties": {
-        "price": {
-          "type": "number",
-          "default": "5.14"
-        },
-        "buy": {
-          "type": "string",
-          "default": "13eed61e5930031ad24908576f5be4e7"
-        }
-      },
-      "required": [
-        "price",
-        "buy"
-      ]
+      "title":"Echo request",
+      "description":"Echo of the request made."
     },
     "open_receipt": {
       "type": "object",
