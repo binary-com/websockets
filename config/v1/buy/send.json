@@ -2,18 +2,18 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Buy a Contract Send",
-  "description": "Buy the Contract using an ID from a previous Get Price call.",
+  "description": "Buy the Contract using an ID from a previous Get Price call",
   "properties": {
     "buy": {
       "type": "string",
-      "default": "ID",
+      "sample": "ID",
       "description": "The id received from a Get Price call"
     },
 
     "price": {
        "type": "number",
-       "default": "0",
-       "description": "PRICE is the price being offered for this contract. This should normally match the last offered price, or it can be 0 or missing, which means \"buy at market\". In fact all purchases are \"at market\", hence if this value is supplied, and the market price has reduced, the purchase will be made at the lower price. It will be rejected with an error message if the market price has moved up. So this field allows the buyer to nominate a maximum price to their purchase."
+       "sample": "0",
+       "description": "Price being offered for this contract. This should normally match the last offered price, or it can be 0 or missing, which means \"buy at market\". In fact all purchases are \"at market\", hence if this value is supplied, and the market price has reduced, the purchase will be made at the lower price. It will be rejected with an error message if the market price has moved up. So this field allows the buyer to nominate a maximum price to their purchase."
     }
   },
   "required": [

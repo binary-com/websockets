@@ -3,10 +3,9 @@
   "type": "object",
   "properties": {
     "authorize": {
-      
       "type": "string",
-      "default": "ABCDABCDABCDABCDABCDABCDABCDABCD",
-      "description": "Authentication token"
+      "sample": "ABCDABCDABCDABCDABCDABCDABCDABCD",
+      "description": "Authentication token. Example: ABCDABCDABCDABCDABCDABCDABCDABCD"
     }
   },
   "required": [

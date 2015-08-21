@@ -5,117 +5,87 @@
   "description": "For each portfolio entry, an initial message will provide information about that contract.",
   "properties": {
     "echo_req": {
-      "type": "object",
-      "title": "Echo request",
-      "description": "Echo of the request made.",
-      "properties": {
-        "portfolio": {
-          "type": "integer",
-          "default": 1
-        }
-      },
-      "required": [
-        "portfolio"
-      ]
+      "title":"Echo request",
+      "description":"Echo of the request made"
     },
     "portfolio": {
       "type": "object",
-      "title": "Response of portfolio",
-      "description": "Information about the contract",
+      "title": "Portfolio",
+      "description": "Client open positions",
       "properties": {
         "ask_price": {
           "type": "number",
-          "default": "1040.02",
           "description": "Ask price of the contract"
         },
         "batch_count": {
           "type": "integer",
-          "default": 6,
           "description": "Batch count"
         },
         "batch_index": {
           "type": "integer",
-          "default": 2,
           "description": "Batch index"
         },
         "bid_price": {
           "type": "number",
-          "default": "965.43",
           "description": "Bid price of the contract"
         },
         "buy_price": {
           "type": "number",
-          "default": "1454.11",
-          "description": "It is the actual effected purchase price."
-        	  
+          "description": "Actual effected purchase price"
         },
         "contract_type": {
           "type": "string",
-          "default": "PUT",
-          "description": "Type of contract sold"
+          "description": "Type of contract"
         },
         "currency": {
           "type": "string",
-          "default": "USD",
           "description": "Currency in which contract is traded"
         },
         "date_start": {
           "type": "integer",
-          "default": 1432665003,
           "description": "Date when contract was bought"
         },
         "expiry_time": {
           "type": "integer",
-          "default": 1461963600,
           "description": "Time when this contract will expire"
         },
         "fmb_id": {
           "type": "integer",
-          "default": "3789083468",
-          "description": "It is a binary.com internal contract identifier."
+          "description": "Internal contract identifier"
         },
         "id": {
           "type": "string",
-          "default": "8ece5e8cc17282db12c901c58830db94",
-          "description": "It is a handle that identifies this contract"
+          "description": "Handle that identifies this contract"
         },
         "longcode": {
           "type": "string",
-          "default": "USD 2,976.00 payout if EUR/USD is strictly lower than 1.10500 at close on 2016-04-29.",
-          "description": "It is the description of contract purchased"
+          "description": "Description of contract"
         },
         "payout": {
           "type": "number",
-          "default": "2976",
           "description": "Payout"
         },
         "purchase_time": {
           "type": "integer",
-          "default": 1432665003,
-          "description": "It is an epoch value showing the transaction purchase time."
+          "description": "Epoch value showing the transaction purchase time"
         },
         "spot": {
           "type": "number",
-          "default": "1.12329",
           "description": "Spot price of the symbol"
         },
         "spot_time": {
           "type": "string",
-          "default": "1434044307",
           "description": "Spot time"
         },
         "symbol": {
           "type": "string",
-          "default": "frxEURUSD",
           "description": "Symbol"
         }
       }
     },
     "msg_type": {
       "type": "string",
-      "default": "portfolio",
-      "description": "This shows the total number of portfolio entries that were sent, and it also gives the number of contracts that are no longer in the portfolio because it was possible to settle them immediately on this call."
-    	  
+      "description": "portfolio"
     }
   },
   "required": [

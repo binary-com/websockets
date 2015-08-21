@@ -6,7 +6,8 @@
   "properties": {
     "portfolio": {
       "type": "integer",
-      "default": "1"
+      "description":"Must be 1",
+      "sample": "1"
     }
   },
   "required": [

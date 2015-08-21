@@ -2,98 +2,49 @@
   "type": "object",
   "properties": {
     "echo_req": {
-      "type": "object",
-      "properties": {
-        "symbol": {
-          "type": "string",
-          "default": "R_100"
-        },
-        "duration": {
-          "type": "integer",
-          "default": "900"
-        },
-        "currency": {
-          "type": "string",
-          "default": "USD"
-        },
-        "proposal": {
-          "type": "integer",
-          "default": "1"
-        },
-        "amount_val": {
-          "type": "number",
-          "default": "10"
-        },
-        "date_start": {
-          "type": "integer",
-          "default": 0
-        },
-        "basis": {
-          "type": "string",
-          "default": "payout"
-        },
-        "duration_unit": {
-          "type": "string",
-          "default": "s"
-        },
-        "contract_type": {
-          "type": "string",
-          "default": "CALL"
-        }
-      },
-      "required": [
-        "symbol",
-        "duration",
-        "currency",
-        "proposal",
-        "amount_val",
-        "date_start",
-        "basis",
-        "duration_unit",
-        "contract_type"
-      ]
+      "title":"Echo request",
+      "description":"Echo of the request made"
     },
     "proposal": {
-      "id": "undefined/proposal",
       "type": "object",
       "properties": {
         "bid_price": {
           "type": "number",
-          "default": "4.96"
+          "description": "Example: 4.96"
         },
         "longcode": {
           "type": "string",
-          "default": "USD 10.00 payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time."
+          "description": "Example: USD 10.00 payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time."
         },
         "spot": {
           "type": "number",
-          "default": "9874.52"
+          "description": "Example: 9874.52"
         },
         "spot_time": {
           "type": "integer",
-          "default": "1439999052"
+          "description": "Example: 1439999052"
         },
         "ask_price": {
           "type": "number",
-          "default": "5.14"
+          "description": "Example: 5.14"
         },
         "date_start": {
           "type": "integer",
-          "default": 1439999053
+          "description": "Example: 1439999053"
         },
         "id": {
           "type": "string",
-          "default": "1d6651e7d599bce6c54bd71a8283e579"
+          "description": "Example: 1d6651e7d599bce6c54bd71a8283e579"
         },
         "payout": {
           "type": "number",
-          "default": "10"
+          "description": "Example: 10"
         }
       }
     },
     "msg_type": {
       "type": "string",
-      "default": "proposal"
+      "description": "proposal"
     }
   },
   "required": [
