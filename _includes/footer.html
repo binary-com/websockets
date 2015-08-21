@@ -7,14 +7,27 @@
 </footer>
 
 <script charset="utf-8">
- require.config({ baseUrl: "."});
+ require.config({ baseUrl: "/"});
  require(["docson/docson", "lib/jquery"], function(docson) {
-     docson.templateBaseUrl="docson";
-     $('[data-schema]').each(function() {
-         var $this = $(this);
-         $.get($this.attr('data-schema'), function(schema) {
+     docson.templateBaseUrl="/docson";
+    //  $('[data-schema]').each(function() {
+    //      var $this = $(this);
+    //      $.get($this.attr('data-schema'), function(schema) {
+    //          docson.doc($this, schema);
+    //      });
+    //  });
+
+     $('p').each(function() {
+         var $this = $(this),
+            text = $this.text().trim();
+
+         if (!~text.indexOf('$schema')) return;
+
+         var schemaUrl = text.split(' ')[1];
+         $.get(schemaUrl, function(schema) {
              docson.doc($this, schema);
          });
-     })
+     });
+
  });
 </script>
