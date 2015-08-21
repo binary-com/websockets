@@ -2,11 +2,11 @@
   "$schema":"http://json-schema.org/draft-04/schema#",
   "type":"object",
   "title":"Statement Receive",
-  "description":"A summary of account statement is received.",
+  "description":"A summary of account statement is received",
   "properties":{
     "echo_req":{
       "title":"Echo request",
-      "description":"Echo of the request made."
+      "description":"Echo of the request made"
     },
     "statement":{
       "type":"object",

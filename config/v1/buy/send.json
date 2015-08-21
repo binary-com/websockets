@@ -2,12 +2,12 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Buy a Contract Send",
-  "description": "Buy the Contract using an ID from a previous Get Price call.",
+  "description": "Buy the Contract using an ID from a previous Get Price call",
   "properties": {
     "buy": {
       "type": "string",
       "sample": "ID",
-      "description": "The id received from a Get Price call."
+      "description": "The id received from a Get Price call"
     },
 
     "price": {

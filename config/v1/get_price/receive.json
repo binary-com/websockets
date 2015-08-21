@@ -3,10 +3,9 @@
   "properties": {
     "echo_req": {
       "title":"Echo request",
-      "description":"Echo of the request made."
+      "description":"Echo of the request made"
     },
     "proposal": {
-      "id": "undefined/proposal",
       "type": "object",
       "properties": {
         "bid_price": {

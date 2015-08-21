@@ -6,7 +6,7 @@
   "properties": {
     "echo_req": {
       "title":"Echo request",
-      "description":"Echo of the request made."
+      "description":"Echo of the request made"
     },
     "portfolio": {
       "type": "object",
@@ -31,7 +31,7 @@
         },
         "buy_price": {
           "type": "number",
-          "description": "Actual effected purchase price."
+          "description": "Actual effected purchase price"
         },
         "contract_type": {
           "type": "string",
@@ -51,7 +51,7 @@
         },
         "fmb_id": {
           "type": "integer",
-          "description": "Internal contract identifier."
+          "description": "Internal contract identifier"
         },
         "id": {
           "type": "string",
@@ -67,7 +67,7 @@
         },
         "purchase_time": {
           "type": "integer",
-          "description": "Epoch value showing the transaction purchase time."
+          "description": "Epoch value showing the transaction purchase time"
         },
         "spot": {
           "type": "number",

@@ -4,7 +4,7 @@
   "properties": {
     "echo_req": {
       "title":"Echo request",
-      "description":"Echo of the request made."
+      "description":"Echo of the request made"
     },
     "history": {
       "type": "object",

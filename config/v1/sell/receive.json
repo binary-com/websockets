@@ -2,11 +2,11 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Sell a Contract Receive",
-  "description": "A message with transaction results is received.",
+  "description": "A message with transaction results is received",
   "properties": {
     "echo_req": {
       "title":"Echo request",
-      "description":"Echo of the request made."
+      "description":"Echo of the request made"
     },
     "close_receipt": {
       "type": "object",
@@ -15,19 +15,19 @@
       "properties": {
         "balance_after": {
           "type": "number",
-          "description":"New account balance after completion of the sale."
+          "description":"New account balance after completion of the sale"
         },
         "fmb_id": {
           "type": "integer",
-          "description":"Internal contract identifier for the sold contract."
+          "description":"Internal contract identifier for the sold contract"
         },
         "sold_for": {
           "type": "number",
-          "description": "Actual effected sale price."
+          "description": "Actual effected sale price"
         },
         "trx_id": {
           "type": "integer",
-          "description":"Internal transaction identifier for the sale transaction."
+          "description":"Internal transaction identifier for the sale transaction"
         }
       }
     },

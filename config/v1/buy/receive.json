@@ -2,11 +2,11 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Buy a Contract Receive",
-  "description": "A message with transaction results is received.",
+  "description": "A message with transaction results is received",
   "properties": {
     "echo_req": {
       "title":"Echo request",
-      "description":"Echo of the request made."
+      "description":"Echo of the request made"
     },
     "open_receipt": {
       "type": "object",
@@ -23,23 +23,23 @@
         },
         "start_time": {
           "type": "integer",
-          "description":"Epoch value showing the expected start time of the contract."
+          "description":"Epoch value showing the expected start time of the contract"
         },
         "fmb_id": {
           "type": "integer",
-          "description":"Internal contract identifier."
+          "description":"Internal contract identifier"
         },
         "buy_price": {
           "type": "number",
-          "description":"Actual effected purchase price."
+          "description":"Actual effected purchase price"
         },
         "purchase_time": {
           "type": "integer",
-          "description":"Epoch value of the transaction purchase time."
+          "description":"Epoch value of the transaction purchase time"
         },
         "trx_id": {
           "type": "integer",
-          "description":"Internal transaction identifier."
+          "description":"Internal transaction identifier"
         }
       }
     },
