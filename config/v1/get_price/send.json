@@ -8,7 +8,7 @@
     },
     "amount_val": {
       "type": "number",
-      "title": "10.0",
+      "sample": "10.0",
       "description": "Example: 10.0"
     },
     "basis": {
