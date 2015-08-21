@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "AuthorizeRequest",
+  "type": "object",
+  "properties": {
+    "token": {
+      "description": "Authorization token",
+      "type": "string"
+    }
+  },
+  "required": [
+    "token"
+  ],
+  "additionalProperties": false,
+  "definitions": {}
+}

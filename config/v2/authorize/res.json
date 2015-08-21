@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "ResponseMessage",
+  "type": "object",
+  "properties": {
+    "msg_type": {
+      "type": "string"
+    },
+    "echo_msg": {
+      "$ref": "#/definitions/EchoMessage"
+    },
+    "authorize": {
+      "$ref": "#/definitions/AuthorizeResponse"
+    }
+  },
+  "required": [
+    "msg_type",
+    "echo_msg",
+    "authorize"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "AuthorizeResponse": {
+      "id": "AuthorizeResponse",
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "balance": {
+          "type": "number"
+        },
+        "loginid": {
+          "type": "string"
+        },
+        "fullname": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "token",
+        "email",
+        "currency",
+        "balance",
+        "loginid",
+        "fullname"
+      ],
+      "additionalProperties": false
+    },
+    "EchoMessage": {
+      "id": "EchoMessage",
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    }
+  }
+}
