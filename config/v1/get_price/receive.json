@@ -2,56 +2,8 @@
   "type": "object",
   "properties": {
     "echo_req": {
-      "type": "object",
-      "properties": {
-        "symbol": {
-          "type": "string",
-          "description": "R_100"
-        },
-        "duration": {
-          "type": "integer",
-          "description": "900"
-        },
-        "currency": {
-          "type": "string",
-          "description": "USD"
-        },
-        "proposal": {
-          "type": "integer",
-          "description": "1"
-        },
-        "amount_val": {
-          "type": "number",
-          "description": "10"
-        },
-        "date_start": {
-          "type": "integer",
-          "description": "1439999052"
-        },
-        "basis": {
-          "type": "string",
-          "description": "payout"
-        },
-        "duration_unit": {
-          "type": "string",
-          "description": "s"
-        },
-        "contract_type": {
-          "type": "string",
-          "description": "CALL"
-        }
-      },
-      "required": [
-        "symbol",
-        "duration",
-        "currency",
-        "proposal",
-        "amount_val",
-        "date_start",
-        "basis",
-        "duration_unit",
-        "contract_type"
-      ]
+      "title":"Echo request",
+      "description":"Echo of the request made."
     },
     "proposal": {
       "id": "undefined/proposal",
@@ -59,35 +11,35 @@
       "properties": {
         "bid_price": {
           "type": "number",
-          "description": "4.96"
+          "description": "Example: 4.96"
         },
         "longcode": {
           "type": "string",
-          "description": "USD 10.00 payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time."
+          "description": "Example: USD 10.00 payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time."
         },
         "spot": {
           "type": "number",
-          "description": "9874.52"
+          "description": "Example: 9874.52"
         },
         "spot_time": {
           "type": "integer",
-          "description": "1439999052"
+          "description": "Example: 1439999052"
         },
         "ask_price": {
           "type": "number",
-          "description": "5.14"
+          "description": "Example: 5.14"
         },
         "date_start": {
           "type": "integer",
-          "description": "1439999053"
+          "description": "Example: 1439999053"
         },
         "id": {
           "type": "string",
-          "description": "1d6651e7d599bce6c54bd71a8283e579"
+          "description": "Example: 1d6651e7d599bce6c54bd71a8283e579"
         },
         "payout": {
           "type": "number",
-          "description": "10"
+          "description": "Example: 10"
         }
       }
     },

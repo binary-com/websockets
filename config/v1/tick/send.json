@@ -6,8 +6,8 @@
   "properties": {
     "ticks": {
       "type": "string",
-      "default": "frxUSDJPY",
-      "description": "The short symbol name."
+      "sample": "frxUSDJPY",
+      "description": "The short symbol name. Example: frxUSDJPY, R_50"
     }
   },
   "required": [

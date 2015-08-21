@@ -15,8 +15,7 @@
       "properties":{
         "count":{
           "type":"number",
-          "default":"0",
-          "description":"It is the number of transactions returned in this call"
+          "description":"Number of transactions returned in this call"
         },
         "transactions":{
           "type":"array",
@@ -24,13 +23,13 @@
             "type":"string"
           },
           "minItems":"1",
-          "description":"It is an array of returned transactions"
+          "description":"Array of returned transactions"
         }
       }
     },
     "msg_type":{
       "type":"string",
-      "default":"statement"
+      "description":"statement"
     }
   },
   "required":[

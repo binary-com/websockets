@@ -6,11 +6,13 @@
   "properties": {
     "ticks": {
       "type": "string",
-      "default": "R_100"
+      "sample": "R_100",
+      "description": "The short symbol name. Example: frxUSDJPY, R_50"
     },
     "end": {
       "type": "string",
-      "default": "END"
+      "sample": "END",
+      "description": "END"
     }
   },
   "required": [

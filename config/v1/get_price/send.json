@@ -4,35 +4,43 @@
   "properties": {
     "proposal": {
       "type": "integer",
-      "default": "1"
+      "description":"Must be 1",
+      "sample": "1"
     },
     "amount_val": {
       "type": "number",
-      "default": "10.0"
+      "description":"Proposed payout or stake value",
+      "sample": "10.0"
     },
     "basis": {
       "type": "string",
-      "default": "payout"
+      "description":"Indicate whether amount_val is 'payout' or 'stake'",
+      "sample": "payout"
     },
     "contract_type": {
       "type": "string",
-      "default": "CALL"
+      "description":"A valid contract-type. Example: CALL, PUT, ONETOUCH, NOTOUCH",
+      "sample": "CALL"
     },
     "currency": {
       "type": "string",
-      "default": "USD"
+      "description":"This can only be the account-holder's currency",
+      "sample": "USD"
     },
     "duration": {
       "type": "string",
-      "default": "900"
+      "description":"Duration quantity",
+      "sample": "900"
     },
     "duration_unit": {
       "type": "string",
-      "default": "s"
+      "description":"Duration unit is s (seconds), d (days), t (ticks)",
+      "sample": "s"
     },
     "symbol": {
       "type": "string",
-      "default": "R_100"
+      "description":"Symbol code. Example: frxUSDJPY, R_50",
+      "sample": "R_100"
     }
   },
   "required": [

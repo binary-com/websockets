@@ -14,8 +14,8 @@
     			   "properties": {
     				   "sort_by": {
     					   "type": "string",
-    					   "default": "id desc",
-    					   "description": "name an output field to sort by, optionally followed by 'desc' for reverse sort order"
+    					   "sample": "id desc",
+    					   "description": "Name an output field to sort by, optionally followed by 'desc' for reverse sort order"
     				   }
     			   }
     		   },
@@ -24,7 +24,7 @@
     			   "properties": {
     				   "limit": {
     					   "type": "number",
-    					   "default": "100",
+    					   "sample": "100",
     					   "description": "Apply upper limit to count of transactions received"
     				   }
     			   }
@@ -34,8 +34,8 @@
     			   "properties": {
     				   "offset": {
     					   "type": "number",
-    					   "default": "0",
-    					   "description": "skip this many transactions"
+    					   "sample": "0",
+    					   "description": "Skip this many transactions"
     				   }
     			   }
     		   },
@@ -44,8 +44,8 @@
     			   "properties": {
     				   "dt_fm": {
     					   "type": "integer",
-    					   "default": 1439432307,
-    					   "description": "optional start date"
+    					   "sample": 1439432307,
+    					   "description": "Optional start date"
     				   }
     			   }
     		   },
@@ -54,8 +54,8 @@
     			   "properties": {
     				   "dt_to": {
     					   "type": "integer",
-    					   "default": 1439432307,
-    					   "description": "optional end date"
+    					   "sample": 1439432307,
+    					   "description": "Optional end date"
     				   }
     			   }
     		   },
@@ -64,8 +64,8 @@
     			   "properties": {
     				   "yyyymm": {
     					   "type": "integer",
-    					   "default": 201510,
-    					   "description": "optional short-hand expression of a single month"
+    					   "sample": 201510,
+    					   "description": "Optional short-hand expression of a single month"
     				   }
     			   }
     		   },
@@ -75,7 +75,7 @@
     				   "action_type": {
     					   "type": "string",
     					   "enum": ["deposit","withdrawal","buy","sell"],
-    					   "description": "optional filter"
+    					   "description": "Optional filter"
     				 }
     			   }
     		   }

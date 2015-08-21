@@ -6,14 +6,13 @@
   "properties": {
     "sell": {
       "type": "string",
-      "default": "ID",
+      "sample": "ID",
       "description": "The id received from the Portfolio call"
     },
-
 	"price": {
 	   "type": "number",
-	   "default": "0",
-	   "description": "PRICE is the price being offered to sell this contract. This should normally match the last bidded price seen in Portfolio updates, or it can be 0 or missing, which means \"sell at market\". In fact all sales are \"at market\", hence if this value is supplied, and the market price for sell-back of the given contract has gone up, the sale will be made at the higher price. It will be rejected with an error message if the market price has moved down. So this field allows the buyer to nominate a minimum expected price for the sale."
+	   "sample": "0",
+	   "description": "Price being offered to sell this contract. This should normally match the last bidded price seen in Portfolio updates, or it can be 0 or missing, which means \"sell at market\". In fact all sales are \"at market\", hence if this value is supplied, and the market price for sell-back of the given contract has gone up, the sale will be made at the higher price. It will be rejected with an error message if the market price has moved down. So this field allows the buyer to nominate a minimum expected price for the sale."
   }
   },
   "required": [

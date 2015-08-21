@@ -5,19 +5,9 @@
   "description": "The stream message will contain an epoch value and a quote value, showing latest spot price for the requested symbol. These update messages will arrive with a frequency of up to one second",
   "properties": {
     "echo_req": {
-      "type": "object",
-      "title": "Echo request",
-      "description": "Echo of the request made.",
-      "properties": {
-        "ticks": {
-          "type": "string",
-           "default": "frxUSDJPY"
-        }
-      },
-      "required": [
-        "ticks"
-      ]
-    },
+      "title":"Echo request",
+      "description":"Echo of the request made."
+     },
     "tick": {
       "type": "object",
       "title": "Response of streamer",
@@ -25,25 +15,21 @@
       "properties": {
         "epoch": {
           "type": "integer",
-          "default" : "1434046444",
           "description": "Epoch time of the tick."
         },
         "id": {
           "type": "string",
-          "default" : "dde3ec8bb106cbf9ddd12f968d6f64a3",          
-          "description": "The id field here is a stream id that can be used to cancel this stream using the Cancel An Incoming Stream request."
+          "description": "A stream id that can be used to cancel this stream using the Cancel An Incoming Stream request."
         },
         "quote": {
           "type": "number",
-          "default" : "123.45",
           "description": "Market value at the epoch."
         }
       }
     },
     "msg_type": {
       "type": "string",
-      "default" : "tick",
-      "description": "This is indicator of return value type."
+      "description": "tick"
     }
   },
   "required": [
