@@ -6,39 +6,39 @@
       "properties": {
         "symbol": {
           "type": "string",
-          "default": "R_100"
+          "description": "R_100"
         },
         "duration": {
           "type": "integer",
-          "default": "900"
+          "description": "900"
         },
         "currency": {
           "type": "string",
-          "default": "USD"
+          "description": "USD"
         },
         "proposal": {
           "type": "integer",
-          "default": "1"
+          "description": "1"
         },
         "amount_val": {
           "type": "number",
-          "default": "10"
+          "description": "10"
         },
         "date_start": {
           "type": "integer",
-          "default": 0
+          "description": "1439999052"
         },
         "basis": {
           "type": "string",
-          "default": "payout"
+          "description": "payout"
         },
         "duration_unit": {
           "type": "string",
-          "default": "s"
+          "description": "s"
         },
         "contract_type": {
           "type": "string",
-          "default": "CALL"
+          "description": "CALL"
         }
       },
       "required": [
@@ -59,41 +59,41 @@
       "properties": {
         "bid_price": {
           "type": "number",
-          "default": "4.96"
+          "description": "4.96"
         },
         "longcode": {
           "type": "string",
-          "default": "USD 10.00 payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time."
+          "description": "USD 10.00 payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time."
         },
         "spot": {
           "type": "number",
-          "default": "9874.52"
+          "description": "9874.52"
         },
         "spot_time": {
           "type": "integer",
-          "default": "1439999052"
+          "description": "1439999052"
         },
         "ask_price": {
           "type": "number",
-          "default": "5.14"
+          "description": "5.14"
         },
         "date_start": {
           "type": "integer",
-          "default": 1439999053
+          "description": "1439999053"
         },
         "id": {
           "type": "string",
-          "default": "1d6651e7d599bce6c54bd71a8283e579"
+          "description": "1d6651e7d599bce6c54bd71a8283e579"
         },
         "payout": {
           "type": "number",
-          "default": "10"
+          "description": "10"
         }
       }
     },
     "msg_type": {
       "type": "string",
-      "default": "proposal"
+      "description": "proposal"
     }
   },
   "required": [
