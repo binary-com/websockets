@@ -7,7 +7,7 @@
       "properties": {
         "email": {
           "type": "string",
-          "title": "Example: example@example.com"
+          "description": "Example: example@example.com"
         },
         "currency": {
           "type": "string",
