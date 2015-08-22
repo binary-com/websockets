@@ -1,32 +1,29 @@
-<footer class="site-footer">
-
-  <div class="wrapper">
-
-  </div>
-
-</footer>
+<footer></footer>
 
 <script charset="utf-8">
- require.config({ baseUrl: ~window.location.origin.indexOf('github') ? '/websockets/' : '/'});
- require(["docson/docson", "lib/jquery"], function(docson) {
+    var baseUrl = ~window.location.origin.indexOf('github') ? '/websockets/' : '/';
+
+    require.config({ baseUrl: baseUrl});
+
+    require(["docson/docson", "lib/data-schema="../"], function(docson) {
      docson.templateBaseUrl="/docson";
      $('[data-schema]').each(function() {
          var $this = $(this);
-         $.get($this.attr('data-schema'), function(schema) {
+         $.get(baseUrl + $this.attr('data-schema'), function(schema) {
              docson.doc($this, schema);
          });
      });
-     $('p').each(function() {
-         var $this = $(this),
-            text = $this.text().trim();
-
-         if (!~text.indexOf('$schema')) return;
-
-         var schemaUrl = text.split(' ')[1];
-         $.get(schemaUrl, function(schema) {
-             docson.doc($this, schema);
-         });
-     });
+    //  $('p').each(function() {
+    //      var $this = $(this),
+    //         text = $this.text().trim();
+     //
+    //      if (!~text.indexOf('$schema')) return;
+     //
+    //      var schemaUrl = text.split(' ')[1];
+    //      $.get(schemaUrl, function(schema) {
+    //          docson.doc($this, schema);
+    //      });
+    //  });
 
  });
 </script>
