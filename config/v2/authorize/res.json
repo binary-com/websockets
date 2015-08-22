@@ -4,10 +4,12 @@
   "type": "object",
   "properties": {
     "msg_type": {
+      "description": "\"authorize\"",
       "type": "string"
     },
-    "echo_msg": {
-      "$ref": "#/definitions/EchoMessage"
+    "echo_req": {
+      "description": "Request object echeoed back",
+      "$ref": "#/definitions/EchoedRequest"
     },
     "authorize": {
       "$ref": "#/definitions/AuthorizeResponse"
@@ -15,7 +17,7 @@
   },
   "required": [
     "msg_type",
-    "echo_msg",
+    "echo_req",
     "authorize"
   ],
   "additionalProperties": false,
@@ -53,8 +55,8 @@
       ],
       "additionalProperties": false
     },
-    "EchoMessage": {
-      "id": "EchoMessage",
+    "EchoedRequest": {
+      "id": "EchoedRequest",
       "type": "object",
       "properties": {},
       "additionalProperties": false

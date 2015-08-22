@@ -1,6 +1,8 @@
 interface ResponseMessage {
+    /** "authorize" */
     msg_type: string;
-    echo_msg: EchoMessage;
+    /** Request object echeoed back */
+    echo_req: EchoedRequest;
     authorize: AuthorizeResponse;
 }
 
@@ -13,6 +15,6 @@ interface AuthorizeResponse {
     fullname: string;
 }
 
-interface EchoMessage {
+interface EchoedRequest {
 
 }
