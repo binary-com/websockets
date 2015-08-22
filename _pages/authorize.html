@@ -4,22 +4,19 @@ title:  "Authorize"
 permalink: authorize/
 ---
 
-### Send
+<h3>Send</h3>
 
-$schema /config/v1/authorize/send.json
+<p>$schema /config/v1/authorize/send.json</p>
 
-{% highlight javascript %}
-{
+<pre><code data-language="javascript">{
     "authorize": "dhfgishdfgisdgsdfgsdfg"
-}
-{% endhighlight %}
+}</code></pre>
 
-### Receive
+<h3>Receive</h3>
 
-$schema /config/v1/authorize/receive.json
+<p>$schema /config/v1/authorize/receive.json</p>
 
-{% highlight javascript %}
-{
+<pre><code data-language="javascript">{
     "msg_type": "authorize",
     "echo_req": {
         "authorize": "dhfgishdfgisdgsdfgsdfg"
@@ -31,5 +28,4 @@ $schema /config/v1/authorize/receive.json
         "loginid": "VRTC573035",
         "fullname": "John Smith"
     }
-}
-{% endhighlight %}
+}</code></pre>

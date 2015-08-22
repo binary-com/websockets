@@ -1,0 +1,33 @@
+---
+layout: page
+title:  "Authorize"
+permalink: authorize2/
+---
+
+<h3>Authorize Request</h3>
+
+<p>$schema /config/v2/authorize/req.json</p>
+
+<pre><code data-language="javascript">{
+    "id": "1",
+    "type": "authorize",
+    "parameters": {
+        "token": "dhfgishdfgisdgsdfgsdfg"
+    }
+}</code></pre>
+
+<h3>Authorize Response</h3>
+
+<p>$schema /config/v2/authorize/res.json</p>
+
+<pre><code data-language="javascript">{
+    "type": "authorize",
+    "response": {
+        "email": "example@example.com",
+        "currency": "USD",
+        "balance": 10377.9900,
+        "loginid": "VRTC573035",
+        "fullname": "John Smith"
+    },
+    "reply_to": "1"
+}</code></pre>
