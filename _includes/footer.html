@@ -7,7 +7,7 @@
 </footer>
 
 <script charset="utf-8">
- require.config({ baseUrl: "/"});
+ require.config({ baseUrl: ~window.location.origin.indexOf('github') ? '/websockets/' : '/'});
  require(["docson/docson", "lib/jquery"], function(docson) {
      docson.templateBaseUrl="/docson";
      $('[data-schema]').each(function() {
