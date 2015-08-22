@@ -1,24 +1,25 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "ResponseMessage",
+  "id": "Response",
   "type": "object",
   "properties": {
-    "msg_type": {
-      "description": "\"authorize\"",
+    "type": {
+      "description": "Response type, \"authorize\"",
       "type": "string"
     },
-    "echo_req": {
-      "description": "Request object echeoed back",
-      "$ref": "#/definitions/EchoedRequest"
+    "reply_to": {
+      "description": "Id of the request message",
+      "type": "string"
     },
-    "authorize": {
+    "response": {
+      "description": "Request object echeoed back",
       "$ref": "#/definitions/AuthorizeResponse"
     }
   },
   "required": [
-    "msg_type",
-    "echo_req",
-    "authorize"
+    "type",
+    "reply_to",
+    "response"
   ],
   "additionalProperties": false,
   "definitions": {
@@ -26,9 +27,6 @@
       "id": "AuthorizeResponse",
       "type": "object",
       "properties": {
-        "token": {
-          "type": "string"
-        },
         "email": {
           "type": "string"
         },
@@ -46,19 +44,12 @@
         }
       },
       "required": [
-        "token",
         "email",
         "currency",
         "balance",
         "loginid",
         "fullname"
       ],
-      "additionalProperties": false
-    },
-    "EchoedRequest": {
-      "id": "EchoedRequest",
-      "type": "object",
-      "properties": {},
       "additionalProperties": false
     }
   }

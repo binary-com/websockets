@@ -1,20 +1,16 @@
-interface ResponseMessage {
-    /** "authorize" */
-    msg_type: string;
+interface Response {
+    /** Response type, "authorize" */
+    type: string;
+    /** Id of the request message */
+    reply_to: string;
     /** Request object echeoed back */
-    echo_req: EchoedRequest;
-    authorize: AuthorizeResponse;
+    response: AuthorizeResponse;
 }
 
 interface AuthorizeResponse {
-    token: string;
     email: string;
     currency: string;
     balance: number;
     loginid: string;
     fullname: string;
-}
-
-interface EchoedRequest {
-
 }

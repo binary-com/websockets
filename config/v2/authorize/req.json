@@ -1,16 +1,41 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "AuthorizeRequest",
+  "id": "Request",
   "type": "object",
   "properties": {
-    "token": {
-      "description": "Authorization token",
+    "id": {
+      "description": "Unique id identifiyng the request",
       "type": "string"
+    },
+    "type": {
+      "description": "Request type",
+      "type": "string"
+    },
+    "parameters": {
+      "description": "Parameters for the request",
+      "$ref": "#/definitions/AuthorizeParameters"
     }
   },
   "required": [
-    "token"
+    "id",
+    "type",
+    "parameters"
   ],
   "additionalProperties": false,
-  "definitions": {}
+  "definitions": {
+    "AuthorizeParameters": {
+      "id": "AuthorizeParameters",
+      "type": "object",
+      "properties": {
+        "token": {
+          "description": "Authorization token",
+          "type": "string"
+        }
+      },
+      "required": [
+        "token"
+      ],
+      "additionalProperties": false
+    }
+  }
 }

@@ -1,7 +1,7 @@
 ---
 layout: page
 title:  "Authorize"
-permalink: /authorize2/
+permalink: authorize2/
 ---
 
 ### Authorize Request

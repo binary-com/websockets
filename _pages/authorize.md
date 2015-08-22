@@ -1,7 +1,7 @@
 ---
 layout: page
 title:  "Authorize"
-permalink: /authorize/
+permalink: authorize/
 ---
 
 ### Send
