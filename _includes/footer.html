@@ -10,13 +10,12 @@
  require.config({ baseUrl: "/"});
  require(["docson/docson", "lib/jquery"], function(docson) {
      docson.templateBaseUrl="/docson";
-    //  $('[data-schema]').each(function() {
-    //      var $this = $(this);
-    //      $.get($this.attr('data-schema'), function(schema) {
-    //          docson.doc($this, schema);
-    //      });
-    //  });
-
+     $('[data-schema]').each(function() {
+         var $this = $(this);
+         $.get($this.attr('data-schema'), function(schema) {
+             docson.doc($this, schema);
+         });
+     });
      $('p').each(function() {
          var $this = $(this),
             text = $this.text().trim();

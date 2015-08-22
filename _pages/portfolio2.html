@@ -1,0 +1,43 @@
+---
+layout: page
+title:  "Portfolio v2"
+permalink: portfolio2/
+---
+
+<h3>Portfolio Request</h3>
+
+<p data-schema="/config/v2/portfolio/req.json"></p>
+
+<pre><code data-language="javascript">{
+    "id": "1",
+    "type": "get_portfolio",
+    "parameters": { }
+}</code></pre>
+
+<h3>Portfolio Response</h3>
+
+<p data-schema="/config/v2/portfolio/res.json"></p>
+
+<pre><code data-language="javascript">{
+    "type": "portfolio_contracts",
+    "response": {
+        "contracts": [{
+            "ask_price": 123,
+            "bid_price": 23,
+            "buy_price": 12,
+            "contract_type": "sell",
+            "currency": "USD",
+            "date_start": 123123132,
+            "expiry_time": 42342424323,
+            "fmb_id": 223323322,
+            "id": "asdasdasda",
+            "longcode": "Something",
+            "payout": 123.000,
+            "purchase_time": 1212123123,
+            "spot_number": 4,
+            "spot_time": "???????",
+            "symbol_string": "frxUSD"
+        }]
+    },
+    "reply_to": "1"
+}</code></pre>

@@ -18,11 +18,9 @@ h1 {
 .page-content { flex: 5; }
 
 .docson .box { width: 100%; }
-pre {
-    border-radius: 4px;
-}
-.json-schema {
-    background-color: white;
+
+.json-keyword, .json-string, .json-object-key {
+    color: #E6DB74 !important;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
