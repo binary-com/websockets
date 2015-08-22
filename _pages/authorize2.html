@@ -1,33 +1,75 @@
 ---
 layout: page
-title:  "Authorize v2"
-permalink: authorize2/
+title:  "v2"
+permalink: v2/
 ---
 
-<h3>Authorize Request</h3>
+<h3>Common Request Format</h3>
 
-<p data-schema="../config/v2/authorize/req.json"></p>
+<p>Equals a function call. Zero or one responses expected.</p>
 
 <pre><code data-language="javascript">{
-    "id": "1",
-    "type": "authorize",
+    "id": "unique_id",
+    "type": "request_type",
     "parameters": {
-        "token": "dhfgishdfgisdgsdfgsdfg"
+        ...
     }
 }</code></pre>
 
-<h3>Authorize Response</h3>
+<h3>Common Response Format</h3>
 
-<p data-schema="../config/v2/authorize/res.json"></p>
+<p>Equivalent to a function result. 'reply_to' used to determine which request it corresponds to.</p>
 
 <pre><code data-language="javascript">{
-    "type": "authorize",
+    "type": "response_type",
     "response": {
-        "email": "example@example.com",
-        "currency": "USD",
-        "balance": 10377.9900,
-        "loginid": "VRTC573035",
-        "fullname": "John Smith"
+        ...
     },
-    "reply_to": "1"
+    "reply_to": "request_id"
+}</code></pre>
+
+<h3>Error Response</h3>
+
+<p>Sent when error occurs. Can be sent in addition or instead of the response.</p>
+
+<pre><code data-language="javascript">{
+    "type": "error",
+    "response": {
+        "code": 2,
+        "msg": "Error message here"
+    },
+    "reply_to": "request_id"
+}</code></pre>
+
+<h3>Common Subscribe Request</h3>
+
+<p>Subscription to 'events'. These can be tick stream, portfolio or any other events.</p>
+
+<pre><code data-language="javascript">{
+    "type": "subscribe_type",
+    "parameters": {
+        ...
+    }
+}</code></pre>
+
+<h3>Common Event Response</h3>
+
+<p>Happens when the user had subscribed to the event. Server determines how otften it will be called</p>
+
+<pre><code data-language="javascript">{
+    "type": "event_type",
+    "response": {
+        ...
+    }
+}</code></pre>
+
+<h3>Common Unsubscribe Request</h3>
+
+<p>Stop being sent 'events' from server.</p>
+
+<pre><code data-language="javascript">{
+    "type": "unsubscribe_type",
+    "parameters": {
+        ...
+    }
 }</code></pre>

@@ -1,7 +1,5 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
-@charset "utf-8";
 
 #content { width: 100%; margin-top: 100px !important; }
 .page-wrapper { display: flex; }
@@ -13,6 +11,7 @@ h1 {
     background-color: #f7f7f7;
     padding: 1rem;
     margin-right: 1rem;
+    li { padding-bottom: .5rem; }
     a { text-decoration: none; }
 }
 .page-content { flex: 5; }
@@ -33,5 +32,4 @@ pre, code {
     font-family: 'Source Code Pro', monospace;
 }
 
-// Import partials from `sass_dir` (defaults to `_sass`)
  @import "monokai.css";

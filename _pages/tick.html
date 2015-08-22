@@ -6,8 +6,24 @@ permalink: /tick/
 
 <h3>Send</h3>
 
-<p data-schema="../config/v1/tick/send.json"></p>
+<p data-schema="config/v1/tick/send.json"></p>
+
+<pre><code data-language="javascript">{
+    "ticks": "frxUSDJPY"
+}</code></pre>
 
 <h3>Receive</h3>
 
-<p data-schema="../config/v1/tick/receive.json"></p>
+<p data-schema="config/v1/tick/receive.json"></p>
+
+<pre><code data-language="javascript">{
+    "msg_type": "tick",
+    "echo_req": {
+        "ticks": "frxUSDJPY"
+    },
+    "tick": {
+      "epoch": 123131232,
+      "id": "sdfsdfsdfds",
+      "quote": 2323423
+    }
+}</code></pre>

@@ -6,13 +6,13 @@
     require.config({ baseUrl: baseUrl});
 
     require(["docson/docson", "lib/jquery"], function(docson) {
-     docson.templateBaseUrl="/docson";
-     $('[data-schema]').each(function() {
-         var $this = $(this);
-         $.get(baseUrl + $this.attr('data-schema'), function(schema) {
-             docson.doc($this, schema);
-         });
-     });
+        docson.templateBaseUrl = baseUrl + "docson";
+        $('[data-schema]').each(function() {
+        var $this = $(this);
+        $.get(baseUrl + $this.attr('data-schema'), function(schema) {
+            docson.doc($this, schema);
+        });
+    });
     //  $('p').each(function() {
     //      var $this = $(this),
     //         text = $this.text().trim();

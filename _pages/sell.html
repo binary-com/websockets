@@ -6,8 +6,27 @@ permalink: /sell/
 
 <h3>Send</h3>
 
-<p data-schema="../config/v1/sell/send.json"></p>
+<p data-schema="config/v1/sell/send.json"></p>
+
+<pre><code data-language="javascript">{
+    "sell": "343",
+    "price": 500
+}</code></pre>
 
 <h3>Receive</h3>
 
-<p data-schema="../config/v1/sell/receive.json"></p>
+<p data-schema="config/v1/sell/receive.json"></p>
+
+<pre><code data-language="javascript">{
+    "msg_type": "sell",
+    "echo_req": {
+        "sell": "343",
+        "price": 500
+    },
+    "close_receipt": {
+        "balance_after": 10900,
+        "fmb_id": 424234234,
+        "sold_for": 500.00,
+        "trx_id": 434
+    }
+}</code></pre>
