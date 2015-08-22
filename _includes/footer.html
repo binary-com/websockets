@@ -5,7 +5,7 @@
 
     require.config({ baseUrl: baseUrl});
 
-    require(["docson/docson", "lib/data-schema="../"], function(docson) {
+    require(["docson/docson", "lib/jquery"], function(docson) {
      docson.templateBaseUrl="/docson";
      $('[data-schema]').each(function() {
          var $this = $(this);

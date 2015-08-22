@@ -23,5 +23,15 @@ h1 {
     color: #E6DB74 !important;
 }
 
+pre {
+    border-radius: 4px;
+    background: #2a2f3a;
+    font-size: inherit;
+    padding: 0;
+}
+pre, code {
+    font-family: 'Source Code Pro', monospace;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
  @import "monokai.css";

@@ -9,16 +9,17 @@
  * @version 1.0.0
  */
 pre {
-    border-radius: 4px;    
-    background: #2a2f3a;
+    background: #272822;
     word-wrap: break-word;
     margin: 0px;
+    padding: 10px;
     color: #fff;
+    font-size: 14px;
     margin-bottom: 20px;
 }
 
 pre, code {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Monaco', courier, monospace;
 }
 
 pre .comment {
