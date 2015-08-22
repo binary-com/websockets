@@ -5,9 +5,17 @@
 
 #content { width: 100%; margin-top: 100px !important; }
 .page-wrapper { display: flex; }
-h1 { margin-top: 0; }
-.sidebar { flex: 1; }
-.page-content { flex: 3; }
+h1 {
+    margin-top: 0;
+}
+.sidebar {
+    flex: 1;
+    background-color: #f7f7f7;
+    padding: 1rem;
+    margin-right: 1rem;
+    a { text-decoration: none; }
+}
+.page-content { flex: 5; }
 
 .docson .box { width: 100%; }
 pre {
@@ -15,17 +23,6 @@ pre {
 }
 .json-schema {
     background-color: white;
-}
-.language-javascript {
-    font-family: 'Source Code Pro';
-    border-radius: 4px;
-    background-color: #2A2F3A;
-    .nx { color: #f8f8f2; }
-    .p, .o { color: #BEBEBE; }
-    .s1, .s2 { color: #e6db74; }
-    .p+.s2, .kd { color: #6FB3D2; }
-    .mf { color: #FC6D24; }
-    .k { color: #f92672; }
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
