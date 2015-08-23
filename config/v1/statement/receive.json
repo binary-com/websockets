@@ -20,7 +20,7 @@
         "transactions":{
           "type":"array",
           "items":{
-            "type":"string"
+            "type":"object"
           },
           "minItems":"1",
           "description":"Array of returned transactions"
