@@ -4,16 +4,16 @@ title:  "v2"
 permalink: v2/
 ---
 
+<p>This is a work-in-progress proposal. Feel free to suggest improvements.</p>
+
 <h3>Common Request Format</h3>
 
 <p>Equals a function call. Zero or one responses expected.</p>
 
 <pre><code data-language="javascript">{
-    "id": "unique_id",
+    "reqid": "unique_request_id",
     "type": "request_type",
-    "parameters": {
-        ...
-    }
+    ...
 }</code></pre>
 
 <h3>Common Response Format</h3>
@@ -22,10 +22,8 @@ permalink: v2/
 
 <pre><code data-language="javascript">{
     "type": "response_type",
-    "response": {
-        ...
-    },
-    "reply_to": "request_id"
+    "reply_to": "request_id",
+    ...
 }</code></pre>
 
 <h3>Error Response</h3>
@@ -34,11 +32,9 @@ permalink: v2/
 
 <pre><code data-language="javascript">{
     "type": "error",
-    "response": {
-        "code": 2,
-        "msg": "Error message here"
-    },
-    "reply_to": "request_id"
+    "reply_to": "request_id",
+    "error_code": 2,
+    "error_msg": "Error message here"    
 }</code></pre>
 
 <h3>Common Subscribe Request</h3>
@@ -47,9 +43,7 @@ permalink: v2/
 
 <pre><code data-language="javascript">{
     "type": "subscribe_type",
-    "parameters": {
-        ...
-    }
+    ...
 }</code></pre>
 
 <h3>Common Event Response</h3>
@@ -58,9 +52,7 @@ permalink: v2/
 
 <pre><code data-language="javascript">{
     "type": "event_type",
-    "response": {
-        ...
-    }
+    ...
 }</code></pre>
 
 <h3>Common Unsubscribe Request</h3>
@@ -69,7 +61,5 @@ permalink: v2/
 
 <pre><code data-language="javascript">{
     "type": "unsubscribe_type",
-    "parameters": {
-        ...
-    }
+    ...
 }</code></pre>

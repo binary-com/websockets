@@ -1,0 +1,41 @@
+---
+layout: page
+title:  "Websockets"
+permalink: websockets/
+---
+
+<p>The binary.com websockets service is at</p>
+
+<pre><code>wss://ws.binary.com/websockets/contracts</code></pre>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket">WebSocket documentation at MDN</a></p>
+
+<p>Open a connection to Binary.com WebSocket service:</p>
+
+<pre><code data-language="javascript">var ws = new WebSocket('wss://ws.binary.com/websockets/contracts');
+</code></pre>
+
+<p>You can now 'send' data down the websocket using any of the messages described in this Reference.</p>
+
+<p>Depending on the call, zero, one or many messages will be sent back to you.</p>
+
+<p>All the examples in this Reference assume that a websocket object named 'ws' has already been opened as shown above.</p>
+
+<p>All movement of data in both directions is done with structured JSON-encoded data.All field name identifiers, and most field values, will be double-quoted in the encoded data.  You can avoid the tedious problem of constructing your own JSON strings by invoking the built-in JSON.stringify method on an in-line Javascript object.</p>
+
+<p>The same applies to receiving messages. Each message is a serialized JSON-encoded string, you need to parse it using JSON.parse().</p>
+
+<p>All of our examples use this technique.</p>
+
+<pre><code data-language="javascript">var ws = new WebSocket('wss://ws.binary.com/websockets/contracts');
+
+ws.onmessage = function(msg) {
+   var data = JSON.parse(msg.data);
+   console.log('ticks update: %o', data);
+};
+
+ws.send(JSON.stringify({authorize: "0d4abc3j3MTabcQJnmabcactabd"}));
+ws.send(JSON.stringify({ticks:'R_100'}));
+</code></pre>
+
+<p>Combining some of the examples, here is a JavaScript snippet that opens a websocket, and requests a stream of updates for the symbol "R_100".  On receipt of each message, it outputs a message to the console.</p>

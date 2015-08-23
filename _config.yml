@@ -1,7 +1,7 @@
 # Site settings
 title: Binary Developers
-baseurl: "/websockets/" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://deveopers.binary.com"
 twitter_username: binarydotcom
 github_username:  binary-com
 

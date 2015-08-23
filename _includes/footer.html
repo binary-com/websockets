@@ -1,15 +1,14 @@
 <footer></footer>
 
 <script charset="utf-8">
-    var baseUrl = ~window.location.origin.indexOf('github') ? '/websockets/' : '/';
 
-    require.config({ baseUrl: baseUrl});
+    require.config({ baseUrl: '/' });
 
     require(["docson/docson", "lib/jquery"], function(docson) {
-        docson.templateBaseUrl = baseUrl + "docson";
+        docson.templateBaseUrl = '/docson';
         $('[data-schema]').each(function() {
         var $this = $(this);
-        $.get(baseUrl + $this.attr('data-schema'), function(schema) {
+        $.get('/' + $this.attr('data-schema'), function(schema) {
             docson.doc($this, schema);
         });
     });
