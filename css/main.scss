@@ -14,9 +14,17 @@ h1 {
     li { padding-bottom: .5rem; }
     a { text-decoration: none; }
 }
+
 .page-content { flex: 5; }
 
-.docson .box { width: 100%; }
+.docson .box {
+    width: 100%;
+    border: 1px solid rgba(42, 47, 58, .5);
+}
+
+.docson .box-header {
+    border-bottom: 1px solid rgba(42, 47, 58, .5);
+}
 
 .json-keyword, .json-string, .json-object-key {
     color: #E6DB74 !important;
