@@ -8,30 +8,10 @@ permalink: /statement/
 
 <p data-schema="config/v1/statement/send.json"></p>
 
-<pre><code data-language="javascript">{
-  "statement": [
-    {
-      "action_type": "deposit",
-      "dt_to": 443,
-      "offset": 200,
-      "limit": 20,
-      "sort_by": "date",
-      "yyyymm": 201505
-    }
-  ]
-}</code></pre>
+<code data-example="config/v1/statement/send-example.json"></code>
 
 <h3>Receive</h3>
 
 <p data-schema="config/v1/statement/receive.json"></p>
 
-<pre><code data-language="javascript">{
-  "echo_req": null,
-  "statement": {
-    "count": 1,
-    "transactions": [
-      "Wrong shema! To fix!!!!"
-    ]
-  },
-  "msg_type": "statement"
-}</code></pre>
+<code data-example="config/v1/statement/receive-example.json"></code>

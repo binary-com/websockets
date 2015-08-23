@@ -7,22 +7,23 @@
     require(["docson/docson", "lib/jquery"], function(docson) {
         docson.templateBaseUrl = '/docson';
         $('[data-schema]').each(function() {
-        var $this = $(this);
-        $.get('/' + $this.attr('data-schema'), function(schema) {
-            docson.doc($this, schema);
+            var $this = $(this);
+            $.get('/' + $this.attr('data-schema'), function(schema) {
+                docson.doc($this, schema);
+            });
+        });
+
+        $('[data-example]').each(function() {
+            var $this = $(this);
+            $.get('/' + $this.attr('data-example'), function(exampleJson) {
+                Rainbow.color('var foo = true;', 'javascript', function(highlighted_code) {
+                    console.log(highlighted_code);
+                });
+                Rainbow.color(JSON.stringify(exampleJson, null, 4), 'javascript', function(highlightedJson) {
+                    $this.replaceWith('<pre><code data-language="javascript">' +
+                        highlightedJson + '</code></pre>');
+                });
+            });
         });
     });
-    //  $('p').each(function() {
-    //      var $this = $(this),
-    //         text = $this.text().trim();
-     //
-    //      if (!~text.indexOf('$schema')) return;
-     //
-    //      var schemaUrl = text.split(' ')[1];
-    //      $.get(schemaUrl, function(schema) {
-    //          docson.doc($this, schema);
-    //      });
-    //  });
-
- });
 </script>

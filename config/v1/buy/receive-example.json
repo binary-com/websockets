@@ -1,0 +1,16 @@
+{
+    "msg_type": "buy",
+    "echo_req": {
+        "buy": "123",
+        "price": 100.00
+    },
+    "buy": {
+        "balance_after": 10377.9900,
+        "longcode": "Something for something"
+        "start_time": 2324324234,
+        "fmb_id": 1231313123,
+        "buy_price": 100.00,
+        "purchase_time": 23424242423,
+        "trx_id": 131312312
+    }
+}

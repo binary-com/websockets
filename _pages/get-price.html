@@ -8,32 +8,10 @@ permalink: /get-price/
 
 <p data-schema="config/v1/get_price/send.json"></p>
 
-<pre><code data-language="javascript">{
-    "proposal": 1,
-    "amount_val": 34,
-    "basis": "payout",
-    "contract_type": "ONETOUCH",
-    "currency": "USD",
-    "duration": "43",
-    "duration_unit": "s",
-    "symbol": "frxUSDPY"
-}</code></pre>
+<code data-example="config/v1/get_price/send-example.json"></code>
 
 <h3>Receive</h3>
 
 <p data-schema="config/v1/get_price/receive.json"></p>
 
-<pre><code data-language="javascript">{
-  "echo_req": null,
-  "proposal": {
-    "bid_price": 4.96,
-    "longcode": "USD 10.00 payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time.",
-    "spot": 9874.52,
-    "spot_time": 1439999052,
-    "ask_price": 5.14,
-    "date_start": 1439999053,
-    "id": "1d6651e7d599bce6c54bd71a8283e579",
-    "payout": 10
-  },
-  "msg_type": "proposal"
-}</code></pre>
+<code data-example="config/v1/get_price/receive-example.json"></code>

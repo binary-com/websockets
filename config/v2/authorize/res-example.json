@@ -1,0 +1,11 @@
+{
+    "type": "authorize",
+    "response": {
+        "email": "example@example.com",
+        "currency": "USD",
+        "balance": 10377.9900,
+        "loginid": "VRTC573035",
+        "fullname": "John Smith"
+    },
+    "reply_to": "1"
+}

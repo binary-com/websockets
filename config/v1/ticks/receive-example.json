@@ -1,0 +1,13 @@
+{
+    "msg_type": "history",
+    "echo_req": {
+        "ticks": "frxUSDJPY",
+        "end": "END"
+    },
+    "history": {
+        "times": [
+            434,
+            2342342
+        ]
+    }
+}

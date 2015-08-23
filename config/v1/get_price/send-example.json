@@ -1,0 +1,10 @@
+{
+    "proposal": 1,
+    "amount_val": 34,
+    "basis": "payout",
+    "contract_type": "ONETOUCH",
+    "currency": "USD",
+    "duration": "43",
+    "duration_unit": "s",
+    "symbol": "frxUSDPY"
+}

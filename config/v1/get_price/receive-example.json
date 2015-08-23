@@ -1,0 +1,14 @@
+{
+  "echo_req": null,
+  "proposal": {
+    "bid_price": 4.96,
+    "longcode": "USD 10.00 payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time.",
+    "spot": 9874.52,
+    "spot_time": 1439999052,
+    "ask_price": 5.14,
+    "date_start": 1439999053,
+    "id": "1d6651e7d599bce6c54bd71a8283e579",
+    "payout": 10
+  },
+  "msg_type": "proposal"
+}
