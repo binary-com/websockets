@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Offering discovery Receive",
+  "description": "A message with offerings",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "offerings": {
+      "type": "object",
+      "description":"The OFFERINGS structure is a hierarchy of Market -> SubMarket -> Symbol -> ContractCategory -> Contract Type"
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "offerings"
+    }
+  },
+  "required": [
+    "echo_req",
+    "offerings",
+    "msg_type"
+  ]
+}
