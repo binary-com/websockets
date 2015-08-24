@@ -6,16 +6,32 @@
 h1 {
     margin-top: 0;
 }
+h5 {
+    margin-bottom: 1rem;
+}
 .sidebar {
     flex: 1;
     background-color: #f7f7f7;
-    padding: 1rem;
-    margin-right: 1rem;
-    li { padding-bottom: .5rem; }
-    a { text-decoration: none; }
+    margin-right: 2rem;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: .5rem 0;
+    li:hover { background-color: #e7e7e7; }
+    a {
+        padding: .25rem 2rem;
+        text-decoration: none;
+        display: inline-block;
+    }
+    h5 {
+        padding: .5rem 1rem;
+    }
+    hr {
+        margin: .5rem 1rem;
+        opacity: .5;
+    }
 }
 
-.page-content { flex: 5; }
+.page-content { flex: 3; }
 
 .docson .box {
     width: 100%;

@@ -1,0 +1,28 @@
+---
+layout: page
+title:  "Contracts For Symbol"
+permalink: /contracts/
+---
+
+<h5>For a given SYMBOL name, get the list of currently available contracts, and the latest barrier and duration limits for each contract.</h5>
+
+<h3>Send</h3>
+
+<p data-schema="config/v1/contracts/send.json"></p>
+
+<code data-example="examples/contracts-req.json"></code>
+
+
+<h3>Receive</h3>
+
+
+<p data-schema="config/v1/contracts/receive.json"></p>
+
+<ul class="checked">
+    <li>DEF is an object with fields describing an available contract and giving its specific current duration and barrier limits</li>
+    <li>CLOSE_TIME is that symbol's next market-close time as an epoch value</li>
+    <li>OPEN_TIME is that symbol's next market-open time as an epoch value</li>
+    <li>HIT_COUNT is the count of contracts available (i.e. the length of the 'available' array).</li>
+</ul>
+
+<code data-response="examples/contracts-req.json"></code>

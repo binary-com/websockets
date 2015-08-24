@@ -15,11 +15,13 @@ permalink: websockets/
 <pre><code data-language="javascript">var ws = new WebSocket('wss://ws.binary.com/websockets/contracts');
 </code></pre>
 
-<p>You can now 'send' data down the websocket using any of the messages described in this Reference.</p>
+<p>You can now send data down the websocket using any of the messages described in this Reference.</p>
 
 <p>Depending on the call, zero, one or many messages will be sent back to you.</p>
 
 <p>All the examples in this Reference assume that a websocket object named 'ws' has already been opened as shown above.</p>
+
+<h2>Sending and Receiving Messages</h2>
 
 <p>All movement of data in both directions is done with structured JSON-encoded data.All field name identifiers, and most field values, will be double-quoted in the encoded data.  You can avoid the tedious problem of constructing your own JSON strings by invoking the built-in JSON.stringify method on an in-line Javascript object.</p>
 

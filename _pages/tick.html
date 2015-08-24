@@ -1,8 +1,10 @@
 ---
 layout: page
-title:  "Tick"
+title:  "Tick Stream"
 permalink: /tick/
 ---
+
+<h5>For a given SYMBOL name, receive a continuous stream of spot price updates.</h5>
 
 <h3>Send</h3>
 
@@ -14,4 +16,8 @@ permalink: /tick/
 
 <p data-schema="config/v1/tick/receive.json"></p>
 
+<p>The stream message will contain an epoch value and a quote value, showing latest spot price for the requested symbol. These update messages will arrive with a frequency of up to one second.</p>
+
 <code data-response="examples/tick-req.json"></code>
+
+<p>The id field here is a stream id that can be used to cancel this stream using the Cancel An Incoming Stream reqeust.</p>
