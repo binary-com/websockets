@@ -4,14 +4,23 @@ title:  "Get Price"
 permalink: /get-price/
 ---
 
+<p>Get latest quote for a specific contract proposal</p>
+
 <h3>Send</h3>
+
+<p>The send message contains sufficient information for a proposed contract to be priced.<br />
+This example for a start-now contract shows the minimum required fields:</p>
+
+<code data-example="examples/get-price-req.json"></code>
 
 <p data-schema="config/v1/get_price/send.json"></p>
 
-<code data-example="config/v1/get_price/send-example.json"></code>
-
 <h3>Receive</h3>
+
+<p>An immediate return message will echo back the proposal fields and will provide sufficient information to describe and price the proposed contract. For example:</p>
+
+<code data-example="examples/get-price-res.json"></code>
 
 <p data-schema="config/v1/get_price/receive.json"></p>
 
-<code data-example="config/v1/get_price/receive-example.json"></code>
+<p>The id here is a server-generated stream identifier for this new contract proposal. This id will be needed in an actual purchase call (see Buy a Contract). From this point on, a stream of update messages will arrive in real time, at a frequency of up to 1 per second. An update message will contain the id and a subset of the initial fields, and so it looks like this example:</p>

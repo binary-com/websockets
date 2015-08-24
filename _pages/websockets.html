@@ -27,15 +27,18 @@ permalink: websockets/
 
 <p>All of our examples use this technique.</p>
 
-<pre><code data-language="javascript">var ws = new WebSocket('wss://ws.binary.com/websockets/contracts');
+<div data-height="300" data-theme-id="0" data-slug-hash="eNqZaw" data-default-tab="js" data-user="borisyankov" class='codepen'>
+<pre><code>var ws = new WebSocket(&#39;wss://ws.binary.com/websockets/contracts&#39;);
+
+ws.onopen = function(evt) {
+    ws.send(JSON.stringify({ticks:&#39;R_100&#39;}));
+};
 
 ws.onmessage = function(msg) {
    var data = JSON.parse(msg.data);
-   console.log('ticks update: %o', data);
+   console.log(&#39;ticks update: %o&#39;, data);
 };
-
-ws.send(JSON.stringify({authorize: "0d4abc3j3MTabcQJnmabcactabd"}));
-ws.send(JSON.stringify({ticks:'R_100'}));
 </code></pre>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 <p>Combining some of the examples, here is a JavaScript snippet that opens a websocket, and requests a stream of updates for the symbol "R_100".  On receipt of each message, it outputs a message to the console.</p>
