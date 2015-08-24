@@ -1,10 +1,32 @@
 <footer></footer>
 
 <script charset="utf-8">
-
     require.config({ baseUrl: '/' });
 
     require(["docson/docson", "lib/jquery"], function(docson) {
+
+        function formatCode(json, $node) {
+            Rainbow.color(JSON.stringify(json, null, 4), 'javascript', function(highlightedJson) {
+                $node.replaceWith('<pre><code data-language="javascript">' +
+                    highlightedJson + '</code></pre>');
+            });
+        }
+
+        function wsResult(json, $responseNode) {
+            var ws = new WebSocket('wss://ws.binary.com/websockets/contracts');
+
+            ws.onopen = function(evt) {
+                ws.send(JSON.stringify(json));
+            };
+
+            ws.onmessage = function(msg) {
+               var json = JSON.parse(msg.data);
+               formatCode(json, $responseNode);
+               // ws.close()
+            };
+        }
+
+
         docson.templateBaseUrl = '/docson';
         $('[data-schema]').each(function() {
             var $this = $(this);
@@ -16,13 +38,14 @@
         $('[data-example]').each(function() {
             var $this = $(this);
             $.get('/' + $this.attr('data-example'), function(exampleJson) {
-                Rainbow.color('var foo = true;', 'javascript', function(highlighted_code) {
-                    console.log(highlighted_code);
-                });
-                Rainbow.color(JSON.stringify(exampleJson, null, 4), 'javascript', function(highlightedJson) {
-                    $this.replaceWith('<pre><code data-language="javascript">' +
-                        highlightedJson + '</code></pre>');
-                });
+                formatCode(exampleJson, $this);
+            });
+        });
+        $('[data-response]').each(function() {
+            var $this = $(this);
+            $this.html('<div class="progress"></div>');
+            $.get('/' + $this.attr('data-response'), function(exampleJson) {
+                wsResult(exampleJson, $this);
             });
         });
     });
