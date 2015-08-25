@@ -59,4 +59,13 @@ pre, code {
     font-family: 'Source Code Pro', monospace;
 }
 
+.spacer {
+    flex: 1;
+}
+
+.gitter {
+    display: flex;
+    align-items: center;
+}
+
  @import "monokai.css";
