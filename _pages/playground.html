@@ -1,0 +1,26 @@
+---
+layout: page
+title: "Playground"
+permalink: playground/
+---
+
+<textarea></textarea>
+
+<select class="playground-api-selector">
+    <option value="authorize">Authorize</option>
+    <option value="tick">Tick Stream</option>
+    <option value="ticks">Tick History</option>
+    <option value="active_symbols">Active Symbols</option>
+    <option value="offerings">Offerings</option>
+    <option value="contracts">Contracts For Symbol</option>
+    <option value="get_price">Get Price</option>
+    <option value="buy">Buy Contract</option>
+    <option value="portfolio">Portfolio</option>
+    <option value="sell">Sell Contract</option>
+    <option value="statement">Statement</option>
+    <option value="forget">Cancel Stream</option>
+</select>
+
+<p data-schema="config/v1/authorize/receive.json"></p>
+
+<code data-response="examples/authorize-req.json"></code>
