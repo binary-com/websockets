@@ -4,13 +4,13 @@ layout: page
 
 <p>The binary.com websockets service is at this URL:</p>
 
-<pre><code>wss://ws.binary.com/websockets/contracts</code></pre>
+<pre>wss://ws.binary.com/websockets/contracts</pre>
 
 <p>There are several useful references for this object such as [here](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) .</p>
 
 <p>This will open the Binary.com WebSocket service:</p>
 
-<pre><code data-language="javascript">var ws = new WebSocket('wss://ws.binary.com/websockets/contracts');
+<pre><p data-language="javascript">var ws = new WebSocket('wss://ws.binary.com/websockets/contracts');
 </code></pre>
 
 <p>You can now 'send' data down the websocket using any of the messages described in this Reference.</p>
@@ -27,7 +27,7 @@ layout: page
 
 <p>Combining some of the examples, here is a javascript fragment that opens a websocket, and requests a stream of updates for the symbol "R_100".  On receipt of each message, it generates a console line allowing inspection of the message.</p>
 
-<pre><code data-language="javascript">var ws = new WebSocket('wss://ws.binary.com/websockets/contracts');
+<pre><p data-language="javascript">var ws = new WebSocket('wss://ws.binary.com/websockets/contracts');
 
 ws.onmessage = function(msg) {
    var data = JSON.parse(msg.data);

@@ -6,14 +6,13 @@ permalink: websockets/
 
 <p>The binary.com websockets service is at</p>
 
-<pre><code>wss://ws.binary.com/websockets/contracts</code></pre>
+<pre>wss://ws.binary.com/websockets/contracts</pre>
 
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket">WebSocket documentation at MDN</a></p>
 
 <p>Open a connection to Binary.com WebSocket service:</p>
 
-<pre><code data-language="javascript">var ws = new WebSocket('wss://ws.binary.com/websockets/contracts');
-</code></pre>
+<pre data-language="javascript">var ws = new WebSocket('wss://ws.binary.com/websockets/contracts');</pre>
 
 <p>You can now send data down the websocket using any of the messages described in this Reference.</p>
 
@@ -29,8 +28,7 @@ permalink: websockets/
 
 <p>All of our examples use this technique.</p>
 
-<div data-height="300" data-theme-id="0" data-slug-hash="eNqZaw" data-default-tab="js" data-user="borisyankov" class='codepen'>
-<pre><code>var ws = new WebSocket(&#39;wss://ws.binary.com/websockets/contracts&#39;);
+<pre data-language="javascript">var ws = new WebSocket(&#39;wss://ws.binary.com/websockets/contracts&#39;);
 
 ws.onopen = function(evt) {
     ws.send(JSON.stringify({ticks:&#39;R_100&#39;}));
@@ -40,7 +38,6 @@ ws.onmessage = function(msg) {
    var data = JSON.parse(msg.data);
    console.log(&#39;ticks update: %o&#39;, data);
 };
-</code></pre>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</pre>
 
 <p>Combining some of the examples, here is a JavaScript snippet that opens a websocket, and requests a stream of updates for the symbol "R_100".  On receipt of each message, it outputs a message to the console.</p>

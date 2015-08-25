@@ -53,10 +53,13 @@ pre {
     border-radius: 4px;
     background: #2a2f3a;
     font-size: inherit;
-    padding: 0;
 }
 pre, code {
     font-family: 'Source Code Pro', monospace;
+}
+
+pre p, code {
+    margin-bottom: 0;
 }
 
 .spacer {
@@ -67,7 +70,7 @@ pre, code {
     display: flex;
     align-items: center;
 }
-#api-key,
+#api-token,
 #playground-request,
 #playground-api-selector,
 #playground-btn {

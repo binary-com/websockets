@@ -4,10 +4,12 @@ title: "Playground"
 permalink: playground/
 ---
 
+<h5>The easiest way to try out and play with our API</h5>
+
 <fieldset>
     <label for="playground-api-selector">See API Reference</label>
     <select id="playground-api-selector">
-        <option value="">Chose Req/Res Type</option>
+        <option value="">Chose Request Type</option>
         <option value="authorize">Authorize</option>
         <option value="tick">Tick Stream</option>
         <option value="ticks">Tick History</option>
@@ -29,9 +31,9 @@ permalink: playground/
 </div>
 
 <fieldset>
-    <label for="api-key">API Token (optional) <a href="https://www.binary.com/user/api_token">Get your API token</a></label>
+    <label for="api-token">API Token (optional) <a href="https://www.binary.com/user/api_token">Get your API token</a></label>
     <br/>
-    <input id="api-key">
+    <input type="text" id="api-token">
 </fieldset>
 
 <fieldset>
@@ -43,4 +45,4 @@ permalink: playground/
     <button id="playground-btn">Send Request to API</button>
 </fieldset>
 
-<code id="playground-response"></code>
+<p id="playground-response"></p>

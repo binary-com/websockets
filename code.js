@@ -6,17 +6,18 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     function formatCode(json, $node) {
         Rainbow.color(JSON.stringify(json, null, 4), 'javascript', function(highlightedJson) {
-            $node.replaceWith('<pre><code data-language="javascript">' +
-                highlightedJson + '</code></pre>');
+            $node.html('<pre><p data-language="javascript">' +
+                highlightedJson + '</pre>');
         });
     }
 
-    function wsResult(json, $responseNode, apiKey) {
+    function wsResult(json, $responseNode, apiToken) {
+        var tokenProvided = apiToken && apiToken.trim().length;
         var ws = new WebSocket('wss://ws.binary.com/websockets/contracts');
 
         ws.onopen = function(evt) {
-            var authorizeReq = '{"authorize":"' + apiKey + '"}';
-            if (apiKey.length) ws.send(authorizeReq);
+            var authorizeReq = '{"authorize":"' + apiToken + '"}';
+            if (tokenProvided) ws.send(authorizeReq);
             ws.send(JSON.stringify(json));
         };
 
@@ -24,7 +25,6 @@ require(["docson/docson", "lib/jquery"], function(docson) {
            var json = JSON.parse(msg.data);
            console.log(json);
            formatCode(json, $responseNode);
-           // ws.close()
         };
     }
 
@@ -48,9 +48,18 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     }
 
     function updatePlaygroundResponse() {
-        var $response = $('#playground-response');
-        $response.html('<div class="progress"></div>');
-        wsResult($('#playground-request'), $response, $('#api-key'));
+        var $response = $('#playground-response'),
+            json;
+
+        try {
+            json = JSON.parse($('#playground-request').val());
+        } catch(err) {
+            alert('Not valid json!');
+            return;
+        }
+
+        $response.html('<code><div class="progress"></div></code>');
+        wsResult(json, $response, $('#api-token').val());
     }
 
     $('[data-schema]').each(function() {
