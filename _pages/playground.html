@@ -4,23 +4,43 @@ title: "Playground"
 permalink: playground/
 ---
 
-<textarea></textarea>
+<fieldset>
+    <label for="playground-api-selector">See API Reference</label>
+    <select id="playground-api-selector">
+        <option value="">Chose Req/Res Type</option>
+        <option value="authorize">Authorize</option>
+        <option value="tick">Tick Stream</option>
+        <option value="ticks">Tick History</option>
+        <option value="active_symbols">Active Symbols</option>
+        <option value="offerings">Offerings</option>
+        <option value="contracts">Contracts For Symbol</option>
+        <option value="get_price">Get Price</option>
+        <option value="buy">Buy Contract</option>
+        <option value="portfolio">Portfolio</option>
+        <option value="sell">Sell Contract</option>
+        <option value="statement">Statement</option>
+        <option value="forget">Cancel Stream</option>
+    </select>
+</fieldset>
 
-<select class="playground-api-selector">
-    <option value="authorize">Authorize</option>
-    <option value="tick">Tick Stream</option>
-    <option value="ticks">Tick History</option>
-    <option value="active_symbols">Active Symbols</option>
-    <option value="offerings">Offerings</option>
-    <option value="contracts">Contracts For Symbol</option>
-    <option value="get_price">Get Price</option>
-    <option value="buy">Buy Contract</option>
-    <option value="portfolio">Portfolio</option>
-    <option value="sell">Sell Contract</option>
-    <option value="statement">Statement</option>
-    <option value="forget">Cancel Stream</option>
-</select>
+<div id="playground-api-ref" class="row">
+    <div id="playground-req-schema"></div>
+    <div id="playground-res-schema"></div>
+</div>
 
-<p data-schema="config/v1/authorize/receive.json"></p>
+<fieldset>
+    <label for="api-key">API Token (optional) <a href="https://www.binary.com/user/api_token">Get your API token</a></label>
+    <br/>
+    <input id="api-key">
+</fieldset>
 
-<code data-response="examples/authorize-req.json"></code>
+<fieldset>
+    <label for="playground-request">Request</label>
+    <br/>
+    <textarea id="playground-request"></textarea>
+</fieldset>
+<fieldset>
+    <button id="playground-btn">Send Request to API</button>
+</fieldset>
+
+<code id="playground-response"></code>

@@ -8,17 +8,17 @@ permalink: /offerings/
 
 <h3>Send</h3>
 
-<p data-schema="config/v1/offerings/send.json"></p>
+<p data-schema="/config/v1/offerings/send.json"></p>
 
-<code data-example="examples/offerings-req.json"></code>
+<code data-example="/examples/offerings-req.json"></code>
 
 <p>Supply an empty OPTIONS object (i.e. {offerings: {} } to apply the defaults and get all offerings.</p>
 
 <h3>Receive</h3>
 
-<p data-schema="config/v1/offerings/receive.json"></p>
+<p data-schema="/config/v1/offerings/receive.json"></p>
 
-<code data-response="examples/offerings-req.json"></code>
+<code data-response="/examples/offerings-req.json"></code>
 
 <p>The OFFERINGS structure is a hierarchy of Market -> SubMarket -> Symbol -> ContractCategory -> Contract Type. At each node is a node identifier, and an array named "available" which lists the entries at the next lower level.</p>
 

@@ -67,5 +67,16 @@ pre, code {
     display: flex;
     align-items: center;
 }
+#api-key,
+#playground-request,
+#playground-api-selector,
+#playground-btn {
+    width: 100%;
+}
+
+#playground-api-ref {
+    font-size: 12px;
+    margin-bottom: 1rem;
+}
 
  @import "monokai.css";
