@@ -1,7 +1,7 @@
 # Site settings
 title: Binary Developers
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://deveopers.binary.com"
+url: "https://deveopers.binary.com"
 twitter_username: binarydotcom
 github_username:  binary-com
 
