@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title":"Contracts for Symbol Send",
+  "description":"For a given SYMBOL name, get the list of currently available contracts, and the latest barrier and duration limits for each contract.",
+  "properties": {
+    "contracts_for": {
+      "type": "string",
+      "description": "It is the short symbol name",
+      "sample": "R_50"
+    }
+  },
+  "required": [
+    "contracts_for"
+  ]
+}
