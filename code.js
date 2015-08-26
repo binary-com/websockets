@@ -5,7 +5,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     docson.templateBaseUrl = '/docson';
 
     function formatCode(json, $node) {
-        Rainbow.color(JSON.stringify(json, null, 4), 'javascript', function(highlightedJson) {
+        Rainbow.color(JSON.stringify(json, null, 2), 'javascript', function(highlightedJson) {
             $node.html('<pre><p data-language="javascript">' +
                 highlightedJson + '</pre>');
         });
