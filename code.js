@@ -87,4 +87,8 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     $('#playground-btn').on('click', function() {
         updatePlaygroundResponse();
     });
+
+    $('.open-in-playground').on('click', function() {
+        window.location.href='/playground?=' + $this.attr('data-example');
+    });
 });
