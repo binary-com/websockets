@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title":"Send authorization request",
-  "description":"For some requests such as Buy or Statement, a client authentication token is required. Tokens may be retreived from www.binary.com/user/api_token",
+  "title":"Authorize this WebSocket session to act on behalf of the owner of a given token.",
+  "description":"An authorize message must precede request thats needs to access client account, for example purchasing and selling contracts or viewing portfolio. Tokens may be retrieved from www.binary.com/user/api_token",
   "properties": {
     "authorize": {
       "type": "string",

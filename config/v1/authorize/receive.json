@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title":"Receive authorization response",
-  "description":"Confirmation of client authorization request.",
+  "description":"A message containing account information for the holder of that token.",
   "properties": {
     "authorize": {
       "type": "object",
