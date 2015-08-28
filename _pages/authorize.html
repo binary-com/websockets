@@ -4,24 +4,11 @@ title:  "Authorize"
 permalink: authorize/
 ---
 
-<h5>Authorize this WebSocket session to act on behalf of the owner of a given token.</h5>
 
 <h3>Send</h3>
 
 <p data-schema="/config/v1/authorize/send.json"></p>
 
-<p data-example="/examples/authorize-req.json"></p>
-<button class="open-in-playground" data-json="/examples/authorize-req.json">Open in Playground</button>
-
-
-<p>TOKEN is a User API Token. Binary.com users can find their API Token on their <a href="https://www.binary.com/user/settings">Settings page</a>.</p>
-
-<p>An authorize message must precede request thats needs to access client account, for example purchasing and selling contracts or viewing portfolio.</p>
-
 <h3>Receive</h3>
 
 <p data-schema="/config/v1/authorize/receive.json"></p>
-
-<p>A message containing account information for the holder of that token. The authorize request key is echoed back. Typical structure is:</p>
-
-<p data-response="/examples/authorize-req.json"></p>

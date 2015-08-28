@@ -19,7 +19,7 @@
         },
         "id": {
           "type": "string",
-          "description": "A stream id that can be used to cancel this stream using the Cancel An Incoming Stream request"
+          "description": "A stream id that can be used to cancel this stream using the Forget request"
         },
         "quote": {
           "type": "number",

@@ -1,6 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
+  "title":"Tick history receive",
+  "description":"Tick history.",
   "properties": {
     "echo_req": {
       "title":"Echo request",
@@ -13,8 +15,17 @@
           "type": "array",
           "items": [
             {
+              "type": "intereger",
+              "description": "Epoch of the tick."
+            }
+          ]
+        },
+        "prices": {
+          "type": "array",
+          "items": [
+            {
               "type": "number",
-              "description": "1.0"
+              "description": "Tick value."
             }
           ]
         }
