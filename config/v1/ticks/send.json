@@ -12,7 +12,27 @@
     "end": {
       "type": "string",
       "sample": "END",
-      "description": "END"
+      "description": "An epoch value representing the end-datetime of the ticks. If END is a non-numeric value (e.g. \"latest\", the end-datetime will be the latest available timestamp."
+    },
+    "start": {
+      "type": "string",
+      "sample": "1420070400",
+      "description": "An epoch value representing the start-datetime of the ticks (default: 1 yr ago),"
+    },
+    "count": {
+      "type": "string",
+      "sample": "10",
+      "description": "An upper limit on ticks to receive (default: 500),"
+    },
+    "style": {
+      "type": "string",
+      "sample": "ticks",
+      "description": "The tick-output style: must be one of 'ticks' or 'candles' (default: 'ticks')"
+    },
+    "granularity": {
+      "type": "string",
+      "sample": "M1",
+      "description": "Is only meaningful for style: 'candles'.  It is the candle time-dimension width setting: typically 'M1', 'M5', 'M10', 'M30', 'H1', 'H2', 'H4', 'H8', or 'D' (default: 'M1'). "
     }
   },
   "required": [
