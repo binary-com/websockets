@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Portfolio Send",
+  "description": "Receive information about my current portfolio, and receive regular pricing updates for each entry",
+  "properties": {
+    "portfolio": {
+      "type": "integer",
+      "description":"Must be 1",
+      "sample": "1"
+    }
+  },
+  "required": [
+    "portfolio"
+  ]
+}

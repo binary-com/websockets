@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title":"Tick history receive",
+  "description":"Tick history.",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "history": {
+      "type": "object",
+      "properties": {
+        "times": {
+          "type": "array",
+          "items": [
+            {
+              "type": "intereger",
+              "description": "Epoch of the tick."
+            }
+          ]
+        },
+        "prices": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number",
+              "description": "Tick value."
+            }
+          ]
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "history"
+    }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}

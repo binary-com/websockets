@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title":"Get list of active symbols send",
+  "description":"Get list of available symbols for trading",
+  "properties": {
+    "active_symbols": {
+      
+      "type": "string",
+      "description": "It should be 'display_name' or 'symbol'",
+      "sample": "display_name"
+      
+    }
+  },
+  "required": [
+    "active_symbols"
+  ]
+}

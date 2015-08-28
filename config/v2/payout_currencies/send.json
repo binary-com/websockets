@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title":"Payout Currencies Send",
+  "properties": {
+    "payout_currencies": {
+      "type": "string",
+      "sample": "USD",
+      "description": "It is the currency code for the account"
+    }
+  },
+  "required": [
+    "payout_currencies"
+  ]
+}
