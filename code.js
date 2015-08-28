@@ -67,7 +67,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         loadAndDisplaySchema($this, $this.attr('data-schema'));
     });
 
-    $('#playground-api-selector').on('change', function() {
+    $('#api-selector').on('change', function() {
         var requestSchemaUrl = '/config/v1/' + $(this).val() + '/send.json',
             responseSchemaUrl = '/config/v1/' + $(this).val() + '/receive.json';
         loadAndDisplaySchema($('#playground-req-schema'), requestSchemaUrl);
@@ -90,5 +90,13 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     $('.open-in-playground').on('click', function() {
         window.location.href='/playground?=' + $this.attr('data-example');
+    });
+
+    $(function() {
+        var apiPageStrIdx = window.location.href.indexOf('/api/#');
+        if (!~apiPageStrIdx) return;
+
+        var apiToDisplay = window.location.href.substr(apiPageStrIdx + 6);
+        $('#api-selector').val(apiToDisplay);
     });
 });
