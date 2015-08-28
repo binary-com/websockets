@@ -1,6 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
+  "title":"Send authorization request",
+  "description":"For some requests such as Buy or Statement, a client authentication token is required. Tokens may be retreived from www.binary.com/user/api_token",
   "properties": {
     "authorize": {
       "type": "string",
