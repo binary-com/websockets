@@ -67,9 +67,11 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         loadAndDisplaySchema($this, $this.attr('data-schema'));
     });
 
-    $('#api-selector').on('change', function() {
-        var requestSchemaUrl = '/config/v2/' + $(this).val() + '/send.json',
-            responseSchemaUrl = '/config/v2/' + $(this).val() + '/receive.json';
+    $('#api-call-selector, #api-version-selector').on('change', function() {
+        var verStr = $('#api-version-selector').val(),
+            apiStr = $('#api-call-selector').val(),
+            requestSchemaUrl = '/config/' + verStr + '/' + apiStr + '/send.json',
+            responseSchemaUrl = '/config/' + verStr + '/' + apiStr + '/receive.json';
         loadAndDisplaySchema($('#playground-req-schema'), requestSchemaUrl);
         loadAndDisplaySchema($('#playground-res-schema'), responseSchemaUrl);
     });
@@ -97,6 +99,6 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         if (!~apiPageStrIdx) return;
 
         var apiToDisplay = window.location.href.substr(apiPageStrIdx + 6);
-        $('#api-selector').val(apiToDisplay).change();
+        $('#api-call-selector').val(apiToDisplay).change();
     });
 });

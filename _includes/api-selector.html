@@ -1,17 +1,23 @@
-<select id="api-selector">
-    <option value='' selected disabled hidden></option>
-    <option value="authorize">Authorize</option>
-    <option value="tick">Tick Stream</option>
-    <option value="ticks">Tick History</option>
-    <option value="active_symbols">Active Symbols</option>
-    <option value="offerings">Offerings</option>
-    <option value="contracts_for">Contracts For Symbol</option>
-    <option value="get_price">Get Price</option>
-    <option value="buy">Buy Contract</option>
-    <option value="portfolio">Portfolio</option>
-    <option value="sell">Sell Contract</option>
-    <option value="statement">Statement</option>
-    <option value="forget">Cancel Stream</option>
-    <option value="payout_currencies">Payout Currencies</option>
-    <option value="trading_times">Trading Times</option>
-</select>
+<div class="row">
+    <select id="api-call-selector">
+        <option value='' selected disabled hidden></option>
+        <option value="authorize">Authorize</option>
+        <option value="tick">Tick Stream</option>
+        <option value="ticks">Tick History</option>
+        <option value="active_symbols">Active Symbols</option>
+        <option value="offerings">Offerings</option>
+        <option value="contracts_for">Contracts For Symbol</option>
+        <option value="get_price">Get Price</option>
+        <option value="buy">Buy Contract</option>
+        <option value="portfolio">Portfolio</option>
+        <option value="sell">Sell Contract</option>
+        <option value="statement">Statement</option>
+        <option value="forget">Cancel Stream</option>
+        <option value="payout_currencies">Payout Currencies</option>
+        <option value="trading_times">Trading Times</option>
+    </select>
+    <select id="api-version-selector">
+        <option value="v2">Version 2</option>
+        <option value="v1">Version 1</option>
+    </select>
+</div>
