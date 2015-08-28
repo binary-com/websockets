@@ -32,7 +32,7 @@
     "granularity": {
       "type": "string",
       "sample": "M1",
-      "description": "Is only meaningful for style: 'candles'.  It is the candle time-dimension width setting: typically 'M1', 'M5', 'M10', 'M30', 'H1', 'H2', 'H4', 'H8', or 'D' (default: 'M1'). "
+      "description": "Is only meaningful for style: 'candles'.  It is the candle time-dimension width setting: typically 'M1', 'M5', 'M10', 'M30', 'H1', 'H2', 'H4', 'H8', or 'D' (default: 'M1'). The granularity units are (M)inute, (H)our, (S)econd, and (D)ay. Currently for 'Day' granularity, only the term 'D' is allowed, signifying 1 Day.  For the other units, other numeric values are possible (within reason)."
     }
   },
   "required": [
