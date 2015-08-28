@@ -97,6 +97,6 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         if (!~apiPageStrIdx) return;
 
         var apiToDisplay = window.location.href.substr(apiPageStrIdx + 6);
-        $('#api-selector').val(apiToDisplay);
+        $('#api-selector').val(apiToDisplay).change();
     });
 });
