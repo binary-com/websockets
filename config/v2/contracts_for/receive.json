@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  
+  "type": "object",
+  "title": "Contracts for Symbol Receive",
+  "description": "Get the list of currently available contracts",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "contracts_for": {
+        "type": "object",
+        "properties":{
+        	"available":{
+                "type":"array",
+                "items":{
+                  "type":"object"
+                },
+                "minItems":"1",
+                "description":"Array of returned transactions"
+                },
+            "close":{
+            	"type":"integer",
+            	"description":"Symbol's next market-close time as an epoch value"
+               },
+            "open":{
+            	"type":"integer",
+            	"description":"Symbol's next market-open time as an epoch value"
+              },
+            "hit_count":{
+              	"type":"number",
+              	"description":"It is the count of contracts available"
+              }
+        }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "contracts_for"
+    }
+  },
+  "required": [
+    "echo_req",
+    "contracts_for",
+    "msg_type"
+  ]
+}

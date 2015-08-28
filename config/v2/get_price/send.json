@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "proposal": {
+      "type": "integer",
+      "description":"Must be 1",
+      "sample": "1"
+    },
+    "amount_val": {
+      "type": "number",
+      "description":"Proposed payout or stake value",
+      "sample": "10.0"
+    },
+    "basis": {
+      "type": "string",
+      "description":"Indicate whether amount_val is 'payout' or 'stake'",
+      "sample": "payout"
+    },
+    "contract_type": {
+      "type": "string",
+      "description":"A valid contract-type. Example: CALL, PUT, ONETOUCH, NOTOUCH",
+      "sample": "CALL"
+    },
+    "currency": {
+      "type": "string",
+      "description":"This can only be the account-holder's currency",
+      "sample": "USD"
+    },
+    "duration": {
+      "type": "string",
+      "description":"Duration quantity",
+      "sample": "900"
+    },
+    "duration_unit": {
+      "type": "string",
+      "description":"Duration unit is s (seconds), d (days), t (ticks)",
+      "sample": "s"
+    },
+    "symbol": {
+      "type": "string",
+      "description":"Symbol code. Example: frxUSDJPY, R_50",
+      "sample": "R_100"
+    }
+  },
+  "required": [
+    "proposal",
+    "amount_val",
+    "basis",
+    "contract_type",
+    "currency",
+    "duration",
+    "duration_unit",
+    "symbol"
+  ]
+}

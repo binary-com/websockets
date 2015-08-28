@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Tick history request",
+  "description": "For a given symbol name, receive history",
+  "properties": {
+    "ticks": {
+      "type": "string",
+      "sample": "R_100",
+      "description": "The short symbol name. Example: frxUSDJPY, R_50"
+    },
+    "end": {
+      "type": "string",
+      "sample": "END",
+      "description": "An epoch value representing the end-datetime of the ticks. If END is a non-numeric value (e.g. \"latest\", the end-datetime will be the latest available timestamp."
+    },
+    "start": {
+      "type": "string",
+      "sample": "1420070400",
+      "description": "An epoch value representing the start-datetime of the ticks (default: 1 yr ago),"
+    },
+    "count": {
+      "type": "string",
+      "sample": "10",
+      "description": "An upper limit on ticks to receive (default: 500),"
+    },
+    "style": {
+      "type": "string",
+      "sample": "ticks",
+      "description": "The tick-output style: must be one of 'ticks' or 'candles' (default: 'ticks')"
+    },
+    "granularity": {
+      "type": "string",
+      "sample": "M1",
+      "description": "Is only meaningful for style: 'candles'.  It is the candle time-dimension width setting: typically 'M1', 'M5', 'M10', 'M30', 'H1', 'H2', 'H4', 'H8', or 'D' (default: 'M1'). The granularity units are (M)inute, (H)our, (S)econd, and (D)ay. Currently for 'Day' granularity, only the term 'D' is allowed, signifying 1 Day.  For the other units, other numeric values are possible (within reason)."
+    }
+  },
+  "required": [
+    "ticks",
+    "end"
+  ]
+}
