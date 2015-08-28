@@ -13,7 +13,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     function wsResult(json, $responseNode, apiToken) {
         var tokenProvided = apiToken && apiToken.trim().length;
-        var ws = new WebSocket('wss://ws.binary.com/websockets/contracts');
+        var ws = new WebSocket('wss://ws.binary.com/websockets/v2');
 
         ws.onopen = function(evt) {
             var authorizeReq = '{"authorize":"' + apiToken + '"}';
@@ -68,8 +68,8 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     });
 
     $('#playground-api-selector').on('change', function() {
-        var requestSchemaUrl = '/config/v1/' + $(this).val() + '/send.json',
-            responseSchemaUrl = '/config/v1/' + $(this).val() + '/receive.json';
+        var requestSchemaUrl = '/config/v2/' + $(this).val() + '/send.json',
+            responseSchemaUrl = '/config/v2/' + $(this).val() + '/receive.json';
         loadAndDisplaySchema($('#playground-req-schema'), requestSchemaUrl);
         loadAndDisplaySchema($('#playground-res-schema'), responseSchemaUrl);
     });
