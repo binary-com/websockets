@@ -8,21 +8,7 @@ permalink: playground/
 
 <fieldset>
     <label for="api-selector">See API Reference</label>
-    <select id="api-selector">
-        <option value="">Choose Request Type</option>
-        <option value="authorize">Authorize</option>
-        <option value="tick">Tick Stream</option>
-        <option value="ticks">Tick History</option>
-        <option value="active_symbols">Active Symbols</option>
-        <option value="offerings">Offerings</option>
-        <option value="contracts">Contracts For Symbol</option>
-        <option value="get_price">Get Price</option>
-        <option value="buy">Buy Contract</option>
-        <option value="portfolio">Portfolio</option>
-        <option value="sell">Sell Contract</option>
-        <option value="statement">Statement</option>
-        <option value="forget">Cancel Stream</option>
-    </select>
+    {% include api-selector.html %}
 </fieldset>
 
 <div id="playground-api-ref" class="row">
