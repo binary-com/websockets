@@ -68,8 +68,8 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     });
 
     $('#api-selector').on('change', function() {
-        var requestSchemaUrl = '/config/v1/' + $(this).val() + '/send.json',
-            responseSchemaUrl = '/config/v1/' + $(this).val() + '/receive.json';
+        var requestSchemaUrl = '/config/v2/' + $(this).val() + '/send.json',
+            responseSchemaUrl = '/config/v2/' + $(this).val() + '/receive.json';
         loadAndDisplaySchema($('#playground-req-schema'), requestSchemaUrl);
         loadAndDisplaySchema($('#playground-res-schema'), responseSchemaUrl);
     });

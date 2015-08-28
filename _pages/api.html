@@ -1,0 +1,31 @@
+---
+layout: page
+title: "API"
+permalink: api/
+---
+
+<fieldset>
+    <select id="api-selector">
+        <option value="">Choose Request Type</option>
+        <option value="authorize">Authorize</option>
+        <option value="tick">Tick Stream</option>
+        <option value="ticks">Tick History</option>
+        <option value="active_symbols">Active Symbols</option>
+        <option value="offerings">Offerings</option>
+        <option value="contracts">Contracts For Symbol</option>
+        <option value="get_price">Get Price</option>
+        <option value="buy">Buy Contract</option>
+        <option value="portfolio">Portfolio</option>
+        <option value="sell">Sell Contract</option>
+        <option value="statement">Statement</option>
+        <option value="forget">Cancel Stream</option>
+    </select>
+</fieldset>
+
+<h3>Send</h3>
+
+<div id="playground-req-schema"></div>
+
+<h3>Receive</h3>
+
+<div id="playground-res-schema"></div>
