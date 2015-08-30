@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Balance Receive",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "balance": {
+      "type": "array",
+      "items":{
+        "type":"object"
+      }
+    },
+    "msg_type": {
+        "type": "string",
+        "description": "balance"
+      }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}
