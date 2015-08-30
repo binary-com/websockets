@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Ping Send",
+  "properties": {
+	  "ping": {
+		  "type": "bool",
+		  "sample": "1"
+	  }
+  }, 
+  "required": [
+    "ping"
+  ]
+}
