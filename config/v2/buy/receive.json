@@ -15,11 +15,11 @@
       "properties": {
         "balance_after": {
           "type": "number",
-          "description":"The new account balance after completion of the purchase"        	  
+          "description":"The new account balance after completion of the purchase"
         },
         "longcode": {
           "type": "string",
-          "description":"The description of contract purchased. Example: USD 10.00 payout if Random 50 Index is strictly higher than entry spot at 15 minutes after contract start time."
+          "description": "The description of contract purchased"
         },
         "start_time": {
           "type": "integer",

@@ -19,7 +19,7 @@
     },
     "contract_type": {
       "type": "string",
-      "description":"A valid contract-type. Example: CALL, PUT, ONETOUCH, NOTOUCH",
+      "description":"A valid contract-type",
       "sample": "CALL"
     },
     "currency": {
@@ -39,7 +39,7 @@
     },
     "symbol": {
       "type": "string",
-      "description":"Symbol code. Example: frxUSDJPY, R_50",
+      "description":"Symbol code",
       "sample": "R_100"
     }
   },

@@ -1,16 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Tick Stream Receive",
-  "description": "The stream message will contain an epoch value and a quote value, showing latest spot price for the requested symbol. These update messages will arrive with a frequency of up to one second",
+  "title": "Tick Stream Response",
+  "description": "Latest spot price for a given symbol. Continous responses with a frequency of up to one second",
   "properties": {
     "echo_req": {
-      "title":"Echo request",
-      "description":"Echo of the request made"
+      "title": "Echo request",
+      "description": "Echo of the request made"
      },
     "tick": {
       "type": "object",
-      "title": "Response of streamer",
+      "title": "TickSpotData",
       "description": "Tick by tick list of streamed data",
       "properties": {
         "epoch": {

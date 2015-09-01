@@ -4,12 +4,12 @@
   "title": "Cancel an Incoming Stream Receive",
   "properties": {
     "echo_req": {
-      "title":"Echo request",
-      "description":"Echo of the request made"
+      "title": "Echo request",
+      "description": "Echo of the request made"
     },
     "forget": {
     	"type": "integer",
-    	"description": "Example: 0"
+    	"description": "Id of the stream to cancel"
     },
     "msg_type": {
         "type": "string",

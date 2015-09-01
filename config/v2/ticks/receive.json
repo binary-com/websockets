@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title":"Tick history receive",
-  "description":"Tick history.",
+  "title": "Tick History Response",
+  "description": "Historic tick data for a single symbol",
   "properties": {
     "echo_req": {
-      "title":"Echo request",
-      "description":"Echo of the request made"
+      "title": "Echo request",
+      "description": "Echo of the request made"
     },
     	"history": {
     	      "type": "object",
