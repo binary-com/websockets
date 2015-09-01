@@ -5,7 +5,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     docson.templateBaseUrl = '/docson';
 
     function formatCode(json, $node) {
-        Rainbow.color(JSON.stringify(json, null, 2), 'javascript', function(highlightedJson) {
+        Rainbow.color(json, 'javascript', function (highlightedJson) {
             $node.html('<pre><p data-language="javascript">' +
                 highlightedJson + '</pre>');
         });
@@ -23,7 +23,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
         ws.onmessage = function(msg) {
            var json = JSON.parse(msg.data);
-           console.log(json);
+           console.log(json); // intended to help developers, not for debugging, do not remove
            formatCode(json, $responseNode);
         };
     }
@@ -35,18 +35,24 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         });
     }
 
-    function loadAndDisplaySchema($this, schemaUrl) {
+    function loadAndDisplaySchema($node, schemaUrl) {
         $.get(schemaUrl, function(schema) {
-            docson.doc($this, schema);
+            docson.doc($node, schema);
         });
     }
 
-    function loadAndDisplayJson($this, jsonUrl) {
+    function loadAndFormatJson($node, jsonUrl) {
         $.get(jsonUrl, function(exampleJson) {
-            formatCode(exampleJson, $this);
-            $this.show();
+            formatCode(JSON.stringify(exampleJson, null, 2), $node);
+            $node.show();
         }).fail(function() {
-            $this.hide();
+            $node.hide();
+        });
+    }
+
+    function loadAndEditJson($node, jsonUrl) {
+        $.get(jsonUrl, function(exampleJson) {
+            $node.text(JSON.stringify(exampleJson, null, 2));
         });
     }
 
@@ -79,7 +85,12 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             exampleJsonUrl = urlPath + 'example.json';
         loadAndDisplaySchema($('#playground-req-schema'), requestSchemaUrl);
         loadAndDisplaySchema($('#playground-res-schema'), responseSchemaUrl);
-        loadAndDisplayJson($('#playground-example'), exampleJsonUrl);
+        if ($('#playground-example').length) {
+            loadAndFormatJson($('#playground-example'), exampleJsonUrl);
+        }
+        if ($('#playground-request').length) {
+            loadAndEditJson($('#playground-request'), exampleJsonUrl);
+        }
     });
 
     $('[data-example]').each(function() {

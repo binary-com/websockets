@@ -81,4 +81,11 @@ pre p, code {
     margin-bottom: 1rem;
 }
 
- @import "monokai.css";
+#api-call-selector,
+#api-version-selector {
+    width: 100%;
+}
+
+
+
+@import "monokai.css";
