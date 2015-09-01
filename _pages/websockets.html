@@ -28,7 +28,9 @@ permalink: websockets/
 
 <p>All of our examples use this technique.</p>
 
-<pre data-language="javascript">var ws = new WebSocket(&#39;wss://ws.binary.com/websockets/v2&#39;);
+<p>Combining some of the examples, here is a JavaScript snippet that opens a websocket, and requests a stream of updates for the symbol "R_100".  On receipt of each message, it outputs a message to the console.</p>
+
+<pre data-language="javascript">var ws = new WebSocket(&#39;wss://ws.binary.com/websockets/v1&#39;);
 
 ws.onopen = function(evt) {
     ws.send(JSON.stringify({ticks:&#39;R_100&#39;}));
@@ -39,5 +41,3 @@ ws.onmessage = function(msg) {
    console.log(&#39;ticks update: %o&#39;, data);
 };
 </pre>
-
-<p>Combining some of the examples, here is a JavaScript snippet that opens a websocket, and requests a stream of updates for the symbol "R_100".  On receipt of each message, it outputs a message to the console.</p>
