@@ -8,37 +8,37 @@
       "title": "Echo request",
       "description": "Echo of the request made"
     },
-      "history": {
-            "type": "object",
-            "properties": {
-              "times": {
-                "type": "array",
-                "items": [
-                  {
-                    "type": "integer",
-                    "description": "Epoch of the tick."
-                  }
-                ]
-              },
-              "prices": {
-                "type": "array",
-                "items": [
-                  {
-                    "type": "number",
-                    "description": "Tick value."
-                  }
-                ]
-              }
-            }
-          },
-          "candles": {
-            "type":"array",
-                "items":{
-                  "type":"object"
-                },
-                "minItems":"1",
-                "description":"Array of OHLC price values for the given time (only for style='candles')"
-          },
+    	"history": {
+    	      "type": "object",
+    	      "properties": {
+    	        "times": {
+    	          "type": "array",
+    	          "items": [
+    	            {
+    	              "type": "integer",
+    	              "description": "Epoch of the tick."
+    	            }
+    	          ]
+    	        },
+    	        "prices": {
+    	          "type": "array",
+    	          "items": [
+    	            {
+    	              "type": "number",
+    	              "description": "Tick value."
+    	            }
+    	          ]
+    	        }
+    	      }
+    	    },
+    	    "candles": {
+    	    	"type":"array",
+    	          "items":{
+    	            "type":"object"
+    	          },
+    	          "minItems":"1",
+    	          "description":"Array of OHLC price values for the given time"
+    	    },
     
     "msg_type": {
       "type": "string",
