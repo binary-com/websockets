@@ -24,7 +24,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         ws.onmessage = function(msg) {
            var json = JSON.parse(msg.data);
            console.log(json); // intended to help developers, not for debugging, do not remove
-           formatCode(json, $responseNode);
+           formatCode(JSON.stringify(json, null, 2), $responseNode);
         };
     }
 
@@ -90,6 +90,9 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         }
         if ($('#playground-request').length) {
             loadAndEditJson($('#playground-request'), exampleJsonUrl);
+        }
+        if ($('#api-example-response')) {
+            issueRequestAndDisplayResult($('#api-example-response'), exampleJsonUrl);
         }
     });
 
