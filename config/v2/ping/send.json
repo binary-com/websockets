@@ -8,7 +8,7 @@
 		  "sample": "1",
 		  "description": "It is the default ping value"
 	  }
-  }, 
+  },
   "required": [
     "ping"
   ]
