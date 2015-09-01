@@ -44,6 +44,9 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     function loadAndDisplayJson($this, jsonUrl) {
         $.get(jsonUrl, function(exampleJson) {
             formatCode(exampleJson, $this);
+            $this.show();
+        }).fail(function() {
+            $this.hide();
         });
     }
 
@@ -70,10 +73,13 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     $('#api-call-selector, #api-version-selector').on('change', function() {
         var verStr = $('#api-version-selector').val(),
             apiStr = $('#api-call-selector').val(),
-            requestSchemaUrl = '/config/' + verStr + '/' + apiStr + '/send.json',
-            responseSchemaUrl = '/config/' + verStr + '/' + apiStr + '/receive.json';
+            urlPath = '/config/' + verStr + '/' + apiStr + '/',
+            requestSchemaUrl = urlPath + 'send.json',
+            responseSchemaUrl = urlPath + 'receive.json',
+            exampleJsonUrl = urlPath + 'example.json';
         loadAndDisplaySchema($('#playground-req-schema'), requestSchemaUrl);
         loadAndDisplaySchema($('#playground-res-schema'), responseSchemaUrl);
+        loadAndDisplayJson($('#playground-example'), exampleJsonUrl);
     });
 
     $('[data-example]').each(function() {
