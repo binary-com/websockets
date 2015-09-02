@@ -11,7 +11,22 @@
     "balance": {
       "type": "array",
       "items":{
-        "type":"object"
+        "type":"object",
+        "properties": {
+          "balance": {
+            "type": "number",
+            "description": "Balance amount"
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency Example: USD"
+          },
+          "loginid": {
+            "type": "string",
+            "description": "Client loginid Example: CR000000"
+          }
+        }
+
       }
     },
     "msg_type": {
