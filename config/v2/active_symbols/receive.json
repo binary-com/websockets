@@ -10,18 +10,8 @@
       "description": "Echo of the request made"
     },
     "active_symbols": {
-      "type":"array",
-      "items":{
-        "type":"object",
-        "properties":{
-          "symbol": {
-            "type": "string",
-            "sample": "R_50",
-            "description": "ymbol"
-          }
-        }
-      },
-      "description":"active symbols"
+        "type": "object",
+        "description": "active symbols"
     },
     "msg_type": {
       "type": "string",
