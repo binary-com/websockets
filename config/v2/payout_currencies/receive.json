@@ -11,7 +11,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "description": "Example: USD"
+        "description": "Available payout currency (example: USD)"
       }
     },
     "msg_type":{
