@@ -1,4 +1,5 @@
 {		
     "ticks": "frxUSDJPY",
-    "end": "END"
+    "end": "latest",
+    "count": 10
 }
