@@ -1,5 +1,7 @@
 {
   "type": "object",
+  "title":"Price Proposal Response",
+  "description":"Latest price and other details for a given contract",
   "properties": {
     "echo_req": {
       "title":"Echo request",
