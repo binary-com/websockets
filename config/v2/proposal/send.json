@@ -1,6 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
+  "title": "Get latest price for a specific contract",
+  "description": "Get latest price for a specific contract",
   "properties": {
     "proposal": {
       "type": "integer",

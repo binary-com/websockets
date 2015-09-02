@@ -6,7 +6,7 @@
 	  "ping": {
 		  "type": "integer",
 		  "sample": "1",
-		  "description": "It is the default ping value"
+		  "description": "Must be 1"
 	  }
   },
   "required": [
