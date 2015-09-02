@@ -12,7 +12,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         return window.location.href.substr(apiPageStrIdx + 2);
     }
 
-    function formatCode(json, $node) {
+    function formatJsCode(json, $node) {
         Rainbow.color(json, 'javascript', function (highlightedJson) {
             $node.html('<pre><p data-language="javascript">' +
                 highlightedJson + '</pre>');
@@ -21,15 +21,10 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     var ws;
 
-    function connectToApi() {
-        if (ws) ws.close();
-        ws = new WebSocket('wss://ws.binary.com/websockets/v2');
-    }
-
     function wsResult(json, $responseNode, apiToken) {
         var tokenProvided = apiToken && apiToken.trim().length;
 
-        if (!ws) connectToApi();
+        ws = new WebSocket('wss://ws.binary.com/websockets/v2');
 
         ws.onopen = function(evt) {
             var authorizeReq = '{"authorize":"' + apiToken + '"}';
@@ -40,7 +35,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         ws.onmessage = function(msg) {
            var json = JSON.parse(msg.data);
            console.log(json); // intended to help developers, not for debugging, do not remove
-           formatCode(JSON.stringify(json, null, 2), $responseNode);
+           formatJsCode(JSON.stringify(json, null, 2), $responseNode);
         };
     }
 
@@ -59,7 +54,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     function loadAndFormatJson($node, jsonUrl) {
         $.get(jsonUrl, function(exampleJson) {
-            formatCode(JSON.stringify(exampleJson, null, 2), $node);
+            formatJsCode(JSON.stringify(exampleJson, null, 2), $node);
             $node.show();
         }).fail(function() {
             $node.hide();
@@ -130,7 +125,10 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         window.location.href='/playground#' + getCurrentApi();
     });
 
-    $('.playground-reconnect-btn').on('click', connectToApi);
+    $('.playground-reconnect-btn').on('click', function() {
+        ws.close();
+        ws.open();
+    });
 
     $(function() {
         var apiToDisplay = getCurrentApi();
