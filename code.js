@@ -4,6 +4,14 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     docson.templateBaseUrl = '/docson';
 
+    function getCurrentApi() {
+        var apiPageStrIdx = window.location.href.indexOf('/#');
+
+        if (!~apiPageStrIdx) return '';
+
+        return window.location.href.substr(apiPageStrIdx + 2);
+    }
+
     function formatCode(json, $node) {
         Rainbow.color(json, 'javascript', function (highlightedJson) {
             $node.html('<pre><p data-language="javascript">' +
@@ -111,14 +119,13 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     });
 
     $('.open-in-playground').on('click', function() {
-        window.location.href='/playground?=' + $this.attr('data-example');
+        window.location.href='/playground#' + getCurrentApi();
     });
 
     $(function() {
-        var apiPageStrIdx = window.location.href.indexOf('/api/#');
-        if (!~apiPageStrIdx) return;
-
-        var apiToDisplay = window.location.href.substr(apiPageStrIdx + 6);
-        $('#api-call-selector').val(apiToDisplay).change();
+        var apiToDisplay = getCurrentApi();
+        if (apiToDisplay) {
+            $('#api-call-selector').val(apiToDisplay).change();
+        }
     });
 });
