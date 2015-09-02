@@ -38,7 +38,7 @@
         },
         "id": {
           "type": "string",
-          "description": "A stream id that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579"
+          "description": "Example: 1d6651e7d599bce6c54bd71a8283e579"
         },
         "payout": {
           "type": "number",
