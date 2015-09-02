@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Time request",
+  "properties": {
+	  "time": {
+		  "type": "integer",
+		  "sample": "1",
+		  "description": "Must be 1"
+	  }
+  },
+  "required": [
+    "time"
+  ]
+}

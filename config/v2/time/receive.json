@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Server time",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "time": {
+    	"type": "integer",
+    	"description": "Epoch of server time."
+    },
+    "msg_type": {
+        "type": "string",
+        "description": "time"
+      }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}
