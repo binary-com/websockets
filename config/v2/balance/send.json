@@ -7,7 +7,7 @@
     "balance": {
       "type": "integer",
       "sample": "1",
-      "description": "It is the default account"
+      "description": "Must be 1."
     }
   },
   "required": [
