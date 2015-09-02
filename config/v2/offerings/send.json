@@ -5,24 +5,34 @@
   "description":"Discover offerings presently available",
   "properties": {
     "offerings": {
-      
-      "type": "object",
-      "properties": {
-        "symbol": {
-          
-          "type": "string",
-          "description": " OPTIONS is an object which can be empty or can have any of these optional flags:    hierarchy => 1, // include a hierarchical tree structure in the results (default: 1)    selectors => 1, // include a report of values selectors in the results (default: 1)    contracts => 1, // include a flat list in the results (default: 0)    FIELD1    => VALUE1, // filter results to just those where FIELD1 equals VALUE1    FEILD2    => VALUE2, ...",
-          "sample":{"symbol": "R_100"}
-          
-        }
-      },
-      "required": [
-        "symbol"
-      ]
+      "type": "string",
+      "description": "This must be 1.",
+      "sample":"1"
+    },
+    "symbol": {
+      "type": "string",
+      "description": "Specifies the symbol",
+      "sample":"R_100"
+    },
+    "hierarchy": {
+      "type": "string",
+      "description": "Include a hierarchical tree structure in the results (default: 1)",
+      "sample":"1"
+    },
+    "selectors": {
+      "type": "string",
+      "description": "Include a report of values selectors in the results (default: 1)",
+      "sample":"1"
+    },
+    "contracts": {
+      "type": "string",
+      "description": "Include a flat list in the results (default: 0)",
+      "sample":"1"
     }
   },
+
   "required": [
-    
-    "offerings"
+    "offerings",
+    "symbol"
   ]
 }
