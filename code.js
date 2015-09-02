@@ -19,9 +19,17 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         });
     }
 
+    var ws;
+
+    function connectToApi() {
+        if (ws) ws.close();
+        ws = new WebSocket('wss://ws.binary.com/websockets/v2');
+    }
+
     function wsResult(json, $responseNode, apiToken) {
         var tokenProvided = apiToken && apiToken.trim().length;
-        var ws = new WebSocket('wss://ws.binary.com/websockets/v2');
+
+        if (!ws) connectToApi();
 
         ws.onopen = function(evt) {
             var authorizeReq = '{"authorize":"' + apiToken + '"}';
@@ -114,13 +122,15 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         issueRequestAndDisplayResult($this, $this.attr('data-response'));
     });
 
-    $('#playground-btn').on('click', function() {
+    $('#playground-send-btn').on('click', function() {
         updatePlaygroundResponse();
     });
 
     $('.open-in-playground').on('click', function() {
         window.location.href='/playground#' + getCurrentApi();
     });
+
+    $('.playground-reconnect-btn').on('click', connectToApi);
 
     $(function() {
         var apiToDisplay = getCurrentApi();
