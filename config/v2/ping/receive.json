@@ -9,7 +9,7 @@
     },
     "ping": {
     	"type": "string",
-    	"description": "Example: pong"
+    	"description": "Will return 'pong'"
     },
     "msg_type": {
         "type": "string",
