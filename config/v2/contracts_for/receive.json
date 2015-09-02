@@ -18,7 +18,7 @@
                   "type":"object"
                 },
                 "minItems":"1",
-                "description":"Array of returned transactions"
+                "description":"Array of available contracts details"
                 },
             "close":{
             	"type":"integer",
