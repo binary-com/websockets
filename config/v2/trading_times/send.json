@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Trading Times Send",
+  "description":"Receive a list of marketing opening times for a given date"
   "properties": {
     "trading_times": {
       "type":"object",
