@@ -10,8 +10,61 @@
       "description": "Echo of the request made"
     },
     "active_symbols": {
-        "type": "object",
-        "description": "active symbols"
+      "type":"array",
+      "items":{
+        "type":"object",
+        "properties":{
+          "symbol": {
+            "type": "string",
+            "description": "Symbol"
+          },
+          "intraday_interval_minutes": {
+            "type": "integer",
+            "description": "Intraday interval minutes"
+          },
+          "symbol_type": {
+            "type": "string",
+            "description": "Symbol type"
+          },
+          "exchange_is_open": {
+            "type": "integer",
+            "description": "1 or 0"
+          },
+          "exchange_name": {
+            "type": "string",
+            "description": "Exchange name"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "display name"
+          },
+          "spot": {
+            "type": ["number", "null"],
+            "description": "Spot"
+          },
+          "spot_time": {
+            "type": "string",
+            "description": "Epoch of spot time."
+          },
+          "is_trading_suspended": {
+            "type": "integer",
+            "description": "1 indicates suspended trade."
+          },
+          "quoted_currency_symbol": {
+            "type": "string",
+            "description": "Quoted currency symbol"
+          },
+          "spot_age": {
+            "type": "string",
+            "description": "Spot age"
+          },
+          "pip": {
+            "type": "number",
+            "description": "pip size"
+          }
+        }
+      },
+      "description":"active symbols"
     },
     "msg_type": {
       "type": "string",
