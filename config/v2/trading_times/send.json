@@ -4,17 +4,17 @@
   "title": "Trading Times Send",
   "properties": {
     "trading_times": {
-    	"type":"object",
-    	"properties":{
-    		"times": {
-    			 "type": "string",
-    	          "description": "Underlyings is an object which can be empty or can have any of the optional fields",
-    	          "sample":{"times": "23h59m59s"}
-    		}
-    	},
-    	"required": [
-    	   "times"
-    	]
+      "type":"object",
+      "properties":{
+        "date": {
+           "type": "string",
+                "description": "Trading date in yyyy-mm-dd format.",
+                "sample":{"date": "2015-01-01"}
+        }
+      },
+      "required": [
+         "times"
+      ]
     }
   },
   "required": [
