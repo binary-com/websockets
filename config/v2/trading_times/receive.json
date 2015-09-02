@@ -10,7 +10,8 @@
     },
     "trading_times": {
       "type": "object",
-      "description":"The trading times structure is a hierarchy of Market -> SubMarket -> Underlyings"
+      "title": "Trading Times Structure",
+      "description":"The trading times structure is a hierarchy as follows: Market -> SubMarket -> Underlyings"
     },
     "msg_type": {
       "type": "string",
