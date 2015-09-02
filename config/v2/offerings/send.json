@@ -32,7 +32,6 @@
   },
 
   "required": [
-    "offerings",
-    "symbol"
+    "offerings"
   ]
 }
