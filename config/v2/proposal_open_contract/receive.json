@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Open contract proposal receive",
+  "description": "Receive information about my open contract, and receive regular pricing updates for it.",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "proposal_open_contract": {
+      "type":"object",
+      "title": "Open contract proposal",
+      "description": "Client open contract information",
+      "properties":{
+        "fmb_id": {
+          "type": "integer",
+          "description": "Contract ID"
+        },
+        "purchase_time": {
+          "type": "integer",
+          "description": "Epoch of purchase time"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Symbol"
+        },
+        "payout": {
+          "type": "number",
+          "description": "Payout price"
+        },
+        "buy_price": {
+          "type": "number",
+          "description": "Buy price"
+        },
+        "date_start": {
+          "type": "integer",
+          "description": "Epoch of start date"
+        },
+        "expiry_time": {
+          "type": "integer",
+          "description": "Epoch of expiry time"
+        },
+        "contract_type": {
+          "type": "string",
+          "description": "Contract type"
+        },
+        "currency": {
+          "type": "string",
+          "description": "Currency"
+        },
+        "longcode": {
+          "type": "string",
+          "description": "Contract description"
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "proposal_open_contract"
+    }
+  },
+  "required": [
+    "echo_req",
+    "proposal_open_contract",
+    "msg_type"
+  ]
+}
