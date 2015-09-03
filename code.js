@@ -13,8 +13,9 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
         return window.location.href.substr(apiPageStrIdx + 2);
     }
-    
+
     function resetWebsocket() {
+        if (!ws) return;
         ws.close();
         ws = new WebSocket('wss://ws.binary.com/websockets/v2');
     }
@@ -165,6 +166,10 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     $('[data-schema]').each(function() {
         var $this = $(this);
         loadAndDisplaySchema($this, $this.attr('data-schema'));
+    });
+
+    $('#api-page #api-call-selector, #api-page #api-version-selector').on('change', function() {
+        resetWebsocket();
     });
 
     $('#api-call-selector, #api-version-selector').on('change', function() {

@@ -3,28 +3,29 @@ layout: page
 title: "Playground"
 permalink: playground/
 ---
+<div id="playground-page">
+    <h5>The easiest way to try out and play with our API</h5>
 
-<h5>The easiest way to try out and play with our API</h5>
+    <fieldset>
+        {% include api-selector.html %}
+    </fieldset>
 
-<fieldset>
-    {% include api-selector.html %}
-</fieldset>
+    <div id="playground-api-ref" class="row">
+        <div id="playground-req-schema"></div>
+        <div id="playground-res-schema"></div>
+    </div>
 
-<div id="playground-api-ref" class="row">
-    <div id="playground-req-schema"></div>
-    <div id="playground-res-schema"></div>
+    {% include token-input.html %}
+
+    <fieldset>
+        <label for="playground-request">Request</label>
+        <br/>
+        <textarea id="playground-request"></textarea>
+    </fieldset>
+    <fieldset>
+        <button id="playground-send-btn">Send Request</button>
+        <button id="playground-reset-btn">Reset</button>
+    </fieldset>
+
+    <p id="playground-console"></p>
 </div>
-
-{% include token-input.html %}
-
-<fieldset>
-    <label for="playground-request">Request</label>
-    <br/>
-    <textarea id="playground-request"></textarea>
-</fieldset>
-<fieldset>
-    <button id="playground-send-btn">Send Request</button>
-    <button id="playground-reset-btn">Reset</button>
-</fieldset>
-
-<p id="playground-console"></p>
