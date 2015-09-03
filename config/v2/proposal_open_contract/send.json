@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Spawn a open contract proposal stream",
-  "description": "Receive information about my open contract, and receive regular pricing updates for it.",
+  "title": "Latest price for an open contract",
+  "description": "Get latest price for an open contract in the user's portfolio",
   "properties": {
     "proposal_open_contract": {
       "type": "integer",
@@ -11,7 +11,7 @@
     },
     "fmd_id": {
       "type": "integer",
-      "description":"open contract id received from a proposal request",
+      "description":"Open contract id received from a portfolio request",
       "sample": "1111111111"
     }
   },
