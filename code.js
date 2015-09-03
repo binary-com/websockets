@@ -13,7 +13,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     function wsResult(json, $responseNode, apiToken) {
         var tokenProvided = apiToken && apiToken.trim().length;
-        var ws = new WebSocket('wss://ws.binary.com/websockets/v2');
+        var ws = new WebSocket('wss://www.binary.com/websockets/v2');
 
         ws.onopen = function(evt) {
             var authorizeReq = '{"authorize":"' + apiToken + '"}';
