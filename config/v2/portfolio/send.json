@@ -11,7 +11,7 @@
     },
     "spawn": {
       "type": "integer",
-      "description":"If set to 1, will spawn 'proposal_open_contract' streams for all outstanding contracts in the portfolio",
+      "description":"If set to 1, will spawn 'proposal_open_contract' streams for all outstanding contracts in the portfolio. This is useful to create a portfolio page with dynamically updating contract prices.",
       "sample": "0"
     }
   },
