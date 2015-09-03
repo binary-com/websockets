@@ -13,6 +13,11 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
         return window.location.href.substr(apiPageStrIdx + 2);
     }
+    
+    function resetWebsocket() {
+        ws.close();
+        ws = new WebSocket('wss://ws.binary.com/websockets/v2');
+    }
 
     function formatJs(js, $node) {
         Rainbow.color(js, 'javascript', function (highlightedJs) {
@@ -35,14 +40,14 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             if (typeof val == 'string') {
                 return span('"' + val + '"', 'string');
             } else if (typeof val == 'number') {
-                return span(val, 'constant numeric');
+                return span(val, 'number');
             } else if (Array.isArray(val)) {
                 var elements =  val.map(function(val) {
                     return spaces(offset + 2) + valToStr(val, offset + 2);
                 }).join(',\n');
                 return '[\n' + elements + '\n' + spaces(offset) + ']';
             } else if (typeof val == 'boolean') {
-                return span(val, 'constant numeric');
+                return span(val, 'boolean');
             } else {
                 return objToStr(val, offset);
             }
@@ -50,7 +55,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
         var propsToStr = function (obj, offset) {
             var keyStr = Object.keys(obj).map(function (key) {
-                return spaces(offset) + span('"' + key + '"', 'string') + ': ' + valToStr(obj[key], offset);
+                return spaces(offset) + span('"' + key + '"', 'key') + ': ' + valToStr(obj[key], offset);
             });
             return keyStr.join(',\n');
         }
@@ -123,12 +128,11 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     }
 
     function appendAndScrollIntoView($node, html) {
-        var newNode = $node.append(html)[0];
-        $node.animate({ scrollTop: $node[0].scrollHeight }, 1000);
-        // setTimeout(function() {
-        //     console.log(newNode, newNode.scrollIntoView);
-        //     newNode.scrollIntoView();
-        // }, 0);
+        $node.append(html)[0];
+        $node.animate({ scrollTop: $node[0].scrollHeight }, 500);
+        setTimeout(function() {
+            $node.animate({ scrollTop: $node[0].scrollHeight }, 500);
+        }, 1000);
     }
 
     function updatePlaygroundWithRequestAndResponse() {
@@ -145,6 +149,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         appendAndScrollIntoView($node, '<pre class="req">' + jsonToPretty(resJson) + '</pre>');
 
         appendAndScrollIntoView($node, '<div class="progress"></div>');
+
         sendToApi(resJson, function(reqJson) {
             var $progress = $('.progress'),
                 prettyJson = getFormattedJsonStr(reqJson);
@@ -202,8 +207,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     $('#playground-reset-btn').on('click', function() {
         $('#playground-console').html('');
-        ws.close();
-        ws.open();
+        resetWebsocket();
     });
 
     $(function() {
@@ -212,4 +216,6 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             $('#api-call-selector').val(apiToDisplay).change();
         }
     });
+
+    localStorage.setItem('myCat', 'Tom');
 });
