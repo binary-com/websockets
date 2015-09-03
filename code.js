@@ -67,12 +67,14 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         return objToStr(json, offset || 0);
     }
 
-    function formatJson(json, $node) {
-        $node.html('<pre><p data-language="javascript">' +
-            jsonToPretty(JSON.parse(json)) + '</pre>');
+    function getFormattedJsonStr(json) {
+        if (typeof json == 'string') {
+            json = JSON.parse(json);
+        }
+        return '<pre>' + jsonToPretty(json) + '</pre>';
     }
 
-    function sendToApiAndShowResult(json, $responseNode, apiToken) {
+    function sendToApi(json, callback, apiToken) {
         var tokenProvided = apiToken && apiToken.trim().length;
 
         ws = new WebSocket('wss://ws.binary.com/websockets/v2');
@@ -86,14 +88,16 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         ws.onmessage = function(msg) {
            var json = JSON.parse(msg.data);
            console.log(json); // intended to help developers, not for debugging, do not remove
-           formatJson(JSON.stringify(json, null, 2), $responseNode);
+           callback(json);
         };
     }
 
-    function issueRequestAndDisplayResult($this, requestUrl) {
-        $this.html('<div class="progress"></div>');
+    function issueRequestAndDisplayResult($node, requestUrl) {
+        $node.html('<div class="progress"></div>');
         $.get(requestUrl, function(requestJson) {
-            sendToApiAndShowResult(requestJson, $this);
+            sendToApi(requestJson, function(json) {
+                $node.html(getFormattedJsonStr(json));
+            });
         });
     }
 
@@ -105,7 +109,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     function loadAndFormatJson($node, jsonUrl) {
         $.get(jsonUrl, function(exampleJson) {
-            formatJson(JSON.stringify(exampleJson, null, 2), $node);
+            $node.html(getFormattedJsonStr(exampleJson));
             $node.show();
         }).fail(function() {
             $node.hide();
@@ -118,19 +122,39 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         });
     }
 
-    function updatePlaygroundResponse() {
-        var $response = $('#playground-response'),
-            json;
+    function appendAndScrollIntoView($node, html) {
+        var newNode = $node.append(html)[0];
+        $node.animate({ scrollTop: $node[0].scrollHeight }, 1000);
+        // setTimeout(function() {
+        //     console.log(newNode, newNode.scrollIntoView);
+        //     newNode.scrollIntoView();
+        // }, 0);
+    }
+
+    function updatePlaygroundWithRequestAndResponse() {
+        var $node = $('#playground-console'),
+            resJson;
 
         try {
-            json = JSON.parse($('#playground-request').val());
+            resJson = JSON.parse($('#playground-request').val());
         } catch(err) {
             alert('Not valid json!');
             return;
         }
 
-        $response.html('<code><div class="progress"></div></code>');
-        sendToApiAndShowResult(json, $response, $('#api-token').val());
+        appendAndScrollIntoView($node, '<pre class="req">' + jsonToPretty(resJson) + '</pre>');
+
+        appendAndScrollIntoView($node, '<div class="progress"></div>');
+        sendToApi(resJson, function(reqJson) {
+            var $progress = $('.progress'),
+                prettyJson = getFormattedJsonStr(reqJson);
+
+            if ($progress.length > 0) {
+                $progress.replaceWith(prettyJson);
+            } else {
+                appendAndScrollIntoView($node, prettyJson);
+            }
+        }, $('#api-token').val());
     }
 
     $('[data-schema]').each(function() {
@@ -169,14 +193,15 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     });
 
     $('#playground-send-btn').on('click', function() {
-        updatePlaygroundResponse();
+        updatePlaygroundWithRequestAndResponse();
     });
 
-    $('.open-in-playground').on('click', function() {
+    $('#open-in-playground').on('click', function() {
         window.location.href='/playground#' + getCurrentApi();
     });
 
-    $('.playground-reconnect-btn').on('click', function() {
+    $('#playground-reset-btn').on('click', function() {
+        $('#playground-console').html('');
         ws.close();
         ws.open();
     });

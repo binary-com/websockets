@@ -56,6 +56,9 @@ pre {
     background: #2a2f3a;
     font-size: inherit;
 }
+pre.req {
+    background: #2a3a2c;
+}
 pre, code, textarea {
     font-family: 'Source Code Pro', monospace;
 }
@@ -87,8 +90,24 @@ pre p, code {
     width: 100%;
 }
 
-.open-in-playground {
+#open-in-playground {
     float: right;
+}
+
+#playground-console {
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    padding: 1rem;
+    overflow: auto;
+    max-height: 80vh;
+}
+
+#playground-console pre:last-child {
+    margin-bottom: 0;
+}
+
+.progress {
+    margin: 0 auto;
 }
 
 @import "monokai.css";
