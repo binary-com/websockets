@@ -14,10 +14,12 @@
       "description": "Client open positions",
       "items":{
         "type":"object",
+        "title": "Portfolio",
+        "description": "Client open positions",
         "properties":{
           "id": {
             "type": "string",
-            "description": "Streaming ID"
+            "description": "If spawn=1, streams of type 'proposal_open_contract' are created for each open contract in the portfolio. This 'id' field contains the stream id that can be used to cancel this stream using the Forget request"
           },
           "fmb_id": {
             "type": "integer",
