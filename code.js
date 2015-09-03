@@ -14,13 +14,63 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         return window.location.href.substr(apiPageStrIdx + 2);
     }
 
-    function formatJsCode(json, $node) {
-        Rainbow.color(json, 'javascript', function (highlightedJson) {
+    function formatJs(js, $node) {
+        Rainbow.color(js, 'javascript', function (highlightedJs) {
             $node.html('<pre><p data-language="javascript">' +
-                highlightedJson + '</pre>');
+                highlightedJs + '</pre>');
         });
     }
 
+    function jsonToPretty(json, offset) {
+
+        var spaces = function(n) {
+            return Array(n + 1).join(" ");
+        }
+
+        var span = function(val, className) {
+            return '<span class="' + className + '">' + val + '</span>';
+        }
+
+        var valToStr = function(val, offset) {
+            if (typeof val == 'string') {
+                return span('"' + val + '"', 'string');
+            } else if (typeof val == 'number') {
+                return span(val, 'constant numeric');
+            } else if (Array.isArray(val)) {
+                var elements =  val.map(function(val) {
+                    return spaces(offset + 2) + valToStr(val, offset + 2);
+                }).join(',\n');
+                return '[\n' + elements + '\n' + spaces(offset) + ']';
+            } else if (typeof val == 'boolean') {
+                return span(val, 'constant numeric');
+            } else {
+                return objToStr(val, offset);
+            }
+        }
+
+        var propsToStr = function (obj, offset) {
+            var keyStr = Object.keys(obj).map(function (key) {
+                return spaces(offset) + span('"' + key + '"', 'string') + ': ' + valToStr(obj[key], offset);
+            });
+            return keyStr.join(',\n');
+        }
+
+        var objToStr = function(obj, offset) {
+            if (!obj || Object.keys(obj).length == 0) return '{}';
+            return (
+                '{\n' +
+                propsToStr(obj, offset + 2) + '\n' +
+                spaces(offset) + '}'
+            )
+        }
+
+        return objToStr(json, offset || 0);
+    }
+
+    function formatJson(json, $node) {
+        $node.html('<pre><p data-language="javascript">' +
+            jsonToPretty(JSON.parse(json)) + '</pre>');
+    }
 
     function sendToApiAndShowResult(json, $responseNode, apiToken) {
         var tokenProvided = apiToken && apiToken.trim().length;
@@ -36,7 +86,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         ws.onmessage = function(msg) {
            var json = JSON.parse(msg.data);
            console.log(json); // intended to help developers, not for debugging, do not remove
-           formatJsCode(JSON.stringify(json, null, 2), $responseNode);
+           formatJson(JSON.stringify(json, null, 2), $responseNode);
         };
     }
 
@@ -55,7 +105,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     function loadAndFormatJson($node, jsonUrl) {
         $.get(jsonUrl, function(exampleJson) {
-            formatJsCode(JSON.stringify(exampleJson, null, 2), $node);
+            formatJson(JSON.stringify(exampleJson, null, 2), $node);
             $node.show();
         }).fail(function() {
             $node.hide();
