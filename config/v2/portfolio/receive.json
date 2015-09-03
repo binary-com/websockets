@@ -23,7 +23,7 @@
           },
           "fmb_id": {
             "type": "integer",
-            "description": "Contract ID"
+            "description": "Binary.com internal contract identifier number"
           },
           "purchase_time": {
             "type": "integer",
@@ -31,7 +31,7 @@
           },
           "symbol": {
             "type": "string",
-            "description": "Symbol"
+            "description": "Symbol code"
           },
           "payout": {
             "type": "number",
@@ -55,7 +55,7 @@
           },
           "currency": {
             "type": "string",
-            "description": "Currency"
+            "description": "Contract currency"
           },
           "longcode": {
             "type": "string",
