@@ -8,6 +8,11 @@
       "type": "integer",
       "description":"Must be 1",
       "sample": "1"
+    },
+    "spawn": {
+      "type": "integer",
+      "description":"If set to 1, will spawn 'proposal_open_contract' streams for all outstanding contracts in the portfolio",
+      "sample": "0"
     }
   },
   "required": [
