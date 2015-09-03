@@ -2,6 +2,8 @@ require.config({ baseUrl: '/' });
 
 require(["docson/docson", "lib/jquery"], function(docson) {
 
+    var ws;
+
     docson.templateBaseUrl = '/docson';
 
     function getCurrentApi() {
@@ -19,9 +21,8 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         });
     }
 
-    var ws;
 
-    function wsResult(json, $responseNode, apiToken) {
+    function sendToApiAndShowResult(json, $responseNode, apiToken) {
         var tokenProvided = apiToken && apiToken.trim().length;
 
         ws = new WebSocket('wss://ws.binary.com/websockets/v2');
@@ -42,7 +43,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     function issueRequestAndDisplayResult($this, requestUrl) {
         $this.html('<div class="progress"></div>');
         $.get(requestUrl, function(requestJson) {
-            wsResult(requestJson, $this);
+            sendToApiAndShowResult(requestJson, $this);
         });
     }
 
@@ -79,7 +80,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         }
 
         $response.html('<code><div class="progress"></div></code>');
-        wsResult(json, $response, $('#api-token').val());
+        sendToApiAndShowResult(json, $response, $('#api-token').val());
     }
 
     $('[data-schema]').each(function() {
