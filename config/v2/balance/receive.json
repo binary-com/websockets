@@ -14,6 +14,8 @@
       "description": "Array of the user's account balances",
       "items":{
         "type":"object",
+        "title": "Array of balances",
+        "description": "Array of the user's account balances",
         "properties": {
           "balance": {
             "type": "number",

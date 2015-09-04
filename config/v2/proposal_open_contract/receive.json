@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Open contract proposal response",
+  "description": "Latest price and other details for an open contract in the user's portfolio",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "proposal_open_contract": {
+      "type":"object",
+      "title": "Open contract response",
+      "description": "Latest price and other details for an open contract",
+      "properties":{
+        "fmb_id": {
+          "type": "integer",
+          "description": "Binary.com internal contract identifier"
+        },
+        "purchase_time": {
+          "type": "integer",
+          "description": "Epoch of purchase time of the contract"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Symbol"
+        },
+        "payout": {
+          "type": "number",
+          "description": "Payout price"
+        },
+        "buy_price": {
+          "type": "number",
+          "description": "Buy price"
+        },
+        "date_start": {
+          "type": "integer",
+          "description": "Epoch of start date of the contract"
+        },
+        "expiry_time": {
+          "type": "integer",
+          "description": "Epoch of expiry time of the contract"
+        },
+        "contract_type": {
+          "type": "string",
+          "description": "Contract type"
+        },
+        "currency": {
+          "type": "string",
+          "description": "Currency of the contract"
+        },
+        "longcode": {
+          "type": "string",
+          "description": "Contract description"
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "proposal_open_contract"
+    }
+  },
+  "required": [
+    "echo_req",
+    "proposal_open_contract",
+    "msg_type"
+  ]
+}

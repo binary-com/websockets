@@ -17,7 +17,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     function resetWebsocket() {
         if (!ws) return;
         ws.close();
-        ws = new WebSocket('wss://ws.binary.com/websockets/v2');
+        ws = new WebSocket('wss://www.binary.com/websockets/v2');
     }
 
     function formatJs(js, $node) {
@@ -83,7 +83,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     function sendToApi(json, callback, apiToken) {
         var tokenProvided = apiToken && apiToken.trim().length > 0;
 
-        ws = new WebSocket('wss://ws.binary.com/websockets/v2');
+        ws = new WebSocket('wss://www.binary.com/websockets/v2');
 
         ws.onopen = function(evt) {
             var authorizeReq = '{"authorize":"' + apiToken + '"}';
