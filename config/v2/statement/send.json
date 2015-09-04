@@ -5,82 +5,39 @@
   "description": "Retrieve a summary of account transactions, according to given search criteria",
   "properties": {
     "statement": {
-      "type": "array",
-      "items": {
-          "anyOf":
-              [
-               {
-                   "type": "object",
-                   "properties": {
-                       "sort_by": {
-                           "type": "string",
-                           "sample": "id desc",
-                           "description": "Name an output field to sort by, optionally followed by 'desc' for reverse sort order"
-                       }
-                   }
-               },
-               {
-                   "type": "object",
-                   "properties": {
-                       "limit": {
-                           "type": "number",
-                           "sample": "100",
-                           "description": "Apply upper limit to count of transactions received"
-                       }
-                   }
-               },
-               {
-                   "type": "object",
-                   "properties": {
-                       "offset": {
-                           "type": "number",
-                           "sample": "0",
-                           "description": "Skip this many transactions"
-                       }
-                   }
-               },
-               {
-                   "type": "object",
-                   "properties": {
-                       "dt_fm": {
-                           "type": "integer",
-                           "sample": 1439432307,
-                           "description": "Optional start date"
-                       }
-                   }
-               },
-               {
-                   "type": "object",
-                   "properties": {
-                       "dt_to": {
-                           "type": "integer",
-                           "sample": 1439432307,
-                           "description": "Optional end date"
-                       }
-                   }
-               },
-               {
-                   "type": "object",
-                   "properties": {
-                       "yyyymm": {
-                           "type": "integer",
-                           "sample": 201510,
-                           "description": "Optional short-hand expression of a single month"
-                       }
-                   }
-               },
-               {
-                   "type": "object",
-                   "properties": {
-                       "action_type": {
-                           "type": "string",
-                           "enum": ["deposit","withdrawal","buy","sell"],
-                           "description": "Optional filter"
-                     }
-                   }
-               }
-               ]
-      }
+      "type": "integer",
+      "sample": 1,
+      "description": "Must be 1."
+    },
+    "sort_by": {
+      "type": "string",
+      "sample": "id desc",
+      "description": "Name an output field to sort by, optionally followed by 'desc' for reverse sort order"
+    },
+    "limit": {
+      "type": "number",
+      "sample": "100",
+      "description": "Apply upper limit to count of transactions received"
+    },
+    "offset": {
+      "type": "number",
+      "sample": "0",
+      "description": "Skip this many transactions"
+    },
+    "dt_fm": {
+      "type": "integer",
+      "sample": 1439432307,
+      "description": "Optional start date (epoch)"
+    },
+    "dt_to": {
+      "type": "integer",
+      "sample": 1439432307,
+      "description": "Optional end date (epoch)"
+    },
+    "action_type": {
+      "type": "string",
+      "sample": "",
+      "description": "Optional filter for statement (deposit,withdrawal,buy,sell)"
     }
   },
   "required": [
