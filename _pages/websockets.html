@@ -6,13 +6,11 @@ permalink: websockets/
 
 <p>The binary.com websockets service is at</p>
 
-<pre>wss://www.binary.com/websockets/v1</pre>
-
-<p>(version 2, which is under beta development, is available at /v2).</p>
+<pre>wss://www.binary.com/websockets/v2</pre>
 
 <p>Open a connection to Binary.com WebSocket service:</p>
 
-<pre data-language="javascript">var ws = new WebSocket('wss://www.binary.com/websockets/v1');</pre>
+<pre data-language="javascript">var ws = new WebSocket('wss://www.binary.com/websockets/v2');</pre>
 
 <p>You can now send data down the websocket using any of the messages described in this Reference.</p>
 
@@ -30,7 +28,7 @@ permalink: websockets/
 
 <p>Combining some of the examples, here is a JavaScript snippet that opens a websocket, and requests a stream of updates for the symbol "R_100".  On receipt of each message, it outputs a message to the console.</p>
 
-<pre data-language="javascript">var ws = new WebSocket(&#39;wss://www.binary.com/websockets/v1&#39;);
+<pre data-language="javascript">var ws = new WebSocket(&#39;wss://www.binary.com/websockets/v2&#39;);
 
 ws.onopen = function(evt) {
     ws.send(JSON.stringify({ticks:&#39;R_100&#39;}));
