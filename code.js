@@ -129,11 +129,17 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     }
 
     function appendAndScrollIntoView($node, html) {
+
+        var shouldScroll = Math.abs($node[0].scrollHeight - $node.scrollTop() - $node.outerHeight()) < 100;
+
         $node.append(html)[0];
-        $node.animate({ scrollTop: $node[0].scrollHeight }, 500);
-        setTimeout(function() {
+
+        if (shouldScroll) {
             $node.animate({ scrollTop: $node[0].scrollHeight }, 500);
-        }, 1000);
+            setTimeout(function() {
+                $node.animate({ scrollTop: $node[0].scrollHeight }, 500);
+            }, 1000);
+        }
     }
 
     function updatePlaygroundWithRequestAndResponse() {
