@@ -14,6 +14,11 @@
       "sample": "id desc",
       "description": "Name an output field to sort by, optionally followed by 'desc' for reverse sort order"
     },
+    "description": {
+      "type": "integer",
+      "sample": "1",
+      "description": "If set to 1, will return full contracts description."
+    },
     "limit": {
       "type": "number",
       "sample": "100",
@@ -36,7 +41,7 @@
     },
     "action_type": {
       "type": "string",
-      "sample": "",
+      "sample": "buy",
       "description": "Optional filter for statement (deposit,withdrawal,buy,sell)"
     }
   },
