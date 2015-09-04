@@ -1,9 +1,3 @@
 {
-    "statement": 1,
-    "action_type": "deposit",
-    "dt_fm": 1420074000,
-    "dt_to": 1420074060,
-    "offset": 100,
-    "limit": 20,
-    "sort_by": "date"
+    "statement": 1
 }
