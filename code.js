@@ -81,7 +81,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     }
 
     function sendToApi(json, callback, apiToken) {
-        var tokenProvided = apiToken && apiToken.trim().length;
+        var tokenProvided = apiToken && apiToken.trim().length > 0;
 
         ws = new WebSocket('wss://ws.binary.com/websockets/v2');
 
@@ -103,7 +103,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         $.get(requestUrl, function(requestJson) {
             sendToApi(requestJson, function(json) {
                 $node.html(getFormattedJsonStr(json));
-            });
+            }, $('#api-token').val());
         });
     }
 
@@ -215,11 +215,17 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         resetWebsocket();
     });
 
+    $('#api-token').on('change', function() {
+        sessionStorage.setItem('token', $('#api-token').val());
+        console.log($('#api-token').val())
+    });
+
     $(function() {
         var apiToDisplay = getCurrentApi();
         if (apiToDisplay) {
             $('#api-call-selector').val(apiToDisplay).change();
         }
+        $('#api-token').val(sessionStorage.getItem('token'));
     });
 
     localStorage.setItem('myCat', 'Tom');
