@@ -29,14 +29,7 @@
           "type": "string",
           "description": "User's full name"
         }
-      },
-      "required": [
-        "email",
-        "currency",
-        "balance",
-        "loginid",
-        "fullname"
-      ]
+      }
     },
     "echo_req": {
       "title": "Echo request",
@@ -48,7 +41,6 @@
     }
   },
   "required": [
-    "authorize",
     "echo_req",
     "msg_type"
   ]

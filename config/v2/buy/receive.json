@@ -8,7 +8,7 @@
       "title":"Echo request",
       "description":"Echo of the request made"
     },
-    "open_receipt": {
+    "buy": {
       "type": "object",
       "title": "Receipt confirmation",
       "description": "Receipt confirmation for the purchase",
@@ -50,7 +50,7 @@
   },
   "required": [
     "echo_req",
-    "open_receipt",
+    "buy",
     "msg_type"
   ]
 }

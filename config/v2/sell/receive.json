@@ -8,7 +8,7 @@
       "title":"Echo request",
       "description":"Echo of the request made"
     },
-    "close_receipt": {
+    "sell": {
       "type": "object",
       "title": "Receipt for the transaction",
       "description": "Receipt for the transaction",
@@ -38,7 +38,7 @@
   },
   "required": [
     "echo_req",
-    "close_receipt",
+    "sell",
     "msg_type"
   ]
 }
