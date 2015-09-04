@@ -10,6 +10,8 @@
     },
       "history": {
             "type": "object",
+            "title": "Tick History Response",
+            "description": "Historic tick data for a given symbol",
             "properties": {
               "times": {
                 "type": "array",
