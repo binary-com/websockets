@@ -149,7 +149,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         try {
             resJson = JSON.parse($('#playground-request').val());
         } catch(err) {
-            alert('Not valid json!');
+            alert('Invalid JSON!');
             return;
         }
 
