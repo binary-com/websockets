@@ -32,6 +32,19 @@ Note: to receive responses where English text has been translated to another lan
 
 <p>Combining some of the examples, here is a JavaScript snippet that opens a websocket, and requests a stream of updates for the symbol "R_100".  On receipt of each message, it outputs a message to the console.</p>
 
+<ul role=segmented>
+    <li><a>JavaScript</a></li>
+    <li><a>Java</a></li>
+    <li><a>C#</a></li>
+    <li><a>CoffeeScript</a></li>
+    <li><a>Go</a></li>
+    <li><a>Ruby</a></li>
+    <li><a>PHP</a></li>
+    <li><a>Python</a></li>
+    <li><a>Swift</a></li>
+    <li><a>Perl</a></li>
+</ul>
+
 <pre data-language="javascript">var ws = new WebSocket(&#39;wss://www.binary.com/websockets/v2&#39;);
 
 ws.onopen = function(evt) {
@@ -70,5 +83,50 @@ ws.onmessage = function(msg) {
         SendTicksRequest();
         Console.ReadLine();
     }
+}
+</pre>
+
+<pre data-language="go">package main
+
+import (
+	"fmt"
+	"regexp"
+	"strconv"
+	"time"
+
+	"golang.org/x/net/websocket"
+)
+
+type Tick struct {
+	epoch int64
+	quote float64
+}
+
+var ticks []Tick
+
+func print_ticks(msg string) {
+	epoch, _ := strconv.ParseInt(regexp.MustCompile("\"epoch\":(\\d+)").FindAllStringSubmatch(msg, 1)[0][1], 10, 64)
+	quote, _ := strconv.ParseFloat(regexp.MustCompile("\"quote\":\"(\\d+\\.?\\d*)").FindAllStringSubmatch(msg, 1)[0][1], 64)
+	fmt.Printf("Current value is: %f\n", quote)
+
+	ticks = append(ticks, Tick{
+		epoch: epoch,
+		quote: quote,
+	})
+	if ticks[0].epoch <= time.Now().Unix()-60 {
+		fmt.Printf("One minute old value is: %f\n", ticks[0].quote)
+		ticks = ticks[1:]
+	}
+}
+
+func main() {
+	ws, _ := websocket.Dial("wss://ws.binary.com/websockets/v2", "", "http://localhost/")
+	ws.Write([]byte("{\"ticks\": \"R_50\"}"))
+
+	var msg = make([]byte, 512)
+	for {
+		ws.Read(msg)
+		print_ticks(string(msg))
+	}
 }
 </pre>
