@@ -1,0 +1,214 @@
+---
+layout: page
+title:  "Demos"
+permalink: demos/
+---
+
+<ul role=segmented>
+    <li><a>JavaScript</a></li>
+    <li><a>CoffeeScript</a></li>
+    <li><a>C#</a></li>
+    <li><a>Go</a></li>
+    <li><a>Java</a></li>
+    <li><a>Perl</a></li>
+    <li><a>PHP</a></li>
+    <li><a>Ruby</a></li>
+    <li><a>Python</a></li>
+    <li><a>Swift</a></li>
+</ul>
+
+<pre data-language="javascript">var ws = new WebSocket(&#39;wss://www.binary.com/websockets/v2&#39;);
+
+ws.onopen = function(evt) {
+    ws.send(JSON.stringify({ticks:&#39;R_100&#39;}));
+};
+
+ws.onmessage = function(msg) {
+   var data = JSON.parse(msg.data);
+   console.log(&#39;ticks update: %o&#39;, data);
+};
+</pre>
+
+<pre data-language="coffeescript">ws = new WebSocket('wss://www.binary.com/websockets/v2')
+
+ws.onopen = (evt) ->
+    ws.send JSON.stringify(ticks: 'R_100')
+
+ws.onmessage = (msg) ->
+    data = JSON.parse(msg.data)
+    console.log 'ticks update: %o', data
+</pre>
+
+<pre data-language="csharp">class Program
+{
+    static async Task SendTicksRequest()
+    {
+        var ws = new ClientWebSocket();
+        var uri = new Uri("wss://www.binary.com/websockets/v2");
+
+        await ws.ConnectAsync(uri, CancellationToken.None);
+
+        var reqAsBytes = Encoding.UTF8.GetBytes("{\"ticks\":\"R_100\"}");
+        var ticksRequest = new ArraySegment&lt;byte>(reqAsBytes);
+
+        await ws.SendAsync(ticksRequest, WebSocketMessageType.Text, true, CancellationToken.None);
+
+        var buffer = new ArraySegment&lt;byte>(new byte[1024]);
+        var result = await ws.ReceiveAsync(buffer, CancellationToken.None);
+
+        string response = Encoding.UTF8.GetString(buffer.Array, 0, result.Count);
+        Console.WriteLine(response);
+    }
+
+    static void Main(string[] args)
+    {
+        SendTicksRequest();
+        Console.ReadLine();
+    }
+}
+</pre>
+
+<pre data-language="go">package main
+
+import (
+	"fmt"
+	"regexp"
+	"strconv"
+	"time"
+
+	"golang.org/x/net/websocket"
+)
+
+type Tick struct {
+	epoch int64
+	quote float64
+}
+
+var ticks []Tick
+
+func print_ticks(msg string) {
+	epoch, _ := strconv.ParseInt(regexp.MustCompile("\"epoch\":(\\d+)").FindAllStringSubmatch(msg, 1)[0][1], 10, 64)
+	quote, _ := strconv.ParseFloat(regexp.MustCompile("\"quote\":\"(\\d+\\.?\\d*)").FindAllStringSubmatch(msg, 1)[0][1], 64)
+	fmt.Printf("Current value is: %f\n", quote)
+
+	ticks = append(ticks, Tick{
+		epoch: epoch,
+		quote: quote,
+	})
+	if ticks[0].epoch <= time.Now().Unix()-60 {
+		fmt.Printf("One minute old value is: %f\n", ticks[0].quote)
+		ticks = ticks[1:]
+	}
+}
+
+func main() {
+	ws, _ := websocket.Dial("wss://ws.binary.com/websockets/v2", "", "http://localhost/")
+	ws.Write([]byte("{\"ticks\": \"R_50\"}"))
+
+	var msg = make([]byte, 512)
+	for {
+		ws.Read(msg)
+		print_ticks(string(msg))
+	}
+}
+</pre>
+
+<pre data-language="java">package com.binary;
+
+import java.net.URI;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
+import org.java_websocket.client.DefaultSSLWebSocketClientFactory;
+import org.java_websocket.client.WebSocketClient;
+import org.java_websocket.drafts.Draft;
+import org.java_websocket.handshake.ServerHandshake;
+import org.json.JSONObject;
+
+public class BinaryWebSocketClient extends WebSocketClient {
+
+	public BinaryWebSocketClient(URI serverUri, Draft draft) {
+		super(serverUri, draft);
+
+		// Create a trust manager that does not validate certificate chains
+        TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
+
+			@Override
+			public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+				return new java.security.cert.X509Certificate[]{};
+			}
+
+			@Override
+			public void checkServerTrusted(java.security.cert.X509Certificate[] arg0,
+					String arg1) throws java.security.cert.CertificateException {
+			}
+
+			@Override
+			public void checkClientTrusted(java.security.cert.X509Certificate[] arg0,
+					String arg1) throws java.security.cert.CertificateException {
+			}
+		}};
+
+        // Install the all-trusting trust manager
+        // We are ignoring SSL certificates
+        try {
+            SSLContext sc = SSLContext.getInstance("TLS");
+            sc.init(null, trustAllCerts, new java.security.SecureRandom());
+            setWebSocketFactory(new DefaultSSLWebSocketClientFactory(sc));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+	}
+
+	boolean isOpen = false;
+
+	@Override
+	public void onMessage(String message) {
+		JSONObject obj = new JSONObject(message);
+		String pong = obj.getString("ping");
+		System.out.println("server reponse to ping : " + pong);
+	}
+
+	@Override
+	public void onOpen(ServerHandshake handshake) {
+		isOpen = true;
+		System.out.println("opened connection");
+	}
+
+	@Override
+	public void onClose(int code, String reason, boolean remote) {
+		System.out.println("closed connection");
+	}
+
+	@Override
+	public void onError(Exception ex) {
+		ex.printStackTrace();
+	}
+
+}</pre>
+
+<pre data-language="perl">TODO</pre>
+
+<pre data-language="php">TODO</pre>
+
+<pre data-language="ruby">TODO</pre>
+
+<pre data-language="python">import websocket
+import json
+
+def on_open(ws):
+    json_data = json.dumps({'ticks':'R_100'})
+    ws.send(json_data)
+
+def on_message(ws, message):
+    print('ticks update: %s' % message)
+
+if __name__ == "__main__":
+    ws = websocket.WebSocketApp("wss://www.binary.com/websockets/v2", on_message = on_message, on_open = on_open)
+    ws.run_forever()
+</pre>
+
+<pre data-language="swift">TODO</pre>

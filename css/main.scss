@@ -57,6 +57,8 @@ pre {
     margin-bottom: .5rem;
     background: #2a2f3a;
     font-size: inherit;
+    overflow: auto;
+    word-wrap: inherit;
 }
 pre.req {
     background: #2a3a2c;
