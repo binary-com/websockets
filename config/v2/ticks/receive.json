@@ -34,14 +34,35 @@
             }
           },
           "candles": {
-            "type":"array",
-                "items":{
-                  "type":"object"
-                },
-                "minItems":"1",
-                "description":"Array of OHLC price values for the given time (only for style='candles')"
-          },
-    
+              "type":"array",
+                  "items":{
+                    "type":"object",
+                    "properties": {
+                  	  "epoch":{
+                  		  "type":"integer",
+                  		  "description":"It is an epoch value"
+                  	  },
+                  	  "open":{
+                  		  "type":"number",
+                  		  "description":"It is the open price value for the given time"
+                  	  },
+                  	  "high":{
+                  		  "type":"number",
+                  		  "description":"It is the high price value for the given time"
+                  	  },
+                  	  "low":{
+                  		  "type":"number",
+                  		  "description":"It is the low price value for the given time"
+                  	  },
+                  	  "close":{
+                  		  "type":"number",
+                  		  "description":"It is the close price value for the given time"
+                  	  }
+                    }
+                  },
+                  "minItems":"1",
+                  "description":"Array of OHLC price values for the given time (only for style='candles')"
+            },
     "msg_type": {
       "type": "string",
       "description": "style"
