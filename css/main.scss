@@ -53,7 +53,7 @@ h5 {
 
 pre {
     border-radius: 4px;
-    padding: .5rem;
+    padding: .5rem .75rem;
     margin-bottom: .5rem;
     background: #2a2f3a;
     font-size: inherit;
@@ -65,6 +65,7 @@ pre.req {
 }
 pre, code, textarea, .docson .json-keyword {
     font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
 }
 
 pre p, code {
@@ -118,5 +119,9 @@ pre { color: white; }
 pre .key { color: #f92672; }
 pre .string { color: #E6DB74; }
 pre .number { color: #AE81FF; }
+
+#language-demos pre {
+    display: none;
+}
 
 @import "monokai.css";

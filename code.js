@@ -226,13 +226,22 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         console.log($('#api-token').val())
     });
 
-    $(function() {
-        var apiToDisplay = getCurrentApi();
-        if (apiToDisplay) {
-            $('#api-call-selector').val(apiToDisplay).change();
-        }
-        $('#api-token').val(sessionStorage.getItem('token'));
+    function showDemoForLanguage(lang) {
+        $('[data-language]').hide();
+        $('[data-language="' + lang + '"]').show();
+    }
+
+    $('#demo-language').on('change', function() {
+        showDemoForLanguage($(this).val());
     });
 
+    var apiToDisplay = getCurrentApi();
+    if (apiToDisplay) {
+        $('#api-call-selector').val(apiToDisplay).change();
+    }
+    $('#api-token').val(sessionStorage.getItem('token'));
+
     localStorage.setItem('myCat', 'Tom');
+
+    showDemoForLanguage('javascript');
 });

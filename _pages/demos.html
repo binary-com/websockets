@@ -4,18 +4,22 @@ title:  "Demos"
 permalink: demos/
 ---
 
-<ul role=segmented>
-    <li><a>JavaScript</a></li>
-    <li><a>CoffeeScript</a></li>
-    <li><a>C#</a></li>
-    <li><a>Go</a></li>
-    <li><a>Java</a></li>
-    <li><a>Perl</a></li>
-    <li><a>PHP</a></li>
-    <li><a>Ruby</a></li>
-    <li><a>Python</a></li>
-    <li><a>Swift</a></li>
-</ul>
+<fieldset>
+    <select id="demo-language">
+        <option value="javascript">JavaScript</option>
+        <option value="coffeescript">CoffeeScript</option>
+        <option value="csharp">C#</option>
+        <option value="go">Go</option>
+        <option value="perl">Perl</option>
+        <option value="java">Java</option>
+        <option value="php">PHP</option>
+        <option value="ruby">Ruby</options>
+        <option value="python">Python</option>
+        <option value="swift">Swift</option>
+    </select>
+</fieldset>
+
+<div id="language-demos">
 
 <pre data-language="javascript">var ws = new WebSocket(&#39;wss://www.binary.com/websockets/v2&#39;);
 
@@ -194,7 +198,25 @@ public class BinaryWebSocketClient extends WebSocketClient {
 
 <pre data-language="php">TODO</pre>
 
-<pre data-language="ruby">TODO</pre>
+<pre data-language="ruby">gem install websocket-client-simple
+
+require 'rubygems'
+require 'websocket-client-simple'
+
+ws = WebSocket::Client::Simple.connect 'wss://www.binary.com/websockets/v2'
+
+ws.on :message do |msg|
+  puts msg.data
+end
+
+ws.on :open do
+  ws.send '{ticks:\'R_100\'}'
+end
+
+loop do
+  ws.send STDIN.gets.strip
+end
+</pre>
 
 <pre data-language="python">import websocket
 import json
@@ -212,3 +234,5 @@ if __name__ == "__main__":
 </pre>
 
 <pre data-language="swift">TODO</pre>
+
+</div>
