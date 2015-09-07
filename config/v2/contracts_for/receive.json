@@ -104,11 +104,11 @@
                 "description":"Array of available contracts details"
                 },
             "close":{
-            	"type":"integer",
+            	"type":["integer", "null"],
             	"description":"Symbol's next market-close time as an epoch value"
                },
             "open":{
-            	"type":"integer",
+              "type":["integer", "null"],
             	"description":"Symbol's next market-open time as an epoch value"
               },
             "hit_count":{
