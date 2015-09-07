@@ -9,57 +9,64 @@
       "description":"Echo of the request made"
     },
     "portfolio": {
-      "type": "array",
+      "type": "object",
       "title": "Portfolio",
       "description": "Client open positions",
-      "items":{
-        "type":"object",
-        "title": "Portfolio",
-        "description": "Client open positions",
-        "properties":{
-          "id": {
-            "type": "string",
-            "description": "If spawn=1, streams of type 'proposal_open_contract' are created for each open contract in the portfolio. This 'id' field contains the stream id for this contract, that can be used in due course to cancel the stream using the Forget request"
-          },
-          "fmb_id": {
-            "type": "integer",
-            "description": "Binary.com internal contract identifier number"
-          },
-          "purchase_time": {
-            "type": "integer",
-            "description": "Epoch of purchase time"
-          },
-          "symbol": {
-            "type": "string",
-            "description": "Symbol code"
-          },
-          "payout": {
-            "type": "number",
-            "description": "Payout price"
-          },
-          "buy_price": {
-            "type": "number",
-            "description": "Buy price"
-          },
-          "date_start": {
-            "type": "integer",
-            "description": "Epoch of start date"
-          },
-          "expiry_time": {
-            "type": "integer",
-            "description": "Epoch of expiry time"
-          },
-          "contract_type": {
-            "type": "string",
-            "description": "Contract type"
-          },
-          "currency": {
-            "type": "string",
-            "description": "Contract currency"
-          },
-          "longcode": {
-            "type": "string",
-            "description": "Contract description"
+      "properties": {
+        "contracts": {
+          "type": "array",
+          "title": "Contracts",
+          "description": "Client open positions",
+          "items":{
+            "type":"object",
+            "title": "Portfolio",
+            "description": "Client open positions",
+            "properties":{
+              "id": {
+                "type": "string",
+                "description": "If spawn=1, streams of type 'proposal_open_contract' are created for each open contract in the portfolio. This 'id' field contains the stream id for this contract, that can be used in due course to cancel the stream using the Forget request"
+              },
+              "fmb_id": {
+                "type": "integer",
+                "description": "Binary.com internal contract identifier number"
+              },
+              "purchase_time": {
+                "type": "integer",
+                "description": "Epoch of purchase time"
+              },
+              "symbol": {
+                "type": "string",
+                "description": "Symbol code"
+              },
+              "payout": {
+                "type": "number",
+                "description": "Payout price"
+              },
+              "buy_price": {
+                "type": "number",
+                "description": "Buy price"
+              },
+              "date_start": {
+                "type": "integer",
+                "description": "Epoch of start date"
+              },
+              "expiry_time": {
+                "type": "integer",
+                "description": "Epoch of expiry time"
+              },
+              "contract_type": {
+                "type": "string",
+                "description": "Contract type"
+              },
+              "currency": {
+                "type": "string",
+                "description": "Contract currency"
+              },
+              "longcode": {
+                "type": "string",
+                "description": "Contract description"
+              }
+            }
           }
         }
       }
