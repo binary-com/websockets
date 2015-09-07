@@ -5,17 +5,9 @@
   "description":"Receive a list of marketing opening times for a given date",
   "properties": {
     "trading_times": {
-      "type":"object",
-      "properties":{
-        "date": {
-           "type": "string",
-                "description": "Trading date in yyyy-mm-dd format.",
-                "sample":{"date": "2015-01-01"}
-        }
-      },
-      "required": [
-         "times"
-      ]
+      "type":"string",
+      "description": "Trading date in yyyy-mm-dd format.",
+      "sample":"2015-01-01"
     }
   },
   "required": [
