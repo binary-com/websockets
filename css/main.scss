@@ -1,17 +1,32 @@
 ---
 ---
 
-#content { width: 100%; margin-top: 100px !important; }
-.page-wrapper { display: flex; }
-header h1 {
-    font-size: 2.5rem;
+#content {
+    width: 100%;
+    padding: 5rem .5rem 2rem .5rem;
 }
+
+.page-wrapper {
+    display: flex;
+}
+
+#logo {
+    height: 3rem;
+    width: 3rem;
+}
+
+header h1 {
+    font-size: 1.75rem;
+}
+
 h1 {
     margin-top: 0;
 }
+
 h5 {
     margin-bottom: 1rem;
 }
+
 .sidebar {
     flex: 1;
     background-color: #f7f7f7;
@@ -36,7 +51,9 @@ h5 {
     }
 }
 
-.page-content { flex: 3; }
+.page-content {
+    flex: 3;
+}
 
 .docson .box {
     width: 100%;
@@ -81,7 +98,8 @@ pre p, code {
     align-items: center;
 }
 #api-token,
-#playground-request {
+#playground-request,
+#demo-language {
     width: 100%;
 }
 
@@ -122,6 +140,18 @@ pre .number { color: #AE81FF; }
 
 #language-demos pre {
     display: none;
+}
+
+#mobile-page-selector {
+    width: 100%;
+    display: none;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 760px) {
+    #mobile-page-selector {
+        display: block;
+    }
 }
 
 @import "monokai.css";

@@ -213,7 +213,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     });
 
     $('#open-in-playground').on('click', function() {
-        window.location.href='/playground#' + getCurrentApi();
+        window.location.href = '/playground#' + getCurrentApi();
     });
 
     $('#playground-reset-btn').on('click', function() {
@@ -233,6 +233,13 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     $('#demo-language').on('change', function() {
         showDemoForLanguage($(this).val());
+    });
+
+    $('#mobile-page-selector').val(window.location.pathname + window.location.hash);
+    $('#mobile-page-selector').on('change', function() {
+        if (window.location.pathname + window.location.hash == $(this).val()) return;
+        window.location.href = $(this).val();
+        console.log('going to ', $(this).val());
     });
 
     var apiToDisplay = getCurrentApi();
