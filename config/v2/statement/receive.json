@@ -9,24 +9,58 @@
       "description":"Echo of the request made"
     },
     "statement":{
-      "type":"object",
-      "title":"statement list",
-      "description":"Account statement.",
-      "properties":{
-        "count":{
-          "type":"number",
-          "description":"Number of transactions returned in this call"
-        },
-        "transactions":{
-          "type":"array",
-          "items":{
-            "type":"object"
+        "type":"object",
+        "title":"statement list",
+        "description":"Account statement.",
+        "properties":{
+          "count":{
+            "type":"number",
+            "description":"Number of transactions returned in this call"
           },
-          "minItems":"1",
-          "description":"Array of returned transactions"
-        }
-      }
-    },
+          "transactions":{
+              "type":"array",
+              "items":{
+                "type":"object",
+                "properties":{
+              	  "source":{
+              		  "type":"string",
+              		  "description":"It is the default source of transaction Example: default"
+              	  },
+              	  "balance_after":{
+            		  "type":"number",
+            		  "description":"It is the remaining balance Example: 10150.1300"
+            	  },
+            	  "contract_id":{
+            		  "type":"integer",
+            		  "description":"It is the contract id Example: 4867502908"
+            	  },
+            	  "transaction_time":{
+            		  "type":"integer",
+            		  "description":"It is the time of transaction Example: 1441175849"
+            	  },
+            	  "action_type":{
+            		  "type":"string",
+            		  "description":"It is the type of action Example: buy"
+            	  },
+            	  "amount":{
+            		  "type":"number",
+            		  "description":"It is the amount of transaction Example: -83.2300"
+            	  },
+            	  "who":{
+            		  "type":"string",
+            		  "description":"It is the user account Example: VRTC680768"
+            	  },
+            	  "id":{
+            		  "type":"integer",
+            		  "description":"It is the account id Example: 9586856528"
+            	  }
+                }
+              },
+              "minItems":"1",
+              "description":"Array of returned transactions"
+            }
+          }
+        },
     "msg_type":{
       "type":"string",
       "description":"statement"
