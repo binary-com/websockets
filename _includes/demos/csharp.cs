@@ -10,7 +10,10 @@ class Program
         var reqAsBytes = Encoding.UTF8.GetBytes("{\"ticks\":\"R_100\"}");
         var ticksRequest = new ArraySegment&lt;byte>(reqAsBytes);
 
-        await ws.SendAsync(ticksRequest, WebSocketMessageType.Text, true, CancellationToken.None);
+        await ws.SendAsync(ticksRequest,
+            WebSocketMessageType.Text,
+            true,
+            CancellationToken.None);
 
         var buffer = new ArraySegment&lt;byte>(new byte[1024]);
         var result = await ws.ReceiveAsync(buffer, CancellationToken.None);
