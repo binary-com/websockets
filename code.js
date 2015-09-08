@@ -236,19 +236,27 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     });
 
     $('#mobile-page-selector').val(window.location.pathname + window.location.hash);
-    $('#mobile-page-selector').on('change', function() {
-        if (window.location.pathname + window.location.hash == $(this).val()) return;
+    $('#mobile-page-selector').on('change', function(event) {
+        if (!event.originalEvent) return;
+
         window.location.href = $(this).val();
         console.log('going to ', $(this).val());
     });
 
-    var apiToDisplay = getCurrentApi();
-    if (apiToDisplay) {
-        $('#api-call-selector').val(apiToDisplay).change();
+    function updateApiDisplayed() {
+        if ($('#api-call-selector').length == 0) return;
+
+        var apiToDisplay = getCurrentApi();
+        if (apiToDisplay) {
+            $('#api-call-selector').val(apiToDisplay).change();
+        }
     }
-    $('#api-token').val(sessionStorage.getItem('token'));
+
+    $(window).on('hashchange', updateApiDisplayed);
 
     localStorage.setItem('myCat', 'Tom');
 
     showDemoForLanguage('javascript');
+    updateApiDisplayed();
+    $('#api-token').val(sessionStorage.getItem('token'));
 });
