@@ -1,0 +1,25 @@
+import java.net.URI;
+import javax.websocket.*;
+
+@ClientEndpoint
+public class WSClient  {
+
+    @OnOpen
+    public void onOpen(Session session) throws java.io.IOException
+    {
+        session.getBasicRemote().sendText("{\"ticks\": \"R_100\"}");
+    }
+
+    @OnMessage
+    public void onMessage(String message)
+    {
+        System.out.println("ticks update: " + message);
+    }
+
+    public static void main(String[] args) throws java.io.IOException, javax.websocket.DeploymentException, java.lang.InterruptedException
+    {
+        WebSocketContainer container = ContainerProvider.getWebSocketContainer();
+        Session session = container.connectToServer(WSClient.class, URI.create("wss://www.binary.com/websockets/v2"));
+        Thread.sleep(10000);
+    }
+}

@@ -1,0 +1,209 @@
+---
+layout: page
+title:  "Code Samples"
+permalink: demos/
+---
+
+<fieldset>
+    <select id="demo-language">
+        <option value="javascript">JavaScript</option>
+        <option value="coffeescript">CoffeeScript</option>
+        <option value="csharp">C#</option>
+        <option value="go">Go</option>
+        <option value="perl">Perl</option>
+        <option value="java">Java</option>
+        <option value="php" hidden>PHP</option>
+        <option value="ruby">Ruby</options>
+        <option value="python">Python</option>
+        <option value="swift">Swift</option>
+    </select>
+</fieldset>
+
+<p>Here is a code snippet that opens a websocket, and requests a stream of updates for the symbol "R_100".
+On receipt of each message, it outputs a message.</p>
+
+<div id="language-demos">
+
+<pre data-language="javascript">var ws = new WebSocket(&#39;wss://www.binary.com/websockets/v2&#39;);
+
+ws.onopen = function(evt) {
+    ws.send(JSON.stringify({ticks:&#39;R_100&#39;}));
+};
+
+ws.onmessage = function(msg) {
+   var data = JSON.parse(msg.data);
+   console.log(&#39;ticks update: %o&#39;, data);
+};
+</pre>
+
+<pre data-language="coffeescript">ws = new WebSocket('wss://www.binary.com/websockets/v2')
+
+ws.onopen = (evt) ->
+    ws.send JSON.stringify(ticks: 'R_100')
+
+ws.onmessage = (msg) ->
+    data = JSON.parse(msg.data)
+    console.log 'ticks update: %o', data
+</pre>
+
+<pre data-language="csharp">class Program
+{
+    static async Task SendTicksRequest()
+    {
+        var ws = new ClientWebSocket();
+        var uri = new Uri("wss://www.binary.com/websockets/v2");
+
+        await ws.ConnectAsync(uri, CancellationToken.None);
+
+        var reqAsBytes = Encoding.UTF8.GetBytes("{\"ticks\":\"R_100\"}");
+        var ticksRequest = new ArraySegment&lt;byte>(reqAsBytes);
+
+        await ws.SendAsync(ticksRequest, WebSocketMessageType.Text, true, CancellationToken.None);
+
+        var buffer = new ArraySegment&lt;byte>(new byte[1024]);
+        var result = await ws.ReceiveAsync(buffer, CancellationToken.None);
+
+        string response = Encoding.UTF8.GetString(buffer.Array, 0, result.Count);
+        Console.WriteLine(response);
+    }
+
+    static void Main(string[] args)
+    {
+        SendTicksRequest();
+        Console.ReadLine();
+    }
+}
+</pre>
+
+<pre data-language="go">package main
+
+import (
+    "fmt"
+
+    "golang.org/x/net/websocket"
+)
+
+var origin = "http://localhost/"
+var url = "wss://ws.binary.com/websockets/v2?l=EN"
+
+func main() {
+    ws, _ := websocket.Dial(url, "", origin)
+
+    message := []byte("{\"ticks\": \"R_100\"}")
+    ws.Write(message)
+    fmt.Printf("Send: %s\n", message)
+
+    var msg = make([]byte, 512000)
+    for {
+        ws.Read(msg)
+        fmt.Printf("Receive: %s\n", msg)
+    }
+}
+</pre>
+
+<pre data-language="java">import java.net.URI;
+import javax.websocket.*;
+
+@ClientEndpoint
+public class WSClient  {
+
+    @OnOpen
+    public void onOpen(Session session) throws java.io.IOException
+    {
+        session.getBasicRemote().sendText("{\"ticks\": \"R_100\"}");
+    }
+
+    @OnMessage
+    public void onMessage(String message)
+    {
+        System.out.println("ticks update: " + message);
+    }
+
+    public static void main(String[] args) throws java.io.IOException, javax.websocket.DeploymentException, java.lang.InterruptedException
+    {
+        WebSocketContainer container = ContainerProvider.getWebSocketContainer();
+        Session session = container.connectToServer(WSClient.class, URI.create("wss://www.binary.com/websockets/v2"));
+        Thread.sleep(10000);
+    }
+}
+</pre>
+
+<pre data-language="perl">#!/usr/bin/perl
+
+use strict;
+use warnings;
+use v5.10;
+use Mojo::UserAgent;
+use Data::Dumper;
+
+my $ua = Mojo::UserAgent->new;
+$ua->websocket('wss://www.binary.com/websockets/v2' => sub {
+    my ($ua, $tx) = @_;
+    say 'WebSocket handshake failed!' and return unless $tx->is_websocket;
+
+    $tx->on(json => sub {
+        my ($tx, $data) = @_;
+        say "ticks update: " . Dumper(\$data);
+    });
+
+    $tx->send({json => {
+        ticks => 'R_100'
+    }});
+});
+Mojo::IOLoop->start unless Mojo::IOLoop->is_running;
+</pre>
+
+<pre data-language="php">TODO</pre>
+
+<pre data-language="ruby">gem install faye-websocket
+
+require 'faye/websocket'
+require 'eventmachine'
+require 'json'
+
+EM.run {
+    ws = Faye::WebSocket::Client.new('wss://www.binary.com/websockets/v2')
+
+    ws.on :open do |event|
+        p [:open]
+        ws.send(JSON.generate({ticks:'R_100'}))
+    end
+
+    ws.on :message do |event|
+        p [:message, event.data]
+    end
+}
+</pre>
+
+<pre data-language="python">import websocket
+import json
+
+def on_open(ws):
+    json_data = json.dumps({'ticks':'R_100'})
+    ws.send(json_data)
+
+def on_message(ws, message):
+    print('ticks update: %s' % message)
+
+if __name__ == "__main__":
+    ws = websocket.WebSocketApp("wss://www.binary.com/websockets/v2", on_message = on_message, on_open = on_open)
+    ws.run_forever()
+</pre>
+
+<pre data-language="swift">let ws = WebSocket("wss://ws.binary.com/websockets/v2")
+
+ws.event.open = {
+    ws.send("{\"ticks\":\"R_100\"}")
+}
+
+ws.event.message = {
+    var obj: AnyObject? = NSJSONSerialization.JSONObjectWithData(
+        source.dataUsingEncoding(NSUTF8StringEncoding)!,
+        options: nil,
+        error: &err
+    )
+    print(obj)
+}
+</pre>
+
+</div>
