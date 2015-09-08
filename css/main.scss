@@ -139,8 +139,11 @@ pre .key { color: #f92672; }
 pre .string { color: #E6DB74; }
 pre .number { color: #AE81FF; }
 
-#language-demos pre {
-    display: none;
+#language-demos {
+    max-width: 720px;
+    pre {
+        display: none;
+    }
 }
 
 #mobile-page-selector {
