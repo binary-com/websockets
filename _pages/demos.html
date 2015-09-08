@@ -15,7 +15,7 @@ permalink: demos/
         <option value="php" hidden>PHP</option>
         <option value="ruby">Ruby</options>
         <option value="python">Python</option>
-        <option value="swift" hidden>Swift</option>
+        <option value="swift">Swift</option>
     </select>
 </fieldset>
 
@@ -190,6 +190,20 @@ if __name__ == "__main__":
     ws.run_forever()
 </pre>
 
-<pre data-language="swift">TODO</pre>
+<pre data-language="swift">let ws = WebSocket("wss://ws.binary.com/websockets/v2")
+
+ws.event.open = {
+    ws.send("{\"ticks\":\"R_100\"}")
+}
+
+ws.event.message = {
+    var obj: AnyObject? = NSJSONSerialization.JSONObjectWithData(
+        source.dataUsingEncoding(NSUTF8StringEncoding)!,
+        options: nil,
+        error: &err
+    )
+    print(obj)
+}
+</pre>
 
 </div>
