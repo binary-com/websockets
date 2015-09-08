@@ -75,147 +75,97 @@ ws.onmessage = (msg) ->
 <pre data-language="go">package main
 
 import (
-	"fmt"
-	"regexp"
-	"strconv"
-	"time"
+    "fmt"
+    "regexp"
+    "strconv"
+    "time"
 
-	"golang.org/x/net/websocket"
+    "golang.org/x/net/websocket"
 )
 
 type Tick struct {
-	epoch int64
-	quote float64
+    epoch int64
+    quote float64
 }
 
 var ticks []Tick
 
 func print_ticks(msg string) {
-	epoch, _ := strconv.ParseInt(regexp.MustCompile("\"epoch\":(\\d+)").FindAllStringSubmatch(msg, 1)[0][1], 10, 64)
-	quote, _ := strconv.ParseFloat(regexp.MustCompile("\"quote\":\"(\\d+\\.?\\d*)").FindAllStringSubmatch(msg, 1)[0][1], 64)
-	fmt.Printf("Current value is: %f\n", quote)
+    epoch, _ := strconv.ParseInt(regexp.MustCompile("\"epoch\":(\\d+)").FindAllStringSubmatch(msg, 1)[0][1], 10, 64)
+    quote, _ := strconv.ParseFloat(regexp.MustCompile("\"quote\":\"(\\d+\\.?\\d*)").FindAllStringSubmatch(msg, 1)[0][1], 64)
+    fmt.Printf("Current value is: %f\n", quote)
 
-	ticks = append(ticks, Tick{
-		epoch: epoch,
-		quote: quote,
-	})
-	if ticks[0].epoch <= time.Now().Unix()-60 {
-		fmt.Printf("One minute old value is: %f\n", ticks[0].quote)
-		ticks = ticks[1:]
-	}
+    ticks = append(ticks, Tick{
+        epoch: epoch,
+        quote: quote,
+    })
+    if ticks[0].epoch <= time.Now().Unix()-60 {
+        fmt.Printf("One minute old value is: %f\n", ticks[0].quote)
+        ticks = ticks[1:]
+    }
 }
 
 func main() {
-	ws, _ := websocket.Dial("wss://ws.binary.com/websockets/v2", "", "http://localhost/")
-	ws.Write([]byte("{\"ticks\": \"R_50\"}"))
+    ws, _ := websocket.Dial("wss://ws.binary.com/websockets/v2", "", "http://localhost/")
+    ws.Write([]byte("{\"ticks\": \"R_50\"}"))
 
-	var msg = make([]byte, 512)
-	for {
-		ws.Read(msg)
-		print_ticks(string(msg))
-	}
+    var msg = make([]byte, 512)
+    for {
+        ws.Read(msg)
+        print_ticks(string(msg))
+    }
 }
 </pre>
 
-<pre data-language="java">package com.binary;
+<pre data-language="java">import java.net.URI;
+import javax.websocket.*;
 
-import java.net.URI;
+@ClientEndpoint
+public class WSClient  {
 
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
+    @OnOpen
+    public void onOpen(Session session) throws java.io.IOException
+    {
+        session.getBasicRemote().sendText("{\"ticks\": \"R_100\"}");
+    }
 
-import org.java_websocket.client.DefaultSSLWebSocketClientFactory;
-import org.java_websocket.client.WebSocketClient;
-import org.java_websocket.drafts.Draft;
-import org.java_websocket.handshake.ServerHandshake;
-import org.json.JSONObject;
+    @OnMessage
+    public void onMessage(String message)
+    {
+        System.out.println("ticks update: " + message);
+    }
 
-public class BinaryWebSocketClient extends WebSocketClient {
-
-	public BinaryWebSocketClient(URI serverUri, Draft draft) {
-		super(serverUri, draft);
-
-		// Create a trust manager that does not validate certificate chains
-        TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
-
-			@Override
-			public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-				return new java.security.cert.X509Certificate[]{};
-			}
-
-			@Override
-			public void checkServerTrusted(java.security.cert.X509Certificate[] arg0,
-					String arg1) throws java.security.cert.CertificateException {
-			}
-
-			@Override
-			public void checkClientTrusted(java.security.cert.X509Certificate[] arg0,
-					String arg1) throws java.security.cert.CertificateException {
-			}
-		}};
-
-        // Install the all-trusting trust manager
-        // We are ignoring SSL certificates
-        try {
-            SSLContext sc = SSLContext.getInstance("TLS");
-            sc.init(null, trustAllCerts, new java.security.SecureRandom());
-            setWebSocketFactory(new DefaultSSLWebSocketClientFactory(sc));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-	}
-
-	boolean isOpen = false;
-
-	@Override
-	public void onMessage(String message) {
-		JSONObject obj = new JSONObject(message);
-		String pong = obj.getString("ping");
-		System.out.println("server reponse to ping : " + pong);
-	}
-
-	@Override
-	public void onOpen(ServerHandshake handshake) {
-		isOpen = true;
-		System.out.println("opened connection");
-	}
-
-	@Override
-	public void onClose(int code, String reason, boolean remote) {
-		System.out.println("closed connection");
-	}
-
-	@Override
-	public void onError(Exception ex) {
-		ex.printStackTrace();
-	}
-
-}</pre>
+    public static void main(String[] args) throws java.io.IOException, javax.websocket.DeploymentException, java.lang.InterruptedException
+    {
+        WebSocketContainer container = ContainerProvider.getWebSocketContainer();
+        Session session = container.connectToServer(WSClient.class, URI.create("wss://www.binary.com/websockets/v2"));
+        Thread.sleep(10000);
+    }
+}
+</pre>
 
 <pre data-language="perl">TODO</pre>
 
 <pre data-language="php">TODO</pre>
 
-<pre data-language="ruby">gem install websocket-client-simple
+<pre data-language="ruby">gem install faye-websocket
 
-require 'rubygems'
-require 'websocket-client-simple'
+require 'faye/websocket'
+require 'eventmachine'
+require 'json'
 
-ws = WebSocket::Client::Simple.connect 'wss://www.binary.com/websockets/v2'
+EM.run {
+    ws = Faye::WebSocket::Client.new('wss://www.binary.com/websockets/v2')
 
-ws.on :message do |msg|
-  puts msg.data
-end
+    ws.on :open do |event|
+        p [:open]
+        ws.send(JSON.generate({ticks:'R_100'}))
+    end
 
-ws.on :open do
-  ws.send '{ticks:\'R_100\'}'
-end
-
-loop do
-  ws.send STDIN.gets.strip
-end
+    ws.on :message do |event|
+        p [:message, event.data]
+    end
+}
 </pre>
 
 <pre data-language="python">import websocket
