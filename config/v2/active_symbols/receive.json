@@ -66,6 +66,10 @@
             "type": "string",
             "description": "Market name"
           },
+          "market_display_name": {
+            "type": "string",
+            "description": "Translated market name"
+          },
           "pip": {
             "type": "number",
             "description": "pip size"
