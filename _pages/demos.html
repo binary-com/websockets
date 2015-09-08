@@ -10,7 +10,7 @@ permalink: demos/
         <option value="coffeescript">CoffeeScript</option>
         <option value="csharp">C#</option>
         <option value="go">Go</option>
-        <option value="perl" hidden>Perl</option>
+        <option value="perl">Perl</option>
         <option value="java">Java</option>
         <option value="php" hidden>PHP</option>
         <option value="ruby">Ruby</options>
@@ -128,7 +128,30 @@ public class WSClient  {
 }
 </pre>
 
-<pre data-language="perl">TODO</pre>
+<pre data-language="perl">#!/usr/bin/perl
+
+use strict;
+use warnings;
+use v5.10;
+use Mojo::UserAgent;
+use Data::Dumper;
+
+my $ua = Mojo::UserAgent->new;
+$ua->websocket('wss://www.binary.com/websockets/v2' => sub {
+    my ($ua, $tx) = @_;
+    say 'WebSocket handshake failed!' and return unless $tx->is_websocket;
+
+    $tx->on(json => sub {
+        my ($tx, $data) = @_;
+        say "ticks update: " . Dumper(\$data);
+    });
+
+    $tx->send({json => {
+        ticks => 'R_100'
+    }});
+});
+Mojo::IOLoop->start unless Mojo::IOLoop->is_running;
+</pre>
 
 <pre data-language="php">TODO</pre>
 
