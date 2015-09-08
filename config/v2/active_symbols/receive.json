@@ -27,7 +27,7 @@
             "description": "Symbol type"
           },
           "exchange_is_open": {
-            "type": "integer",
+            "type": ["integer", "null"],
             "description": "1 or 0"
           },
           "exchange_name": {
