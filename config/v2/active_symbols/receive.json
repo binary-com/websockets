@@ -62,6 +62,10 @@
             "type": "string",
             "description": "Spot age"
           },
+          "market_name": {
+            "type": "string",
+            "description": "Market name"
+          },
           "pip": {
             "type": "number",
             "description": "pip size"
