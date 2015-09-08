@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  "Demos"
+title:  "Code Samples"
 permalink: demos/
 ---
 
@@ -18,6 +18,9 @@ permalink: demos/
         <option value="swift" hidden>Swift</option>
     </select>
 </fieldset>
+
+<p>Here is a code snippet that opens a websocket, and requests a stream of updates for the symbol "R_100".
+On receipt of each message, it outputs a message.</p>
 
 <div id="language-demos">
 
@@ -76,43 +79,24 @@ ws.onmessage = (msg) ->
 
 import (
     "fmt"
-    "regexp"
-    "strconv"
-    "time"
 
     "golang.org/x/net/websocket"
 )
 
-type Tick struct {
-    epoch int64
-    quote float64
-}
-
-var ticks []Tick
-
-func print_ticks(msg string) {
-    epoch, _ := strconv.ParseInt(regexp.MustCompile("\"epoch\":(\\d+)").FindAllStringSubmatch(msg, 1)[0][1], 10, 64)
-    quote, _ := strconv.ParseFloat(regexp.MustCompile("\"quote\":\"(\\d+\\.?\\d*)").FindAllStringSubmatch(msg, 1)[0][1], 64)
-    fmt.Printf("Current value is: %f\n", quote)
-
-    ticks = append(ticks, Tick{
-        epoch: epoch,
-        quote: quote,
-    })
-    if ticks[0].epoch <= time.Now().Unix()-60 {
-        fmt.Printf("One minute old value is: %f\n", ticks[0].quote)
-        ticks = ticks[1:]
-    }
-}
+var origin = "http://localhost/"
+var url = "wss://ws.binary.com/websockets/v2?l=EN"
 
 func main() {
-    ws, _ := websocket.Dial("wss://ws.binary.com/websockets/v2", "", "http://localhost/")
-    ws.Write([]byte("{\"ticks\": \"R_50\"}"))
+    ws, _ := websocket.Dial(url, "", origin)
 
-    var msg = make([]byte, 512)
+    message := []byte("{\"ticks\": \"R_100\"}")
+    ws.Write(message)
+    fmt.Printf("Send: %s\n", message)
+
+    var msg = make([]byte, 512000)
     for {
         ws.Read(msg)
-        print_ticks(string(msg))
+        fmt.Printf("Receive: %s\n", msg)
     }
 }
 </pre>
