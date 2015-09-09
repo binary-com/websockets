@@ -159,14 +159,17 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
         sendToApi(resJson, function(reqJson) {
             var $progress = $('.progress'),
-                prettyJson = getFormattedJsonStr(reqJson);
+                prettyJson = getFormattedJsonStr(reqJson),
+                authorizationError = !!(reqJson.error && reqJson.error.code == "AuthorizationRequired");
+
+            console.log(authorizationError, reqJson.error, reqJson.error && reqJson.error.code);
 
             if ($progress.length > 0) {
                 $progress.replaceWith(prettyJson);
             } else {
                 appendAndScrollIntoView($node, prettyJson);
             }
-            $('#unauthorized-error').toggle(reqJson.error && reqJson.error.code == "AuthorizationRequired");
+            $('#unauthorized-error').toggle(authorizationError);
         }, $('#api-token').val());
     }
 
