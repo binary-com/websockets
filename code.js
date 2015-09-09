@@ -254,9 +254,21 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     $(window).on('hashchange', updateApiDisplayed);
 
-    localStorage.setItem('myCat', 'Tom');
-
     showDemoForLanguage('javascript');
     updateApiDisplayed();
     $('#api-token').val(sessionStorage.getItem('token'));
+
+    $('#send-auth-manually-btn').on('click', function() {
+        var token = sessionStorage.getItem('token');
+            authReqStr = JSON.stringify({
+                authorize: token || ''
+            }, null, 2);
+
+        $('#playground-request').val(authReqStr);
+        if (token) {
+            $('#playground-send-btn').click();
+        } else {
+            $('#playground-request').focus();
+        }
+    });
 });
