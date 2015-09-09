@@ -83,7 +83,7 @@ pre.req {
 }
 pre, code, textarea, .docson .json-keyword {
     font-family: 'Source Code Pro', monospace;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 pre p, code {
@@ -105,7 +105,7 @@ pre p, code {
 }
 
 #playground-api-ref {
-    font-size: 12px;
+    font-size: 13px;
     margin-bottom: 1rem;
 }
 
@@ -156,6 +156,10 @@ pre .number { color: #AE81FF; }
     #mobile-page-selector {
         display: block;
     }
+}
+
+#unauthorized-error {
+    display: none;
 }
 
 @import "monokai.css";

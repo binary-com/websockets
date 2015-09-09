@@ -166,6 +166,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             } else {
                 appendAndScrollIntoView($node, prettyJson);
             }
+            $('#unauthorized-error').toggle(reqJson.error && reqJson.error.code == "AuthorizationRequired");
         }, $('#api-token').val());
     }
 
