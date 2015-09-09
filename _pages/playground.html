@@ -6,25 +6,31 @@ permalink: playground/
 <div id="playground-page">
     <h5>The easiest way to try out and play with our API</h5>
 
-    <fieldset>
-        {% include api-selector.html %}
-    </fieldset>
-
     <div id="playground-api-ref" class="row">
-        <div id="playground-req-schema"></div>
-        <div id="playground-res-schema"></div>
-    </div>
+        <div>
+            <fieldset>
+                {% include api-selector.html %}
+            </fieldset>
 
-    <fieldset>
-        <label for="playground-request">Request</label>
-        <br/>
-        <textarea id="playground-request"></textarea>
-    </fieldset>
-    <fieldset>
-        <button id="playground-send-btn">Send Request</button>
-        <button id="playground-reset-btn">Reset</button>
-    </fieldset>
+            <div id="playground-req-schema"></div>
+            <p>
+            <div id="playground-res-schema"></div>
 
-    <p id="unauthorized-error" class="errorfield">You are not authenticated. Send an authorize request first <button id="send-auth-manually-btn">Send Auth Request</button></p>
-    <p id="playground-console"></p>
+            <fieldset>
+                <label for="playground-request">Request</label>
+                <br/>
+                <textarea id="playground-request"></textarea>
+            </fieldset>
+            <fieldset>
+                <button id="playground-send-btn">Send Request</button>
+                <button id="playground-reset-btn">Reset</button>
+            </fieldset>
+        </div>
+        <div>
+            <div id="unauthorized-error" >
+                <p class="errorfield">You are not authenticated.</p>
+                <p><button id="send-auth-manually-btn">Send Auth Request</button></p>
+            </div>
+            <p id="playground-console"></p>
+        </div>
 </div>

@@ -6,6 +6,10 @@
     padding: 5rem .5rem 2rem .5rem;
 }
 
+.header-content, #content {
+    max-width: 1200px;
+}
+
 .page-wrapper {
     display: flex;
 }
@@ -102,11 +106,6 @@ pre p, code {
 #playground-request,
 #demo-language {
     width: 100%;
-}
-
-#playground-api-ref {
-    font-size: 13px;
-    margin-bottom: 1rem;
 }
 
 #api-call-selector,
