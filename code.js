@@ -124,7 +124,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     function loadAndEditJson($node, jsonUrl) {
         $.get(jsonUrl, function(exampleJson) {
-            $node.text(JSON.stringify(exampleJson, null, 2));
+            $node.val(JSON.stringify(exampleJson, null, 2));
         });
     }
 
@@ -162,8 +162,6 @@ require(["docson/docson", "lib/jquery"], function(docson) {
                 prettyJson = getFormattedJsonStr(reqJson),
                 authorizationError = !!(reqJson.error && reqJson.error.code == "AuthorizationRequired");
 
-            console.log(authorizationError, reqJson.error, reqJson.error && reqJson.error.code);
-
             if ($progress.length > 0) {
                 $progress.replaceWith(prettyJson);
             } else {
@@ -194,9 +192,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         if ($('#playground-example').length) {
             loadAndFormatJson($('#playground-example'), exampleJsonUrl);
         }
-        if ($('#playground-request').length) {
-            loadAndEditJson($('#playground-request'), exampleJsonUrl);
-        }
+        loadAndEditJson($('#playground-request'), exampleJsonUrl);
         if ($('#api-example-response')) {
             issueRequestAndDisplayResult($('#api-example-response'), exampleJsonUrl);
         }
