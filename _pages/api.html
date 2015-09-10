@@ -6,20 +6,20 @@ permalink: api/
     <div id="playground" class="row">
         <div>
             {% include api-selector.html %}
-            {% include token-input.html %}
 
             <div id="playground-req-schema"></div>
             <p>
             <div id="playground-res-schema"></div>
         </div>
         <div>
+            {% include token-input.html %}
             <fieldset>
                 <textarea id="playground-request" placeholder="Request JSON"></textarea>
             </fieldset>
-            <fieldset>
+            <p id="playground-reset-buttons">
                 <button id="playground-send-btn">Send Request</button>
                 <button id="playground-reset-btn">Reset Connection</button>
-            </fieldset>
+            </p>
             <div id="unauthorized-error" >
                 <p class="errorfield">You are not authenticated.</p>
             </div>

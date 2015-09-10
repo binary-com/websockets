@@ -2,7 +2,7 @@ require.config({ baseUrl: '/' });
 
 require(["docson/docson", "lib/jquery"], function(docson) {
 
-    var ws;
+    var ws = new WebSocket('wss://www.binary.com/websockets/v2');
 
     docson.templateBaseUrl = '/docson';
 
@@ -18,13 +18,6 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         if (!ws) return;
         ws.close();
         ws = new WebSocket('wss://www.binary.com/websockets/v2');
-    }
-
-    function formatJs(js, $node) {
-        Rainbow.color(js, 'javascript', function (highlightedJs) {
-            $node.html('<pre><p data-language="javascript">' +
-                highlightedJs + '</pre>');
-        });
     }
 
     function jsonToPretty(json, offset) {
@@ -82,8 +75,6 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     function sendToApi(json, callback, apiToken) {
         var tokenProvided = apiToken && apiToken.trim().length > 0;
-
-        ws = new WebSocket('wss://www.binary.com/websockets/v2');
 
         ws.onopen = function(evt) {
             var authorizeReq = '{"authorize":"' + apiToken + '"}';
@@ -174,10 +165,6 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     $('[data-schema]').each(function() {
         var $this = $(this);
         loadAndDisplaySchema($this, $this.attr('data-schema'));
-    });
-
-    $('#api-page #api-call-selector, #api-page #api-version-selector').on('change', function() {
-        resetWebsocket();
     });
 
     $('#api-call-selector, #api-version-selector').on('change', function() {

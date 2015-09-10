@@ -114,6 +114,10 @@ pre p, code {
     width: 100%;
 }
 
+#playground-request {
+    height: 8rem;
+}
+
 #api-call-selector,
 #api-version-selector {
     width: 100%;
@@ -130,6 +134,11 @@ pre p, code {
 
 #playground-console pre:last-child {
     margin-bottom: 0;
+}
+
+#playground-reset-buttons {
+    display: flex;
+    justify-content: space-between;
 }
 
 .progress {
