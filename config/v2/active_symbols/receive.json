@@ -62,13 +62,21 @@
             "type": "string",
             "description": "Spot age"
           },
-          "market_name": {
+          "market": {
             "type": "string",
             "description": "Market name"
           },
           "market_display_name": {
             "type": "string",
             "description": "Translated market name"
+          },
+          "submarket": {
+            "type": "string",
+            "description": "Submarket name"
+          },
+          "submarket_display_name": {
+            "type": "string",
+            "description": "Translated submarket name"
           },
           "pip": {
             "type": "number",

@@ -23,7 +23,7 @@
                 "type":"object",
                 "properties":{
               	  "source":{
-              		  "type":"string",
+                   "type":["string", "null"],
               		  "description":"It is the default source of transaction Example: default"
               	  },
               	  "balance_after":{
