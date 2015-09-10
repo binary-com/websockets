@@ -124,9 +124,6 @@ pre p, code {
 }
 
 #playground-console {
-    background-color: #e0e0e0;
-    border-radius: 2px;
-    padding: 1rem;
     overflow: auto;
     height: 70vh;
 }
@@ -144,12 +141,10 @@ pre .key { color: #f92672; }
 pre .string { color: #E6DB74; }
 pre .number { color: #AE81FF; }
 
-#language-demos {
-    max-width: 720px;
-    pre {
-        display: none;
-    }
+#language-demos pre {
+    display: none;
 }
+
 
 #mobile-page-selector {
     width: 100%;
