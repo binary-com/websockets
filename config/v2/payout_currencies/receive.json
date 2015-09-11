@@ -9,6 +9,8 @@
     },
     "payout_currencies": {
       "type": "array",
+      "title":"Payout currencies",
+      "description":"Available payout currencies. Note: if a user is logged in, only the currency available for his account will be returned.",
       "items": {
         "type": "string",
         "description": "Available payout currency (example: USD)"
