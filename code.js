@@ -2,9 +2,31 @@ require.config({ baseUrl: '/' });
 
 require(["docson/docson", "lib/jquery"], function(docson) {
 
-    var ws = new WebSocket('wss://www.binary.com/websockets/v2');
+    var ws,
+        $console = $('#playground-console');
 
     docson.templateBaseUrl = '/docson';
+
+
+    function initConnection() {
+        ws = new WebSocket('wss://www.binary.com/websockets/v2');
+
+        ws.onmessage = incomingMessageHandler;
+    }
+
+    function sendToApi(jsonStr) {
+        ws.send(JSON.stringify(jsonStr));
+    }
+
+    function incomingMessageHandler(msg) {
+        var json = JSON.parse(msg.data),
+            authorizationError = !!(json.error && json.error.code == "AuthorizationRequired");
+            prettyJson = getFormattedJsonStr(json);
+       console.log(json); // intended to help developers, not for debugging, do not remove
+       $('.progress').remove();
+       appendAndScrollIntoView($console, prettyJson);
+       $('#unauthorized-error').toggle(authorizationError);
+    };
 
     function getCurrentApi() {
         var apiPageStrIdx = window.location.href.indexOf('/#');
@@ -17,7 +39,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     function resetWebsocket() {
         if (!ws) return;
         ws.close();
-        ws = new WebSocket('wss://www.binary.com/websockets/v2');
+        initConnection();
     }
 
     function jsonToPretty(json, offset) {
@@ -73,28 +95,10 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         return '<pre>' + jsonToPretty(json) + '</pre>';
     }
 
-    function sendToApi(json, callback, apiToken) {
-        var tokenProvided = apiToken && apiToken.trim().length > 0;
-
-        ws.onopen = function(evt) {
-            var authorizeReq = '{"authorize":"' + apiToken + '"}';
-            if (tokenProvided) ws.send(authorizeReq);
-            ws.send(JSON.stringify(json));
-        };
-
-        ws.onmessage = function(msg) {
-           var json = JSON.parse(msg.data);
-           console.log(json); // intended to help developers, not for debugging, do not remove
-           callback(json);
-        };
-    }
-
     function issueRequestAndDisplayResult($node, requestUrl) {
         $node.html('<div class="progress"></div>');
         $.get(requestUrl, function(requestJson) {
-            sendToApi(requestJson, function(json) {
-                $node.html(getFormattedJsonStr(json));
-            }, $('#api-token').val());
+            ws.send(JSON.stringify(requestJson));
         });
     }
 
@@ -134,32 +138,17 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     }
 
     function updatePlaygroundWithRequestAndResponse() {
-        var $node = $('#playground-console'),
-            resJson;
 
         try {
-            resJson = JSON.parse($('#playground-request').val());
+            var json = JSON.parse($('#playground-request').val());
         } catch(err) {
             alert('Invalid JSON!');
             return;
         }
 
-        appendAndScrollIntoView($node, '<pre class="req">' + jsonToPretty(resJson) + '</pre>');
-
-        appendAndScrollIntoView($node, '<div class="progress"></div>');
-
-        sendToApi(resJson, function(reqJson) {
-            var $progress = $('.progress'),
-                prettyJson = getFormattedJsonStr(reqJson),
-                authorizationError = !!(reqJson.error && reqJson.error.code == "AuthorizationRequired");
-
-            if ($progress.length > 0) {
-                $progress.replaceWith(prettyJson);
-            } else {
-                appendAndScrollIntoView($node, prettyJson);
-            }
-            $('#unauthorized-error').toggle(authorizationError);
-        }, $('#api-token').val());
+        appendAndScrollIntoView($console, '<pre class="req">' + jsonToPretty(json) + '</pre>');
+        appendAndScrollIntoView($console, '<div class="progress"></div>');
+        sendToApi(json);
     }
 
     $('[data-schema]').each(function() {
@@ -176,24 +165,8 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             exampleJsonUrl = urlPath + 'example.json';
         loadAndDisplaySchema($('#playground-req-schema'), requestSchemaUrl);
         loadAndDisplaySchema($('#playground-res-schema'), responseSchemaUrl);
-        if ($('#playground-example').length) {
-            loadAndFormatJson($('#playground-example'), exampleJsonUrl);
-        }
         loadAndEditJson($('#playground-request'), exampleJsonUrl);
-        if ($('#api-example-response')) {
-            issueRequestAndDisplayResult($('#api-example-response'), exampleJsonUrl);
-        }
     });
-
-    // $('[data-example]').each(function() {
-    //     var $this = $(this);
-    //     loadAndDisplayJson($this, $this.attr('data-example'))
-    // });
-    // 
-    // $('[data-response]').each(function() {
-    //     var $this = $(this);
-    //     issueRequestAndDisplayResult($this, $this.attr('data-response'));
-    // });
 
     $('#playground-send-btn').on('click', function() {
         updatePlaygroundWithRequestAndResponse();
@@ -239,12 +212,6 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         }
     }
 
-    $(window).on('hashchange', updateApiDisplayed);
-
-    showDemoForLanguage('javascript');
-    updateApiDisplayed();
-    $('#api-token').val(sessionStorage.getItem('token'));
-
     $('#send-auth-manually-btn').on('click', function() {
         var token = sessionStorage.getItem('token');
             authReqStr = JSON.stringify({
@@ -258,4 +225,10 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             $('#playground-request').focus();
         }
     });
+
+    $(window).on('hashchange', updateApiDisplayed);
+    initConnection();
+    showDemoForLanguage('javascript');
+    updateApiDisplayed();
+    $('#api-token').val(sessionStorage.getItem('token'));
 });
