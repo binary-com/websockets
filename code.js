@@ -185,15 +185,15 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         }
     });
 
-    $('[data-example]').each(function() {
-        var $this = $(this);
-        loadAndDisplayJson($this, $this.attr('data-example'))
-    });
-
-    $('[data-response]').each(function() {
-        var $this = $(this);
-        issueRequestAndDisplayResult($this, $this.attr('data-response'));
-    });
+    // $('[data-example]').each(function() {
+    //     var $this = $(this);
+    //     loadAndDisplayJson($this, $this.attr('data-example'))
+    // });
+    // 
+    // $('[data-response]').each(function() {
+    //     var $this = $(this);
+    //     issueRequestAndDisplayResult($this, $this.attr('data-response'));
+    // });
 
     $('#playground-send-btn').on('click', function() {
         updatePlaygroundWithRequestAndResponse();
