@@ -11,6 +11,8 @@
     },
     "active_symbols": {
       "type":"array",
+      "title": "Active symbols",
+      "description": "List of active symbols. Note: if the user is authenticated, then only symbols allowed under his account will be returned.",
       "items":{
         "type":"object",
         "properties":{

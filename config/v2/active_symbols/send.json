@@ -6,9 +6,8 @@
   "properties": {
     "active_symbols": {
       "type": "string",
-      "description": "Value must be 'brief' or 'full'.",
-      "sample": "brief"
-
+      "description": "Value must be 'brief' or 'full'. If you use 'brief', only a subset of fields will be returned.",
+      "sample": "full"
     }
   },
   "required": [
