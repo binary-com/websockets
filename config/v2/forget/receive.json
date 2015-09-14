@@ -9,7 +9,9 @@
     },
     "forget": {
     	"type": "integer",
-    	"description": "Id of the stream to cancel"
+    	"description": "If 1 stream existed and stop. If 0 stream did not exist.",
+    	"pattern": "^(1|0)$"
+    		
     },
     "msg_type": {
         "type": "string",

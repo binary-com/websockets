@@ -4,8 +4,9 @@
   "title": "Ping Send",
   "properties": {
 	  "ping": {
-		  "type": "integer",
+		  "type": "string",
 		  "sample": "1",
+		  "pattern": "^1$",
 		  "description": "Must be 1"
 	  }
   },
