@@ -166,6 +166,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         loadAndDisplaySchema($('#playground-req-schema'), requestSchemaUrl);
         loadAndDisplaySchema($('#playground-res-schema'), responseSchemaUrl);
         loadAndEditJson($('#playground-request'), exampleJsonUrl);
+        window.location.hash = apiStr;
     });
 
     $('#playground-send-btn').on('click', function() {
