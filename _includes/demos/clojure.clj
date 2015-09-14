@@ -7,7 +7,7 @@
    (ws/connect
     "wss://www.binary.com/websockets/v2"
     :on-receive #(prn 'received %)))
-  (ws/send-msg socket "{ \"ticks\": \"R_50\"}")
+  (ws/send-msg socket "{ \"ticks\": \"R_100\"}")
   (Thread/sleep 5000)
   (ws/close socket)
 )
