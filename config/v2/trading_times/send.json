@@ -6,7 +6,7 @@
   "properties": {
     "trading_times": {
       "type":"string",
-      "description": "Trading date in yyyy-mm-dd format.",
+      "description": "Trading date in yyyy-mm-dd format (or use 'today' for trading times for today's date).",
       "sample":"2015-09-14"
     }
   },
