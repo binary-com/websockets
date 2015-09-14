@@ -24,7 +24,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             prettyJson = getFormattedJsonStr(json);
        console.log(json); // intended to help developers, not for debugging, do not remove
        $('.progress').remove();
-       appendAndScrollIntoView($console, prettyJson);
+       appendToConsoleAndScrollIntoView(prettyJson);
        $('#unauthorized-error').toggle(authorizationError);
     };
 
@@ -123,17 +123,20 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         });
     }
 
-    function appendAndScrollIntoView($node, html) {
+    function scrollConsoleToBottom() {
+        $console.stop(true, true);
+        $console.animate({ scrollTop: $console[0].scrollHeight }, 500);
+    }
 
-        var shouldScroll = Math.abs($node[0].scrollHeight - $node.scrollTop() - $node.outerHeight()) < 100;
+    function appendToConsoleAndScrollIntoView(html) {
 
-        $node.append(html)[0];
+        var shouldScroll = Math.abs($console[0].scrollHeight - $console.scrollTop() - $console.outerHeight()) < 100;
+
+        $console.append(html)[0];
 
         if (shouldScroll) {
-            $node.animate({ scrollTop: $node[0].scrollHeight }, 500);
-            setTimeout(function() {
-                $node.animate({ scrollTop: $node[0].scrollHeight }, 500);
-            }, 1000);
+            scrollConsoleToBottom($console);
+            setTimeout(scrollConsoleToBottom, 1000);
         }
     }
 
@@ -146,8 +149,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             return;
         }
 
-        appendAndScrollIntoView($console, '<pre class="req">' + jsonToPretty(json) + '</pre>');
-        appendAndScrollIntoView($console, '<div class="progress"></div>');
+        appendToConsoleAndScrollIntoView('<pre class="req">' + jsonToPretty(json) + '</pre>' + '<div class="progress"></div>');
         sendToApi(json);
     }
 
