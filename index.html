@@ -3,9 +3,22 @@ layout: page
 ---
 
 <p>The Binary.com Websockets API uses the state-of-the-art <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSockets</a> protocol to allow fast, two-way messaging between client programs and Binary.com trading services.</p>
-<p>If you are not sure how to use them here is <a href="/websockets">a quick intro to websockets with Binary's API</a></p>
 
-<p><a href="/api">Binary API Playground - try our API</a></p>
+<p>To open a connection to Binary.com WebSocket service (in Javascript), do:</p>
+
+<pre data-language="javascript">var ws = new WebSocket('wss://www.binary.com/websockets/v2');</pre>
+
+<p>For other languages, <a href="/demos">View code samples</a></p>
+
+<p>You can now send data up and down the websocket using any of the messages described in this Reference.</p>
+
+Note: to receive responses where English text has been translated to another language, append the language code to the connection URL as follows:
+
+<pre data-language="javascript">var ws = new WebSocket('wss://www.binary.com/websockets/v2?l=RU');</pre>
+
+<p>All movement of data in both directions is done with structured JSON-encoded data. All field name identifiers, and most field values, will be double-quoted in the encoded data. The same applies to receiving messages: each message is a serialized JSON-encoded string.</p>
+
+<p>Explore the API using the <a href="/api">Binary API Playground</a></p>
 
 <p>Having problems? Ask our friendly developers:
     <a href="https://gitter.im/binary-com/websockets">
