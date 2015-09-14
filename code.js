@@ -3,6 +3,7 @@ require.config({ baseUrl: '/' });
 require(["docson/docson", "lib/jquery"], function(docson) {
 
     var ws,
+        manuallySentReq
         $console = $('#playground-console');
 
     docson.templateBaseUrl = '/docson';
@@ -124,20 +125,29 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     }
 
     function scrollConsoleToBottom() {
-        $console.stop(true, true);
+        $console.stop(false, true);
         $console.animate({ scrollTop: $console[0].scrollHeight }, 500);
     }
 
+    function consoleShouldScroll() {
+        return Math.abs($console[0].scrollHeight - $console.scrollTop() - $console.outerHeight()) > 10;
+    }
+
     function appendToConsoleAndScrollIntoView(html) {
+        $console.stop(false, true);
 
-        var shouldScroll = Math.abs($console[0].scrollHeight - $console.scrollTop() - $console.outerHeight()) < 100;
+        setTimeout(function() {
+            $console.append(html)[0];
 
-        $console.append(html)[0];
-
-        if (shouldScroll) {
-            scrollConsoleToBottom($console);
-            setTimeout(scrollConsoleToBottom, 1000);
-        }
+            if (consoleShouldScroll()) {
+                scrollConsoleToBottom();
+                setTimeout(function() {
+                    if (consoleShouldScroll()) {
+                        $console.animate({ scrollTop: $console[0].scrollHeight }, 500);
+                    }
+                }, 1500);
+            }
+        }, 0);
     }
 
     function updatePlaygroundWithRequestAndResponse() {
@@ -227,6 +237,13 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         } else {
             $('#playground-request').focus();
         }
+    });
+
+    $('#scroll-to-bottom-btn').on('click', scrollConsoleToBottom);
+
+    $console.on('scroll', function() {
+        var shouldShow = consoleShouldScroll() && !$console.is(':animated');
+        $('#scroll-to-bottom-btn').toggle(shouldShow);
     });
 
     $(window).on('hashchange', updateApiDisplayed);
