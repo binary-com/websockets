@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Cancel Incoming Streams Based on Type Send",
+  "description": "Immediately cancel the real-time streams of messages with type",
+  "properties": {
+    "forget_all": {
+      "type": "string",
+      "sample": "ticks",
+      "description": "cancel all streams based on type, example: ticks, proposal, portfolio, proposal_open_contract"
+    }
+  },
+  "required": [
+    "forget_all"
+  ]
+}
