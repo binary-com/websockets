@@ -45,6 +45,10 @@
             	  "amount":{
             		  "type":"number",
             		  "description":"It is the amount of transaction Example: -83.2300"
+            	  },
+            	  "who":{
+            		  "type":"string",
+            		  "description":"It is the user account Example: VRTC680768"
             	  }
                 }
               },
