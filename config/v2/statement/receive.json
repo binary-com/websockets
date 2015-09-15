@@ -22,14 +22,14 @@
               "items":{
                 "type":"object",
                 "properties":{
-              	  "source":{
-                   "type":["string", "null"],
-              		  "description":"It is the default source of transaction Example: default"
-              	  },
               	  "balance_after":{
             		  "type":"number",
             		  "description":"It is the remaining balance Example: 10150.1300"
             	  },
+                "transaction_id":{
+                  "type":"integer",
+                  "description":"It is the transaction id. in statement every contract (buy or sell) and every payment has a unique id. Example: 10867502908"
+                },
             	  "contract_id":{
             		  "type":"integer",
             		  "description":"It is the contract id Example: 4867502908"
@@ -49,10 +49,6 @@
             	  "who":{
             		  "type":"string",
             		  "description":"It is the user account Example: VRTC680768"
-            	  },
-            	  "id":{
-            		  "type":"integer",
-            		  "description":"It is the account id Example: 9586856528"
             	  }
                 }
               },
