@@ -1,10 +1,7 @@
 package main
 
-import (
-    "fmt"
-
-    "golang.org/x/net/websocket"
-)
+import "fmt"
+import "golang.org/x/net/websocket"
 
 var origin = "http://localhost/"
 var url = "wss://ws.binary.com/websockets/v2?l=EN"
