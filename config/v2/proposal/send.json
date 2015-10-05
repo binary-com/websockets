@@ -8,6 +8,69 @@
       "type": "integer",
       "description":"Must be 1",
       "sample": "1"
+    },
+    "amount_val": {
+      "type": "number",
+      "description":"Proposed payout or stake value",
+      "sample": "10.0"
+    },
+    "basis": {
+      "type": "string",
+      "description":"Indicate whether amount_val is 'payout' or 'stake'",
+      "sample": "payout"
+    },
+    "contract_type": {
+      "type": "string",
+      "description":"A valid contract-type",
+      "sample": "CALL"
+    },
+    "currency": {
+      "type": "string",
+      "description":"This can only be the account-holder's currency",
+      "sample": "USD"
+    },
+    "date_start": {
+      "type":  ["integer", "null"],
+      "description":"For forward-starting contracts, epoch value of the starting time of the contract.",
+      "sample": "1444010000"
+    },
+    "date_expiry": {
+      "type":  ["integer", "null"],
+      "description":"Epoch value of the expiry time of the contract. You must either specify date_expiry or duration.",
+      "sample": "1444010000"
+    },
+    "duration": {
+      "type": "string",
+      "description":"Duration quantity",
+      "sample": "900"
+    },
+    "duration_unit": {
+      "type": "string",
+      "description":"Duration unit is s (seconds), d (days), t (ticks)",
+      "sample": "s"
+    },
+    "symbol": {
+      "type": "string",
+      "description":"Symbol code",
+      "sample": "R_100"
+    },
+    "barrier": {
+      "type": ["number", "null"],
+      "description":"Barrier for the contract (or last digit prediction for digit contracts).",
+      "sample": "1000"
+    },
+    "barrier2": {
+      "type": ["number", "null"],
+      "description":"Low barrier for the contract (for contracts with two barriers)",
+      "sample": "900"
     }
-  }
+  },
+  "required": [
+    "proposal",
+    "amount_val",
+    "basis",
+    "contract_type",
+    "currency",
+    "symbol"
+  ]
 }
