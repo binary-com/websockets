@@ -38,11 +38,21 @@
       "sample": "M1",
       "pattern": "^\\w\\d*$",
       "description": "Provide for style: 'candles'. Candle time-dimension width setting: typically 'M1', 'M5', 'M10', 'M30', 'H1', 'H2', 'H4', 'H8', or 'D' (default: 'M1'). The granularity units are (M)inute, (H)our, (S)econd, and (D)ay. Currently for 'Day' granularity, only the term 'D' is allowed, signifying 1 Day.  For the other units, other numeric values are possible (within reason)."
+    },
+    "adjust_start_time": {
+      "type": "integer",
+      "sample": "1",
+      "pattern": "^1?$",
+      "description": "If market is closed at the end time, or license limit is before end time, then move interval backwards."
     },   
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    },
+    "instrumentCdAndTp": {
+      "type":"string"
     }
+
   },
   "additionalProperties": false,
   "required": [
