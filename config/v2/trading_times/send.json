@@ -9,6 +9,10 @@
       "description": "Trading date in yyyy-mm-dd format (or use 'today' for trading times for today's date).",
       "pattern": "^(\\d{4}-\\d{1,2}-\\d{1,2}|today)$",
       "sample":"2015-09-14"
+    },   
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
     }
   },
   "additionalProperties": false,

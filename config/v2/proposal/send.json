@@ -91,6 +91,10 @@
       "type": "number",
       "description":"[For spread contracts only] Stop loss amount",
       "sample": "15"
+    },   
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
     }
   },
   "additionalProperties": false,

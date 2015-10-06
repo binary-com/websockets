@@ -15,6 +15,10 @@
       "pattern": "^(1|0)?$",
       "description":"If set to 1, will spawn 'proposal_open_contract' streams for all outstanding contracts in the portfolio. This is useful to create a portfolio page with dynamically updating contract prices.",
       "sample": "0"
+    },   
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
     }
   },
   "additionalProperties": false,

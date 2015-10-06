@@ -10,11 +10,15 @@
       "pattern": "^\\w{32,128}$",
       "description": "The id received from the Portfolio call"
     },
-	"price": {
-	   "type": "number",
-	   "sample": "0",
-	   "description": "Minimum price at which to sell the contract, or '0' for 'sell at market'"
-  }
+  	"price": {
+  	   "type": "number",
+  	   "sample": "0",
+  	   "description": "Minimum price at which to sell the contract, or '0' for 'sell at market'"
+    },   
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    }
   },
   "additionalProperties": false,
   "required": [

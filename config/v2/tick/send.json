@@ -9,6 +9,10 @@
       "sample": "frxUSDJPY",
       "pattern": "^\\w{2,30}$",
       "description": "The short symbol name"
+    },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
     }
   },
   "additionalProperties": false,
