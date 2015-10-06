@@ -11,7 +11,7 @@ fn main() {
     let (mut sender, mut receiver) = response.begin().split();
     let req = Message::Text(String::from("{\"ticks\": \"R_100\"}"));
     sender.send_message(req).unwrap();
-    for message in receiver.incoming_messages::<Message>() {
+    for message in receiver.incoming_messages::&lt;Message&gt;() {
         match message {
             Ok(Message::Text(m))    => { println!("tick update: {:?}", m) },
             _                       => { break },
