@@ -7,12 +7,8 @@
     "statement": {
       "type": "integer",
       "sample": 1,
+      "pattern": "^1$",
       "description": "Must be 1."
-    },
-    "sort_by": {
-      "type": "string",
-      "sample": "id desc",
-      "description": "Name an output field to sort by, optionally followed by 'desc' for reverse sort order"
     },
     "description": {
       "type": "integer",
@@ -42,9 +38,11 @@
     "action_type": {
       "type": "string",
       "sample": "buy",
+      "pattern": "^(buy|sell|deposit|withdrawal)$",
       "description": "Optional filter for statement (deposit,withdrawal,buy,sell)"
     }
   },
+  "additionalProperties": false,
   "required": [
     "statement"
   ]

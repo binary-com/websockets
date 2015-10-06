@@ -7,14 +7,16 @@
     "proposal_open_contract": {
       "type": "integer",
       "description":"Must be 1",
+      "pattern": "^1$",
       "sample": "1"
     },
-    "fmd_id": {
+    "fmb_id": {
       "type": "integer",
       "description":"Open contract id received from a portfolio request",
       "sample": "1111111111"
     }
   },
+  "additionalProperties": false,
   "required": [
     "portfolio",
     "proposal_open_contract"

@@ -7,9 +7,11 @@
     "authorize": {
       "type": "string",
       "sample": "ABCDABCDABCDABCDABCDABCDABCDABCD",
+      "pattern": "^\\w{32,128}$",
       "description": "Authentication token. May be retrieved from www.binary.com/user/api_token"
     }
   },
+  "additionalProperties": false,
   "required": [
     "authorize"
   ]

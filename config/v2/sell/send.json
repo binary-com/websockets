@@ -7,6 +7,7 @@
     "sell": {
       "type": "string",
       "sample": "ID",
+      "pattern": "^\\w{32,128}$",
       "description": "The id received from the Portfolio call"
     },
 	"price": {
@@ -15,6 +16,7 @@
 	   "description": "Minimum price at which to sell the contract, or '0' for 'sell at market'"
   }
   },
+  "additionalProperties": false,
   "required": [
     "sell",
     "price"

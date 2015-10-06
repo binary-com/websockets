@@ -10,6 +10,7 @@
 		  "description": "Must be 1"
 	  }
   },
+  "additionalProperties": false,
   "required": [
     "ping"
   ]

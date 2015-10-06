@@ -7,34 +7,39 @@
     "ticks": {
       "type": "string",
       "sample": "R_100",
+      "pattern": "^\\w{2,30}$",
+
       "description": "Short symbol name"
     },
     "end": {
-      "type": "string",
+      "type": "integer",
       "sample": "1420070400",
       "description": "Epoch value representing the end-datetime of the ticks. If non-numeric value (e.g. \"latest\", the end-datetime will be the latest available timestamp."
     },
     "start": {
-      "type": "string",
+      "type": "integer",
       "sample": "1420070400",
       "description": "Epoch value representing the start-datetime of the ticks (default: 1 yr ago)"
     },
     "count": {
-      "type": "string",
+      "type": "integer",
       "sample": "100",
       "description": "An upper limit on ticks to receive (default: 500)"
     },
     "style": {
       "type": "string",
       "sample": "ticks",
+      "pattern": "^(candles|ticks)$",
       "description": "The tick-output style: must be one of 'ticks' or 'candles' (default: 'ticks')"
     },
     "granularity": {
       "type": "string",
       "sample": "M1",
+      "pattern": "^\\w\\d*$",
       "description": "Provide for style: 'candles'. Candle time-dimension width setting: typically 'M1', 'M5', 'M10', 'M30', 'H1', 'H2', 'H4', 'H8', or 'D' (default: 'M1'). The granularity units are (M)inute, (H)our, (S)econd, and (D)ay. Currently for 'Day' granularity, only the term 'D' is allowed, signifying 1 Day.  For the other units, other numeric values are possible (within reason)."
     }
   },
+  "additionalProperties": false,
   "required": [
     "ticks",
     "end"

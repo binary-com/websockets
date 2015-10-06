@@ -7,14 +7,17 @@
     "contracts_for": {
       "type": "string",
       "description": "It is the short symbol name",
+      "pattern": "^\\w{2,30}$",
       "sample": "R_100"
         },
     "region": {
       "type": "string",
       "description": "Set to 'japan' to retrieve contracts available under Japanese regulations, or 'other' otherwise.",
+      "pattern": "^(japan|other)$",
       "sample": "other"
         }
     },
+    "additionalProperties": false,
   "required": [
     "contracts_for"
   ]

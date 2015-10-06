@@ -7,9 +7,11 @@
     "ticks": {
       "type": "string",
       "sample": "frxUSDJPY",
+      "pattern": "^\\w{2,30}$",
       "description": "The short symbol name"
     }
   },
+  "additionalProperties": false,
   "required": [
     "ticks"
   ]

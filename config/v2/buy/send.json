@@ -7,6 +7,7 @@
     "buy": {
       "type": "string",
       "sample": "ID",
+      "pattern": "^\\w{32,128}$",
       "description": "The id received from a Price Proposal call"
     },
 
@@ -16,6 +17,7 @@
        "description": "Maximum price at which to purchase the contract, or '0' for 'buy at market'"
     }
   },
+  "additionalProperties": false,
   "required": [
     "buy",
     "price"

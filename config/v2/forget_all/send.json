@@ -7,9 +7,11 @@
     "forget_all": {
       "type": "string",
       "sample": "ticks",
+      "pattern": "^(ticks|proposal|portfolio|proposal_open_contract)$",
       "description": "Cancel all streams based on type (which should be 'ticks', 'proposal', 'portfolio', or 'proposal_open_contract')"
     }
   },
+  "additionalProperties": false,
   "required": [
     "forget_all"
   ]

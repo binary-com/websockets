@@ -7,9 +7,11 @@
     "payout_currencies": {
       "type": "integer",
       "sample": "1",
+      "pattern": "^1$",
       "description": "Must be 1"
     }
   },
+  "additionalProperties": false,
   "required": [
     "payout_currencies"
   ]
