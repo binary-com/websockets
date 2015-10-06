@@ -3,26 +3,30 @@
         <div class="col">
             <select id="api-call-selector">
                 <option selected disabled hidden>Select API Call</option>
-                <option value="ticks">Tick History</option>
-                <option value="active_symbols">Active Symbols</option>
-                <option value="contracts_for">Contracts For Symbol</option>
-                <option value="payout_currencies">Payout Currencies</option>
-                <option value="trading_times">Trading Times</option>
-                <option value="ping">Ping</option>
-                <option value="time">Server time</option>
-                <option value='-' disabled>─────────────────────────────</option>
-                <option value="tick">Tick Stream</option>
-                <option value="proposal">Price Proposal</option>
-                <option value="forget">Forget</option>
-                <option value="forget_all">Forget All</option>
-                <option value='-' disabled>─────────────────────────────</option>
-                <option value="authorize">Authorize</option>
-                <option value="balance">Balance</option>
-                <option value="statement">Statement</option>
-                <option value="portfolio">Portfolio</option>
-                <option value="proposal_open_contract">Price Proposal - Open Contract</option>
-                <option value="buy">Buy Contract</option>
-                <option value="sell">Sell Contract</option>
+                <optgroup label="Unauthenticated Calls">
+                    <option value="ticks">Tick History</option>
+                    <option value="active_symbols">Active Symbols</option>
+                    <option value="contracts_for">Contracts For Symbol</option>
+                    <option value="payout_currencies">Payout Currencies</option>
+                    <option value="trading_times">Trading Times</option>
+                    <option value="ping">Ping</option>
+                    <option value="time">Server time</option>
+                </optgroup>
+                <optgroup label="Streams">
+                    <option value="tick">Tick Stream</option>
+                    <option value="proposal">Price Proposal</option>
+                    <option value="forget">Forget</option>
+                    <option value="forget_all">Forget All</option>
+                </optgroup>
+                <optgroup label="Authenticated Calls">
+                    <option value="authorize">Authorize</option>
+                    <option value="balance">Balance</option>
+                    <option value="statement">Statement</option>
+                    <option value="portfolio">Portfolio</option>
+                    <option value="proposal_open_contract">Price Proposal - Open Contract</option>
+                    <option value="buy">Buy Contract</option>
+                    <option value="sell">Sell Contract</option>
+                </optgroup>
             </select>
         </div>
         <div class="col">
