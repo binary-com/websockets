@@ -48,13 +48,8 @@
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
-    "instrumentCdAndTp": {
-      "type":"string"
     }
-
   },
-  "additionalProperties": false,
   "required": [
     "ticks",
     "end"
