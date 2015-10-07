@@ -1,6 +1,6 @@
 {
     "proposal": 1,
-    "amount_val": "100",
+    "amount": "100",
     "basis": "payout",
     "contract_type": "CALL",
     "currency": "USD",
