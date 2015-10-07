@@ -2,7 +2,7 @@ require.config({ baseUrl: '/' });
 
 require(["docson/docson", "lib/jquery"], function(docson) {
 
-    var ws,
+    var api,
         manuallySentReq
         $console = $('#playground-console');
 
@@ -10,18 +10,13 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
 
     function initConnection() {
-        ws = new WebSocket('wss://www.binary.com/websockets/v2');
+        api = new LiveApi();
 
-        ws.onmessage = incomingMessageHandler;
+        api.events.on('*', incomingMessageHandler);
     }
 
-    function sendToApi(jsonStr) {
-        ws.send(JSON.stringify(jsonStr));
-    }
-
-    function incomingMessageHandler(msg) {
-        var json = JSON.parse(msg.data),
-            authorizationError = !!(json.error && json.error.code == "AuthorizationRequired");
+    function incomingMessageHandler(json) {
+        var authorizationError = !!(json.error && json.error.code == "AuthorizationRequired");
             prettyJson = getFormattedJsonStr(json);
        console.log(json); // intended to help developers, not for debugging, do not remove
        $('.progress').remove();
@@ -36,13 +31,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
         return window.location.href.substr(apiPageStrIdx + 2);
     }
-
-    function resetWebsocket() {
-        if (!ws) return;
-        ws.close();
-        initConnection();
-    }
-
+    
     function jsonToPretty(json, offset) {
 
         var spaces = function(n) {
@@ -99,7 +88,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     function issueRequestAndDisplayResult($node, requestUrl) {
         $node.html('<div class="progress"></div>');
         $.get(requestUrl, function(requestJson) {
-            ws.send(JSON.stringify(requestJson));
+            api.sendRaw(requestJson);
         });
     }
 
@@ -160,7 +149,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         }
 
         appendToConsoleAndScrollIntoView('<pre class="req">' + jsonToPretty(json) + '</pre>' + '<div class="progress"></div>');
-        sendToApi(json);
+        api.sendRaw(json);
     }
 
     $('[data-schema]').each(function() {
@@ -191,7 +180,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     $('#playground-reset-btn').on('click', function() {
         $('#playground-console').html('');
-        resetWebsocket();
+        initConnection();
     });
 
     $('#api-token').on('change', function() {
