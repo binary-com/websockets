@@ -63,12 +63,12 @@
     "barrier": {
       "type": "string",
       "description":"Barrier for the contract (or last digit prediction for digit contracts).",
-      "pattern": "^(+|-)?\\d+\\.?\\d*$",
+      "pattern": "^[+-]?\\d+\\.?\\d*$",
       "sample": "1000"
     },
     "barrier2": {
       "type": "string",
-      "pattern": "^(+|-)?\\d+\\.?\\d*$",
+      "pattern": "^[+-]?\\d+\\.?\\d*$",
       "description":"Low barrier for the contract (for contracts with two barriers)",
       "sample": "900"
     },
