@@ -21,6 +21,10 @@
           "type": "string",
           "description": "The description of contract purchased"
         },
+        "shortcode": {
+          "type": "string",
+          "description": "Compact description of the contract purchased"
+        },
         "start_time": {
           "type": "integer",
           "description":"Epoch value showing the expected start time of the contract"
