@@ -122,13 +122,8 @@ var LiveApi = (function () {
 
     LiveApi.prototype.onMessage = function onMessage(message) {
         var json = JSON.parse(message.data);
-        var response = {
-            type: json.msg_type,
-            data: json[json.msg_type],
-            echo: json.echo_req,
-            error: json.error
-        };
-        this.events.emit(json.msg_type, response);
+
+        this.events.emit(json.msg_type, json);
 
         if (!json.echo_req.passthrough || !json.echo_req.passthrough.uid) {
             return;
@@ -137,10 +132,10 @@ var LiveApi = (function () {
         var promise = this.unresolvedPromises[json.echo_req.passthrough.uid];
         if (promise) {
             delete this.unresolvedPromises[json.echo_req.passthrough.uid];
-            if (!response.error) {
-                promise.resolve(response);
+            if (!json.error) {
+                promise.resolve(json);
             } else {
-                promise.reject(response.error);
+                promise.reject(json.error);
             }
         }
     };
