@@ -12,13 +12,16 @@ layout: page
 
 <p>You can now send data up and down the websocket using any of the messages described in this Reference.</p>
 
-Note: to receive responses where English text has been translated to another language, append the language code to the connection URL as follows:
+<p>Note: to receive responses where English text has been translated to another language, append the language code to the connection URL as follows:</p>
 
 <pre data-language="javascript">var ws = new WebSocket('wss://www.binary.com/websockets/v2?l=RU');</pre>
 
-<p>All movement of data in both directions is done with structured JSON-encoded data. All field name identifiers, and most field values, will be double-quoted in the encoded data. The same applies to receiving messages: each message is a serialized JSON-encoded string.</p>
+<p>Data transfer in both directions is done with structured JSON-encoded data. All field name identifiers, and most field values, will be double-quoted in the encoded data. The same applies to receiving messages: each message is a serialized JSON-encoded string.</p>
 
 <p>Explore the API using the <a href="/api">Binary API Playground</a></p>
+
+<p>We also provide a higher-level api library, to help you use our service easier.<br/>
+<a href="https://github.com/binary-com/binary-live-api">binary-live-api on GitHub</a></p>
 
 <p>Having problems? Ask our friendly developers:
     <a href="https://gitter.im/binary-com/websockets">
