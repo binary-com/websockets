@@ -12,10 +12,6 @@
       "title":"Price Proposal Response",
       "description":"Latest price and other details for a given contract",
       "properties": {
-        "bid_price": {
-          "type": "number",
-          "description": "Example: 4.96"
-        },
         "longcode": {
           "type": "string",
           "description": "Example: USD 10.00 payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time."
