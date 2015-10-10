@@ -28,7 +28,7 @@
               },
               "fmb_id": {
                 "type": "integer",
-                "description": "Binary.com internal contract identifier number"
+                "description": "Binary.com internal contract identifier number (to be used in a Price Proposal - Open Contract API call)"
               },
               "purchase_time": {
                 "type": "integer",
