@@ -12,7 +12,7 @@
     },
     "fmb_id": {
       "type": "integer",
-      "description":"Open contract id received from a portfolio request",
+      "description":"Open contract id received from a Portfolio request",
       "sample": "1111111111"
     },   
     "passthrough": {
