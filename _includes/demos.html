@@ -84,7 +84,7 @@ import (
 )
 
 var origin = "http://localhost/"
-var url = "wss://ws.binary.com/websockets/v2?l=EN"
+var url = "wss://www.binary.com/websockets/v2?l=EN"
 
 func main() {
     ws, _ := websocket.Dial(url, "", origin)
@@ -190,7 +190,7 @@ if __name__ == "__main__":
     ws.run_forever()
 </pre>
 
-<pre data-language="swift">let ws = WebSocket("wss://ws.binary.com/websockets/v2")
+<pre data-language="swift">let ws = WebSocket("wss://www.binary.com/websockets/v2")
 
 ws.event.open = {
     ws.send("{\"ticks\":\"R_100\"}")
