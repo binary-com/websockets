@@ -16,7 +16,7 @@ var LiveEvents = (function () {
     };
 
     LiveEvents.prototype.emitWildcard = function emitWildcard(msgData) {
-        this.messageHandlers['*'].forEach(function (handler) {
+        (this.messageHandlers['*'] || []).forEach(function (handler) {
             handler(msgData);
         });
     };
