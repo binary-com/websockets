@@ -45,7 +45,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var apiUrl = 'wss://ws.binary.com/websockets/v2';
+var apiUrl = 'wss://www.binary.com/websockets/v2';
 
 var noSubscriptions = function noSubscriptions() {
     return {
