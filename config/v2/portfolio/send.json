@@ -2,19 +2,13 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Portfolio Send",
-  "description": "Receive information about my current portfolio, and receive regular pricing updates for each entry",
+  "description": "Receive information about my current portfolio.",
   "properties": {
     "portfolio": {
       "type": "integer",
       "pattern": "^1$",
       "description":"Must be 1",
       "sample": "1"
-    },
-    "spawn": {
-      "type": "integer",
-      "pattern": "^(1|0)?$",
-      "description":"If set to 1, will spawn 'proposal_open_contract' streams for all outstanding contracts in the portfolio. This is useful to create a portfolio page with dynamically updating contract prices.",
-      "sample": "0"
     },   
     "passthrough": {
       "type": "object",
