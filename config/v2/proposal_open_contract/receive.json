@@ -17,41 +17,25 @@
           "type": "integer",
           "description": "Binary.com internal contract identifier"
         },
-        "purchase_time": {
-          "type": "integer",
-          "description": "Epoch of purchase time of the contract"
-        },
-        "symbol": {
+        "id": {
           "type": "string",
-          "description": "Symbol"
+          "description": "Example: 1d6651e7d599bce6c54bd71a8283e579"
         },
-        "payout": {
+        "spot": {
           "type": "number",
-          "description": "Payout price"
+          "description": "Example: 9874.52"
         },
-        "buy_price": {
+        "spot_time": {
+          "type": "integer",
+          "description": "Example: 1439999052"
+        },
+        "ask_price": {
           "type": "number",
-          "description": "Buy price"
+          "description": "Example: 5.14"
         },
-        "date_start": {
-          "type": "integer",
-          "description": "Epoch of start date of the contract"
-        },
-        "expiry_time": {
-          "type": "integer",
-          "description": "Epoch of expiry time of the contract"
-        },
-        "contract_type": {
-          "type": "string",
-          "description": "Contract type"
-        },
-        "currency": {
-          "type": "string",
-          "description": "Currency of the contract"
-        },
-        "longcode": {
-          "type": "string",
-          "description": "Contract description"
+        "bid_price": {
+          "type": "number",
+          "description": "Example: 5.14"
         }
       }
     },
