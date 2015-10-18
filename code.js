@@ -31,7 +31,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
         return window.location.href.substr(apiPageStrIdx + 2);
     }
-    
+
     function jsonToPretty(json, offset) {
 
         var spaces = function(n) {
@@ -214,10 +214,19 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         }
     }
 
+    function escapeHtml(unsafe) {
+        return unsafe
+             .replace(/&/g, "&amp;")
+             .replace(/</g, "&lt;")
+             .replace(/>/g, "&gt;")
+             .replace(/"/g, "&quot;")
+             .replace(/'/g, "&#039;");
+     }
+
     $('#send-auth-manually-btn').on('click', function() {
         var token = sessionStorage.getItem('token');
             authReqStr = JSON.stringify({
-                authorize: token || ''
+                authorize: escapeHtml(token || '')
             }, null, 2);
 
         $('#playground-request').val(authReqStr);
