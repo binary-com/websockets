@@ -31,7 +31,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
         return window.location.href.substr(apiPageStrIdx + 2);
     }
-    
+
     function jsonToPretty(json, offset) {
 
         var spaces = function(n) {
@@ -219,6 +219,8 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             authReqStr = JSON.stringify({
                 authorize: token || ''
             }, null, 2);
+            // escape HTML
+            authReqStr = $("<div>").text(authReqStr).html();
 
         $('#playground-request').val(authReqStr);
         if (token) {
