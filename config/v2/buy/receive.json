@@ -44,6 +44,21 @@
         "trx_id": {
           "type": "integer",
           "description":"Internal transaction identifier"
+        },
+        "amount_per_point": {
+          "type": "number",
+          "description":"[For spread contracts only] Amount per point",
+          "sample": "1"
+        },
+        "stop_profit_level": {
+          "type": "number",
+          "description":"[For spread contracts only] Stop profit level (spot plus/minus stop profit amount)",
+          "sample": "10"
+        },
+        "stop_loss_level": {
+          "type": "number",
+          "description":"[For spread contracts only] Stop loss level (spot plus/minus stop loss amount)",
+          "sample": "15"
         }
       }
     },
