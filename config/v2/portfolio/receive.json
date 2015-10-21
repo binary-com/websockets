@@ -65,6 +65,10 @@
               "longcode": {
                 "type": "string",
                 "description": "Contract description"
+              },
+              "shortcode": {
+                "type": "string",
+                "description": "Compact description of the contract purchased"
               }
             }
           }

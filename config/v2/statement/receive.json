@@ -22,30 +22,38 @@
               "items":{
                 "type":"object",
                 "properties":{
-              	  "balance_after":{
-            		  "type":"number",
-            		  "description":"It is the remaining balance Example: 10150.1300"
-            	  },
-                "transaction_id":{
-                  "type":"integer",
-                  "description":"It is the transaction id. in statement every contract (buy or sell) and every payment has a unique id. Example: 10867502908"
-                },
-            	  "contract_id":{
-            		  "type": ["integer", "null"],
-            		  "description":"It is the contract id Example: 4867502908"
-            	  },
-            	  "transaction_time":{
-            		  "type":"integer",
-            		  "description":"It is the time of transaction Example: 1441175849"
-            	  },
-            	  "action_type":{
-            		  "type":"string",
-            		  "description":"It is the type of action Example: buy"
-            	  },
-            	  "amount":{
-            		  "type":"number",
-            		  "description":"It is the amount of transaction Example: -83.2300"
-            	  }
+                  "balance_after":{
+                    "type":"number",
+                    "description":"It is the remaining balance Example: 10150.1300"
+                  },
+                  "transaction_id":{
+                    "type":"integer",
+                    "description":"It is the transaction id. in statement every contract (buy or sell) and every payment has a unique id. Example: 10867502908"
+                  },
+                  "contract_id":{
+                    "type": ["integer", "null"],
+                    "description":"It is the contract id Example: 4867502908"
+                  },
+                  "transaction_time":{
+                    "type":"integer",
+                    "description":"It is the time of transaction Example: 1441175849"
+                  },
+                  "action_type":{
+                    "type":"string",
+                    "description":"It is the type of action Example: buy"
+                  },
+                  "amount":{
+                    "type":"number",
+                    "description":"It is the amount of transaction Example: -83.2300"
+                  },
+                  "longcode":{
+                    "type":"string",
+                    "description":"contract description"
+                  },
+                  "shortcode": {
+                    "type": "string",
+                    "description": "Compact description of the contract purchased"
+                  }
                 }
               },
               "minItems":"1",
