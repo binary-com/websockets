@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Buy a Contract Send",
+  "description": "Buy the Contract using an ID from a previous Price Proposal call",
+  "properties": {
+    "buy": {
+      "type": "string",
+      "sample": "ID",
+      "pattern": "^\\w{32,128}$",
+      "description": "The id received from a Price Proposal call"
+    },
+
+    "price": {
+       "type": "number",
+       "sample": "0",
+       "description": "Maximum price at which to purchase the contract, or '0' for 'buy at market'"
+    },   
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "buy",
+    "price"
+  ]
+}

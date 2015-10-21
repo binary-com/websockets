@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Buy a Contract Receive",
+  "description": "A message with transaction results is received",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "buy": {
+      "type": "object",
+      "title": "Receipt confirmation",
+      "description": "Receipt confirmation for the purchase",
+      "properties": {
+        "balance_after": {
+          "type": "number",
+          "description":"The new account balance after completion of the purchase"
+        },
+        "longcode": {
+          "type": "string",
+          "description": "The description of contract purchased"
+        },
+        "shortcode": {
+          "type": "string",
+          "description": "Compact description of the contract purchased"
+        },
+        "start_time": {
+          "type": "integer",
+          "description":"Epoch value showing the expected start time of the contract"
+        },
+        "fmb_id": {
+          "type": "integer",
+          "description":"Internal contract identifier"
+        },
+        "buy_price": {
+          "type": "number",
+          "description":"Actual effected purchase price"
+        },
+        "purchase_time": {
+          "type": "integer",
+          "description":"Epoch value of the transaction purchase time"
+        },
+        "trx_id": {
+          "type": "integer",
+          "description":"Internal transaction identifier"
+        },
+        "amount_per_point": {
+          "type": "number",
+          "description":"[For spread contracts only] Amount per point",
+          "sample": "1"
+        },
+        "stop_profit_level": {
+          "type": "number",
+          "description":"[For spread contracts only] Stop profit level (spot plus/minus stop profit amount)",
+          "sample": "10"
+        },
+        "stop_loss_level": {
+          "type": "number",
+          "description":"[For spread contracts only] Stop loss level (spot plus/minus stop loss amount)",
+          "sample": "15"
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description":"buy"
+    }
+  },
+  "required": [
+    "echo_req",
+    "buy",
+    "msg_type"
+  ]
+}

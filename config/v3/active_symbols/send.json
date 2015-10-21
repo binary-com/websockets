@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Request list of active symbols",
+  "description": "Retrieve all available active symbol definitions",
+  "properties": {
+    "active_symbols": {
+      "type": "string",
+      "description": "Value must be 'brief' or 'full'. If you use 'brief', only a subset of fields will be returned.",
+      "pattern": "^(brief|full)$",
+      "sample": "full"
+    },   
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "active_symbols"
+  ]
+}

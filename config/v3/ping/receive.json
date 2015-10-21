@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Ping Receive",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "ping": {
+    	"type": "string",
+    	"description": "Will return 'pong'",
+    	"pattern": "^pong$"
+    		
+    },
+    "msg_type": {
+        "type": "string",
+        "description": "ping"
+      }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}

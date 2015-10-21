@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Asset Index Receive",
+  "description": "A message with Asset Index",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "asset_index": {
+      "type": "array",
+      "title": "Asset Index Structure",
+      "description":"The Asset Index structure is a hierarchy as follows: Market -> Categories -> Underlyings"
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "asset_index"
+    }
+  },
+  "required": [
+    "echo_req",
+    "asset_index",
+    "msg_type"
+  ]
+}

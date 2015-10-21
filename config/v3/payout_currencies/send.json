@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title":"Payout Currencies Send",
+  "description":"Retrieve a list of available payout currencies",
+  "properties": {
+    "payout_currencies": {
+      "type": "integer",
+      "sample": "1",
+      "pattern": "^1$",
+      "description": "Must be 1"
+    },   
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "payout_currencies"
+  ]
+}

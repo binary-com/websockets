@@ -1,0 +1,65 @@
+{
+  "$schema":"http://json-schema.org/draft-04/schema#",
+  "type":"object",
+  "title":"Statement Receive",
+  "description":"A summary of account statement is received",
+  "properties":{
+    "echo_req":{
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "statement":{
+        "type":"object",
+        "title":"statement list",
+        "description":"Account statement.",
+        "properties":{
+          "count":{
+            "type":"number",
+            "description":"Number of transactions returned in this call"
+          },
+          "transactions":{
+              "type":"array",
+              "items":{
+                "type":"object",
+                "properties":{
+              	  "balance_after":{
+            		  "type":"number",
+            		  "description":"It is the remaining balance Example: 10150.1300"
+            	  },
+                "transaction_id":{
+                  "type":"integer",
+                  "description":"It is the transaction id. in statement every contract (buy or sell) and every payment has a unique id. Example: 10867502908"
+                },
+            	  "contract_id":{
+            		  "type": ["integer", "null"],
+            		  "description":"It is the contract id Example: 4867502908"
+            	  },
+            	  "transaction_time":{
+            		  "type":"integer",
+            		  "description":"It is the time of transaction Example: 1441175849"
+            	  },
+            	  "action_type":{
+            		  "type":"string",
+            		  "description":"It is the type of action Example: buy"
+            	  },
+            	  "amount":{
+            		  "type":"number",
+            		  "description":"It is the amount of transaction Example: -83.2300"
+            	  }
+                }
+              },
+              "minItems":"1",
+              "description":"Array of returned transactions"
+            }
+          }
+        },
+    "msg_type":{
+      "type":"string",
+      "description":"statement"
+    }
+  },
+  "required":[
+    "echo_req",
+    "msg_type"
+  ]
+}

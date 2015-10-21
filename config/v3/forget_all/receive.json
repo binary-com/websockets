@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Cancel Incoming Streams Based on Type Receive",
+  "properties": {
+    "echo_req": {
+      "title": "Echo request",
+      "description": "Echo of the request made"
+    },
+    "forget_all": {
+    	"type": "array",
+    	"description": "Ids of the cancelled streams"
+    },
+    "msg_type": {
+        "type": "string",
+        "description": "forget_all"
+      }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}

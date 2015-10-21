@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Balance Receive",
+  "description": "Return details of user account balances",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "balance": {
+      "type": "array",
+      "title": "Array of balances",
+      "description": "Array of the user's account balances",
+      "items":{
+        "type":"object",
+        "title": "Array of balances",
+        "description": "Array of the user's account balances",
+        "properties": {
+          "balance": {
+            "type": "number",
+            "description": "Balance amount",
+            "pattern": "^([.0-9]{1,25})$"
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency Example: USD",
+            "pattern": "^([A-Z]{3})$"
+            	
+          },
+          "loginid": {
+            "type": "string",
+            "description": "Client loginid Example: CR000000",
+            "pattern": "^([A-Z0-9]{1,25})$"
+            	
+          }
+        }
+
+      }
+    },
+    "msg_type": {
+        "type": "string",
+        "description": "balance"
+      }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}
