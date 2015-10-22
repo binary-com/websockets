@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title":"Receive authorization response",
+  "description":"A message containing account information for the holder of that token.",
+  "properties": {
+    "authorize": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "Example: example@example.com"
+        },
+        "currency": {
+          "type": "string",
+          "description": "Example: USD"
+        },
+        "balance": {
+          "type": "number",
+          "description": "Example: 10377.9900"
+        },
+        "loginid": {
+          "type": "string",
+          "description": "Example: VRTC573035"
+        },
+        "fullname": {
+          "type": "string",
+          "description": "Example: fullname"
+        }
+      },
+      "required": [
+        "email",
+        "currency",
+        "balance",
+        "loginid",
+        "fullname"
+      ]
+    },
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "authorize"
+    }
+  },
+  "required": [
+    "authorize",
+    "echo_req",
+    "msg_type"
+  ]
+}

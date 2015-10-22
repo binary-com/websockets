@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Tick Stream Receive",
+  "description": "The stream message will contain an epoch value and a quote value, showing latest spot price for the requested symbol. These update messages will arrive with a frequency of up to one second",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+     },
+    "tick": {
+      "type": "object",
+      "title": "Response of streamer",
+      "description": "Tick by tick list of streamed data",
+      "properties": {
+        "epoch": {
+          "type": "integer",
+          "description": "Epoch time of the tick"
+        },
+        "id": {
+          "type": "string",
+          "description": "A stream id that can be used to cancel this stream using the Forget request"
+        },
+        "quote": {
+          "type": "number",
+          "description": "Market value at the epoch"
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "tick"
+    }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Portfolio Receive",
+  "description": "For each portfolio entry, an initial message will provide information about that contract.",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "portfolio": {
+      "type": "object",
+      "title": "Portfolio",
+      "description": "Client open positions",
+      "properties": {
+        "ask_price": {
+          "type": "number",
+          "description": "Ask price of the contract"
+        },
+        "batch_count": {
+          "type": "integer",
+          "description": "Batch count"
+        },
+        "batch_index": {
+          "type": "integer",
+          "description": "Batch index"
+        },
+        "bid_price": {
+          "type": "number",
+          "description": "Bid price of the contract"
+        },
+        "buy_price": {
+          "type": "number",
+          "description": "Actual effected purchase price"
+        },
+        "contract_type": {
+          "type": "string",
+          "description": "Type of contract"
+        },
+        "currency": {
+          "type": "string",
+          "description": "Currency in which contract is traded"
+        },
+        "date_start": {
+          "type": "integer",
+          "description": "Date when contract was bought"
+        },
+        "expiry_time": {
+          "type": "integer",
+          "description": "Time when this contract will expire"
+        },
+        "fmb_id": {
+          "type": "integer",
+          "description": "Internal contract identifier"
+        },
+        "id": {
+          "type": "string",
+          "description": "Handle that identifies this contract"
+        },
+        "longcode": {
+          "type": "string",
+          "description": "Description of contract"
+        },
+        "payout": {
+          "type": "number",
+          "description": "Payout"
+        },
+        "purchase_time": {
+          "type": "integer",
+          "description": "Epoch value showing the transaction purchase time"
+        },
+        "spot": {
+          "type": "number",
+          "description": "Spot price of the symbol"
+        },
+        "spot_time": {
+          "type": "string",
+          "description": "Spot time"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Symbol"
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "portfolio"
+    }
+  },
+  "required": [
+    "echo_req",
+    "portfolio",
+    "msg_type"
+  ]
+}
