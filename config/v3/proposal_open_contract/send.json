@@ -10,11 +10,11 @@
       "pattern": "^1$",
       "sample": "1"
     },
-    "fmb_id": {
+    "contract_id": {
       "type": "integer",
       "description":"Open contract id received from a Portfolio request. If not set, you will receive stream of all open contracts.",
       "sample": "1111111111"
-    },   
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."

@@ -13,7 +13,7 @@
       "title": "Open contract response",
       "description": "Latest price and other details for an open contract",
       "properties":{
-        "fmb_id": {
+        "contract_id": {
           "type": "integer",
           "description": "Binary.com internal contract identifier"
         },

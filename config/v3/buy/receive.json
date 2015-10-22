@@ -29,7 +29,7 @@
           "type": "integer",
           "description":"Epoch value showing the expected start time of the contract"
         },
-        "fmb_id": {
+        "contract_id": {
           "type": "integer",
           "description":"Internal contract identifier"
         },
@@ -41,7 +41,7 @@
           "type": "integer",
           "description":"Epoch value of the transaction purchase time"
         },
-        "trx_id": {
+        "transaction_id": {
           "type": "integer",
           "description":"Internal transaction identifier"
         },

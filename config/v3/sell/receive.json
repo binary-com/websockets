@@ -17,7 +17,7 @@
           "type": "number",
           "description":"New account balance after completion of the sale"
         },
-        "fmb_id": {
+        "contract_id": {
           "type": "integer",
           "description":"Internal contract identifier for the sold contract"
         },
@@ -25,7 +25,7 @@
           "type": "number",
           "description": "Actual effected sale price"
         },
-        "trx_id": {
+        "transaction_id": {
           "type": "integer",
           "description":"Internal transaction identifier for the sale transaction"
         }
