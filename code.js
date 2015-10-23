@@ -1,5 +1,7 @@
 require.config({ baseUrl: '/' });
 
+var apiUrl = 'wss://www.binary.com/websockets/v3';
+
 require(["docson/docson", "lib/jquery"], function(docson) {
 
     var api,
@@ -10,7 +12,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
 
     function initConnection() {
-        api = new LiveApi();
+        api = new LiveApi({ apiUrl: apiUrl });
 
         api.events.on('*', incomingMessageHandler);
     }
@@ -168,6 +170,11 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         loadAndDisplaySchema($('#playground-res-schema'), responseSchemaUrl);
         loadAndEditJson($('#playground-request'), exampleJsonUrl);
         window.location.hash = apiStr;
+    });
+
+    $('#api-version-selector').on('change', function(е) {
+        apiUrl = 'wss://www.binary.com/websockets/' + е.target.value;
+        initConnection();
     });
 
     $('#playground-send-btn').on('click', function() {

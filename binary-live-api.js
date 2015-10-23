@@ -66,8 +66,15 @@ var LiveApi = (function () {
     }]);
 
     function LiveApi() {
+        var _ref = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+        var _ref$apiUrl = _ref.apiUrl;
+        var apiUrl = _ref$apiUrl === undefined ? 'wss://www.binary.com/websockets/v3' : _ref$apiUrl;
+        var websocket = _ref.websocket;
+
         _classCallCheck(this, LiveApi);
 
+        this.apiUrl = apiUrl;
         this.status = LiveApi.Status.Unknown;
         this.subscriptions = noSubscriptions();
 
@@ -77,11 +84,15 @@ var LiveApi = (function () {
 
         this.events = new LiveEvents();
 
-        this.connect();
+        if (websocket) {
+            WebSocket = options.websocket;
+        }
+
+        this.connect(this.apiUrl || 'wss://www.binary.com/websockets/v3');
     }
 
     LiveApi.prototype.connect = function connect() {
-        this.socket = new WebSocket(apiUrl);
+        this.socket = new WebSocket(this.apiUrl);
         this.socket.onopen = this.onOpen.bind(this);
         this.socket.onclose = this.onClose.bind(this);
         this.socket.onerror = this.onError.bind(this);
@@ -149,13 +160,16 @@ var LiveApi = (function () {
             this.bufferedSends.push(data);
         }
         var promise = new Promise(function (resolve, reject) {
-            _this.unresolvedPromises[data.uid] = { resolve: resolve, reject: reject };
+            if (data.passthrough) {
+                _this.unresolvedPromises[data.passthrough.uid] = { resolve: resolve, reject: reject };
+            }
         });
         return promise;
     };
 
     LiveApi.prototype.send = function send(data) {
-        data.passthrough = { uid: (Math.random() * 1e17).toString() };
+        data.passthrough = data.passthrough || {};
+        data.passthrough.uid = (Math.random() * 1e17).toString();
         return this.sendRaw(data);
     };
 
@@ -170,17 +184,12 @@ var LiveApi = (function () {
     LiveApi.prototype.resubscribe = function resubscribe() {
         var _subscriptions = this.subscriptions;
         var ticks = _subscriptions.ticks;
-        var portfolio = _subscriptions.portfolio;
         var priceProposal = _subscriptions.priceProposal;
 
         this.subscribeToTicks(Object.keys(ticks));
 
-        if (portfolio) {
-            this.getPortfolio(true);
-        }
-
         if (priceProposal) {
-            this.getPriceForContractProposal(priceProposal);
+            this.subscribeToPriceForContractProposal(priceProposal);
         }
     };
 
@@ -221,9 +230,15 @@ var LiveApi = (function () {
     LiveApi.prototype.getTradingTimes = function getTradingTimes() {
         var date = arguments.length <= 0 || arguments[0] === undefined ? new Date() : arguments[0];
 
-        var dateStr = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate();
+        var dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
         return this.send({
             trading_times: dateStr
+        });
+    };
+
+    LiveApi.prototype.getAssetIndex = function getAssetIndex() {
+        return this.send({
+            asset_index: 1
         });
     };
 
@@ -253,10 +268,23 @@ var LiveApi = (function () {
         symbols.forEach(this.subscribeToTick.bind(this));
     };
 
-    LiveApi.prototype.getPriceForContractProposal = function getPriceForContractProposal(contractProposal) {
+    LiveApi.prototype.subscribeToPriceForContractProposal = function subscribeToPriceForContractProposal(contractProposal) {
         return this.send(_extends({
             proposal: 1
         }, contractProposal));
+    };
+
+    LiveApi.prototype.subscribeToOpenContract = function subscribeToOpenContract(contractId) {
+        return this.send({
+            proposal_open_contract: 1,
+            fmd_id: contractId
+        });
+    };
+
+    LiveApi.prototype.subscribeToAllOpenContracts = function subscribeToAllOpenContracts() {
+        return this.send({
+            proposal_open_contract: 1
+        });
     };
 
     LiveApi.prototype.unsubscribeFromTick = function unsubscribeFromTick(symbol) {
@@ -272,7 +300,7 @@ var LiveApi = (function () {
     };
 
     LiveApi.prototype.unsubscribeFromAllTicks = function unsubscribeFromAllTicks() {
-        this.subscriptions.ticks[symbol] = {};
+        this.subscriptions.ticks = {};
 
         return this.send({
             forget_all: "ticks"
@@ -325,22 +353,17 @@ var LiveApi = (function () {
         }, statementOptions));
     };
 
-    LiveApi.prototype.getPortfolio = function getPortfolio() {
-        var subscribeToUpdates = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
+    LiveApi.prototype.getProfitTable = function getProfitTable() {
+        var profitTableOptions = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
-        if (subscribeToUpdates) {
-            this.subscriptions.portfolio = true;
-        }
-        return this.send({
-            portfolio: 1,
-            spawn: +subscribeToUpdates
-        });
+        return this.send(_extends({
+            profit_table: 1
+        }, profitTableOptions));
     };
 
-    LiveApi.prototype.getPriceForOpenContract = function getPriceForOpenContract(contractId) {
+    LiveApi.prototype.getPortfolio = function getPortfolio() {
         return this.send({
-            proposal_open_contract: 1,
-            fmd_id: contractId
+            portfolio: 1
         });
     };
 
