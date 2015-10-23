@@ -48,7 +48,6 @@
             	  }
                 }
               },
-              "minItems":"1",
               "description":"Array of returned transactions"
             }
           }
