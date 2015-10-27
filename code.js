@@ -124,9 +124,19 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         return Math.abs($console[0].scrollHeight - $console.scrollTop() - $console.outerHeight()) > 10;
     }
 
+    function escapeHtml(unsafe) {
+        return unsafe
+             .replace(/&/g, "&amp;")
+             .replace(/</g, "&lt;")
+             .replace(/>/g, "&gt;")
+             .replace(/"/g, "&quot;")
+             .replace(/'/g, "&#039;");
+    }
+
     function appendToConsoleAndScrollIntoView(html) {
         $console.stop(false, true);
 
+        html = escapeHtml(html);
         setTimeout(function() {
             $console.append(html)[0];
 
@@ -221,19 +231,10 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         }
     }
 
-    function escapeHtml(unsafe) {
-        return unsafe
-             .replace(/&/g, "&amp;")
-             .replace(/</g, "&lt;")
-             .replace(/>/g, "&gt;")
-             .replace(/"/g, "&quot;")
-             .replace(/'/g, "&#039;");
-     }
-
     $('#send-auth-manually-btn').on('click', function() {
         var token = sessionStorage.getItem('token');
             authReqStr = JSON.stringify({
-                authorize: escapeHtml(token || '')
+                authorize: token || ''
             }, null, 2);
 
         $('#playground-request').val(authReqStr);
