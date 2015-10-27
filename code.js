@@ -10,6 +10,14 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     docson.templateBaseUrl = '/docson';
 
+    function escapeHtml(unsafe) {
+        return unsafe
+             .replace(/&/g, "&amp;")
+             .replace(/</g, "&lt;")
+             .replace(/>/g, "&gt;")
+             .replace(/"/g, "&quot;")
+             .replace(/'/g, "&#039;");
+    }
 
     function initConnection() {
         api = new LiveApi({ apiUrl: apiUrl });
@@ -77,7 +85,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             )
         }
 
-        return objToStr(json, offset || 0);
+        return escapeHtml(objToStr(json, offset || 0));
     }
 
     function getFormattedJsonStr(json) {
@@ -124,19 +132,9 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         return Math.abs($console[0].scrollHeight - $console.scrollTop() - $console.outerHeight()) > 10;
     }
 
-    function escapeHtml(unsafe) {
-        return unsafe
-             .replace(/&/g, "&amp;")
-             .replace(/</g, "&lt;")
-             .replace(/>/g, "&gt;")
-             .replace(/"/g, "&quot;")
-             .replace(/'/g, "&#039;");
-    }
-
     function appendToConsoleAndScrollIntoView(html) {
         $console.stop(false, true);
 
-        html = escapeHtml(html);
         setTimeout(function() {
             $console.append(html)[0];
 
