@@ -49,7 +49,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         }
 
         var span = function(val, className) {
-            return '<span class="' + className + '">' + val + '</span>';
+            return '<span class="' + className + '">' + escapeHtml(val) + '</span>';
         }
 
         var valToStr = function(val, offset) {
@@ -85,7 +85,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             )
         }
 
-        return escapeHtml(objToStr(json, offset || 0));
+        return objToStr(json, offset || 0);
     }
 
     function getFormattedJsonStr(json) {
