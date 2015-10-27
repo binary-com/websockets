@@ -5,16 +5,15 @@
   "description": "Sell a Contract as identified from a previous Portfolio call",
   "properties": {
     "sell": {
-      "type": "string",
-      "sample": "ID",
-      "pattern": "^\\w{32,128}$",
-      "description": "The id received from the Portfolio call"
+      "type": "integer",
+      "sample": "1111111",
+      "description": "Pass fmb_id received from the Portfolio call"
     },
-  	"price": {
-  	   "type": "number",
-  	   "sample": "0",
-  	   "description": "Minimum price at which to sell the contract, or '0' for 'sell at market'"
-    },   
+    "price": {
+      "type": "number",
+      "sample": "0",
+      "description": "Minimum price at which to sell the contract, or '0' for 'sell at market'"
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
