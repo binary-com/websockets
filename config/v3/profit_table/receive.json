@@ -31,11 +31,11 @@
                     "description":"It is the contract id Example: 4867502908"
                   },
               	  "purchase_time":{
-              		  "type":"string",
+              		  "type":"integer",
               		  "description":"It is the purchase time of transaction"
               	  },
               	  "sell_time":{
-              		  "type":["string", "null"],
+              		  "type":["integer", "null"],
               		  "description":"It is the sell time of transaction"
               	  },
                   "buy_price":{

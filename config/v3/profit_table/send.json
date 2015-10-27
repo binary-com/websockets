@@ -25,12 +25,12 @@
       "sample": "0",
       "description": "Skip this many transactions"
     },
-    "dt_fm": {
+    "date_from": {
       "type": "string",
       "sample": "1439432307",
       "description": "Optional start date (epoch or YYYY-MM-DD)"
     },
-    "dt_to": {
+    "date_to": {
       "type": "string",
       "sample": "1439432307",
       "description": "Optional end date (epoch or YYYY-MM-DD)"

@@ -22,13 +22,13 @@
             "title": "Portfolio",
             "description": "Client open positions",
             "properties":{
-              "id": {
-                "type": "string",
-                "description": "This 'id' field contains the stream id for this contract, that can be used in due course to cancel the stream using the Forget request"
-              },
               "contract_id": {
                 "type": "integer",
                 "description": "Binary.com internal contract identifier number (to be used in a Price Proposal - Open Contract API call)"
+              },
+              "transaction_id":{
+                "type":"integer",
+                "description":"It is the transaction id. Every contract (buy or sell) and every payment has a unique id. Example: 10867502908"
               },
               "purchase_time": {
                 "type": "integer",

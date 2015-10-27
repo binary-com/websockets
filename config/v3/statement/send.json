@@ -25,12 +25,12 @@
       "sample": "0",
       "description": "Skip this many transactions"
     },
-    "dt_fm": {
+    "date_from": {
       "type": "integer",
       "sample": 1439432307,
       "description": "Optional start date (epoch)"
     },
-    "dt_to": {
+    "date_to": {
       "type": "integer",
       "sample": 1439432307,
       "description": "Optional end date (epoch)"

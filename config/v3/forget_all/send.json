@@ -8,8 +8,8 @@
       "type": "string",
       "sample": "ticks",
       "pattern": "^(ticks|proposal|portfolio|proposal_open_contract)$",
-      "description": "Cancel all streams based on type (which should be 'ticks', 'proposal', 'portfolio', or 'proposal_open_contract')"
-    },   
+      "description": "Cancel all streams based on type (which should be 'ticks', 'proposal', or 'proposal_open_contract')"
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
