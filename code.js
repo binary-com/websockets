@@ -11,7 +11,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     docson.templateBaseUrl = '/docson';
 
     function escapeHtml(unsafe) {
-        return unsafe
+        return unsafe.toString()
              .replace(/&/g, "&amp;")
              .replace(/</g, "&lt;")
              .replace(/>/g, "&gt;")
