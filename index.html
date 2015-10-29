@@ -6,7 +6,7 @@ layout: page
 
 <p>To open a connection to Binary.com WebSocket service (in Javascript), do:</p>
 
-<pre data-language="javascript">var ws = new WebSocket('wss://www.binary.com/websockets/v2');</pre>
+<pre data-language="javascript">var ws = new WebSocket('wss://www.binary.com/websockets/v3');</pre>
 
 <p>For other languages, <a href="/demos">View code samples</a></p>
 
@@ -14,7 +14,7 @@ layout: page
 
 <p>Note: to receive responses where English text has been translated to another language, append the language code to the connection URL as follows:</p>
 
-<pre data-language="javascript">var ws = new WebSocket('wss://www.binary.com/websockets/v2?l=RU');</pre>
+<pre data-language="javascript">var ws = new WebSocket('wss://www.binary.com/websockets/v3?l=RU');</pre>
 
 <p>Data transfer in both directions is done with structured JSON-encoded data. All field name identifiers, and most field values, will be double-quoted in the encoded data. The same applies to receiving messages: each message is a serialized JSON-encoded string.</p>
 
