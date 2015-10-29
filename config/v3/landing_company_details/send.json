@@ -1,12 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Asset Index Send",
-  "description":"Asset Index",
+  "title": "Landing Company Details Send",
+  "description":"Landing Company details",
   "properties": {
-    "asset_index": {
-      "type":"integer",
-      "pattern": "^1$"
+    "landing_company_details": {
+      "type":"string",
+      "pattern": "^\\w+$",
+      "description": "landing company, for example: costarica"
     },
     "passthrough": {
       "type": "object",
@@ -15,6 +16,6 @@
   },
   "additionalProperties": false,
   "required": [
-    "asset_index"
+    "landing_company_details"
   ]
 }

@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Asset Index Send",
-  "description":"Asset Index",
+  "title": "Residence List Send",
+  "description":"Residence List",
   "properties": {
-    "asset_index": {
+    "residence_list": {
       "type":"integer",
       "pattern": "^1$"
     },
@@ -15,6 +15,6 @@
   },
   "additionalProperties": false,
   "required": [
-    "asset_index"
+    "residence_list"
   ]
 }

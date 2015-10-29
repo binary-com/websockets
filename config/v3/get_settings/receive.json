@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Get User Settings Receive",
+  "description": "A message with User Settings",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "get_settings": {
+      "type": "object",
+      "title": "User Details",
+      "properties":{
+        "email":{
+          "type":"string",
+          "description": "User Email"
+        },
+        "country":{
+          "type":"string",
+          "description": "User Country"
+        },
+        "address_line_1":{
+          "type":"string",
+          "description": "Address 1, not for virtual account"
+        },
+        "address_line_2":{
+          "type":"string",
+          "description": "Address 2, not for virtual account"
+        },
+        "address_city":{
+          "type":"string",
+          "description": "City, not for virtual account"
+        },
+        "address_state":{
+          "type":"string",
+          "description": "State, not for virtual account"
+        },
+        "address_postcode":{
+          "type":"string",
+          "description": "Post Code, not for virtual account"
+        },
+        "phone":{
+          "type":"string",
+          "description": "Phone, not for virtual account"
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "get_settings"
+    }
+  },
+  "required": [
+    "echo_req",
+    "get_settings",
+    "msg_type"
+  ]
+}

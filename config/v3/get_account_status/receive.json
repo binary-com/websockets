@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Get Account Status Receive",
+  "description": "A message with Account Status",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "get_account_status": {
+      "type": "array",
+      "title": "Account status, sample: disabled, unwelcome, cashier locked, etc, active",
+      "items": {
+        "type": "string"
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "get_account_status"
+    }
+  },
+  "required": [
+    "echo_req",
+    "get_account_status",
+    "msg_type"
+  ]
+}

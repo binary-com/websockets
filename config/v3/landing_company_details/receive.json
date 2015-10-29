@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Landing Company Receive",
+  "description": "A message with Landing Company",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "landing_company_details": {
+      "type": "object",
+      "title": "Landing Company Structure",
+      "properties":{
+        "shortcode":{
+          "type":"string"
+        },
+        "name":{
+          "type":"string"
+        },
+        "address":{
+          "type": ["array", "null"],
+          "items":{
+            "type":"string"
+          }
+        },
+        "country":{
+          "type":"string"
+        },
+        "legal_default_currency":{
+          "type":"string"
+        },
+        "legal_allowed_currencies":{
+          "type":"array",
+          "items":{
+            "type":"string"
+          }
+        },
+        "legal_allowed_markets":{
+          "type":"array",
+          "items":{
+            "type":"string"
+          }
+        },
+        "legal_allowed_contract_categories":{
+          "type":"array",
+          "items":{
+            "type":"string"
+          }
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "landing_company_details"
+    }
+  },
+  "required": [
+    "echo_req",
+    "landing_company_details",
+    "msg_type"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Get Limits Receive",
+  "description": "Trading and Withdrawal Limits",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "get_limits": {
+      "type": "object"
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "get_limits"
+    }
+  },
+  "required": [
+    "echo_req",
+    "get_limits",
+    "msg_type"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "States List Receive",
+  "description": "A message with States List",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "states_list": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties":{
+          "value":{
+            "type":"string"
+          },
+          "text":{
+            "type":"string"
+          }
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "states_list"
+    }
+  },
+  "required": [
+    "echo_req",
+    "states_list",
+    "msg_type"
+  ]
+}
