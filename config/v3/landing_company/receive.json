@@ -9,90 +9,95 @@
       "description":"Echo of the request made"
     },
     "landing_company": {
-      "id": {
-        "type": "string"
-      },
-      "name": {
-        "type": "string"
-      },
-      "gaming_company": {
-        "type": ["null", "object"],
-        "properties":{
-          "shortcode":{
-            "type":"string"
-          },
-          "name":{
-            "type":"string"
-          },
-          "address":{
-            "type": ["array", "null"],
-            "items":{
+      "type": "object",
+      "title": "Landing Company",
+      "description": "Landing Company",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "gaming_company": {
+          "type": ["null", "object"],
+          "properties":{
+            "shortcode":{
               "type":"string"
-            }
-          },
-          "country":{
-            "type":"string"
-          },
-          "legal_default_currency":{
-            "type":"string"
-          },
-          "legal_allowed_currencies":{
-            "type":"array",
-            "items":{
+            },
+            "name":{
               "type":"string"
-            }
-          },
-          "legal_allowed_markets":{
-            "type":"array",
-            "items":{
+            },
+            "address":{
+              "type": ["array", "null"],
+              "items":{
+                "type":"string"
+              }
+            },
+            "country":{
               "type":"string"
-            }
-          },
-          "legal_allowed_contract_categories":{
-            "type":"array",
-            "items":{
+            },
+            "legal_default_currency":{
               "type":"string"
+            },
+            "legal_allowed_currencies":{
+              "type":"array",
+              "items":{
+                "type":"string"
+              }
+            },
+            "legal_allowed_markets":{
+              "type":"array",
+              "items":{
+                "type":"string"
+              }
+            },
+            "legal_allowed_contract_categories":{
+              "type":"array",
+              "items":{
+                "type":"string"
+              }
             }
           }
-        }
-      },
-      "financial_company": {
-        "type": ["null", "object"],
-        "properties": {
-          "shortcode":{
-            "type":"string"
-          },
-          "name":{
-            "type":"string"
-          },
-          "address":{
-            "type": ["array", "null"],
-            "items":{
+        },
+        "financial_company": {
+          "type": ["null", "object"],
+          "properties": {
+            "shortcode":{
               "type":"string"
-            }
-          },
-          "country":{
-            "type":"string"
-          },
-          "legal_default_currency":{
-            "type":"string"
-          },
-          "legal_allowed_currencies":{
-            "type":"array",
-            "items":{
+            },
+            "name":{
               "type":"string"
-            }
-          },
-          "legal_allowed_markets":{
-            "type":"array",
-            "items":{
+            },
+            "address":{
+              "type": ["array", "null"],
+              "items":{
+                "type":"string"
+              }
+            },
+            "country":{
               "type":"string"
-            }
-          },
-          "legal_allowed_contract_categories":{
-            "type":"array",
-            "items":{
+            },
+            "legal_default_currency":{
               "type":"string"
+            },
+            "legal_allowed_currencies":{
+              "type":"array",
+              "items":{
+                "type":"string"
+              }
+            },
+            "legal_allowed_markets":{
+              "type":"array",
+              "items":{
+                "type":"string"
+              }
+            },
+            "legal_allowed_contract_categories":{
+              "type":"array",
+              "items":{
+                "type":"string"
+              }
             }
           }
         }

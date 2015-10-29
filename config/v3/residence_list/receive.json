@@ -9,12 +9,15 @@
       "description":"Echo of the request made"
     },
     "residence_list": {
+      "title":"Countries list",
+      "description":"List of countries for account opening",
       "type": "array",
       "items": {
         "type": "object",
         "properties":{
           "value":{
-            "type":"string"
+            "type":"string",
+            "pattern": "^\\w\\w$"
           },
           "text":{
             "type":"string"

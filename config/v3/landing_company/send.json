@@ -6,7 +6,9 @@
   "properties": {
     "landing_company": {
       "type":"string",
-      "pattern": "^\\w+$"
+      "title": "Landing Company",
+      "description":"Client country.",
+      "pattern": "^\\w\\w$"
     },
     "passthrough": {
       "type": "object",

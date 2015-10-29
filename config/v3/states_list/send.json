@@ -5,8 +5,10 @@
   "description":"States List based on country",
   "properties": {
     "states_list": {
+      "title": "States list",
+      "description":"Two letter country code.",
       "type":"string",
-      "pattern": "^\\w+$"
+      "pattern": "^\\w\\w$"
     },
     "passthrough": {
       "type": "object",

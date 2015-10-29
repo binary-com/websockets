@@ -10,6 +10,8 @@
     },
     "states_list": {
       "type": "array",
+      "title":"List of states",
+      "description":"List of states.",
       "items": {
         "type": "object",
         "properties":{
