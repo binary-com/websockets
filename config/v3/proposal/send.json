@@ -12,14 +12,12 @@
     },
     "amount": {
       "type": "number",
-      "description":"Proposed payout or stake value",
-      "required": "1"
+      "description":"Proposed payout or stake value"
     },
     "basis": {
       "type": "string",
       "description":"Indicate whether amount is 'payout' or 'stake'",
-      "pattern": "^(payout|stake)$",
-      "required": "1"
+      "pattern": "^(payout|stake)$"
     },
     "contract_type": {
       "type": "string",
