@@ -180,8 +180,10 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         window.location.hash = apiStr;
     });
 
-    $('#api-version-selector').on('change', function(е) {
-        apiUrl = 'wss://www.binary.com/websockets/' + е.target.value;
+    $('#api-version-selector, #api-language-selector').on('change', function(е) {
+        var verStr = $('#api-version-selector').val(),
+            langStr = $('#api-language-selector').val();
+        apiUrl = 'wss://www.binary.com/websockets/' + verStr + '?l=' + langStr;
         initConnection();
     });
 

@@ -1,6 +1,6 @@
 <fieldset>
     <div class="row">
-        <div class="col">
+        <div class="col" style="flex: 2">
             <select id="api-call-selector">
                 <option selected disabled hidden>Select API Call</option>
                 <optgroup label="Unauthenticated Calls">
@@ -43,9 +43,25 @@
         </div>
         <div class="col">
             <select id="api-version-selector">
-                <option value="v3">Version 3</option>
-                <option value="v2">Version 2</option>
-                <option value="v1" disabled>Version 1 (deprecated)</option>
+                <option value="v3">Ver 3 </option>
+                <option value="v2">Ver 2 </option>
+                <option value="v1" disabled>Ver 1 (deprecated)</option>
+            </select>
+        </div>
+        <div class="col">
+            <select id="api-language-selector">
+                <option value="ZH_TW">繁體中文</option>
+                <option value="DE">Deutsch</option>
+                <option value="ID">Bahasa Indonesia</option>
+                <option value="ZH_CN">简体中文</option>
+                <option value="VI">Vietnamese</option>
+                <option value="AR">Arabic</option>
+                <option value="PL">Polish</option>
+                <option value="RU">Русский</option>
+                <option value="PT">Português</option>
+                <option value="ES">Español</option>
+                <option value="FR">Français</option>
+                <option value="EN" selected="selected">English</option>
             </select>
         </div>
     </div>
