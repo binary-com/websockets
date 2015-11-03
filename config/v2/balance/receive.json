@@ -32,7 +32,10 @@
             "type": "string",
             "description": "Client loginid Example: CR000000",
             "pattern": "^([A-Z0-9]{1,25})$"
-            	
+          },
+          "id": {
+            "type": "string",
+            "description": "A stream id that can be used to cancel this stream using the Forget request"
           }
         }
 

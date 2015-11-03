@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title":"Balance Send",
-  "description": "Get user balance",
+  "description": "Get realtime stream of user balance changes.",
   "properties": {
     "balance": {
       "type": "integer",

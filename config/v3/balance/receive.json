@@ -1,22 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Balance Receive",
-  "description": "Return details of user account balances",
+  "title": "Realtime Balance",
+  "description": "Return details of user account balance",
   "properties": {
     "echo_req": {
       "title":"Echo request",
       "description":"Echo of the request made"
     },
     "balance": {
-      "type": "array",
-      "title": "Array of balances",
-      "description": "Array of the user's account balances",
-      "items":{
-        "type":"object",
-        "title": "Array of balances",
-        "description": "Array of the user's account balances",
-        "properties": {
+      "type": "object",
+      "title": "Lastest balance of client",
+      "description": "Realtime stream of user balance changes.",
+      "properties": {
           "balance": {
             "type": "number",
             "description": "Balance amount",
@@ -34,8 +30,6 @@
             "pattern": "^([A-Z0-9]{1,25})$"
             	
           }
-        }
-
       }
     },
     "msg_type": {
