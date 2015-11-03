@@ -6,22 +6,18 @@
   "properties": {
     "sell": {
       "type": "integer",
-      "sample": "1111111",
-      "description": "Pass contract_id received from the Portfolio call"
+      "description": "Pass contract_id received from the Portfolio call",
+      "required": "1"
     },
     "price": {
       "type": "number",
-      "sample": "0",
-      "description": "Minimum price at which to sell the contract, or '0' for 'sell at market'"
+      "description": "Minimum price at which to sell the contract, or '0' for 'sell at market'",
+      "required": "1"
     },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
     }
   },
-  "additionalProperties": false,
-  "required": [
-    "sell",
-    "price"
-  ]
+  "additionalProperties": false
 }

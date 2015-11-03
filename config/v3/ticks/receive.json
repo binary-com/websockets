@@ -1,71 +1,35 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Tick History Response",
-  "description": "Historic tick data for a single symbol",
+  "title": "Tick Stream Response",
+  "description": "Latest spot price for a given symbol. Continous responses with a frequency of up to one second",
   "properties": {
     "echo_req": {
       "title": "Echo request",
       "description": "Echo of the request made"
+     },
+    "tick": {
+      "type": "object",
+      "title": "TickSpotData",
+      "description": "Tick by tick list of streamed data",
+      "properties": {
+        "epoch": {
+          "type": "integer",
+          "description": "Epoch time of the tick"
+        },
+        "id": {
+          "type": "string",
+          "description": "A stream id that can be used to cancel this stream using the Forget request"
+        },
+        "quote": {
+          "type": "number",
+          "description": "Market value at the epoch"
+        }
+      }
     },
-      "history": {
-            "type": "object",
-            "title": "Tick History Response",
-            "description": "Historic tick data for a given symbol",
-            "properties": {
-              "times": {
-                "type": "array",
-                "items": [
-                  {
-                    "type": "integer",
-                    "description": "Epoch of the tick."
-                  }
-                ]
-              },
-              "prices": {
-                "type": "array",
-                "items": [
-                  {
-                    "type": "number",
-                    "description": "Tick value."
-                  }
-                ]
-              }
-            }
-          },
-          "candles": {
-              "type":"array",
-                  "items":{
-                    "type":"object",
-                    "properties": {
-                  	  "epoch":{
-                  		  "type":"integer",
-                  		  "description":"It is an epoch value"
-                  	  },
-                  	  "open":{
-                  		  "type":"number",
-                  		  "description":"It is the open price value for the given time"
-                  	  },
-                  	  "high":{
-                  		  "type":"number",
-                  		  "description":"It is the high price value for the given time"
-                  	  },
-                  	  "low":{
-                  		  "type":"number",
-                  		  "description":"It is the low price value for the given time"
-                  	  },
-                  	  "close":{
-                  		  "type":"number",
-                  		  "description":"It is the close price value for the given time"
-                  	  }
-                    }
-                  },
-                  "minItems":"1",
-                  "description":"Array of OHLC price values for the given time (only for style='candles')"
-            },
     "msg_type": {
       "type": "string",
-      "description": "style"
+      "description": "tick"
     }
   },
   "required": [

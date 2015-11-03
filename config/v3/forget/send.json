@@ -6,17 +6,14 @@
   "properties": {
     "forget": {
       "type": "string",
-      "sample": "045dee728d91cd60f9315318fc8e4239",
       "pattern": "^\\w{32,128}$",
-      "description": "ID of the real-time stream of messages to cancel"
+      "description": "ID of the real-time stream of messages to cancel",
+      "require": "1"
     },   
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
     }
   },
-  "additionalProperties": false,
-  "required": [
-    "forget"
-  ]
+  "additionalProperties": false
 }

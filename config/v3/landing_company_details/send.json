@@ -7,15 +7,13 @@
     "landing_company_details": {
       "type":"string",
       "pattern": "^\\w{3,20}$",
-      "description": "landing company shortcode, for example: costarica"
+      "description": "landing company shortcode, for example: costarica",
+      "required": "1"
     },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
     }
   },
-  "additionalProperties": false,
-  "required": [
-    "landing_company_details"
-  ]
+  "additionalProperties": false
 }

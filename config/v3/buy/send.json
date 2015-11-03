@@ -6,24 +6,19 @@
   "properties": {
     "buy": {
       "type": "string",
-      "sample": "ID",
       "pattern": "^\\w{32,128}$",
-      "description": "The id received from a Price Proposal call"
+      "description": "The id received from a Price Proposal call",
+      "required": "1"
     },
-
     "price": {
-       "type": "number",
-       "sample": "0",
-       "description": "Maximum price at which to purchase the contract, or '0' for 'buy at market'"
-    },   
+      "type": "number",
+      "description": "Maximum price at which to purchase the contract, or '0' for 'buy at market'",
+      "required": "1"
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
     }
   },
-  "additionalProperties": false,
-  "required": [
-    "buy",
-    "price"
-  ]
+  "additionalProperties": false
 }

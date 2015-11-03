@@ -8,30 +8,30 @@
       "type": "integer",
       "description":"Must be 1",
       "pattern": "^1$",
-      "sample": "1"
+      "required": "1"
     },
     "amount": {
       "type": "number",
       "description":"Proposed payout or stake value",
-      "sample": "10.0"
+      "required": "1"
     },
     "basis": {
       "type": "string",
       "description":"Indicate whether amount is 'payout' or 'stake'",
       "pattern": "^(payout|stake)$",
-      "sample": "payout"
+      "required": "1"
     },
     "contract_type": {
       "type": "string",
       "description":"A valid contract-type",
       "pattern": "^\\w{2,30}$",
-      "sample": "CALL"
+      "required": "1"
     },
     "currency": {
       "type": "string",
       "description":"This can only be the account-holder's currency",
       "pattern": "^[A-Z]{3}$",
-      "sample": "USD"
+      "required": "1"
     },
     "date_start": {
       "type":  "integer",
@@ -58,7 +58,8 @@
       "type": "string",
       "description":"Symbol code",
       "pattern": "^\\w{2,30}$",
-      "sample": "R_100"
+      "sample": "R_100",
+      "required": "1"
     },
     "barrier": {
       "type": "string",
@@ -98,12 +99,5 @@
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
     }
   },
-  "additionalProperties": false,
-  "required": [
-    "proposal",
-    "basis",
-    "contract_type",
-    "currency",
-    "symbol"
-  ]
+  "additionalProperties": false
 }

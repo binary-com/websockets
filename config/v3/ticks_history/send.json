@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Tick History Request",
+  "description": "Get historic tick data for a given symbol name",
+  "properties": {
+    "ticks_history": {
+      "type": "string",
+      "sample": "R_100",
+      "pattern": "^\\w{2,30}$",
+      "description": "Short symbol name",
+      "required": "1"
+    },
+    "end": {
+      "type": "string",
+      "sample": "1420070400",
+      "pattern": "^(latest|\\d+)$",
+      "description": "Epoch value representing the end-datetime of the ticks. If non-numeric value (e.g. \"latest\", the end-datetime will be the latest available timestamp.",
+      "required": "1"
+    },
+    "start": {
+      "type": "integer",
+      "sample": "1420070400",
+      "description": "Epoch value representing the start-datetime of the ticks (default: 1 yr ago)"
+    },
+    "count": {
+      "type": "integer",
+      "sample": "100",
+      "description": "An upper limit on ticks to receive (default: 500)"
+    },
+    "style": {
+      "type": "string",
+      "sample": "ticks",
+      "pattern": "^(candles|ticks)$",
+      "description": "The tick-output style: must be one of 'ticks' or 'candles' (default: 'ticks')"
+    },
+    "granularity": {
+      "type": "string",
+      "sample": "M1",
+      "pattern": "^\\w\\d*$",
+      "description": "Provide for style: 'candles'. Candle time-dimension width setting: typically 'M1', 'M5', 'M10', 'M30', 'H1', 'H2', 'H4', 'H8', or 'D' (default: 'M1'). The granularity units are (M)inute, (H)our, (S)econd, and (D)ay. Currently for 'Day' granularity, only the term 'D' is allowed, signifying 1 Day.  For the other units, other numeric values are possible (within reason)."
+    },
+    "adjust_start_time": {
+      "type": "integer",
+      "sample": "1",
+      "pattern": "^1?$",
+      "description": "If market is closed at the end time, or license limit is before end time, then move interval backwards."
+    },   
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    }
+  },
+  "additionalProperties": false
+}

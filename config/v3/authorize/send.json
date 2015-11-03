@@ -6,17 +6,14 @@
   "properties": {
     "authorize": {
       "type": "string",
-      "sample": "ABCDABCDABCDABCDABCDABCDABCDABCD",
       "pattern": "^\\w{15,128}$",
-      "description": "Authentication token. May be retrieved from www.binary.com/user/api_token"
+      "description": "Authentication token. May be retrieved from www.binary.com/user/api_token",
+      "required": "1"
     },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
     }
   },
-  "additionalProperties": false,
-  "required": [
-    "authorize"
-  ]
+  "additionalProperties": false
 }
