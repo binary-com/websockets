@@ -13,33 +13,125 @@
       "title": "Open contract response",
       "description": "Latest price and other details for an open contract",
       "properties":{
+        "ask_price": {
+          "type": "number",
+          "description": "Example: 5.14"
+        },
+        "high_barrier": {
+          "type": "number",
+          "description": "42.123"
+        },
+        "low_barrier": {
+          "type": "number",
+          "description": "40.132"
+        },
+        "barrier": {
+          "type": "number",
+          "description": "42.123"
+        },
+        "bid_price": {
+          "type": "number",
+          "description": "Example: 5.14"
+        },
         "contract_id": {
           "type": "integer",
           "description": "Binary.com internal contract identifier"
+        },
+        "currency": {
+          "type": "string",
+          "description": "Example: USD"
+        },
+        "current_spot": {
+          "type": "number",
+          "description": "Example: 9874.52"
+        },
+        "current_spot_time": {
+          "type": "epoch",
+          "description": "Example: 1439999052"
+        },
+        "date_expiry": {
+          "type": "epoch",
+          "description": "Example: 1446629000"
+        },
+        "date_settlement": {
+          "type": "epoch",
+          "description": "Example: 1446629000"
+        },
+        "date_start": {
+          "type": "epoch",
+          "description": "Example: 1446629000"
         },
         "id": {
           "type": "string",
           "description": "A stream id that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579"
         },
-        "spot": {
-          "type": "number",
-          "description": "Example: 9874.52"
-        },
-        "spot_time": {
+        "is_expired": {
           "type": "integer",
-          "description": "Example: 1439999052"
+          "description": "Boolean value 1 or 0"
         },
-        "ask_price": {
+        "is_forward_starting": {
+          "type": "integer",
+          "description": "Boolean value 1 or 0"
+        },
+        "is_intraday": {
+          "type": "integer",
+          "description": "Boolean value 1 or 0"
+        },
+        "is_path_dependent": {
+          "type": "integer",
+          "description": "Boolean value 1 or 0"
+        },
+        "is_valid_to_sell": {
+          "type": "integer",
+          "description": "Boolean value 1 or 0"
+        },
+        "longcode": {
+          "type": "string",
+          "description": "Text description of the bet purchased, Example: USD 90.00 payout if Random 100 Index is strictly higher than entry spot at 10 minutes after contract start time."
+        },
+        "payout": {
           "type": "number",
-          "description": "Example: 5.14"
+          "description": "Example: 10.50"
+        },
+        "shortcode": {
+          "type": "string",
+          "description": "Coded description of the bet purchased, Example: CALL_R_100_90_1446704187_1446704787_S0P_0"
         },
         "display_value": {
           "type": "number",
           "description": "Example: 5.14, same as ask_price except for spread contracts"
         },
-        "bid_price": {
+        "underlying": {
+          "type": "string",
+          "description": "Example: BSESENSEX30"
+        },
+        "entry_tick": {
           "type": "number",
-          "description": "Example: 5.14"
+          "description": "Example: 86.630"
+        },
+        "entry_tick_time": {
+          "type": "epoch",
+          "description": "Example: 1446629000"
+        },
+        "exit_tick": {
+          "type": "number",
+          "description": "Example: 86.810"
+        },
+        "exit_tick_time": {
+          "type": "epoch",
+          "description": "Example: 1446629000"
+        },
+        "prediction": {
+          "type": "integer",
+          "description": "Only for tick trades, Example: 8"
+        },
+        "tick_count": {
+          "type": "integer",
+          "description": "Only for tick trades, number of ticks"
+        },
+        "validation_error": {
+          "type": "string",
+          "description": "error message if validation fails"
         }
       }
     },
