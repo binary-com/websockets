@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Create virtual account Receive",
+  "description": "Create virtual account Receive",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "account": {
+      "type": "object",
+      "title": "new virtual account",
+      "description": "new virtual account details",
+      "properties": {
+        "client_id": {
+          "type": "string",
+          "description": "client id of new virtual account"
+        },
+        "currency": {
+          "type": "string",
+          "description": "account currency"
+        },
+        "balance": {
+          "type": "number",
+          "description": "account balance"
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "account"
+    }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}

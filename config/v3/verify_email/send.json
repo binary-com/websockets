@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title":"Verify Email Send",
+  "description": "Verify your email address before new account signup",
+  "properties": {
+    "verify_email": {
+      "type": "string",
+      "description": "email address to be verified",
+      "format": "email",
+      "required": "1"
+    }
+  },
+  "additionalProperties": false
+}

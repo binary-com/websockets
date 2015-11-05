@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title":"Create virtual account Send",
+  "description": "Create virtual account Send",
+  "properties": {
+    "new_account_virtual": {
+      "type": "integer",
+      "description":"Must be 1",
+      "pattern": "^1$",
+      "required": "1"
+    },
+    "email": {
+      "type": "string",
+      "description": "email address",
+      "format": "email",
+      "required": "1"
+    },
+    "verification_code": {
+      "type": "string",
+      "description": "email verification code receive from verify_email call",
+      "pattern": "^[0-9A-Za-z\/+=]{10,15}$",
+      "required": "1"
+    },
+    "client_password": {
+      "type": "string",
+      "description": "password length within 5-25 chars, accepts alphanumeric, space, @_:+-./=",
+      "pattern": "^[\\s.A-Za-z0-9@_:+-\/=]{5,25}$",
+      "required": "1"
+    },
+    "residence": {
+      "type": "string",
+      "description": "value receive from residence_list call, 2-letter country code",
+      "pattern": "^[a-z]{2}$",
+      "required": "1"
+    },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    }
+  },
+  "additionalProperties": false
+}
