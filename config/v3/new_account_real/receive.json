@@ -8,7 +8,7 @@
       "title":"Echo request",
       "description":"Echo of the request made"
     },
-    "new_account_default": {
+    "new_account_real": {
       "type": "object",
       "title": "New real money account",
       "description": "New real money account details",
@@ -16,12 +16,20 @@
         "client_id": {
           "type": "string",
           "description": "Client id of new real money account"
+        },
+        "landing_company": {
+          "type": "string",
+          "description": "landing company full name"
+        },
+        "landing_company_short": {
+          "type": "string",
+          "description": "landing company shortcode"
         }
       }
     },
     "msg_type": {
       "type": "string",
-      "description": "new_account_default"
+      "description": "new_account_real"
     }
   },
   "required": [
