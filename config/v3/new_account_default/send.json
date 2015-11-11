@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title":"Create real account Send",
+  "description": "Create real account Send",
+  "properties": {
+    "new_account_default": {
+      "type": "integer",
+      "description": "Must be 1",
+      "pattern": "^1$",
+      "required": "1"
+    },
+    "salutation" : {
+      "enum": ["Mr", "Mrs", "Ms", "Miss", "Dr", "Prof"],
+      "description": "Accept any value in enum list.",
+      "required": "1"
+    },
+    "first_name": {
+      "type": "string",
+      "pattern": "^[a-zA-Z\\s'.-]{2,30}$",
+      "description": "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+      "required": "1"
+    },
+    "last_name": {
+      "type": "string",
+      "pattern": "^[a-zA-Z\\s'.-]{2,30}$",
+      "description": "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+      "required": "1"
+    },
+    "date_of_birth" : {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d\\d?-\\d\\d?$",
+      "description": "Date of birth format: yyyy-mm-dd.",
+      "required": "1"
+    },
+    "residence" : {
+      "type" : "string",
+      "pattern": "^[a-z]{2}$",
+      "description": "2-letter country code, possible value receive from residence_list call.",
+      "required": "1"
+    },
+    "address_line_1": {
+      "type" : "string",
+      "minLength": 1,
+      "maxLength": 70,
+      "description": "Within 70 characters.",
+      "required": "1"
+    },
+    "address_line_2": {
+      "type" : "string",
+      "maxLength": 70,
+      "description": "Optional field, within 70 characters."
+    },
+    "address_city": {
+      "type" : "string",
+      "minLength": 1,
+      "maxLength": 35,
+      "description": "Within 35 characters",
+      "required": "1"
+    },
+    "address_state": {
+      "type" : "string",
+      "maxLength": 35,
+      "description": "Optional field, possible value receive from states_list call."
+    },
+    "address_postcode": {
+      "type" : "string",
+      "pattern": "^[^+]{0,20}$",
+      "description": "Optional field, within 20 characters and may not contain '+'."
+    },
+    "phone": {
+      "type" : "string",
+      "pattern": "^\\+?[0-9\\s]{6,35}$",
+      "description": "Within 6-35 digits, allowing '+' in front, numbers or space.",
+      "required": "1"
+    },
+    "secret_question": {
+      "enum": [ "Mother's maiden name", "Name of your pet", "Name of first love", "Memorable town/city", "Memorable date", "Favourite dish", "Brand of first car", "Favourite artist" ],
+      "description": "Accept any value in enum list.",
+      "required": "1"
+    },
+    "secret_answer": {
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 50,
+      "description": "Answer to secret question, within 4-50 characters.",
+      "required": "1"
+    },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    }
+  },
+  "additionalProperties": false
+}

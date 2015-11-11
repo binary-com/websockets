@@ -8,7 +8,7 @@
       "title":"Echo request",
       "description":"Echo of the request made"
     },
-    "account": {
+    "new_account_virtual": {
       "type": "object",
       "title": "new virtual account",
       "description": "new virtual account details",
@@ -29,7 +29,7 @@
     },
     "msg_type": {
       "type": "string",
-      "description": "account"
+      "description": "new_account_virtual"
     }
   },
   "required": [

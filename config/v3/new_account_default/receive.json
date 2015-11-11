@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Create real account Receive",
+  "description": "Create real account Receive",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "new_account_default": {
+      "type": "object",
+      "title": "New real money account",
+      "description": "New real money account details",
+      "properties": {
+        "client_id": {
+          "type": "string",
+          "description": "Client id of new real money account"
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "new_account_default"
+    }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}
