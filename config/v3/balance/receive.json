@@ -25,7 +25,7 @@
           "currency": {
             "type": "string",
             "description": "Currency Example: USD",
-            "pattern": "^([A-Z]{3})$"	
+            "pattern": "^(|[A-Z]{3})$"
           },
           "loginid": {
             "type": "string",
