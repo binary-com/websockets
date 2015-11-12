@@ -2,13 +2,18 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title":"Balance Send",
-  "description": "Get realtime stream of user balance changes.",
+  "description": "Get user account balance",
   "properties": {
     "balance": {
       "type": "integer",
       "description": "Must be 1.",
       "pattern": "^1$",
       "require": "1"
+    },
+    "subscribe": {
+      "type": "integer",
+      "description": "If set to 1, will send updates whenever the balance changes. If set to 0, will unsubscribe from updates.",
+      "pattern": "^1|0$"
     },
     "passthrough": {
       "type": "object",
