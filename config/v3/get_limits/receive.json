@@ -9,7 +9,51 @@
       "description":"Echo of the request made"
     },
     "get_limits": {
-      "type": "object"
+      "type": "object",
+      "title": "Get Limits",
+      "description": "Trading limits of real account user",
+      "properties": {
+        "account_balance": {
+          "type": "integer",
+          "description": "Maximum account cash balance"
+        },
+        "daily_turnover": {
+          "type": "integer",
+          "description": "Maximum daily turnover"
+        },
+        "lifetime_limit": {
+          "type": "integer",
+          "description": "Withdrawal limit"
+        },
+        "num_of_days": {
+          "type": "integer",
+          "description": "Number of days for this limit"
+        },
+        "num_of_days_limit": {
+          "type": "integer",
+          "description": "Limit for these days"
+        },
+        "open_positions": {
+          "type": "integer",
+          "description": "Maximum number of open positions"
+        },
+        "payout": {
+          "type": "integer",
+          "description": "Maximum aggregate payouts on open positions"
+        },
+        "remainder": {
+          "type": "integer",
+          "description": "Amount left to reach limit"
+        },
+        "withdrawal_for_x_days_monetary": {
+          "type": "integer",
+          "description": "Withdrawal for these number of days"
+        },
+        "withdrawal_since_inception_monetary": {
+          "type": "integer",
+          "description": "Withdrawal since inception"
+        }
+      }
     },
     "msg_type": {
       "type": "string",
