@@ -31,6 +31,10 @@
             "hit_count":{
               	"type":"number",
               	"description":"It is the count of contracts available"
+              },
+            "spot":{
+                "type":"number",
+                "description":"Current spot price for this underlying"
               }
         }
     },
