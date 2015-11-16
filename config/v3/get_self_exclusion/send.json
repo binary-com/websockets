@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Get User Self-Exclusion Send",
+  "description":"Self-Exclusion Facilities",
+  "properties": {
+    "get_self_exclusion": {
+      "type":"integer",
+      "pattern": "^1$"
+    },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "get_self_exclusion"
+  ]
+}

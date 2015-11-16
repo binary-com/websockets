@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Get User Self-Exclusion Receive",
+  "description": "A message with User Self-Exclusion",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "get_self_exclusion": {
+      "type": "object",
+      "title": "Self-Exclusion Structure",
+      "properties":{
+        "max_balance":{
+          "type":"integer",
+          "description": "Maximum account cash balance"
+        },
+        "max_turnover":{
+          "type":"integer",
+          "description": "Daily turnover limit"
+        },
+        "max_losses":{
+          "type":"integer",
+          "description": "Daily limit on losses"
+        },
+        "max_7day_turnover":{
+          "type":"integer",
+          "description": "7-day turnover limit"
+        },
+        "max_7day_losses":{
+          "type":"integer",
+          "description": "7-day limit on losses"
+        },
+        "max_30day_turnover":{
+          "type":"integer",
+          "description": "30-day turnover limit"
+        },
+        "max_30day_losses":{
+          "type":"integer",
+          "description": "30-day limit on losses"
+        },
+        "max_open_bets":{
+          "type":"integer",
+          "description": "Maximum number of open positions"
+        },
+        "session_duration_limit":{
+          "type":"integer",
+          "description": "Session duration limit, in minutes"
+        },
+        "exclude_until":{
+          "type": "string",
+          "description": "Exclude me from the website until (date YYYY-MM-DD)"
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "get_self_exclusion"
+    }
+  },
+  "required": [
+    "echo_req",
+    "get_self_exclusion",
+    "msg_type"
+  ]
+}

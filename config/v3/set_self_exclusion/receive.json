@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Set User Self-Exclusion Receive",
+  "description": "A message with User Self-Exclusion",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "set_self_exclusion": {
+      "type": "integer",
+      "title": "Update Status",
+      "description": "1 on success"
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "set_self_exclusion"
+    }
+  },
+  "required": [
+    "echo_req",
+    "set_self_exclusion",
+    "msg_type"
+  ]
+}
