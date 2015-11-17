@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Payment Agent List Send",
+  "description": "Payment agents based on country",
+  "properties": {
+    "paymentagent_list": {
+      "type":"string",
+      "title": "Payment Agent Target Country",
+      "description": "Client country.",
+      "pattern": "^\\w\\w$",
+      "required": "1"
+    },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    }
+  },
+  "additionalProperties": false
+}

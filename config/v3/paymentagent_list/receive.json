@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Payment Agent List Receive",
+  "description": "A message with Payment Agent List",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "paymentagent_list": {
+      "type": "object",
+      "title": "Payment Agent List",
+      "description": "Payment Agent List",
+      "properties": {
+        "available_countries": {
+          "type": "array"
+        },
+        "list": {
+          "type": "array",
+          "items":{
+            "type": "object"
+          }
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "paymentagent_list"
+    }
+  },
+  "required": [
+    "echo_req",
+    "paymentagent_list",
+    "msg_type"
+  ]
+}
