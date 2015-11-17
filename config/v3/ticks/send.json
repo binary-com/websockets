@@ -5,10 +5,8 @@
   "description": "Initiate a continuous stream of spot price updates for a given symbol",
   "properties": {
     "ticks": {
-      "type": "string",
       "sample": "frxUSDJPY",
-      "pattern": "^\\w{2,30}$",
-      "description": "The short symbol name",
+      "description": "The short symbol name or array of symbols. E.x [\"frxUSDJPY\", \"R_50\"]",
       "required": "1"
     },
     "passthrough": {
