@@ -13,9 +13,9 @@
         "title":"Profit Table list",
         "description":"Account Profit Table.",
         "properties":{
-          "total":{
+          "count":{
             "type":"number",
-            "description":"Number of transactions for this account"
+            "description":"Number of transactions returned in this call"
           },
           "transactions":{
               "type":"array",
