@@ -16,6 +16,10 @@
           "type":"string",
           "description": "User Email"
         },
+        "date_of_birth": {
+          "type": "integer",
+          "description": "Epoch of birthday"
+        },
         "country":{
           "type":["string","null"],
           "description": "User Country"
