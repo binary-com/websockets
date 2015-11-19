@@ -14,15 +14,15 @@
       "description": "Trading limits of real account user",
       "properties": {
         "account_balance": {
-          "type": "integer",
+          "type": "number",
           "description": "Maximum account cash balance"
         },
         "daily_turnover": {
-          "type": "integer",
+          "type": "number",
           "description": "Maximum daily turnover"
         },
         "lifetime_limit": {
-          "type": "integer",
+          "type": "number",
           "description": "Withdrawal limit"
         },
         "num_of_days": {
@@ -38,19 +38,19 @@
           "description": "Maximum number of open positions"
         },
         "payout": {
-          "type": "integer",
+          "type": "number",
           "description": "Maximum aggregate payouts on open positions"
         },
         "remainder": {
-          "type": "integer",
+          "type": "number",
           "description": "Amount left to reach limit"
         },
         "withdrawal_for_x_days_monetary": {
-          "type": "integer",
+          "type": "number",
           "description": "Withdrawal for these number of days"
         },
         "withdrawal_since_inception_monetary": {
-          "type": "integer",
+          "type": "number",
           "description": "Withdrawal since inception"
         }
       }
