@@ -6,7 +6,7 @@
   "properties": {
     "forget": {
       "type": "string",
-      "pattern": "^\\w{32,128}$",
+      "pattern": "^[\\w-]{32,128}$",
       "description": "ID of the real-time stream of messages to cancel",
       "require": "1"
     },   

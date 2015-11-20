@@ -37,7 +37,7 @@
     "granularity": {
       "type": "integer",
       "sample": "60",
-      "description": "Provide for style: 'candles'. Candle time-dimension width setting: typically '60', '120', '300', '600', '900', '1800', '3600', '14400', or '86400' (default: '60')."
+      "description": "Provide for style: 'candles'. Candle time-dimension width setting: typically '60', '120', '180', '300', '600', '900', '1800', '3600', '14400', or '86400' (default: '60')."
     },
     "adjust_start_time": {
       "type": "integer",

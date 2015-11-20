@@ -24,6 +24,10 @@
         "quote": {
           "type": "number",
           "description": "Market value at the epoch"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Symbol"
         }
       }
     },
