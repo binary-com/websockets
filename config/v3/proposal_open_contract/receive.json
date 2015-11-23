@@ -46,19 +46,23 @@
           "description": "Example: 9874.52"
         },
         "current_spot_time": {
-          "type": "epoch",
+          "type": "integer",
           "description": "Example: 1439999052"
         },
+        "entry_spot": {
+          "type": ["number", "null"],
+          "description": "Example: 9874.52"
+        },
         "date_expiry": {
-          "type": "epoch",
+          "type": "integer",
           "description": "Example: 1446629000"
         },
         "date_settlement": {
-          "type": "epoch",
+          "type": "integer",
           "description": "Example: 1446629000"
         },
         "date_start": {
-          "type": "epoch",
+          "type": "integer",
           "description": "Example: 1446629000"
         },
         "id": {
@@ -110,7 +114,7 @@
           "description": "Example: 86.630"
         },
         "entry_tick_time": {
-          "type": "epoch",
+          "type": "integer",
           "description": "Example: 1446629000"
         },
         "exit_tick": {
@@ -118,7 +122,7 @@
           "description": "Example: 86.810"
         },
         "exit_tick_time": {
-          "type": "epoch",
+          "type": "integer",
           "description": "Example: 1446629000"
         },
         "prediction": {

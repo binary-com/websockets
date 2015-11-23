@@ -30,25 +30,29 @@
                     "type": ["integer", "null"],
                     "description":"It is the contract id Example: 4867502908"
                   },
-              	  "purchase_time":{
-              		  "type":"integer",
-              		  "description":"It is the purchase time of transaction"
-              	  },
-              	  "sell_time":{
-              		  "type":["integer", "null"],
-              		  "description":"It is the sell time of transaction"
-              	  },
+                  "purchase_time":{
+                    "type":"integer",
+                    "description":"It is the purchase time of transaction"
+                  },
+                  "sell_time":{
+                    "type":["integer", "null"],
+                    "description":"It is the sell time of transaction"
+                  },
                   "buy_price":{
                     "type":"number",
                     "description":"buy price"
                   },
-              	  "sell_price":{
-              		  "type":"number",
-              		  "description":"sold price"
-              	  },
-                  "description":{
-                    "type":"string",
-                    "description":"contract description"
+                  "sell_price":{
+                    "type":"number",
+                    "description":"sold price"
+                  },
+                  "longcode": {
+                    "type": "string",
+                    "description": "The description of contract purchased if description is set to 1"
+                  },
+                  "shortcode": {
+                    "type": "string",
+                    "description": "Compact description of the contract purchased if description is set to 1"
                   }
                 }
               },
