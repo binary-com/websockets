@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Create maltainvest account Receive",
+  "description": "Create maltainvest account Receive",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "new_account_maltainvest": {
+      "type": "object",
+      "title": "New maltainvest account",
+      "description": "New maltainvest account details",
+      "properties": {
+        "client_id": {
+          "type": "string",
+          "description": "Client id of new maltainvest account"
+        },
+        "landing_company": {
+          "type": "string",
+          "description": "landing company full name"
+        },
+        "landing_company_short": {
+          "type": "string",
+          "description": "landing company shortcode"
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "new_account_maltainvest"
+    }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}
