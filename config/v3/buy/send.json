@@ -6,7 +6,7 @@
   "properties": {
     "buy": {
       "type": "string",
-      "pattern": "^\\w{32,128}$",
+      "pattern": "^[\\w-]{32,128}$",
       "description": "The id received from a Price Proposal call",
       "required": "1"
     },
