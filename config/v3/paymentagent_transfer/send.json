@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Payment Agent Transfer Request",
+  "description": "Payment Agent Transfer",
+  "properties": {
+    "paymentagent_transfer": {
+      "type":"integer",
+      "pattern": "^1$",
+      "required": "1"
+    },
+    "transfer_to": {
+      "type": "string",
+      "pattern": "\\w+",
+      "description": "The transfer_to loginid",
+      "required": "1"
+    },
+    "currency": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "required": "1"
+    },
+    "amount": {
+      "type": "number",
+      "required": "1"
+    },
+    "dry_run": {
+      "type": "integer",
+      "pattern": "^(0|1)$",
+      "description": "If 1, just do validation"
+    },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    }
+  },
+  "additionalProperties": false
+}
