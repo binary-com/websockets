@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-
   "type": "object",
   "title": "Get list of active symbols Receive",
   "description": "A message list of active symbols",
@@ -85,8 +84,7 @@
             "description": "pip size"
           }
         }
-      },
-      "description":"active symbols"
+      }
     },
     "msg_type": {
       "type": "string",
