@@ -18,7 +18,7 @@
         "properties":{
           "symbol": {
             "type": "string",
-            "description": "Symbol"
+            "description": "Binary.com symbol code for this underlying"
           },
           "intraday_interval_minutes": {
             "type": "integer",
@@ -26,47 +26,47 @@
           },
           "symbol_type": {
             "type": "string",
-            "description": "Symbol type"
+            "description": "Symbol type (forex, commodities, etc)"
           },
           "exchange_is_open": {
             "type": ["integer", "null"],
-            "description": "1 or 0"
+            "description": "1 or 0 - whether the market is currently open or closed"
           },
           "exchange_name": {
             "type": "string",
-            "description": "Exchange name"
+            "description": "Exchange name (for underlyings listed on a Stock Exchange)"
           },
           "delay_amount": {
             "type": "integer",
-            "description": "Amount the feed is delayed (in minutes)"
+            "description": "Amount the feed is delayed (in minutes) due to Exchange licensing requirements"
           },
           "display_name": {
             "type": "string",
-            "description": "display name"
+            "description": "Display name"
           },
           "spot": {
             "type": ["number", "null"],
-            "description": "Spot"
+            "description": "Latest spot price"
           },
           "spot_time": {
             "type": "string",
-            "description": "Epoch of spot time."
+            "description": "Latest spot epoch time"
           },
           "is_trading_suspended": {
             "type": "integer",
-            "description": "1 indicates suspended trade."
+            "description": "1 indicates that trading is currently suspended"
           },
           "quoted_currency_symbol": {
             "type": "string",
-            "description": "Quoted currency symbol"
+            "description": "For stocks and stock indices, the underlying currency for that instrument"
           },
           "spot_age": {
             "type": "string",
-            "description": "Spot age"
+            "description": "Number of seconds elapsed since the last spot price"
           },
           "market": {
             "type": "string",
-            "description": "Market name"
+            "description": "Market category (forex, indices etc)"
           },
           "market_display_name": {
             "type": "string",

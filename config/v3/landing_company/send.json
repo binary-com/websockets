@@ -2,12 +2,12 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Landing Company Send",
-  "description":"Landing Company based on country",
+  "description":"Binary.com has a number of licensed subsidiaries in various jurisidictions, which are called Landing Companies. This call will return the appropriate Landing Company for clients of a given country. The landing company may differ for gaming contracts (Random Indices) and financial contracts (forex, stock indices, commodities).",
   "properties": {
     "landing_company": {
       "type":"string",
       "title": "Landing Company",
-      "description":"Client country.",
+      "description":"Client country",
       "pattern": "^\\w\\w$",
       "required": "1"
     },

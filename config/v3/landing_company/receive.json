@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Landing Company Receive",
-  "description": "A message with Landing Company",
+  "description": "Returns the Landing Company for clients of a given country.",
   "properties": {
     "echo_req": {
       "title":"Echo request",
@@ -14,46 +14,57 @@
       "description": "Landing Company",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "string",
+          "description": "Country code"
         },
         "name": {
-          "type": "string"
+          "type": "string",
+          "description": "Country name"
         },
         "gaming_company": {
           "type": ["null", "object"],
+          "description": "Landing Company for gaming contracts (Random Indices)",
           "properties":{
             "shortcode":{
-              "type":"string"
+              "type":"string",
+              "description": "Landing Company short code"
             },
             "name":{
-              "type":"string"
+              "type":"string",
+              "description": "Landing Company legal name"
             },
             "address":{
               "type": ["array", "null"],
+              "description": "Landing Company address",
               "items":{
                 "type":"string"
               }
             },
             "country":{
-              "type":"string"
+              "type":"string",
+              "description": "Landing Company country of incorporation"
             },
             "legal_default_currency":{
-              "type":"string"
+              "type":"string",
+              "description": "Default account currency"
             },
             "legal_allowed_currencies":{
               "type":"array",
+              "description": "Allowable currencies",
               "items":{
                 "type":"string"
               }
             },
             "legal_allowed_markets":{
               "type":"array",
+              "description": "Allowable markets",
               "items":{
                 "type":"string"
               }
             },
             "legal_allowed_contract_categories":{
               "type":"array",
+              "description": "Allowed contract types",
               "items":{
                 "type":"string"
               }
@@ -62,39 +73,48 @@
         },
         "financial_company": {
           "type": ["null", "object"],
+          "description": "Landing Company for financial contracts (all except Random Indices)",
           "properties": {
             "shortcode":{
-              "type":"string"
+              "type":"string",
+              "description": "Landing Company short code"
             },
             "name":{
-              "type":"string"
+              "type":"string",
+              "description": "Landing Company legal name"
             },
             "address":{
               "type": ["array", "null"],
+              "description": "Landing Company address",
               "items":{
                 "type":"string"
               }
             },
             "country":{
-              "type":"string"
+              "type":"string",
+              "description": "Landing Company country of incorporation"
             },
             "legal_default_currency":{
-              "type":"string"
+              "type":"string",
+              "description": "Default account currency"
             },
             "legal_allowed_currencies":{
               "type":"array",
+              "description": "Allowed account currencies",
               "items":{
                 "type":"string"
               }
             },
             "legal_allowed_markets":{
               "type":"array",
+              "description": "Allowed markets",
               "items":{
                 "type":"string"
               }
             },
             "legal_allowed_contract_categories":{
               "type":"array",
+              "description": "Allowed contract types",
               "items":{
                 "type":"string"
               }

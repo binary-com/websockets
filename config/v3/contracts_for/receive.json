@@ -19,67 +19,67 @@
                   "properties":{
                 	  "market":{
                 		  "type":"string",
-                		  "description":"Type of Market Example: random"
+                		  "description":"Type of market (forex, indices, random, ...)"
                 	  },
                 	  "contracts_display":{
                 		  "type":"string",
-                		  "description":"Type of contract Example: asian up"
+                		  "description":"Type of contract (example: asian up)"
                 	  },
                 	  "max_contract_duration":{
                 		  "type":"string",
-                		  "description":"Maximum contract duration Example: 10"
+                		  "description":"Maximum contract duration (example: 10)"
                 	  },
                 	  "barrier_category":{
                 		  "type":"string",
-                		  "description":"Category of barrier Example: asian"
+                		  "description":"Category of barrier (example: asian)"
                 	  },
                 	  "payout_limit":{
                 		  "type":"number",
-                		  "description":"Maximum payout Example: 10000"
+                		  "description":"Maximum payout (example: 10000)"
                 	  },
                 	  "submarket":{
                 		  "type":"string",
-                		  "description":"Type of submarket Example: random_index"
+                		  "description":"Type of submarket (example: random_index)"
                 	  },
                 	  "exchange_name":{
                 		  "type":"string",
-                		  "description":"Name of exchange Example: RANDOM"
+                		  "description":"Name of exchange (example: RANDOM)"
                 	  },
                 	  "contract_category_display":{
                 		  "type":"string",
-                		  "description":"Category of the contract Example: Asians"
+                		  "description":"Category of the contract (example: Asians)"
                 	  },
                 	  "contract_type":{
                 		  "type":"string",
-                		  "description":"Type of contract Example: ASIANU"
+                		  "description":"Type of contract (example: ASIANU)"
                 	  },
                 	  "min_contract_duration":{
                 		  "type":"string",
-                		  "description":"Minimum contract duration Example: 5"
+                		  "description":"Minimum contract duration (example: 5)"
                 	  },
                 	  "sentiment":{
                 		  "type":"string",
-                		  "description":"Type of sentiment Example: up"
+                		  "description":"Type of sentiment (example: up)"
                 	  },
                 	  "barriers":{
                 		  "type":"number",
-                		  "description":"Barriers Example: 0"
+                		  "description":"Barriers (example: 0)"
                 	  },
                 	  "contract_category":{
                 		  "type":"string",
-                		  "description":"Category of contract Example: asian"
+                		  "description":"Category of contract (example: asian)"
                 	  },
                 	  "start_type":{
                 		  "type":"string",
-                		  "description":"Start Type Example: spot"
+                		  "description":"Start Type (example: spot)"
                 	  },
                 	  "expiry_type":{
                 		  "type":"string",
-                		  "description":"Expiry Type Example: tick"
+                		  "description":"Expiry Type (example: tick)"
                 	  },
                 	  "underlying_symbol":{
                 		  "type":"string",
-                		  "description":"Symbol code Example: R_50"
+                		  "description":"Symbol code (example: R_50)"
                 	  },
                 	  "forward_starting_options":{
                 		  "type":"array",
@@ -113,7 +113,7 @@
               },
             "hit_count":{
               	"type":"number",
-              	"description":"It is the count of contracts available"
+              	"description":"Count of contracts available"
               },
             "spot":{
                 "type":"number",
