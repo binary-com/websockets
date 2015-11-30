@@ -24,7 +24,7 @@ On receipt of each message, it outputs a message.</p>
 
 <div id="language-demos">
 
-<pre data-language="javascript">var ws = new WebSocket(&#39;wss://www.binary.com/websockets/v2&#39;);
+<pre data-language="javascript">var ws = new WebSocket(&#39;wss://ws.binaryws.com/websockets/v3&#39;);
 
 ws.onopen = function(evt) {
     ws.send(JSON.stringify({ticks:&#39;R_100&#39;}));
@@ -36,7 +36,7 @@ ws.onmessage = function(msg) {
 };
 </pre>
 
-<pre data-language="coffeescript">ws = new WebSocket('wss://www.binary.com/websockets/v2')
+<pre data-language="coffeescript">ws = new WebSocket('wss://ws.binaryws.com/websockets/v3')
 
 ws.onopen = (evt) ->
     ws.send JSON.stringify(ticks: 'R_100')
@@ -51,7 +51,7 @@ ws.onmessage = (msg) ->
     static async Task SendTicksRequest()
     {
         var ws = new ClientWebSocket();
-        var uri = new Uri("wss://www.binary.com/websockets/v2");
+        var uri = new Uri("wss://ws.binaryws.com/websockets/v3");
 
         await ws.ConnectAsync(uri, CancellationToken.None);
 
@@ -84,7 +84,7 @@ import (
 )
 
 var origin = "http://localhost/"
-var url = "wss://www.binary.com/websockets/v2?l=EN"
+var url = "wss://ws.binaryws.com/websockets/v3?l=EN"
 
 func main() {
     ws, _ := websocket.Dial(url, "", origin)
@@ -122,7 +122,7 @@ public class WSClient  {
     public static void main(String[] args) throws java.io.IOException, javax.websocket.DeploymentException, java.lang.InterruptedException
     {
         WebSocketContainer container = ContainerProvider.getWebSocketContainer();
-        Session session = container.connectToServer(WSClient.class, URI.create("wss://www.binary.com/websockets/v2"));
+        Session session = container.connectToServer(WSClient.class, URI.create("wss://ws.binaryws.com/websockets/v3"));
         Thread.sleep(10000);
     }
 }
@@ -137,7 +137,7 @@ use Mojo::UserAgent;
 use Data::Dumper;
 
 my $ua = Mojo::UserAgent->new;
-$ua->websocket('wss://www.binary.com/websockets/v2' => sub {
+$ua->websocket('wss://ws.binaryws.com/websockets/v3' => sub {
     my ($ua, $tx) = @_;
     say 'WebSocket handshake failed!' and return unless $tx->is_websocket;
 
@@ -162,7 +162,7 @@ require 'eventmachine'
 require 'json'
 
 EM.run {
-    ws = Faye::WebSocket::Client.new('wss://www.binary.com/websockets/v2')
+    ws = Faye::WebSocket::Client.new('wss://ws.binaryws.com/websockets/v3')
 
     ws.on :open do |event|
         p [:open]
@@ -186,11 +186,11 @@ def on_message(ws, message):
     print('ticks update: %s' % message)
 
 if __name__ == "__main__":
-    ws = websocket.WebSocketApp("wss://www.binary.com/websockets/v2", on_message = on_message, on_open = on_open)
+    ws = websocket.WebSocketApp("wss://ws.binaryws.com/websockets/v3", on_message = on_message, on_open = on_open)
     ws.run_forever()
 </pre>
 
-<pre data-language="swift">let ws = WebSocket("wss://www.binary.com/websockets/v2")
+<pre data-language="swift">let ws = WebSocket("wss://ws.binaryws.com/websockets/v3")
 
 ws.event.open = {
     ws.send("{\"ticks\":\"R_100\"}")
