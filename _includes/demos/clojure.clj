@@ -6,7 +6,7 @@
   [& args]
   (def socket
    (ws/connect
-    "wss://www.binary.com/websockets/v2"
+    "wss://ws.binaryws.com/websockets/v3"
     :on-receive #(prn (parse-string %))))
   (ws/send-msg socket (generate-string {:ticks "R_100"}))
   (Thread/sleep 5000)

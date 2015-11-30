@@ -22,7 +22,7 @@ public class WSClient  {
         throws IOException, DeploymentException, InterruptedException
     {
         WebSocketContainer container = ContainerProvider.getWebSocketContainer();
-        URI apiUri = URI.create("wss://www.binary.com/websockets/v2");
+        URI apiUri = URI.create("wss://ws.binaryws.com/websockets/v3");
         Session session = container.connectToServer(WSClient.class, apiUri);
         Thread.sleep(10000);
     }
