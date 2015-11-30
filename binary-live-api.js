@@ -69,7 +69,7 @@ var LiveApi = (function () {
         var _ref = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
         var _ref$apiUrl = _ref.apiUrl;
-        var apiUrl = _ref$apiUrl === undefined ? 'wss://www.binary.com/websockets/v3' : _ref$apiUrl;
+        var apiUrl = _ref$apiUrl === undefined ? 'wss://ws.binaryws.com/websockets/v3' : _ref$apiUrl;
         var websocket = _ref.websocket;
 
         _classCallCheck(this, LiveApi);
