@@ -5,7 +5,7 @@ require 'eventmachine'
 require 'json'
 
 EM.run {
-    ws = Faye::WebSocket::Client.new('wss://www.binary.com/websockets/v2')
+    ws = Faye::WebSocket::Client.new('wss://ws.binaryws.com/websockets/v3')
 
     ws.on :open do |event|
         p [:open]

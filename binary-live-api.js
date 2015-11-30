@@ -45,7 +45,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var apiUrl = 'wss://www.binary.com/websockets/v2';
+var apiUrl = 'wss://ws.binaryws.com/websockets/v3';
 
 var noSubscriptions = function noSubscriptions() {
     return {
@@ -88,7 +88,7 @@ var LiveApi = (function () {
             WebSocket = options.websocket;
         }
 
-        this.connect(this.apiUrl || 'wss://www.binary.com/websockets/v3');
+        this.connect(this.apiUrl || 'wss://ws.binaryws.com/websockets/v3');
     }
 
     LiveApi.prototype.connect = function connect() {

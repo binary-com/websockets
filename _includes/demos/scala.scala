@@ -1,7 +1,7 @@
 import org.jfarcand.wcs._   // "org.jfarcand" % "wcs" % "1.4"
 
 object BinaryWS extends App {
-  WebSocket().open("wss://www.binary.com/websockets/v2")
+  WebSocket().open("wss://ws.binaryws.com/websockets/v3")
       .listener(new TextListener() {
           override def onMessage(message: String) {
               println("ticks update: "+message)

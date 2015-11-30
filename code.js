@@ -1,6 +1,6 @@
 require.config({ baseUrl: '/' });
 
-var apiUrl = 'wss://www.binary.com/websockets/v3';
+var apiUrl = 'wss://ws.binaryws.com/websockets/v3';
 
 require(["docson/docson", "lib/jquery"], function(docson) {
 
@@ -183,7 +183,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     $('#api-version-selector, #api-language-selector').on('change', function(е) {
         var verStr = $('#api-version-selector').val(),
             langStr = $('#api-language-selector').val();
-        apiUrl = 'wss://www.binary.com/websockets/' + verStr + '?l=' + langStr;
+        apiUrl = 'wss://ws.binaryws.com/websockets/' + verStr + '?l=' + langStr;
         initConnection();
     });
 

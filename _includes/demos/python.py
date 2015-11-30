@@ -9,6 +9,6 @@ def on_message(ws, message):
     print('ticks update: %s' % message)
 
 if __name__ == "__main__":
-    apiUrl = "wss://www.binary.com/websockets/v2"
+    apiUrl = "wss://ws.binaryws.com/websockets/v3"
     ws = websocket.WebSocketApp(apiUrl, on_message = on_message, on_open = on_open)
     ws.run_forever()

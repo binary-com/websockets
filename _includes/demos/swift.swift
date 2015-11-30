@@ -1,4 +1,4 @@
-let ws = WebSocket("wss://www.binary.com/websockets/v2")
+let ws = WebSocket("wss://ws.binaryws.com/websockets/v3")
 
 ws.event.open = {
     ws.send("{\"ticks\":\"R_100\"}")

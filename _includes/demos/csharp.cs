@@ -3,7 +3,7 @@ class Program
     static async Task SendTicksRequest()
     {
         var ws = new ClientWebSocket();
-        var uri = new Uri("wss://www.binary.com/websockets/v2");
+        var uri = new Uri("wss://ws.binaryws.com/websockets/v3");
 
         await ws.ConnectAsync(uri, CancellationToken.None);
 
