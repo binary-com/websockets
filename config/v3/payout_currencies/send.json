@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title":"Payout Currencies Send",
-  "description":"Retrieve a list of available payout currencies",
+  "description":"Retrieve a list of available option payout currencies. If a user is logged in, only the currency available for his account will be returned.",
   "properties": {
     "payout_currencies": {
       "type": "integer",

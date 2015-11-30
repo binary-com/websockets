@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Portfolio Send",
-  "description": "Receive information about my current portfolio.",
+  "description": "Receive information about my current portfolio of outstanding options",
   "properties": {
     "portfolio": {
       "type": "integer",

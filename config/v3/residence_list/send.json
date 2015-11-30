@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Residence List Send",
-  "description":"Residence List",
+  "description":"This call returns a list of countries and 2-letter country codes, suitable for populating the account opening form.",
   "properties": {
     "residence_list": {
       "type":"integer",

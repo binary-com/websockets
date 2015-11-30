@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Get Limits Send",
-  "description":"Trading and Withdrawal Limits",
+  "description":"Trading and Withdrawal Limits for a given user",
   "properties": {
     "get_limits": {
       "type":"integer",

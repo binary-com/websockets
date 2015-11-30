@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Set User Settings Send",
-  "description":"Set User Settings",
+  "description":"Set User Settings (this call should be used in conjunction with get_settings)",
   "properties": {
     "set_settings": {
       "type":"integer",

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "States List Send",
-  "description":"States List based on country",
+  "description":"For a given country, returns a list of States of that country. This is useful to populate the account opening form.",
   "properties": {
     "states_list": {
       "title": "States list",

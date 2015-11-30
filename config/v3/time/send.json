@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Time request",
+  "description": "Request back-end server epoch time",
   "properties": {
     "time": {
       "type": "integer",

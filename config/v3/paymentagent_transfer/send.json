@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Payment Agent Transfer Request",
-  "description": "Payment Agent Transfer",
+  "description": "Payment Agent Transfer - this call is available only to accounts that are approved Payment Agents.",
   "properties": {
     "paymentagent_transfer": {
       "type":"integer",

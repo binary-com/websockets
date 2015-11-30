@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Set Self-Exclusion Send",
-  "description":"Set Self-Exclusion",
+  "description":"Set Self-Exclusion (this call should be used in conjunction with get_self_exclusion)",
   "properties": {
     "set_self_exclusion": {
       "type":"integer",

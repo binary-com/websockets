@@ -18,7 +18,7 @@
         },
         "date_of_birth": {
           "type": "integer",
-          "description": "Epoch of birthday"
+          "description": "Epoch of user's birthday"
         },
         "country":{
           "type":["string","null"],
@@ -26,27 +26,27 @@
         },
         "address_line_1":{
           "type":"string",
-          "description": "Address 1, not for virtual account"
+          "description": "Address line 1 (note: not set for virtual-money accounts)"
         },
         "address_line_2":{
           "type":"string",
-          "description": "Address 2, not for virtual account"
+          "description": "Address line 2 (note: not set for virtual-money accounts)"
         },
         "address_city":{
           "type":"string",
-          "description": "City, not for virtual account"
+          "description": "City (note: not set for virtual-money accounts)"
         },
         "address_state":{
           "type":"string",
-          "description": "State, not for virtual account"
+          "description": "State (note: not set for virtual-money accounts)"
         },
         "address_postcode":{
           "type":"string",
-          "description": "Post Code, not for virtual account"
+          "description": "Post Code (note: not set for virtual-money accounts)"
         },
         "phone":{
           "type":"string",
-          "description": "Phone, not for virtual account"
+          "description": "Telephone (note: not set for virtual-money accounts)"
         }
       }
     },

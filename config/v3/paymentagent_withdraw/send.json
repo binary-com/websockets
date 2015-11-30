@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Payment Agent Withdrawal Request",
-  "description": "Payment Agent Withdrawal",
+  "description": "Initiate a withdrawal to an approved Payment Agent.",
   "properties": {
     "paymentagent_withdraw": {
       "type":"integer",
@@ -12,7 +12,7 @@
     "paymentagent_loginid": {
       "type": "string",
       "pattern": "\\w+",
-      "description": "The paymentagent loginid from paymentagent_list",
+      "description": "The payment agent loginid received from the paymentagent_list call",
       "required": "1"
     },
     "currency": {

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title":"Create virtual account Send",
-  "description": "Create virtual account Send",
+  "description": "Create a new virtual-money account",
   "properties": {
     "new_account_virtual": {
       "type": "integer",
@@ -12,25 +12,25 @@
     },
     "email": {
       "type": "string",
-      "description": "email address",
+      "description": "Email address",
       "format": "email",
       "required": "1"
     },
     "verification_code": {
       "type": "string",
-      "description": "email verification code receive from verify_email call",
+      "description": "Email verification code (received from a verify_email call, which must be done first)",
       "pattern": "^[0-9A-Za-z\/+=]{10,15}$",
       "required": "1"
     },
     "client_password": {
       "type": "string",
-      "description": "password length within 5-25 chars, accepts alphanumeric, space, @_:+-./=",
+      "description": "Password (length within 5-25 chars, accepts alphanumeric, space, @_:+-./= )",
       "pattern": "^[\\s.A-Za-z0-9@_:+-\/=]{5,25}$",
       "required": "1"
     },
     "residence": {
       "type": "string",
-      "description": "value receive from residence_list call, 2-letter country code",
+      "description": "Value received from residence_list call (2-letter country code)",
       "pattern": "^[a-z]{2}$",
       "required": "1"
     },

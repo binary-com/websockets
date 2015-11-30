@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Get User Settings Send",
-  "description":"Get User Settings",
+  "description":"Get User Settings (email, date of birth, address etc)",
   "properties": {
     "get_settings": {
       "type":"integer",

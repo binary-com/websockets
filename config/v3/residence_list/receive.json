@@ -17,10 +17,12 @@
         "properties":{
           "value":{
             "type":"string",
+            "description":"2-letter country code",
             "pattern": "^\\w\\w$"
           },
           "text":{
-            "type":"string"
+            "type":"string",
+            "description":"Country full name"
           }
         }
       }

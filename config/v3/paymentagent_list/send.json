@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Payment Agent List Send",
-  "description": "Payment agents based on country",
+  "description": "Will return a list of Payment Agents for a given country. Payment agents allow Binary.com users to deposit and withdraw funds using local payment methods that might not be available via the main Binary.com cashier system.",
   "properties": {
     "paymentagent_list": {
       "type":"string",

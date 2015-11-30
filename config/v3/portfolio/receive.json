@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Portfolio Receive",
-  "description": "For each portfolio entry, an initial message will provide information about that contract.",
+  "description": "Receive a list of outstanding options in the user's portfolio",
   "properties": {
     "echo_req": {
       "title":"Echo request",
