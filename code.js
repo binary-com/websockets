@@ -1,5 +1,6 @@
 require.config({ baseUrl: '/' });
 
+var LiveApi = window['binary-live-api'].LiveApi;
 var apiUrl = 'wss://ws.binaryws.com/websockets/v3';
 
 require(["docson/docson", "lib/jquery"], function(docson) {
