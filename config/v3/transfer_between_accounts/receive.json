@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Transfer Between Accounts Response",
+  "description": "",
+  "properties": {
+    "transfer_between_accounts": {
+      "type": "integer",
+      "description": "If 1, transfer success.",
+      "pattern": "^(1|0)$"
+    },
+    "echo_req": {
+      "title": "Echo request",
+      "description": "Echo of the request made"
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "transfer_between_accounts"
+    }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}
