@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Latest price for an open contract",
-  "description": "Get latest price for an open contract in the user's portfolio",
+  "description": "Get latest price (and other information) for an open contract in the user's portfolio",
   "properties": {
     "proposal_open_contract": {
       "type": "integer",

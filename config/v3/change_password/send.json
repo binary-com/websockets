@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Change Password Request",
-  "description": "Change Password",
+  "description": "Change Password. Note: this call is NOT available when authenticated to a per-app token. It is only available for in-house Binary.com apps.",
   "properties": {
     "change_password": {
       "type": "string",
