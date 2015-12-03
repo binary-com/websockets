@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Cashier Password Response",
+  "description": "",
+  "properties": {
+    "cashier_password": {
+      "type": "integer",
+      "description": "If 1, proceeded successfully.",
+      "pattern": "^(1|0)$"
+    },
+    "echo_req": {
+      "title": "Echo request",
+      "description": "Echo of the request made"
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "cashier_password"
+    }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}
