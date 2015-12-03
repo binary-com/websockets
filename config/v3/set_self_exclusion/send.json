@@ -9,52 +9,52 @@
       "pattern": "^1$"
     },
     "max_balance":{
-      "type": "integer",
+      "type": ["integer", "null"],
       "pattern": "^\\d{0,20}$",
       "description": "Maximum account cash balance"
     },
     "max_turnover":{
-      "type": "integer",
+      "type": ["integer", "null"],
       "pattern": "^\\d{0,20}$",
       "description": "Daily turnover limit"
     },
     "max_losses":{
-      "type": "integer",
+      "type": ["integer", "null"],
       "pattern": "^\\d{0,20}$",
       "description": "Daily limit on losses"
     },
     "max_7day_turnover":{
-      "type": "integer",
+      "type": ["integer", "null"],
       "pattern": "^\\d{0,20}$",
       "description": "7-day turnover limit"
     },
     "max_7day_losses":{
-      "type": "integer",
+      "type": ["integer", "null"],
       "pattern": "^\\d{0,20}$",
       "description": "7-day limit on losses"
     },
     "max_30day_turnover":{
-      "type": "integer",
+      "type": ["integer", "null"],
       "pattern": "^\\d{0,20}$",
       "description": "30-day turnover limit"
     },
     "max_30day_losses":{
-      "type": "integer",
+      "type": ["integer", "null"],
       "pattern": "^\\d{0,20}$",
       "description": "30-day limit on losses"
     },
     "max_open_bets":{
-      "type": "integer",
+      "type": ["integer", "null"],
       "pattern": "^\\d{0,4}$",
       "description": "Maximum number of open positions"
     },
     "session_duration_limit":{
-      "type": "integer",
+      "type": ["integer", "null"],
       "pattern": "^\\d{0,5}$",
       "description": "Session duration limit, in minutes"
     },
     "exclude_until":{
-      "type":"string",
+      "type": ["string", "null"],
       "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
       "description": "Exclude me from the website until"
     },
