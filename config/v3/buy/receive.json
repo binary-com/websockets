@@ -59,11 +59,6 @@
           "type": "number",
           "description":"[For spread contracts only] Stop loss level (spot plus/minus stop loss amount)",
           "sample": "15"
-        },
-        "payout": {
-            "type": "number",
-            "description": "Proposed payout value",
-            "sample": 10
         }
       }
     },
