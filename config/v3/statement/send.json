@@ -11,38 +11,36 @@
     },
     "description": {
       "type": "integer",
-      "sample": "1",
       "description": "If set to 1, will return full contracts description."
     },
     "limit": {
       "type": "number",
-      "sample": "100",
       "description": "Apply upper limit to count of transactions received"
     },
     "offset": {
       "type": "number",
-      "sample": "0",
       "description": "Skip this many transactions"
     },
     "date_from": {
       "type": "integer",
-      "sample": 1439432307,
       "description": "Optional start date (epoch)"
     },
     "date_to": {
       "type": "integer",
-      "sample": 1439432307,
       "description": "Optional end date (epoch)"
     },
     "action_type": {
       "type": "string",
-      "sample": "buy",
       "pattern": "^(buy|sell|deposit|withdrawal)$",
       "description": "Optional filter for statement (deposit,withdrawal,buy,sell)"
-    },   
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field to map request to response"
     }
   },
   "additionalProperties": false

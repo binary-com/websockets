@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  
   "type": "object",
   "title": "Contracts for Symbol Receive",
   "description": "Get the list of currently available contracts",
@@ -12,118 +11,122 @@
     "contracts_for": {
         "type": "object",
         "properties":{
-        	"available":{
+            "available":{
                 "type":"array",
                 "items":{
                   "type":"object",
                   "properties":{
-                	  "market":{
-                		  "type":"string",
-                		  "description":"Type of market (forex, indices, random, ...)"
-                	  },
-                	  "contracts_display":{
-                		  "type":"string",
-                		  "description":"Type of contract (example: asian up)"
-                	  },
-                	  "max_contract_duration":{
-                		  "type":"string",
-                		  "description":"Maximum contract duration (example: 10)"
-                	  },
-                	  "barrier_category":{
-                		  "type":"string",
-                		  "description":"Category of barrier (example: asian)"
-                	  },
-                	  "payout_limit":{
-                		  "type":"number",
-                		  "description":"Maximum payout (example: 10000)"
-                	  },
-                	  "submarket":{
-                		  "type":"string",
-                		  "description":"Type of submarket (example: random_index)"
-                	  },
-                	  "exchange_name":{
-                		  "type":"string",
-                		  "description":"Name of exchange (example: RANDOM)"
-                	  },
-                	  "contract_category_display":{
-                		  "type":"string",
-                		  "description":"Category of the contract (example: Asians)"
-                	  },
-                	  "contract_type":{
-                		  "type":"string",
-                		  "description":"Type of contract (example: ASIANU)"
-                	  },
-                	  "min_contract_duration":{
-                		  "type":"string",
-                		  "description":"Minimum contract duration (example: 5)"
-                	  },
-                	  "sentiment":{
-                		  "type":"string",
-                		  "description":"Type of sentiment (example: up)"
-                	  },
-                	  "barriers":{
-                		  "type":"number",
-                		  "description":"Barriers (example: 0)"
-                	  },
-                	  "contract_category":{
-                		  "type":"string",
-                		  "description":"Category of contract (example: asian)"
-                	  },
-                	  "start_type":{
-                		  "type":"string",
-                		  "description":"Start Type (example: spot)"
-                	  },
-                	  "expiry_type":{
-                		  "type":"string",
-                		  "description":"Expiry Type (example: tick)"
-                	  },
-                	  "underlying_symbol":{
-                		  "type":"string",
-                		  "description":"Symbol code (example: R_50)"
-                	  },
-                	  "forward_starting_options":{
-                		  "type":"array",
+                      "market":{
+                          "type":"string",
+                          "description":"Type of market (forex, indices, random, ...)"
+                      },
+                      "contracts_display":{
+                          "type":"string",
+                          "description":"Type of contract (example: asian up)"
+                      },
+                      "max_contract_duration":{
+                          "type":"string",
+                          "description":"Maximum contract duration (example: 10)"
+                      },
+                      "barrier_category":{
+                          "type":"string",
+                          "description":"Category of barrier (example: asian)"
+                      },
+                      "payout_limit":{
+                          "type":"number",
+                          "description":"Maximum payout (example: 10000)"
+                      },
+                      "submarket":{
+                          "type":"string",
+                          "description":"Type of submarket (example: random_index)"
+                      },
+                      "exchange_name":{
+                          "type":"string",
+                          "description":"Name of exchange (example: RANDOM)"
+                      },
+                      "contract_category_display":{
+                          "type":"string",
+                          "description":"Category of the contract (example: Asians)"
+                      },
+                      "contract_type":{
+                          "type":"string",
+                          "description":"Type of contract (example: ASIANU)"
+                      },
+                      "min_contract_duration":{
+                          "type":"string",
+                          "description":"Minimum contract duration (example: 5)"
+                      },
+                      "sentiment":{
+                          "type":"string",
+                          "description":"Type of sentiment (example: up)"
+                      },
+                      "barriers":{
+                          "type":"number",
+                          "description":"Barriers (example: 0)"
+                      },
+                      "contract_category":{
+                          "type":"string",
+                          "description":"Category of contract (example: asian)"
+                      },
+                      "start_type":{
+                          "type":"string",
+                          "description":"Start Type (example: spot)"
+                      },
+                      "expiry_type":{
+                          "type":"string",
+                          "description":"Expiry Type (example: tick)"
+                      },
+                      "underlying_symbol":{
+                          "type":"string",
+                          "description":"Symbol code (example: R_50)"
+                      },
+                      "forward_starting_options":{
+                          "type":"array",
                           "items":{
                             "type":"object"
                           },
                           "minItems":"1",
                           "description":"Array of returned forward starting options"
-                	  },
-                          "available_barriers":{
-                		  "type":"array",
-                                  "minItems":"1",
-                                  "description":"Array of available barriers"
-                	  },
-                          "trading_period":{
-                		  "type":"object",
-                                  "description":"A hash of trading period"
-                	  }
-                  } 
+                      },
+                      "available_barriers":{
+                          "type":"array",
+                          "minItems":"1",
+                          "description":"Array of available barriers"
+                      },
+                      "trading_period":{
+                          "type":"object",
+                          "description":"A hash of trading period"
+                      }
+                  }
                 },
                 "minItems":"1",
                 "description":"Array of available contracts details"
-                },
+            },
             "close":{
             	"type":["integer", "null"],
             	"description":"Symbol's next market-close time as an epoch value"
-               },
+            },
             "open":{
-              "type":["integer", "null"],
-            	"description":"Symbol's next market-open time as an epoch value"
-              },
+                "type":["integer", "null"],
+                "description":"Symbol's next market-open time as an epoch value"
+            },
             "hit_count":{
               	"type":"number",
               	"description":"Count of contracts available"
-              },
+            },
             "spot":{
                 "type":"number",
                 "description":"Current spot price for this underlying"
-              }
+            }
         }
     },
     "msg_type": {
       "type": "string",
       "description": "contracts_for"
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
   },
   "required": [

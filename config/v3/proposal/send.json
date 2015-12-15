@@ -33,68 +33,61 @@
     },
     "date_start": {
       "type":  "integer",
-      "description":"For forward-starting contracts, epoch value of the starting time of the contract.",
-      "sample": "1444010000"
+      "description":"For forward-starting contracts, epoch value of the starting time of the contract."
     },
     "date_expiry": {
       "type":  "integer",
-      "description":"Epoch value of the expiry time of the contract. You must either specify date_expiry or duration.",
-      "sample": "1444010000"
+      "description":"Epoch value of the expiry time of the contract. You must either specify date_expiry or duration."
     },
     "duration": {
       "type": "integer",
-      "description":"Duration quantity",
-      "sample": "900"
+      "description":"Duration quantity"
     },
     "duration_unit": {
       "type": "string",
       "description":"Duration unit is s(seconds), m(minutes), h(hours), d(days), t(ticks)",
-      "pattern": "^(d|m|s|h|t)$",
-      "sample": "s"
+      "pattern": "^(d|m|s|h|t)$"
     },
     "symbol": {
       "type": "string",
       "description":"Symbol code",
       "pattern": "^\\w{2,30}$",
-      "sample": "R_100",
       "required": "1"
     },
     "barrier": {
       "type": "string",
       "description":"Barrier for the contract (or last digit prediction for digit contracts).",
-      "pattern": "^[+-]?\\d+\\.?\\d*$",
-      "sample": "1000"
+      "pattern": "^[+-]?\\d+\\.?\\d*$"
     },
     "barrier2": {
       "type": "string",
       "pattern": "^[+-]?\\d+\\.?\\d*$",
-      "description":"Low barrier for the contract (for contracts with two barriers)",
-      "sample": "900"
+      "description":"Low barrier for the contract (for contracts with two barriers)"
     },
     "amount_per_point": {
       "type": "number",
-      "description":"[For spread contracts only] Amount per point",
-      "sample": "1"
+      "description":"[For spread contracts only] Amount per point"
     },
     "stop_type": {
       "type": "string",
       "description":"[For spread contracts only] Stop type (dollar or point)",
-      "pattern": "^(dollar|point)$",
-      "sample": "point"
+      "pattern": "^(dollar|point)$"
     },
     "stop_profit": {
       "type": "number",
-      "description":"[For spread contracts only] Stop profit amount",
-      "sample": "10"
+      "description":"[For spread contracts only] Stop profit amount"
     },
     "stop_loss": {
       "type": "number",
-      "description":"[For spread contracts only] Stop loss amount",
-      "sample": "15"
+      "description":"[For spread contracts only] Stop loss amount"
     },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field to map request to response"
     }
   },
   "additionalProperties": false

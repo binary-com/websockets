@@ -9,10 +9,14 @@
       "pattern": "^[\\w-]{32,128}$",
       "description": "ID of the real-time stream of messages to cancel",
       "require": "1"
-    },   
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field to map request to response"
     }
   },
   "additionalProperties": false

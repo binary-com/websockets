@@ -6,45 +6,38 @@
   "properties": {
     "ticks_history": {
       "type": "string",
-      "sample": "R_100",
       "pattern": "^\\w{2,30}$",
       "description": "Short symbol name",
       "required": "1"
     },
     "end": {
       "type": "string",
-      "sample": "1420070400",
       "pattern": "^(latest|\\d+)$",
       "description": "Epoch value representing the end-datetime of the ticks. If non-numeric value (e.g. \"latest\", the end-datetime will be the latest available timestamp.",
       "required": "1"
     },
     "start": {
       "type": "integer",
-      "sample": "1420070400",
       "description": "Epoch value representing the start-datetime of the ticks (default: 1 yr ago)"
     },
     "count": {
       "type": "integer",
-      "sample": "100",
       "description": "An upper limit on ticks to receive (default: 500)"
     },
     "style": {
       "type": "string",
-      "sample": "ticks",
       "pattern": "^(candles|ticks)$",
       "description": "The tick-output style: must be one of 'ticks' or 'candles' (default: 'ticks')"
     },
     "granularity": {
       "type": "integer",
-      "sample": "60",
       "description": "Provide for style: 'candles'. Candle time-dimension width setting: typically '60', '120', '180', '300', '600', '900', '1800', '3600', '14400', or '86400' (default: '60')."
     },
     "adjust_start_time": {
       "type": "integer",
-      "sample": "1",
       "pattern": "^1?$",
       "description": "If market is closed at the end time, or license limit is before end time, then move interval backwards."
-    },   
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
@@ -53,6 +46,10 @@
       "type": "integer",
       "description": "If set to 1, will send updates whenever the price changes",
       "pattern": "^1|0$"
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field to map request to response"
     }
   },
   "additionalProperties": false

@@ -47,29 +47,29 @@
         },
         "amount_per_point": {
           "type": "number",
-          "description":"[For spread contracts only] Amount per point",
-          "sample": "1"
+          "description":"[For spread contracts only] Amount per point"
         },
         "stop_profit_level": {
           "type": "number",
-          "description":"[For spread contracts only] Stop profit level (spot plus/minus stop profit amount)",
-          "sample": "10"
+          "description":"[For spread contracts only] Stop profit level (spot plus/minus stop profit amount)"
         },
         "stop_loss_level": {
           "type": "number",
-          "description":"[For spread contracts only] Stop loss level (spot plus/minus stop loss amount)",
-          "sample": "15"
+          "description":"[For spread contracts only] Stop loss level (spot plus/minus stop loss amount)"
         },
         "payout": {
             "type": "number",
-            "description": "Proposed payout value",
-            "sample": 10
+            "description": "Proposed payout value"
         }
       }
     },
     "msg_type": {
       "type": "string",
       "description":"buy"
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
   },
   "required": [

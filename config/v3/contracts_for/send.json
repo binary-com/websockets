@@ -1,24 +1,27 @@
-{  
+{
     "$schema":"http://json-schema.org/draft-04/schema#",
     "type":"object",
     "title":"Contracts for Symbol Send",
     "description":"For a given symbol, get the list of currently available option contracts, and the latest barrier and duration limits for each contract.",
-    "properties":{  
-        "contracts_for":{  
+    "properties":{
+        "contracts_for":{
             "type":"string",
             "description":"The short symbol name",
             "pattern":"^\\w{2,30}$",
             "required": "1"
         },
-        "region":{  
+        "region":{
             "type":"string",
             "description":"Set to 'japan' to retrieve contracts available under Japanese regulations, or 'other' otherwise.",
-            "pattern":"^(japan|other)$",
-            "sample":"other"
+            "pattern":"^(japan|other)$"
         },
-        "passthrough":{  
+        "passthrough":{
             "type":"object",
             "description":"Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+        },
+        "req_id": {
+          "type": "integer",
+          "description": "Optional field to map request to response"
         }
     },
     "additionalProperties":false

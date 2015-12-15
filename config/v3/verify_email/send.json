@@ -9,6 +9,10 @@
       "description": "Email address to be verified",
       "format": "email",
       "required": "1"
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field to map request to response"
     }
   },
   "additionalProperties": false
