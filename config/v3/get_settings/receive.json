@@ -24,6 +24,11 @@
           "type":["string","null"],
           "description": "User Country"
         },
+        "country_code":{
+          "type": "string",
+          "description": "2-letter country code ISO standard",
+          "pattern": "^[a-z]{2}$"
+        },
         "address_line_1":{
           "type":"string",
           "description": "Address line 1 (note: not set for virtual-money accounts)"
