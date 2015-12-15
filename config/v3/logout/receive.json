@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Logout Response",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "logout": {
+      "type": "integer",
+      "title": "Logout Status"
+    },
+    "msg_type": {
+        "type": "string",
+        "description": "time"
+      }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}
