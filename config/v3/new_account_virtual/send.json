@@ -24,8 +24,8 @@
     },
     "client_password": {
       "type": "string",
-      "description": "Password (length within 5-25 chars, accepts alphanumeric, space, @_:+-./= )",
-      "pattern": "^[\\s.A-Za-z0-9@_:+-\/=]{5,25}$",
+      "description": "Password (length within 6-25 chars, accepts any printable ASCII character)",
+      "pattern": "^[ -~]{6,25}$",
       "required": "1"
     },
     "residence": {
