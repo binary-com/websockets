@@ -7,7 +7,8 @@
     "cashier_password": {
       "type": "string",
       "pattern": "^1$",
-      "required": "1"
+      "required": "1",
+      "description": "if neither lock_password nor unlock_password is passed, we'll just return the status for cashier"
     },
     "unlock_password": {
       "type": "string",

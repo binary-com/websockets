@@ -6,7 +6,7 @@
   "properties": {
     "cashier_password": {
       "type": "integer",
-      "description": "If 1, proceeded successfully.",
+      "description": "The status for cashier, 1 means locked, 0 means unlocked.",
       "pattern": "^(1|0)$"
     },
     "echo_req": {
