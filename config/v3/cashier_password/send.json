@@ -12,13 +12,13 @@
     },
     "unlock_password": {
       "type": "string",
-      "pattern": "^.{5,25}$",
-      "description": "old password to unlock cashier, required for unlock"
+      "pattern": "^[ -~]{6,25}$",
+      "description": "old password to unlock cashier, required for unlock (length within 6-25 chars, accepts any printable ASCII character)"
     },
     "lock_password": {
       "type": "string",
-      "pattern": "^.{5,25}$",
-      "description": "new password to lock cashier, required for lock"
+      "pattern": "^[ -~]{6,25}$",
+      "description": "new password to lock cashier, required for lock (length within 6-25 chars, accepts any printable ASCII character)"
     },
     "passthrough": {
       "type": "object",
