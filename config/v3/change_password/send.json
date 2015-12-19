@@ -11,14 +11,14 @@
     },
     "old_password": {
       "type": "string",
-      "pattern": "^.{5,25}$",
-      "description": "old password for validation",
+      "pattern": "^[ -~]{6,25}$",
+      "description": "old password for validation (length within 6-25 chars, accepts any printable ASCII character)",
       "required": "1"
     },
     "new_password": {
       "type": "string",
-      "pattern": "^.{5,25}$",
-      "description": "new password",
+      "pattern": "^[ -~]{6,25}$",
+      "description": "new password (length within 6-25 chars, accepts any printable ASCII character)",
       "required": "1"
     },
     "passthrough": {
