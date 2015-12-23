@@ -7,28 +7,25 @@
     "transfer_between_accounts": {
       "type":"integer",
       "pattern": "^1$",
-      "required": "1"
+      "required": "1",
+      "description": "if account_from and account_to are not provided, we'll just return available accounts"
     },
     "account_from": {
       "type": "string",
       "pattern": "\\w+",
-      "description": "The account_from loginid",
-      "required": "1"
+      "description": "The account_from loginid"
     },
     "account_to": {
       "type": "string",
       "pattern": "\\w+",
-      "description": "The account_to loginid",
-      "required": "1"
+      "description": "The account_to loginid"
     },
     "currency": {
       "type": "string",
-      "pattern": "^[A-Z]{3}$",
-      "required": "1"
+      "pattern": "^[A-Z]{3}$"
     },
     "amount": {
-      "type": "number",
-      "required": "1"
+      "type": "number"
     },
     "passthrough": {
       "type": "object",

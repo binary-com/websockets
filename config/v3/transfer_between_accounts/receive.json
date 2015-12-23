@@ -9,6 +9,21 @@
       "description": "If 1, transfer success.",
       "pattern": "^(1|0)$"
     },
+    "accounts": {
+      "type": "array",
+      "description": "the avaiable accounts to transfer",
+      "items": {
+        "type": "object",
+        "properties":{
+          "loginid":{
+            "type":"string"
+          },
+          "balance":{
+            "type":"string"
+          }
+        }
+      }
+    },
     "echo_req": {
       "title": "Echo request",
       "description": "Echo of the request made"
