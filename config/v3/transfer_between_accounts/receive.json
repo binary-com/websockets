@@ -20,6 +20,9 @@
           },
           "balance":{
             "type":"string"
+          },
+          "currency":{
+            "type":"string"
           }
         }
       }
