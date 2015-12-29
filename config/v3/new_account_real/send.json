@@ -86,6 +86,11 @@
       "description": "Answer to secret question, within 4-50 characters.",
       "required": "1"
     },
+    "affiliate_token": {
+      "type": "string",
+      "pattern": "^[\\w-]{0,32}$",
+      "description": "Affiliate token, within 32 characters."
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."

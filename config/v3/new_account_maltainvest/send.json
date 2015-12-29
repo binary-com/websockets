@@ -75,6 +75,11 @@
       "maxLength": 50,
       "description": "Answer to secret question, within 4-50 characters."
     },
+    "affiliate_token": {
+      "type": "string",
+      "pattern": "^[\\w-]{0,32}$",
+      "description": "Affiliate token, within 32 characters."
+    },
     "forex_trading_experience": {
       "enum": [ "0-1 year", "1-2 years", "Over 3 years" ],
       "description": "Forex trading experience",
