@@ -33,4 +33,17 @@ layout: page
 
 <h2>API Functionality</h2>
 
-xx
+<h3>Authentication</h3>
+The API provides certain functions that require authentication (e.g. <a target=_blank href="https://developers.binary.com/api/#portfolio">portfolio</a>)
+whilst other functions do not require authentication (e.g. <a target=_blank href="https://developers.binary.com/api/#ticks">ticks</a>).
+Authentication is provided by way of API tokens, which binary.com users can generate by logging into their accounts and
+visiting <a target=_blank href="https://www.binary.com/user/api_token">https://www.binary.com/user/api_token</a>.
+An Oauth service is being developed and will be available in early 2016.
+
+<h3>Streams</h3>
+Certain functions generate streams (e.g. <a target=_blank href="https://developers.binary.com/api/#ticks">ticks</a>)
+whilst other functions do not.
+Please use the (e.g. <a target=_blank href="https://developers.binary.com/api/#forget">forget</a>) call to cancel an outstanding stream.
+
+
+
