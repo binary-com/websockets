@@ -40,10 +40,38 @@ Authentication is provided by way of API tokens, which binary.com users can gene
 visiting <a target=_blank href="https://www.binary.com/user/api_token">https://www.binary.com/user/api_token</a>.
 An Oauth service is being developed and will be available in early 2016.
 
+With a user's API token, you may call
+<a target=_blank href="https://developers.binary.com/api/#authorize">authorize</a>.
+
 <h3>Streams</h3>
 Certain functions generate streams (e.g. <a target=_blank href="https://developers.binary.com/api/#ticks">ticks</a>)
 whilst other functions do not.
 Please use the (e.g. <a target=_blank href="https://developers.binary.com/api/#forget">forget</a>) call to cancel an outstanding stream.
+
+<h3>Binary.com Account Opening</h3>
+To open binary.com accounts via the API, start by verifying the user's email address using the
+<a target=_blank href="https://developers.binary.com/api/#verify_email">verify_email</a> call.
+You may then call
+<a target=_blank href="https://developers.binary.com/api/#new_account_virtual">new_account_virtual</a> to open a virtual-money account.
+
+Note: you may top-up virtual-money funds using
+<a target=_blank href="https://developers.binary.com/api/#topup_virtual">topup_virtual</a>.
+
+To open a real-money account, you may use the 
+<a target=_blank href="https://developers.binary.com/api/#residence_list">residence_list</a>
+and
+<a target=_blank href="https://developers.binary.com/api/#states_list">states_list</a>
+to retreive data to create the account opening form.
+Once you have the required data from the user, call
+<a target=_blank href="https://developers.binary.com/api/#new_account_real">new_account_real</a>.
+
+<h3>Accounting functionality</h3>
+You may generate a user's
+<a target=_blank href="https://developers.binary.com/api/#portfolio">portfolio</a>,
+<a target=_blank href="https://developers.binary.com/api/#statement">statement</a>, and
+<a target=_blank href="https://developers.binary.com/api/#profit_table">profit_table</a>,
+as well as retrieve his
+<a target=_blank href="https://developers.binary.com/api/#balance">account balance</a>.
 
 
 
