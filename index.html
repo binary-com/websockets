@@ -46,18 +46,18 @@ With a user's API token, you may call
 <h3>Streams</h3>
 Certain functions generate streams (e.g. <a target=_blank href="https://developers.binary.com/api/#ticks">ticks</a>)
 whilst other functions do not.
-Please use the (e.g. <a target=_blank href="https://developers.binary.com/api/#forget">forget</a>) call to cancel an outstanding stream.
+Please use <a target=_blank href="https://developers.binary.com/api/#forget">forget</a> to cancel an outstanding stream.
 
 <h3>Binary.com Account Opening</h3>
-To open binary.com accounts via the API, start by verifying the user's email address using the
-<a target=_blank href="https://developers.binary.com/api/#verify_email">verify_email</a> call.
+To open binary.com accounts via the API, start by verifying the user's email address using 
+<a target=_blank href="https://developers.binary.com/api/#verify_email">verify_email</a>.
 You may then call
 <a target=_blank href="https://developers.binary.com/api/#new_account_virtual">new_account_virtual</a> to open a virtual-money account.
 
 Note: you may top-up virtual-money funds using
 <a target=_blank href="https://developers.binary.com/api/#topup_virtual">topup_virtual</a>.
 
-To open a real-money account, you may use the 
+To open a real-money account, you may use 
 <a target=_blank href="https://developers.binary.com/api/#residence_list">residence_list</a>
 and
 <a target=_blank href="https://developers.binary.com/api/#states_list">states_list</a>
@@ -73,5 +73,22 @@ You may generate a user's
 as well as retrieve his
 <a target=_blank href="https://developers.binary.com/api/#balance">account balance</a>.
 
+<h3>Option prices</h3>
+To price an option, call 
+<a target=_blank href="https://developers.binary.com/api/#proposal">proposal</a>.
 
+To price options which are open in a user's portfolio, call
+<a target=_blank href="https://developers.binary.com/api/#proposal_open_contract">proposal_open_contract</a>.
+
+<h3>Payment agents</h3>
+Clients may withdraw to a payment agent using
+<a target=_blank href="https://developers.binary.com/api/#paymentagent_withdraw">paymentagent_withdraw</a>
+and payment agents may credit a client account using
+<a target=_blank href="https://developers.binary.com/api/#paymentagent_transfer">paymentagent_transfer</a>.
+
+<h3>Utility calls</h3>
+If need be, use 
+<a target=_blank href="https://developers.binary.com/api/#ping">ping</a>
+and
+<a target=_blank href="https://developers.binary.com/api/#time">server time</a>.
 
