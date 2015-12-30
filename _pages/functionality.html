@@ -1,0 +1,49 @@
+---
+layout: page
+permalink: functionality/
+---
+<h1>API Functionality</h1>
+
+<h2>Authentication</h2>
+The API provides certain functions that require authentication (e.g. <a href="/api#portfolio">portfolio</a>) whilst other functions do not require authentication (e.g. <a href="/api#ticks">ticks</a>).
+Authentication is provided by way of API tokens, which binary.com users can generate by logging into their accounts and visiting <a href="https://www.binary.com/user/api_token">https://www.binary.com/user/api_token</a>. An Oauth service
+is being developed and will be available in early 2016. With a user's API token, you may call
+<a href="/api#authorize">authorize</a>.
+
+<h2>Streams</h2>
+Certain functions generate streams (e.g. <a href="/api#ticks">ticks</a>) whilst other functions do not. Please use <a href="/api#forget">forget</a> to cancel an outstanding
+stream.
+
+<h2>Binary.com Account Opening</h2>
+To open binary.com accounts via the API, start by verifying the user's email address using
+<a href="/api#verify_email">verify_email</a>. You may then call
+<a href="/api#new_account_virtual">new_account_virtual</a> to open a virtual-money account. Note: you may top-up virtual-money funds using
+<a href="/api#topup_virtual">topup_virtual</a>. To open a real-money account, you may use
+<a href="/api#residence_list">residence_list</a> and
+<a href="/api#states_list">states_list</a> to retreive data to create the account opening form. Once you have the required data from the user, call
+<a href="/api#new_account_real">new_account_real</a>. If you are a registered affiliate, remember to pass in the <i>affiliate_token</i> parameter, so that you may earn affiliate commissions for the new account.
+You can determine which Landing Company (i.e counter-party) the account will be opened with, based on the user's jurisdiction, using <a href="/api#landing_company">landing_company</a>, and you can find out details
+about that landing company using
+<a href="/api#landing_company_details">landing_company_details</a>.
+
+<h2>Accounting functionality</h2>
+You may generate a user's
+<a href="/api#portfolio">portfolio</a>,
+<a href="/api#statement">statement</a>, and
+<a href="/api#profit_table">profit_table</a>, as well as retrieve his
+<a href="/api#balance">account balance</a>.
+
+<h2>Option prices</h2>
+To price an option, call
+<a href="/api#proposal">proposal</a>. To price options which are open in a user's portfolio, call
+<a href="/api#proposal_open_contract">proposal_open_contract</a>.
+
+<h2>Payment agents</h2>
+Clients may withdraw to a payment agent using
+<a href="/api#paymentagent_withdraw">paymentagent_withdraw</a> and payment agents may credit a client account using
+<a href="/api#paymentagent_transfer">paymentagent_transfer</a>.
+
+<h2>Utility calls</h2>
+If need be, use
+<a href="/api#ping">ping</a> and
+<a href="/api#time">server time</a>.
