@@ -10,6 +10,11 @@
       "pattern": "^1$",
       "required": "1"
     },
+    "subscribe": {
+        "type": "integer",
+        "description": " 1 - to stream",
+        "pattern": "^1$"
+    },
     "amount": {
       "type": "number",
       "description":"Proposed payout or stake value"
