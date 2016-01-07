@@ -12,7 +12,7 @@
     },
     "subscribe": {
         "type": "integer",
-        "description": " 1 - to stream",
+        "description": "1 - to stream",
         "pattern": "^1$"
     },
     "amount": {

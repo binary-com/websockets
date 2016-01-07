@@ -21,6 +21,11 @@
     "req_id": {
       "type": "integer",
       "description": "Optional field to map request to response"
+    },
+    "subscribe": {
+      "type": "integer",
+      "description": "1 - to stream",
+      "pattern": "^1$"
     }
   },
   "additionalProperties": false
