@@ -12,7 +12,7 @@
     },
     "subscribe": {
         "type": "integer",
-        "description": "1 - to stream",
+        "description": "1 - to stream. Note that certain contracts, such as tick trades on Random Indices, have constant prices and hence won't stream.",
         "pattern": "^1$"
     },
     "amount": {
