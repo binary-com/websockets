@@ -100,9 +100,13 @@ pre p, code {
     flex: 1;
 }
 
-.gitter {
-    display: flex;
-    align-items: center;
+header {
+    background: #2a3052 !important;
+}
+
+.support-btn {
+    margin: .35rem;
+    max-height: 2.5rem;
 }
 #api-token,
 #playground-request,
