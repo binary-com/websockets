@@ -13,6 +13,11 @@
         "terms_conditions_version": {
           "type": "string",
           "description":"latest T&C version"
+        },
+        "api_call_limits": {
+            "type": "object",
+            "title": "API call limits",
+            "description": "Limits for api call for each websocket connection"
         }
       }
     },
