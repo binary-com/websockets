@@ -1,32 +1,38 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Realtime Balance",
-  "description": "Return details of user account balance",
+  "title": "Transaction Updates",
+  "description": "Return transaction updates",
   "properties": {
     "echo_req": {
       "title":"Echo request",
       "description":"Echo of the request made"
     },
-    "balance": {
+    "transaction": {
       "type": "object",
-      "title": "Lastest balance of client",
-      "description": "Realtime stream of user balance changes.",
+      "title": "Latest update to transaction",
+      "description": "Realtime stream of user transaction updates.",
       "properties": {
           "balance": {
             "type": "number",
             "description": "Balance amount",
             "pattern": "^([.0-9]{1,25})$"
           },
-          "currency": {
+          "action": {
             "type": "string",
-            "description": "Currency Example: USD",
-            "pattern": "^(|[A-Z]{3})$"
+            "enum": ["deposit","withdrawal","buy","sell"]
           },
-          "loginid": {
-            "type": "string",
-            "description": "Client loginid Example: CR000000",
-            "pattern": "^([A-Z0-9]{1,25})$"
+          "contract_id": {
+            "type": ["integer", "null"],
+            "description":"It is the contract id Example: 4867502908"
+          },
+          "transaction_id":{
+            "type":"integer",
+            "description":"It is the transaction id. Every contract (buy or sell) or payment has a unique id. Example: 10867502908"
+          },
+          "amount": {
+            "type": "number",
+            "description":"It is the amount of transaction performed Example: -83.2300"
           },
           "id": {
             "type": "string",
@@ -36,7 +42,7 @@
     },
     "msg_type": {
         "type": "string",
-        "description": "balance"
+        "description": "transaction"
     },
     "req_id": {
         "type": "integer",

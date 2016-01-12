@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title":"Balance Send",
-  "description": "Get user account balance",
+  "title":"Transaction Subscription",
+  "description": "Subscribe to transaction notifications",
   "properties": {
-    "balance": {
+    "transaction": {
       "type": "integer",
       "description": "Must be 1.",
       "pattern": "^1$",
@@ -12,8 +12,9 @@
     },
     "subscribe": {
       "type": "integer",
-      "description": "If set to 1, will send updates whenever the balance changes.",
-      "pattern": "^1$"
+      "description": "If set to 1, will send updates whenever there is an update to transactions. If not to 1 then it will not return any records.",
+      "pattern": "^1$",
+      "required": "1"
     },
     "passthrough": {
       "type": "object",

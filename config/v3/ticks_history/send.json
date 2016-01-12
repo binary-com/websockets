@@ -45,7 +45,7 @@
     "subscribe": {
       "type": "integer",
       "description": "If set to 1, will send updates whenever the price changes",
-      "pattern": "^1|0$"
+      "pattern": "^1$"
     },
     "req_id": {
       "type": "integer",
