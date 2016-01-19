@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Create Japan account Receive",
+  "description": "Create Japan account Receive",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "new_account_japan": {
+      "type": "object",
+      "title": "New Japan account",
+      "description": "New Japan account details",
+      "properties": {
+        "client_id": {
+          "type": "string",
+          "description": "Client id of new Japan account"
+        },
+        "landing_company": {
+          "type": "string",
+          "description": "landing company full name"
+        },
+        "landing_company_short": {
+          "type": "string",
+          "description": "landing company shortcode"
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "new_account_japan"
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field send in request to map to response, present only when request contains req_id"
+    }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}
