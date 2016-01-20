@@ -17,14 +17,14 @@
     },
     "first_name": {
       "type": "string",
-      "pattern": "^[a-zA-Z\\s'.-]{2,30}$",
-      "description": "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+      "pattern": "^[\\w\\s'.-]{2,30}$",
+      "description": "Within 2-30 characters, use only word characters, spaces, hyphens, full-stops or apostrophes.",
       "required": 1
     },
     "last_name": {
       "type": "string",
-      "pattern": "^[a-zA-Z\\s'.-]{2,30}$",
-      "description": "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+      "pattern": "^[\\w\\s'.-]{2,30}$",
+      "description": "Within 2-30 characters, use only words characters, spaces, hyphens, full-stops or apostrophes.",
       "required": 1
     },
     "date_of_birth" : {
@@ -78,7 +78,7 @@
     },
     "phone": {
       "type" : "string",
-      "pattern": "^\\+?[0-9\\s]{6,35}$",
+      "pattern": "^\\+?[0-9\\s\\-]{6,35}$",
       "description": "Within 6-35 digits, allowing '+' in front, numbers or space.",
       "required": 1
     },
@@ -89,7 +89,7 @@
     },
     "secret_answer": {
       "type": "string",
-      "minLength": 4,
+      "minLength": 2,
       "maxLength": 50,
       "description": "Answer to secret question, within 4-50 characters.",
       "required": 1
