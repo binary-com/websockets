@@ -136,6 +136,14 @@
         "validation_error": {
           "type": "string",
           "description": "error message if validation fails"
+        },
+        "sell_price":{
+          "type":"number",
+          "description": "Price at which contract was sold, only available when contract has been sold."
+        },
+        "buy_price":{
+          "type":"number",
+          "description": "Price at which contract was purchased"
         }
       }
     },
