@@ -38,6 +38,10 @@
                     "type":"integer",
                     "description":"It is the time of transaction Example: 1441175849"
                   },
+                  "purchase_time": {
+                    "type": "integer",
+                    "description": "Time at which contract was purchased, present only for sell transaction"
+                  },
                   "action_type":{
                     "type":"string",
                     "description":"It is the type of action Example: buy"
