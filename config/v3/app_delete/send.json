@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "App Delete Send",
+  "properties": {
+    "app_delete": {
+      "type":"string",
+      "pattern": "^.{32}$",
+      "required": "1",
+      "description": "Application app_id"
+    },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field to map request to response"
+    }
+  },
+  "additionalProperties": false
+}

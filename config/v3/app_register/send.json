@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "App Register Send",
+  "description":"register a new OAuth application",
+  "properties": {
+    "app_register": {
+      "type":"integer",
+      "pattern": "^1$",
+      "required": "1"
+    },
+    "name":{
+      "type": "string",
+      "pattern": "^[\\w\\s-]{1,48}$",
+      "description": "Application name"
+    },
+    "homepage":{
+      "type": ["string", "null"],
+      "pattern": "^.{0,255}$",
+      "description": "Application homepage"
+    },
+    "github":{
+      "type": ["string", "null"],
+      "pattern": "^.{0,255}$",
+      "description": "Application GitHub page"
+    },
+    "appstore":{
+      "type": ["string", "null"],
+      "pattern": "^.{0,255}$",
+      "description": "Application App Store URL"
+    },
+    "googleplay":{
+      "type": ["string", "null"],
+      "pattern": "^.{0,255}$",
+      "description": "Application Google Play URL"
+    },
+    "redirect_uri": {
+      "type": "array",
+      "description":"Application redirect_uri",
+      "items": {
+          "type": "string", "pattern": "^.{6,255}$"
+        }
+    },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field to map request to response"
+    }
+  },
+  "additionalProperties": false
+}
