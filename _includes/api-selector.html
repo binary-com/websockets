@@ -3,6 +3,12 @@
         <div class="col" style="flex: 2">
             <select id="api-call-selector">
                 <option selected disabled hidden>Select API Call</option>
+                <optgroup label="App management">
+                    <option value="app_register">Register an Application</option>
+                    <option value="app_list">List my Applications</option>
+                    <option value="app_get">Get details for an Application</option>
+                    <option value="app_delete">Delete an Application</option>
+                </optgroup>
                 <optgroup label="Unauthenticated Calls">
                     <option value="active_symbols">Active Symbols</option>
                     <option value="asset_index">Asset Index</option>
