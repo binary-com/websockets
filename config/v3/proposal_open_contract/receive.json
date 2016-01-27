@@ -43,7 +43,7 @@
         },
         "current_spot": {
           "type": "number",
-          "description": "Example: 9874.52"
+          "description": "Spot value if we have license to stream this symbol. Example: 9874.52"
         },
         "current_spot_time": {
           "type": "integer",
