@@ -23,7 +23,7 @@
             "description":"Application id"
           },
           "redirect_uri": {
-            "type": "array",
+            "type": "string",
             "description":"Application redirect_uri"
           }
         }

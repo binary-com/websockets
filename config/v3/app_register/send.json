@@ -35,11 +35,9 @@
       "description": "Application Google Play URL"
     },
     "redirect_uri": {
-      "type": "array",
-      "description":"Application redirect_uri",
-      "items": {
-          "type": "string", "pattern": "^.{6,255}$"
-        }
+      "type": "string",
+      "pattern": "^.{6,255}$",
+      "description":"Application redirect_uri"
     },
     "passthrough": {
       "type": "object",

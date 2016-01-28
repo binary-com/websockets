@@ -6,7 +6,7 @@
   "properties": {
     "authorize": {
       "type": "string",
-      "pattern": "^\\w{1,128}$",
+      "pattern": "^[\\w\\-]{1,128}$",
       "description": "Authentication token. May be retrieved from www.binary.com/user/api_token",
       "required": "1"
     },
