@@ -1,8 +1,9 @@
 {
     "app_register": 1,
     "name": "Test Application",
-    "homepage": "https://www.binary.com/",
-    "github": "",
-    "appstore": "",
-    "googleplay": ""
+    "homepage": "https://test.example.com/",
+    "github": "https://github.com/test_org/app",
+    "appstore": "https://itunes.apple.com/test_app",
+    "googleplay": "https://play.google.com/test_app",
+    "redirect_uri": ["https://test.example.com/redirect"]
 }
