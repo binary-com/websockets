@@ -39,3 +39,5 @@ namespace ConsoleApp
         }
     }
 }
+
+// See also https://github.com/binary-com/BinaryWebsocketDemo
