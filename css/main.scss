@@ -166,9 +166,23 @@ pre .number { color: #AE81FF; }
     #mobile-page-selector {
         display: block;
     }
+
     .sidebar {
         display: none;
     }
+
+    #playground {
+        flex-direction: column;
+    }
+
+    .page-content .btn-primary, .page-content .btn-secondary {
+        width: 100%;
+    }
+}
+
+pre {
+    max-width: 100%;
+    overflow: scroll;
 }
 
 #unauthorized-error {
