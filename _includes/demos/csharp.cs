@@ -5,36 +5,84 @@ using System.Net.WebSockets;
 using System.Threading;
 using System.Net;
 
-namespace ConsoleApp
+namespace BinaryWSDemo
 {
-    class Program
+    class BinaryWS
     {
-        static async Task SendTicksRequest()
+    	private ClientWebSocket ws = new ClientWebSocket();
+        private Uri uri = new Uri("wss://ws.binaryws.com/websockets/v3");
+            
+        public async Task SendRequest(string data)
         {
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
-            var ws = new ClientWebSocket();
-            var uri = new Uri("wss://ws.binaryws.com/websockets/v3");
+        	
+        	while(this.ws.State == WebSocketState.Connecting){};
+            if (this.ws.State != WebSocketState.Open)
+            {
+                throw new Exception("Connection is not open.");
+            }
+            
+            var reqAsBytes = Encoding.UTF8.GetBytes(data);
+            var ticksRequest = new ArraySegment&ltbyte>(reqAsBytes);
 
-            await ws.ConnectAsync(uri, CancellationToken.None);
-
-            var reqAsBytes = Encoding.UTF8.GetBytes("{\"ticks\":\"R_100\"}");
-            var ticksRequest = new ArraySegment&lt;byte>(reqAsBytes);
-
-            await ws.SendAsync(ticksRequest,
+            await this.ws.SendAsync(ticksRequest,
                 WebSocketMessageType.Text,
                 true,
                 CancellationToken.None);
+            
+            Console.WriteLine("The request has been sent: ");
+            Console.WriteLine(data);
+            Console.WriteLine("\r\n \r\n");
 
-            var buffer = new ArraySegment&lt;byte>(new byte[1024]);
-            var result = await ws.ReceiveAsync(buffer, CancellationToken.None);
+            
+        }
+        
+        public async Task StartListen(){
+        	WebSocketReceiveResult result;
+        	while (this.ws.State == WebSocketState.Open){
+        	var buffer = new ArraySegment&ltbyte>(new byte[1024]);
+                    do
+                    {
+                        result = await this.ws.ReceiveAsync(new ArraySegment&ltbyte>(buffer.Array), CancellationToken.None);
 
-            string response = Encoding.UTF8.GetString(buffer.Array, 0, result.Count);
-            Console.WriteLine(response);
+                        if (result.MessageType == WebSocketMessageType.Close)
+                        {
+                        	Console.WriteLine("Connection Closed!");
+                        	break;
+                        }
+                        else
+                        {
+                            var str = Encoding.UTF8.GetString(buffer.Array, 0, result.Count);
+                            Console.WriteLine("Received Data at: " + DateTime.Now);
+                            Console.WriteLine(str);
+                            Console.WriteLine("\r\n");
+                        }
+
+                    } while (!result.EndOfMessage);
+        	}
+        }
+        
+        public async Task Connect(){
+        	Console.WriteLine("Prepare to connect to: " + this.uri.ToString());
+        	Console.WriteLine("\r\n");
+        	
+        	ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
+        	await ws.ConnectAsync(uri, CancellationToken.None);
+        	
+        	Console.WriteLine("The connection is established!");
+        	Console.WriteLine("\r\n");
         }
 
         static void Main(string[] args)
         {
-            SendTicksRequest();
+            
+			string data = "{\"ticks\":\"R_100\"}";
+            
+			var bws = new BinaryWS();
+			bws.Connect().Wait();
+			
+			bws.SendRequest(data).Wait();
+			bws.StartListen();
+            
             Console.ReadLine();
         }
     }
