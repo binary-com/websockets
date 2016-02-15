@@ -12,7 +12,7 @@
     },
     "type": {
       "type": "string",
-      "description": "two types: account_opening and lost_password",
+      "enum": ["account_opening","lost_password","paymentagent_withdraw"],
       "required": "1"
     },
     "req_id": {

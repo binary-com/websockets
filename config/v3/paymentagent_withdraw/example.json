@@ -2,5 +2,6 @@
     "paymentagent_withdraw": "1",
     "paymentagent_loginid": "CR100001",
     "currency": "USD",
-    "amount": 1000
+    "amount": 1000,
+    "verification_code": "Ag76JL9+B/g="
 }

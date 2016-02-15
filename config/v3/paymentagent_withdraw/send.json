@@ -24,8 +24,15 @@
       "type": "number",
       "required": "1"
     },
+    "verification_code": {
+      "type": "string",
+      "description": "Email verification code (received from a verify_email call, which must be done first)",
+      "pattern": "^\\w{15,128}$",
+      "required": "1"
+    },
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "Remarks about the withdraw"
     },
     "dry_run": {
       "type": "integer",
