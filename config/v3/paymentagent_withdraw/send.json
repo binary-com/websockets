@@ -32,7 +32,8 @@
     },
     "description": {
       "type": "string",
-      "description": "Remarks about the withdraw"
+      "pattern": "^[0-9A-Za-z\\s.,'-]{0,300}$",
+      "description": "Optional field for remarks about the withdraw. Only letters, numbers, space, period, comma, - ' are allowed."
     },
     "dry_run": {
       "type": "integer",
