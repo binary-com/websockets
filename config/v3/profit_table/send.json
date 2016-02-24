@@ -16,6 +16,7 @@
     },
     "limit": {
       "type": "number",
+      "pattern": "^\\d+$",
       "description": "Apply upper limit to count of transactions received"
     },
     "offset": {
