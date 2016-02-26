@@ -5,14 +5,14 @@
   "description": "Latest price and other details for an open contract in the user's portfolio",
   "properties": {
     "echo_req": {
-      "title":"Echo request",
-      "description":"Echo of the request made"
+      "title": "Echo request",
+      "description": "Echo of the request made"
     },
     "proposal_open_contract": {
-      "type":"object",
+      "type": "object",
       "title": "Open contract response",
       "description": "Latest price and other details for an open contract",
-      "properties":{
+      "properties": {
         "ask_price": {
           "type": "number",
           "description": "Example: 5.14"
@@ -50,12 +50,15 @@
           "description": "Example: 1439999052"
         },
         "entry_spot": {
-          "type": ["number", "null"],
+          "type": [
+            "number",
+            "null"
+          ],
           "description": "Example: 9874.52"
         },
         "date_expiry": {
           "type": "integer",
-          "description": "Example: 1446629000"
+          "description": "Example: 1446629000. Please note that it is not applicable for spreads and tick trade contracts"
         },
         "date_settlement": {
           "type": "integer",
@@ -137,13 +140,32 @@
           "type": "string",
           "description": "error message if validation fails"
         },
-        "sell_price":{
-          "type":"number",
+        "sell_price": {
+          "type": "number",
           "description": "Price at which contract was sold, only available when contract has been sold."
         },
-        "buy_price":{
-          "type":"number",
+        "buy_price": {
+          "type": "number",
           "description": "Price at which contract was purchased"
+        },
+        "purchase_time": {
+          "type": "integer",
+          "description": "Epoch of purchase time, will be same as date_start for all contracts except forward starting contracts."
+        },
+        "sell_time": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "sell time of contract, only present for contracts already sold"
+        },
+        "sell_spot": {
+          "type": "number",
+          "description": "Example: 86.630, only present for contracts already sold"
+        },
+        "sell_spot_time": {
+          "type": "integer",
+          "description": "Example: 1446629000, only present for contracts already sold"
         }
       }
     },
