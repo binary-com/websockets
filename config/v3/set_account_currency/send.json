@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Set Account Currency",
+  "description": "Set account currency, this will be default currency for your account i.e currency for trading, deposit",
+  "properties": {
+     "set_account_currency": {
+      "enum": ["USD", "EUR", "GBP", "AUD", "JPY"],
+      "require": "1"
+    },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field to map request to response"
+    }
+  },
+  "additionalProperties": false
+}
