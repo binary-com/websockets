@@ -17,14 +17,14 @@
     },
     "first_name": {
       "type": "string",
-      "pattern": "^[\\w\\s'.-]{2,30}$",
-      "description": "Within 2-30 characters, use only word characters, spaces, hyphens, full-stops or apostrophes.",
+      "pattern": "^[\\p{L}\\s'.-]{1,30}$",
+      "description": "Within 1-30 characters, use only word characters, spaces, hyphens, full-stops or apostrophes.",
       "required": 1
     },
     "last_name": {
       "type": "string",
-      "pattern": "^[\\w\\s'.-]{2,30}$",
-      "description": "Within 2-30 characters, use only words characters, spaces, hyphens, full-stops or apostrophes.",
+      "pattern": "^[\\p{L}\\s'.-]{1,30}$",
+      "description": "Within 1-30 characters, use only words characters, spaces, hyphens, full-stops or apostrophes.",
       "required": 1
     },
     "date_of_birth" : {
@@ -54,8 +54,7 @@
     "address_line_2": {
       "type" : "string",
       "maxLength": 70,
-      "description": "Optional field, within 70 characters.",
-      "required": 1
+      "description": "Optional field, within 70 characters."
     },
     "address_city": {
       "type" : "string",
@@ -66,14 +65,15 @@
     },
     "address_state": {
       "type" : "string",
+      "minLength": 1,
       "maxLength": 35,
-      "description": "Optional field, possible value receive from states_list call.",
+      "description": "Possible value receive from states_list call.",
       "required": 1
     },
     "address_postcode": {
       "type" : "string",
-      "pattern": "^[^+]{0,20}$",
-      "description": "Optional field, within 20 characters and may not contain '+'.",
+      "pattern": "^\\d{3}-\\d{4}$",
+      "description": "Follows the exact pattern of three numbers, a dash, and four numbers.",
       "required": 1
     },
     "phone": {
@@ -91,7 +91,7 @@
       "type": "string",
       "minLength": 2,
       "maxLength": 50,
-      "description": "Answer to secret question, within 4-50 characters.",
+      "description": "Answer to secret question, within 2-50 characters.",
       "required": 1
     },
     "annual_income": {
@@ -106,7 +106,7 @@
     },
     "daily_loss_limit": {
       "type": "integer",
-      "pattern": "^\\d+$",
+      "pattern": "^\\d{1,20}$",
       "description": "Daily limit loss in JPY",
       "required": 1
     },
