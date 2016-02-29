@@ -11,30 +11,13 @@ permalink: guide/
 and create a per-app token with Admin scope. Then go to <a href="/api#app_register">app_register</a> to register your app into
 the system (using your per-app token to tie it to your Binary.com account).</p>
 
-<h2>Token Scopes</h2>
-
-<p>Tokens can possess one or more of these scopes:
-<ul>
-    <li>'read' - for API calls that only read client data</li>
-    <li>'trade' - for API calls that can create trades in the client account</li>
-    <li>'payments' - for API calls that can access the cashier (deposits and withdrawals)</li>
-    <li>'admin' - for API calls that change client settings</li>
-</ul>
-</p>
-
 <h2>Client Authentication</h2>
-
 <p>Parts of the API functions require authentication (e.g. <a href="/api#portfolio">portfolio</a>) whilst other functions do not (e.g. <a href="/api#ticks">ticks</a>).</p>
-
 There are 2 ways to do authentication:
-
 <OL>
-
 <LI>Authentication by app-specific API tokens. <a href="https://binary.com">Binary.com</a> users can generate tokens by logging into
 their accounts and visiting <a href="https://www.binary.com/user/api_token">Settings, API Token</a>.
-With a user's API token, you may call <a href="/api#authorize">authorize</a>.
 </LI>
-
 <LI>Authentication by Oauth. To use Oauth, firstly obtain your app_id (either from
 <a href="/api#app_register">app_register</a> when you registered your app, or by finding it from 
 <a href="/api#app_list">app_list</a> or <a href="/api#app_get">app_get</a>).
@@ -43,8 +26,19 @@ https://www.binary.com/oauth2/authorize?app_id=[..insert app_id..]
 Our system will authenticate the user, and redirect him to the redirect_uri which you specified when registering the app, with
 a valid token in the URL in the "token" parameter.
 </LI>
-
 </OL>
+With a user's API token (either a per-app token, or a token obtained via Oauth), you may call <a href="/api#authorize">authorize</a>.
+
+<h2>Token Scopes</h2>
+<p>Note that tokens can possess one or more of these scopes:
+<ul>
+    <li>'read' - for API calls that only read client data</li>
+    <li>'trade' - for API calls that can create trades in the client account</li>
+    <li>'payments' - for API calls that can access the cashier (deposits and withdrawals)</li>
+    <li>'admin' - for API calls that change client settings</li>
+</ul>
+The drop-down list in the <a href="/api">API Playground</a> indicates which call needs which scope.
+</p>
 
 <h2>Binary.com Account Opening</h2>
 To open binary.com accounts via the API, start by verifying the user's email address using
