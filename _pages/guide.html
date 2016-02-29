@@ -8,11 +8,15 @@ permalink: guide/
 
 <p>Parts of the API functions require authentication (e.g. <a href="/api#portfolio">portfolio</a>) whilst other functions do not (e.g. <a href="/api#ticks">ticks</a>).</p>
 
-<p>Authentication is provided by app-specific API tokens. <a href="https://binary.com">Binary.com</a> users can generate tokens by logging into their accounts and visiting <a href="https://www.binary.com/user/api_token">Settings, API Token</a>.</p>
+There are 2 ways to do authentication:
 
-<p>With a user's API token, you may call <a href="/api#authorize">authorize</a>.</p>
+<OL>
 
-<p>An OAuth service is under active development and will be available in early 2016.</p>
+<LI>Authentication by <b>app-specific API tokens</b>. <a href="https://binary.com">Binary.com</a> users can generate tokens by logging into their accounts and visiting <a href="https://www.binary.com/user/api_token">Settings, API Token</a>.</p>
+With a user's API token, you may call <a href="/api#authorize">authorize</a>.
+
+<LI>Authentication by <b>Oauth</b>.
+</OL>
 
 <h2>Streams</h2>
 
