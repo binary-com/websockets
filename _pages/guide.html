@@ -11,6 +11,17 @@ permalink: guide/
 and create a per-app token with Admin scope. Then go to <a href="/api#app_register">app_register</a> to register your app into
 the system (using your per-app token to tie it to your Binary.com account).</p>
 
+<h2>Scopes</h2>
+
+<p>Tokens can possess one or more of these scopes:
+<ul>
+    <li>'read' - for API calls that only read client data</li>
+    <li>'trade' - for API calls that can create trades in the client account</li>
+    <li>'payments' - for API calls that can access the cashier (deposits and withdrawals)</li>
+    <li>'admin' - for API calls that change client settings</li>
+</ul>
+</p>
+
 <h2>Authentication</h2>
 
 <p>Parts of the API functions require authentication (e.g. <a href="/api#portfolio">portfolio</a>) whilst other functions do not (e.g. <a href="/api#ticks">ticks</a>).</p>
