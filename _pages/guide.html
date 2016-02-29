@@ -46,11 +46,6 @@ a valid token in the URL in the "token" parameter.
 
 </OL>
 
-<h2>Streams</h2>
-
-<p>Certain functions generate streams (e.g. <a href="/api#ticks">ticks</a>) whilst other functions do not. Please use <a href="/api#forget">forget</a> to cancel an outstanding
-stream.</p>
-
 <h2>Binary.com Account Opening</h2>
 To open binary.com accounts via the API, start by verifying the user's email address using
 <a href="/api#verify_email">verify_email</a>. You may then call
@@ -88,3 +83,7 @@ Clients may withdraw to a payment agent using
     <li>To keep the connection alive use <a href="/api#ping">Ping</a></li>
     <li>You can get the <a href="/api#time">Server Time</a></li>
 </ul>
+
+<h2>Streams</h2>
+<p>Note that certain functions generate streams (e.g. <a href="/api#ticks">ticks</a>) whilst other functions do not. Please use <a href="/api#forget">forget</a> to cancel an outstanding
+stream.</p>
