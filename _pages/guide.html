@@ -11,7 +11,7 @@ permalink: guide/
 and create a per-app token with Admin scope. Then go to <a href="/api#app_register">app_register</a> to register your app into
 the system (using your per-app token to tie it to your Binary.com account).</p>
 
-<h2>Scopes</h2>
+<h2>Token Scopes</h2>
 
 <p>Tokens can possess one or more of these scopes:
 <ul>
@@ -22,7 +22,7 @@ the system (using your per-app token to tie it to your Binary.com account).</p>
 </ul>
 </p>
 
-<h2>Authentication</h2>
+<h2>Client Authentication</h2>
 
 <p>Parts of the API functions require authentication (e.g. <a href="/api#portfolio">portfolio</a>) whilst other functions do not (e.g. <a href="/api#ticks">ticks</a>).</p>
 
@@ -35,7 +35,13 @@ their accounts and visiting <a href="https://www.binary.com/user/api_token">Sett
 With a user's API token, you may call <a href="/api#authorize">authorize</a>.
 </LI>
 
-<LI>Authentication by Oauth.
+<LI>Authentication by Oauth. To use Oauth, firstly obtain your app_id (either from
+<a href="/api#app_register">app_register</a> when you registered your app, or by finding it from 
+<a href="/api#app_list">app_list</a> or <a href="/api#app_get">app_get</a>).
+<p>To authenticate your users, send them to
+https://www.binary.com/oauth2/authorize?app_id=id-g5ZovxsQzPgNLoBHiNK5krxzwHnly
+Our system will authenticate the user, and redirect him to the redirect_uri which you specified when registering the app, with
+a valid token in the URL in the "token" parameter.
 </LI>
 
 </OL>
@@ -45,7 +51,7 @@ With a user's API token, you may call <a href="/api#authorize">authorize</a>.
 <p>Certain functions generate streams (e.g. <a href="/api#ticks">ticks</a>) whilst other functions do not. Please use <a href="/api#forget">forget</a> to cancel an outstanding
 stream.</p>
 
-<h2>Account Opening</h2>
+<h2>Binary.com Account Opening</h2>
 To open binary.com accounts via the API, start by verifying the user's email address using
 <a href="/api#verify_email">verify_email</a>. You may then call
 <a href="/api#new_account_virtual">new_account_virtual</a> to open a virtual-money account. Note: you may top-up virtual-money funds using
