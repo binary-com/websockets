@@ -13,7 +13,7 @@ the system (using your per-app token to tie it to your Binary.com account).</p>
 
 <h2>Client Authentication</h2>
 <p>Certain API calls require client authentication (e.g. <a href="/api#portfolio">portfolio</a>) whilst other calls do not (e.g. <a href="/api#ticks">ticks</a>).</p>
-There are 2 ways to do client authentication:
+There are 2 ways to do client authentication:</p>
 <OL>
 <LI>Client authentication by app-specific API tokens. <a href="https://binary.com">Binary.com</a> users can generate tokens by logging into
 their accounts and visiting <a href="https://www.binary.com/user/api_token">Settings, API Token</a>.
@@ -24,10 +24,11 @@ their accounts and visiting <a href="https://www.binary.com/user/api_token">Sett
 <p>To authenticate your users, send them to
 https://www.binary.com/oauth2/authorize?app_id=[..insert app_id..]
 Our system will authenticate the user, and redirect him to the redirect_uri which you specified when registering the app, with
-a valid token returned in the URL in the "token" parameter.
+a valid token returned in the URL in the "token" parameter.</p>
+<p>Sample code that demonstrates the Oauth facility may be found at <a target=_blank href="https://github.com/binary-com/example_app">here</a>.</p>
 </LI>
 </OL>
-With a user's API token (either a per-app token, or a token obtained via Oauth), you may call <a href="/api#authorize">authorize</a>.
+<p>With a user's API token (either a per-app token, or a token obtained via Oauth), you may call <a href="/api#authorize">authorize</a>.</p>
 
 <h2>Token Scopes</h2>
 <p>Note that tokens can possess one or more of these scopes:
