@@ -128,10 +128,6 @@
           "type": "integer",
           "description": "Example: 1446629000"
         },
-        "prediction": {
-          "type": "integer",
-          "description": "Only for tick trades, Example: 8"
-        },
         "tick_count": {
           "type": "integer",
           "description": "Only for tick trades, number of ticks"
