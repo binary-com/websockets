@@ -8,8 +8,9 @@
       "description":"Echo of the request made"
     },
     "tnc_approval": {
-    	"type": "string",
-    	"description": "1 on success"
+        "type": "integer",
+        "description": "Set terms and conditions 1: success",
+        "pattern": "^1$"
     },
     "msg_type": {
         "type": "string",
