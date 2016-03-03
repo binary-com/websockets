@@ -12,7 +12,7 @@
     "contracts_for": {
         "type": "object",
         "properties":{
-        	"available":{
+            "available":{
                 "type":"array",
                 "items":{
                   "type":"object",
@@ -98,23 +98,27 @@
                 		  "type":"object",
                                   "description":"A hash of trading period"
                 	  }
-                  } 
-                },
-                "minItems":"1",
-                "description":"Array of available contracts details"
-                },
+                    } 
+                  },
+                  "minItems":"1",
+                  "description":"Array of available contracts details"
+            },
             "close":{
             	"type":["integer", "null"],
             	"description":"Symbol's next market-close time as an epoch value"
-               },
+            },
             "open":{
               "type":["integer", "null"],
             	"description":"Symbol's next market-open time as an epoch value"
-              },
+            },
             "hit_count":{
               	"type":"number",
               	"description":"It is the count of contracts available"
-              }
+            },
+            "feed_license": {
+                "type": "string",
+                "description": "Indicates the feed license for symbol, for example whether its realtime or delayed"
+            }
         }
     },
     "msg_type": {

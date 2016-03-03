@@ -117,6 +117,10 @@
             "spot":{
                 "type":"number",
                 "description":"Current spot price for this underlying"
+            },
+            "feed_license": {
+                "type": "string",
+                "description": "Indicates the feed license for symbol, for example whether its realtime or delayed"
             }
         }
     },
@@ -131,7 +135,6 @@
   },
   "required": [
     "echo_req",
-    "contracts_for",
     "msg_type"
   ]
 }
