@@ -7,7 +7,7 @@
     "authorize": {
       "type": "string",
       "pattern": "^[\\w\\-]{1,128}$",
-      "description": "Authentication token. May be retrieved from www.binary.com/user/api_token",
+      "description": "Authentication token. May be retrieved from www.binary.com/user/api_tokenws",
       "required": "1"
     },
     "passthrough": {
