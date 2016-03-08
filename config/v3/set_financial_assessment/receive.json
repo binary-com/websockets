@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Set Financial Assessment Receive",
+  "description": "Set Financial Assessment Receive",
+  "properties": {
+    "echo_req": {
+      "title": "Echo request",
+      "description": "Echo of the request made"
+    },
+    "set_financial_assessment": {
+      "type": "object",
+      "title": "Financial Assessment Details",
+      "description": "Financial Assessment score and appropriate status",
+      "properties": {
+        "score": {
+          "type": "integer",
+          "description": "Financial assessment score based on answers"
+        },
+        "is_professional": {
+          "type": "integer",
+          "description": "On the basis of the information provided in relation to the client's knowledge and experience, we mark whether client is professional or not. 1: professional, 0: not professional",
+          "pattern": "^(1|0)$"
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "set_financial_assessment"
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field send in request to map to response, present only when request contains req_id"
+    }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}

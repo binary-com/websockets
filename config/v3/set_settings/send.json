@@ -36,7 +36,7 @@
     },
     "phone":{
       "type": ["string", "null"],
-      "pattern": "^\\+?[0-9\\s]{0,35}$",
+      "pattern": "^\\+?[0-9\\s-]{0,35}$",
       "description": "Note: not applicable for virtual account. Optional field for real money account."
     },
     "residence": {
