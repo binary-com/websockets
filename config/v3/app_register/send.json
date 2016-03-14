@@ -12,7 +12,16 @@
     "name":{
       "type": "string",
       "pattern": "^[\\w\\s-]{1,48}$",
-      "description": "Application name"
+      "description": "Application name",
+      "required": "1"
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(read|trade|payments|admin)$"
+      },
+      "required": "1"
     },
     "homepage":{
       "type": ["string", "null"],

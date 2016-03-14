@@ -1,6 +1,7 @@
 {
     "app_register": 1,
     "name": "Test Application",
+    "scopes": ["read", "trade"],
     "homepage": "https://test.example.com/",
     "github": "https://github.com/test_org/app",
     "appstore": "https://itunes.apple.com/test_app",

@@ -29,7 +29,7 @@
     },
     "msg_type": {
       "type": "string",
-      "description": "transfer_between_accounts"
+      "description": "api_token"
     },
     "req_id": {
       "type": "integer",
