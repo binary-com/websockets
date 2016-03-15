@@ -167,7 +167,7 @@
     },
     "accept_risk" : {
       "type": "integer",
-      "description": "client needs to accept risk disclaimer, boolean value 1 or 0",
+      "description": "Show whether client has accepted risk disclaimer, boolean value 1 or 0",
       "required": 1
     },
     "passthrough": {
