@@ -18,6 +18,10 @@
     "req_id": {
       "type": "integer",
       "description": "Optional field to map request to response"
+    },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
     }
   },
   "additionalProperties": false

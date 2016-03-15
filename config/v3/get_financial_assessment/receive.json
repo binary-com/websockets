@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Get financial assessment details",
+  "description": "This call gets the financial assessment details of client's account.",
+  "properties": {
+    "echo_req": {
+      "title": "Echo request",
+      "description": "Echo of the request made"
+    },
+    "get_financial_assessment": {
+      "type": "object",
+      "title": "Assessment details",
+      "description": "Client's financial asessment details",
+      "properties": {
+        "score": {
+          "type": "integer",
+          "description": "Total score based on client's answer for financial assessment"
+        },
+        "forex_trading_frequency": {
+          "type": "string",
+          "description": "Forex trading frequency"
+        },
+        "forex_trading_experience": {
+          "type": "string",
+          "description": "Forex trading experience"
+        },
+        "indices_trading_frequency": {
+          "type": "string",
+          "description": "Indices trading frequency"
+        },
+        "indices_trading_experience": {
+          "type": "string",
+          "description": "Indices trading experience"
+        },
+        "commodities_trading_frequency": {
+          "type": "string",
+          "description": "Commodities trading frequency"
+        },
+        "commodities_trading_experience": {
+          "type": "string",
+          "description": "Commodities trading experience"
+        },
+        "stocks_trading_experience": {
+          "type": "string",
+          "description": "Stocks trading experience"
+        },
+        "stocks_trading_frequency": {
+          "type": "string",
+          "description": "Stocks trading frequency"
+        },
+        "other_derivatives_trading_frequency": {
+          "type": "string",
+          "description": "Binary options or other financial derivatives trading frequency"
+        },
+        "other_derivatives_trading_experience": {
+          "type": "string",
+          "description": "Binary options or other financial derivatives trading experience"
+        },
+        "other_instruments_trading_frequency": {
+          "type": "string",
+          "description": "Other financial instruments trading frequency"
+        },
+        "other_instruments_trading_experience": {
+          "type": "string",
+          "description": "Other financial instruments trading experience"
+        },
+        "employment_industry": {
+          "type": "string",
+          "description": "Industry of Employment"
+        },
+        "education_level": {
+          "type": "string",
+          "description": "Level of Education"
+        },
+        "income_source": {
+          "type": "string",
+          "description": "Income Source"
+        },
+        "net_income": {
+          "type": "string",
+          "description": "Net Annual Income"
+        },
+        "estimated_worth": {
+          "type": "string",
+          "description": "Estimated Net Worth"
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description": "get_financial_assessment"
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field send in request to map to response, present only when request contains req_id"
+    }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}
