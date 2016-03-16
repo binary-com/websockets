@@ -13,6 +13,11 @@
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
     },
+    "landing_company": {
+      "type": "string",
+      "description": "Optional landing company field",
+      "pattern": "^(japan|costarica|malta|maltainvest|iom)$"
+    },
     "req_id": {
       "type": "integer",
       "description": "Optional field to map request to response"
