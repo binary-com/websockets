@@ -68,6 +68,25 @@
         "is_authenticated_payment_agent": {
           "type": "integer",
           "description": "Boolean value 1 or 0, indicating whether is payment agent (note: not applicable for virtual money accounts)"
+        },
+        "jp_account_status": {
+          "type": "object",
+          "title": "Japan real money account status",
+          "description": "Japan real money account_status, only applicable for Japan virtual money account client.",
+          "properties": {
+            "status": {
+              "enum": ["activated", "jp_knowledge_test_pending", "jp_knowledge_test_fail", "jp_activation_pending", "disabled"],
+              "description": "Status of Japan real money account opening, any of the above."
+            },
+            "last_test_epoch": {
+              "type": "integer",
+              "description": "Optional field. When status equals 'jp_knowledge_test_fail', this shows last knowledge test taken time in epoch."
+            },
+            "next_test_epoch": {
+              "type": "integer",
+              "description": "Optional field. When status equals 'jp_knowledge_test_pending' or 'jp_knowledge_test_fail', this shows next available knowledge test time in epoch."
+            }
+          }
         }
       }
     },
