@@ -6,7 +6,7 @@
   "properties": {
     "landing_company_details": {
       "type":"string",
-      "pattern": "^\\w{3,20}$",
+      "pattern": "^(\\w|-){3,20}$",
       "description": "Landing company shortcode (for example: costarica, malta, maltainvest, iom)",
       "required": "1"
     },
