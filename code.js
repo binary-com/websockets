@@ -27,12 +27,12 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     }
 
     function incomingMessageHandler(json) {
-        var authorizationError = !!(json.error && json.error.code == "AuthorizationRequired");
+        var authorizationError = !!(json.error && json.error.code == "AuthorizationRequired"),
             prettyJson = getFormattedJsonStr(json);
-       console.log(json); // intended to help developers, not for debugging, do not remove
-       $('.progress').remove();
-       appendToConsoleAndScrollIntoView(prettyJson);
-       $('#unauthorized-error').toggle(authorizationError);
+        console.log(json); // intended to help developers, not for debugging, do not remove
+        $('.progress').remove();
+        appendToConsoleAndScrollIntoView(prettyJson);
+        $('#unauthorized-error').toggle(authorizationError);
     };
 
     function getCurrentApi() {
@@ -93,7 +93,9 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         if (typeof json == 'string') {
             json = JSON.parse(json);
         }
-        return '<pre>' + jsonToPretty(json) + '</pre>';
+        return (json.error ? '<pre class="error">' : '<pre>') + 
+            jsonToPretty(json) +
+            '</pre>';
     }
 
     function issueRequestAndDisplayResult($node, requestUrl) {
