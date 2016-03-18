@@ -91,11 +91,15 @@
                       "available_barriers":{
                           "type":"array",
                           "minItems":"1",
-                          "description":"Array of available barriers"
+                          "description":"Array of available barriers for a predefined trading period (only return if region set to 'japan')"
+                      },
+                       "expired_barriers":{
+                          "type":"array",
+                          "description":"Array of barriers already expired (only return if region set to 'japan')"
                       },
                       "trading_period":{
                           "type":"object",
-                          "description":"A hash of trading period"
+                          "description":"A hash of predefined trading period (only return if region set to 'japan')"
                       }
                   }
                 },
