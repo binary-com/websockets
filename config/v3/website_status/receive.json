@@ -18,6 +18,10 @@
             "type": "object",
             "title": "API call limits",
             "description": "Limits for api call for each websocket connection"
+        },
+        "clients_country": {
+          "type": "string",
+          "description": "Country code of connected IP"
         }
       }
     },
