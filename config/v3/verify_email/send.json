@@ -12,7 +12,7 @@
     },
     "type": {
       "type": "string",
-      "enum": ["account_opening","lost_password","paymentagent_withdraw"],
+      "enum": ["account_opening","reset_password","paymentagent_withdraw"],
       "required": "1"
     },
     "req_id": {
