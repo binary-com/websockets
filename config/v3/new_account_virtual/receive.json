@@ -17,6 +17,10 @@
           "type": "string",
           "description": "Client id of the new virtual-money account"
         },
+        "email": {
+          "type": "string",
+          "description": "Email of the new virtual-money account"
+        },
         "currency": {
           "type": "string",
           "description": "Account currency"
