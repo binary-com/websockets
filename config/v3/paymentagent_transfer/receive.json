@@ -7,7 +7,11 @@
     "paymentagent_transfer": {
       "type": "integer",
       "description": "If 1, transfer success. If 2, dry-run success.",
-      "pattern": "^(2|1|0)$"
+      "pattern": "^(2|1)$"
+    },
+    "client_to_full_name": {
+      "type": "string",
+      "description": "The transfer_to client full name"
     },
     "echo_req": {
       "title": "Echo request",
