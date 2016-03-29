@@ -87,6 +87,69 @@
               "description": "Optional field. When status equals 'jp_knowledge_test_pending' or 'jp_knowledge_test_fail', this shows next available knowledge test time in epoch."
             }
           }
+        },
+        "gender" : {
+          "enum": ["m", "f"],
+          "description": "Male (m) or female (f) (note: only set for Japan real-money accounts)"
+        },
+        "occupation" : {
+          "enum": ["Office worker", "Director", "Public worker", "Self-employed", "Housewife / Househusband", "Contract / Temporary / Part Time", "Student", "Unemployed", "Others"],
+          "description": "Occupation (note: only set for Japan real-money accounts)"
+        },
+        "annual_income": {
+          "enum": ["Less than 1 million JPY", "1-3 million JPY", "3-5 million JPY", "5-10 million JPY", "10-30 million JPY", "30-50 million JPY", "50-100 million JPY", "Over 100 million JPY"],
+          "description": "Annual income (note: only set for Japan real-money accounts)"
+        },
+        "financial_asset": {
+          "enum": ["Less than 1 million JPY", "1-3 million JPY", "3-5 million JPY", "5-10 million JPY", "10-30 million JPY", "30-50 million JPY", "50-100 million JPY", "Over 100 million JPY"],
+          "description": "Financial asset (note: only set for Japan real-money accounts)"
+        },
+        "daily_loss_limit": {
+          "type": "integer",
+          "pattern": "^\\d{1,20}$",
+          "description": "Daily limit on losses in JPY (note: only set for Japan real-money accounts)"
+        },
+        "trading_experience_equities": {
+          "enum": ["No experience", "Less than 6 months", "6 months to 1 year", "1-3 years", "3-5 years", "Over 5 years"],
+          "description": "Equities trading experience (note: only set for Japan real-money accounts)"
+        },
+        "trading_experience_commodities": {
+          "enum": ["No experience", "Less than 6 months", "6 months to 1 year", "1-3 years", "3-5 years", "Over 5 years"],
+          "description": "Commodities trading experience (note: only set for Japan real-money accounts)"
+        },
+        "trading_experience_foreign_currency_deposit": {
+          "enum": ["No experience", "Less than 6 months", "6 months to 1 year", "1-3 years", "3-5 years", "Over 5 years"],
+          "description": "Foreign currency deposit trading experience (note: only set for Japan real-money accounts)"
+        },
+        "trading_experience_margin_fx": {
+          "enum": ["No experience", "Less than 6 months", "6 months to 1 year", "1-3 years", "3-5 years", "Over 5 years"],
+          "description": "Margin FX trading experience (note: only set for Japan real-money accounts)"
+        },
+        "trading_experience_investment_trust": {
+          "enum": ["No experience", "Less than 6 months", "6 months to 1 year", "1-3 years", "3-5 years", "Over 5 years"],
+          "description": "Investment trust trading experience (note: only set for Japan real-money accounts)"
+        },
+        "trading_experience_public_bond": {
+          "enum": ["No experience", "Less than 6 months", "6 months to 1 year", "1-3 years", "3-5 years", "Over 5 years"],
+          "description": "Public and corporation bond trading experience (note: only set for Japan real-money accounts)"
+        },
+        "trading_experience_option_trading": {
+          "enum": ["No experience", "Less than 6 months", "6 months to 1 year", "1-3 years", "3-5 years", "Over 5 years"],
+          "description": "OTC Derivative (Option) trading experience (note: only set for Japan real-money accounts)"
+        },
+        "trading_purpose" : {
+          "enum": ["Targeting short-term profits", "Targeting medium-term / long-term profits", "Both the above", "Hedging"],
+          "description": "Trading purpose (note: only set for Japan real-money accounts)"
+        },
+        "hedge_asset" : {
+          "type": ["string", "null"],
+          "pattern": "^(Foreign currency deposit|Margin FX|Other)$",
+          "description": "Classification of assets requiring hedge (note: only set for Japan real-money accounts, if 'Hedging' is selected for 'Trading purpose')"
+        },
+        "hedge_asset_amount" : {
+          "type": ["integer", "null"],
+          "pattern": "^\\d{0,20}$",
+          "description": "Hedge asset amount in JPY (note: only set for Japan real-money accounts, if 'Hedging' is selected for 'Trading purpose')"
         }
       }
     },

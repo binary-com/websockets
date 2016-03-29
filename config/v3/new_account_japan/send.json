@@ -96,64 +96,64 @@
     },
     "annual_income": {
       "enum": ["Less than 1 million JPY", "1-3 million JPY", "3-5 million JPY", "5-10 million JPY", "10-30 million JPY", "30-50 million JPY", "50-100 million JPY", "Over 100 million JPY"],
-      "description": "Accept any value in enum list.",
+      "description": "Annual income. Accept any value in enum list.",
       "required": 1
     },
     "financial_asset": {
       "enum": ["Less than 1 million JPY", "1-3 million JPY", "3-5 million JPY", "5-10 million JPY", "10-30 million JPY", "30-50 million JPY", "50-100 million JPY", "Over 100 million JPY"],
-      "description": "Accept any value in enum list.",
+      "description": "Financial asset. Accept any value in enum list.",
       "required": 1
     },
     "daily_loss_limit": {
       "type": "integer",
       "pattern": "^\\d{1,20}$",
-      "description": "Daily limit loss in JPY",
+      "description": "Daily limit on losses, in JPY",
       "required": 1
     },
     "trading_experience_equities": {
       "enum": ["No experience", "Less than 6 months", "6 months to 1 year", "1-3 years", "3-5 years", "Over 5 years"],
-      "description": "Accept any value in enum list.",
+      "description": "Equities trading experience. Accept any value in enum list.",
       "required": 1
     },
     "trading_experience_commodities": {
       "enum": ["No experience", "Less than 6 months", "6 months to 1 year", "1-3 years", "3-5 years", "Over 5 years"],
-      "description": "Accept any value in enum list.",
+      "description": "Commodities trading experience. Accept any value in enum list.",
       "required": 1
     },
     "trading_experience_foreign_currency_deposit": {
       "enum": ["No experience", "Less than 6 months", "6 months to 1 year", "1-3 years", "3-5 years", "Over 5 years"],
-      "description": "Accept any value in enum list.",
+      "description": "Foreign currency deposit trading experience. Accept any value in enum list.",
       "required": 1
     },
     "trading_experience_margin_fx": {
       "enum": ["No experience", "Less than 6 months", "6 months to 1 year", "1-3 years", "3-5 years", "Over 5 years"],
-      "description": "Accept any value in enum list.",
+      "description": "Margin FX trading experience. Accept any value in enum list.",
       "required": 1
     },
     "trading_experience_investment_trust": {
       "enum": ["No experience", "Less than 6 months", "6 months to 1 year", "1-3 years", "3-5 years", "Over 5 years"],
-      "description": "Accept any value in enum list.",
+      "description": "Investment trust trading experience. Accept any value in enum list.",
       "required": 1
     },
     "trading_experience_public_bond": {
       "enum": ["No experience", "Less than 6 months", "6 months to 1 year", "1-3 years", "3-5 years", "Over 5 years"],
-      "description": "Accept any value in enum list.",
+      "description": "Public and corporation bond trading experience. Accept any value in enum list.",
       "required": 1
     },
     "trading_experience_option_trading": {
       "enum": ["No experience", "Less than 6 months", "6 months to 1 year", "1-3 years", "3-5 years", "Over 5 years"],
-      "description": "Accept any value in enum list.",
+      "description": "OTC Derivative (Option) trading experience. Accept any value in enum list.",
       "required": 1
     },
     "trading_purpose" : {
       "enum": ["Targeting short-term profits", "Targeting medium-term / long-term profits", "Both the above", "Hedging"],
-      "description": "Accept any value in enum list.",
+      "description": "Trading purpose. Accept any value in enum list.",
       "required": 1
     },
     "hedge_asset" : {
       "type": ["string", "null"],
       "pattern": "^(Foreign currency deposit|Margin FX|Other)$",
-      "description": "This field is only required if 'Hedging' is selected for 'trading_purpose'."
+      "description": "Classification of assets requiring hedge. This field is only required if 'Hedging' is selected for 'trading_purpose'."
     },
     "hedge_asset_amount" : {
       "type": ["integer", "null"],
