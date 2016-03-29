@@ -11,7 +11,7 @@
       "required": "1"
     },
     "salutation" : {
-      "enum": ["Mr", "Mrs", "Ms", "Miss", "Dr", "Prof"],
+      "enum": ["Mr", "Mrs", "Ms", "Miss"],
       "description": "Accept any value in enum list.",
       "required": "1"
     },
