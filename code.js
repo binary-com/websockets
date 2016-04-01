@@ -2,6 +2,7 @@ require.config({ baseUrl: '/' });
 
 var LiveApi = window['binary-live-api'].LiveApi;
 var apiUrl = 'wss://ws.binaryws.com/websockets/v3';
+var langCode = 'en';
 
 require(["docson/docson", "lib/jquery"], function(docson) {
 
@@ -21,7 +22,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     }
 
     function initConnection() {
-        api = new LiveApi({ apiUrl: apiUrl });
+        api = new LiveApi({ apiUrl: apiUrl, language: langCode });
 
         api.events.on('*', incomingMessageHandler);
     }
@@ -93,7 +94,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         if (typeof json == 'string') {
             json = JSON.parse(json);
         }
-        return (json.error ? '<pre class="error">' : '<pre>') + 
+        return (json.error ? '<pre class="error">' : '<pre>') +
             jsonToPretty(json) +
             '</pre>';
     }
@@ -184,9 +185,8 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     });
 
     $('#api-version-selector, #api-language-selector').on('change', function(е) {
-        var verStr = $('#api-version-selector').val(),
-            langStr = $('#api-language-selector').val();
-        apiUrl = 'wss://ws.binaryws.com/websockets/' + verStr + '?l=' + langStr;
+        apiUrl = 'wss://ws.binaryws.com/websockets/' + $('#api-version-selector').val();
+        langCode = $('#api-language-selector').val();
         initConnection();
     });
 
