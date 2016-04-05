@@ -89,9 +89,9 @@
     },
     "secret_answer": {
       "type": "string",
-      "minLength": 2,
+      "minLength": 1,
       "maxLength": 50,
-      "description": "Answer to secret question, within 2-50 characters.",
+      "description": "Answer to secret question, within 1-50 characters.",
       "required": 1
     },
     "annual_income": {
