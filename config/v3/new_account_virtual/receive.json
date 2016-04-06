@@ -28,6 +28,10 @@
         "balance": {
           "type": "number",
           "description": "Account balance"
+        },
+        "oauth_token": {
+          "type": "string",
+          "description": "oauth token for client's login session"
         }
       }
     },

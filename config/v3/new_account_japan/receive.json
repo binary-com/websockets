@@ -24,6 +24,10 @@
         "landing_company_short": {
           "type": "string",
           "description": "landing company shortcode"
+        },
+        "oauth_token": {
+          "type": "string",
+          "description": "oauth token for client's login session"
         }
       }
     },
