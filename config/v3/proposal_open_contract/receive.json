@@ -37,6 +37,10 @@
           "type": "integer",
           "description": "Binary.com internal contract identifier"
         },
+        "contract_type": {
+          "type": "string",
+          "description": "Contract type, for example CALL, PUT"
+        },
         "currency": {
           "type": "string",
           "description": "Example: USD"
@@ -112,6 +116,10 @@
           "type": "string",
           "description": "Example: BSESENSEX30"
         },
+        "display_name": {
+          "type": "string",
+          "description": "Display name of underlying"
+        },
         "entry_tick": {
           "type": "number",
           "description": "Example: 86.630"
@@ -162,6 +170,21 @@
         "sell_spot_time": {
           "type": "integer",
           "description": "Example: 1446629000, only present for contracts already sold"
+        },
+        "transaction_ids": {
+          "type": "object",
+          "title": "Transaction ids for contract",
+          "description": "Every contract has buy and sell transaction ids, i.e. when you purchase a contract we associate it with buy transaction id, and if contract is already sold we associate that with sell transaction id.",
+          "properties":{
+            "buy": {
+              "type": "integer",
+              "description": "Buy transaction id for that contract"
+            },
+            "sell": {
+              "type": "integer",
+              "description": "Sell transaction id for that contract, only present when contract is already sold."
+            }
+          }
         }
       }
     },
