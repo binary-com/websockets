@@ -25,12 +25,11 @@
       "description": "An upper limit on ticks to receive (default: 500)"
     },
     "style": {
-      "type": "string",
-      "pattern": "^(candles|ticks)$",
+      "enum": ["candles", "ticks"],
       "description": "The tick-output style: must be one of 'ticks' or 'candles' (default: 'ticks')"
     },
     "granularity": {
-      "type": "integer",
+      "enum": [60, 120, 180, 300, 600, 900, 1800, 3600, 14400, 86400],
       "description": "Provide for style: 'candles'. Candle time-dimension width setting: typically '60', '120', '180', '300', '600', '900', '1800', '3600', '14400', or '86400' (default: '60')."
     },
     "adjust_start_time": {
