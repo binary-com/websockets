@@ -187,6 +187,7 @@ pre .number { color: #AE81FF; }
 pre {
     max-width: 100%;
     overflow: scroll;
+    white-space: pre-wrap;
 }
 
 #unauthorized-error {
