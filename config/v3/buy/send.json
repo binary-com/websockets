@@ -21,13 +21,11 @@
       "properties": {
         "amount": {
           "type": "number",
-          "description":"Proposed payout or stake value",
-          "required": "1"
+          "description":"Proposed payout or stake value"
         },
         "basis": {
           "description":"Indicate whether amount is 'payout' or 'stake'",
-          "enum": ["payout", "stake"],
-          "required": "1"
+          "enum": ["payout", "stake"]
         },
         "contract_type": {
           "type": "string",
