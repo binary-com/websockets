@@ -21,18 +21,6 @@
           "type": "number",
           "description": "Maximum daily turnover"
         },
-        "lifetime_limit": {
-          "type": "number",
-          "description": "Withdrawal limit"
-        },
-        "num_of_days": {
-          "type": "integer",
-          "description": "Number of days for this limit"
-        },
-        "num_of_days_limit": {
-          "type": "integer",
-          "description": "Limit for these days"
-        },
         "open_positions": {
           "type": "integer",
           "description": "Maximum number of open positions"
@@ -41,17 +29,29 @@
           "type": "number",
           "description": "Maximum aggregate payouts on open positions"
         },
+        "lifetime_limit": {
+          "type": "number",
+          "description": "Lifetime withdrawal limit"
+        },
+        "num_of_days": {
+          "type": "integer",
+          "description": "Number of days for num_of_days_limit withdrawal limit"
+        },
+        "num_of_days_limit": {
+          "type": "integer",
+          "description": "Withdrawal limit for num_of_days days"
+        },
         "remainder": {
           "type": "number",
-          "description": "Amount left to reach limit"
+          "description": "Amount left to reach withdrawal limit"
         },
         "withdrawal_for_x_days_monetary": {
           "type": "number",
-          "description": "Withdrawal for these number of days"
+          "description": "Total withdrawal for num_of_days days"
         },
         "withdrawal_since_inception_monetary": {
           "type": "number",
-          "description": "Withdrawal since inception"
+          "description": "Total withdrawal since inception"
         }
       }
     },
