@@ -17,12 +17,13 @@
     },
     "amount": {
       "type": "number",
-      "description":"Proposed payout or stake value"
+      "description":"Proposed payout or stake value",
+      "required": "1"
     },
     "basis": {
-      "type": "string",
       "description":"Indicate whether amount is 'payout' or 'stake'",
-      "pattern": "^(payout|stake)$"
+      "enum": ["payout", "stake"],
+      "required": "1"
     },
     "contract_type": {
       "type": "string",
@@ -49,9 +50,8 @@
       "description":"Duration quantity"
     },
     "duration_unit": {
-      "type": "string",
       "description":"Duration unit is s(seconds), m(minutes), h(hours), d(days), t(ticks)",
-      "pattern": "^(d|m|s|h|t)$"
+      "enum": ["d", "m", "s", "h", "t"]
     },
     "symbol": {
       "type": "string",
@@ -74,9 +74,8 @@
       "description":"[For spread contracts only] Amount per point"
     },
     "stop_type": {
-      "type": "string",
       "description":"[For spread contracts only] Stop type (dollar or point)",
-      "pattern": "^(dollar|point)$"
+      "enum": ["dollar","point"]
     },
     "stop_profit": {
       "type": "number",
