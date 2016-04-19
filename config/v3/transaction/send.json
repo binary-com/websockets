@@ -8,7 +8,7 @@
       "type": "integer",
       "description": "Must be 1.",
       "pattern": "^1$",
-      "require": "1"
+      "required": "1"
     },
     "subscribe": {
       "type": "integer",

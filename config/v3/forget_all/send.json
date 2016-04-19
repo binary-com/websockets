@@ -8,7 +8,7 @@
       "type": "string",
       "pattern": "^(ticks|proposal|portfolio|proposal_open_contract|balance|transaction|pricing_table)$",
       "description": "Cancel all streams based on type (which should be 'ticks', 'proposal', or 'proposal_open_contract')",
-      "require": "1"
+      "required": "1"
     },
     "passthrough": {
       "type": "object",

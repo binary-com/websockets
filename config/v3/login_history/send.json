@@ -8,7 +8,7 @@
       "type": "integer",
       "pattern": "^1$",
       "description": "Must be 1.",
-      "require": "1"
+      "required": "1"
     },
     "limit": {
       "type": "integer",
