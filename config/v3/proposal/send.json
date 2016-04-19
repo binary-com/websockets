@@ -12,7 +12,7 @@
     },
     "subscribe": {
         "type": "integer",
-        "description": "1 - to stream. Note that certain contracts, such as tick trades on Random Indices, have constant prices and hence won't stream.",
+        "description": "1 - to stream. Note that tick trades, digit trades and less than 24 hours at the money contracts for the following underlying symbols are not streamed: R_100 R_50 R_25 R_75 RDBULL RDBEAR RDYIN RDYANG",
         "pattern": "^1$"
     },
     "amount": {
