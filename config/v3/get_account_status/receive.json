@@ -10,7 +10,7 @@
     },
     "get_account_status": {
       "type": "array",
-      "description": "Account status. Possible statuses: authenticated (client is fully authenticated), age_verification (client is age-verified), cashier_locked (cashier is locked), disabled (account is disabled), unwelcome (client cannot deposit or buy contracts, but can withdraw or sell contracts), withdrawal_locked (deposits allowed but withdrawals locked), ukgc_funds_protection (client has acknowledged UKGC funds protection notice), jp_knowledge_test_pending (Japan client who hasn't done knowledge test), jp_knowledge_test_fail (Japan client who has failed knowledge test), jp_activation_pending (Japan client who has passed knowledge test but real money account still pending activation), active (default to active when no other status set, except authenticated)",
+      "description": "Account status. Possible statuses: authenticated (client is fully authenticated), age_verification (client is age-verified), cashier_locked (cashier is locked), disabled (account is disabled), unwelcome (client cannot deposit or buy contracts, but can withdraw or sell contracts), withdrawal_locked (deposits allowed but withdrawals locked), ukgc_funds_protection (client has acknowledged UKGC funds protection notice), jp_knowledge_test_pending (Japan client who hasn't done knowledge test), jp_knowledge_test_fail (Japan client who has failed knowledge test), jp_activation_pending (Japan client who has passed knowledge test but real money account still pending activation)",
       "items": {
         "type": "string"
       }
