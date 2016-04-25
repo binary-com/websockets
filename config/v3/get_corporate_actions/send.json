@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Corporate actions for an open contract",
+  "description": "Get corporate actions for an open contract in the user's portfolio",
+  "properties": {
+    "get_corporate_actions": {
+      "type": "integer",
+      "description":"Must be 1",
+      "pattern": "^1$",
+      "required": "1"
+    },
+    "symbol": {
+      "type": "string",
+      "description":"Equity's short symbol name. Example: USMSFT, USGOOG.",
+      "pattern":"^\\w{1,10}$",
+      "required": "1"
+    },
+    "start": {
+      "type": "string",
+      "description": "Optional start date (epoch or YYYY-MM-DD). Will default to end minus 1 year if not specified.",
+      "pattern": "^(\\20[012]d{1}-\\(0?[1-9]|1[012])-\\(0?[1-9]|[12][0-9]|3[01])|\\d{10})$"
+    },
+    "end": {
+      "type": "string",
+      "description": "Optional end date (epoch or YYYY-MM-DD). Will default to now if not specified.",
+      "pattern": "^(\\20[012]d{1}-\\(0?[1-9]|1[012])-\\(0?[1-9]|[12][0-9]|3[01])|\\d{10})$"
+    }
+  },
+  "additionalProperties": false
+}
