@@ -15,7 +15,7 @@
       "properties": {
         "display_date": {
           "type": "object",
-          "description": "Original barrier of the contract before adjustment due to corporate actions.",
+          "description": "Effective date of the corporate action.",
           "properties":{
             "type": {
               "type": "integer",
