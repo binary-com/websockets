@@ -3,5 +3,6 @@
   "type": "japan",
   "contract_category": "callput",
   "date_expiry": "1456891200",
+  "date_start": "1456881200",
   "symbol": "frxEURUSD"
 }

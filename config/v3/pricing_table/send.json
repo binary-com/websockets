@@ -29,7 +29,11 @@
     },
     "date_expiry": {
       "type": "integer",
-      "description": "Epoch value of the expiry time of the contract. You must either specify date_expiry or duration."
+      "description": "Epoch value of the expiry time of the trading window."
+    },
+    "date_start": {
+      "type": "integer",
+      "description": "Epoch value of the start time of the trading window."
     },
     "passthrough": {
       "type": "object",
