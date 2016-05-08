@@ -15,11 +15,11 @@
         },
         "currency": {
           "type": "string",
-          "description": "Balance currency string"
+          "description": "Currency of the account"
         },
         "balance": {
           "type": "number",
-          "description": "Balance amount"
+          "description": "Cash balance of the account"
         },
         "loginid": {
           "type": "string",
@@ -27,7 +27,7 @@
         },
         "is_virtual": {
           "type": "string",
-          "description": "Boolean value 1 or 0 which indicates if it is a virtual account"
+          "description": "Boolean value: 1 or 0, indicating whether it is a virtual-money account"
         },
         "landing_company_name": {
           "type": "string",

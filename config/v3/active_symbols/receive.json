@@ -37,7 +37,7 @@
           },
           "delay_amount": {
             "type": "integer",
-            "description": "Amount the feed is delayed (in minutes) due to Exchange licensing requirements"
+            "description": "Amount the data feed is delayed (in minutes) due to Exchange licensing requirements"
           },
           "display_name": {
             "type": "string",
@@ -45,7 +45,7 @@
           },
           "spot": {
             "type": ["number", "null"],
-            "description": "Latest spot price"
+            "description": "Latest spot price of the underlying"
           },
           "spot_time": {
             "type": "string",
@@ -81,7 +81,7 @@
           },
           "pip": {
             "type": "number",
-            "description": "pip size"
+            "description": "Pip size (i.e. minimum fluctuation amount)"
           }
         }
       }

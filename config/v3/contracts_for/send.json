@@ -2,7 +2,7 @@
     "$schema":"http://json-schema.org/draft-04/schema#",
     "type":"object",
     "title":"Contracts for Symbol Send",
-    "description":"For a given symbol, get the list of currently available option contracts, and the latest barrier and duration limits for each contract.",
+    "description":"For a given symbol, get the list of currently available contracts, and the latest barrier and duration limits for each contract.",
     "properties":{
         "contracts_for":{
             "type":"string",
@@ -12,7 +12,7 @@
         },
         "currency": {
           "type": "string",
-          "description":"Currency for contracts expected to be priced in. Optional field, default to USD if not pass in.",
+          "description":"Currency for the contracts stake and payout. Optional field, defaults to USD if not passed in.",
           "pattern": "^[A-Z]{3}$"
         },
         "region":{

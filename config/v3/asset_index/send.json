@@ -2,11 +2,12 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Asset Index Send",
-  "description":"Retreive the Asset Index: a list of all available markets and a summary of the contracts available thereupon.",
+  "description":"Retrieve the Asset Index: a list of all available markets and a summary of the contracts available thereupon.",
   "properties": {
     "asset_index": {
       "type":"integer",
       "pattern": "^1$",
+      "description": "Must be 1",
       "required": "1"
     },
     "passthrough": {
@@ -15,7 +16,7 @@
     },
     "landing_company": {
       "type": "string",
-      "description": "Optional landing company field",
+      "description": "Optional landing company field. If specified, will return only the markets and contracts that this landing company can trade.",
       "pattern": "^(japan|costarica|malta|maltainvest|iom)$"
     },
     "req_id": {

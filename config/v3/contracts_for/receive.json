@@ -18,7 +18,7 @@
                   "properties":{
                       "market":{
                           "type":"string",
-                          "description":"Type of market (forex, indices, random, ...)"
+                          "description":"Type of market (forex, indices, ...)"
                       },
                       "contracts_display":{
                           "type":"string",
@@ -38,11 +38,11 @@
                       },
                       "submarket":{
                           "type":"string",
-                          "description":"Type of submarket (example: random_index)"
+                          "description":"Type of submarket (example: major_pairs)"
                       },
                       "exchange_name":{
                           "type":"string",
-                          "description":"Name of exchange (example: RANDOM)"
+                          "description":"Name of exchange (example: EURONEXT)"
                       },
                       "contract_category_display":{
                           "type":"string",
