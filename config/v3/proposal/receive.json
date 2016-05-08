@@ -18,7 +18,7 @@
         },
         "spot": {
           "type": "number",
-          "description": "Spot value if we have license to stream this symbol. Example: 9874.52"
+          "description": "Spot value (if there are no Exchange data-feed licensing restrictions for the underlying symbol). Example: 9874.52"
         },
         "spot_time": {
           "type": "integer",

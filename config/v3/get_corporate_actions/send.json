@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Corporate actions for an open contract",
-  "description": "Get corporate actions for an open contract in the user's portfolio",
+  "description": "Get corporate actions for an equity symbol.",
   "properties": {
     "get_corporate_actions": {
       "type": "integer",

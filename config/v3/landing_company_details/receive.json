@@ -13,25 +13,31 @@
       "title": "Landing Company Structure",
       "properties":{
         "shortcode":{
+          "description":"Landing Company shortcode",
           "type":"string"
         },
         "name":{
+          "description":"Landing Company name",
           "type":"string"
         },
         "address":{
           "type": ["array", "null"],
+          "description":"Landing Company address",
           "items":{
             "type":"string"
           }
         },
         "country":{
+          "description":"Landing Company country",
           "type":"string"
         },
         "legal_default_currency":{
+          "description":"Default currency of client accounts with this Landing Company",
           "type":"string"
         },
         "legal_allowed_currencies":{
           "type":"array",
+          "description":"Allowable currencies for accounts with this Landing Company",
           "items":{
             "type":"string"
           }
@@ -50,7 +56,7 @@
         },
         "has_reality_check": {
           "type": "integer",
-          "description": "Flag to indicate whether reality check is applicable for this landing company. 1: applicable, 0: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session.",
+          "description": "Flag to indicate whether reality check is applicable for this Landing Company. 1: applicable, 0: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
           "pattern": "^(1|0)$"
         }
       }

@@ -7,6 +7,7 @@
     "residence_list": {
       "type":"integer",
       "pattern": "^1$",
+      "description": "Must be 1",
       "required": "1"
     },
     "passthrough": {

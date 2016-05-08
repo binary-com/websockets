@@ -61,7 +61,7 @@
         }
       },
       "minItems": "1",
-      "description": "Array of OHLC price values for the given time (only for style='candles')"
+      "description": "Array of OHLC (open/high/low/close) price values for the given time (only for style='candles')"
     },
     "msg_type": {
       "type": "string",

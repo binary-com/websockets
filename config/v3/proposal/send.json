@@ -12,12 +12,12 @@
     },
     "subscribe": {
         "type": "integer",
-        "description": "1 - to stream. Note that tick trades, digit trades and less than 24 hours at the money contracts for the following underlying symbols are not streamed: R_100 R_50 R_25 R_75 RDBULL RDBEAR RDYIN RDYANG",
+        "description": "1 - to initiate a realtime stream of prices. Note that tick trades, digit trades and less than 24 hours at-the-money contracts for the following underlying symbols are not streamed: R_100 R_50 R_25 R_75 RDBULL RDBEAR (this is because their price is constant).",
         "pattern": "^1$"
     },
     "amount": {
       "type": "number",
-      "description":"Proposed payout or stake value"
+      "description":"Proposed contract payout or stake value"
     },
     "basis": {
       "description":"Indicate whether amount is 'payout' or 'stake'",
