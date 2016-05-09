@@ -2,12 +2,12 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Buy a Contract Send",
-  "description": "Buy the Contract using an ID from a previous Price Proposal call",
+  "description": "Buy a Contract",
   "properties": {
     "buy": {
       "type": "string",
       "pattern": "^(?:[\\w-]{32,128}|1)$",
-      "description": "The id received from a Price Proposal call or 1 if contract buy parameters are passed in parameters field",
+      "description": "Either the id received from a Price Proposal (proposal) call, or 1 if contract buy parameters are passed in the parameters field",
       "required": "1"
     },
     "price": {

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Top Up Virtual Request",
-  "description": "Top up virtual account",
+  "description": "When a virtual-money's account balance becomes low, it can be topped up using this call.",
   "properties": {
     "topup_virtual": {
       "type": "integer",

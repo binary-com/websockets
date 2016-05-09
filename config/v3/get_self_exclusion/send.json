@@ -2,10 +2,11 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Get User Self-Exclusion Send",
-  "description":"Since trading can be an addicitive activity, Binary.com allows users to exclude themselves from the website for certain periods of time, or to set limits on their trading activities.",
+  "description":"Binary.com allows users to exclude themselves from the website for certain periods of time, or to set limits on their trading activities. This facility is a regulatory requirement for certain Landing Companies.",
   "properties": {
     "get_self_exclusion": {
       "type":"integer",
+      "description": "Must be 1",
       "pattern": "^1$"
     },
     "passthrough": {

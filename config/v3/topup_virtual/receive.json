@@ -23,7 +23,7 @@
     },
     "msg_type": {
       "type": "string",
-      "description": "cashier_password"
+      "description": "topup_virtual"
     },
     "req_id": {
       "type": "integer",

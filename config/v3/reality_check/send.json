@@ -2,11 +2,12 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Reality check send",
-  "description": "Retrieve summary of client's trades and account for reality check. A 'reality check' means a display of time elapsed since the session began.",
+  "description": "Retrieve summary of client's trades and account for the Reality Check facility. A 'reality check' means a display of time elapsed since the session began, and associated client profit/loss. The Reality Check facility is a regulatory requirement for certain landing companies.",
   "properties": {
     "reality_check": {
       "type":"integer",
       "pattern": "^1$",
+      "description": "Must be 1",
       "required": "1"
     },
     "passthrough": {

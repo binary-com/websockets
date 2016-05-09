@@ -7,6 +7,7 @@
     "api_token": {
       "type":"integer",
       "pattern": "^1$",
+      "description": "Must be 1",
       "required": "1"
     },
     "new_token": {
@@ -19,7 +20,7 @@
       "items": {
         "type": "string",
         "pattern": "^(read|trade|payments|admin)$",
-        "description": "required when create new token"
+        "description": "Required when create new token"
       }
     },
     "delete_token": {

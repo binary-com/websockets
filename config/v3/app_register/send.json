@@ -2,11 +2,12 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "App Register Send",
-  "description":"register a new OAuth application",
+  "description":"Register a new OAuth application",
   "properties": {
     "app_register": {
       "type":"integer",
       "pattern": "^1$",
+      "description": "Must be 1",
       "required": "1"
     },
     "name":{
@@ -26,22 +27,22 @@
     "homepage":{
       "type": ["string", "null"],
       "pattern": "^.{0,255}$",
-      "description": "Application homepage"
+      "description": "Application's homepage"
     },
     "github":{
       "type": ["string", "null"],
       "pattern": "^.{0,255}$",
-      "description": "Application GitHub page"
+      "description": "Application's GitHub page (for open-source projects)"
     },
     "appstore":{
       "type": ["string", "null"],
       "pattern": "^.{0,255}$",
-      "description": "Application App Store URL"
+      "description": "Application's App Store URL (if applicable)"
     },
     "googleplay":{
       "type": ["string", "null"],
       "pattern": "^.{0,255}$",
-      "description": "Application Google Play URL"
+      "description": "Application's Google Play URL (if applicable)"
     },
     "redirect_uri": {
       "type": "string",
