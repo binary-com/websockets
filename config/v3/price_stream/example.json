@@ -4,7 +4,7 @@
     "basis": "payout",
     "contract_type": "CALL",
     "currency": "USD",
-    "duration": "60",
+    "duration": "120",
     "duration_unit": "s",
     "symbol": "frxUSDJPY",
     "subscribe": 1
