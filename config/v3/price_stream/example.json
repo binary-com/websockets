@@ -6,5 +6,6 @@
     "currency": "USD",
     "duration": "60",
     "duration_unit": "s",
-    "symbol": "R_100"
+    "symbol": "frxUSDJPY",
+    "subscribe": 1
 }

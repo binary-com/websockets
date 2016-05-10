@@ -12,10 +12,6 @@
       "title":"Price Stream Response",
       "description":"Latest price and other details for a given contract",
       "properties": {
-        "longcode": {
-          "type": "string",
-          "description": "Example: USD 10.00 payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time."
-        },
         "spot": {
           "type": "number",
           "description": "Spot value if we have license to stream this symbol. Example: 9874.52"
