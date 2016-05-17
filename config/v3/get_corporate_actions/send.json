@@ -10,6 +10,10 @@
       "pattern": "^1$",
       "required": "1"
     },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    },
     "symbol": {
       "type": "string",
       "description":"Equity's short symbol name. Example: USMSFT, USGOOG.",
