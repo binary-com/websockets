@@ -49,8 +49,7 @@
     },
     "duration_unit": {
       "description":"Duration unit is s(seconds), m(minutes), h(hours), d(days), t(ticks)",
-      "enum": ["d", "m", "s", "h", "t"],
-      "default": "s"
+      "enum": ["d", "m", "s", "h", "t"]
     },
     "symbol": {
       "type": "string",
