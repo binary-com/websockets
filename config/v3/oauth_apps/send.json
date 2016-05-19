@@ -10,7 +10,7 @@
       "required": "1"
     },
     "revoke_app": {
-      "type":"string",
+      "type":"integer",
       "description": "Accept app_id, Revoke App Permissions and delete all tokens related to the app."
     },
     "passthrough": {

@@ -4,8 +4,8 @@
   "title": "App Delete Send",
   "properties": {
     "app_delete": {
-      "type":"string",
-      "pattern": "^.{32}$",
+      "type":"integer",
+      "pattern": "^\\d{1,20}$",
       "required": "1",
       "description": "Application app_id"
     },

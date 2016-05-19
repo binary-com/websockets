@@ -19,7 +19,7 @@
             "description":"Application name"
           },
           "app_id": {
-            "type": "string",
+            "type": "integer",
             "description":"Application id"
           },
           "last_used": {

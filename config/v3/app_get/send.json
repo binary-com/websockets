@@ -5,8 +5,8 @@
   "description":"get created OAuth application by app_id",
   "properties": {
     "app_get": {
-      "type":"string",
-      "pattern": "^.{32}$",
+      "type":"integer",
+      "pattern": "^\\d{1,20}$",
       "required": "1",
       "description": "Application app_id"
     },
