@@ -22,7 +22,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     }
 
     function initConnection() {
-        api = new LiveApi({ apiUrl: apiUrl, language: langCode });
+        api = new LiveApi({ apiUrl: apiUrl, language: langCode, appId: 1089 });
 
         api.events.on('*', incomingMessageHandler);
     }
