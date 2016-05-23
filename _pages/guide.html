@@ -22,12 +22,11 @@ their accounts and visiting <a href="https://www.binary.com/user/api_tokenws">Se
 <a href="/api#app_register">app_register</a> when you registered your app, or by finding it from 
 <a href="/api#app_list">app_list</a> or <a href="/api#app_get">app_get</a>).
 <p>To authenticate your users, send them to
-https://www.binary.com/oauth2/authorize?app_id=[..insert app_id..]
+https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..]
 Our system will authenticate the user, and redirect him to the redirect_uri which you specified when registering the app, with
 a valid token returned in the URL in the "token" parameter.</p>
 <p>Note: to display the authentication form in another language, please append the language code at the end,
-for example https://www.binary.com/oauth2/authorize?app_id=[..insert app_id..]&l=ZH_CN</p>
-<p>Sample code that demonstrates the Oauth facility may be found at <a target=_blank href="https://github.com/binary-com/example_app">here</a>.</p>
+for example https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..]&l=ZH_CN</p>
 </LI>
 </OL>
 <p>With a user's API token (either a per-app token, or a token obtained via Oauth), you may call <a href="/api#authorize">authorize</a>.</p>
