@@ -1,7 +1,9 @@
 require.config({ baseUrl: '/' });
 
 var LiveApi = window['binary-live-api'].LiveApi;
-var apiUrl = 'wss://ws.binaryws.com/websockets/v3';
+
+var defaultApiUrl = 'wss://ws.binaryws.com/websockets/v3';
+var apiUrl = defaultApiUrl;
 var langCode = 'en';
 
 require(["docson/docson", "lib/jquery"], function(docson) {
@@ -188,6 +190,17 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         apiUrl = 'wss://ws.binaryws.com/websockets/' + $('#api-version-selector').val();
         langCode = $('#api-language-selector').val();
         initConnection();
+    });
+
+    $('#endpoint-button').on('click', function(e) {
+        apiUrl = $('#endpoint-input').val();
+        try {
+            initConnection();
+        } catch (e) {
+            alert('End point invalid, fallback to default endpoint');
+            apiUrl = defaultApiUrl;
+            initConnection();
+        }
     });
 
     $('#playground-send-btn').on('click', function() {
