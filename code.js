@@ -186,9 +186,14 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         window.location.hash = apiStr;
     });
 
-    $('#api-version-selector, #api-language-selector').on('change', function(е) {
-        apiUrl = 'wss://ws.binaryws.com/websockets/' + $('#api-version-selector').val();
+    $('#api-language-selector').on('change', function(е) {
         langCode = $('#api-language-selector').val();
+        initConnection();
+    });
+
+    $('#api-version-selector').on('change', function () {
+        $('#endpoint-input').val('');
+        apiUrl = 'wss://ws.binaryws.com/websockets/' + $('#api-version-selector').val();
         initConnection();
     });
 
