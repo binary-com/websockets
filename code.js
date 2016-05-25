@@ -198,7 +198,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     });
 
     $('#endpoint-button').on('click', function(e) {
-        apiUrl = 'wss://' + $('#endpoint-input').val() + '/websocket/' + $('#api-version-selector').val();
+        apiUrl = 'wss://' + $('#endpoint-input').val() + '/websockets/' + $('#api-version-selector').val();
         try {
             initConnection();
         } catch (e) {
