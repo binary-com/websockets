@@ -198,4 +198,20 @@ pre {
     display: none;
 }
 
+#applications #api-token-fieldest {
+  width: 50%;
+}
+
+#frmNewApplication {
+  width: 80%;
+}
+
+#frmNewApplication legend {
+  padding: 10px 0;
+}
+
+#btnRegister {
+  margin-top: 10px;
+}
+
 @import "monokai.css";
