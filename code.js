@@ -24,8 +24,8 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     }
 
     function initConnection() {
-        if (api) {
-            api.close();
+        if (api && api.disconnect) {
+            api.disconnect();
         }
         api = new LiveApi({ apiUrl: apiUrl, language: langCode, appId: 1089 });
 
