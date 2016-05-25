@@ -13,17 +13,28 @@
       "title": "Get corporate actions response",
       "description": "Corporate actions for an equity symbol",
       "properties": {
-        "display_date": {
-          "type": "object",
-          "description": "Effective date of the corporate action.",
-          "properties":{
-            "type": {
-              "type": "integer",
-              "description": "Type of corporate actions."
-            },
-            "value": {
-              "type": "integer",
-              "description": "Value for the corporate actions. Example: split ratio for stock split."
+        "actions": {
+          "type": "array",
+          "description": "Array of the corporate actions.",
+          "items":{
+            "type":"object",
+            "properties":{
+              "display_date": {
+                "type": "string",
+                "description": "Effective date of the corporate actions."
+              },
+              "type": {
+                "type": "integer",
+                "description": "Type of corporate actions."
+              },
+              "value": {
+                "type": "integer",
+                "description": "Value for the corporate actions. Example: split ratio for stock split."
+              },
+              "modifier": {
+                "type": "string",
+                "description": "Modifier for the corporate actions. Example: divide."
+              }
             }
           }
         }

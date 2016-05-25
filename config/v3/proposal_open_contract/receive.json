@@ -76,6 +76,10 @@
           "type": "string",
           "description": "A stream id that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579"
         },
+        "has_corporate_actions": {
+          "type": "integer",
+          "description": "Whether the contract has an applicable corporate actions or not. Boolean value 1 or 0"
+        },
         "is_expired": {
           "type": "integer",
           "description": "Whether the contract is expired or not. Boolean value 1 or 0"
