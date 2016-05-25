@@ -14,6 +14,9 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     docson.templateBaseUrl = '/docson';
 
+    $('#conn-error').hide();
+    $('#connected').hide();
+
     function escapeHtml(unsafe) {
         return unsafe.toString()
              .replace(/&/g, "&amp;")
@@ -24,11 +27,18 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     }
 
     function initConnection() {
+        $('#connected').hide();
+        $('#connecting').show();
         if (api && api.disconnect) {
             api.disconnect();
         }
         api = new LiveApi({ apiUrl: apiUrl, language: langCode, appId: 1089 });
-
+        api.socket.onopen = function (e) {
+            api.onOpen.apply(api, e);
+            $('#connecting').hide();
+            $('#connected').show();
+            $('#api-url').text(apiUrl);
+        };
         api.events.on('*', incomingMessageHandler);
     }
 
@@ -202,13 +212,10 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     $('#endpoint-button').on('click', function(e) {
         apiUrl = 'wss://' + $('#endpoint-input').val() + '/websockets/' + $('#api-version-selector').val();
+        $('#conn-error').hide();
         initConnection();
-        api.socket.onopen = function (e) {
-            alert('Connection Opened!');
-            api.onOpen.apply(api, e);
-        };
         api.socket.onerror = function () {
-            alert('End point invalid, fallback to default endpoint');
+            $('#conn-error').show();
             apiUrl = defaultApiUrl;
             initConnection();
             $('#endpoint-input').val('');

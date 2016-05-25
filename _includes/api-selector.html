@@ -3,6 +3,14 @@
         <input id="endpoint-input" type="text" placeholder="Custom endpoint url" autocomplete="on"/>
         <button id="endpoint-button">Use New Endpoint</button>
         <div style="font-size: smaller">Leave this blank to use default endpoint</div>
+        <div id="conn-error" class="errorfield">Failed to connect, fallback to default endpoint</div>
+        <div>
+            <span id="connecting">Connecting ...</span>
+            <span id="connected">
+                <span>Connected to: </span>
+                <span id="api-url"></span>
+            </span>
+        </div>
     </div>
     <div class="row">
         <div class="col" style="flex: 2">
