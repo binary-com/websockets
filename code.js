@@ -2,7 +2,10 @@ require.config({ baseUrl: '/' });
 
 var LiveApi = window['binary-live-api'].LiveApi;
 
+var defaultAppId = 1089;
 var defaultApiUrl = 'wss://ws.binaryws.com/websockets/v3';
+
+var appId = defaultAppId;
 var apiUrl = defaultApiUrl;
 var langCode = 'en';
 
@@ -32,7 +35,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         if (api && api.disconnect) {
             api.disconnect();
         }
-        api = new LiveApi({ apiUrl: apiUrl, language: langCode, appId: 1089 });
+        api = new LiveApi({ apiUrl: apiUrl, language: langCode, appId: appId || defaultAppId });
         api.socket.onopen = function (e) {
             api.onOpen.apply(api, e);
             $('#connecting').hide();
@@ -212,11 +215,13 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     $('#endpoint-button').on('click', function(e) {
         apiUrl = 'wss://' + $('#endpoint-input').val() + '/websockets/' + $('#api-version-selector').val();
+        appId = $('#appid-input').val();
         $('#conn-error').hide();
         initConnection();
         api.socket.onerror = function () {
             $('#conn-error').show();
             apiUrl = defaultApiUrl;
+            appId = defaultAppId;
             initConnection();
             $('#endpoint-input').val('');
         };
