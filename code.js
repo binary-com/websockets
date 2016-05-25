@@ -29,7 +29,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         }
         api = new LiveApi({ apiUrl: apiUrl, language: langCode, appId: 1089 });
         api.socket.onopen = function (e) {
-            api.socket.onopen(e);
+            api.onOpen(e);
             alert('Connection Opened!');
         };
         api.events.on('*', incomingMessageHandler);
