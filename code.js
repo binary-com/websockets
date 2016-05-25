@@ -9,7 +9,7 @@ var langCode = 'en';
 require(["docson/docson", "lib/jquery"], function(docson) {
 
     var api,
-        manuallySentReq
+        manuallySentReq,
         $console = $('#playground-console');
 
     docson.templateBaseUrl = '/docson';
@@ -28,10 +28,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             api.disconnect();
         }
         api = new LiveApi({ apiUrl: apiUrl, language: langCode, appId: 1089 });
-        api.socket.onopen = function (e) {
-            alert('Connection Opened!');
-            api.onOpen.apply(api, e);
-        };
+
         api.events.on('*', incomingMessageHandler);
     }
 
@@ -206,10 +203,15 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     $('#endpoint-button').on('click', function(e) {
         apiUrl = 'wss://' + $('#endpoint-input').val() + '/websockets/' + $('#api-version-selector').val();
         initConnection();
+        api.socket.onopen = function (e) {
+            alert('Connection Opened!');
+            api.onOpen.apply(api, e);
+        };
         api.socket.onerror = function () {
             alert('End point invalid, fallback to default endpoint');
             apiUrl = defaultApiUrl;
             initConnection();
+            $('#endpoint-input').val('');
         };
     });
 
