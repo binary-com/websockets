@@ -13,18 +13,7 @@ permalink: api/
         </div>
         <div>
             {% include token-input.html %}
-            <fieldset>
-                <textarea id="playground-request" placeholder="Request JSON"></textarea>
-            </fieldset>
-            <p id="playground-reset-buttons">
-                <button id="playground-send-btn">Send Request</button>
-                <button id="scroll-to-bottom-btn">Scroll To Bottom</button>
-                <button id="playground-reset-btn">Reset Connection</button>
-            </p>
-            <div id="unauthorized-error" >
-                <p class="errorfield">You are not authenticated.</p>
-            </div>
-            <div id="playground-console"></div>
+            {% include api-playground-field.html %}
         </div>
     </div>
 </div>
