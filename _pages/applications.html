@@ -24,7 +24,6 @@ permalink: applications/
                       <div>
                           <input id="application-redirect" type="text" maxlength="32" />
                       </div>
-                      </div>
                       <div>
                           <label for="application-homepage">Homepage URL:</label>
                       </div>
@@ -63,11 +62,11 @@ permalink: applications/
                       </div>
                       <div>
                           <input id="payments-scope" name="scopes[]" type="checkbox" value="payments" />
-                          <span>Payments (open accounts, set settings, manage token usage)</abbr>
+                          <span>Payments (open accounts, manage tokens)</abbr>
                       </div>
                       <div>
                           <input id="admin-scope" name="scopes[]" type="checkbox" value="admin" />
-                          <span>Admin (transfer or withdraw funds, set / clear cashier passwords)</abbr>
+                          <span>Admin (transfer or withdraw funds, set passwords)</abbr>
                       </div>
                       <div class="center">
                           <button id="btnRegister">Register</button>
@@ -80,4 +79,18 @@ permalink: applications/
       {% include token-input.html %}
       {% include api-playground-field.html %}
     </div>
+</div>
+<div>
+  <table class="flex-table" id="applications-table" style="display:none">
+    <thead>
+      <tr class="flex-tr">
+        <th class="flex-tr-child">Name</th>
+        <th class="flex-tr-child">Application ID</th>
+        <th class="flex-tr-child">Scopes</th>
+        <th class="flex-tr-child">Redirect URL</th>
+        <th class="flex-tr-child">Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 </div>
