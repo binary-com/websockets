@@ -184,6 +184,13 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         api.sendRaw(json);
     }
 
+    // trim leading and trailing white space
+    function Trim(str){
+      while(str.charAt(0) == (" ") ){str = str.substring(1);}
+      while(str.charAt(str.length-1) ==" " ){str = str.substring(0,str.length-1);}
+      return str;
+    }
+
     $('[data-schema]').each(function() {
         var $this = $(this);
         loadAndDisplaySchema($this, $this.attr('data-schema'));
@@ -283,6 +290,37 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         } else {
             $('#playground-request').focus();
         }
+        if (!document.getElementById('playground-request')) {
+          api.sendRaw(authReqStr);
+        }
+    });
+
+    $('#btnRegister').on('click', function() {
+      var request = {'app_register': 1, 'scopes':[]};
+
+      var name     = document.getElementById('application-name').value,
+          redirect = document.getElementById('application-redirect').value,
+          homepage = document.getElementById('application-homepage').value,
+          github   = document.getElementById('application-github').value,
+          appstore = document.getElementById('application-appstore').value,
+          google   = document.getElementById('application-googleplay').value;
+
+      var scopesEl = document.forms['frmNewApplication'].elements[ 'scopes[]' ];
+
+      if (Trim(name) !== '')     request['name']         = name;
+      if (Trim(redirect) !== '') request['redirect_uri'] = redirect;
+      if (Trim(homepage) !== '') request['homepage']     = homepage;
+      if (Trim(github) !== '')   request['github']       = github;
+      if (Trim(appstore) !== '') request['appstore']     = appstore;
+      if (Trim(google) !== '')   request['googleplay']   = google;
+
+      for (i = 0; i < scopesEl.length; i++) {
+        if (scopesEl[i].checked) {
+          request.scopes.push(scopesEl[i].value);
+        }
+      }
+
+      api.sendRaw(JSON.stringify(request));
     });
 
     $('#scroll-to-bottom-btn').on('click', scrollConsoleToBottom);
