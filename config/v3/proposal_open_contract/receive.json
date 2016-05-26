@@ -29,6 +29,10 @@
           "type": "number",
           "description": "Barrier of the contract (if any). Example: 42.123"
         },
+        "barrier_count": {
+          "type": "number",
+          "description": "The number of barriers a contract has. Example: 2"
+        },
         "bid_price": {
           "type": "number",
           "description": "Price at which the contract could be sold back to Binary.com. Example: 5.14"
