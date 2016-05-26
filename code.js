@@ -52,7 +52,51 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         $('.progress').remove();
         appendToConsoleAndScrollIntoView(prettyJson);
         $('#unauthorized-error').toggle(authorizationError);
+        if (!json.error) handleApplicationsResponse(json);
     };
+
+    function handleApplicationsResponse(response) {
+      if (response.msg_type === 'authorize' && $('#applications-table').length !== 0) {
+        api.sendRaw({"app_list": 1});
+      } else if (response.msg_type === 'app_list' && response.app_list.length !== 0) {
+        listAllApplications(response);
+      } else if (response.msg_type === 'app_register') {
+        addApplication(response);
+      } else if (response.msg_type === 'app_delete') {
+        $('tr[id=' + response.echo_req.app_delete + ']').fadeOut(700).remove();
+      }
+    }
+
+    function listAllApplications(response) {
+      var applications = response.app_list;
+      for (i = 0; i < applications.length; i++) {
+        applicationsTableRow(applications[i].app_id, applications[i].name, applications[i].scopes.join(', '), applications[i].redirect_uri);
+      }
+      $('#applications-table').show();
+      return;
+    }
+
+    function addApplication(response) {
+      var application = response.app_register;
+      applicationsTableRow(application.app_id, application.name, application.scopes.join(', '), application.redirect_uri);
+    }
+
+    function applicationsTableRow(id, name, scopes, redirect_uri) {
+      $('#applications-table tbody').append(
+        '<tr class="flex-tr" id="' + id + '">' +
+          '<td class="flex-tr-child">' + name + '</td>' +
+          '<td class="flex-tr-child">' + id + '</td>' +
+          '<td class="flex-tr-child">' + scopes + '</td>' +
+          '<td class="flex-tr-child">' + redirect_uri + '</td>' +
+          '<td class="action flex-tr-child"><button id="' + id + '">Delete</button></td>' +
+        '</tr>'
+      );
+      $('button[id=' + id + ']').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        api.sendRaw({'app_delete':e.target.id});
+      });
+    }
 
     function getCurrentApi() {
         var apiPageStrIdx = window.location.href.indexOf('/#');
@@ -296,14 +340,14 @@ require(["docson/docson", "lib/jquery"], function(docson) {
       e.preventDefault();
       var request = {'app_register': 1, 'scopes':[]};
 
-      var name     = document.getElementById('application-name').value,
-          redirect = document.getElementById('application-redirect').value,
-          homepage = document.getElementById('application-homepage').value,
-          github   = document.getElementById('application-github').value,
-          appstore = document.getElementById('application-appstore').value,
-          google   = document.getElementById('application-googleplay').value;
+      var name     = $('#application-name').val(),
+          redirect = $('#application-redirect').val(),
+          homepage = $('application-homepage').val(),
+          github   = $('application-github').val(),
+          appstore = $('application-appstore').val(),
+          google   = $('application-googleplay').val();
 
-      var scopesEl = document.forms['frmNewApplication'].elements[ 'scopes[]' ];
+      var scopesEl = $("form:first :input[type='checkbox']");
 
       if (Trim(name) !== '')     request['name']         = name;
       if (Trim(redirect) !== '') request['redirect_uri'] = redirect;
@@ -317,8 +361,8 @@ require(["docson/docson", "lib/jquery"], function(docson) {
           request.scopes.push(scopesEl[i].value);
         }
       }
-
-      api.sendRaw(JSON.stringify(request));
+      $('#playground-request').val(JSON.stringify(request, null, 2));
+      api.sendRaw(request);
     });
 
     $('#scroll-to-bottom-btn').on('click', scrollConsoleToBottom);
