@@ -342,10 +342,10 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
       var name     = $('#application-name').val(),
           redirect = $('#application-redirect').val(),
-          homepage = $('application-homepage').val(),
-          github   = $('application-github').val(),
-          appstore = $('application-appstore').val(),
-          google   = $('application-googleplay').val();
+          homepage = $('#application-homepage').val(),
+          github   = $('#application-github').val(),
+          appstore = $('#application-appstore').val(),
+          google   = $('#application-googleplay').val();
 
       var scopesEl = $("form:first :input[type='checkbox']");
 
