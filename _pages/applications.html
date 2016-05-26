@@ -2,12 +2,11 @@
 layout: page
 permalink: applications/
 ---
-<div id="applications-page">
+<div id="applications-page" class="row">
     <div id="applications">
         <div>
             <h3>Applications</h3>
-            <p>Enter your API token below to manage your applications.</p>
-            {% include token-input.html %}
+            <p>Enter your API token to manage your applications.</p>
             <form id="frmNewApplication">
                   <fieldset>
                       <legend>Register an Application <em class="required_asterisk">(* Required)</em></legend>
@@ -76,5 +75,9 @@ permalink: applications/
                   </fieldset>
             </form>
         </div>
+    </div>
+    <div>
+      {% include token-input.html %}
+      {% include api-playground-field.html %}
     </div>
 </div>

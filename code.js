@@ -290,12 +290,10 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         } else {
             $('#playground-request').focus();
         }
-        if (!document.getElementById('playground-request')) {
-          api.sendRaw(authReqStr);
-        }
     });
 
-    $('#btnRegister').on('click', function() {
+    $('#btnRegister').on('click', function(e) {
+      e.preventDefault();
       var request = {'app_register': 1, 'scopes':[]};
 
       var name     = document.getElementById('application-name').value,
