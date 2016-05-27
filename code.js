@@ -295,7 +295,8 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     });
 
     $('#use-default-button').on('click', function (e) {
-
+        $('#conn-error').hide();
+        resetEndpoint();
     });
 
     $('#playground-send-btn').on('click', function() {
