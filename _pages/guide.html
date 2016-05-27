@@ -18,9 +18,7 @@ There are 2 ways to do client authentication:</p>
 <LI>Client authentication by app-specific API tokens. <a href="https://binary.com">Binary.com</a> users can generate tokens by logging into
 their accounts and visiting <a href="https://www.binary.com/user/api_tokenws">Settings, API Token</a>.
 </LI>
-<LI>Client authentication by Oauth. To use Oauth, firstly obtain your app_id (either from
-<a href="/api#app_register">app_register</a> when you registered your app, or by finding it from
-<a href="/api#app_list">app_list</a> or <a href="/api#app_get">app_get</a>).
+<LI>Client authentication by Oauth. To use Oauth, firstly obtain your app_id (by following the instructions in the App registration section above).
 <p>To authenticate your users, send them to
 https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..]
 Our system will authenticate the user, and redirect him to the redirect_uri which you specified when registering the app, with
