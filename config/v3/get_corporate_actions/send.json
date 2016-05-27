@@ -10,10 +10,6 @@
       "pattern": "^1$",
       "required": "1"
     },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
     "symbol": {
       "type": "string",
       "description":"Equity's short symbol name. Example: USMSFT, USGOOG.",
@@ -29,6 +25,14 @@
       "type": "string",
       "description": "Optional end date (epoch or YYYY-MM-DD). Will default to now if not specified.",
       "pattern": "^(20[012]\\d{1}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|\\d{10})$"
+    },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field to map request to response"
     }
   },
   "additionalProperties": false

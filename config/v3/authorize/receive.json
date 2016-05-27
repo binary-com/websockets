@@ -36,6 +36,13 @@
         "fullname": {
           "type": "string",
           "description": "User's full name"
+        },
+        "scopes": {
+          "type": "array",
+          "description": "provide scope of current token like read, trade etc",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
