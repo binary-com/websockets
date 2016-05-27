@@ -35,7 +35,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         if (api && api.disconnect) {
             api.disconnect();
         }
-        api = new LiveApi({ apiUrl: apiUrl, language: langCode, appId: appId || defaultAppId });
+        api = new LiveApi({ apiUrl: apiUrl, language: langCode, appId: appId });
         api.socket.onopen = function (e) {
             api.onOpen.apply(api, e);
             $('#connecting').hide();
@@ -43,6 +43,16 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             $('#api-url').text(apiUrl);
         };
         api.events.on('*', incomingMessageHandler);
+    }
+
+    function resetEndpoint() {
+        appId = defaultAppId;
+        apiUrl = defaultApiUrl;
+        localStorage.removeItem('appId');
+        localStorage.removeItem('apiUrl');
+        $('#endpoint-input').val('');
+        $('#appid-input').val('');
+        initConnection();
     }
 
     function incomingMessageHandler(json) {
@@ -282,6 +292,10 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             initConnection();
             $('#endpoint-input').val('');
         };
+    });
+
+    $('#use-default-button').on('click', function (e) {
+
     });
 
     $('#playground-send-btn').on('click', function() {
