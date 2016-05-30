@@ -22,15 +22,18 @@
     },
     "count": {
       "type": "integer",
-      "description": "An upper limit on ticks to receive (default: 500)"
+      "description": "An upper limit on ticks to receive (default: 500)",
+      "default": "500"
     },
     "style": {
       "enum": ["candles", "ticks"],
-      "description": "The tick-output style: must be one of 'ticks' or 'candles' (default: 'ticks')"
+      "description": "The tick-output style: must be one of 'ticks' or 'candles' (default: 'ticks')",
+      "default": "ticks"
     },
     "granularity": {
       "type": "integer",
-      "description": "Provide for style: 'candles'. Candle time-dimension width setting. Allowed values 60, 120, 180, 300, 600, 900, 1800, 3600, 7200, 14400, 28800, 86400 (default: '60')."
+      "description": "Provide for style: 'candles'. Candle time-dimension width setting. Allowed values 60, 120, 180, 300, 600, 900, 1800, 3600, 7200, 14400, 28800, 86400 (default: '60').",
+      "default": "60"
     },
     "adjust_start_time": {
       "type": "integer",
