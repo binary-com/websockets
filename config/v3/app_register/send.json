@@ -46,7 +46,7 @@
     },
     "redirect_uri": {
       "type": "string",
-      "pattern": "^(https?:\/\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,8})([\\/\\w \\.-]*)*\\/?$",
+      "pattern": "^(https?:\/\/)?(localhost:?\\d*\/?|([\\da-z\\.-]+)\\.([a-z\\.]{2,8})([\\/\\w \\.-]*)*\/?)$",
       "description":"Application redirect_uri"
     },
     "passthrough": {
