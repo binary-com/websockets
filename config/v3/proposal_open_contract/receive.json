@@ -106,7 +106,7 @@
         },
         "longcode": {
           "type": "string",
-          "description": "Text description of the contract purchased, Example: USD 90.00 payout if Volatility 100 Index is strictly higher than entry spot at 10 minutes after contract start time."
+          "description": "Text description of the contract purchased, Example: Win payout if Volatility 100 Index is strictly higher than entry spot at 10 minutes after contract start time."
         },
         "payout": {
           "type": "number",
