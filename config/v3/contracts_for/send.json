@@ -13,7 +13,8 @@
         "currency": {
           "type": "string",
           "description":"Currency for the contracts stake and payout. Optional field, defaults to USD if not passed in.",
-          "pattern": "^[A-Z]{3}$"
+          "pattern": "^[A-Z]{3}$",
+          "default": "USD"
         },
         "region":{
             "type":"string",

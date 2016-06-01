@@ -1,14 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "App Register Send",
-  "description":"Register a new OAuth application",
+  "title": "App Update Send",
+  "description":"Update a new OAuth application",
   "properties": {
-    "app_register": {
+    "app_update": {
       "type":"integer",
-      "pattern": "^1$",
-      "description": "Must be 1",
-      "required": "1"
+      "pattern": "^\\d{1,20}$",
+      "required": "1",
+      "description": "Application app_id"
     },
     "name":{
       "type": "string",

@@ -14,7 +14,7 @@
       "properties": {
         "longcode": {
           "type": "string",
-          "description": "Example: USD 10.00 payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time."
+          "description": "Example: Win payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time."
         },
         "spot": {
           "type": "number",

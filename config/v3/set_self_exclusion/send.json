@@ -6,7 +6,8 @@
   "properties": {
     "set_self_exclusion": {
       "type":"integer",
-      "pattern": "^1$"
+      "pattern": "^1$",
+      "required": "1"
     },
     "max_balance":{
       "type": ["integer", "null"],

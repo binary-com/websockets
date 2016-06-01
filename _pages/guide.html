@@ -8,8 +8,7 @@ permalink: guide/
 
 <p>Before using the API, you must register your application. To do that, first open an account on <a href="https://binary.com">Binary.com</a>
 (either a virtual-money or a real-money account). Then go to <a href="https://www.binary.com/user/api_tokenws">Settings, API Token</a>
-and create a per-app token with Admin scope. Then select <a href="/applications/">Applications</a> from the drop-down list to register your app into
-the system (using your per-app token to tie it to your Binary.com account).</p>
+and create a per-app token with Admin scope. Then <a href="/applications/">register the app</a> to obtain your app_id.</p>
 
 <h2>Client Authentication</h2>
 <p>Certain API calls require client authentication (e.g. <a href="/api#portfolio">portfolio</a>) whilst other calls do not (e.g. <a href="/api#ticks">ticks</a>).</p>
@@ -18,9 +17,7 @@ There are 2 ways to do client authentication:</p>
 <LI>Client authentication by app-specific API tokens. <a href="https://binary.com">Binary.com</a> users can generate tokens by logging into
 their accounts and visiting <a href="https://www.binary.com/user/api_tokenws">Settings, API Token</a>.
 </LI>
-<LI>Client authentication by Oauth. To use Oauth, firstly obtain your app_id (either from
-<a href="/api#app_register">app_register</a> when you registered your app, or by finding it from
-<a href="/api#app_list">app_list</a> or <a href="/api#app_get">app_get</a>).
+<LI>Client authentication by Oauth. To use Oauth, firstly obtain your app_id (by following the instructions in the App registration section above).
 <p>To authenticate your users, send them to
 https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..]
 Our system will authenticate the user, and redirect him to the redirect_uri which you specified when registering the app, with
