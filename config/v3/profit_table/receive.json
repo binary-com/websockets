@@ -53,6 +53,10 @@
                   "shortcode": {
                     "type": "string",
                     "description": "Compact description of the contract purchased if description is set to 1"
+                  },
+                  "payout": {
+                    "type": "number",
+                    "description": "Payout price"
                   }
                 }
               },
