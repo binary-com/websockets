@@ -1,79 +1,75 @@
 ---
-layout: page
+layout: default
 permalink: applications/
 ---
 <div id="applications-page" class="row">
     <div id="applications">
-        <div>
-            <h3>Applications</h3>
-            <p>Enter your API token to manage your applications.</p>
-            <form id="frmNewApplication">
-                  <fieldset>
-                      <legend>Register an Application <em class="required_asterisk">(* Required)</em></legend>
-                      <div>
-                          <label for="application-name">Name:</label>
-                          <em class="required_asterisk">*</em>
-                      </div>
-                      <div>
-                          <input id="application-name" type="text" maxlength="48" />
-                      </div>
-                      <div>
-                          <label for="application-redirect">Redirect URL:</label>
-                          <em class="required_asterisk">*</em>
-                      </div>
-                      <div>
-                          <input id="application-redirect" type="text" maxlength="255" />
-                      </div>
-                      <div>
-                          <label for="application-homepage">Homepage URL:</label>
-                      </div>
-                      <div>
-                          <input id="application-homepage" type="text" maxlength="255" />
-                      </div>
-                      <div>
-                          <label for="application-github">Github URL:</label>
-                      </div>
-                      <div>
-                          <input id="application-github" type="text" maxlength="255" />
-                      </div>
-                      <div>
-                          <label for="application-appstore">Appstore URL:</label>
-                      </div>
-                      <div>
-                          <input id="application-appstore" type="text" maxlength="255" />
-                      </div>
-                      <div>
-                          <label for="application-googleplay">Google Play URL:</label>
-                      </div>
-                      <div>
-                          <input id="application-googleplay" type="text" maxlength="255" />
-                      </div>
-                      <div>
-                          <label>Scopes:</label>
-                          <em class="required_asterisk">*</em>
-                      </div>
-                      <div>
-                          <input id="read-scope" name="scopes[]" type="checkbox" value="read" checked="checked" />
-                          <span>Read (view account activity)</span>
-                      </div>
-                      <div>
-                          <input id="trade-scope" name="scopes[]" type="checkbox" value="trade" />
-                          <span>Trade (buy and sell contracts)</span>
-                      </div>
-                      <div>
-                          <input id="payments-scope" name="scopes[]" type="checkbox" value="payments" />
-                          <span>Payments (open accounts, manage tokens)</abbr>
-                      </div>
-                      <div>
-                          <input id="admin-scope" name="scopes[]" type="checkbox" value="admin" />
-                          <span>Admin (transfer or withdraw funds, set passwords)</abbr>
-                      </div>
-                      <div class="center">
-                          <button id="btnRegister">Register</button>
-                      </div>
-                  </fieldset>
-            </form>
-        </div>
+        <h1>Applications</h1>
+        <p>Authenticate with your API token before managing your applications.</p>
+        <form id="frmNewApplication">
+              <fieldset>
+                  <legend>Register an Application <em class="required_asterisk">(* Required)</em></legend>
+                  <div>
+                      <label for="application-name">Name:</label>
+                      <em class="required_asterisk">*</em>
+                  </div>
+                  <div>
+                      <input id="application-name" type="text" maxlength="48" />
+                  </div>
+                  <div>
+                      <label for="application-redirect">Redirect URL:</label>
+                      <em class="required_asterisk">*</em>
+                  </div>
+                  <div>
+                      <input id="application-redirect" type="text" maxlength="255" />
+                  </div>
+                  <div>
+                      <label for="application-homepage">Homepage URL:</label>
+                  </div>
+                  <div>
+                      <input id="application-homepage" type="text" maxlength="255" />
+                  </div>
+                  <div>
+                      <label for="application-github">Github URL:</label>
+                  </div>
+                  <div>
+                      <input id="application-github" type="text" maxlength="255" />
+                  </div>
+                  <div>
+                      <label for="application-appstore">Appstore URL:</label>
+                  </div>
+                  <div>
+                      <input id="application-appstore" type="text" maxlength="255" />
+                  </div>
+                  <div>
+                      <label for="application-googleplay">Google Play URL:</label>
+                  </div>
+                  <div>
+                      <input id="application-googleplay" type="text" maxlength="255" />
+                  </div>
+                  <div>
+                      <label>Scopes:</label>
+                      <em class="required_asterisk">*</em>
+                  </div>
+                  <div>
+                      <input id="read-scope" name="scopes[]" type="checkbox" value="read" checked="checked" />
+                      <label for="read-scope">Read (view account activity)</label>
+                  </div>
+                  <div>
+                      <input id="trade-scope" name="scopes[]" type="checkbox" value="trade" />
+                      <label for="trade-scope">Trade (buy and sell contracts)</label>
+                  </div>
+                  <div>
+                      <input id="payments-scope" name="scopes[]" type="checkbox" value="payments" />
+                      <label for="payments-scope">Payments (open accounts, manage tokens)</label>
+                  </div>
+                  <div>
+                      <input id="admin-scope" name="scopes[]" type="checkbox" value="admin" />
+                      <label for="payments-scope">Admin (transfer or withdraw funds, set passwords)</label>
+                  </div>
+                  <button id="btnRegister">Register</button>
+              </fieldset>
+        </form>
     </div>
     <div>
       {% include token-input.html %}

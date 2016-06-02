@@ -202,16 +202,16 @@ pre {
   width: 50%;
 }
 
-#frmNewApplication {
-  width: 80%;
+#frmNewApplication input[type=text] {
+  width: 100%;
 }
 
 #frmNewApplication legend {
-  padding: 10px 0;
+  padding: .5rem 0;
 }
 
 #btnRegister {
-  margin-top: 10px;
+  margin-top: .5rem;
 }
 
 @import "monokai.css";
