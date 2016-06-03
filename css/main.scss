@@ -179,14 +179,14 @@ pre .number { color: #AE81FF; }
         flex-direction: column;
     }
 
-    .page-content .btn-primary, .page-content .btn-secondary {
+    .page-content .btn-primary {
         width: 100%;
     }
 }
 
 pre {
     max-width: 100%;
-    overflow: scroll;
+    overflow: auto;
     white-space: pre-wrap;
 }
 
