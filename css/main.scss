@@ -321,4 +321,10 @@ pre {
 #btnRegister {
     margin-top: 0.5rem;
 }
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 @import "monokai.css";
