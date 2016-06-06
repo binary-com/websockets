@@ -293,7 +293,7 @@ select {
 }
 pre {
     max-width: 100%;
-    overflow: scroll;
+    overflow: auto;
     white-space: pre-wrap;
 }
 #unauthorized-error {
