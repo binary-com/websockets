@@ -399,3 +399,9 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     updateApiDisplayed();
     $('#api-token').val(sessionStorage.getItem('token'));
 });
+// sidebar-left
+    $('.sidebar-left a').on('click', function(e) {
+      e.preventDefault();
+      $('.sidebar-left li').removeClass('selected');
+      $(this).parent().addClass('selected');
+    });
