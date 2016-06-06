@@ -15,8 +15,8 @@
     display: flex;
 }
 #logo {
-    height: 2rem;
-    width: 3rem;
+    height: 3rem;
+    // width: 3rem;
     margin: 0.5rem 0;
 }
 header h1 {
@@ -116,6 +116,9 @@ header {
     width: 100%;
     font-size: 16px;
 }
+#api-token{
+  margin-right: 0.5rem;
+}
 #playground-request {
     height: 8rem;
 }
@@ -138,6 +141,7 @@ header {
 #playground-reset-buttons {
     display: flex;
     justify-content: space-between;
+    margin:1rem;
 }
 .progress {
     margin: 0 auto;
@@ -162,45 +166,6 @@ pre .number {
     display: none;
     margin-bottom: 1rem;
 }
-@media (max-width: 760px) {
-    #mobile-page-selector {
-        display: block;
-    }
-    .sidebar {
-        display: none;
-    }
-    #playground {
-        flex-direction: column;
-    }
-    .page-content .btn-primary,
-    .page-content .btn-secondary {
-        width: 100%;
-    }
-}
-pre {
-    max-width: 100%;
-    overflow: scroll;
-    white-space: pre-wrap;
-}
-#unauthorized-error {
-    display: none;
-}
-#scroll-to-bottom-btn {
-    display: none;
-}
-#applications #api-token-fieldset {
-    width: 50%;
-}
-#frmNewApplication input[type=text] {
-    width: 100%;
-}
-#frmNewApplication legend {
-    padding: 0.5rem 0;
-}
-#btnRegister {
-    margin-top: 0.5rem;
-}
-@import "monokai.css";
 .row {
     display: flex;
     margin: 0 -.5rem;
@@ -281,7 +246,7 @@ input[type=text],
 input[type=time],
 select,
 textarea {
-    border: 1px solid rgba(42, 48, 82, 0.25);
+    border-radius: 5px;
 }
 option {
     font-family: inherit;
@@ -304,3 +269,56 @@ select {
     padding: 0 0.25rem;
     height: 2rem;
 }
+.header-content h1{
+  color: white;
+   margin: 1rem
+}
+@media (max-width: 760px) {
+    #mobile-page-selector {
+        display: block;
+    }
+    .sidebar {
+        display: none;
+    }
+    #playground {
+        flex-direction: column;
+    }
+    .page-content .btn-primary,
+    .page-content .btn-secondary {
+        width: 100%;
+    }
+    .header-content h1{
+      font-size: 1.3rem;
+    }
+}
+pre {
+    max-width: 100%;
+    overflow: scroll;
+    white-space: pre-wrap;
+}
+#unauthorized-error {
+    display: none;
+}
+#scroll-to-bottom-btn {
+    display: none;
+}
+#applications #api-token-fieldset {
+    width: 50%;
+}
+#api-token-fieldset{
+  padding:0 0 1rem 0;
+  margin:0 1rem;
+}
+#playground fieldset{
+  padding-top:0;
+}
+#frmNewApplication input[type=text] {
+    width: 100%;
+}
+#frmNewApplication legend {
+    padding: 0.5rem 0;
+}
+#btnRegister {
+    margin-top: 0.5rem;
+}
+@import "monokai.css";
