@@ -1,81 +1,77 @@
 ---
 ---
-
 #content {
     width: 100%;
-    padding: 4rem .5rem 2rem .5rem;
+    padding: 4rem 0.5rem 2rem;
+    margin: 0 auto;
+    max-width: 1000px;
+    flex-direction: column;
 }
-
-.header-content, #content {
+#content,
+.header-content {
     max-width: 1240px;
 }
-
 .page-wrapper {
     display: flex;
 }
-
 #logo {
     height: 2rem;
     width: 3rem;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
 }
-
 header h1 {
     font-size: 1.5rem;
     line-height: 1.4;
 }
-
 h1 {
     margin-top: 0;
 }
-
 h5 {
     margin-bottom: 1rem;
 }
-
 .sidebar {
     flex: 1;
     background-color: #f7f7f7;
     margin-right: 2rem;
     border-radius: 4px;
     overflow: hidden;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     font-size: 14px;
-    li:hover { background-color: #e0e0e0; }
+    li:hover {
+        background-color: #e0e0e0;
+    }
     a {
-        padding: .25rem 1rem;
+        padding: 0.25rem 1rem;
         width: 100%;
         text-decoration: none;
         display: inline-block;
     }
     h6 {
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
         background: #e0e0e0;
-        margin: .25rem 0;
+        margin: 0.25rem 0;
     }
     hr {
-        margin: .5rem 1rem;
-        opacity: .5;
+        margin: 0.5rem 1rem;
+        opacity: 0.5;
     }
 }
-
 .page-content {
     font-size: 18px;
     flex: 4;
 }
-
 .docson .box {
     width: 100%;
 }
-
-.json-keyword, .json-string, .json-object-key {
+.json-keyword,
+.json-object-key,
+.json-string {
     color: #E6DB74 !important;
 }
-
 pre {
     border-radius: 4px;
-    padding: .5rem .75rem;
-    margin-bottom: .5rem;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
     background: #2a2f3a;
     font-size: inherit;
     overflow: auto;
@@ -87,131 +83,224 @@ pre.req {
 pre.error {
     background: #2a0000;
 }
-pre, code, textarea {
+code,
+pre,
+textarea {
     font-family: 'Source Code Pro', monospace;
 }
-pre, code, textarea,
-.docson .json-keyword,
 #playground #playground-req-schema,
-#playground #playground-res-schema {
+#playground #playground-res-schema,
+.docson .json-keyword,
+code,
+pre,
+textarea {
     font-size: 13px;
 }
-
-pre p, code {
+code,
+pre p {
     margin-bottom: 0;
 }
-
 .spacer {
     flex: 1;
 }
-
 header {
     background: #2a3052 !important;
 }
-
 .support-btn {
-    margin: .35rem;
+    margin: 0.35rem;
     max-height: 2.5rem;
 }
 #api-token,
-#playground-request,
-#demo-language {
+#demo-language,
+#playground-request {
     width: 100%;
+    font-size: 16px;
 }
-
 #playground-request {
     height: 8rem;
 }
-
 #api-call-selector,
-#api-version-selector {
+#api-version-selector,
+#api-language-selector {
     width: 100%;
+    font-size: 16px;
 }
-
 #open-in-playground {
     float: right;
 }
-
 #playground-console {
     overflow: auto;
     height: 60vh;
 }
-
 #playground-console pre:last-child {
     margin-bottom: 0;
 }
-
 #playground-reset-buttons {
     display: flex;
     justify-content: space-between;
 }
-
 .progress {
     margin: 0 auto;
 }
-
-pre { color: white; }
-pre .key { color: #f92672; }
-pre .string { color: #E6DB74; }
-pre .number { color: #AE81FF; }
-
+pre {
+    color: white;
+}
+pre .key {
+    color: #f92672;
+}
+pre .string {
+    color: #E6DB74;
+}
+pre .number {
+    color: #AE81FF;
+}
 #language-demos pre {
     display: none;
 }
-
-
 #mobile-page-selector {
     width: 100%;
     display: none;
     margin-bottom: 1rem;
 }
-
 @media (max-width: 760px) {
     #mobile-page-selector {
         display: block;
     }
-
     .sidebar {
         display: none;
     }
-
     #playground {
         flex-direction: column;
     }
-
-    .page-content .btn-primary, .page-content .btn-secondary {
+    .page-content .btn-primary,
+    .page-content .btn-secondary {
         width: 100%;
     }
 }
-
 pre {
     max-width: 100%;
     overflow: scroll;
     white-space: pre-wrap;
 }
-
 #unauthorized-error {
     display: none;
 }
-
 #scroll-to-bottom-btn {
     display: none;
 }
-
 #applications #api-token-fieldset {
-  width: 50%;
+    width: 50%;
 }
-
 #frmNewApplication input[type=text] {
-  width: 100%;
+    width: 100%;
 }
-
 #frmNewApplication legend {
-  padding: .5rem 0;
+    padding: 0.5rem 0;
 }
-
 #btnRegister {
-  margin-top: .5rem;
+    margin-top: 0.5rem;
 }
-
 @import "monokai.css";
+.row {
+    display: flex;
+    margin: 0 -.5rem;
+    flex-wrap: wrap;
+}
+.row > * {
+    flex: 1;
+    margin: 0 0.5rem;
+}
+body {
+    color: #000;
+}
+header {
+    position: relative;
+    z-index: 50;
+    width: 100%;
+    border-bottom: 4px solid #e98024;
+    border-top: 2px solid #394171;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+#topbar {
+    width: 100%;
+    color: #fff;
+    line-height: 1;
+    padding: 3px 0;
+    height: 20px;
+    background: #15212d;
+}
+.header-content {
+    max-width: 1240px;
+    display: flex;
+    width: 100%;
+    margin: 0 0.5em;
+}
+body {
+    flex-direction: column;
+    display: flex;
+}
+legend {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    border-bottom: 1px solid #2a3052;
+    width: 100%;
+    em {
+        color: red;
+        font-size: 12px;
+    }
+}
+fieldset {
+    border: 0;
+}
+label {
+    line-height: 2;
+}
+input[type=text] {
+    vertical-align: bottom;
+    border-radius: 2px;
+    padding: 0 0.25rem;
+    height: 2rem;
+    border: 1px solid #f2f2f2;
+}
+.required_asterisk {
+    color: red;
+}
+.dob,
+.inputlike,
+input[type=date],
+input[type=datepicker],
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+select,
+textarea {
+    border: 1px solid rgba(42, 48, 82, 0.25);
+}
+option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+.inputlike,
+.picker__input,
+input[type=date],
+input[type=datepicker],
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+select {
+    padding: 0 0.25rem;
+    height: 2rem;
+}
