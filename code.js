@@ -353,6 +353,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     });
 
     function updateApiDisplayed() {
+        $('.sidebar-left a[href="' + window.location.pathname + '"]').parent().addClass('selected');
         if ($('#api-call-selector').length == 0) return;
 
         var apiToDisplay = getCurrentApi();
@@ -419,10 +420,5 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     showDemoForLanguage('javascript');
     updateApiDisplayed();
     $('#api-token').val(sessionStorage.getItem('token'));
-    // sidebar-left
-    $('.sidebar-left a').on('click', function(e) {
-        e.preventDefault();
-        $('.sidebar-left li').removeClass('selected');
-        $(this).parent().addClass('selected');
-    });
+
 });
