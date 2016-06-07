@@ -142,19 +142,19 @@
         },
         "entry_tick": {
           "type": "number",
-          "description": "Example: 86.630"
+          "description": "This is the entry spot of the contract. For contracts starting immediately it is the next tick after the start time. For forward-starting contracts it is the spot at the start time. Example: 86.630."
         },
         "entry_tick_time": {
           "type": "integer",
-          "description": "Example: 1446629000"
+          "description": "This is the epoch time of the entry tick. Example: 1446629000"
         },
         "exit_tick": {
           "type": "number",
-          "description": "Example: 86.810"
+          "description": "This is the latest spot value at the end time of the contract. Example: 86.810"
         },
         "exit_tick_time": {
           "type": "integer",
-          "description": "Example: 1446629000"
+          "description": "This is the epoch time of the exit tick. Note that since certain instruments don't tick every second, the exit tick time may be a few seconds before the end time. Example: 1446629000"
         },
         "tick_count": {
           "type": "integer",
@@ -181,15 +181,15 @@
             "integer",
             "null"
           ],
-          "description": "sell time of contract, only present for contracts already sold"
+          "description": "Epoch time of when the contract was sold (only present for contracts already sold)"
         },
         "sell_spot": {
           "type": "number",
-          "description": "Example: 86.630, only present for contracts already sold"
+          "description": "Latest spot value at the sell time. Example: 86.630 (only present for contracts already sold)"
         },
         "sell_spot_time": {
           "type": "integer",
-          "description": "Example: 1446629000, only present for contracts already sold"
+          "description": "Epoch time of the sell spot. Note that since certain underlyings don't tick every second, the sell spot time may be a few seconds before the sell time. Example: 1446629000 (only present for contracts already sold)"
         },
         "transaction_ids": {
           "type": "object",
