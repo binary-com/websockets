@@ -1,4 +1,6 @@
-require.config({ baseUrl: '/' });
+require.config({
+    baseUrl: '/'
+});
 
 var LiveApi = window['binary-live-api'].LiveApi;
 
@@ -22,11 +24,11 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     function escapeHtml(unsafe) {
         return unsafe.toString()
-             .replace(/&/g, "&amp;")
-             .replace(/</g, "&lt;")
-             .replace(/>/g, "&gt;")
-             .replace(/"/g, "&quot;")
-             .replace(/'/g, "&#039;");
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
     }
 
     function initConnection() {
@@ -35,8 +37,12 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         if (api && api.disconnect) {
             api.disconnect();
         }
-        api = new LiveApi({ apiUrl: apiUrl, language: langCode, appId: appId });
-        api.socket.onopen = function (e) {
+        api = new LiveApi({
+            apiUrl: apiUrl,
+            language: langCode,
+            appId: appId
+        });
+        api.socket.onopen = function(e) {
             api.onOpen.apply(api, e);
             $('#connecting').hide();
             $('#connected').show();
@@ -66,46 +72,50 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     };
 
     function handleApplicationsResponse(response) {
-      if (response.msg_type === 'authorize' && $('#applications-table').length !== 0) {
-        api.sendRaw({"app_list": 1});
-      } else if (response.msg_type === 'app_list' && response.app_list.length !== 0) {
-        listAllApplications(response);
-      } else if (response.msg_type === 'app_register') {
-        addApplication(response);
-      } else if (response.msg_type === 'app_delete') {
-        $('tr[id=' + response.echo_req.app_delete + ']').fadeOut(700).remove();
-      }
+        if (response.msg_type === 'authorize' && $('#applications-table').length !== 0) {
+            api.sendRaw({
+                "app_list": 1
+            });
+        } else if (response.msg_type === 'app_list' && response.app_list.length !== 0) {
+            listAllApplications(response);
+        } else if (response.msg_type === 'app_register') {
+            addApplication(response);
+        } else if (response.msg_type === 'app_delete') {
+            $('tr[id=' + response.echo_req.app_delete + ']').fadeOut(700).remove();
+        }
     }
 
     function listAllApplications(response) {
-      var applications = response.app_list;
-      for (i = 0; i < applications.length; i++) {
-        applicationsTableRow(applications[i].app_id, applications[i].name, applications[i].scopes.join(', '), applications[i].redirect_uri);
-      }
-      $('#applications-table').show();
-      return;
+        var applications = response.app_list;
+        for (i = 0; i < applications.length; i++) {
+            applicationsTableRow(applications[i].app_id, applications[i].name, applications[i].scopes.join(', '), applications[i].redirect_uri);
+        }
+        $('#applications-table').show();
+        return;
     }
 
     function addApplication(response) {
-      var application = response.app_register;
-      applicationsTableRow(application.app_id, application.name, application.scopes.join(', '), application.redirect_uri);
+        var application = response.app_register;
+        applicationsTableRow(application.app_id, application.name, application.scopes.join(', '), application.redirect_uri);
     }
 
     function applicationsTableRow(id, name, scopes, redirect_uri) {
-      $('#applications-table tbody').append(
-        '<tr class="flex-tr" id="' + id + '">' +
-          '<td class="flex-tr-child">' + name + '</td>' +
-          '<td class="flex-tr-child">' + id + '</td>' +
-          '<td class="flex-tr-child">' + scopes + '</td>' +
-          '<td class="flex-tr-child">' + redirect_uri + '</td>' +
-          '<td class="action flex-tr-child"><button id="' + id + '">Delete</button></td>' +
-        '</tr>'
-      );
-      $('button[id=' + id + ']').on('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        api.sendRaw({'app_delete':e.target.id});
-      });
+        $('#applications-table tbody').append(
+            '<tr class="flex-tr" id="' + id + '">' +
+            '<td class="flex-tr-child">' + name + '</td>' +
+            '<td class="flex-tr-child">' + id + '</td>' +
+            '<td class="flex-tr-child">' + scopes + '</td>' +
+            '<td class="flex-tr-child">' + redirect_uri + '</td>' +
+            '<td class="action flex-tr-child"><button id="' + id + '">Delete</button></td>' +
+            '</tr>'
+        );
+        $('button[id=' + id + ']').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            api.sendRaw({
+                'app_delete': e.target.id
+            });
+        });
     }
 
     function getCurrentApi() {
@@ -132,7 +142,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             } else if (typeof val == 'number') {
                 return span(val, 'number');
             } else if (Array.isArray(val)) {
-                var elements =  val.map(function(val) {
+                var elements = val.map(function(val) {
                     return spaces(offset + 2) + valToStr(val, offset + 2);
                 }).join(',\n');
                 return '[\n' + elements + '\n' + spaces(offset) + ']';
@@ -143,8 +153,8 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             }
         }
 
-        var propsToStr = function (obj, offset) {
-            var keyStr = Object.keys(obj).map(function (key) {
+        var propsToStr = function(obj, offset) {
+            var keyStr = Object.keys(obj).map(function(key) {
                 return spaces(offset) + span('"' + key + '"', 'key') + ': ' + valToStr(obj[key], offset);
             });
             return keyStr.join(',\n');
@@ -201,7 +211,9 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     function scrollConsoleToBottom() {
         $console.stop(false, true);
-        $console.animate({ scrollTop: $console[0].scrollHeight }, 500);
+        $console.animate({
+            scrollTop: $console[0].scrollHeight
+        }, 500);
     }
 
     function consoleShouldScroll() {
@@ -218,7 +230,9 @@ require(["docson/docson", "lib/jquery"], function(docson) {
                 scrollConsoleToBottom();
                 setTimeout(function() {
                     if (consoleShouldScroll()) {
-                        $console.animate({ scrollTop: $console[0].scrollHeight }, 500);
+                        $console.animate({
+                            scrollTop: $console[0].scrollHeight
+                        }, 500);
                     }
                 }, 1500);
             }
@@ -229,7 +243,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
         try {
             var json = JSON.parse($('#playground-request').val());
-        } catch(err) {
+        } catch (err) {
             alert('Invalid JSON!');
             return;
         }
@@ -239,10 +253,14 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     }
 
     // trim leading and trailing white space
-    function Trim(str){
-      while(str.charAt(0) == (" ") ){str = str.substring(1);}
-      while(str.charAt(str.length-1) ==" " ){str = str.substring(0,str.length-1);}
-      return str;
+    function Trim(str) {
+        while (str.charAt(0) == (" ")) {
+            str = str.substring(1);
+        }
+        while (str.charAt(str.length - 1) == " ") {
+            str = str.substring(0, str.length - 1);
+        }
+        return str;
     }
 
     $('[data-schema]').each(function() {
@@ -268,7 +286,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         initConnection();
     });
 
-    $('#api-version-selector').on('change', function () {
+    $('#api-version-selector').on('change', function() {
         $('#endpoint-input').val('');
         apiUrl = 'wss://ws.binaryws.com/websockets/' + $('#api-version-selector').val();
         initConnection();
@@ -283,7 +301,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
         $('#conn-error').hide();
         initConnection();
-        api.socket.onerror = function () {
+        api.socket.onerror = function() {
             $('#conn-error').show();
             localStorage.removeItem('apiUrl');
             localStorage.removeItem('appId');
@@ -294,7 +312,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         };
     });
 
-    $('#use-default-button').on('click', function (e) {
+    $('#use-default-button').on('click', function(e) {
         $('#conn-error').hide();
         resetEndpoint();
     });
@@ -345,9 +363,9 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     $('#send-auth-manually-btn').on('click', function() {
         var token = sessionStorage.getItem('token');
-            authReqStr = JSON.stringify({
-                authorize: token || ''
-            }, null, 2);
+        authReqStr = JSON.stringify({
+            authorize: token || ''
+        }, null, 2);
 
         $('#playground-request').val(authReqStr);
         if (token) {
@@ -358,32 +376,35 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     });
 
     $('#btnRegister').on('click', function(e) {
-      e.preventDefault();
-      var request = {'app_register': 1, 'scopes':[]};
+        e.preventDefault();
+        var request = {
+            'app_register': 1,
+            'scopes': []
+        };
 
-      var name     = $('#application-name').val(),
-          redirect = $('#application-redirect').val(),
-          homepage = $('#application-homepage').val(),
-          github   = $('#application-github').val(),
-          appstore = $('#application-appstore').val(),
-          google   = $('#application-googleplay').val();
+        var name = $('#application-name').val(),
+            redirect = $('#application-redirect').val(),
+            homepage = $('#application-homepage').val(),
+            github = $('#application-github').val(),
+            appstore = $('#application-appstore').val(),
+            google = $('#application-googleplay').val();
 
-      var scopesEl = $("form:first :input[type='checkbox']");
+        var scopesEl = $("form:first :input[type='checkbox']");
 
-      if (Trim(name) !== '')     request['name']         = name;
-      if (Trim(redirect) !== '') request['redirect_uri'] = redirect;
-      if (Trim(homepage) !== '') request['homepage']     = homepage;
-      if (Trim(github) !== '')   request['github']       = github;
-      if (Trim(appstore) !== '') request['appstore']     = appstore;
-      if (Trim(google) !== '')   request['googleplay']   = google;
+        if (Trim(name) !== '') request['name'] = name;
+        if (Trim(redirect) !== '') request['redirect_uri'] = redirect;
+        if (Trim(homepage) !== '') request['homepage'] = homepage;
+        if (Trim(github) !== '') request['github'] = github;
+        if (Trim(appstore) !== '') request['appstore'] = appstore;
+        if (Trim(google) !== '') request['googleplay'] = google;
 
-      for (i = 0; i < scopesEl.length; i++) {
-        if (scopesEl[i].checked) {
-          request.scopes.push(scopesEl[i].value);
+        for (i = 0; i < scopesEl.length; i++) {
+            if (scopesEl[i].checked) {
+                request.scopes.push(scopesEl[i].value);
+            }
         }
-      }
-      $('#playground-request').val(JSON.stringify(request, null, 2));
-      api.sendRaw(request);
+        $('#playground-request').val(JSON.stringify(request, null, 2));
+        api.sendRaw(request);
     });
 
     $('#scroll-to-bottom-btn').on('click', scrollConsoleToBottom);
@@ -398,10 +419,10 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     showDemoForLanguage('javascript');
     updateApiDisplayed();
     $('#api-token').val(sessionStorage.getItem('token'));
-});
-// sidebar-left
+    // sidebar-left
     $('.sidebar-left a').on('click', function(e) {
-      e.preventDefault();
-      $('.sidebar-left li').removeClass('selected');
-      $(this).parent().addClass('selected');
+        e.preventDefault();
+        $('.sidebar-left li').removeClass('selected');
+        $(this).parent().addClass('selected');
     });
+});
