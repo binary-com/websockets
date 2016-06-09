@@ -327,14 +327,24 @@ textarea:focus,
 button:focus {
     outline: none;
 }
+
 .sidebar-left{
-flex: 1;
-margin-right: 2rem;
-border-radius: 4px;
-overflow: hidden;
-padding: 0.5rem 0;
-ul{
-  margin-top:0;
+  flex: 1;
+  margin-right: 2rem;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  ul{
+    margin-top:0;
+  }
 }
+
+#applications-table {
+  thead {
+    text-align: left;
+  }
+  th, td {
+    padding: 10px;
+  }
 }
 @import "monokai.css";

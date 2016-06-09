@@ -72,26 +72,28 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     };
 
     function handleApplicationsResponse(response) {
-        if (response.msg_type === 'authorize' && $('#applications-table').length !== 0) {
-            api.sendRaw({
-                "app_list": 1
-            });
-        } else if (response.msg_type === 'app_list' && response.app_list.length !== 0) {
-            listAllApplications(response);
-        } else if (response.msg_type === 'app_register') {
-            addApplication(response);
-        } else if (response.msg_type === 'app_delete') {
-            $('tr[id=' + response.echo_req.app_delete + ']').fadeOut(700).remove();
-        }
+      if (response.msg_type === 'authorize' && $('#applications-table').length !== 0) {
+        api.sendRaw({"app_list": 1});
+      } else if (response.msg_type === 'app_list' && response.app_list.length !== 0) {
+        listAllApplications(response);
+      } else if (response.msg_type === 'app_register') {
+        addApplication(response);
+      } else if (response.msg_type === 'app_delete') {
+        $('tr[id=' + response.echo_req.app_delete + ']').fadeOut(700).remove();
+      } else if (response.msg_type === 'app_update') {
+        updateApplication(response);
+      }
     }
 
     function listAllApplications(response) {
-        var applications = response.app_list;
-        for (i = 0; i < applications.length; i++) {
-            applicationsTableRow(applications[i].app_id, applications[i].name, applications[i].scopes.join(', '), applications[i].redirect_uri);
+      var applications = response.app_list;
+      for (i = 0; i < applications.length; i++) {
+        if ($('#' + applications[i].app_id).length === 0) {
+          applicationsTableRow(applications[i].app_id, applications[i].name, applications[i].scopes.join(', '), applications[i].redirect_uri);
         }
-        $('#applications-table').show();
-        return;
+      }
+      $('#applications-table').show();
+      return;
     }
 
     function addApplication(response) {
@@ -100,22 +102,92 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     }
 
     function applicationsTableRow(id, name, scopes, redirect_uri) {
-        $('#applications-table tbody').append(
-            '<tr class="flex-tr" id="' + id + '">' +
-            '<td class="flex-tr-child">' + name + '</td>' +
-            '<td class="flex-tr-child">' + id + '</td>' +
-            '<td class="flex-tr-child">' + scopes + '</td>' +
-            '<td class="flex-tr-child">' + redirect_uri + '</td>' +
-            '<td class="action flex-tr-child"><button id="' + id + '">Delete</button></td>' +
-            '</tr>'
-        );
-        $('button[id=' + id + ']').on('click', function(e) {
+      $('#applications-table tbody').append(
+        '<tr class="flex-tr" id="' + id + '">' +
+          '<td class="flex-tr-child name">' + name + '</td>' +
+          '<td class="flex-tr-child app_id">' + id + '</td>' +
+          '<td class="flex-tr-child scopes">' + scopes + '</td>' +
+          '<td class="flex-tr-child redirect_uri">' + redirect_uri + '</td>' +
+          '<td class="action flex-tr-child"><button class="delete" id="' + id + '">Delete</button></td>' +
+          '<td class="action flex-tr-child"><button class="update" id="' + id + '">Update</button></td>' +
+        '</tr>'
+      );
+      $('button[id=' + id + '][class="delete"]').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        api.sendRaw({'app_delete':e.target.id});
+      });
+      $('button[id=' + id + '][class="update"]').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $('#frmNewApplication legend').html($('#frmNewApplication legend').html().replace('Register an', 'Update'));
+        $('#placeholder_app_id').text(' ' + e.target.id + ' ').attr('style', 'background:#ffffe0');
+        $('#application-name').val($('#' + e.target.id + ' .name').text());
+        $('#application-redirect').val($('#' + e.target.id + ' .redirect_uri').text());
+        var array = $('#' + e.target.id + ' .scopes').text().split(', '),
+            $scopes = $('.scopes input'),
+            i, j;
+        for (i = 0; i < $scopes.length; i++) {
+          for (j = 0; j < array.length; j++) {
+            if ($scopes[i].id.match(array[j] + '-scope') !== null) {
+              $('.scopes input[id="' + array[j] + '-scope"').attr('checked', 'checked');
+              break;
+            } else {
+              $('.scopes input[id="' + $scopes[i].id + '"').removeAttr('checked');
+            }
+          }
+        }
+        if ($('#btnUpdate').length === 0) {
+          $('.application_buttons').prepend('<button id="btnUpdate">Update</button> Or');
+          $('#btnRegister').text('Register as New Application');
+          $('#btnUpdate').on('click', function(e) {
             e.preventDefault();
-            e.stopPropagation();
-            api.sendRaw({
-                'app_delete': e.target.id
-            });
-        });
+            send_application_request(Trim($('#placeholder_app_id').text()));
+          });
+        }
+        $("html, body").animate({ scrollTop: 280 }, "slow");
+      });
+    }
+
+    function send_application_request(update) {
+      var request;
+      if (update) {
+        request = {'app_update': update, 'scopes':[]};
+      } else {
+        request = {'app_register': 1, 'scopes':[]};
+      }
+
+      var name     = $('#application-name').val(),
+          redirect = $('#application-redirect').val(),
+          homepage = $('#application-homepage').val(),
+          github   = $('#application-github').val(),
+          appstore = $('#application-appstore').val(),
+          google   = $('#application-googleplay').val();
+
+      var scopesEl = $("form:first :input[type='checkbox']");
+
+      if (Trim(name) !== '')     request['name']         = name;
+      if (Trim(redirect) !== '') request['redirect_uri'] = redirect;
+      if (Trim(homepage) !== '') request['homepage']     = homepage;
+      if (Trim(github) !== '')   request['github']       = github;
+      if (Trim(appstore) !== '') request['appstore']     = appstore;
+      if (Trim(google) !== '')   request['googleplay']   = google;
+
+      for (i = 0; i < scopesEl.length; i++) {
+        if (scopesEl[i].checked) {
+          request.scopes.push(scopesEl[i].value);
+        }
+      }
+      $('#playground-request').val(JSON.stringify(request, null, 2));
+      api.sendRaw(request);
+    }
+
+    function updateApplication(response) {
+      var application = response.app_update;
+      $('#' + application.app_id + ' .name').text(application.name);
+      $('#' + application.app_id + ' .app_id').text(application.app_id);
+      $('#' + application.app_id + ' .scopes').text(application.scopes.join(', '));
+      $('#' + application.app_id + ' .redirect_uri').text(application.redirect_uri);
     }
 
     function getCurrentApi() {
@@ -377,35 +449,8 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     });
 
     $('#btnRegister').on('click', function(e) {
-        e.preventDefault();
-        var request = {
-            'app_register': 1,
-            'scopes': []
-        };
-
-        var name = $('#application-name').val(),
-            redirect = $('#application-redirect').val(),
-            homepage = $('#application-homepage').val(),
-            github = $('#application-github').val(),
-            appstore = $('#application-appstore').val(),
-            google = $('#application-googleplay').val();
-
-        var scopesEl = $("form:first :input[type='checkbox']");
-
-        if (Trim(name) !== '') request['name'] = name;
-        if (Trim(redirect) !== '') request['redirect_uri'] = redirect;
-        if (Trim(homepage) !== '') request['homepage'] = homepage;
-        if (Trim(github) !== '') request['github'] = github;
-        if (Trim(appstore) !== '') request['appstore'] = appstore;
-        if (Trim(google) !== '') request['googleplay'] = google;
-
-        for (i = 0; i < scopesEl.length; i++) {
-            if (scopesEl[i].checked) {
-                request.scopes.push(scopesEl[i].value);
-            }
-        }
-        $('#playground-request').val(JSON.stringify(request, null, 2));
-        api.sendRaw(request);
+      e.preventDefault();
+      send_application_request();
     });
 
     $('#scroll-to-bottom-btn').on('click', scrollConsoleToBottom);
