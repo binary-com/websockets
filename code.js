@@ -126,15 +126,15 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         $('#application-redirect').val($('#' + e.target.id + ' .redirect_uri').text());
         var array = $('#' + e.target.id + ' .scopes').text().split(', '),
             $scopes = $('.scopes input'),
-            i, j;
+            i;
+        for (i = 0; i < array.length; i++) {
+          array[i] = array[i] + '-scope';
+        }
         for (i = 0; i < $scopes.length; i++) {
-          for (j = 0; j < array.length; j++) {
-            if ($scopes[i].id.match(array[j] + '-scope') !== null) {
-              $('.scopes input[id="' + array[j] + '-scope"').attr('checked', 'checked');
-              break;
-            } else {
-              $('.scopes input[id="' + $scopes[i].id + '"').removeAttr('checked');
-            }
+          if ($.inArray($scopes[i].id, array) > -1) {
+            $('.scopes input[id="' + $scopes[i].id + '"').prop('checked', true);
+          } else {
+            $('.scopes input[id="' + $scopes[i].id + '"').prop('checked', false);
           }
         }
         if ($('#btnUpdate').length === 0) {
