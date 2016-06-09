@@ -8,7 +8,7 @@ permalink: applications/
         <p>Authenticate with your API token before managing your applications.</p>
         <form id="frmNewApplication">
               <fieldset>
-                  <legend>Register an Application <em class="required_asterisk">(* Required)</em></legend>
+                  <legend>Register an Application <span id="placeholder_app_id"></span><em class="required_asterisk">(* Required)</em></legend>
                   <div>
                       <label for="application-name">Name:</label>
                       <em class="required_asterisk">*</em>
@@ -51,23 +51,27 @@ permalink: applications/
                       <label>Scopes:</label>
                       <em class="required_asterisk">*</em>
                   </div>
-                  <div>
-                      <input id="read-scope" name="scopes[]" type="checkbox" value="read" checked="checked" />
-                      <label for="read-scope">Read (view account activity)</label>
+                  <div class="scopes">
+                    <div>
+                        <input id="read-scope" name="scopes[]" type="checkbox" value="read" checked="checked" />
+                        <label for="read-scope">Read (view account activity)</label>
+                    </div>
+                    <div>
+                        <input id="trade-scope" name="scopes[]" type="checkbox" value="trade" />
+                        <label for="trade-scope">Trade (buy and sell contracts)</label>
+                    </div>
+                    <div>
+                        <input id="payments-scope" name="scopes[]" type="checkbox" value="payments" />
+                        <label for="payments-scope">Payments (open accounts, manage tokens)</label>
+                    </div>
+                    <div>
+                        <input id="admin-scope" name="scopes[]" type="checkbox" value="admin" />
+                        <label for="payments-scope">Admin (transfer or withdraw funds, set passwords)</label>
+                    </div>
                   </div>
-                  <div>
-                      <input id="trade-scope" name="scopes[]" type="checkbox" value="trade" />
-                      <label for="trade-scope">Trade (buy and sell contracts)</label>
+                  <div class="application_buttons">
+                    <button id="btnRegister">Register</button>
                   </div>
-                  <div>
-                      <input id="payments-scope" name="scopes[]" type="checkbox" value="payments" />
-                      <label for="payments-scope">Payments (open accounts, manage tokens)</label>
-                  </div>
-                  <div>
-                      <input id="admin-scope" name="scopes[]" type="checkbox" value="admin" />
-                      <label for="payments-scope">Admin (transfer or withdraw funds, set passwords)</label>
-                  </div>
-                  <button id="btnRegister">Register</button>
               </fieldset>
         </form>
     </div>
@@ -84,7 +88,7 @@ permalink: applications/
         <th class="flex-tr-child">Application ID</th>
         <th class="flex-tr-child">Scopes</th>
         <th class="flex-tr-child">Redirect URL</th>
-        <th class="flex-tr-child">Action</th>
+        <th colspan="2" class="flex-tr-child">Actions</th>
       </tr>
     </thead>
     <tbody></tbody>
