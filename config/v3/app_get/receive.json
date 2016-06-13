@@ -23,6 +23,22 @@
         "redirect_uri": {
           "type": "string",
           "description":"Application redirect_uri"
+        },
+        "homepage": {
+          "type": "string",
+          "description":"Application's homepage"
+        },
+        "github": {
+          "type": "string",
+          "description":"Application's GitHub page (for open-source projects)"
+        },
+        "appstore": {
+          "type": "string",
+          "description":"Application's App Store URL"
+        },
+        "googleplay": {
+          "type": "string",
+          "description":"Application's Google Play URL"
         }
       }
     },
