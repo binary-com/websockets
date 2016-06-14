@@ -12,7 +12,7 @@
     },
     "price": {
       "type": "number",
-      "description": "Maximum price at which to purchase the contract, or '0' for 'buy at market'",
+      "description": "Maximum price at which to purchase the contract.",
       "required": "1"
     },
     "parameters": {
