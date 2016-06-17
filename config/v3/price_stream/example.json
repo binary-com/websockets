@@ -1,0 +1,11 @@
+{
+    "price_stream": 1,
+    "amount": "100",
+    "basis": "payout",
+    "contract_type": "CALL",
+    "currency": "USD",
+    "duration": "120",
+    "duration_unit": "s",
+    "symbol": "frxUSDJPY",
+    "subscribe": 1
+}
