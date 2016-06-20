@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Japan Knowledge Test Send",
-  "description":"Store Japan Knowledge Test result in database",
+  "description":"Store Japan Knowledge Test result in database. The 'Japan Knowledge Test' is a specific requirement under Japanese licensing regulations and does not apply to non-Japanese accounts.",
   "properties": {
     "jp_knowledge_test": {
       "type": "integer",

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "OAuth Applications Send",
-  "description":"List all my used OAuth application",
+  "description":"List all my used OAuth applications.",
   "properties": {
     "oauth_apps": {
       "type":"integer",

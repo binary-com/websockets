@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Corporate actions for an open contract",
-  "description": "Get corporate actions for an equity symbol.",
+  "description": "Get corporate actions for an equity symbol. Corporate actions are events such as stock splits or stock consolidations that will lead to a contract's barrier having to be adjusted accordingly.",
   "properties": {
     "get_corporate_actions": {
       "type": "integer",

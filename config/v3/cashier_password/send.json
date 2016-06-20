@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Cashier Password Request",
-  "description": "Cashier Password",
+  "description": "Facilities to manage the Cashier Password, which allows users to lock access to their Cashier using a special password.",
   "properties": {
     "cashier_password": {
       "type": "string",
