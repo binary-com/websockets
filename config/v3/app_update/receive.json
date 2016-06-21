@@ -39,6 +39,10 @@
         "googleplay": {
           "type": "string",
           "description":"Application's Google Play URL"
+        },
+        "app_markup_percentage": {
+          "type": "number",
+          "description": "Markup added to contract prices (as a percentage of contract payout)"
         }
       }
     },
