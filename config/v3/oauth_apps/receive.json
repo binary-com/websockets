@@ -31,10 +31,6 @@
             "items": {
               "type": "string"
             }
-          },
-          "app_markup_percentage": {
-            "type": "number",
-            "description": "Markup added to contract prices (as a percentage of contract payout)"
           }
         }
       }

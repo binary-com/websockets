@@ -13,6 +13,10 @@
       "title": "Open contract response",
       "description": "Latest price and other details for an open contract",
       "properties": {
+        "ask_price": {
+          "type": "number",
+          "description": "Price at which the contract may be purchased. Example: 5.14"
+        },
         "high_barrier": {
           "type": "number",
           "description": "High barrier of the contract (if any). Example: 42.123"
