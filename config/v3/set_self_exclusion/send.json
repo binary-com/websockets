@@ -59,6 +59,11 @@
       "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
       "description": "Exclude me from the website until"
     },
+    "timeout_until":{
+      "type": ["integer", "null"],
+      "pattern": "^\\d{10}$",
+      "description": "Exclude me from the website until (epoch time)"
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."

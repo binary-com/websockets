@@ -51,6 +51,10 @@
         "exclude_until":{
           "type": "string",
           "description": "Exclude me from the website until (date YYYY-MM-DD)"
+        },
+        "timeout_until":{
+          "type": "integer",
+          "description": "Exclude me from the website until (epoch time)"
         }
       }
     },

@@ -9,5 +9,6 @@
     "max_30day_losses": 100000,
     "max_open_bets": 1000,
     "session_duration_limit": 3600,
-    "exclude_until": "2020-01-01"
+    "exclude_until": "2020-01-01",
+    "timeout_until": 1497357184
 }
