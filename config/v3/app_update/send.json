@@ -22,7 +22,8 @@
         "type": "string",
         "pattern": "^(read|trade|payments|admin)$"
       },
-      "required": "1"
+      "required": "1",
+      "description": "Change scopes will revoke all user's grants and log them out."
     },
     "homepage":{
       "type": ["string", "null"],
