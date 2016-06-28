@@ -89,7 +89,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
       var applications = response.app_list;
       for (i = 0; i < applications.length; i++) {
         if ($('#' + applications[i].app_id).length === 0) {
-          applicationsTableRow(applications[i].app_id, applications[i].name, applications[i].scopes.join(', '), applications[i].redirect_uri);
+          applicationsTableRow(applications[i]);
         }
       }
       $('#applications-table').show();
@@ -98,32 +98,43 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     function addApplication(response) {
         var application = response.app_register;
-        applicationsTableRow(application.app_id, application.name, application.scopes.join(', '), application.redirect_uri);
+        applicationsTableRow(application);
     }
 
-    function applicationsTableRow(id, name, scopes, redirect_uri) {
+    function applicationsTableRow(application) {
       $('#applications-table tbody').append(
-        '<tr class="flex-tr" id="' + id + '">' +
-          '<td class="flex-tr-child name">' + name + '</td>' +
-          '<td class="flex-tr-child app_id">' + id + '</td>' +
-          '<td class="flex-tr-child scopes">' + scopes + '</td>' +
-          '<td class="flex-tr-child redirect_uri">' + redirect_uri + '</td>' +
-          '<td class="action flex-tr-child"><button class="delete" id="' + id + '">Delete</button></td>' +
-          '<td class="action flex-tr-child"><button class="update" id="' + id + '">Update</button></td>' +
+        '<tr class="flex-tr" id="' + application.app_id + '">' +
+          '<td class="flex-tr-child name">' + application.name + '</td>' +
+          '<td class="flex-tr-child app_id">' + application.app_id + '</td>' +
+          '<td class="flex-tr-child scopes">' + application.scopes.join(', ') + '</td>' +
+          '<td class="flex-tr-child redirect_uri">' + application.redirect_uri + '</td>' +
+          '<td class="flex-tr-child homepage" style="display:none">' + application.homepage + '</td>' +
+          '<td class="flex-tr-child github" style="display:none">' + application.github + '</td>' +
+          '<td class="flex-tr-child googleplay" style="display:none">' + application.googleplay + '</td>' +
+          '<td class="flex-tr-child appstore" style="display:none">' + application.appstore + '</td>' +
+          '<td class="flex-tr-child app_markup_percentage" style="display:none">' + application.app_markup_percentage + '</td>' +
+          '<td class="action flex-tr-child"><button class="delete" id="' + application.app_id + '">Delete</button></td>' +
+          '<td class="action flex-tr-child"><button class="update" id="' + application.app_id + '">Update</button></td>' +
         '</tr>'
       );
-      $('button[id=' + id + '][class="delete"]').on('click', function(e) {
+      $('#applications-table').show();
+      $('button[id=' + application.app_id + '][class="delete"]').on('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         api.sendRaw({'app_delete':e.target.id});
       });
-      $('button[id=' + id + '][class="update"]').on('click', function(e) {
+      $('button[id=' + application.app_id + '][class="update"]').on('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         $('#frmNewApplication legend').html($('#frmNewApplication legend').html().replace('Register an', 'Update'));
         $('#placeholder_app_id').text(' ' + e.target.id + ' ').attr('style', 'background:#ffffe0');
         $('#application-name').val($('#' + e.target.id + ' .name').text());
         $('#application-redirect').val($('#' + e.target.id + ' .redirect_uri').text());
+        $('#application-homepage').val($('#' + e.target.id + ' .homepage').text());
+        $('#application-github').val($('#' + e.target.id + ' .github').text());
+        $('#application-googleplay').val($('#' + e.target.id + ' .googleplay').text());
+        $('#application-appstore').val($('#' + e.target.id + ' .appstore').text());
+        $('#application-markup').val($('#' + e.target.id + ' .app_markup_percentage').text());
         var array = $('#' + e.target.id + ' .scopes').text().split(', '),
             $scopes = $('.scopes input'),
             i;
@@ -157,21 +168,23 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         request = {'app_register': 1, 'scopes':[]};
       }
 
-      var name     = $('#application-name').val(),
-          redirect = $('#application-redirect').val(),
-          homepage = $('#application-homepage').val(),
-          github   = $('#application-github').val(),
-          appstore = $('#application-appstore').val(),
-          google   = $('#application-googleplay').val();
+      var name     = Trim($('#application-name').val()),
+          redirect = Trim($('#application-redirect').val()),
+          homepage = Trim($('#application-homepage').val()),
+          github   = Trim($('#application-github').val()),
+          appstore = Trim($('#application-appstore').val()),
+          google   = Trim($('#application-googleplay').val()),
+          markup   = Trim($('#application-markup').val());
 
       var scopesEl = $("form:first :input[type='checkbox']");
 
-      if (Trim(name) !== '')     request['name']         = name;
-      if (Trim(redirect) !== '') request['redirect_uri'] = redirect;
-      if (Trim(homepage) !== '') request['homepage']     = homepage;
-      if (Trim(github) !== '')   request['github']       = github;
-      if (Trim(appstore) !== '') request['appstore']     = appstore;
-      if (Trim(google) !== '')   request['googleplay']   = google;
+      if (name !== '')     request['name']                  = name;
+      if (redirect !== '') request['redirect_uri']          = redirect;
+      if (homepage !== '') request['homepage']              = homepage;
+      if (github !== '')   request['github']                = github;
+      if (appstore !== '') request['appstore']              = appstore;
+      if (google !== '')   request['googleplay']            = google;
+      if (markup !== '')   request['app_markup_percentage'] = markup;
 
       for (i = 0; i < scopesEl.length; i++) {
         if (scopesEl[i].checked) {
