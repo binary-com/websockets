@@ -27,19 +27,19 @@
             "description":"Application redirect_uri"
           },
           "homepage": {
-            "type": "string",
+            "type": ["string", "null"],
             "description":"Application's homepage"
           },
           "github": {
-            "type": "string",
+            "type": ["string", "null"],
             "description":"Application's GitHub page (for open-source projects)"
           },
           "appstore": {
-            "type": "string",
+            "type": ["string", "null"],
             "description":"Application's App Store URL"
           },
           "googleplay": {
-            "type": "string",
+            "type": ["string", "null"],
             "description":"Application's Google Play URL"
           },
           "app_markup_percentage": {
