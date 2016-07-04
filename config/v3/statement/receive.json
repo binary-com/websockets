@@ -61,6 +61,10 @@
                   "payout": {
                     "type": ["number", "null"],
                     "description": "Payout price"
+                  },
+                  "app_id": {
+                    "type": ["integer", "null"],
+                    "description": "Id of an app where this transaction was performed. For example, it's 1 for binary.com."
                   }
                 }
               },
