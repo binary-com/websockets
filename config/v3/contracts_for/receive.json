@@ -119,7 +119,7 @@
               	"description":"Count of contracts available"
             },
             "spot":{
-                "type":"number",
+                "type":["number", "null"],
                 "description":"Current spot price for this underlying"
             },
             "feed_license": {
