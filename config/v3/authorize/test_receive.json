@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "authorize": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "pattern": "^test@binary.com$"
+        },
+        "currency": {
+          "type": "string",
+           "pattern": "^USD$"
+        },
+        "balance": {
+          "type": "number",
+          "pattern": "^10000.0000$"
+        },
+        "loginid": {
+          "type": "string",
+          "pattern": "^VRTC\\d+$"
+        },
+        "is_virtual": {
+          "type": "string",
+          "pattern": "^1$"
+        },
+        "landing_company_name": {
+          "type": "string",
+          "pattern": "^fog$"
+        },
+        "fullname": {
+          "type": "string",
+          "pattern": "^  $"
+        },
+        "scopes": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "string",
+            "pattern": "^(admin|payments|read|trade)$"
+          }
+        }
+      }
+    },
+    "echo_req": {
+    },
+    "msg_type": {
+    }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}
