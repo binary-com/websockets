@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "echo_req": {
+      "type": "object",
+      "payout_currencies": {
+        "type": "number"
+      }
+    },
+    "payout_currencies": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^USD$"
+      }
+    },
+    "msg_type":{
+        "type":"string"
+   }
+  },
+  "required": [
+    "echo_req",
+    "payout_currencies",
+    "msg_type"
+  ]
+}

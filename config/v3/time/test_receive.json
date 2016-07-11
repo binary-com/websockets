@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Server time",
+  "properties": {
+    "echo_req": {
+    },
+    "time": {
+      "type": "integer",
+      "pattern": "^\\d{10}$"
+    },
+    "msg_type": {
+        "type": "string",
+        "pattern": "^time$"
+    }
+  },
+  "required": [
+    "echo_req",
+    "msg_type"
+  ]
+}

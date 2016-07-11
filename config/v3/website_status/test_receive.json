@@ -1,0 +1,80 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "echo_req": {},
+        "website_status": {
+            "type": "object",
+            "properties": {
+                "terms_conditions_version": {
+                    "type": "string"
+                },
+                "api_call_limits": {
+                    "type": "object",
+                    "max_proposal_subscription": {
+                      "type": "object",
+                      "max": {
+                        "type": "number"
+                      },
+                      "applies_to": {
+                        "type": "string"
+                      }
+                    },
+                    "max_requests_pricing": {
+                      "type": "object",
+                      "minutely": {
+                        "type": "number"
+                      },
+                      "hourly": {
+                        "type": "number"
+                      },
+                      "applies_to": {
+                        "type": "string"
+                      }
+                    },
+                    "max_requests_outcome": {
+                      "type": "object",
+                      "minutely": {
+                        "type": "number"
+                      },
+                      "hourly": {
+                        "type": "number"
+                      },
+                      "applies_to": {
+                        "type": "string"
+                      }
+                    },
+                    "max_requestes_general": {
+                      "type": "object",
+                      "minutely": {
+                        "type": "number"
+                      },
+                      "hourly": {
+                        "type": "number"
+                      },
+                      "applies_to": {
+                        "type": "string"
+                      }
+                    }
+                },
+                "clients_country": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "terms_conditions_version",
+                "clients_country"
+            ]
+        },
+        "msg_type": {
+            "type": "string"
+        },
+        "req_id": {
+            "type": "integer"
+        }
+    },
+    "required": [
+        "echo_req",
+        "msg_type"
+    ]
+}

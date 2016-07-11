@@ -1,0 +1,86 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"echo_req": {},
+		"landing_company": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string",
+					"pattern": "^de$"
+				},
+				"name": {
+					"type": "string",
+					"pattern": "^Germany$"
+				},
+				"gaming_company": {
+					"type": ["null"]
+				}
+			},
+			"financial_company": {
+				"type": ["object"],
+				"properties": {
+					"shortcode": {
+						"type": "string",
+						"pattern": "^maltainvest$"
+					},
+					"name": {
+						"type": "string",
+						"pattern": "^Binary Investments (Europe) Ltd$"
+					},
+					"address": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"country": {
+						"type": "string",
+						"pattern": "^Malta$"
+					},
+					"legal_default_currency": {
+						"type": "string",
+						"pattern": "^EUR$"
+					},
+					"legal_allowed_currencies": {
+						"type": "array",
+						"minItems": 3,
+						"items": {
+							"type": "string",
+							"pattern": "^(USD|EUR|GBP)$"
+						}
+					},
+					"legal_allowed_markets": {
+						"type": "array",
+						"minItems": 5,
+						"items": {
+							"type": "string",
+							"pattern": "^(commodities|forex|indices|stocks|smarties)$"
+						}
+					},
+					"legal_allowed_contract_categories": {
+						"type": "array",
+						"minItems": 6,
+						"items": {
+							"type": "string",
+							"pattern": "^(asian|callput|digits|endsinout|staysinout|touchnotouch)$"
+						}
+					},
+					"has_reality_check": {
+						"type": "integer",
+						"pattern": "^1$"
+					}
+				}
+			}
+		}
+	},
+	"msg_type": {
+		"type": "string"
+	},
+	"required": [
+		"echo_req",
+		"landing_company",
+		"msg_type"
+	]
+}
