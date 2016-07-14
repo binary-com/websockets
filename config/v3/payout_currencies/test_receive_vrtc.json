@@ -4,24 +4,24 @@
   "properties": {
     "echo_req": {
       "type": "object",
+      "required": "1",
       "payout_currencies": {
-        "type": "number"
+        "type": "number",
+        "required": "1"
       }
     },
     "payout_currencies": {
       "type": "array",
+      "required": "1",
       "items": {
         "type": "string",
-        "pattern": "^USD$"
+        "pattern": "^USD$",
+        "required": "1"
       }
     },
     "msg_type":{
-        "type":"string"
+        "type":"string",
+        "required": "1"
    }
-  },
-  "required": [
-    "echo_req",
-    "payout_currencies",
-    "msg_type"
-  ]
+  }
 }

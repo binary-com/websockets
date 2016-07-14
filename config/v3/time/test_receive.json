@@ -4,6 +4,7 @@
   "title": "Server time",
   "properties": {
     "echo_req": {
+      "required": "1"
     },
     "time": {
       "type": "integer",
@@ -11,11 +12,8 @@
     },
     "msg_type": {
         "type": "string",
-        "pattern": "^time$"
+        "pattern": "^time$",
+        "required": "1"
     }
-  },
-  "required": [
-    "echo_req",
-    "msg_type"
-  ]
+  }
 }

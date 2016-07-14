@@ -2,17 +2,22 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"type": "object",
 	"properties": {
-		"echo_req": {},
+		"echo_req": {
+			"required": "1"
+		},
 		"landing_company": {
 			"type": "object",
+			"required": "1",
 			"properties": {
 				"id": {
 					"type": "string",
-					"pattern": "^de$"
+					"pattern": "^de$",
+					"required": "1"
 				},
 				"name": {
 					"type": "string",
-					"pattern": "^Germany$"
+					"pattern": "^Germany$",
+					"required": "1"
 				},
 				"gaming_company": {
 					"type": ["null"]
@@ -23,11 +28,13 @@
 				"properties": {
 					"shortcode": {
 						"type": "string",
-						"pattern": "^maltainvest$"
+						"pattern": "^maltainvest$",
+						"required": "1"
 					},
 					"name": {
 						"type": "string",
-						"pattern": "^Binary Investments (Europe) Ltd$"
+						"pattern": "^Binary Investments (Europe) Ltd$",
+						"required": "1"
 					},
 					"address": {
 						"type": "array",
@@ -37,50 +44,54 @@
 					},
 					"country": {
 						"type": "string",
-						"pattern": "^Malta$"
+						"pattern": "^Malta$",
+						"required": "1"
 					},
 					"legal_default_currency": {
 						"type": "string",
-						"pattern": "^EUR$"
+						"pattern": "^EUR$",
+						"required": "1"
 					},
 					"legal_allowed_currencies": {
 						"type": "array",
 						"minItems": 3,
 						"items": {
 							"type": "string",
-							"pattern": "^(USD|EUR|GBP)$"
+							"pattern": "^(USD|EUR|GBP)$",
+							"required": "1"
 						}
 					},
 					"legal_allowed_markets": {
 						"type": "array",
 						"minItems": 5,
+						"required": "1",
 						"items": {
 							"type": "string",
-							"pattern": "^(commodities|forex|indices|stocks|smarties)$"
+							"pattern": "^(commodities|forex|indices|stocks|smarties)$",
+							"required": "1"
 						}
 					},
 					"legal_allowed_contract_categories": {
 						"type": "array",
 						"minItems": 6,
+						"required": "1",
 						"items": {
 							"type": "string",
-							"pattern": "^(asian|callput|digits|endsinout|staysinout|touchnotouch)$"
+							"pattern": "^(asian|callput|digits|endsinout|staysinout|touchnotouch)$",
+							"required": "1"
 						}
 					},
 					"has_reality_check": {
 						"type": "integer",
-						"pattern": "^1$"
+						"pattern": "^1$",
+						"required": "1"
 					}
 				}
 			}
 		}
 	},
 	"msg_type": {
-		"type": "string"
-	},
-	"required": [
-		"echo_req",
-		"landing_company",
-		"msg_type"
-	]
+		"type": "string",
+		"required": "1"
+	}
 }

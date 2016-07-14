@@ -5,6 +5,7 @@
   "properties": {
     "echo_req": {
       "type": "object",
+      "required": "1",
       "properties": {
 	    "ping": {
 	    	"type": "string",
@@ -18,11 +19,8 @@
     },
     "msg_type": {
         "type": "string",
-        "pattern": "^ping$"
+        "pattern": "^ping$",
+        "required": "1"
     }
-  },
-  "required": [
-    "echo_req",
-    "msg_type"
-  ]
+  }
 }
