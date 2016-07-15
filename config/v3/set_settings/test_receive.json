@@ -5,14 +5,14 @@
     "echo_req": {
         "required": "1"
     },
-    "verify_email": {
+    "set_settings": {
       "type": "integer",
       "pattern": "^1$",
       "required": "1"
     },
     "msg_type": {
       "type": "string",
-      "pattern": "^verify_email$",
+      "pattern": "^set_settings$",
       "required": "1"
     }
   }

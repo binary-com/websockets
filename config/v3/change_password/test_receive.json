@@ -2,17 +2,17 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "echo_req": {
-        "required": "1"
-    },
-    "verify_email": {
+    "change_password": {
       "type": "integer",
       "pattern": "^1$",
       "required": "1"
     },
+    "echo_req": {
+        "required": "1"
+    },
     "msg_type": {
       "type": "string",
-      "pattern": "^verify_email$",
+      "pattern": "^change_password$",
       "required": "1"
     }
   }

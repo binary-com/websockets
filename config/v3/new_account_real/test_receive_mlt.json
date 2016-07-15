@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "echo_req": {
+            "required": "1"
+        },
+        "new_account_real": {
+            "type": "object",
+            "properties": {
+                "client_id": {
+                    "type": "string",
+                    "pattern": "^MLT\\d+$",
+                    "required": "1"
+                },
+                "landing_company": {
+                    "type": "string",
+                    "pattern": "^Binary \\(Europe\\) Ltd$",
+                    "required": "1"
+                },
+                "landing_company_shortcode": {
+                    "type": "string",
+                    "pattern": "^malta$",
+                    "required": "1"
+                },
+                "oauth_token": {
+                    "type": "string",
+                    "pattern": "^.{32}$",
+                    "required": "1"
+                }
+            },
+            "required": "1"
+        },
+        "msg_type": {
+            "type": "string",
+            "pattern": "^new_account_real$",
+            "required": "1"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "echo_req": {
+            "required": "1"
+        },
+        "get_account_status": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "array",
+                    "required": "1"
+                },
+                "risk_classification": {
+                    "type": ["string", "null"],
+                    "pattern": "^(low|standard|high)?$",
+                    "required": "1"
+                }
+            },
+            "required": "1"
+        },
+        "msg_type":{
+            "type": "string",
+            "pattern": "^get_account_status$",
+            "required": "1"
+        }
+    }
+}

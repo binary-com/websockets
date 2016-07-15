@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "echo_req": {
+        "required": "1"
+    },
+    "authorize": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "pattern": "^test@binary.com$",
+          "required": "1"
+        },
+        "currency": {
+          "type": ["string", "null"],
+          "pattern": "^(USD|GBP|EUR|AUD)?$",
+          "required": "1"
+        },
+        "balance": {
+          "type": ["number", "null"],
+          "required": "1"
+        },
+        "loginid": {
+          "type": "string",
+          "pattern": "^CR\\d+$",
+          "required": "1"
+        },
+        "is_virtual": {
+          "type": "string",
+          "pattern": "^0$",
+          "required": "1"
+        },
+        "landing_company_name": {
+          "type": "string",
+          "pattern": "^costarica$",
+          "required": "1"
+        },
+        "fullname": {
+          "type": "string",
+          "pattern": "^Mr Peter Pan$",
+          "required": "1"
+        },
+        "scopes": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "string",
+            "pattern": "^(admin|payments|read|trade)$"
+          },
+          "required": "1"
+        }
+      },
+      "required": "1"
+    },
+    "msg_type": {
+        "type": "string",
+        "pattern": "^authorize$",
+        "required": "1"
+    }
+  }
+}

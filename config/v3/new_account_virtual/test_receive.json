@@ -3,45 +3,42 @@
   "type": "object",
   "properties": {
     "echo_req": {
+        "required": "1"
     },
     "new_account_virtual": {
       "type": "object",
       "properties": {
         "client_id": {
           "type": "string",
-          "pattern": "^VRTC\\d+$"
+          "pattern": "^VRTC\\d+$",
+          "required": "1"
         },
         "email": {
           "type": "string",
-          "pattern": "^test@binary.com$"
+          "pattern": "^(test@binary.com|test-mlt@binary.com)$",
+          "required": "1"
         },
         "currency": {
           "type": "string",
-          "pattern": "^USD$"
+          "pattern": "^USD$",
+          "required": "1"
         },
         "balance": {
           "type": "number",
-          "pattern": "^10000.0000$"
+          "pattern": "^10000.0000$",
+          "required": "1"
         },
         "oauth_token": {
+            "type": "string",
+            "required": "1"
         }
       },
-      "required": [
-        "client_id",
-        "email",
-        "currency",
-        "balance",
-        "oauth_token"
-      ]
+      "required": "1"
     },
     "msg_type": {
-    },
-    "req_id": {
+        "type": "string",
+        "pattern": "^new_account_virtual$",
+        "required": "1"
     }
-  },
-  "required": [
-    "echo_req",
-    "msg_type",
-    "new_account_virtual"
-  ]
+  }
 }

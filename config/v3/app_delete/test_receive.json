@@ -5,14 +5,14 @@
     "echo_req": {
         "required": "1"
     },
-    "verify_email": {
-      "type": "integer",
+    "app_delete": {
+      "type": "string",
       "pattern": "^1$",
       "required": "1"
     },
     "msg_type": {
       "type": "string",
-      "pattern": "^verify_email$",
+      "pattern": "^app_delete$",
       "required": "1"
     }
   }
