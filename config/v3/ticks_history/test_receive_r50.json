@@ -3,33 +3,12 @@
   "type": "object",
   "properties": {
     "echo_req": {
-      "granularity": {
-        "type": "number",
-        "pattern": "^60$"
-        },
-      "count": {
-        "type": "number",
-        "pattern": "^10$"
-      },
-      "ticks_history": {
-        "type": "string",
-        "pattern": "^R_50$"
-      },
-      "style": {
-        "type": "string",
-        "pattern": "^ticks$"
-      },
-      "end": {
-        "type": "string",
-        "pattern": "^latest$"
-      },
       "required": "1"
     },
     "history": {
       "type": "object",
       "required": "1",
       "properties": {
-        "required": "1",
         "times": {
           "type": ["array","null"],
           "maxItems": 10,
@@ -58,6 +37,7 @@
     },
     "msg_type": {
       "type": "string",
+      "pattern": "^history$",
       "required": "1"
     }
   }

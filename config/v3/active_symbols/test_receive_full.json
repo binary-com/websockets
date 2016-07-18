@@ -1,0 +1,98 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "active_symbols": {
+            "type": "array",
+            "required": 1,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "market": {
+                        "type": "string",
+                        "required": 1
+                    },
+                    "market_display_name": {
+                        "type": "string",
+                        "required": 1
+                    },
+                    "submarket": {
+                        "type": "string",
+                        "required": 1
+                    },
+                    "submarket_display_name": {
+                        "type": "string",
+                        "required": 1
+                    },
+                    "symbol": {
+                        "type": "string",
+                        "required": 1
+                    },
+                    "symbol_type": {
+                        "type": "string",
+                        "required": 1
+                    },
+                    "display_name": {
+                        "type": "string",
+                        "required": 1
+                    },
+                    "exchange_name": {
+                        "type": "string",
+                        "required": 1
+                    },
+                    "exchange_is_open": {
+                        "type": ["integer", "null"],
+                        "pattern": "^(0|1)$"
+                    },
+                    "quoted_currency_symbol": {
+                        "type": ["string", "null"],
+                        "pattern": "^(|[A-Z]{3}|[A-Z]{6})$"
+                    },
+                    "pip": {
+                        "type": "string",
+                        "pattern": "^0\\.0{1,4}1$",
+                        "required": 1
+                    },
+                    "spot": {
+                        "type": "string",
+                        "pattern": "^(|\\d+\\.\\d+)$",
+                        "required": 1
+                    },
+                    "spot_age": {
+                        "type": "number",
+                        "pattern": "^(|\\d+)$",
+                        "required": 1
+                    },
+                    "spot_time": {
+                        "type": "string",
+                        "pattern": "^(|\\d{10})$",
+                        "required": 1
+                    },
+                    "delay_amount": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "required": 1
+                    },
+                    "intraday_interval_minutes": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "required": 1
+                    },
+                    "is_trading_suspended": {
+                        "type": "integer",
+                        "pattern": "^(0|1)$",
+                        "required": 1
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "required": 1
+        },
+        "msg_type": {
+            "type": "string",
+            "pattern": "^active_symbols$",
+            "required": 1
+        }
+    }
+}

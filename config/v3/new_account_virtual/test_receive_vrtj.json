@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "echo_req": {
+    },
+    "new_account_virtual": {
+      "type": "object",
+      "properties": {
+        "client_id": {
+          "type": "string",
+          "pattern": "^VRTJ\\d+$"
+        },
+        "email": {
+          "type": "string",
+          "pattern": "^test-jp@binary.com$"
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "^JPY$"
+        },
+        "balance": {
+          "type": "number",
+          "pattern": "^1000000.0000$"
+        },
+        "oauth_token": {
+        }
+      },
+      "required": [
+        "client_id",
+        "email",
+        "currency",
+        "balance",
+        "oauth_token"
+      ]
+    },
+    "msg_type": {
+    },
+    "req_id": {
+    }
+  },
+  "required": [
+    "echo_req",
+    "msg_type",
+    "new_account_virtual"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "residence_list": {
+            "type": "array",
+            "required": 1,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "phone_idd": {
+                        "type": "string",
+                        "pattern": "^\\d+$"
+                    },
+                    "text": {
+                        "type": "string",
+                        "required": 1
+                    },
+                    "value": {
+                        "type": "string",
+                        "pattern": "^[a-z]{2}$",
+                        "required": 1
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "required": 1
+        },
+        "msg_type": {
+            "type": "string",
+            "pattern": "^residence_list$",
+                                "required": 1
+        }
+    }
+}

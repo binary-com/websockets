@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "echo_req": {
+            "required": 1
+        },
+        "balance": {
+            "type": "object",
+            "required": 1,
+            "properties": {
+                "balance": {
+                    "type": "number",
+                    "pattern": "^1000000.0000$",
+                    "required": 1
+                },
+                "currency": {
+                    "type": "string",
+                    "pattern": "^JPY$",
+                    "required": 1
+                },
+                "loginid": {
+                    "type": "string",
+                    "pattern": "^VRTJ\\d+$",
+                    "required": 1
+                }
+            }
+        },
+        "msg_type": {
+            "type": "string",
+            "required": 1
+        }
+    }
+}
