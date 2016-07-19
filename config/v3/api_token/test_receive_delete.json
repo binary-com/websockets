@@ -8,32 +8,7 @@
         "tokens": {
           "type": "array",
           "items": {
-              "type": "object",
-              "properties": {
-                  "scopes": {
-                      "minItems": 4,
-                      "items": {
-                        "type": "string",
-                        "pattern": "^(read|trade|payments|admin)$"
-                      },
-                      "required": "1"
-                  },
-                  "token": {
-                      "type": "string",
-                      "pattern": "^[_1]$",
-                      "required": "1"
-                  },
-                  "display_name": {
-                      "type": "string",
-                      "pattern": "^test$",
-                      "required": "1"
-                  },
-                  "last_used": {
-                      "type": ["string", "null"],
-                      "pattern": "^(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})?$",
-                      "required": "1"
-                  }
-              }
+              "type": "null"
             },
             "required": "1"
         },

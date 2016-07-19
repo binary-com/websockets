@@ -10,7 +10,7 @@
                 "properties": {
                     "market": {
                         "type": "string",
-                        "pattern": "^volidx$",
+                        "pattern": "^[_2]$",
                         "required": 1
                     },
                     "market_display_name": {
@@ -19,6 +19,7 @@
                     },
                     "submarket": {
                         "type": "string",
+                        "pattern": "^[_3]$",
                         "required": 1
                     },
                     "submarket_display_name": {

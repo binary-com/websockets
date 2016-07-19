@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "echo_req": {
+            "required": "1"
+        },
+        "error": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "required": "1"
+                },
+                "code": {
+                    "type": "string",
+                    "pattern": "^FeatureNotAvailable$",
+                    "required": "1"
+                }
+            },
+            "required": "1"
+        },
+        "msg_type":{
+            "type": "string",
+            "pattern": "^get_limits$",
+            "required": "1"
+        }
+    }
+}

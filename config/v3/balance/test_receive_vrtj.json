@@ -11,7 +11,7 @@
             "properties": {
                 "balance": {
                     "type": "number",
-                    "pattern": "^1000000.0000$",
+                    "pattern": "^1000000\\.0000$",
                     "required": 1
                 },
                 "currency": {
@@ -21,13 +21,14 @@
                 },
                 "loginid": {
                     "type": "string",
-                    "pattern": "^VRTJ\\d+$",
+                    "pattern": "^[_1]$",
                     "required": 1
                 }
             }
         },
         "msg_type": {
             "type": "string",
+            "pattern": "^balance$",
             "required": 1
         }
     }

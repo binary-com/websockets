@@ -15,7 +15,7 @@
       "required": "1",
       "items": {
         "type": "string",
-        "pattern": "^USD$",
+        "pattern": "^[_1]$",
         "required": "1"
       }
     },

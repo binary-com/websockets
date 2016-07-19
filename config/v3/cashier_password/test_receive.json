@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "cashier_password": {
+      "type": "integer",
+      "pattern": "^[_1]$",
+      "required": 1
+    },
+    "echo_req": {
+      "required": 1
+    },
+    "msg_type": {
+      "type": "string",
+      "pattern": "^cashier_password$",
+      "required": 1
+    }
+  }
+}

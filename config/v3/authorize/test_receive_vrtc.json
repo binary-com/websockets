@@ -7,7 +7,7 @@
       "properties": {
         "email": {
           "type": "string",
-          "pattern": "^(test@binary.com|test-mlt@binary.com)$",
+          "pattern": "^[_2]$",
           "required": "1"
         },
         "currency": {

@@ -14,12 +14,13 @@
           "required": "1"
         },
         "currency": {
-          "type": ["string", "null"],
-          "pattern": "^(USD|GBP|EUR|AUD)?$",
+          "type": "string",
+          "pattern": "^$",
           "required": "1"
         },
         "balance": {
-          "type": ["number", "null"],
+          "type": "number",
+          "pattern": "^0$",
           "required": "1"
         },
         "loginid": {
@@ -39,7 +40,7 @@
         },
         "fullname": {
           "type": "string",
-          "pattern": "^Mr Captain Hook$",
+          "pattern": "^Mr Jack Pan$",
           "required": "1"
         },
         "scopes": {

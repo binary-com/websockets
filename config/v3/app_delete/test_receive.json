@@ -7,7 +7,7 @@
     },
     "app_delete": {
       "type": "string",
-      "pattern": "^1$",
+      "pattern": "^[_2]$",
       "required": "1"
     },
     "msg_type": {

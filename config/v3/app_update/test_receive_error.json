@@ -5,20 +5,16 @@
         "echo_req": {
             "required": "1"
         },
-        "get_settings": {
+        "error": {
             "type": "object",
             "properties": {
-                "email": {
+                "message": {
                     "type": "string",
                     "required": "1"
                 },
-                "country": {
-                    "type": ["string", "null"],
-                    "required": "1"
-                },
-                "country_code": {
-                    "type": ["string", "null"],
-                    "pattern": "^[a-z]{2}$",
+                "code": {
+                    "type": "string",
+                    "pattern": "^AppUpdate$",
                     "required": "1"
                 }
             },
@@ -26,7 +22,7 @@
         },
         "msg_type":{
             "type": "string",
-            "pattern": "^get_settings$",
+            "pattern": "^app_update$",
             "required": "1"
         }
     }

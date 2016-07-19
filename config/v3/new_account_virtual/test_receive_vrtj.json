@@ -13,7 +13,7 @@
         },
         "email": {
           "type": "string",
-          "pattern": "^test-jp@binary.com$"
+          "pattern": "^[_2]$"
         },
         "currency": {
           "type": "string",

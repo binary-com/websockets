@@ -1,5 +1,5 @@
 {
   "change_password": "1",
-  "old_password": "Abc123",
-  "new_password": "Abcd123"
+  "old_password": "[_1]",
+  "new_password": "[_2]"
 }
