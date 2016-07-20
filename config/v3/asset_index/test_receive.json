@@ -4,21 +4,21 @@
     "properties": {
         "asset_index": {
             "type": "array",
-            "required": 1,
+            "required": "1",
             "items": {
                 "type": "array",
                 "items": [
                     {
                         "type": "string",
-                        "required": 1
+                        "required": "1"
                     },
                     {
                         "type": "string",
-                        "required": 1
+                        "required": "1"
                     },
                     {
                         "type": "array",
-                        "required": 1,
+                        "required": "1",
                         "items": {
                             "type": "array",
                             "items": {
@@ -34,7 +34,7 @@
             }
         },
         "echo_req": {
-            "required": 1
+            "required": "1"
         },
         "msg_type": {
             "type": "string",

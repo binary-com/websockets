@@ -2,79 +2,110 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "properties": {
-        "echo_req": {},
         "website_status": {
             "type": "object",
+            "required": "1",
             "properties": {
-                "terms_conditions_version": {
+                "clients_country": {
                     "type": "string"
+                },
+                "terms_conditions_version": {
+                    "type": "string",
+                    "required": "1"
                 },
                 "api_call_limits": {
                     "type": "object",
-                    "max_proposal_subscription": {
-                      "type": "object",
-                      "max": {
-                        "type": "number"
-                      },
-                      "applies_to": {
-                        "type": "string"
-                      }
-                    },
-                    "max_requests_pricing": {
-                      "type": "object",
-                      "minutely": {
-                        "type": "number"
-                      },
-                      "hourly": {
-                        "type": "number"
-                      },
-                      "applies_to": {
-                        "type": "string"
-                      }
-                    },
-                    "max_requests_outcome": {
-                      "type": "object",
-                      "minutely": {
-                        "type": "number"
-                      },
-                      "hourly": {
-                        "type": "number"
-                      },
-                      "applies_to": {
-                        "type": "string"
-                      }
-                    },
-                    "max_requestes_general": {
-                      "type": "object",
-                      "minutely": {
-                        "type": "number"
-                      },
-                      "hourly": {
-                        "type": "number"
-                      },
-                      "applies_to": {
-                        "type": "string"
-                      }
+                    "required": "1",
+                    "properties": {
+                        "max_proposal_subscription": {
+                            "type": "object",
+                            "required": "1",
+                            "properties": {
+                                "max": {
+                                    "type": "number",
+                                    "pattern": "^5$",
+                                    "required": "1"
+                                },
+                                "applies_to": {
+                                    "type": "string",
+                                    "required": "1"
+                                }
+                            }
+                        },
+                        "max_requests_pricing": {
+                            "type": "object",
+                            "required": "1",
+                            "properties": {
+                                "minutely": {
+                                    "type": "number",
+                                    "pattern": "^60$",
+                                    "required": "1"
+                                },
+                                "hourly": {
+                                    "type": "number",
+                                    "pattern": "^3600$",
+                                    "required": "1"
+                                },
+                                "applies_to": {
+                                    "type": "string",
+                                    "required": "1"
+                                }
+                            }
+                        },
+                        "max_requests_outcome": {
+                            "type": "object",
+                            "required": "1",
+                            "properties": {
+                                "minutely": {
+                                    "type": "number",
+                                    "pattern": "^60$",
+                                    "required": "1"
+                                },
+                                "hourly": {
+                                    "type": "number",
+                                    "pattern": "^3600$",
+                                    "required": "1"
+                                },
+                                "applies_to": {
+                                    "type": "string",
+                                    "required": "1"
+                                }
+                            }
+                        },
+                        "max_requestes_general": {
+                            "type": "object",
+                            "required": "1",
+                            "properties": {
+                                "minutely": {
+                                    "type": "number",
+                                    "pattern": "^240$",
+                                    "required": "1"
+                                },
+                                "hourly": {
+                                    "type": "number",
+                                    "pattern": "^14400$",
+                                    "required": "1"
+                                },
+                                "applies_to": {
+                                    "type": "string",
+                                    "required": "1"
+                                }
+                            }
+                        }
                     }
-                },
-                "clients_country": {
-                    "type": "string"
                 }
-            },
-            "required": [
-                "terms_conditions_version",
-                "clients_country"
-            ]
+            }
+        },
+        "echo_req": {
+            "required": "1"
         },
         "msg_type": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^website_status$",
+            "required": "1"
         },
         "req_id": {
             "type": "integer"
         }
-    },
-    "required": [
-        "echo_req",
-        "msg_type"
-    ]
+    }
 }

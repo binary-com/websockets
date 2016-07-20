@@ -8,21 +8,21 @@
             "properties": {
                 "id": {
                     "type": "string",
-                    "pattern": "^de$",
+                    "pattern": "^jp$",
                     "required": "1"
                 },
                 "name": {
                     "type": "string",
-                    "pattern": "^Germany$",
-                    "required": "1"
-                },
-                "virtual_company": {
-                    "type": "string",
-                    "pattern": "^fog$",
+                    "pattern": "^Japan$",
                     "required": "1"
                 },
                 "gaming_company": {
                     "type": "null"
+                },
+                "virtual_company": {
+                    "type": "string",
+                    "pattern": "^japan-virtual$",
+                    "required": "1"
                 },
                 "financial_company": {
                     "type": "object",
@@ -30,12 +30,12 @@
                     "properties": {
                         "shortcode": {
                             "type": "string",
-                            "pattern": "^maltainvest$",
+                            "pattern": "^japan$",
                             "required": "1"
                         },
                         "name": {
                             "type": "string",
-                            "pattern": "^Binary Investments \\(Europe\\) Ltd$",
+                            "pattern": "^Binary KK$",
                             "required": "1"
                         },
                         "address": {
@@ -47,46 +47,47 @@
                         },
                         "country": {
                             "type": "string",
-                            "pattern": "^Malta$",
+                            "pattern": "^Japan$",
                             "required": "1"
                         },
                         "legal_default_currency": {
                             "type": "string",
-                            "pattern": "^EUR$",
+                            "pattern": "^JPY$",
                             "required": "1"
                         },
                         "legal_allowed_currencies": {
                             "type": "array",
-                            "minItems": 3,
+                            "minItems": 1,
+                            "required": "1",
                             "items": {
                                 "type": "string",
-                                "pattern": "^(USD|EUR|GBP)$",
+                                "pattern": "^JPY$",
                                 "required": "1"
                             }
                         },
                         "legal_allowed_markets": {
                             "type": "array",
-                            "minItems": 5,
+                            "minItems": 1,
                             "required": "1",
                             "items": {
                                 "type": "string",
-                                "pattern": "^(commodities|forex|indices|stocks|smarties)$",
+                                "pattern": "^forex$",
                                 "required": "1"
                             }
                         },
                         "legal_allowed_contract_categories": {
                             "type": "array",
-                            "minItems": 6,
+                            "minItems": 4,
                             "required": "1",
                             "items": {
                                 "type": "string",
-                                "pattern": "^(asian|callput|digits|endsinout|staysinout|touchnotouch)$",
+                                "pattern": "^(callput|endsinout|staysinout|touchnotouch)$",
                                 "required": "1"
                             }
                         },
                         "has_reality_check": {
                             "type": "integer",
-                            "pattern": "^1$",
+                            "pattern": "^0$",
                             "required": "1"
                         }
                     }
@@ -98,6 +99,7 @@
         },
         "msg_type": {
             "type": "string",
+            "pattern": "^landing_company$",
             "required": "1"
         }
     }

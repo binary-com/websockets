@@ -3,33 +3,33 @@
     "type": "object",
     "properties": {
         "echo_req": {
-            "required": 1
+            "required": "1"
         },
         "balance": {
             "type": "object",
-            "required": 1,
+            "required": "1",
             "properties": {
                 "balance": {
                     "type": "number",
                     "pattern": "^1000000\\.0000$",
-                    "required": 1
+                    "required": "1"
                 },
                 "currency": {
                     "type": "string",
                     "pattern": "^JPY$",
-                    "required": 1
+                    "required": "1"
                 },
                 "loginid": {
                     "type": "string",
                     "pattern": "^[_1]$",
-                    "required": 1
+                    "required": "1"
                 }
             }
         },
         "msg_type": {
             "type": "string",
             "pattern": "^balance$",
-            "required": 1
+            "required": "1"
         }
     }
 }

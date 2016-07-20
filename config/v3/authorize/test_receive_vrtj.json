@@ -1,58 +1,64 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "authorize": {
-      "type": "object",
-      "properties": {
-        "email": {
-          "type": "string",
-          "pattern": "^test-jp@binary.com$"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "authorize": {
+            "type": "object",
+            "required": "1",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "pattern": "^test-jp@binary.com$",
+                    "required": "1"
+                },
+                "currency": {
+                    "type": "string",
+                    "pattern": "^JPY$",
+                    "required": "1"
+                },
+                "balance": {
+                    "type": "number",
+                    "pattern": "^1000000.0000$",
+                    "required": "1"
+                },
+                "loginid": {
+                    "type": "string",
+                    "pattern": "^VRTJ\\d+$",
+                    "required": "1"
+                },
+                "is_virtual": {
+                    "type": "string",
+                    "pattern": "^1$",
+                    "required": "1"
+                },
+                "landing_company_name": {
+                    "type": "string",
+                    "pattern": "^japan-virtual$",
+                    "required": "1"
+                },
+                "fullname": {
+                    "type": "string",
+                    "pattern": "^  $",
+                    "required": "1"
+                },
+                "scopes": {
+                    "type": "array",
+                    "required": "1",
+                    "minItems": 4,
+                    "items": {
+                        "type": "string",
+                        "pattern": "^(admin|payments|read|trade)$"
+                    }
+                }
+            }
         },
-        "currency": {
-          "type": "string",
-           "pattern": "^JPY$"
+        "echo_req": {
+            "required": "1"
         },
-        "balance": {
-          "type": "number",
-          "pattern": "^1000000.0000$"
-        },
-        "loginid": {
-          "type": "string",
-          "pattern": "^VRTJ\\d+$"
-        },
-        "is_virtual": {
-          "type": "string",
-          "pattern": "^1$"
-        },
-        "landing_company_name": {
-          "type": "string",
-          "pattern": "^japan-virtual$"
-        },
-        "fullname": {
-          "type": "string",
-          "pattern": "^  $"
-        },
-        "scopes": {
-          "type": "array",
-          "minItems": 4,
-          "items": {
+        "msg_type": {
             "type": "string",
-            "pattern": "^(admin|payments|read|trade)$"
-          }
+            "pattern": "^authorize$",
+            "required": "1"
         }
-      }
-    },
-    "echo_req": {
-    },
-    "msg_type": {
-      "type": "string",
-      "pattern": "^authorize$"
     }
-  },
-  "required": [
-    "authorize",
-    "echo_req",
-    "msg_type"
-  ]
 }

@@ -2,33 +2,27 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "properties": {
-        "echo_req": {
-            "required": "1"
-        },
-        "balance": {
+        "error": {
             "type": "object",
             "required": "1",
             "properties": {
-                "balance": {
-                    "type": "number",
-                    "pattern": "^10000\\.0000$",
+                "code": {
+                    "type": "string",
+                    "pattern": "^UnknownLandingCompany$",
                     "required": "1"
                 },
-                "currency": {
+                "message": {
                     "type": "string",
-                    "pattern": "^USD$",
-                    "required": "1"
-                },
-                "loginid": {
-                    "type": "string",
-                    "pattern": "^[_1]$",
                     "required": "1"
                 }
             }
         },
+        "echo_req": {
+            "required": "1"
+        },
         "msg_type": {
             "type": "string",
-            "pattern": "^balance$",
+            "pattern": "^landing_company_details$",
             "required": "1"
         }
     }

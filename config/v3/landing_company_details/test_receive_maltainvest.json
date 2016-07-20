@@ -1,0 +1,82 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "landing_company_details": {
+            "type": "object",
+            "required": "1",
+            "properties": {
+                "shortcode": {
+                    "type": "string",
+                    "pattern": "^[_1]$",
+                    "required": "1"
+                },
+                "name": {
+                    "type": "string",
+                    "pattern": "^Binary Investments \\(Europe\\) Ltd$",
+                    "required": "1"
+                },
+                "address": {
+                    "type": "array",
+                    "required": "1",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "country": {
+                    "type": "string",
+                    "pattern": "^Malta$",
+                    "required": "1"
+                },
+                "legal_default_currency": {
+                    "type": "string",
+                    "pattern": "^EUR$",
+                    "required": "1"
+                },
+                "legal_allowed_currencies": {
+                    "type": "array",
+                    "minItems": 3,
+                    "required": "1",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^(USD|EUR|GBP)$",
+                        "required": "1"
+                    }
+                },
+                "legal_allowed_markets": {
+                    "type": "array",
+                    "minItems": 5,
+                    "required": "1",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^(commodities|forex|indices|stocks|smarties)$",
+                        "required": "1"
+                    }
+                },
+                "legal_allowed_contract_categories": {
+                    "type": "array",
+                    "minItems": 6,
+                    "required": "1",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^(asian|callput|digits|endsinout|staysinout|touchnotouch)$",
+                        "required": "1"
+                    }
+                },
+                "has_reality_check": {
+                    "type": "integer",
+                    "pattern": "^1$",
+                    "required": "1"
+                }
+            }
+        },
+        "echo_req": {
+            "required": "1"
+        },
+        "msg_type": {
+            "type": "string",
+            "pattern": "^landing_company_details$",
+            "required": "1"
+        }
+    }
+}
