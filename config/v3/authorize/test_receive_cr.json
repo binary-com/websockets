@@ -20,7 +20,7 @@
         },
         "balance": {
           "type": "number",
-          "pattern": "^0$",
+          "pattern": "^0.00$",
           "required": "1"
         },
         "loginid": {

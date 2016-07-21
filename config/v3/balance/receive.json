@@ -26,7 +26,7 @@
           "loginid": {
             "type": "string",
             "description": "Client loginid Example: CR000000",
-            "pattern": "^([A-Z0-9]{1,25})$"
+            "pattern": "^[A-Z]{2,4}[0-9]{1,10}$"
           },
           "id": {
             "type": "string",
