@@ -18,8 +18,8 @@
           "required": "1"
         },
         "currency": {
-          "type": ["string", "null"],
-          "pattern": "^(USD|GBP|EUR|AUD)?$",
+          "type": "string",
+          "pattern": "^[_1]$",
           "required": "1"
         },
         "buy_count": {

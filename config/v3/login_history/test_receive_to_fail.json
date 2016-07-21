@@ -24,7 +24,7 @@
                     },
                     "status": {
                         "type": "integer",
-                        "pattern": "^1$",
+                        "pattern": "^0$",
                         "required": "1"
                     }
                 }

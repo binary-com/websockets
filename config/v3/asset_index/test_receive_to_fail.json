@@ -21,8 +21,8 @@
                         "required": "1",
                         "items": {
                             "type": "array",
-                            "minItems": 4,
-                            "maxItems": 4,
+                            "minItems": 2,
+                            "maxItems": 3,
                             "items": {
                                 "type": "string"
                             }

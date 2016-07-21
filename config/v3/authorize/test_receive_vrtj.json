@@ -8,7 +8,7 @@
             "properties": {
                 "email": {
                     "type": "string",
-                    "pattern": "^test-jp@binary.com$",
+                    "pattern": "^[_2]$",
                     "required": "1"
                 },
                 "currency": {

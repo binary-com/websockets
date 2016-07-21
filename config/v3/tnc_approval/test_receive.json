@@ -1,19 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Server time",
   "properties": {
     "echo_req": {
-      "required": "1"
+        "required": "1"
     },
-    "time": {
-      "type": "integer",
-      "pattern": "^\\d{10}$",
-      "required": "1"
+    "tnc_approval": {
+        "type": "integer",
+        "pattern": "^1$",
+        "required": "1"
     },
     "msg_type": {
         "type": "string",
-        "pattern": "^time$",
+        "pattern": "^tnc_approval$",
         "required": "1"
     }
   }

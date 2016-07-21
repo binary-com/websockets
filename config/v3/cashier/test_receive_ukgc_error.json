@@ -5,30 +5,24 @@
         "echo_req": {
             "required": "1"
         },
-        "balance": {
+        "error": {
             "type": "object",
-            "required": "1",
             "properties": {
-                "balance": {
-                    "type": "number",
-                    "pattern": "^1000000\\.0000$",
+                "message": {
+                    "type": "string",
                     "required": "1"
                 },
-                "currency": {
+                "code": {
                     "type": "string",
-                    "pattern": "^JPY$",
-                    "required": "1"
-                },
-                "loginid": {
-                    "type": "string",
-                    "pattern": "^[_1]$",
+                    "pattern": "^ASK_UK_FUNDS_PROTECTION$",
                     "required": "1"
                 }
-            }
+            },
+            "required": "1"
         },
-        "msg_type": {
+        "msg_type":{
             "type": "string",
-            "pattern": "^balance$",
+            "pattern": "^cashier$",
             "required": "1"
         }
     }
