@@ -26,4 +26,13 @@ permalink: omnibus/
 <p>
     Once approved, your Binary.com account becomes the <b>omnibus master account</b>. All incoming deposits and outgoing withdrawals should be made from this account.
     You may then create <a href="https://developers.binary.com/api/#new_sub_account">sub-accounts</a> which will hold records of your client trades.
+    You may transfer funds to/from your master account and sub-accounts using the <a href="https://developers.binary.com/api/#transfer_between_accounts">account transfers</a> call.
+</p>
+
+<h2>
+    Transacting on sub-accounts
+</h2>
+<p>
+    To create transactions in sub-accounts, you will need to use the <a href="https://developers.binary.com/api/#api_token">API token</a> facilities.
+    The Oauth facility does not work with sub-accounts.
 </p>
