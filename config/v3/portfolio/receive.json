@@ -6,7 +6,8 @@
   "properties": {
     "echo_req": {
       "title":"Echo request",
-      "description":"Echo of the request made"
+      "description":"Echo of the request made",
+      "required": 1
     },
     "portfolio": {
       "type": "object",
@@ -17,6 +18,7 @@
           "type": "array",
           "title": "Contracts",
           "description": "Client open positions",
+          "required": 1,
           "items":{
             "type":"object",
             "title": "Portfolio",
@@ -77,16 +79,12 @@
     },
     "msg_type": {
       "type": "string",
-      "description": "portfolio"
+      "description": "portfolio",
+      "required": 1
     },
     "req_id": {
       "type": "integer",
       "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "portfolio",
-    "msg_type"
-  ]
+  }
 }

@@ -6,12 +6,14 @@
   "properties": {
     "echo_req": {
       "title": "Echo request",
-      "description": "Echo of the request made"
+      "description": "Echo of the request made",
+      "required": 1
     },
     "active_symbols": {
       "type":"array",
       "title": "Active symbols",
       "description": "List of active symbols. Note: if the user is authenticated, then only symbols allowed under his account will be returned.",
+      "required": 1,
       "items":{
         "type":"object",
         "properties":{
@@ -88,16 +90,12 @@
     },
     "msg_type": {
       "type": "string",
-      "description": "active_symbols"
+      "description": "active_symbols",
+      "required": 1
     },
     "req_id": {
       "type": "integer",
       "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "active_symbols",
-    "msg_type"
-  ]
+  }
 }

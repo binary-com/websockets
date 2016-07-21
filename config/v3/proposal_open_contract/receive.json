@@ -6,7 +6,8 @@
   "properties": {
     "echo_req": {
       "title": "Echo request",
-      "description": "Echo of the request made"
+      "description": "Echo of the request made",
+      "required": 1
     },
     "proposal_open_contract": {
       "type": "object",
@@ -244,10 +245,5 @@
       "type": "integer",
       "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "proposal_open_contract",
-    "msg_type"
-  ]
+  }
 }

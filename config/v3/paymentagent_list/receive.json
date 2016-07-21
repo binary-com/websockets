@@ -6,7 +6,8 @@
   "properties": {
     "echo_req": {
       "title":"Echo request",
-      "description":"Echo of the request made"
+      "description":"Echo of the request made",
+      "required": 1
     },
     "paymentagent_list": {
       "type": "object",
@@ -18,6 +19,7 @@
         },
         "list": {
           "type": "array",
+          "required": 1,
           "items":{
             "type": "object"
           }
@@ -26,16 +28,12 @@
     },
     "msg_type": {
       "type": "string",
-      "description": "paymentagent_list"
+      "description": "paymentagent_list",
+      "required": 1
     },
     "req_id": {
       "type": "integer",
       "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "paymentagent_list",
-    "msg_type"
-  ]
+  }
 }
