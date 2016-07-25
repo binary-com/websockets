@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title":"Create MT5 account",
+  "description": "This call creates new MT5 user, either demo or real money user.",
+  "properties": {
+    "mt5_new_account": {
+      "type": "integer",
+      "description": "Must be 1",
+      "pattern": "^1$",
+      "required": "1"
+    },
+    "account_type": {
+      "enum": ["demo", "vanuatu", "costarica", "iom", "malta", "maltainvest", "japan"],
+      "description": "Landing company short name.",
+      "required": "1"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address",
+      "required": "1"
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 128,
+      "description": "Client's name. The maximum length of a client's symbol name is 128 characters. Optional field."
+    },
+    "mainPassword": {
+      "type": "string",
+      "description": "the master password of the account. The password must contain at least two of three types of characters (lower case, upper case and digits) and meet the minimum length requirements set for the group. This field is required.",
+      "required": "1"
+    },
+    "investPassword": {
+      "type": "string",
+      "description": "the investor password of the account. The password must contain at least two of three types of characters (lower case, upper case and digits) and meet the minimum length requirements set for the group. This field is required.",
+      "required": "1"
+    },
+    "leverage": {
+      "type": "string",
+      "pattern": "^([1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500)$",
+      "description": "Client leverage (from 1 to 500).",
+      "required" : "1"
+    },
+    "address": {
+      "type" : "string",
+      "maxLength": 128,
+      "description": "The address of the user. The maximum length of the address is 128 characters. Optional field."
+    },
+    "state": {
+      "type" : "string",
+      "maxLength": 50,
+      "description": "User's state (region) of residence. Optional field."
+    },
+    "city": {
+      "type" : "string",
+      "maxLength": 50,
+      "description": "User's city of residence. Optional field."
+    },
+    "zipCode": {
+      "type" : "string",
+      "maxLength": 50,
+      "description": "User's zip code. Optional field."
+    },
+    "country": {
+      "type" : "string",
+      "pattern": "^[a-z]{2}$",
+      "description": "2-letter country code (value received from residence_list call). Optional field."
+    },
+    "company": {
+      "type" : "string",
+      "maxLength": 64,
+      "description": "Name of the client's company. The maximum length of the company name is 64 characters. Optional field."
+    },
+    "phone": {
+      "type" : "string",
+      "maxLength": 50,
+      "description": "User's phone number. Optional field."
+    },
+    "phonePassword": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "the user's phone password."
+    },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field to map request to response"
+    }
+  },
+  "additionalProperties": false
+}

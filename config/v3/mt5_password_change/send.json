@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title":"MT5 user main password change",
+  "description": "This call change main password for MT5 user",
+  "properties": {
+    "mt5_password_change": {
+      "type": "integer",
+      "description": "Must be 1",
+      "pattern": "^1$",
+      "required": "1"
+    },
+    "login": {
+      "type": "string",
+      "description": "MT5 user login",
+      "required": "1"
+    },
+    "old_password": {
+      "type": "string",
+      "description": "Existing master password of the account.",
+      "required": "1"
+    },
+    "new_password": {
+      "type": "string",
+      "description": "New master password of the account.",
+      "required": "1"
+    },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field to map request to response"
+    }
+  },
+  "additionalProperties": false
+}

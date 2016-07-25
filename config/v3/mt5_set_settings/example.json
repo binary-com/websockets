@@ -1,0 +1,14 @@
+{
+    "mt5_set_settings": "1",
+    "email": "test@mailinator.com",
+    "name": "Peter Pan",
+    "leverage": "100",
+    "address": "Dummy address",
+    "state": "Valleta",
+    "city": "Valleta",
+    "zipCode": "VLT 1117",
+    "country": "mt",
+    "company": "Binary Limited",
+    "phone": "+6123456789",
+    "phonePassword": "Abc1234"
+}

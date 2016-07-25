@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "MT5 Account Deposit Request",
+  "description": "This call allows deposit into MT5 account from Binary account.",
+  "properties": {
+    "mt5_deposit": {
+      "type":"integer",
+      "pattern": "^1$",
+      "required": "1"
+    },
+    "from_binary": {
+      "type": "string",
+      "pattern": "^\\w+\\d+$",
+      "description": "Binary account loginid to transfer money from",
+      "required": "1"
+    },
+    "to_mt5": {
+      "type": "string",
+      "pattern": "^\\d+$",
+      "description": "MT5 account login to deposit money to",
+      "required": "1"
+    },
+    "amount": {
+      "type": "number",
+      "required": "1"
+    },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field to map request to response"
+    }
+  },
+  "additionalProperties": false
+}
