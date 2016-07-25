@@ -13,7 +13,8 @@
           "pattern": "\\d{10}",
           "required": "1"
         }
-      }
+      },
+      "required": "1"
     },
     "msg_type": {
       "type": "string",
