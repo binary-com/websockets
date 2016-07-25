@@ -10,7 +10,7 @@
       "required": "1"
     },
     "mt5_login_list": {
-      "type": "array",
+      "type": ["array", "null"],
       "items": {
         "type": "object",
         "title": "Application object",
