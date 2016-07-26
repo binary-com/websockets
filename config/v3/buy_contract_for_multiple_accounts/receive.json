@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Buy a Contract for multiple Accounts Receive",
+  "description": "A message with transaction results is received",
+  "properties": {
+    "echo_req": {
+      "title":"Echo request",
+      "description":"Echo of the request made"
+    },
+    "buy_contract_for_multiple_accounts": {
+      "type": "object",
+      "title": "Receipt confirmation",
+      "description": "Receipt confirmation for the purchase",
+      "additionalProperties": false,
+      "properties": {
+        "result": {
+          "type": "array",
+          "required": "1",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "description": "Receipt for one contract",
+                "additionalProperties": false,
+                "properties": {
+                  "token": {
+                    "type": "string",
+                    "description":"The token designating the account",
+                    "required": "1"
+                  },
+                  "longcode": {
+                    "type": "string",
+                    "description": "The description of contract purchased",
+                    "required": "1"
+                  },
+                  "shortcode": {
+                    "type": "string",
+                    "description": "Compact description of the contract purchased",
+                    "required": "1"
+                  },
+                  "start_time": {
+                    "type": "integer",
+                    "description":"Epoch value showing the expected start time of the contract",
+                    "required": "1"
+                  },
+                  "contract_id": {
+                    "type": "integer",
+                    "description":"Internal contract identifier",
+                    "required": "1"
+                  },
+                  "buy_price": {
+                    "type": "number",
+                    "description":"Actual effected purchase price",
+                    "required": "1"
+                  },
+                  "purchase_time": {
+                    "type": "integer",
+                    "description":"Epoch value of the transaction purchase time",
+                    "required": "1"
+                  },
+                  "transaction_id": {
+                    "type": "integer",
+                    "description":"Internal transaction identifier",
+                    "required": "1"
+                  },
+                  "amount_per_point": {
+                    "type": "number",
+                    "description":"[For spread contracts only] Amount per point"
+                  },
+                  "stop_profit_level": {
+                    "type": "number",
+                    "description":"[For spread contracts only] Stop profit level (spot plus/minus stop profit amount)"
+                  },
+                  "stop_loss_level": {
+                    "type": "number",
+                    "description":"[For spread contracts only] Stop loss level (spot plus/minus stop loss amount)"
+                  },
+                  "payout": {
+                    "type": "number",
+                    "description": "Proposed payout value",
+                    "required": "1"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "description": "Error message",
+                "additionalProperties": false,
+                "properties": {
+                  "token": {
+                    "type": "string",
+                    "description":"The token designating the account",
+                    "required": "1"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description":"An error code",
+                    "required": "1"
+                  },
+                  "message_to_client": {
+                    "type": "string",
+                    "description":"An error message localized according to the websocket",
+                    "required": "1"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "msg_type": {
+      "type": "string",
+      "description":"buy_contract_for_multiple_accounts"
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field send in request to map to response, present only when request contains req_id"
+    }
+  },
+  "required": [
+    "echo_req",
+    "buy_contract_for_multiple_accounts",
+    "msg_type"
+  ]
+}
