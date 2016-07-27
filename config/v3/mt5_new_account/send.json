@@ -24,7 +24,8 @@
     "name": {
       "type": "string",
       "maxLength": 128,
-      "description": "Client's name. The maximum length of a client's symbol name is 128 characters. Optional field."
+      "description": "Client's name. The maximum length of name is 128 characters.",
+      "required": "1"
     },
     "mainPassword": {
       "type": "string",
