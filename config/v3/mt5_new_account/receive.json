@@ -19,7 +19,7 @@
           "description": "Login of new MT5 account"
         },
         "account_type": {
-          "enum": ["demo", "costarica", "iom", "malta", "maltainvest", "japan"],
+          "enum": ["demo", "vanuatu", "costarica", "iom", "malta", "maltainvest", "japan"],
           "description": "Landing company short name."
         },
         "balance": {
