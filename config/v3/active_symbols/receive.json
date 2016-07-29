@@ -13,13 +13,13 @@
       "type":"array",
       "title": "Active symbols",
       "description": "List of active symbols. Note: if the user is authenticated, then only symbols allowed under his account will be returned.",
-      "required": 1,
       "items":{
         "type":"object",
         "properties":{
           "symbol": {
             "type": "string",
-            "description": "Binary.com symbol code for this underlying"
+            "description": "Binary.com symbol code for this underlying",
+            "required": "1"
           },
           "intraday_interval_minutes": {
             "type": "integer",
@@ -27,11 +27,13 @@
           },
           "symbol_type": {
             "type": "string",
-            "description": "Symbol type (forex, commodities, etc)"
+            "description": "Symbol type (forex, commodities, etc)",
+            "required": "1"
           },
           "exchange_is_open": {
             "type": ["integer", "null"],
-            "description": "1 or 0 - whether the market is currently open or closed"
+            "description": "1 or 0 - whether the market is currently open or closed",
+            "required": "1"
           },
           "exchange_name": {
             "type": "string",
@@ -43,7 +45,8 @@
           },
           "display_name": {
             "type": "string",
-            "description": "Display name"
+            "description": "Display name",
+            "required": "1"
           },
           "spot": {
             "type": ["number", "null"],
@@ -55,7 +58,8 @@
           },
           "is_trading_suspended": {
             "type": "integer",
-            "description": "1 indicates that trading is currently suspended"
+            "description": "1 indicates that trading is currently suspended",
+            "required": "1"
           },
           "quoted_currency_symbol": {
             "type": "string",
@@ -67,23 +71,28 @@
           },
           "market": {
             "type": "string",
-            "description": "Market category (forex, indices etc)"
+            "description": "Market category (forex, indices etc)",
+            "required": "1"
           },
           "market_display_name": {
             "type": "string",
-            "description": "Translated market name"
+            "description": "Translated market name",
+            "required": "1"
           },
           "submarket": {
             "type": "string",
-            "description": "Submarket name"
+            "description": "Submarket name",
+            "required": "1"
           },
           "submarket_display_name": {
             "type": "string",
-            "description": "Translated submarket name"
+            "description": "Translated submarket name",
+            "required": "1"
           },
           "pip": {
             "type": "number",
-            "description": "Pip size (i.e. minimum fluctuation amount)"
+            "description": "Pip size (i.e. minimum fluctuation amount)",
+            "required": "1"
           }
         }
       }
