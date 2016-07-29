@@ -20,12 +20,12 @@
     },
     "first_name": {
       "type": "string",
-      "pattern": "^[a-zA-Z\\s'.-]{2,30}$",
+      "pattern": "^[\\p{L}\\s'.-]{2,30}$",
       "description": "[Optional] Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes."
     },
     "last_name": {
       "type": "string",
-      "pattern": "^[a-zA-Z\\s'.-]{2,30}$",
+      "pattern": "^[\\p{L}\\s'.-]{2,30}$",
       "description": "[Optional] Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes."
     },
     "date_of_birth": {

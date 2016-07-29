@@ -17,13 +17,13 @@
     },
     "first_name": {
       "type": "string",
-      "pattern": "^[a-zA-Z\\s'.-]{2,30}$",
+      "pattern": "^[\\p{L}\\s'.-]{2,30}$",
       "description": "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
       "required": "1"
     },
     "last_name": {
       "type": "string",
-      "pattern": "^[a-zA-Z\\s'.-]{2,30}$",
+      "pattern": "^[\\p{L}\\s'.-]{2,30}$",
       "description": "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
       "required": "1"
     },
