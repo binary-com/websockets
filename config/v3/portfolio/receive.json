@@ -71,6 +71,10 @@
               "app_id": {
                 "type": ["integer", "null"],
                 "description": "Id of an app from where this contract was purchased. For example, it's 1 for binary.com."
+              },
+              "app_name": {
+                "type": ["string", "null"],
+                "description": "Name of the app corresponding to the app_id from where this contract was purchased. For example, it's binary.com for app_id 1."
               }
             }
           }
