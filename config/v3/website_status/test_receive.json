@@ -38,12 +38,12 @@
                             "properties": {
                                 "minutely": {
                                     "type": "number",
-                                    "pattern": "^1320$",
+                                    "pattern": "^60$",
                                     "required": "1"
                                 },
                                 "hourly": {
                                     "type": "number",
-                                    "pattern": "^79200$",
+                                    "pattern": "^3600$",
                                     "required": "1"
                                 },
                                 "applies_to": {
@@ -78,12 +78,12 @@
                             "properties": {
                                 "minutely": {
                                     "type": "number",
-                                    "pattern": "^5280$",
+                                    "pattern": "^240$",
                                     "required": "1"
                                 },
                                 "hourly": {
                                     "type": "number",
-                                    "pattern": "^316800$",
+                                    "pattern": "^14400$",
                                     "required": "1"
                                 },
                                 "applies_to": {
