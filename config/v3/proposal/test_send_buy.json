@@ -1,0 +1,11 @@
+{
+    "proposal": 1,
+    "subscribe": 1,
+    "amount": 100,
+    "basis": "payout",
+    "contract_type": "CALL",
+    "currency": "USD",
+    "symbol": "R_50",
+    "duration": 5,
+    "duration_unit": "t"
+}
