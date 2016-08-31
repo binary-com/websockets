@@ -18,6 +18,10 @@
           "login": {
             "type": "string",
             "description": "Login of MT5 account"
+          },
+          "group": {
+            "type": "string",
+            "description": "Group type of the MT5 account, e.g. real, vanuatu, etc."
           }
         }
       }
