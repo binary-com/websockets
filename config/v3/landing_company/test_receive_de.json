@@ -18,7 +18,7 @@
                 },
                 "virtual_company": {
                     "type": "string",
-                    "pattern": "^fog$",
+                    "pattern": "^virtual$",
                     "required": "1"
                 },
                 "gaming_company": {

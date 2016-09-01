@@ -32,7 +32,7 @@
         },
         "landing_company_name": {
           "type": "string",
-          "pattern": "^fog$",
+          "pattern": "^virtual$",
           "required": "1"
         },
         "fullname": {
