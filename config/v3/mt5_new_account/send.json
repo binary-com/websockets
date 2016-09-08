@@ -11,8 +11,8 @@
       "required": "1"
     },
     "account_type": {
-      "enum": ["demo", "vanuatu", "costarica", "iom", "malta", "maltainvest", "japan"],
-      "description": "Landing company short name.",
+      "enum": ["demo", "gaming", "financial"],
+      "description": "Account type",
       "required": "1"
     },
     "email": {

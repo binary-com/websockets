@@ -154,6 +154,141 @@
                             "required": "1"
                         }
                     }
+                },
+                "mt_gaming_company": {
+                    "type": "object",
+                    "required": "1",
+                    "properties": {
+                        "shortcode": {
+                            "type": "string",
+                            "pattern": "^costarica$",
+                            "required": "1"
+                        },
+                        "name": {
+                            "type": "string",
+                            "pattern": "^Binary \\(C\\.R\\.\\) S\\.A\\.$",
+                            "required": "1"
+                        },
+                        "address": {
+                            "type": "null",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "country": {
+                            "type": "string",
+                            "pattern": "^Costa Rica$",
+                            "required": "1"
+                        },
+                        "legal_default_currency": {
+                            "type": "string",
+                            "pattern": "^USD$",
+                            "required": "1"
+                        },
+                        "legal_allowed_currencies": {
+                            "type": "array",
+                            "minItems": 4,
+                            "required": "1",
+                            "items": {
+                                "type": "string",
+                                "pattern": "^(USD|EUR|GBP|AUD)$",
+                                "required": "1"
+                            }
+                        },
+                        "legal_allowed_markets": {
+                            "type": "array",
+                            "minItems": 6,
+                            "required": "1",
+                            "items": {
+                                "type": "string",
+                                "pattern": "^(commodities|forex|indices|stocks|smarties|volidx)$",
+                                "required": "1"
+                            }
+                        },
+                        "legal_allowed_contract_categories": {
+                            "type": "array",
+                            "minItems": 7,
+                            "required": "1",
+                            "items": {
+                                "type": "string",
+                                "pattern": "^(asian|callput|digits|endsinout|staysinout|touchnotouch|spreads)$",
+                                "required": "1"
+                            }
+                        },
+                        "has_reality_check": {
+                            "type": "integer",
+                            "pattern": "^0$",
+                            "required": "1"
+                        }
+                    }
+                },
+                "mt_financial_company": {
+                    "type": "object",
+                    "required": "1",
+                    "properties": {
+                        "shortcode": {
+                            "type": "string",
+                            "pattern": "^vanuatu$",
+                            "required": "1"
+                        },
+                        "name": {
+                            "type": "string",
+                            "pattern": "^Binary \\(V\\) Ltd$",
+                            "required": "1"
+                        },
+                        "address": {
+                            "type": "array",
+                            "required": "1",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "country": {
+                            "type": "string",
+                            "pattern": "^Republic of Vanuatu$",
+                            "required": "1"
+                        },
+                        "legal_default_currency": {
+                            "type": "string",
+                            "pattern": "^USD$",
+                            "required": "1"
+                        },
+                        "legal_allowed_currencies": {
+                            "type": "array",
+                            "minItems": 1,
+                            "required": "1",
+                            "items": {
+                                "type": "string",
+                                "pattern": "^USD$",
+                                "required": "1"
+                            }
+                        },
+                        "legal_allowed_markets": {
+                            "type": "array",
+                            "minItems": 1,
+                            "required": "1",
+                            "items": {
+                                "type": "string",
+                                "pattern": "^forex$",
+                                "required": "1"
+                            }
+                        },
+                        "legal_allowed_contract_categories": {
+                            "type": "array",
+                            "minItems": 1,
+                            "required": "1",
+                            "items": {
+                                "type": "string",
+                                "pattern": "^spreads$",
+                                "required": "1"
+                            }
+                        },
+                        "has_reality_check": {
+                            "type": "integer",
+                            "pattern": "^0$",
+                            "required": "0"
+                        }
+                    }
                 }
             }
         },

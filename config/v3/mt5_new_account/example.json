@@ -3,8 +3,8 @@
     "account_type": "demo",
     "email": "test@mailinator.com",
     "name": "Peter Pan",
-    "mainPassword": "Abc1234",
-    "investPassword": "Abc1234",
+    "mainPassword": "AbcDv1234",
+    "investPassword": "AbcDv1234",
     "leverage": "100",
     "address": "Dummy address",
     "state": "Valleta",
@@ -13,5 +13,5 @@
     "country": "mt",
     "company": "Binary Limited",
     "phone": "+6123456789",
-    "phonePassword": "Abc1234"
+    "phonePassword": "AbcDv1234"
 }

@@ -126,6 +126,111 @@
               "pattern": "^(1|0)$"
             }
           }
+        },
+        "mt_gaming_company": {
+          "type": ["null", "object"],
+          "description": "Landing Company for MT5 gaming contracts (Volatility Indices)",
+          "properties":{
+            "shortcode":{
+              "type":"string",
+              "description": "Landing Company short code"
+            },
+            "name":{
+              "type":"string",
+              "description": "Landing Company legal name"
+            },
+            "address":{
+              "type": ["array", "null"],
+              "description": "Landing Company address",
+              "items":{
+                "type":"string"
+              }
+            },
+            "country":{
+              "type":"string",
+              "description": "Landing Company country of incorporation"
+            },
+            "legal_default_currency":{
+              "type":"string",
+              "description": "Default account currency"
+            },
+            "legal_allowed_currencies":{
+              "type":"array",
+              "description": "Allowable currencies",
+              "items":{
+                "type":"string"
+              }
+            },
+            "legal_allowed_markets":{
+              "type":"array",
+              "description": "Allowable markets",
+              "items":{
+                "type":"string"
+              }
+            },
+            "legal_allowed_contract_categories":{
+              "type":"array",
+              "description": "Allowed contract types",
+              "items":{
+                "type":"string"
+              }
+            }
+          }
+        },
+        "mt_financial_company": {
+          "type": ["null", "object"],
+          "description": "Landing Company for MT5 financial contracts (all except Volatility Indices)",
+          "properties": {
+            "shortcode":{
+              "type":"string",
+              "description": "Landing Company short code"
+            },
+            "name":{
+              "type":"string",
+              "description": "Landing Company legal name"
+            },
+            "address":{
+              "type": ["array", "null"],
+              "description": "Landing Company address",
+              "items":{
+                "type":"string"
+              }
+            },
+            "country":{
+              "type":"string",
+              "description": "Landing Company country of incorporation"
+            },
+            "legal_default_currency":{
+              "type":"string",
+              "description": "Default account currency"
+            },
+            "legal_allowed_currencies":{
+              "type":"array",
+              "description": "Allowed account currencies for this Landing Company",
+              "items":{
+                "type":"string"
+              }
+            },
+            "legal_allowed_markets":{
+              "type":"array",
+              "description": "Allowed markets for this Landing Company",
+              "items":{
+                "type":"string"
+              }
+            },
+            "legal_allowed_contract_categories":{
+              "type":"array",
+              "description": "Allowed contract types for this Landing Company",
+              "items":{
+                "type":"string"
+              }
+            },
+            "has_reality_check": {
+              "type": "integer",
+              "description": "Flag to indicate whether reality check is applicable for this Landing Company. 1: applicable, 0: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
+              "pattern": "^(1|0)$"
+            }
+          }
         }
       }
     },
