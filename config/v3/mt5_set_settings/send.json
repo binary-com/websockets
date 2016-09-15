@@ -35,22 +35,22 @@
     },
     "address": {
       "type" : "string",
-      "maxLength": 128,
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{0,128}$",
       "description": "The address of the user. The maximum length of the address is 128 characters. Optional field."
     },
     "state": {
       "type" : "string",
-      "maxLength": 50,
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,50}$",
       "description": "User's state (region) of residence. Optional field."
     },
     "city": {
       "type" : "string",
-      "maxLength": 50,
+      "pattern": "^[\\p{L}\\s'.-]{0,50}$",
       "description": "User's city of residence. Optional field."
     },
     "zipCode": {
       "type" : "string",
-      "maxLength": 50,
+      "pattern": "^[\\w\\s-]{0,50}$",
       "description": "User's zip code. Optional field."
     },
     "country": {

@@ -11,22 +11,22 @@
     },
     "address_line_1":{
       "type":"string",
-      "pattern": "^.{1,70}$",
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,-@\/]{1,70}$",
       "description": "Note: not applicable for virtual account. Required field for real money account."
     },
     "address_line_2":{
       "type": ["string", "null"],
-      "pattern": "^.{0,70}$",
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,-@\/]{0,70}$",
       "description": "Note: not applicable for virtual account. Optional field for real money account."
     },
     "address_city":{
       "type":"string",
-      "pattern": "^.{1,35}$",
+      "pattern": "^[\\p{L}\\s'.-]{1,35}$",
       "description": "Note: not applicable for virtual account. Required field for real money account."
     },
     "address_state":{
       "type":"string",
-      "pattern": "^.{1,35}$",
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,35}$",
       "description": "Note: not applicable for virtual account. Required field for real money account."
     },
     "address_postcode":{

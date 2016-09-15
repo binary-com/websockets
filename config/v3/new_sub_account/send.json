@@ -40,24 +40,22 @@
     },
     "address_line_1": {
       "type": "string",
-      "minLength": 1,
-      "maxLength": 70,
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{0,70}$",
       "description": "[Optional] Within 70 characters."
     },
     "address_line_2": {
       "type": "string",
-      "maxLength": 70,
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{0,70}$",
       "description": "[Optional] Within 70 characters."
     },
     "address_city": {
       "type": "string",
-      "minLength": 1,
-      "maxLength": 35,
+      "pattern": "^[\\p{L}\\s'.-]{0,35}$",
       "description": "[Optional] Within 35 characters"
     },
     "address_state": {
       "type": "string",
-      "maxLength": 35,
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,35}$",
       "description": "[Optional] Possible value received from states_list call."
     },
     "address_postcode": {

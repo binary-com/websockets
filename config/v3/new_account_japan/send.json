@@ -46,27 +46,24 @@
     },
     "address_line_1": {
       "type" : "string",
-      "minLength": 1,
-      "maxLength": 70,
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{1,70}$",
       "description": "Within 70 characters.",
       "required": 1
     },
     "address_line_2": {
       "type" : "string",
-      "maxLength": 70,
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{0,70}$",
       "description": "Optional field, within 70 characters."
     },
     "address_city": {
       "type" : "string",
-      "minLength": 1,
-      "maxLength": 35,
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{1,35}$",
       "description": "Within 35 characters",
       "required": 1
     },
     "address_state": {
       "type" : "string",
-      "minLength": 1,
-      "maxLength": 35,
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{1,50}$",
       "description": "Possible value receive from states_list call.",
       "required": 1
     },
