@@ -5,12 +5,14 @@
   "properties": {
     "echo_req": {
       "title":"Echo request",
-      "description":"Echo of the request made"
+      "description":"Echo of the request made",
+      "required": 1
     },
     "payout_currencies": {
       "type": "array",
       "title":"Payout currencies",
       "description":"Available payout currencies. Note: if a user is logged in, only the currency available for his account will be returned.",
+      "required": 1,
       "items": {
         "type": "string",
         "description": "Available payout currency (example: USD)"
@@ -18,16 +20,12 @@
     },
     "msg_type":{
         "type":"string",
-        "description":"payout_currencies"
+        "description":"payout_currencies",
+        "required": 1
    },
     "req_id": {
       "type": "integer",
       "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "payout_currencies",
-    "msg_type"
-  ]
+  }
 }

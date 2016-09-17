@@ -6,25 +6,23 @@
   "properties": {
     "echo_req": {
       "title":"Echo request",
-      "description":"Echo of the request made"
+      "description":"Echo of the request made",
+      "required": 1
     },
     "asset_index": {
       "type": "array",
       "title": "Asset Index Structure",
-      "description":"The Asset Index structure is a hierarchy as follows: Market -> Categories -> Underlyings"
+      "description":"The Asset Index structure is a hierarchy as follows: Market -> Categories -> Underlyings",
+      "required": 1
     },
     "msg_type": {
       "type": "string",
-      "description": "asset_index"
+      "description": "asset_index",
+      "required": 1
     },
     "req_id": {
       "type": "integer",
       "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "asset_index",
-    "msg_type"
-  ]
+  }
 }

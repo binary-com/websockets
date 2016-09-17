@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "echo_req": {
+        "required": "1"
+    },
+    "get_self_exclusion": {
+      "type": "object",
+      "properties":{
+        "max_balance":{
+          "type": "integer",
+          "pattern": "^1000$",
+          "required": "1"
+        },
+        "max_turnover":{
+          "type": "integer",
+          "pattern": "^3000$",
+          "required": "1"
+        },
+        "max_losses":{
+          "type": "integer",
+          "pattern": "^5000$",
+          "required": "1"
+        },
+        "max_7day_turnover":{
+          "type": "integer",
+          "pattern": "^20$",
+          "required": "1"
+        },
+        "max_7day_losses":{
+          "type": "integer",
+          "pattern": "^400$",
+          "required": "1"
+        },
+        "max_30day_turnover":{
+          "type": "integer",
+          "pattern": "^7000$",
+          "required": "1"
+        },
+        "max_30day_losses":{
+          "type": "integer",
+          "pattern": "^50100$",
+          "required": "1"
+        },
+        "max_open_bets":{
+          "type": "integer",
+          "pattern": "^60$",
+          "required": "1"
+        },
+        "session_duration_limit":{
+          "type": "integer",
+          "pattern": "^36120$",
+          "required": "1"
+        }
+      },
+      "required": "1"
+    },
+    "msg_type": {
+      "type": "string",
+      "pattern": "^get_self_exclusion$",
+      "required": "1"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title":"MT5 user main password check",
+  "description": "This call validates the main password for the MT5 user",
+  "properties": {
+    "mt5_password_check": {
+      "type": "integer",
+      "description": "Must be 1",
+      "pattern": "^1$",
+      "required": "1"
+    },
+    "login": {
+      "type": "string",
+      "description": "MT5 user login",
+      "required": "1"
+    },
+    "password": {
+      "type": "string",
+      "description": "the master password of the account.",
+      "required": "1"
+    },
+    "passthrough": {
+      "type": "object",
+      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field to map request to response"
+    }
+  },
+  "additionalProperties": false
+}

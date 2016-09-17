@@ -6,7 +6,8 @@
   "properties": {
     "echo_req": {
       "title": "Echo request",
-      "description": "Echo of the request made"
+      "description": "Echo of the request made",
+      "required": 1
     },
     "get_account_status": {
       "type": "object",
@@ -15,30 +16,26 @@
         "status": {
           "type": "array",
           "description": "Account status. Possible status: authenticated (client is fully authenticated), age_verification (client is age-verified), cashier_locked (cashier is locked), disabled (account is disabled), unwelcome (client cannot deposit or buy contracts, but can withdraw or sell contracts), withdrawal_locked (deposits allowed but withdrawals locked), ukgc_funds_protection (client has acknowledged UKGC funds protection notice), jp_knowledge_test_pending (Japan client who hasn't done knowledge test), jp_knowledge_test_fail (Japan client who has failed knowledge test), jp_activation_pending (Japan client who has passed knowledge test but real money account still pending activation)",
+          "required": 1,
           "item": {
               "type": "string"
           }
         },
         "risk_classification": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Client risk classification: low, standard, high"
+          "type": "string",
+          "description": "Client risk classification: low, standard, high",
+          "required": 1
         }
       }
     },
     "msg_type": {
       "type": "string",
-      "description": "get_account_status"
+      "description": "get_account_status",
+      "required": 1
     },
     "req_id": {
       "type": "integer",
       "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "msg_type"
-  ]
+  }
 }

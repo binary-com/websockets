@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "echo_req": {
+            "required": "1"
+        },
+        "login_history": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "time": {
+                        "type": "integer",
+                        "required": "1"
+                    },
+                    "action": {
+                        "type": "string",
+                        "required": "1"
+                    },
+                    "environment": {
+                        "type":"string",
+                        "required": "1"
+                    },
+                    "status": {
+                        "type": "integer",
+                        "pattern": "^1$",
+                        "required": "1"
+                    }
+                }
+            },
+            "required": "1"
+        },
+        "msg_type":{
+            "type": "string",
+            "pattern": "^login_history$",
+            "required": "1"
+        }
+    }
+}

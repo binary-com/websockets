@@ -5,7 +5,8 @@
   "properties": {
     "echo_req": {
       "title":"Echo request",
-      "description":"Echo of the request made"
+      "description":"Echo of the request made",
+      "required": 1
     },
     "logout": {
       "type": "integer",
@@ -13,15 +14,12 @@
     },
     "msg_type": {
         "type": "string",
-        "description": "time"
+        "description": "time",
+        "required": 1
     },
     "req_id": {
       "type": "integer",
       "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "msg_type"
-  ]
+  }
 }

@@ -6,7 +6,8 @@
   "properties":{
     "echo_req":{
       "title":"Echo request",
-      "description":"Echo of the request made"
+      "description":"Echo of the request made",
+      "required": 1
     },
     "statement":{
         "type":"object",
@@ -59,8 +60,12 @@
                     "description": "Compact description of the contract purchased if description is set to 1"
                   },
                   "payout": {
-                    "type": "number",
+                    "type": ["number", "null"],
                     "description": "Payout price"
+                  },
+                  "app_id": {
+                    "type": ["integer", "null"],
+                    "description": "Id of an app where this transaction was performed. For example, it's 1 for binary.com."
                   }
                 }
               },
@@ -70,15 +75,12 @@
         },
     "msg_type":{
       "type":"string",
-      "description":"statement"
+      "description":"statement",
+      "required": 1
     },
     "req_id": {
       "type": "integer",
       "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required":[
-    "echo_req",
-    "msg_type"
-  ]
+  }
 }

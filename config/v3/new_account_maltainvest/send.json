@@ -16,12 +16,12 @@
     },
     "first_name": {
       "type": "string",
-      "pattern": "^[a-zA-Z\\s'.-]{2,30}$",
+      "pattern": "^[\\p{L}\\s'.-]{2,30}$",
       "description": "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes."
     },
     "last_name": {
       "type": "string",
-      "pattern": "^[a-zA-Z\\s'.-]{2,30}$",
+      "pattern": "^[\\p{L}\\s'.-]{2,30}$",
       "description": "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes."
     },
     "date_of_birth" : {
@@ -36,24 +36,22 @@
     },
     "address_line_1": {
       "type" : "string",
-      "minLength": 1,
-      "maxLength": 70,
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{1,70}$",
       "description": "Within 70 characters."
     },
     "address_line_2": {
       "type" : "string",
-      "maxLength": 70,
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{0,70}$",
       "description": "Optional field, within 70 characters."
     },
     "address_city": {
       "type" : "string",
-      "minLength": 1,
-      "maxLength": 35,
+      "pattern": "^[\\p{L}\\s'.-]{1,35}$",
       "description": "Within 35 characters"
     },
     "address_state": {
       "type" : "string",
-      "maxLength": 35,
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,35}$",
       "description": "Optional field, possible value receive from states_list call."
     },
     "address_postcode": {
@@ -157,12 +155,12 @@
       "required": 1
     },
     "net_income": {
-      "enum": [ "Less than $25,000", "$25,000 - $100,000", "$100,000 - $500,000", "Over $500,000" ],
+      "enum": [ "Less than $25,000", "$25,000 - $50,000", "$50,001 - $100,000", "$100,001 - $500,000", "Over $500,000" ],
       "description": "Net Annual Income",
       "required": 1
     },
     "estimated_worth": {
-      "enum": [ "Less than $100,000", "$100,000 - $250,000", "$250,000 - $1,000,000", "Over $1,000,000" ],
+      "enum": [ "Less than $100,000", "$100,000 - $250,000", "$250,001 - $500,000", "$500,001 - $1,000,000", "Over $1,000,000" ],
       "description": "Estimated Net Worth",
       "required": 1
     },

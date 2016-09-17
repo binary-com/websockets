@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Transfer Between Accounts Request",
-  "description": "This call allows transfers between accounts held by a given user with the 'malta' and 'maltainvest' Landing Companies only.",
+  "description": "This call allows transfers between accounts held by a given user with the 'malta' and 'maltainvest' Landing Companies or between sub account and master account for omnibus accounts.",
   "properties": {
     "transfer_between_accounts": {
       "type":"integer",

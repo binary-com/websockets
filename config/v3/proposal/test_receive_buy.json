@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "echo_req": {
+      "required": 1
+    },
+    "proposal": {
+      "type": "object",
+      "properties": {
+        "longcode": {
+          "type": "string",
+          "required": 1
+        },
+        "spot": {
+          "type": "number",
+          "pattern": "^\\d*\\.\\d*$",
+          "required": 1
+        },
+        "spot_time": {
+          "type": "integer",
+          "pattern": "^\\d{10}$",
+          "required": 1
+        },
+        "ask_price": {
+          "type": "number",
+          "pattern": "\\d*\\.\\d*",
+          "required": 1
+        },
+        "display_value": {
+          "type": "number",
+          "pattern": "\\d*\\.\\d{2}",
+          "required": 1
+        },
+        "date_start": {
+          "type": "integer",
+          "pattern": "^\\d{10}$",
+          "required": 1
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[0-9\\w-]{36}$",
+          "required": 1
+        },
+        "payout": {
+          "type": "number",
+          "pattern": "^100$",
+          "required": 1
+        }
+      },
+      "required": 1
+    },
+    "msg_type": {
+      "type": "string",
+      "pattern": "^proposal$",
+      "required": 1
+    }
+  }
+}

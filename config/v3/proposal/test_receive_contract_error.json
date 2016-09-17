@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "error": {
+            "type": "object",
+            "required": "1",
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "pattern": "^ContractCreationFailure$",
+                    "required": "1"
+                },
+                "message": {
+                    "type": "string",
+                    "pattern": "^Cannot create contract$",
+                    "required": "1"
+                }
+            }
+        },
+        "echo_req": {
+            "required": "1"
+        },
+        "msg_type": {
+            "type": "string",
+            "pattern": "^proposal$",
+            "required": "1"
+        }
+    }
+}

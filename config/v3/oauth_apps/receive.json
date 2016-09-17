@@ -6,7 +6,8 @@
   "properties": {
     "echo_req": {
       "title":"Echo request",
-      "description":"Echo of the request made"
+      "description":"Echo of the request made",
+      "required": 1
     },
     "oauth_apps": {
       "type": "array",
@@ -16,37 +17,42 @@
         "properties": {
           "name": {
             "type": "string",
-            "description":"Application name"
+            "description":"Application name",
+            "required": 1
           },
           "app_id": {
             "type": "integer",
-            "description":"Application id"
+            "description":"Application id",
+            "required": 1
           },
           "last_used": {
             "type": ["string", "null"],
-            "description":"Application last used"
+            "description":"Application last used",
+            "required": 1
           },
           "scopes": {
             "type": "array",
+            "required": 1,
             "items": {
               "type": "string"
             }
+          },
+          "app_markup_percentage": {
+            "type": "number",
+            "description": "Markup added to contract prices (as a percentage of contract payout)",
+            "required": 1
           }
         }
       }
     },
     "msg_type": {
       "type": "string",
-      "description": "oauth_apps"
+      "description": "oauth_apps",
+      "required": 1
     },
     "req_id": {
       "type": "integer",
       "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "oauth_apps",
-    "msg_type"
-  ]
+  }
 }

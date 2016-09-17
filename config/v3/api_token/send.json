@@ -28,6 +28,11 @@
       "pattern": "\\w+",
       "description": "The token to remove"
     },
+    "sub_account": {
+      "type": "string",
+      "pattern": "^[A-Z]{2,4}[0-9]{1,10}$",
+      "description": "[For omnibus accounts only] Loginid of sub account. If this field is present then it will create token for this sub account."
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."

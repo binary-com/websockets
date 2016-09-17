@@ -6,17 +6,14 @@
   "properties": {
     "echo_req": {
       "title": "Echo request",
-      "description": "Echo of the request made"
+      "description": "Echo of the request made",
+      "required": 1
     },
     "proposal_open_contract": {
       "type": "object",
       "title": "Open contract response",
       "description": "Latest price and other details for an open contract",
       "properties": {
-        "ask_price": {
-          "type": "number",
-          "description": "Price at which the contract may be purchased. Example: 5.14"
-        },
         "high_barrier": {
           "type": "number",
           "description": "High barrier of the contract (if any). Example: 42.123"
@@ -191,6 +188,38 @@
           "type": "integer",
           "description": "Epoch time of the sell spot. Note that since certain underlyings don't tick every second, the sell spot time may be a few seconds before the sell time. Example: 1446629000 (only present for contracts already sold)"
         },
+        "entry_level": {
+          "type": "number",
+          "description": "The value (points) at which this contract was opened. Only applicable for spreads."
+        },
+        "amount_per_point": {
+          "type": "string",
+          "description": "The dollar profit/loss per point of movement of the current value. Only applicable for spreads."
+        },
+        "stop_loss_level": {
+          "type": "number",
+          "description": "If the current level touches the stop loss level, then the contract will automatically be closed at the stop loss level. Only applicable for spreads."
+        },
+        "stop_profit_level": {
+          "type": "number",
+          "description": "If the current level touches the stop profit level, then the contract will automatically be closed at the stop profit level. Only applicable for spreads."
+        },
+        "current_level": {
+          "type": "number",
+          "description": "Current value of the underlying. Only applicable for spreads."
+        },
+        "exit_level": {
+          "type": ["number","null"],
+          "description": "The contract was closed at this level. Only applicable for spreads"
+        },
+        "current_value_in_dollar": {
+          "type": "number",
+          "description": "Current profit/loss in dollars. Only applicable for spreads."
+        },
+        "current_value_in_point": {
+          "type": "number",
+          "description": "Current profit or loss in points. Only applicable for spreads."
+        },
         "transaction_ids": {
           "type": "object",
           "title": "Transaction ids for contract",
@@ -216,10 +245,5 @@
       "type": "integer",
       "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "proposal_open_contract",
-    "msg_type"
-  ]
+  }
 }

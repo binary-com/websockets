@@ -22,7 +22,8 @@
         "type": "string",
         "pattern": "^(read|trade|payments|admin)$"
       },
-      "required": "1"
+      "required": "1",
+      "description": "Change scopes will revoke all user's grants and log them out."
     },
     "homepage":{
       "type": ["string", "null"],
@@ -49,6 +50,11 @@
       "pattern": "^(https?:\/\/)?(localhost:?\\d*\/?|([\\da-z\\.-]+)\\.([a-z\\.]{2,8})([\\/\\w \\.-]*)*\/?)$",
       "description":"Application redirect_uri",
       "required": "1"
+    },
+    "app_markup_percentage": {
+      "type": "number",
+      "pattern": "^([0-4](\\.[0-9][0-9]?)?|5(\\.00?)?)$",
+      "description": "Markup to be added to contract prices (as a percentage of contract payout). Min: 0, Max: 5"
     },
     "passthrough": {
       "type": "object",

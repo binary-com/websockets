@@ -86,12 +86,12 @@
       "required": "1"
     },
     "net_income": {
-      "enum": [ "Less than $25,000", "$25,000 - $100,000", "$100,000 - $500,000", "Over $500,000" ],
+      "enum": [ "Less than $25,000", "$25,000 - $50,000", "$50,001 - $100,000", "$100,001 - $500,000", "Over $500,000" ],
       "description": "Net Annual Income",
       "required": "1"
     },
     "estimated_worth": {
-      "enum": [ "Less than $100,000", "$100,000 - $250,000", "$250,000 - $1,000,000", "Over $1,000,000" ],
+      "enum": [ "Less than $100,000", "$100,000 - $250,000", "$250,001 - $500,000", "$500,001 - $1,000,000", "Over $1,000,000" ],
       "description": "Estimated Net Worth",
       "required": "1"
     },

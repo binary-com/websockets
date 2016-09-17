@@ -5,7 +5,8 @@
   "properties": {
     "echo_req": {
       "title": "Echo request",
-      "description": "Echo of the request made"
+      "description": "Echo of the request made",
+      "required": 1
     },
     "forget_all": {
     	"type": "array",
@@ -13,7 +14,8 @@
     },
     "msg_type": {
         "type": "string",
-        "description": "forget_all"
+        "description": "forget_all",
+        "required": 1
     },
     "req_id": {
         "type": "integer",

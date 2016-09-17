@@ -1,0 +1,38 @@
+---
+layout: page
+permalink: omnibus/
+---
+
+<h1>Omnibus account facilities</h1>
+
+<h2>
+    What is an Omnibus Broker?
+</h2>
+<p>
+    The Omnibus Broker facility is available to approved Binary.com partners, who are appropriately licensed and regulated brokers.
+    In the Omnibus Broker account structure, all trades are placed by you on behalf of your clients, who are unknown to Binary.com.
+</p>
+
+<h2>
+    How do I apply to become an Omnibus Broker?
+</h2>
+<p>
+    If you are a licensed and regulated broker in your home jurisdiction, you may apply by contacting our <a href="mailto:affiliates@binary.com">Affiliate Manager</a>.
+</p>
+
+<h2>
+    How does the Omnibus Broker facility work?
+</h2>
+<p>
+    Once approved, your Binary.com account becomes the <b>omnibus master account</b>. All incoming deposits and outgoing withdrawals should be made from this account.
+    You may then create <a href="https://developers.binary.com/api/#new_sub_account">sub-accounts</a> which will hold records of the trades made on behalf of your clients.
+    You may transfer funds to/from your master account and sub-accounts using the <a href="https://developers.binary.com/api/#transfer_between_accounts">account transfers</a> call.
+</p>
+
+<h2>
+    Transacting on sub-accounts
+</h2>
+<p>
+    To create transactions in sub-accounts, you will need to use the <a href="https://developers.binary.com/api/#api_token">API token</a> facilities.
+    The Oauth facility does not work with sub-accounts.
+</p>

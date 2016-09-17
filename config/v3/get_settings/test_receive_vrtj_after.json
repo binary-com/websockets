@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "echo_req": {
+        "required": "1"
+    },
+    "get_settings": {
+      "type": "object",
+      "properties":{
+        "email":{
+          "type": "string",
+          "pattern": "^[_2]$",
+          "required": "1"
+        },
+        "country":{
+          "type": "string",
+          "pattern": "^Japan$",
+          "required": "1"
+        },
+        "country_code":{
+          "type": "string",
+          "pattern": "^jp$",
+          "required": "1"
+        },
+        "jp_account_status": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "pattern": "^[_1]$",
+              "required": "1"
+            }
+          },
+          "required": "1"
+        }
+      },
+      "required": "1"
+    },
+    "msg_type": {
+      "type": "string",
+      "pattern": "^get_settings$",
+      "required": "1"
+    }
+  }
+}

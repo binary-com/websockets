@@ -1,0 +1,155 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "echo_req": {
+            "required": "1"
+        },
+        "get_limits": {
+            "type": "object",
+            "properties": {
+                "account_balance": {
+                  "type": "integer",
+                  "pattern": "^300000$",
+                  "required": "1"
+                },
+                "lifetime_limit": {
+                  "type": "integer",
+                  "pattern": "^10000$",
+                  "required": "1"
+                },
+                "market_specific": {
+                  "type": "object",
+                  "properties": {
+                      "commodities": {
+                          "type": "array",
+                          "items": {
+                              "type": "object",
+                              "properties": {
+                                  "name": {
+                                      "type": "string",
+                                      "pattern": "^Commodities$"
+                                  },
+                                  "turnover_limit": {
+                                      "type": "integer",
+                                      "pattern": "^50000$"
+                                  }
+                              }
+                          },
+                          "required": "1"
+                      },
+                      "forex": {
+                          "type": "array",
+                          "items": {
+                              "type": "object",
+                              "properties": {
+                                  "name": {
+                                      "type": "string",
+                                      "pattern": "^(Major Pairs|Minor Pairs|Smart FX)$"
+                                  },
+                                  "turnover_limit": {
+                                      "type": "integer",
+                                      "pattern": "^(100000|50000)$"
+                                  }
+                              }
+                          },
+                          "required": "1"
+                      },
+                      "indices": {
+                          "type": "array",
+                          "items": {
+                              "type": "object",
+                              "properties": {
+                                  "name": {
+                                      "type": "string",
+                                      "pattern": "^Indices$"
+                                  },
+                                  "turnover_limit": {
+                                      "type": "integer",
+                                      "pattern": "^100000$"
+                                  }
+                              }
+                          },
+                          "required": "1"
+                      },
+                      "stocks": {
+                          "type": "array",
+                          "items": {
+                              "type": "object",
+                              "properties": {
+                                  "name": {
+                                      "type": "string",
+                                      "pattern": "^OTC Stocks$"
+                                  },
+                                  "turnover_limit": {
+                                      "type": "integer",
+                                      "pattern": "^10000$"
+                                  }
+                              }
+                          },
+                          "required": "1"
+                      },
+                      "volidx": {
+                          "type": "array",
+                          "items": {
+                              "type": "object",
+                              "properties": {
+                                  "name": {
+                                      "type": "string",
+                                      "pattern": "^Volatility Indices$"
+                                  },
+                                  "turnover_limit": {
+                                      "type": "integer",
+                                      "pattern": "^500000$"
+                                  }
+                              }
+                          },
+                          "required": "1"
+                      }
+                  }
+                },
+                "num_of_days": {
+                  "type": "integer",
+                  "pattern": "^30$",
+                  "required": "1"
+                },
+                "num_of_days_limit": {
+                  "type": "integer",
+                  "pattern": "^10000$",
+                  "required": "1"
+                },
+                "open_positions": {
+                  "type": "integer",
+                  "pattern": "^60$",
+                  "required": "1"
+                },
+                "payout": {
+                  "type": "integer",
+                  "pattern": "^100000$",
+                  "required": "1"
+                },
+                "remainder": {
+                  "type": "integer",
+                  "pattern": "^10000$",
+                  "required": "1"
+                },
+                "withdrawal_for_x_days_monetary": {
+                  "type": "integer",
+                  "pattern": "^0$",
+                  "required": "1"
+                },
+                "withdrawal_since_inception_monetary": {
+                  "type": "integer",
+                  "pattern": "^0$",
+                  "required": "1"
+                }
+            },
+            "required": "1"
+        },
+        "msg_type":{
+            "type": "string",
+            "pattern": "^get_limits$",
+            "required": "1"
+        }
+    }
+}

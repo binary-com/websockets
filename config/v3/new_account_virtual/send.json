@@ -33,6 +33,21 @@
       "pattern": "^[\\w-]{0,32}$",
       "description": "Affiliate token, within 32 characters."
     },
+    "utm_source": {
+      "type": "string",
+      "description": "Optional field to identify the source of traffic such as: search engine, newsletter, or other referral",
+      "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+    },
+    "utm_medium": {
+      "type": "string",
+      "description": "Optional field to identify the medium the link was used upon such as: email, CPC, or other methods of sharing",
+      "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+    },
+    "utm_campaign": {
+      "type": "string",
+      "description": "Optional field to identify a specific product promotion or strategic campaign such as a spring sale or other promotions",
+      "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."

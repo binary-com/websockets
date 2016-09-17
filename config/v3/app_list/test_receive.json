@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "echo_req": {
+        "required": "1"
+    },
+    "app_list": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+            "name": {
+              "type": "string",
+              "pattern": "^.+$",
+              "required": "1"
+            },
+            "app_id": {
+              "type": "integer",
+              "pattern": "(?!^[_1]$)(^.*$)",
+              "required": "1"
+            },
+            "scopes": {
+              "type": "array",
+              "minItem": 1,
+              "maxItem": 4,
+              "items": {
+                "type": "string",
+                "pattern": "^(read|trade|payments|admin)$"
+              },
+              "required": "1"
+            },
+            "redirect_uri": {
+              "type": "string",
+              "required": "1"
+            },
+            "homepage": {
+              "type": ["string", "null"],
+              "required": "1"
+            },
+            "github": {
+              "type": ["string", "null"],
+              "required": "1"
+            },
+            "appstore": {
+              "type": ["string", "null"],
+              "required": "1"
+            },
+            "googleplay": {
+              "type": ["string", "null"],
+              "required": "1"
+            },
+            "app_markup_percentage": {
+              "type": "number",
+              "required": "1"
+            }
+        }
+      },
+      "required": "1"
+    },
+    "msg_type": {
+      "type": "string",
+      "pattern": "^app_list$",
+      "required": "1"
+    }
+  }
+}

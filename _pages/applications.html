@@ -48,25 +48,33 @@ permalink: applications/
                       <input id="application-googleplay" type="text" maxlength="255" />
                   </div>
                   <div>
+                      <label for="application-markup">
+                          <span data-balloon="Percentage to be added to pricing of contracts" data-balloon-length="medium">Markup Percentage</span>: (minimum 0.00 and maximum 5.00)
+                      </label>
+                  </div>
+                  <div>
+                      <input id="application-markup" type="text" maxlength="4" />
+                  </div>
+                  <div>
                       <label>Scopes:</label>
                       <em class="required_asterisk">*</em>
                   </div>
                   <div class="scopes">
                     <div>
-                        <input id="read-scope" name="scopes[]" type="checkbox" value="read" checked="checked" />
-                        <label for="read-scope">Read (view account activity)</label>
+                        <input id="read-scope" type="checkbox" value="read" checked="checked" />
+                        <label for="read-scope">Read: View account activity</label>
                     </div>
                     <div>
-                        <input id="trade-scope" name="scopes[]" type="checkbox" value="trade" />
-                        <label for="trade-scope">Trade (buy and sell contracts)</label>
+                        <input id="trade-scope" type="checkbox" value="trade" />
+                        <label for="trade-scope">Trade: Buy and sell contracts</label>
                     </div>
                     <div>
-                        <input id="payments-scope" name="scopes[]" type="checkbox" value="payments" />
-                        <label for="payments-scope">Payments (open accounts, manage tokens)</label>
+                        <input id="payments-scope" type="checkbox" value="payments" />
+                        <label for="payments-scope">Payments: Cashier (Deposit, Withdraw)</label>
                     </div>
                     <div>
-                        <input id="admin-scope" name="scopes[]" type="checkbox" value="admin" />
-                        <label for="payments-scope">Admin (transfer or withdraw funds, set passwords)</label>
+                        <input id="admin-scope" type="checkbox" value="admin" />
+                        <label for="payments-scope">Admin: API token management , Application management</label>
                     </div>
                   </div>
                   <div class="application_buttons">

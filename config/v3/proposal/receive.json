@@ -5,7 +5,8 @@
   "properties": {
     "echo_req": {
       "title":"Echo request",
-      "description":"Echo of the request made"
+      "description":"Echo of the request made",
+      "required": 1
     },
     "proposal": {
       "type": "object",
@@ -14,35 +15,43 @@
       "properties": {
         "longcode": {
           "type": "string",
-          "description": "Example: Win payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time."
+          "description": "Example: Win payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time.",
+          "required": 1
         },
         "spot": {
           "type": "number",
-          "description": "Spot value (if there are no Exchange data-feed licensing restrictions for the underlying symbol). Example: 9874.52"
+          "description": "Spot value (if there are no Exchange data-feed licensing restrictions for the underlying symbol). Example: 9874.52",
+          "required": 1
         },
         "spot_time": {
           "type": "integer",
-          "description": "Example: 1439999052"
+          "description": "Example: 1439999052",
+          "required": 1
         },
         "ask_price": {
           "type": "number",
-          "description": "Example: 5.14"
+          "description": "Example: 5.14",
+          "required": 1
         },
         "display_value": {
           "type": "number",
-          "description": "Example: 5.14, same as ask_price except for spread contracts"
+          "description": "Example: 5.14, same as ask_price except for spread contracts",
+          "required": 1
         },
         "date_start": {
           "type": "integer",
-          "description": "Example: 1439999053"
+          "description": "Example: 1439999053",
+          "required": 1
         },
         "id": {
           "type": "string",
-          "description": "A stream id that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579"
+          "description": "A stream id that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579",
+          "required": 1
         },
         "payout": {
           "type": "number",
-          "description": "Example: 10"
+          "description": "Example: 10",
+          "required": 1
         },
         "spread": {
           "type": "number",
@@ -52,16 +61,12 @@
     },
     "msg_type": {
       "type": "string",
-      "description": "proposal"
+      "description": "proposal",
+      "required": 1
     },
     "req_id": {
       "type": "integer",
       "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "proposal",
-    "msg_type"
-  ]
+  }
 }

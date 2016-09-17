@@ -6,7 +6,8 @@
   "properties": {
     "echo_req": {
       "title":"Echo request",
-      "description":"Echo of the request made"
+      "description":"Echo of the request made",
+      "required": 1
     },
     "new_account_japan": {
       "type": "object",
@@ -15,11 +16,13 @@
       "properties": {
         "client_id": {
           "type": "string",
-          "description": "Client id of new Japan account"
+          "description": "Client id of new Japan account",
+          "required": 1
         },
         "landing_company": {
           "type": "string",
-          "description": "landing company full name"
+          "description": "landing company full name",
+          "required": 1
         },
         "landing_company_short": {
           "type": "string",
@@ -27,21 +30,19 @@
         },
         "oauth_token": {
           "type": "string",
-          "description": "oauth token for client's login session"
+          "description": "oauth token for client's login session",
+          "required": 1
         }
       }
     },
     "msg_type": {
       "type": "string",
-      "description": "new_account_japan"
+      "description": "new_account_japan",
+      "required": 1
     },
     "req_id": {
       "type": "integer",
       "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "msg_type"
-  ]
+  }
 }

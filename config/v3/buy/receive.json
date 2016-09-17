@@ -6,7 +6,8 @@
   "properties": {
     "echo_req": {
       "title":"Echo request",
-      "description":"Echo of the request made"
+      "description":"Echo of the request made",
+      "required": 1
     },
     "buy": {
       "type": "object",
@@ -15,35 +16,43 @@
       "properties": {
         "balance_after": {
           "type": "number",
-          "description":"The new account balance after completion of the purchase"
+          "description":"The new account balance after completion of the purchase",
+          "required": 1
         },
         "longcode": {
           "type": "string",
-          "description": "The description of contract purchased"
+          "description": "The description of contract purchased",
+          "required": 1
         },
         "shortcode": {
           "type": "string",
-          "description": "Compact description of the contract purchased"
+          "description": "Compact description of the contract purchased",
+          "required": 1
         },
         "start_time": {
           "type": "integer",
-          "description":"Epoch value showing the expected start time of the contract"
+          "description":"Epoch value showing the expected start time of the contract",
+          "required": 1
         },
         "contract_id": {
           "type": "integer",
-          "description":"Internal contract identifier"
+          "description":"Internal contract identifier",
+          "required": 1
         },
         "buy_price": {
           "type": "number",
-          "description":"Actual effected purchase price"
+          "description":"Actual effected purchase price",
+          "required": 1
         },
         "purchase_time": {
           "type": "integer",
-          "description":"Epoch value of the transaction purchase time"
+          "description":"Epoch value of the transaction purchase time",
+          "required": 1
         },
         "transaction_id": {
           "type": "integer",
-          "description":"Internal transaction identifier"
+          "description":"Internal transaction identifier",
+          "required": 1
         },
         "amount_per_point": {
           "type": "number",
@@ -59,22 +68,19 @@
         },
         "payout": {
             "type": "number",
-            "description": "Proposed payout value"
+            "description": "Proposed payout value",
+            "required": 1
         }
       }
     },
     "msg_type": {
       "type": "string",
-      "description":"buy"
+      "description":"buy",
+      "required": 1
     },
     "req_id": {
       "type": "integer",
       "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "buy",
-    "msg_type"
-  ]
+  }
 }
