@@ -48,7 +48,7 @@
       "description":"Duration quantity"
     },
     "duration_unit": {
-      "description":"Duration unit is s(seconds), m(minutes), h(hours), d(days), t(ticks)",
+      "description":"Duration unit is s(seconds), m(minutes), h(hours), d(days), t(ticks). If this parameter is not set then duration will be counted as seconds.",
       "enum": ["d", "m", "s", "h", "t"]
     },
     "symbol": {
