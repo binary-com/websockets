@@ -9,6 +9,11 @@
       "required": "1",
       "description": "either deposit or withdraw, default to deposit"
     },
+    "provider": {
+      "enum": ["doughflow", "epg"],
+      "default": "doughflow",
+      "description": "Note only doughflow is supported currently, epg is only for test."
+    },
     "verification_code": {
       "type": "string",
       "description": "Email verification code (received from a verify_email call, which must be done first)",
