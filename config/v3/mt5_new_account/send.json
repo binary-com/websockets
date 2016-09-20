@@ -23,7 +23,7 @@
     },
     "name": {
       "type": "string",
-      "maxLength": 128,
+       "pattern": "^[\\p{L}\\s'.-]{1,128}$",
       "description": "Client's name. The maximum length of name is 128 characters.",
       "required": "1"
     },
@@ -70,13 +70,13 @@
     },
     "company": {
       "type" : "string",
-      "maxLength": 64,
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{0,64}$",
       "description": "Name of the client's company. The maximum length of the company name is 64 characters. Optional field."
     },
     "phone": {
       "type" : "string",
-      "maxLength": 50,
-      "description": "User's phone number. Optional field."
+      "pattern": "^\\+?\\d{0,50}$",
+      "description": "User's phone number. Optional field. Max length 50"
     },
     "phonePassword": {
       "type": "string",
