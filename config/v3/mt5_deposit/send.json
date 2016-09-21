@@ -23,6 +23,9 @@
     },
     "amount": {
       "type": "number",
+      "minimum": 1,
+      "maximum": 20001,
+      "description": "Amount to deposit. Min 1, max 20000.",
       "required": "1"
     },
     "passthrough": {
