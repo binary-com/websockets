@@ -97,6 +97,11 @@
           "type": "integer",
           "description": "Whether the contract is expired or not. Boolean value 1 or 0"
         },
+        "is_settleable": {
+          "type": "integer",
+          "description": "Whether the contract is settleable or not. Boolean value 1 or 0"
+        },
+
         "is_forward_starting": {
           "type": "integer",
           "description": "Whether the contract is forward-starting or not. Boolean value 1 or 0"
