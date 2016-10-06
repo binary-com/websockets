@@ -48,6 +48,11 @@
       "description": "Optional field to identify a specific product promotion or strategic campaign such as a spring sale or other promotions",
       "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
     },
+    "email_consent": {
+      "type": "integer",
+      "pattern": "^(0|1)$",
+      "description": "Boolean value 1 or 0, indicating permission to use email address for any contact which may include marketing"
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."

@@ -82,6 +82,11 @@
                   "type": "string",
                   "pattern": "^Peter$",
                   "required": "1"
+                },
+                "email_consent": {
+                    "type": "integer",
+                    "pattern": "^(0|1)$",
+                    "required": "1"
                 }
             },
             "required": "1"

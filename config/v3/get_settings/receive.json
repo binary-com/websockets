@@ -70,6 +70,10 @@
           "type": "integer",
           "description": "Boolean value 1 or 0, indicating whether is payment agent (note: not applicable for virtual money accounts)"
         },
+        "email_consent": {
+          "type": "integer",
+          "description": "Boolean value 1 or 0, indicating permission to use email address for any contact which may include marketing"
+        },
         "jp_account_status": {
           "type": "object",
           "title": "Japan real money account status",
