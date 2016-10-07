@@ -38,12 +38,12 @@
                             "properties": {
                                 "minutely": {
                                     "type": "number",
-                                    "pattern": "^60$",
+                                    "pattern": "^1320$",
                                     "required": "1"
                                 },
                                 "hourly": {
                                     "type": "number",
-                                    "pattern": "^3600$",
+                                    "pattern": "^79200$",
                                     "required": "1"
                                 },
                                 "applies_to": {
@@ -58,12 +58,12 @@
                             "properties": {
                                 "minutely": {
                                     "type": "number",
-                                    "pattern": "^60$",
+                                    "pattern": "^1320$",
                                     "required": "1"
                                 },
                                 "hourly": {
                                     "type": "number",
-                                    "pattern": "^3600$",
+                                    "pattern": "^79200$",
                                     "required": "1"
                                 },
                                 "applies_to": {
@@ -78,12 +78,12 @@
                             "properties": {
                                 "minutely": {
                                     "type": "number",
-                                    "pattern": "^240$",
+                                    "pattern": "^5280$",
                                     "required": "1"
                                 },
                                 "hourly": {
                                     "type": "number",
-                                    "pattern": "^14400$",
+                                    "pattern": "^316800$",
                                     "required": "1"
                                 },
                                 "applies_to": {
