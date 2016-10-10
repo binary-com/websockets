@@ -13,6 +13,12 @@
                     "type": "string",
                     "required": "1"
                 },
+                "supported_languages": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "api_call_limits": {
                     "type": "object",
                     "required": "1",

@@ -23,6 +23,13 @@
         "clients_country": {
           "type": "string",
           "description": "Country code of connected IP"
+        },
+        "supported_languages": {
+          "type": "array",
+          "description": "Provides codes for languages supported",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
