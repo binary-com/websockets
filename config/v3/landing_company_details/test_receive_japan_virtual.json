@@ -21,7 +21,7 @@
                 },
                 "country": {
                     "type": "string",
-                    "pattern": "^Antarctica$",
+                    "pattern": "^Japan$",
                     "required": "1"
                 },
                 "legal_default_currency": {
