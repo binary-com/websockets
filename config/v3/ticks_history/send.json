@@ -22,8 +22,8 @@
     },
     "count": {
       "type": "integer",
-      "description": "An upper limit on ticks to receive (default: 500)",
-      "default": "500"
+      "description": "An upper limit on ticks to receive (default: 5000)",
+      "default": "5000"
     },
     "style": {
       "enum": ["candles", "ticks"],
