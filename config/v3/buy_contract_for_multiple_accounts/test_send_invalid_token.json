@@ -1,0 +1,8 @@
+{
+  "buy_contract_for_multiple_accounts": "[_1]",
+  "price": 100,
+  "tokens": [
+    "[_2]",
+    "[_3]"
+  ]
+}

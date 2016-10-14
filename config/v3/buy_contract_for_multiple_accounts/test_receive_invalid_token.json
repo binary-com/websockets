@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Buy a Contract for multiple Accounts Receive",
+  "description": "A message with transaction results is received",
+  "properties": {
+    "buy_contract_for_multiple_accounts": {
+      "type": "object",
+      "title": "Receipt confirmation",
+      "description": "Receipt confirmation for the purchase",
+      "properties": {
+        "result": {
+          "type": "array",
+          "required": "1",
+          "items": {
+            "type": "object",
+            "title": "1 schema.",
+            "description": "An explanation about the purpose of this instance.",
+            "properties": {
+              "code": {
+                "type": "string",
+                "description": "Error code"
+              },
+              "message_to_client": {
+                "type": "string",
+                "description": "Message to client"
+              },
+              "token": {
+                "type": "string",
+                "description": "Token returned"
+              }
+            }
+          }
+        }
+      }
+    }
+      
+    },
+    "msg_type": {
+      "type": "string",
+      "title": "buy_contract_for_multiple_accounts",
+      "description": "buy_contract_for_multiple_accounts"
+    }
+  }
