@@ -31,7 +31,16 @@
         },
         "landing_company_name": {
           "type": "string",
-          "description": "Landing company the account belongs to"
+          "description": "Landing company shortcode the account belongs to"
+        },
+        "landing_company_fullname": {
+          "type": "string",
+          "description": "Landing company name the account belongs to"
+        },
+        "country":{
+          "type": "string",
+          "description": "2-letter country code ISO standard",
+          "pattern": "^[a-z]{2}$"
         },
         "fullname": {
           "type": "string",

@@ -38,6 +38,16 @@
           "pattern": "^costarica$",
           "required": "1"
         },
+        "landing_company_fullname": {
+          "type": "string",
+          "pattern": "^Binary \\(C\\.R\\.\\) S\\.A\\.$",
+          "required": "1"
+        },
+        "country": {
+          "type": "string",
+          "pattern": "^[a-z]{2}$",
+          "required": "1"
+        },
         "fullname": {
           "type": "string",
           "pattern": "^Mr Peter Pan$",

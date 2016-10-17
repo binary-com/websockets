@@ -38,6 +38,16 @@
           "pattern": "^malta$",
           "required": "1"
         },
+        "landing_company_fullname": {
+          "type": "string",
+          "pattern": "^Binary \\(Europe\\) Ltd$",
+          "required": "1"
+        },
+        "country": {
+          "type": "string",
+          "pattern": "^[a-z]{2}$",
+          "required": "1"
+        },
         "fullname": {
           "type": "string",
           "pattern": "^Mr Jack Pan$",
