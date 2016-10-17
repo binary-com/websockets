@@ -43,7 +43,7 @@
                 },
                 "country": {
                   "type": "string",
-                  "pattern": "^[a-z]{2}$",
+                  "pattern": "^[a-z]{0,2}$",
                   "required": "1"
                 },
                 "fullname": {

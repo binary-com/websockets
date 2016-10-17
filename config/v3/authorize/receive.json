@@ -39,8 +39,8 @@
         },
         "country":{
           "type": "string",
-          "description": "2-letter country code ISO standard",
-          "pattern": "^[a-z]{2}$"
+          "pattern": "^[a-z]{0,2}$",
+          "description": "2-letter country code ISO standard"
         },
         "fullname": {
           "type": "string",
