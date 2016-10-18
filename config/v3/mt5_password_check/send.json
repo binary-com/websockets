@@ -13,6 +13,7 @@
     "login": {
       "type": "string",
       "description": "MT5 user login",
+      "pattern": "^\\w{1,10}$",
       "required": "1"
     },
     "password": {
