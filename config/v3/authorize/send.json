@@ -10,6 +10,11 @@
       "description": "Authentication token. May be retrieved from https://www.binary.com/en/user/security/api_tokenws.html",
       "required": "1"
     },
+    "add_to_login_history": {
+      "type": "integer",
+      "description": "Optional field, send this when you use api tokens for authorization and want to track activity using login_history call",
+      "pattern": "^(1|0)$"
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
