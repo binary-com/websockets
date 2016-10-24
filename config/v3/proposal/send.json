@@ -83,6 +83,10 @@
       "type": "number",
       "description":"[For spread contracts only] Stop loss amount"
     },
+    "trading_period_start": {
+      "type": "integer",
+      "description":"[For japan only] An epoch value of a predefined trading period start time"
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
