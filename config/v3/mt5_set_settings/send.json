@@ -65,12 +65,12 @@
     },
     "phone": {
       "type" : "string",
-      "maxLength": 50,
+      "pattern": "^\\+?[\\d\\)\\(\\- ]{0,50}$",
       "description": "User's phone number. Optional field."
     },
     "phonePassword": {
       "type": "string",
-      "pattern": "^\\+?\\d{0,50}$",
+      "pattern": "^[ -~]{0,32}$",
       "description": "the user's phone password."
     },
     "passthrough": {

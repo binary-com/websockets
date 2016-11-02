@@ -72,6 +72,7 @@
       "type": "string",
       "minLength": 4,
       "maxLength": 50,
+      "pattern": "^[\\w\\-\\,\\.\\' ]+",
       "description": "Answer to secret question, within 4-50 characters."
     },
     "affiliate_token": {
