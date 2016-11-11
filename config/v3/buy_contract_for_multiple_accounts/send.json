@@ -19,6 +19,7 @@
       "type": "array",
       "items": {
         "type": "string",
+        "pattern": "^[\\w\\s-]+$",
         "description": "API tokens identifying the accounts for which the contract is bought. Note, if the same token appears multiple times or if multiple tokens designate the same account, the contract is bought multiple times for this account."
       },
       "required": "1"
