@@ -12,12 +12,13 @@
     },
     "end": {
       "type": "string",
-      "pattern": "^(latest|\\d+)$",
+      "pattern": "^(latest|\\d{10})$",
       "description": "Epoch value representing the end-datetime of the ticks. If non-numeric value (e.g. \"latest\", the end-datetime will be the latest available timestamp.",
       "required": "1"
     },
     "start": {
       "type": "integer",
+      "pattern": "^\\d{10}$",
       "description": "Epoch value representing the start-datetime of the ticks (For styles: 'ticks', it will default to 1 day ago. For styles: 'candle', it will default to 1 day ago if count or granularity is undef )"
     },
     "count": {

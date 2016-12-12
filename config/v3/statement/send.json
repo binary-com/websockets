@@ -25,10 +25,12 @@
     },
     "date_from": {
       "type": "integer",
+      "pattern": "^\\d{10}$",
       "description": "Optional start date (epoch)"
     },
     "date_to": {
       "type": "integer",
+      "pattern": "^\\d{10}$",
       "description": "Optional end date (epoch)"
     },
     "action_type": {
