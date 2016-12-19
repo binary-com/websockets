@@ -30,6 +30,10 @@
           "type": "number",
           "description": "Maximum aggregate payouts on open positions"
         },
+        "payout_per_symbol_and_contract_type": {
+          "type": "number",
+          "description": "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
+        },
         "lifetime_limit": {
           "type": "number",
           "description": "Lifetime withdrawal limit"
