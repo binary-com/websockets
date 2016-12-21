@@ -20,6 +20,37 @@
       "description": "Result status of knowledge test, whether pass / fail.",
       "required": "1"
     },
+    "questions": {
+      "title":"Questions list",
+      "description":"List of 20 questions presented to the client",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties":{
+          "id":{
+            "type":"integer",
+            "description":"question id"
+          },
+          "question":{
+            "type":"string",
+            "pattern":"^[\\w\\d\\s//,.:;-()'?%{}]*$",
+            "description":"The question"
+          },
+          "answer":{
+            "type": "integer",
+            "description":"Given answer"
+          },
+          "pass":{
+            "type": "integer",
+            "description":"Whether given answer is correct"
+          },
+          "category":{
+            "type": "integer",
+            "description":"Category of the question"
+          }
+        }
+      }
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
