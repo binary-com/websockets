@@ -41,12 +41,12 @@
         },
         "date_start": {
           "type":  "integer",
-          "pattern": "^\\d{10}$",
+          "pattern": "^\\d{1,10}$",
           "description":"For forward-starting contracts, epoch value of the starting time of the contract."
         },
         "date_expiry": {
           "type":  "integer",
-          "pattern": "^\\d{10}$",
+          "pattern": "^\\d{1,10}$",
           "description":"Epoch value of the expiry time of the contract. You must either specify date_expiry or duration."
         },
         "duration": {
@@ -91,7 +91,7 @@
         },
         "trading_period_start": {
           "type": "integer",
-          "pattern": "^\\d{10}$",
+          "pattern": "^\\d{1,10}$",
           "description":"[For japan only] An epoch value of a predefined trading period start time"
         }
       }
