@@ -1,0 +1,15 @@
+{
+    "proposal":1,
+    "subscribe":1,
+    "basis":"payout",
+    "amount":1,
+    "currency":"USD",
+    "symbol":"frxAUDUSD",
+    "req_id":3,
+    "date_expiry":"1480712400",
+    "trading_period_start":"1480291200",
+    "contract_type":"UPORDOWN",
+    "barriers":[{"barrier":0.7582,"barrier2":0.7303},
+                {"barrier":0.7551,"barrier2":0.7334}],
+    "passthrough":{}
+}
