@@ -111,6 +111,11 @@
       },
       "additionalProperties": false
     },
+    "allow_copiers": {
+      "type": "integer",
+      "pattern": "^(0|1)$",
+      "description": "Boolean value 1 or 0, indicating permission to allow others to follow your trades. Note: not applicable for Virtual account. Only allow for real money account."
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
