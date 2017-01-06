@@ -17,7 +17,7 @@
     "landing_company": {
       "type": "string",
       "description": "Optional landing company field. If you specify this field, only symbols available for trading by that landing company will be returned.",
-      "pattern": "^(japan|costarica|malta|maltainvest|iom)$"
+      "pattern": "^(japan|costarica|malta|maltainvest|iom|champion)$"
     },
     "req_id": {
       "type": "integer",
