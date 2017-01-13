@@ -165,6 +165,11 @@
       "description": "Estimated Net Worth",
       "required": 1
     },
+    "occupation": {
+      "enum": ["Chief Executives, Senior Officials and Legislators", "Managers", "Professionals", "Clerks", "Personal Care, Sales and Service Workers", "Agricultural, Forestry and Fishery Workers", "Craft, Metal, Electrical and Electronics Workers", "Plant and Machine Operators and Assemblers", "Cleaners and Helpers", "Mining, Construction, Manufacturing and Transport Workers", "Armed Forces", "Government Officers", "Others"],
+      "description": "Occupation",
+      "required": "1"
+    },
     "accept_risk" : {
       "type": "integer",
       "description": "Show whether client has accepted risk disclaimer, boolean value 1 or 0",
