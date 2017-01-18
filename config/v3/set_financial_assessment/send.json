@@ -95,11 +95,6 @@
       "description": "Estimated Net Worth",
       "required": "1"
     },
-    "occupation": {
-      "enum": ["Chief Executives, Senior Officials and Legislators", "Managers", "Professionals", "Clerks", "Personal Care, Sales and Service Workers", "Agricultural, Forestry and Fishery Workers", "Craft, Metal, Electrical and Electronics Workers", "Plant and Machine Operators and Assemblers", "Cleaners and Helpers", "Mining, Construction, Manufacturing and Transport Workers", "Armed Forces", "Government Officers", "Others"],
-      "description": "Occupation",
-      "required": "1"
-    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."

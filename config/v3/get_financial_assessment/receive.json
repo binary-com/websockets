@@ -85,10 +85,6 @@
         "estimated_worth": {
           "type": "string",
           "description": "Estimated Net Worth"
-        },
-        "occupation": {
-          "type": "string",
-          "description": "Occupation"
         }
       }
     },
