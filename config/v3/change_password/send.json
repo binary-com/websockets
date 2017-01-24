@@ -12,8 +12,8 @@
     },
     "old_password": {
       "type": "string",
-      "pattern": "^[ -~]{6,25}$",
-      "description": "Old password for validation (length within 6-25 chars, accepts any printable ASCII character)",
+      "pattern": "^[ -~]+$",
+      "description": "Old password for validation (non-empty string, accepts any printable ASCII character)",
       "required": "1"
     },
     "new_password": {
