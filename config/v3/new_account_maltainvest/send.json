@@ -12,32 +12,44 @@
     },
     "salutation" : {
       "enum": ["Mr", "Mrs", "Ms", "Miss"],
-      "description": "Accept any value in enum list."
+      "description": "Accept any value in enum list.",
+      "required": "1"
     },
     "first_name": {
       "type": "string",
       "pattern": "^[\\p{L}\\s'.-]{2,30}$",
-      "description": "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes."
+      "description": "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+      "required": "1"
     },
     "last_name": {
       "type": "string",
       "pattern": "^[\\p{L}\\s'.-]{2,30}$",
-      "description": "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes."
+      "description": "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+      "required": "1"
     },
     "date_of_birth" : {
       "type": "string",
       "pattern": "^\\d{4}-\\d\\d?-\\d\\d?$",
-      "description": "Date of birth format: yyyy-mm-dd."
+      "description": "Date of birth format: yyyy-mm-dd.",
+      "required": "1"
     },
     "residence" : {
       "type" : "string",
       "pattern": "^[a-z]{2}$",
-      "description": "2-letter country code, possible value receive from residence_list call."
+      "description": "2-letter country code, possible value receive from residence_list call.",
+      "required": "1"
+    },
+    "place_of_birth": {
+      "type" : "string",
+      "pattern": "^[a-z]{2}$",
+      "description": "Place of birth, 2-letter country code.",
+      "required": "1"
     },
     "address_line_1": {
       "type" : "string",
       "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{1,70}$",
-      "description": "Within 70 characters."
+      "description": "Within 70 characters.",
+      "required": "1"
     },
     "address_line_2": {
       "type" : "string",
@@ -47,7 +59,8 @@
     "address_city": {
       "type" : "string",
       "pattern": "^[\\p{L}\\s'.-]{1,35}$",
-      "description": "Within 35 characters"
+      "description": "Within 35 characters",
+      "required": "1"
     },
     "address_state": {
       "type" : "string",
@@ -62,7 +75,8 @@
     "phone": {
       "type" : "string",
       "pattern": "^\\+?[0-9\\s]{6,35}$",
-      "description": "Within 6-35 digits, allowing '+' in front, numbers or space."
+      "description": "Within 6-35 digits, allowing '+' in front, numbers or space.",
+      "required": "1"
     },
     "secret_question": {
       "enum": [ "Mother's maiden name", "Name of your pet", "Name of first love", "Memorable town/city", "Memorable date", "Favourite dish", "Brand of first car", "Favourite artist" ],
@@ -79,6 +93,18 @@
       "type": "string",
       "pattern": "^[\\w-]{0,32}$",
       "description": "Affiliate token, within 32 characters."
+    },
+    "tax_residence": {
+      "type": "string",
+      "pattern": "^[a-z]{0,2}(?:,[a-z]{2})*$",
+      "description": "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for maltainvest landing company.",
+      "required": "1"
+    },
+    "tax_identification_number": {
+      "type": "string",
+      "pattern": "^[\\w-]{0,20}$",
+      "description": "Tax identification number. Only applicable for real money account. Required for maltainvest landing company.",
+      "required": "1"
     },
     "forex_trading_experience": {
       "enum": [ "0-1 year", "1-2 years", "Over 3 years" ],

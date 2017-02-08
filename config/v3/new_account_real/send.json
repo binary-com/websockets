@@ -39,6 +39,11 @@
       "description": "2-letter country code, possible value receive from residence_list call.",
       "required": "1"
     },
+    "place_of_birth": {
+      "type" : "string",
+      "pattern": "^[a-z]{2}$",
+      "description": "Place of birth, 2-letter country code."
+    },
     "address_line_1": {
       "type" : "string",
       "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{1,70}$",
@@ -88,6 +93,16 @@
       "type": "string",
       "pattern": "^[\\w-]{0,32}$",
       "description": "Affiliate token, within 32 characters."
+    },
+    "tax_residence": {
+      "type": "string",
+      "pattern": "^[a-z]{0,2}(?:,[a-z]{2})*$",
+      "description": "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for maltainvest landing company."
+    },
+    "tax_identification_number": {
+      "type": "string",
+      "pattern": "^[\\w-]{0,20}$",
+      "description": "Tax identification number. Only applicable for real money account. Required for maltainvest landing company."
     },
     "passthrough": {
       "type": "object",

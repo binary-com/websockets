@@ -38,6 +38,11 @@
       "pattern": "^[a-z]{2}$",
       "description": "[Optional] 2-letter country code, possible value receive from residence_list call."
     },
+    "place_of_birth": {
+      "type" : "string",
+      "pattern": "^[a-z]{2}$",
+      "description": "[Optional] Place of birth, 2-letter country code."
+    },
     "address_line_1": {
       "type": "string",
       "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{0,70}$",

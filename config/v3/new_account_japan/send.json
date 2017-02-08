@@ -44,6 +44,11 @@
       "description": "Must be 'jp' (Japan).",
       "required": 1
     },
+    "place_of_birth": {
+      "type" : "string",
+      "pattern": "^[a-z]{2}$",
+      "description": "Place of birth, 2-letter country code."
+    },
     "address_line_1": {
       "type" : "string",
       "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{1,70}$",
@@ -90,6 +95,16 @@
       "maxLength": 50,
       "description": "Answer to secret question, within 1-50 characters.",
       "required": 1
+    },
+    "tax_residence": {
+      "type": "string",
+      "pattern": "^[a-z]{0,2}(?:,[a-z]{2})*$",
+      "description": "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for maltainvest landing company."
+    },
+    "tax_identification_number": {
+      "type": "string",
+      "pattern": "^[\\w-]{0,20}$",
+      "description": "Tax identification number. Only applicable for real money account. Required for maltainvest landing company."
     },
     "annual_income": {
       "enum": ["Less than 1 million JPY", "1-3 million JPY", "3-5 million JPY", "5-10 million JPY", "10-30 million JPY", "30-50 million JPY", "50-100 million JPY", "Over 100 million JPY"],
