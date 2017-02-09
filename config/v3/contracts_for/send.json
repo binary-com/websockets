@@ -16,10 +16,16 @@
           "pattern": "^[A-Z]{3}$",
           "default": "USD"
         },
-        "region":{
+        "product_type":{
             "type":"string",
-            "description":"Set to 'japan' to retrieve contracts available under Japanese regulations, or 'other' otherwise.",
-            "pattern":"^(japan|other)$"
+            "description":"Set to 'multi_barrier' to get a list of contracts with predefined trading windows and barriers for a given symbol. Default to 'basic'",
+            "pattern":"^(multi_barrier|basic)$",
+            "default": "basic"
+        },
+        "landing_company":{
+            "type":"string",
+            "description":"Optional landing_company field. Set to a specific landing company if you want to get a list of contracts for a specific landing company. Default to costarica.",
+            "default": "costarica"
         },
         "passthrough":{
             "type":"object",

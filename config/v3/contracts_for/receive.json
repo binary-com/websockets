@@ -11,6 +11,7 @@
     },
     "contracts_for": {
         "type": "object",
+        "description": "List of available contracts. Note: if the user is authenticated, then only contracts allowed under his account will be returned.",
         "properties":{
             "available":{
                 "type":"array",

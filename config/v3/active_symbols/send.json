@@ -19,6 +19,12 @@
       "description": "Optional landing company field. If you specify this field, only symbols available for trading by that landing company will be returned.",
       "pattern": "^(japan|costarica|malta|maltainvest|iom|champion)$"
     },
+    "product_type":{
+        "type":"string",
+        "description":"Set to 'multi_barrier' to get a list of symbols with predefined trading windows and barriers. Default to 'basic'",
+        "pattern":"^(multi_barrier|basic)$",
+        "default": "basic"
+    },
     "req_id": {
       "type": "integer",
       "description": "Optional field to map request to response"
