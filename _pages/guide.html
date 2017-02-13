@@ -1,66 +1,71 @@
----
-layout: page
-permalink: guide/
+--- 
+layout: page 
+permalink: guide/ 
 ---
 
-<h1>API Guide</h1>
+<h1>API guide</h1>
 <h2>App registration</h2>
-<p>Before using the API, you must register your application. To do that, first open an account on <a href="https://binary.com">Binary.com</a> (either a virtual-money or a real-money account). Then go to <a href="https://www.binary.com/en/user/security/api_tokenws.html">Settings, API Token</a> and create a per-app token with Admin scope. Then <a href="/applications/">register the app</a> to obtain your app_id.</p>
-<h2>Client Authentication</h2>
-<p>Certain API calls require client authentication (e.g. <a href="/api#portfolio">portfolio</a>) whilst other calls do not (e.g. <a href="/api#ticks">ticks</a>).</p>
+<p>Before using the API, you must register your application:</p>
+<ol>
+    <li>Open an account on <a href="https://binary.com">Binary.com</a> (either a Virtual Account or a Real Account)</li>
+    <li>Go to <strong>Security & Limits</strong>, select <a href="https://www.binary.com/en/user/security/api_tokenws.html">API token</a> and create a new token with the <strong>admin</strong> scope
+        <a href="/applications/"></li>
+    <li>Register</a> your app to obtain your <code>app_id</code></li>
+</ol>
+<h2>Client authentication</h2>
+<p>Certain API calls require client authentication (e.g. <a href="/api#portfolio">portfolio</a>) whilst other calls do not (e.g. <a href="/api#ticks">ticks</a>)</p>
 There are 2 ways to do client authentication:</p>
 <ol>
-    <li>Client authentication by app-specific API tokens. <a href="https://binary.com">Binary.com</a> users can generate tokens by logging into their accounts and visiting <a href="https://www.binary.com/en/user/security/api_tokenws.html">Settings, API Token</a>.
+    <li><strong>Client authentication by app-specific API tokens</strong> - Binary.com users can generate tokens by logging into their accounts and navigate to the <a href="https://www.binary.com/en/user/security/api_tokenws.html">API token</a> page under <strong>Security & Limits</strong>
     </li>
-    <li>Client authentication by Oauth. To use Oauth, firstly obtain your app_id (by following the instructions in the App registration section above).
-        <p>To authenticate your users, send them to https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..] Our system will authenticate the user, and redirect him to the redirect_uri which you specified when registering the app, with a valid token returned in the URL in the "token" parameter.</p>
-        <p>Note: to display the authentication form in another language, please append the language code at the end, for example https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..]&l=ZH_CN</p>
+    <li><strong>Client authentication by OAuth</strong> - To use OAuth, get your <code>app_id</code> (see instructions above):
+        <p>To authenticate your users, navigate them to Binary.com OAuth URL: <pre>https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..]</pre>Our system will authenticate the user, and redirect him to the redirect URI specified during app registration, with a valid token returned in the URL in the <code>token</code> parameter.</p>
+        <p>To display the authentication form in another language, append the language code to the OAuth URL as follows:<pre>https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..]&l=ZH_CN</pre></p>
     </li>
 </ol>
-<p>With a user's API token (either a per-app token, or a token obtained via Oauth), you may call <a href="/api#authorize">authorize</a>.</p>
-<h2>Token Scopes</h2>
-<p>Note that tokens can possess one or more of these scopes:</p>
+<p>With a user's API token (either a per-app token, or a token obtained via OAuth), you may call <a href="/api#authorize"><code>authorize</code></a></p>
+<h2>Token scopes</h2>
+<p>Tokens can possess one or more of these scopes:</p>
 <ul class="bullet">
-    <li>'read' - for API calls that only read client data</li>
-    <li>'trade' - for API calls that can create trades in the client account</li>
-    <li>'payments' - for API calls that can access the cashier (deposits and withdrawals)</li>
-    <li>'admin' - for API calls that change client settings</li>
+    <li><strong>read</strong> - for API calls that only read client data</li>
+    <li><strong>trade</strong> - for API calls that can create trades in the client account</li>
+    <li><strong>payments</strong> - for API calls that can access the cashier (deposits and withdrawals)</li>
+    <li><strong>admin</strong> - for API calls that change client settings</li>
 </ul>
-<p>The drop-down list in the <a href="/api">API Playground</a> indicates which call needs which scope.</p>
-<h2>Binary.com Account Opening</h2>
-<p>To open binary.com accounts via the API, start by verifying the user's email address using
-    <a href="/api#verify_email">verify_email</a>. You may then call
-    <a href="/api#new_account_virtual">new_account_virtual</a> to open a virtual-money account. Note: you may top-up virtual-money funds using
-    <a href="/api#topup_virtual">topup_virtual</a>. To open a real-money account, you may use
-    <a href="/api#residence_list">residence_list</a> and
-    <a href="/api#states_list">states_list</a> to retrieve data to create the account opening form. Once you have the required data from the user, call
-    <a href="/api#new_account_real">new_account_real</a>. If you are a registered affiliate, remember to pass in the <i>affiliate_token</i> parameter, so that you may earn affiliate commissions for the new account. You can determine which Landing Company (i.e counter-party) the account will be opened with, based on the user's jurisdiction, using <a href="/api#landing_company">landing_company</a>, and you can find out details about that landing company using
-    <a href="/api#landing_company_details">landing_company_details</a>.
+<p>The drop-down list in the <a href="/api">API playground</a> indicates which call needs which scope</p>
+<h2>Binary.com accounts opening</h2>
+<p>To open Binary.com accounts via the API, start by verifying the user's email address using
+    <a href="/api#verify_email"><code>verify_email</code></a></p>
+<p>To open a Virtual Account, you may call <a href="/api#new_account_virtual"><code>new_account_virtual</code></a>, then <a href="/api#topup_virtual"><code>topup_virtual</code></a> to top-up virtual-money fund</p>
+<p>To open a Real Account, you may use
+    <a href="/api#residence_list"><code>residence_list</code></a> and
+    <a href="/api#states_list"><code>states_list</code></a> to retrieve data to create the account opening form. Once you have the required data from the user, call
+    <a href="/api#new_account_real"><code>new_account_real</code></a></p>
+    <p>If you are a registered affiliate, remember to pass in the <code>affiliate_token</code> parameter, so that you may earn affiliate commissions for the new account. You can determine which Landing Company (i.e counter-party) the account will be opened with, based on the user's jurisdiction, using <a href="/api#landing_company"><code>landing_company</code></a>, and you can find out details about that landing company using
+    <a href="/api#landing_company_details"><code>landing_company_details</code></a>
 </p>
 <h2>Accounting functionality</h2>
 <p>You may generate a user's
-    <a href="/api#portfolio">portfolio</a>,
-    <a href="/api#statement">statement</a>, and
-    <a href="/api#profit_table">profit_table</a>, as well as retrieve his
-    <a href="/api#balance">account balance</a>. You may also
-    <a href="/api#sell_expired">sell any expired contracts</a>, and generate a realtime
-    <a href="/api#transaction">stream of transactions</a>.
+    <a href="/api#portfolio"><code>portfolio</code></a>,
+    <a href="/api#statement"><code>statement</code></a> and
+    <a href="/api#profit_table"><code>profit_table</code></a>, as well as retrieve his account <a href="/api#balance"><code>balance</code></a>. You may also
+    <a href="/api#sell_expired"><code>sell expired contracts</code></a>, and generate a realtime stream of <a href="/api#transaction"><code>transactions</code></a>
 </p>
 <h2>Option prices</h2>
 <p>To price an option, call
-    <a href="/api#proposal">proposal</a>. To price options which are open in a user's portfolio, call
-    <a href="/api#proposal_open_contract">proposal_open_contract</a>.
+    <a href="/api#proposal"><code>proposal</code></a>. To price options which are open in a user's portfolio, call
+    <a href="/api#proposal_open_contract"><code>proposal_open_contract</code></a>.
 </p>
 <h2>Payment agents</h2>
 <p>Clients may withdraw to a payment agent using
-    <a href="/api#paymentagent_withdraw">paymentagent_withdraw</a> and payment agents may credit a client account using
-    <a href="/api#paymentagent_transfer">paymentagent_transfer</a>.
+    <a href="/api#paymentagent_withdraw"><code>paymentagent_withdraw</code></a> and payment agents may credit a client account using
+    <a href="/api#paymentagent_transfer"><code>paymentagent_transfer</code></a>
 </p>
 <h2>Utility calls</h2>
 <ul class="bullet">
-    <li>To keep the connection alive use <a href="/api#ping">Ping</a></li>
-    <li>You can get the <a href="/api#time">Server Time</a></li>
+    <li>To keep the connection alive use <a href="/api#ping"><code>ping</code></a></li>
+    <li>You can get the <a href="/api#time">server <code>time</code></a></li>
 </ul>
 <h2>Streams</h2>
-<p>Note that certain functions generate streams (e.g. <a href="/api#ticks">ticks</a>) whilst other functions do not. Please use <a href="/api#forget">forget</a> to cancel an outstanding stream.
+<p>Note that certain functions generate streams (e.g. <a href="/api#ticks"><code>ticks</code></a>) whilst other functions do not. Please use <a href="/api#forget"><code>forget</code></a> to cancel an outstanding stream
 </p>
