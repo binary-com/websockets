@@ -41,23 +41,23 @@
         "properties": {
           "epoch": {
             "type": "integer",
-            "description": "It is an epoch value"
+            "description": "The opening time of this candle"
           },
           "open": {
             "type": "number",
-            "description": "It is the open price value for the given time"
+            "description": "Open price value for this candle"
           },
           "high": {
             "type": "number",
-            "description": "It is the high price value for the given time"
+            "description": "Highest price value for this candle"
           },
           "low": {
             "type": "number",
-            "description": "It is the low price value for the given time"
+            "description": "Lowest price value for this candle"
           },
           "close": {
             "type": "number",
-            "description": "It is the close price value for the given time"
+            "description": "Close price value for this candle"
           }
         }
       },
