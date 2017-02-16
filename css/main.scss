@@ -60,6 +60,7 @@ h5 {
 .page-content {
     font-size: 18px;
     flex: 4;
+    padding: 0.0.5em 0 0.5em;
 }
 .docson .box {
     width: 100%;
@@ -334,9 +335,10 @@ button:focus {
   margin-right: 2rem;
   border-radius: 4px;
   overflow: hidden;
-  padding: 0.5rem 0;
+  padding: 0.0.5em 0 0.5em;
   ul{
-    margin-top:0;
+    margin-top: 0;
+    padding-left: 0;
   }
 }
 
@@ -347,5 +349,14 @@ button:focus {
   th, td {
     padding: 10px;
   }
+}
+
+code {
+    border-radius: 4px;
+    padding: 2px 4px;
+    color: #c7254e;
+    font-size: 90%;
+    border: 1px solid #eceff1;
+    font-weight: 400;
 }
 @import "monokai.css";
