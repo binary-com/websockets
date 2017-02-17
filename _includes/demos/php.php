@@ -6,7 +6,7 @@ $logger = new \Zend\Log\Logger();
 $writer = new Zend\Log\Writer\Stream("php://output");
 $logger->addWriter($writer);
 
-$client = new \Devristo\Phpws\Client\WebSocket("wss://ws.binaryws.com/websockets/v3", $loop, $logger);
+$client = new \Devristo\Phpws\Client\WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089", $loop, $logger);
 
 $client->on("connect", function($headers) use ($client, $logger){
     $logger->notice("connected!");

@@ -4,7 +4,7 @@ import "fmt"
 import "golang.org/x/net/websocket"
 
 var origin = "http://localhost/"
-var url = "wss://ws.binaryws.com/websockets/v3?l=EN"
+var url = "wss://ws.binaryws.com/websockets/v3?app_id=1089"
 
 func main() {
     ws, _ := websocket.Dial(url, "", origin)

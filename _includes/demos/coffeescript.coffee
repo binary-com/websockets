@@ -1,4 +1,4 @@
-ws = new WebSocket('wss://ws.binaryws.com/websockets/v3')
+ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1089')
 
 ws.onopen = (evt) ->
     ws.send JSON.stringify(ticks: 'R_100')
