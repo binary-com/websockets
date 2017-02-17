@@ -5,7 +5,7 @@ use websocket::client::request::Url;
 use websocket::{Client, Message, Sender, Receiver};
 
 fn main() {
-    let url = Url::parse("wss://ws.binaryws.com/websockets/v3").unwrap();
+    let url = Url::parse("wss://ws.binaryws.com/websockets/v3?app_id=1089").unwrap();
     let request = Client::connect(url).unwrap();
     let response = request.send().unwrap();
     let (mut sender, mut receiver) = response.begin().split();
