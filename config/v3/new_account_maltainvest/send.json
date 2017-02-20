@@ -163,6 +163,20 @@
       "description": "Other financial instruments trading frequency",
       "required": 1
     },
+    "account_opening_reason": {
+      "type": "string",
+      "description": "Purpose and reason for requesting the account opening",
+      "enum": [
+        "Speculative",
+        "Income Earning",
+        "Assets Saving",
+        "Hedging"
+      ]
+    },
+    "account_turnover": {
+      "enum": [ "Less than $25,000", "$25,000 - $50,000", "$50,001 - $100,000", "$100,001 - $500,000", "Over $500,000" ],
+      "description": "The anticipated account turnover"
+    },
     "employment_industry": {
       "enum": [ "Construction", "Education", "Finance", "Health", "Tourism", "Other" ],
       "description": "Industry of Employment",
