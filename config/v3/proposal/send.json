@@ -17,7 +17,8 @@
     },
     "amount": {
       "type": "number",
-      "description":"Proposed contract payout or stake value"
+      "description":"Proposed contract payout or stake value",
+      "pattern": "^[0-9]+([.][0-9]+)?$"
     },
     "basis": {
       "description":"Indicate whether amount is 'payout' or 'stake'",
