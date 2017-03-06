@@ -66,6 +66,18 @@
           "date_expiry": {
             "type": "integer",
             "description": "Epoch value of the expiry time of the contract. Please note that in case of buy transaction this is approximate value not exact one."
+          },
+          "barrier": {
+            "type": ["number", "string", "null"],
+            "description": "Barrier of the contract. Only applicable to single barrier contracts. Could be undefined if a contract does not have a barrier."
+          },
+          "high_barrier": {
+            "type": ["number", "string"],
+            "description": "The high barrier of a contract. Only applicable to double barrier contracts."
+          },
+          "low_barrier": {
+            "type": ["number", "string"],
+            "description": "The low barrier of a contract. Only applicable to double barrier contracts."
           }
       }
     },
