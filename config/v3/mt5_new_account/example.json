@@ -4,7 +4,7 @@
     "email": "test@mailinator.com",
     "name": "Peter Pan",
     "mainPassword": "AbcDv1234",
-    "investPassword": "AbcDv1234",
+    "investPassword": "AbcDv12345",
     "leverage": "100",
     "address": "Dummy address",
     "state": "Valleta",

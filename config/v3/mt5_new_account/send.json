@@ -15,6 +15,10 @@
       "description": "Account type",
       "required": "1"
     },
+    "mt5_account_type": {
+      "enum": ["cent", "standard", "stp"],
+      "description": "Cent: Fixed spreads, High leverage. Standard: Variable spreads, Medium leverage. STP: Straight through processing, Variable tight spreads. Only required when account_type is financial."
+    },
     "email": {
       "type": "string",
       "format": "email",
