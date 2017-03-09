@@ -23,6 +23,11 @@
         "description": "Required when create new token"
       }
     },
+    "valid_for_current_ip_only": {
+      "type": "integer",
+      "description": "Optional field, if you set this parameter during token creation, then the token created will only work for the IP address that was used to create the token",
+      "pattern": "^(1|0)$"
+    },
     "delete_token": {
       "type": "string",
       "pattern": "^\\w+$", 
