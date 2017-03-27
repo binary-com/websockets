@@ -25,10 +25,18 @@
             "enum": ["payout", "stake"]
         },
         "contract_type": {
-            "type": "string",
-            "description":"A valid contract-type",
-            "pattern": "^\\w{2,30}$",
-            "required": "1"
+            "type": "array",
+            "items": [
+                {
+                    "type": "string",
+                    "pattern": "^\\w{2,30}$"
+                }
+            ],
+            "description": "One or more valid contract-types",
+            "required": "1",
+            "uniqueItems": true,
+            "minItems": 1,
+            "maxItems": 2
         },
         "currency": {
             "type": "string",
