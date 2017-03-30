@@ -1,6 +1,5 @@
 {
-    "proposal":1,
-    "subscribe":1,
+    "proposal_array":1,
     "basis":"payout",
     "amount":1,
     "currency":"USD",
