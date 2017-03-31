@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Sell Multiply Contract Receive",
-  "description": "A message with transaction results is received",
+  "title": "Sell for multiple contracts response",
+  "description": "Confirmation of the sale status for the selected contracts and accounts.",
   "properties": {
     "echo_req": {
       "title":"Echo request",
@@ -11,8 +11,8 @@
     },
     "sell_contract_for_multiple_accounts": {
       "type": "object",
-      "title": "Receipt confirmation",
-      "description": "Receipt confirmation for the purchase",
+      "title": "Transaction confirmation",
+      "description": "Status information for each affected acccount",
       "additionalProperties": false,
       "properties": {
         "result": {
