@@ -79,6 +79,10 @@
           "pattern": "^(0|1)$",
           "description": "Boolean value 1 or 0, indicating permission to allow others to follow your trades. Note: not applicable for Virtual account. Only allow for real money account."
         },
+        "client_tnc_status": {
+          "type": ["string", "null"],
+          "description": "Latest terms and conditions version accepted by client"
+        },
         "place_of_birth": {
           "type": ["string", "null"],
           "description": "Place of birth, 2-letter country code."

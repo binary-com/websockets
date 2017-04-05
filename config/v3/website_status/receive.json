@@ -13,7 +13,7 @@
     	"properties": {
         "terms_conditions_version": {
           "type": "string",
-          "description":"latest T&C version"
+          "description":"Latest terms and conditions version"
         },
         "api_call_limits": {
             "type": "object",
