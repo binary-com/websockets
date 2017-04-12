@@ -36,7 +36,7 @@
         },
         "display_value": {
           "type": "number",
-          "description": "Example: 5.14, same as ask_price except for spread contracts",
+          "description": "Example: 5.14, same as ask_price",
           "required": 1
         },
         "date_start": {
@@ -53,10 +53,6 @@
           "type": "number",
           "description": "Example: 10",
           "required": 1
-        },
-        "spread": {
-          "type": "number",
-          "description": "Example: 10"
         }
       }
     },

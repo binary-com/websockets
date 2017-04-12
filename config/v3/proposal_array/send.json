@@ -87,22 +87,6 @@
                 }
             }
         },
-        "amount_per_point": {
-            "type": "number",
-            "description":"[For spread contracts only] Amount per point"
-        },
-        "stop_type": {
-            "description":"[For spread contracts only] Stop type (dollar or point)",
-            "enum": ["dollar","point"]
-        },
-        "stop_profit": {
-            "type": "number",
-            "description":"[For spread contracts only] Stop profit amount"
-        },
-        "stop_loss": {
-            "type": "number",
-            "description":"[For spread contracts only] Stop loss amount"
-        },
         "trading_period_start": {
             "type": "integer",
             "description":"[For japan only] An epoch value of a predefined trading period start time"

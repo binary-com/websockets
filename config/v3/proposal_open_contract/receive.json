@@ -75,7 +75,7 @@
         },
         "date_expiry": {
           "type": "integer",
-          "description": "Expiry date (epoch) of the Contract. Example: 1446629000. Please note that it is not applicable for spreads and tick trade contracts."
+          "description": "Expiry date (epoch) of the Contract. Example: 1446629000. Please note that it is not applicable for tick trade contracts."
         },
         "date_settlement": {
           "type": "integer",
@@ -132,7 +132,7 @@
         },
         "display_value": {
           "type": "number",
-          "description": "Example: 5.14, same as ask_price except for spread contracts"
+          "description": "Example: 5.14, same as ask_price"
         },
         "underlying": {
           "type": "string",
@@ -192,38 +192,6 @@
         "sell_spot_time": {
           "type": "integer",
           "description": "Epoch time of the sell spot. Note that since certain underlyings don't tick every second, the sell spot time may be a few seconds before the sell time. Example: 1446629000 (only present for contracts already sold)"
-        },
-        "entry_level": {
-          "type": "number",
-          "description": "The value (points) at which this contract was opened. Only applicable for spreads."
-        },
-        "amount_per_point": {
-          "type": "string",
-          "description": "The dollar profit/loss per point of movement of the current value. Only applicable for spreads."
-        },
-        "stop_loss_level": {
-          "type": "number",
-          "description": "If the current level touches the stop loss level, then the contract will automatically be closed at the stop loss level. Only applicable for spreads."
-        },
-        "stop_profit_level": {
-          "type": "number",
-          "description": "If the current level touches the stop profit level, then the contract will automatically be closed at the stop profit level. Only applicable for spreads."
-        },
-        "current_level": {
-          "type": "number",
-          "description": "Current value of the underlying. Only applicable for spreads."
-        },
-        "exit_level": {
-          "type": ["number","null"],
-          "description": "The contract was closed at this level. Only applicable for spreads"
-        },
-        "current_value_in_dollar": {
-          "type": "number",
-          "description": "Current profit/loss in dollars. Only applicable for spreads."
-        },
-        "current_value_in_point": {
-          "type": "number",
-          "description": "Current profit or loss in points. Only applicable for spreads."
         },
         "transaction_ids": {
           "type": "object",

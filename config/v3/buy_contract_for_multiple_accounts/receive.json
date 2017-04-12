@@ -64,18 +64,6 @@
                     "description":"Internal transaction identifier",
                     "required": "1"
                   },
-                  "amount_per_point": {
-                    "type": "number",
-                    "description":"[For spread contracts only] Amount per point"
-                  },
-                  "stop_profit_level": {
-                    "type": "number",
-                    "description":"[For spread contracts only] Stop profit level (spot plus/minus stop profit amount)"
-                  },
-                  "stop_loss_level": {
-                    "type": "number",
-                    "description":"[For spread contracts only] Stop loss level (spot plus/minus stop loss amount)"
-                  },
                   "payout": {
                     "type": "number",
                     "description": "Proposed payout value",
