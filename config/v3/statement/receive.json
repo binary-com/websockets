@@ -31,6 +31,10 @@
                     "type":"integer",
                     "description":"It is the transaction id. In statement every contract (buy or sell) and every payment has a unique id. Example: 10867502908"
                   },
+                  "reference_id": {
+                    "type": ["integer","null"],
+                    "description":"Internal transaction identifier for the corresponding buy transaction ( set only for contract selling )"
+                  },
                   "contract_id":{
                     "type": ["integer", "null"],
                     "description":"It is the contract id Example: 4867502908"
