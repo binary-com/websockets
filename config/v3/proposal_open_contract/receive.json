@@ -26,18 +26,6 @@
           "type": "number",
           "description": "Barrier of the contract (if any). Example: 42.123"
         },
-        "original_high_barrier": {
-          "type": "number",
-          "description": "Original high barrier of the contract (if any corporate action). Example: 83.246"
-        },
-        "original_low_barrier": {
-          "type": "number",
-          "description": "Original low barrier of the contract (if any corporate action). Example: 80.262"
-        },
-        "original_barrier": {
-          "type": "number",
-          "description": "Original barrier of the contract (if any corporate action). Example: 83.246"
-        },
         "barrier_count": {
           "type": "number",
           "description": "The number of barriers a contract has. Example: 2"
@@ -89,10 +77,6 @@
           "type": "string",
           "description": "A stream id that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579"
         },
-        "has_corporate_actions": {
-           "type": "integer",
-           "description": "Whether the contract has an applicable corporate actions or not. Boolean value 1 or 0"
-         },
         "is_expired": {
           "type": "integer",
           "description": "Whether the contract is expired or not. Boolean value 1 or 0"
