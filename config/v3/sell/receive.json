@@ -29,6 +29,10 @@
         "transaction_id": {
           "type": "integer",
           "description":"Internal transaction identifier for the sale transaction"
+        },
+        "reference_id": {
+          "type": "integer",
+          "description":"Internal transaction identifier for the corresponding buy transaction"
         }
       }
     },

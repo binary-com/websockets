@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Save Financial assessment details send",
-  "description": "This call sets the financial assessement details based on the client's answers to analyse whether he possess the experience and knowledge to understand the risks involved with binary options trading.",
+  "description": "This call sets the financial assessement details based on the client's answers to analyse whether he possess the experience and knowledge to understand the risks involved with binary options trading. Not applicable for Japan landing company.",
   "properties": {
     "set_financial_assessment": {
       "type": "integer",

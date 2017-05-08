@@ -81,22 +81,6 @@
           "type": "string",
           "pattern": "^[+-]?\\d+\\.?\\d*$",
           "description":"Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), meaning that the entry spot would be adjusted accordingly with that amount to define a barrier."
-        },
-        "amount_per_point": {
-          "type": "number",
-          "description":"[For spread contracts only] Amount per point"
-        },
-        "stop_type": {
-          "description":"[For spread contracts only] Stop type (dollar or point)",
-          "enum": ["dollar","point"]
-        },
-        "stop_profit": {
-          "type": "number",
-          "description":"[For spread contracts only] Stop profit amount"
-        },
-        "stop_loss": {
-          "type": "number",
-          "description":"[For spread contracts only] Stop loss amount"
         }
       }
     },

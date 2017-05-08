@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Get financial assessment details",
-  "description": "This call gets the financial assessement details. The 'financial assessment' is a questionnaire that clients of certain Landing Companies need to complete, due to regulatory and KYC (know your client) requirements.",
+  "description": "This call gets the financial assessement details. The 'financial assessment' is a questionnaire that clients of certain Landing Companies need to complete, due to regulatory and KYC (know your client) requirements. Not applicable for Japan landing company.",
   "properties": {
     "get_financial_assessment": {
       "type": "integer",
