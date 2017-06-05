@@ -5,8 +5,8 @@
   "description": "Trading and Withdrawal Limits",
   "properties": {
     "echo_req": {
-      "title":"Echo request",
-      "description":"Echo of the request made",
+      "title": "Echo request",
+      "description": "Echo of the request made",
       "required": 1
     },
     "get_limits": {
@@ -57,6 +57,111 @@
         "withdrawal_since_inception_monetary": {
           "type": "number",
           "description": "Total withdrawal since inception"
+        },
+        "market_specific": {
+          "type": "object",
+          "properties": {
+            "commodities": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "turnover_limit": {
+                    "type": "number"
+                  },
+                  "payout_limit": {
+                    "type": "number"
+                  },
+                  "profile_name": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "forex": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "turnover_limit": {
+                    "type": "number"
+                  },
+                  "payout_limit": {
+                    "type": "number"
+                  },
+                  "profile_name": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "indices": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "turnover_limit": {
+                    "type": "number"
+                  },
+                  "payout_limit": {
+                    "type": "number"
+                  },
+                  "profile_name": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "stocks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "turnover_limit": {
+                    "type": "number"
+                  },
+                  "payout_limit": {
+                    "type": "number"
+                  },
+                  "profile_name": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "volidx": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "turnover_limit": {
+                    "type": "number"
+                  },
+                  "payout_limit": {
+                    "type": "number"
+                  },
+                  "profile_name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
