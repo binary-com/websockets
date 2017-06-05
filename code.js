@@ -114,7 +114,7 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
           '<td class="action flex-tr-child"><button class="delete" id="' + application.app_id + '">Delete</button></td>' +
           '<td class="action flex-tr-child"><button class="update" id="' + application.app_id + '">Update</button></td>' +
         '</tr>'
-      ).show();
+      ).end().show();
       $('button[id=' + application.app_id + '][class="delete"]').on('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
