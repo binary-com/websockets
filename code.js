@@ -11,10 +11,9 @@ var appId = localStorage.getItem('appId') || defaultAppId;
 var apiUrl = localStorage.getItem('apiUrl') || defaultApiUrl;
 var langCode = 'en';
 
-require(["docson/docson", "lib/jquery"], function(docson) {
+require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
 
     var api,
-        manuallySentReq,
         $console = $('#playground-console');
 
     docson.templateBaseUrl = '/docson';
@@ -62,14 +61,14 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     }
 
     function incomingMessageHandler(json) {
-        var authorizationError = !!(json.error && json.error.code == "AuthorizationRequired"),
+        var authorizationError = !!(json.error && json.error.code === "AuthorizationRequired"),
             prettyJson = getFormattedJsonStr(json);
         console.log(json); // intended to help developers, not for debugging, do not remove
         $('.progress').remove();
         appendToConsoleAndScrollIntoView(prettyJson);
         $('#unauthorized-error').toggle(authorizationError);
         if (!json.error) handleApplicationsResponse(json);
-    };
+    }
 
     function handleApplicationsResponse(response) {
       if (response.msg_type === 'authorize' && $('#applications-table').length !== 0) {
@@ -93,7 +92,6 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         }
       }
       $('#applications-table').show();
-      return;
     }
 
     function addApplication(response) {
@@ -102,7 +100,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     }
 
     function applicationsTableRow(application) {
-      $('#applications-table tbody').append(
+      $('#applications-table').find('tbody').append(
         '<tr class="flex-tr" id="' + application.app_id + '">' +
           '<td class="flex-tr-child name">' + application.name + '</td>' +
           '<td class="flex-tr-child app_id">' + application.app_id + '</td>' +
@@ -116,8 +114,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
           '<td class="action flex-tr-child"><button class="delete" id="' + application.app_id + '">Delete</button></td>' +
           '<td class="action flex-tr-child"><button class="update" id="' + application.app_id + '">Update</button></td>' +
         '</tr>'
-      );
-      $('#applications-table').show();
+      ).show();
       $('button[id=' + application.app_id + '][class="delete"]').on('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
@@ -126,7 +123,8 @@ require(["docson/docson", "lib/jquery"], function(docson) {
       $('button[id=' + application.app_id + '][class="update"]').on('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        $('#frmNewApplication legend').html($('#frmNewApplication legend').html().replace('Register an', 'Update'));
+        var $legend = $('#frmNewApplication').find('legend');
+        $legend.html($legend.html().replace('Register an', 'Update'));
         $('#placeholder_app_id').text(' ' + e.target.id + ' ').attr('style', 'background:#ffffe0');
         $('#application-name').val($('#' + e.target.id + ' .name').text());
         $('#application-redirect').val($('#' + e.target.id + ' .redirect_uri').text());
@@ -148,10 +146,11 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             $('.scopes input[id="' + $scopes[i].id + '"').prop('checked', false);
           }
         }
-        if ($('#btnUpdate').length === 0) {
+        var $btnUpdate = $('#btnUpdate');
+        if ($btnUpdate.length === 0) {
           $('.application_buttons').prepend('<button id="btnUpdate">Update</button> Or');
           $('#btnRegister').text('Register as New Application');
-          $('#btnUpdate').on('click', function(e) {
+          $btnUpdate.on('click', function(e) {
             e.preventDefault();
             send_application_request(Trim($('#placeholder_app_id').text()));
           });
@@ -214,51 +213,51 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     function jsonToPretty(json, offset) {
 
         var spaces = function(n) {
-            return Array(n + 1).join(" ");
-        }
+            return new Array(n + 1).join(" ");
+        };
 
         var span = function(val, className) {
             return '<span class="' + className + '">' + escapeHtml(val) + '</span>';
-        }
+        };
 
         var valToStr = function(val, offset) {
-            if (typeof val == 'string') {
+            if (typeof val === 'string') {
                 return span('"' + val + '"', 'string');
-            } else if (typeof val == 'number') {
+            } else if (typeof val === 'number') {
                 return span(val, 'number');
             } else if (Array.isArray(val)) {
                 var elements = val.map(function(val) {
                     return spaces(offset + 2) + valToStr(val, offset + 2);
                 }).join(',\n');
                 return '[\n' + elements + '\n' + spaces(offset) + ']';
-            } else if (typeof val == 'boolean') {
+            } else if (typeof val === 'boolean') {
                 return span(val, 'boolean');
             } else {
                 return objToStr(val, offset);
             }
-        }
+        };
 
         var propsToStr = function(obj, offset) {
             var keyStr = Object.keys(obj).map(function(key) {
                 return spaces(offset) + span('"' + key + '"', 'key') + ': ' + valToStr(obj[key], offset);
             });
             return keyStr.join(',\n');
-        }
+        };
 
         var objToStr = function(obj, offset) {
-            if (!obj || Object.keys(obj).length == 0) return '{}';
+            if (!obj || Object.keys(obj).length === 0) return '{}';
             return (
                 '{\n' +
                 propsToStr(obj, offset + 2) + '\n' +
                 spaces(offset) + '}'
             )
-        }
+        };
 
         return objToStr(json, offset || 0);
     }
 
     function getFormattedJsonStr(json) {
-        if (typeof json == 'string') {
+        if (typeof json === 'string') {
             json = JSON.parse(json);
         }
         return (json.error ? '<pre class="error">' : '<pre>') +
@@ -266,25 +265,9 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             '</pre>';
     }
 
-    function issueRequestAndDisplayResult($node, requestUrl) {
-        $node.html('<div class="progress"></div>');
-        $.get(requestUrl, function(requestJson) {
-            api.sendRaw(requestJson);
-        });
-    }
-
     function loadAndDisplaySchema($node, schemaUrl) {
         $.get(schemaUrl, function(schema) {
             docson.doc($node, schema);
-        });
-    }
-
-    function loadAndFormatJson($node, jsonUrl) {
-        $.get(jsonUrl, function(exampleJson) {
-            $node.html(getFormattedJsonStr(exampleJson));
-            $node.show();
-        }).fail(function() {
-            $node.hide();
         });
     }
 
@@ -309,7 +292,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         $console.stop(false, true);
 
         setTimeout(function() {
-            $console.append(html)[0];
+            $console.append(html);
 
             if (consoleShouldScroll()) {
                 scrollConsoleToBottom();
@@ -339,10 +322,10 @@ require(["docson/docson", "lib/jquery"], function(docson) {
 
     // trim leading and trailing white space
     function Trim(str) {
-        while (str.charAt(0) == (" ")) {
+        while (str.charAt(0) === (" ")) {
             str = str.substring(1);
         }
-        while (str.charAt(str.length - 1) == " ") {
+        while (str.charAt(str.length - 1) === " ") {
             str = str.substring(0, str.length - 1);
         }
         return str;
@@ -353,8 +336,8 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         loadAndDisplaySchema($this, $this.attr('data-schema'));
     });
 
-    $('#api-call-selector, #api-version-selector').on('change', function() {
-        var verStr = $('#api-version-selector').val(),
+    $('#api-call-selector').select2().on('change', function() {
+        var verStr = 'v3',
             apiStr = $('#api-call-selector').val(),
             urlPath = '/config/' + verStr + '/' + apiStr + '/',
             requestSchemaUrl = urlPath + 'send.json',
@@ -366,18 +349,18 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         window.location.hash = apiStr;
     });
 
-    $('#api-language-selector').on('change', function(е) {
+    $('#api-language-selector').on('change', function() {
         langCode = $('#api-language-selector').val();
         initConnection();
     });
 
-    $('#api-version-selector').on('change', function() {
-        $('#endpoint-input').val('');
-        apiUrl = 'wss://ws.binaryws.com/websockets/' + $('#api-version-selector').val();
-        initConnection();
-    });
+    // $('#api-version-selector').on('change', function() {
+    //     $('#endpoint-input').val('');
+    //     apiUrl = 'wss://ws.binaryws.com/websockets/' + $('#api-version-selector').val();
+    //     initConnection();
+    // });
 
-    $('#endpoint-button').on('click', function(e) {
+    $('#endpoint-button').on('click', function() {
         apiUrl = 'wss://' + $('#endpoint-input').val() + '/websockets/v3';
         appId = $('#appid-input').val();
 
@@ -397,7 +380,7 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         };
     });
 
-    $('#use-default-button').on('click', function(e) {
+    $('#use-default-button').on('click', function() {
         $('#conn-error').hide();
         resetEndpoint();
     });
@@ -415,9 +398,10 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         initConnection();
     });
 
-    $('#api-token').on('change', function() {
-        sessionStorage.setItem('token', $('#api-token').val());
-        console.log($('#api-token').val())
+    var $apiToken = $('#api-token');
+    $apiToken.on('change', function() {
+        sessionStorage.setItem('token', $apiToken.val());
+        console.log($apiToken.val())
     });
 
     function showDemoForLanguage(lang) {
@@ -429,21 +413,23 @@ require(["docson/docson", "lib/jquery"], function(docson) {
         showDemoForLanguage($(this).val());
     });
 
-    $('#mobile-page-selector').val(window.location.pathname + window.location.hash);
-    $('#mobile-page-selector').on('change', function(event) {
-        if (!event.originalEvent) return;
+    $('#mobile-page-selector')
+        .val(window.location.pathname + window.location.hash)
+        .on('change', function(event) {
+            if (!event.originalEvent) return;
 
-        window.location.href = $(this).val();
-        console.log('going to ', $(this).val());
-    });
+            window.location.href = $(this).val();
+            console.log('going to ', $(this).val());
+        });
 
     function updateApiDisplayed() {
         $('.sidebar-left a[href="' + window.location.pathname + '"]').parent().addClass('selected');
-        if ($('#api-call-selector').length == 0) return;
+        var $apiCallSelector = $('#api-call-selector');
+        if ($apiCallSelector.length === 0) return;
 
         var apiToDisplay = getCurrentApi();
         if (apiToDisplay) {
-            $('#api-call-selector').val(apiToDisplay).change();
+            $apiCallSelector.val(apiToDisplay).change();
         }
     }
 
@@ -453,11 +439,12 @@ require(["docson/docson", "lib/jquery"], function(docson) {
             authorize: token || ''
         }, null, 2);
 
-        $('#playground-request').val(authReqStr);
+        var $playgroundRequest = $('#playground-request');
+        $playgroundRequest.val(authReqStr);
         if (token) {
             $('#playground-send-btn').click();
         } else {
-            $('#playground-request').focus();
+            $playgroundRequest.focus();
         }
     });
 
@@ -477,6 +464,6 @@ require(["docson/docson", "lib/jquery"], function(docson) {
     initConnection();
     showDemoForLanguage('javascript');
     updateApiDisplayed();
-    $('#api-token').val(sessionStorage.getItem('token'));
+    $apiToken.val(sessionStorage.getItem('token'));
 
 });
