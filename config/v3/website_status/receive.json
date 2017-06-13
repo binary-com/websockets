@@ -31,6 +31,10 @@
             "type": "string"
           }
         },
+        "currencies_config": {
+            "type": "object",
+            "description": "Show fractional digits for supported currencies, for example USD have display of 2 fractional digits. { USD => { fractional_digits => 2 } }"
+        },
         "site_status": {
           "type":"string",
           "pattern": "^(up|down)$",
