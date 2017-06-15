@@ -16,7 +16,8 @@
 
 var docson = docson || {};
 var pathname = document.location.pathname;
-pathname = /websockets/.test(pathname) ? 'websockets/' : '';
+// handle deploying to forks as well as production route
+pathname = /\.github\.io$/i.test(window.location.hostname) ? 'websockets/' : '';
 
 var getPath = function(path) {
     return pathname + path;

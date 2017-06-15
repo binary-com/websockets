@@ -11,7 +11,8 @@ var appId = localStorage.getItem('appId') || defaultAppId;
 var apiUrl = localStorage.getItem('apiUrl') || defaultApiUrl;
 var langCode = 'en';
 var pathname = document.location.pathname;
-pathname = /websockets/.test(pathname) ? 'websockets/' : '';
+// handle deploying to forks as well as production route
+pathname = /\.github\.io$/i.test(window.location.hostname) ? 'websockets/' : '';
 
 var getPath = function(path) {
     return pathname + path;
