@@ -10,13 +10,20 @@ var defaultApiUrl = 'wss://ws.binaryws.com/websockets/v3';
 var appId = localStorage.getItem('appId') || defaultAppId;
 var apiUrl = localStorage.getItem('apiUrl') || defaultApiUrl;
 var langCode = 'en';
+var pathname = document.location.pathname;
+// handle deploying to forks as well as production route
+pathname = /\.github\.io$/i.test(window.location.hostname) ? 'websockets/' : '';
 
-require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
+var getPath = function(path) {
+    return pathname + path;
+};
+
+require([getPath("docson/docson"), getPath("lib/jquery"), getPath("lib/select2.min")], function(docson) {
 
     var api,
         $console = $('#playground-console');
 
-    docson.templateBaseUrl = '/docson';
+    docson.templateBaseUrl = '/' + getPath('docson');
 
     $('#conn-error').hide();
     $('#connected').hide();
@@ -146,11 +153,11 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
             $('.scopes input[id="' + $scopes[i].id + '"').prop('checked', false);
           }
         }
-        var $btnUpdate = $('#btnUpdate');
-        if ($btnUpdate.length === 0) {
+          // can't store btnupdate in a variable since it won't exist first
+          if ($('#btnUpdate').length === 0) {
           $('.application_buttons').prepend('<button id="btnUpdate">Update</button> Or');
           $('#btnRegister').text('Register as New Application');
-          $btnUpdate.on('click', function(e) {
+          $('#btnUpdate').on('click', function(e) {
             e.preventDefault();
             send_application_request(Trim($('#placeholder_app_id').text()));
           });
@@ -339,7 +346,7 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
     $('#api-call-selector').select2().on('change', function() {
         var verStr = 'v3',
             apiStr = $('#api-call-selector').val(),
-            urlPath = '/config/' + verStr + '/' + apiStr + '/',
+            urlPath = '/' + getPath('config/' + verStr + '/' + apiStr + '/'),
             requestSchemaUrl = urlPath + 'send.json',
             responseSchemaUrl = urlPath + 'receive.json',
             exampleJsonUrl = urlPath + 'example.json';

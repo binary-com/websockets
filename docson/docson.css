@@ -182,7 +182,10 @@
     color: purple;
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 90%;
-    padding-left: 2px;
+    border: 1px solid #dedede;
+    padding: 2px 5px;
+    white-space: nowrap;
+    border-radius: 4px;
 }
 
 .docson .type-default {

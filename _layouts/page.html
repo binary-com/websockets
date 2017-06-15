@@ -2,6 +2,12 @@
 layout: default
 ---
 
+{% assign base_url = '/websockets' %}
+{% assign branch = '' %}
+{% if site.baseurl contains base_url %}
+    {% assign branch = base_url %}
+{% endif %}
+
 {% include mobile-page-selector.html %}
 
 <div class="page-wrapper">
