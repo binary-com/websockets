@@ -152,11 +152,11 @@ require([getPath("docson/docson"), getPath("lib/jquery"), getPath("lib/select2.m
             $('.scopes input[id="' + $scopes[i].id + '"').prop('checked', false);
           }
         }
-        var $btnUpdate = $('#btnUpdate');
-        if ($btnUpdate.length === 0) {
+          // can't store btnupdate in a variable since it won't exist first
+          if ($('#btnUpdate').length === 0) {
           $('.application_buttons').prepend('<button id="btnUpdate">Update</button> Or');
           $('#btnRegister').text('Register as New Application');
-          $btnUpdate.on('click', function(e) {
+          $('#btnUpdate').on('click', function(e) {
             e.preventDefault();
             send_application_request(Trim($('#placeholder_app_id').text()));
           });
