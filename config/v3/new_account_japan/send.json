@@ -91,7 +91,8 @@
     },
     "secret_answer": {
       "type": "string",
-      "pattern": "^([a-zA-Z0-9\\s,]){1,50}$",
+      "minLength": 1,
+      "maxLength": 50,
       "description": "Answer to secret question, within 1-50 characters.",
       "required": 1
     },
