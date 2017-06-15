@@ -15,10 +15,16 @@
  */
 
 var docson = docson || {};
+var pathname = document.location.pathname;
+pathname = /websockets/.test(pathname) ? 'websockets/' : '';
 
-docson.templateBaseUrl="templates";
+var getPath = function(path) {
+    return pathname + path;
+};
 
-define(["lib/jquery", "lib/handlebars", "lib/highlight", "lib/jsonpointer", "lib/marked", "lib/traverse"], function(jquery, handlebars, highlight, jsonpointer, marked) {
+docson.templateBaseUrl= getPath("templates");
+
+define([getPath("lib/jquery"), getPath("lib/handlebars"), getPath("lib/highlight"), getPath("lib/jsonpointer"), getPath("lib/marked"), getPath("lib/traverse")], function(jquery, handlebars, highlight, jsonpointer, marked) {
 
     var ready = $.Deferred();
     var boxTemplate;

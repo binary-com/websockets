@@ -10,13 +10,19 @@ var defaultApiUrl = 'wss://ws.binaryws.com/websockets/v3';
 var appId = localStorage.getItem('appId') || defaultAppId;
 var apiUrl = localStorage.getItem('apiUrl') || defaultApiUrl;
 var langCode = 'en';
+var pathname = document.location.pathname;
+pathname = /websockets/.test(pathname) ? 'websockets/' : '';
 
-require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
+var getPath = function(path) {
+    return pathname + path;
+};
+
+require([getPath("docson/docson"), getPath("lib/jquery"), getPath("lib/select2.min")], function(docson) {
 
     var api,
         $console = $('#playground-console');
 
-    docson.templateBaseUrl = '/docson';
+    docson.templateBaseUrl = '/' + getPath('docson');
 
     $('#conn-error').hide();
     $('#connected').hide();
@@ -339,7 +345,7 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
     $('#api-call-selector').select2().on('change', function() {
         var verStr = 'v3',
             apiStr = $('#api-call-selector').val(),
-            urlPath = '/config/' + verStr + '/' + apiStr + '/',
+            urlPath = '/' + getPath('config/' + verStr + '/' + apiStr + '/'),
             requestSchemaUrl = urlPath + 'send.json',
             responseSchemaUrl = urlPath + 'receive.json',
             exampleJsonUrl = urlPath + 'example.json';
