@@ -18,10 +18,6 @@
           "type": "integer",
           "description": "Total score based on client's answer for financial assessment"
         },
-        "account_opening_reason": {
-          "type": "string",
-          "description": "Purpose and reason for requesting the account opening"
-        },
         "account_turnover": {
           "type":"string",
           "description": "The anticipated account turnover"

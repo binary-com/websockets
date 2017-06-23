@@ -10,16 +10,6 @@
       "pattern": "^1$",
       "required": "1"
     },
-    "account_opening_reason": {
-      "type": "string",
-      "description": "Purpose and reason for requesting the account opening",
-      "enum": [
-        "Speculative",
-        "Income Earning",
-        "Assets Saving",
-        "Hedging"
-      ]
-    },
     "forex_trading_experience": {
       "enum": [ "0-1 year", "1-2 years", "Over 3 years" ],
       "description": "Forex trading experience",
