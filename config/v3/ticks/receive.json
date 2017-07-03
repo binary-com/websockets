@@ -22,6 +22,14 @@
           "type": "string",
           "description": "A stream id that can be used to cancel this stream using the Forget request"
         },
+        "bid": {
+          "type": "number",
+          "description": "Market bid at the epoch"
+        },
+        "ask": {
+          "type": "number",
+          "description": "Market ask at the epoch"
+        },
         "quote": {
           "type": "number",
           "description": "Market value at the epoch"
