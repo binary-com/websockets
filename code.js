@@ -447,10 +447,13 @@ require([getPath("docson/docson"), getPath("lib/jquery"), getPath("lib/select2.m
         }, null, 2);
 
         var $playgroundRequest = $('#playground-request');
+        var lastContents = $playgroundRequest.val();
         $playgroundRequest.val(authReqStr);
         if (token) {
             $('#playground-send-btn').click();
+            $playgroundRequest.val(lastContents);
         } else {
+            window.location.hash = 'authorize';
             $playgroundRequest.focus();
         }
     });
