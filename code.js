@@ -118,6 +118,7 @@ require([getPath("docson/docson"), getPath("lib/jquery"), getPath("lib/select2.m
           '<td class="flex-tr-child googleplay" style="display:none">' + application.googleplay + '</td>' +
           '<td class="flex-tr-child appstore" style="display:none">' + application.appstore + '</td>' +
           '<td class="flex-tr-child app_markup_percentage" style="display:none">' + application.app_markup_percentage + '</td>' +
+          '<td class="flex-tr-child signup_uri" style="display:none">' + application.signup_uri + '</td>' +
           '<td class="action flex-tr-child"><button class="delete" id="' + application.app_id + '">Delete</button></td>' +
           '<td class="action flex-tr-child"><button class="update" id="' + application.app_id + '">Update</button></td>' +
         '</tr>'
@@ -140,6 +141,7 @@ require([getPath("docson/docson"), getPath("lib/jquery"), getPath("lib/select2.m
         $('#application-googleplay').val($('#' + e.target.id + ' .googleplay').text());
         $('#application-appstore').val($('#' + e.target.id + ' .appstore').text());
         $('#application-markup').val($('#' + e.target.id + ' .app_markup_percentage').text());
+        $('#application-signup').val($('#' + e.target.id + ' .signup_uri').text());
         var array = $('#' + e.target.id + ' .scopes').text().split(', '),
             $scopes = $('.scopes input'),
             i;
@@ -180,7 +182,8 @@ require([getPath("docson/docson"), getPath("lib/jquery"), getPath("lib/select2.m
           github   = Trim($('#application-github').val()),
           appstore = Trim($('#application-appstore').val()),
           google   = Trim($('#application-googleplay').val()),
-          markup   = Trim($('#application-markup').val());
+          markup   = Trim($('#application-markup').val()),
+          signup   = Trim($('#application-signup').val());
 
       var scopesEl = $("form:first :input[type='checkbox']");
 
@@ -191,6 +194,7 @@ require([getPath("docson/docson"), getPath("lib/jquery"), getPath("lib/select2.m
       if (appstore !== '') request['appstore']              = appstore;
       if (google !== '')   request['googleplay']            = google;
       if (markup !== '')   request['app_markup_percentage'] = markup;
+      if (signup !== '')   request['signup_uri']            = signup;
 
       for (i = 0; i < scopesEl.length; i++) {
         if (scopesEl[i].checked) {
