@@ -113,12 +113,12 @@ require([getPath("docson/docson"), getPath("lib/jquery"), getPath("lib/select2.m
           '<td class="flex-tr-child app_id">' + application.app_id + '</td>' +
           '<td class="flex-tr-child scopes">' + application.scopes.join(', ') + '</td>' +
           '<td class="flex-tr-child redirect_uri">' + application.redirect_uri + '</td>' +
+          '<td class="flex-tr-child signup_uri" style="display:none">' + application.signup_uri + '</td>' +
           '<td class="flex-tr-child homepage" style="display:none">' + application.homepage + '</td>' +
           '<td class="flex-tr-child github" style="display:none">' + application.github + '</td>' +
           '<td class="flex-tr-child googleplay" style="display:none">' + application.googleplay + '</td>' +
           '<td class="flex-tr-child appstore" style="display:none">' + application.appstore + '</td>' +
           '<td class="flex-tr-child app_markup_percentage" style="display:none">' + application.app_markup_percentage + '</td>' +
-          '<td class="flex-tr-child signup_uri" style="display:none">' + application.signup_uri + '</td>' +
           '<td class="action flex-tr-child"><button class="delete" id="' + application.app_id + '">Delete</button></td>' +
           '<td class="action flex-tr-child"><button class="update" id="' + application.app_id + '">Update</button></td>' +
         '</tr>'
@@ -136,12 +136,12 @@ require([getPath("docson/docson"), getPath("lib/jquery"), getPath("lib/select2.m
         $('#placeholder_app_id').text(' ' + e.target.id + ' ').attr('style', 'background:#ffffe0');
         $('#application-name').val($('#' + e.target.id + ' .name').text());
         $('#application-redirect').val($('#' + e.target.id + ' .redirect_uri').text());
+        $('#application-signup').val($('#' + e.target.id + ' .signup_uri').text());
         $('#application-homepage').val($('#' + e.target.id + ' .homepage').text());
         $('#application-github').val($('#' + e.target.id + ' .github').text());
         $('#application-googleplay').val($('#' + e.target.id + ' .googleplay').text());
         $('#application-appstore').val($('#' + e.target.id + ' .appstore').text());
         $('#application-markup').val($('#' + e.target.id + ' .app_markup_percentage').text());
-        $('#application-signup').val($('#' + e.target.id + ' .signup_uri').text());
         var array = $('#' + e.target.id + ' .scopes').text().split(', '),
             $scopes = $('.scopes input'),
             i;
@@ -178,23 +178,23 @@ require([getPath("docson/docson"), getPath("lib/jquery"), getPath("lib/select2.m
 
       var name     = Trim($('#application-name').val()),
           redirect = Trim($('#application-redirect').val()),
+          signup   = Trim($('#application-signup').val()),
           homepage = Trim($('#application-homepage').val()),
           github   = Trim($('#application-github').val()),
           appstore = Trim($('#application-appstore').val()),
           google   = Trim($('#application-googleplay').val()),
-          markup   = Trim($('#application-markup').val()),
-          signup   = Trim($('#application-signup').val());
+          markup   = Trim($('#application-markup').val());
 
       var scopesEl = $("form:first :input[type='checkbox']");
 
       if (name !== '')     request['name']                  = name;
       if (redirect !== '') request['redirect_uri']          = redirect;
+      if (signup !== '')   request['signup_uri']            = signup;
       if (homepage !== '') request['homepage']              = homepage;
       if (github !== '')   request['github']                = github;
       if (appstore !== '') request['appstore']              = appstore;
       if (google !== '')   request['googleplay']            = google;
       if (markup !== '')   request['app_markup_percentage'] = markup;
-      if (signup !== '')   request['signup_uri']            = signup;
 
       for (i = 0; i < scopesEl.length; i++) {
         if (scopesEl[i].checked) {
