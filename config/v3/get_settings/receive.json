@@ -95,6 +95,10 @@
           "type": ["string", "null"],
           "description": "Tax identification number. Only applicable for real money account."
         },
+        "account_opening_reason": {
+          "type": ["string", "null"],
+          "description": "Purpose and reason for requesting the account opening. Only applicable for real money account."
+        },
         "jp_account_status": {
           "type": "object",
           "title": "Japan real money account status",

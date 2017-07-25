@@ -64,6 +64,16 @@
       "pattern": "^[\\w-]{0,20}$",
       "description": "Tax identification number. Only applicable for real money account. Required for maltainvest landing company."
     },
+    "account_opening_reason": {
+      "type": "string",
+      "description": "Purpose and reason for requesting the account opening. Only applicable for real money account. Required for clients that have not set it yet. Can only be set once.",
+      "enum": [
+        "Speculative",
+        "Income Earning",
+        "Assets Saving",
+        "Hedging"
+      ]
+    },
     "allow_copiers": {
       "type": "integer",
       "pattern": "^(0|1)$",
