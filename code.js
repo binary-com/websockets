@@ -1,5 +1,13 @@
+function isProduction(url) {
+    return url && url.indexOf('developers.binary.com') > 0;
+}
+
+function getBaseUrl(url) {
+    return (isProduction('' + url) ? '' : '/' + url.split('/')[3]) + '/';
+}
+
 require.config({
-    baseUrl: '/'
+    baseUrl: getBaseUrl(document.location.href),
 });
 
 var LiveApi = window['binary-live-api'].LiveApi;
