@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-  {% assign base_url = '/websockets' %}
-  {% assign branch = '' %}
-  {% if site.baseurl contains base_url %}
-    {% assign branch = base_url %}
+  {% assign branch = site.baseurl %}
+  {% if site.baseurl == '/websockets' %}
+    {% assign branch = '' %}
   {% endif %}
 
   {% include head.html %}
