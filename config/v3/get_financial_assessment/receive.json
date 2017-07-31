@@ -93,6 +93,14 @@
         "occupation": {
           "type": "string",
           "description": "Occupation"
+        },
+        "employment_status": {
+          "type": "string",
+          "description": "Employment Status"
+        },
+        "source_of_wealth": {
+          "type": "string",
+          "description": "Source of wealth"
         }
       }
     },

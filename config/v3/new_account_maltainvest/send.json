@@ -210,6 +210,16 @@
       "description": "Occupation",
       "required": "1"
     },
+    "employment_status" : {
+      "enum": ["Employed", "Pensioner", "Self-Employed", "Student", "Unemployed"],
+      "description": "Employment Status",
+      "required": 0
+    },
+    "source_of_wealth" : {
+      "enum": ["Accumulation of Income/Savings", "Cash Business", "Company Ownership", "Divorce Settlement", "Inheritance", "Investment Income", "Sale of Property", "Other"],
+      "description": "Source of wealth",
+      "required": 0
+    },
     "accept_risk" : {
       "type": "integer",
       "description": "Show whether client has accepted risk disclaimer, boolean value 1 or 0",

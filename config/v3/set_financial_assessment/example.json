@@ -17,5 +17,7 @@
     "income_source": "Self-Employed",
     "net_income": "$25,000 - $100,000",
     "estimated_worth": "$100,000 - $250,000",
-    "occupation": "Managers"
+    "occupation": "Managers",
+    "employment_status": "Self-Employed",
+    "source_of_wealth": "Company Ownership"
 }
