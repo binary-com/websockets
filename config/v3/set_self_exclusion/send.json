@@ -10,38 +10,31 @@
       "required": "1"
     },
     "max_balance":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,20}$",
+      "type": ["number", "null"],
       "description": "Maximum account cash balance"
     },
     "max_turnover":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,20}$",
+      "type": ["number", "null"],
       "description": "Daily turnover limit"
     },
     "max_losses":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,20}$",
+      "type": ["number", "null"],
       "description": "Daily limit on losses"
     },
     "max_7day_turnover":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,20}$",
+      "type": ["number", "null"],
       "description": "7-day turnover limit"
     },
     "max_7day_losses":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,20}$",
+      "type": ["number", "null"],
       "description": "7-day limit on losses"
     },
     "max_30day_turnover":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,20}$",
+      "type": ["number", "null"],
       "description": "30-day turnover limit"
     },
     "max_30day_losses":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,20}$",
+      "type": ["number", "null"],
       "description": "30-day limit on losses"
     },
     "max_open_bets":{

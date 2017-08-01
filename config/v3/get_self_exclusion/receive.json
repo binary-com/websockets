@@ -14,31 +14,31 @@
       "title": "Self-Exclusion Structure",
       "properties":{
         "max_balance":{
-          "type":"integer",
+          "type":"number",
           "description": "Maximum account cash balance"
         },
         "max_turnover":{
-          "type":"integer",
+          "type":"number",
           "description": "Daily turnover limit"
         },
         "max_losses":{
-          "type":"integer",
+          "type":"number",
           "description": "Daily limit on losses"
         },
         "max_7day_turnover":{
-          "type":"integer",
+          "type":"number",
           "description": "7-day turnover limit"
         },
         "max_7day_losses":{
-          "type":"integer",
+          "type":"number",
           "description": "7-day limit on losses"
         },
         "max_30day_turnover":{
-          "type":"integer",
+          "type":"number",
           "description": "30-day turnover limit"
         },
         "max_30day_losses":{
-          "type":"integer",
+          "type":"number",
           "description": "30-day limit on losses"
         },
         "max_open_bets":{
