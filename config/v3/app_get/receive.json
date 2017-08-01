@@ -28,6 +28,11 @@
           "description":"Application redirect_uri",
           "required": 1
         },
+        "verification_uri": {
+          "type": "string",
+          "description":"Application verification_uri",
+          "required": 1
+        },
         "homepage": {
           "type": "string",
           "description":"Application's homepage",

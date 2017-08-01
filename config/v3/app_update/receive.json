@@ -24,6 +24,10 @@
           "type": "string",
           "description":"Application redirect_uri"
         },
+        "verification_uri": {
+          "type": "string",
+          "description":"Application verification_uri"
+        },
         "homepage": {
           "type": "string",
           "description":"Application's homepage"
