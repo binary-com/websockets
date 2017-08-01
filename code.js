@@ -114,6 +114,7 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
           '<td class="flex-tr-child app_id">' + application.app_id + '</td>' +
           '<td class="flex-tr-child scopes">' + application.scopes.join(', ') + '</td>' +
           '<td class="flex-tr-child redirect_uri">' + application.redirect_uri + '</td>' +
+          '<td class="flex-tr-child verification_uri" style="display:none">' + application.verification_uri + '</td>' +
           '<td class="flex-tr-child homepage" style="display:none">' + application.homepage + '</td>' +
           '<td class="flex-tr-child github" style="display:none">' + application.github + '</td>' +
           '<td class="flex-tr-child googleplay" style="display:none">' + application.googleplay + '</td>' +
@@ -136,6 +137,7 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
         $('#placeholder_app_id').text(' ' + e.target.id + ' ').attr('style', 'background:#ffffe0');
         $('#application-name').val($('#' + e.target.id + ' .name').text());
         $('#application-redirect').val($('#' + e.target.id + ' .redirect_uri').text());
+        $('#application-verification').val($('#' + e.target.id + ' .verification_uri').text());
         $('#application-homepage').val($('#' + e.target.id + ' .homepage').text());
         $('#application-github').val($('#' + e.target.id + ' .github').text());
         $('#application-googleplay').val($('#' + e.target.id + ' .googleplay').text());
@@ -175,18 +177,20 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
         request = {'app_register': 1, 'scopes':[]};
       }
 
-      var name     = Trim($('#application-name').val()),
-          redirect = Trim($('#application-redirect').val()),
-          homepage = Trim($('#application-homepage').val()),
-          github   = Trim($('#application-github').val()),
-          appstore = Trim($('#application-appstore').val()),
-          google   = Trim($('#application-googleplay').val()),
-          markup   = Trim($('#application-markup').val());
+      var name         = Trim($('#application-name').val()),
+          redirect     = Trim($('#application-redirect').val()),
+          verification = Trim($('#application-verification').val()),
+          homepage     = Trim($('#application-homepage').val()),
+          github       = Trim($('#application-github').val()),
+          appstore     = Trim($('#application-appstore').val()),
+          google       = Trim($('#application-googleplay').val()),
+          markup       = Trim($('#application-markup').val());
 
       var scopesEl = $("form:first :input[type='checkbox']");
 
       if (name !== '')     request['name']                  = name;
       if (redirect !== '') request['redirect_uri']          = redirect;
+      if (verification !== '') request['verification_uri']  = verification;
       if (homepage !== '') request['homepage']              = homepage;
       if (github !== '')   request['github']                = github;
       if (appstore !== '') request['appstore']              = appstore;
