@@ -21,6 +21,12 @@
               "type": "string"
           }
         },
+        "prompt_client_to_authenticate": {
+            "type": "string",
+            "pattern": "^(1|0)$",
+            "description": "Indicates whether the client should be prompted to authenticate their account.",
+            "required": 1
+        },
         "risk_classification": {
           "type": "string",
           "description": "Client risk classification: low, standard, high",
