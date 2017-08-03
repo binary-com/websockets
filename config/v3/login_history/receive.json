@@ -11,8 +11,8 @@
     },
     "login_history":{
         "type":"array",
-        "title":"list of details of login activity",
-        "description":"User login history",
+        "title":"List of details of login/logout activity",
+        "description":"Array of records of client login/logout activities",
         "items":{
           "type":"object",
           "description":"User login history",
@@ -39,8 +39,7 @@
               "required": 1
             }
           }
-        },
-        "description":"Array of login/logout activities"
+        }
     },
     "msg_type":{
       "type":"string",
