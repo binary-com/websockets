@@ -110,7 +110,6 @@
       "enum": [
         "Speculative",
         "Income Earning",
-        "Assets Saving",
         "Hedging"
       ]
     },
