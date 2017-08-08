@@ -114,7 +114,7 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
           '<td class="flex-tr-child app_id">' + application.app_id + '</td>' +
           '<td class="flex-tr-child scopes">' + application.scopes.join(', ') + '</td>' +
           '<td class="flex-tr-child redirect_uri">' + application.redirect_uri + '</td>' +
-          '<td class="flex-tr-child verification_uri" style="display:none">' + application.verification_uri + '</td>' +
+          '<td class="flex-tr-child verification_uri" style="display:none">' + (application.verification_uri || '') + '</td>' +
           '<td class="flex-tr-child homepage" style="display:none">' + application.homepage + '</td>' +
           '<td class="flex-tr-child github" style="display:none">' + application.github + '</td>' +
           '<td class="flex-tr-child googleplay" style="display:none">' + application.googleplay + '</td>' +
@@ -212,6 +212,7 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
       $('#' + application.app_id + ' .app_id').text(application.app_id);
       $('#' + application.app_id + ' .scopes').text(application.scopes.join(', '));
       $('#' + application.app_id + ' .redirect_uri').text(application.redirect_uri);
+      $('#' + application.app_id + ' .verification_uri').text(application.verification_uri);
     }
 
     function getCurrentApi() {
