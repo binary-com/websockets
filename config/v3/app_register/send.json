@@ -24,35 +24,35 @@
       },
       "required": "1"
     },
-    "homepage":{
-      "type": ["string", "null"],
-      "pattern": "^.{0,255}$",
-      "description": "Application's homepage"
+    "homepage": {
+      "type": "string",
+      "pattern": "^https?:\/\/[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$",
+      "description":"Application's homepage"
     },
-    "github":{
-      "type": ["string", "null"],
-      "pattern": "^.{0,255}$",
-      "description": "Application's GitHub page (for open-source projects)"
+    "github": {
+      "type": "string",
+      "pattern": "^https?:\/\/[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$",
+      "description":"Application's GitHub page (for open-source projects)"
     },
-    "appstore":{
-      "type": ["string", "null"],
-      "pattern": "^.{0,255}$",
-      "description": "Application's App Store URL (if applicable)"
+    "appstore": {
+      "type": "string",
+      "pattern": "^https?:\/\/[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$",
+      "description":"Application's App Store URL (if applicable)"
     },
-    "googleplay":{
-      "type": ["string", "null"],
-      "pattern": "^.{0,255}$",
-      "description": "Application's Google Play URL (if applicable)"
+    "googleplay": {
+      "type": "string",
+      "pattern": "^https?:\/\/[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$",
+      "description":"Application's Google Play URL (if applicable)"
     },
     "redirect_uri": {
       "type": "string",
-      "pattern": "^(https?:\/\/)?(localhost(:\\d+)*\/?|([\\da-z\\.-]+)\\.([a-z\\.]{2,8})([\\/\\w \\.-]*)*\/?)$",
+      "pattern": "^https?:\/\/[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$",
       "description":"Application redirect_uri",
       "required": "1"
     },
     "verification_uri": {
       "type": "string",
-      "pattern": "^(https?:\/\/)?(localhost(:\\d+)*\/?|([\\da-z\\.-]+)\\.([a-z\\.]{2,8})([\\/\\w \\.-]*)*\/?)$",
+      "pattern": "^https?:\/\/[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$",
       "description":"Application verification_uri"
     },
     "app_markup_percentage": {
