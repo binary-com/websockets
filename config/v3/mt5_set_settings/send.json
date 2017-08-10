@@ -12,6 +12,7 @@
     },
     "login": {
       "type": "string",
+      "pattern": "^\\d+$",
       "description": "MT5 user login",
       "required": "1"
     },
