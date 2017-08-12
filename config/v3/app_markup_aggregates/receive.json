@@ -1,0 +1,66 @@
+{
+  "$schema":"http://json-schema.org/draft-04/schema#",
+  "type":"object",
+  "title":"Arbitrary App Markup Aggregates",
+  "description":"Aggregate reporting of app_markup",
+  "properties":{
+    "echo_req":{
+      "title":"Echo request",
+      "description":"Echo of the request made",
+      "required": 1
+    },
+    "app_markup_aggregates":{
+        "type":"object",
+        "title":"App Markup Aggregates",
+        "description":"App Markup Aggregate details",
+        "properties":{
+          "by_app_id":{
+              "type":"array",
+              "items":{
+                "type":"object",
+                "properties":{
+                  "app_id": {
+                    "type":"integer",
+                    "description": "App id of app where this transaction was performed. For example, it's 1 for binary.com."
+                  },
+                  "client_currcode": {
+                    "type": "string",
+                    "description": "Currency code of the clients"
+                  },
+                  "transaction_count":{
+                    "type":"integer",
+                    "description":"The number of transactions in this grouping"
+                  },
+                  "app_markup":{
+                    "type":"number",
+                    "description":"The markup the clients paid in their currency"
+                  },
+                  "app_markup_value":{
+                    "type":"number",
+                    "description":"The markup the clients paid in the app developer's currency"
+                  },
+                  "first_txn_date": {
+                    "type": "string",
+                    "description": "The date of the first transaction in this grouping"
+                  },
+                  "last_txn_date": {
+                    "type": "string",
+                    "description": "The date of the last transaction in this grouping"
+                  }
+                }
+              },
+              "description":"Array of app markup summaries by app_id"
+            }
+          }
+        },
+    "msg_type":{
+      "type":"string",
+      "description":"app_markup_aggregates",
+      "required": 1
+    },
+    "req_id": {
+      "type": "integer",
+      "description": "Optional field send in request to map to response, present only when request contains req_id"
+    }
+  }
+}
