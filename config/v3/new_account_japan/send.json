@@ -86,14 +86,12 @@
     },
     "secret_question": {
       "enum": [ "Mother's maiden name", "Name of your pet", "Name of first love", "Memorable town/city", "Memorable date", "Favourite dish", "Brand of first car", "Favourite artist" ],
-      "description": "Accept any value in enum list.",
-      "required": 1
+      "description": "Accept any value in enum list. Required for new account and existing client details will be used if client open another account."
     },
     "secret_answer": {
       "type": "string",
       "pattern": "^[^<>&()]{1,100}$",
-      "description": "Answer to secret question, within 1-100 characters. All characters are allowed except <,>,&,),(. ",
-      "required": 1
+      "description": "Answer to secret question, within 1-100 characters. All characters are allowed except <,>,&,),(. Required for new account and existing client details will be used if client open another account"
     },
     "tax_residence": {
       "type": "string",
