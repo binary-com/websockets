@@ -78,16 +78,14 @@
     },
     "secret_question": {
       "enum": [ "Mother's maiden name", "Name of your pet", "Name of first love", "Memorable town/city", "Memorable date", "Favourite dish", "Brand of first car", "Favourite artist" ],
-      "description": "Accept any value in enum list.",
-      "required": "1"
+      "description": "Accept any value in enum list. Required for new account and existing client details will be used if client open another account."
     },
     "secret_answer": {
       "type": "string",
       "minLength": 4,
       "maxLength": 50,
       "pattern": "^[\\w\\-\\,\\.\\' ]+",
-      "description": "Answer to secret question, within 4-50 characters.",
-      "required": "1"
+      "description": "Answer to secret question, within 4-50 characters. Required for new account and existing client details will be used if client open another account."
     },
     "affiliate_token": {
       "type": "string",
