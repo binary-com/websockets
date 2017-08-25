@@ -14,13 +14,13 @@
       "type": "integer",
       "description": "If set to 1, will return app_markup transaction details."
     },
-    "date_time_from": {
+    "date_from": {
       "type": "string",
       "pattern": "^(\\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01]) ([01]?\\d|2[0-3]):([0-5]?\\d):([0-5]?\\d)|\\d{1,10})$",
       "description": "Start date (epoch or YYYY-MM-DD HH:MM:SS). Results are inclusive of this time.",
       "required": "1"
     },
-    "date_time_to": {
+    "date_to": {
       "type": "string",
       "pattern": "^(\\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01]) ([01]?\\d|2[0-3]):([0-5]?\\d):([0-5]?\\d)|\\d{1,10})$",
       "description": "End date (epoch or YYYY-MM-DD HH::MM::SS). Results are inclusive of this time.",
@@ -45,12 +45,12 @@
     },
     "sort_fields": {
         "type": "array",
-        "items": [
+        "items": 
             {
                 "type": "string",
                 "pattern": "^transaction_time|app_id|client_loginid$"
             }
-        ],
+        ,
         "description": "Optional one or more of the specified fields to sort on. Default sort field is by transaction_time.",
         "required": "0",
         "uniqueItems": true,
@@ -59,7 +59,7 @@
     },
     "sort": {
       "type": "string",
-      "pattern": "^(ASC|DESC)$",
+      "enum": ["ASC", "DESC"],
       "description": "Optional transaction_time sort direction, default DESC. Other fields sort order is ASC."
     },
     "passthrough": {

@@ -1,7 +1,7 @@
 {
     "app_markup_details":1,
-    "date_time_from":"2017-08-01 00:00:00",
-    "date_time_to":"2017-08-31 23:59:59",
+    "date_from":"2017-08-01 00:00:00",
+    "date_to":"2017-08-31 23:59:59",
     "app_id":1234,
     "limit":100,
     "offset":0,
