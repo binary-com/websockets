@@ -17,6 +17,7 @@
         },
         "amount": {
             "type": "number",
+            "minimum": 0,
             "description":"Proposed contract payout or stake value"
         },
         "basis": {

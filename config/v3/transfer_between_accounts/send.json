@@ -25,7 +25,8 @@
       "pattern": "^[A-Z]{3}$"
     },
     "amount": {
-      "type": "number"
+      "type": "number",
+      "minimum": 0
     },
     "passthrough": {
       "type": "object",
