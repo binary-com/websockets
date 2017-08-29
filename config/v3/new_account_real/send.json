@@ -115,6 +115,11 @@
       "enum": [ "Less than $25,000", "$25,000 - $50,000", "$50,001 - $100,000", "$100,001 - $500,000", "Over $500,000" ],
       "description": "The anticipated account turnover"
     },
+    "currency": {
+      "pattern": "^[A-Z]{3}$",
+      "required": "0",
+      "description": "Optional field to set currency of the account. List of supported currencies can be acquired with 'payout_currencies' call"
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."

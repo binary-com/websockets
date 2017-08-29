@@ -7,7 +7,7 @@
      "set_account_currency": {
       "pattern": "^[A-Z]{3}$",
       "required": "1",
-      "description": "Supported currencies: USD, EUR, GBP, AUD, JPY"
+      "description": "Currency of the account. List of supported currencies can be acquired with 'payout_currencies' call"
     },
     "passthrough": {
       "type": "object",
