@@ -97,7 +97,6 @@
   },
   "required": [
     "echo_req",
-    "buy_contract_for_multiple_accounts",
     "msg_type"
   ]
 }
