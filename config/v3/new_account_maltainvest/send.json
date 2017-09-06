@@ -47,13 +47,13 @@
     },
     "address_line_1": {
       "type" : "string",
-      "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{1,70}$",
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#\/-]{1,70}$",
       "description": "Within 70 characters.",
       "required": "1"
     },
     "address_line_2": {
       "type" : "string",
-      "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{0,70}$",
+      "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#\/-]{0,70}$",
       "description": "Optional field, within 70 characters."
     },
     "address_city": {
