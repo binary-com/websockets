@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title":"Create maltainvest account Send",
-  "description": "This call opens a new real-money account with the 'maltainvest' Landing Company. Note: you must be authenticated to Binary (Europe) Ltd or virtual-money account to call this function.",
+  "title": "Create maltainvest account Send",
+  "description": "This call opens a new real-money account with the 'maltainvest' Landing Company. This call can be made from a virtual-money account or real-money account at Binary (Europe) Ltd. If it’s the latter, client information fields in this call will be ignored and data from your existing real-money account will be used.",
   "properties": {
     "new_account_maltainvest": {
       "type": "integer",

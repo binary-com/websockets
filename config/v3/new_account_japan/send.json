@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title":"Create Japan account Send",
-  "description": "This call opens a new real-money account with the 'Japan' Landing Company. Note: you must be authenticated to Japan virtual-money account to call this function.",
+  "description": "This call opens a new real-money account with the 'Japan' Landing Company. This call can be made from Japan virtual-money account or real-money account. In latter case client information fields in this call will be ignored, and existing data will be used",
   "properties": {
     "new_account_japan": {
       "type": "integer",

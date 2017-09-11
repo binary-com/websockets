@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title":"Create real account Send",
-  "description": "This call opens a new real-money account. Note: you must be authenticated to a virtual-money account to call this function.",
+  "description": "This call opens a new real-money account. This call can be made from a virtual-money or a real-money account. If it’s the latter, client information fields in this call will be ignored and data from your existing real-money account will be used.",
   "properties": {
     "new_account_real": {
       "type": "integer",
