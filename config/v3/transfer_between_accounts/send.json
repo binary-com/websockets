@@ -2,13 +2,13 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Transfer Between Accounts Request",
-  "description": "This call allows transfers between accounts held by a given user with the 'malta' and 'maltainvest' Landing Companies or between sub account and master account for omnibus accounts.",
+  "description": "This call allows transfers between accounts held by a given user. Transfer funds between your fiat and cryptocurrency accounts (for a fee). Please note that account_from should be same as current authorized account.",
   "properties": {
     "transfer_between_accounts": {
       "type":"integer",
       "pattern": "^1$",
       "required": "1",
-      "description": "if account_from and account_to are not provided, we'll just return available accounts"
+      "description": "If account_from or account_to is not provided, we'll just return available accounts."
     },
     "account_from": {
       "type": "string",
