@@ -34,6 +34,28 @@
           "type": "number",
           "description": "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
         },
+        "payout_per_symbol": {
+          "type": "object",
+          "properties": {
+            "atm": {
+              "type": ["number", "null"],
+              "description": "Maximum aggregate payouts on open positions per symbol for contracts where barrier is same as entry spot. It will be 'null' for japan."
+            },
+            "non_atm": {
+              "type": "object",
+              "properties": {
+                "less_than_seven_days": {
+                  "type": "number",
+                  "description": "Maximum aggregate payouts on open positions per symbol for contract where barrier is different from entry spot and duration is less than and equal to seven days"
+                },
+                "more_than_seven_days": {
+                  "type": "number",
+                  "description": "Maximum aggregate payouts on open positions per symbol for contract where barrier is different from entry spot and duration is more to seven days"
+                }
+              }
+            }
+          }
+        },
         "lifetime_limit": {
           "type": "number",
           "description": "Lifetime withdrawal limit"
