@@ -177,6 +177,21 @@
           "type": "integer",
           "description": "Epoch time of the sell spot. Note that since certain underlyings don't tick every second, the sell spot time may be a few seconds before the sell time. Example: 1446629000 (only present for contracts already sold)"
         },
+        "audit_details": {
+          "type": ["object", "null"],
+          "title": "Audit details for expired contract.",
+          "description": "Tick details around contract start and end time.",
+          "properties": {
+            "contract_start": {
+              "type": "array",
+              "description": "Ticks around contract start time."
+            },
+            "contract_end": {
+              "type": "array",
+              "description": "Ticks around contract end time."
+            }
+          }
+        },
         "transaction_ids": {
           "type": "object",
           "title": "Transaction ids for contract",
