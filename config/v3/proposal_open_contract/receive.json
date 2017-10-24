@@ -184,11 +184,53 @@
           "properties": {
             "contract_start": {
               "type": "array",
-              "description": "Ticks around contract start time."
+              "description": "Ticks around contract start time.",
+              "item": {
+                "type": "object",
+                "properties": {
+                  "epoch": {
+                    "type": "integer",
+                    "description": "Epoch time of a tick or the contract start or end time."
+                  },
+                  "name": {
+                    "type": ["string","null"],
+                    "description": "A short description of the data. It could be a tick or a time associated with the contract."
+                  },
+                  "tick": {
+                    "type": ["number","null"],
+                    "description": "The spot value at the given epoch."
+                  },
+                  "flag": {
+                    "type": ["string","null"],
+                    "description": "A flag used to highlight the record in front-end applications."
+                  }
+                }
+              }
             },
             "contract_end": {
               "type": "array",
-              "description": "Ticks around contract end time."
+              "description": "Ticks around contract end time.",
+              "item": {
+                "type": "object",
+                "properties": {
+                  "epoch": {
+                    "type": "integer",
+                    "description": "Epoch time of a tick or the contract start or end time."
+                  },
+                  "name": {
+                    "type": ["string","null"],
+                    "description": "A short description of the data. It could be a tick or a time associated with the contract."
+                  },
+                  "tick": {
+                    "type": ["number","null"],
+                    "description": "The spot value at the given epoch."
+                  },
+                  "flag": {
+                    "type": ["string","null"],
+                    "description": "A flag used to highlight the record in front-end applications."
+                  }
+                }
+              }
             }
           }
         },
