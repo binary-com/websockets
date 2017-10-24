@@ -35,7 +35,7 @@
           "description": "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
         },
         "payout_per_symbol": {
-          "type": "object",
+          "type": ["object", "null"],
           "properties": {
             "atm": {
               "type": ["number", "null"],
