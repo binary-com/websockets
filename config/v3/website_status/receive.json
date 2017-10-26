@@ -40,6 +40,10 @@
           "pattern": "^(closed|open)$",
           "description": "Current status of the ico auction. closed or open"
         },
+        "ico_info": {
+          "type":"object",
+          "description": "Information about the current ICO bids and price"
+        },
  
         "site_status": {
           "type":"string",
