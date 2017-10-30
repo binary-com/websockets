@@ -6,13 +6,13 @@ permalink: endpoint/
     <input id="endpoint-input" type="text" placeholder="Custom endpoint url" autocomplete="on"/>
     <input id="appid-input" type="text" placeholder="App ID of endpoint" autocomplete="on"/>
     <button id="endpoint-button">Use New Endpoint</button>
-    <div id="conn-error" class="errorfield">Failed to connect, fallback to default endpoint</div>
-    <div>
+    <p id="conn-error" class="errorfield">Failed to connect, fallback to default endpoint</p>
+    <p>
         <span id="connecting">Connecting ...</span>
-            <span id="connected" style="font-weight: bold">
-                <span>Connected to: </span>
-                <span id="api-url"></span>
-            </span>
-    </div>
+        <span id="connected" style="font-weight: bold">
+            <span>Connected to: </span>
+            <span id="api-url"></span>
+        </span>
+    </p>
     <button id="use-default-button">Use Default Endpoint</button>
 </div>
