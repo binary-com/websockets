@@ -29,6 +29,20 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
     $('#conn-error').hide();
     $('#connected').hide();
 
+    function endpointNotification() {
+        const end_note = document.getElementById('end-note');
+        if (end_note) {
+            const server = localStorage.getItem('apiUrl');
+            if (server && server !== defaultAppId) {
+                end_note.innerHTML = 'The server <a href="https://developers.binary.com/endpoint/">endpoint</a> is: ' + server;
+                end_note.classList.remove('invisible');
+            } else {
+                end_note.innerHTML = '';
+                end_note.classList.add('invisible');
+            }
+        }
+    }
+
     function escapeHtml(unsafe) {
         return unsafe.toString()
             .replace(/&/g, "&amp;")
@@ -54,6 +68,7 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
             $('#connecting').hide();
             $('#connected').show();
             $('#api-url').text(apiUrl);
+            endpointNotification();
         };
         api.events.on('*', incomingMessageHandler);
     }
@@ -390,6 +405,7 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
             appId = defaultAppId;
             initConnection();
             $('#endpoint-input').val('');
+            $('#appid-input').val('');
         };
     });
 

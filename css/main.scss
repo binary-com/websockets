@@ -359,4 +359,19 @@ code {
     border: 1px solid #eceff1;
     font-weight: 400;
 }
+
+#end-note {
+    line-height: 25px;
+    background: #c03;
+    font-size: 0.8rem;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+
+    a {
+        color: white;
+    }
+}
+
 @import "monokai.css";
