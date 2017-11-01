@@ -17,11 +17,6 @@
         "score": {
           "type": "integer",
           "description": "Financial assessment score based on answers"
-        },
-        "is_professional": {
-          "type": "integer",
-          "description": "On the basis of the information provided in relation to the client's knowledge and experience, we mark whether client is professional or not. 1: professional, 0: not professional",
-          "pattern": "^(1|0)$"
         }
       }
     },
