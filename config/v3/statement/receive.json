@@ -48,7 +48,8 @@
                     "description": "Time at which contract was purchased, present only for sell transaction"
                   },
                   "action_type":{
-                    "type":"string",
+                    "type": "string",
+                    "enum": ["buy", "sell", "deposit", "withdrawal"],
                     "description":"It is the type of action Example: buy"
                   },
                   "amount":{

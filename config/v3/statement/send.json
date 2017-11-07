@@ -35,7 +35,7 @@
     },
     "action_type": {
       "type": "string",
-      "pattern": "^(buy|sell|deposit|withdrawal)$",
+      "enum": ["buy", "sell", "deposit", "withdrawal"],
       "description": "Optional filter for statement (deposit,withdrawal,buy,sell)"
     },
     "passthrough": {
