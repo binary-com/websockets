@@ -78,6 +78,11 @@
       "pattern": "^(0|1)$",
       "description": "Boolean value 1 or 0, indicating permission to allow others to follow your trades. Note: not applicable for Virtual account. Only allow for real money account."
     },
+    "request_professional_status": {
+      "type": "integer",
+      "pattern": "^1$",
+      "description": "Required when client wants to be treated as professional. Applicable for financial accounts only."
+    },
     "jp_settings": {
       "type": ["object", "null"],
       "title": "Japan real money client settings",
