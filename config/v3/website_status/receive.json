@@ -35,16 +35,6 @@
             "type": "object",
             "description": "Show fractional digits for supported currencies, for example USD have display of 2 fractional digits. { USD => { fractional_digits => 2 } }"
         },
-        "ico_status": {
-          "type":"string",
-          "pattern": "^(closed|open)$",
-          "description": "Current status of the ico auction. closed or open"
-        },
-        "ico_info": {
-          "type":"object",
-          "description": "Information about the current ICO bids and price"
-        },
- 
         "site_status": {
           "type":"string",
           "pattern": "^(up|down)$",
