@@ -12,11 +12,23 @@ require.config({
 
 var LiveApi = window['binary-live-api'].LiveApi;
 
-var defaultAppId = 1089;
-var defaultApiUrl = 'wss://ws.binaryws.com/websockets/v3';
+var getApiUrl = function () {
+  var server_url = window.localStorage.getItem('config.server_url');
+  if (!server_url) {
+    var server = 'frontend';
+    server_url = server + '.binaryws.com';
+  }
+  return 'wss://' + server_url + '/websockets/v3';
+};
 
-var appId = localStorage.getItem('appId') || defaultAppId;
-var apiUrl = localStorage.getItem('apiUrl') || defaultApiUrl;
+var getAppId = function () {
+  window.localStorage.getItem('config.app_id') || '1098'
+}
+
+var defaultApiUrl = getApiUrl();
+
+var appId = getAppId();
+var apiUrl = getApiUrl();
 var langCode = 'en';
 
 require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
@@ -76,10 +88,10 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
     function resetEndpoint() {
         appId = defaultAppId;
         apiUrl = defaultApiUrl;
-        localStorage.removeItem('appId');
-        localStorage.removeItem('apiUrl');
-        $('#endpoint-input').val('');
-        $('#appid-input').val('');
+        localStorage.removeItem('config.app_id');
+        localStorage.removeItem('config.server_url');
+        $('#endpoint-input').val(getApiUrl());
+        $('#appid-input').val(getAppId());
         initConnection();
     }
 
@@ -392,17 +404,17 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
         apiUrl = 'wss://' + $('#endpoint-input').val() + '/websockets/v3';
         appId = $('#appid-input').val();
 
-        localStorage.setItem('apiUrl', apiUrl);
-        localStorage.setItem('appId', appId);
+        localStorage.setItem('config.server_url', apiUrl);
+        localStorage.setItem('config.app_id', appId);
 
         $('#conn-error').hide();
         initConnection();
         api.socket.onerror = function() {
             $('#conn-error').show();
-            localStorage.removeItem('apiUrl');
-            localStorage.removeItem('appId');
-            apiUrl = defaultApiUrl;
-            appId = defaultAppId;
+            localStorage.removeItem('config.server_url');
+            localStorage.removeItem('config.app_id');
+            apiUrl = getApiUrl();
+            appId = getAppId();
             initConnection();
             $('#endpoint-input').val('');
             $('#appid-input').val('');
