@@ -22,7 +22,7 @@ var getApiUrl = function () {
 };
 
 var getAppId = function () {
-  window.localStorage.getItem('config.app_id') || '1098'
+  window.localStorage.getItem('config.app_id') || '1089'
 }
 
 var defaultApiUrl = getApiUrl();
