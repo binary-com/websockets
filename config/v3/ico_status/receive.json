@@ -31,6 +31,35 @@
                 "minimum_bid_usd": {
                     "type":"number",
                     "description": "The minimum bid amount in USD"
+                },
+                "final_price": {
+                    "type": "number",
+                    "description": "ICO final price in client currency"
+                },
+                "final_price_usd": {
+                    "type": "number",
+                    "description": "ICO final price in USD"
+                },
+                "ico_status": {
+                    "enum": ["closed", "open"],
+                    "description": "Status to represent whether ICO is open or closed"
+                },
+                "initial_deposit_percentage": {
+                    "type": "integer",
+                    "description": "Percentage of initial deposit required to place bids on ICO"
+                },
+                "ico_countries_config": {
+                    "type":"object",
+                    "properties": {
+                        "restricted": {
+                            "type": "array",
+                            "description": "ISO code for countries where we restrict ICO"
+                        },
+                        "professional": {
+                            "type": "array",
+                            "description": "ISO code for countries where client needs to be professional to place ICO bids"
+                        }
+                    }
                 }
             }
         },
