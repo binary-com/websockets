@@ -13,18 +13,18 @@ require.config({
 var LiveApi = window['binary-live-api'].LiveApi;
 
 var getApiUrl = function () {
-  var server_url = window.localStorage.getItem('config.server_url');
-  if (!server_url) {
-    var server = 'frontend';
-    server_url = server + '.binaryws.com';
+  var serverUrl = window.localStorage.getItem("config.server_url");
+  if (!serverUrl) {
+    var server = "frontend";
+    serverUrl = server + ".binaryws.com";
   }
-  return 'wss://' + server_url + '/websockets/v3';
+  return "wss://" + serverUrl + "/websockets/v3";
 };
 
 var defaultAppId = 1089;
 
 var getAppId = function () {
-  return window.localStorage.getItem('config.app_id') || defaultAppId;
+  return window.localStorage.getItem("config.app_id") || defaultAppId;
 }
 
 var defaultApiUrl = getApiUrl();
