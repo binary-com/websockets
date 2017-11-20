@@ -21,8 +21,10 @@ var getApiUrl = function () {
   return 'wss://' + server_url + '/websockets/v3';
 };
 
+var defaultAppId = 1089;
+
 var getAppId = function () {
-  window.localStorage.getItem('config.app_id') || '1089'
+  return window.localStorage.getItem('config.app_id') || defaultAppId;
 }
 
 var defaultApiUrl = getApiUrl();
