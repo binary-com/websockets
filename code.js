@@ -399,11 +399,11 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
     // });
 
     $('#endpoint-button').on('click', function() {
-        apiUrl = 'wss://' + $('#endpoint-input').val() + '/websockets/v3';
-        appId = $('#appid-input').val();
+        localStorage.setItem('config.server_url', $('#endpoint-input').val());
+        localStorage.setItem('config.app_id', $('#appid-input').val());
 
-        localStorage.setItem('config.server_url', apiUrl);
-        localStorage.setItem('config.app_id', appId);
+        apiUrl = getApiUrl();
+        appId = getAppId();
 
         $('#conn-error').hide();
         initConnection();
