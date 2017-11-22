@@ -15,17 +15,13 @@ var LiveApi = window['binary-live-api'].LiveApi;
 var defaultAppId = 1089;
 var defaultApiUrl = 'frontend.binaryws.com';
 
-var getApiUrl = function () {
-  var serverUrl = window.localStorage.getItem('config.server_url') || defaultApiUrl;
-  return 'wss://' + serverUrl + '/websockets/v3';
+var getServerUrl = function () {
+  return window.localStorage.getItem('config.server_url') || defaultApiUrl;
 };
 
 var getAppId = function () {
   return window.localStorage.getItem("config.app_id") || defaultAppId;
 };
-
-var appId = getAppId();
-var apiUrl = getApiUrl();
 
 var langCode = 'en';
 
@@ -42,8 +38,8 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
     function endpointNotification() {
         const end_note = document.getElementById('end-note');
         if (end_note) {
-            const server = localStorage.getItem('apiUrl');
-            if (server && server !== defaultAppId) {
+            const server = getServerUrl();
+            if (server && server !== defaultApiUrl) {
                 end_note.innerHTML = 'The server <a href="https://developers.binary.com/endpoint/">endpoint</a> is: ' + server;
                 end_note.classList.remove('invisible');
             } else {
@@ -69,9 +65,9 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
             api.disconnect();
         }
         api = new LiveApi({
-            apiUrl: apiUrl,
+            apiUrl: 'wss://' + getServerUrl() + '/websockets/v3',
             language: langCode,
-            appId: appId
+            appId: getAppId()
         });
         api.socket.onopen = function(e) {
             api.onOpen.apply(api, e);
@@ -84,11 +80,9 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
     }
 
     function resetEndpoint() {
-        appId = defaultAppId;
-        apiUrl = defaultApiUrl;
         localStorage.removeItem('config.app_id');
         localStorage.removeItem('config.server_url');
-        $('#endpoint-input').val(getApiUrl());
+        $('#endpoint-input').val(getServerUrl());
         $('#appid-input').val(getAppId());
         initConnection();
     }
@@ -401,18 +395,12 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
     $('#endpoint-button').on('click', function() {
         localStorage.setItem('config.server_url', $('#endpoint-input').val());
         localStorage.setItem('config.app_id', $('#appid-input').val());
-
-        apiUrl = getApiUrl();
-        appId = getAppId();
-
         $('#conn-error').hide();
         initConnection();
         api.socket.onerror = function() {
             $('#conn-error').show();
             localStorage.removeItem('config.server_url');
             localStorage.removeItem('config.app_id');
-            apiUrl = getApiUrl();
-            appId = getAppId();
             initConnection();
             $('#endpoint-input').val('');
             $('#appid-input').val('');
