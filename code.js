@@ -73,7 +73,7 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
             api.onOpen.apply(api, e);
             $('#connecting').hide();
             $('#connected').show();
-            $('#api-url').text(apiUrl);
+            $('#api-url').text(api.apiUrl);
             endpointNotification();
         };
         api.events.on('*', incomingMessageHandler);
