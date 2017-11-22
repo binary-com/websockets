@@ -12,25 +12,21 @@ require.config({
 
 var LiveApi = window['binary-live-api'].LiveApi;
 
-var getApiUrl = function () {
-  var serverUrl = window.localStorage.getItem("config.server_url");
-  if (!serverUrl) {
-    var server = "frontend";
-    serverUrl = server + ".binaryws.com";
-  }
-  return "wss://" + serverUrl + "/websockets/v3";
-};
-
 var defaultAppId = 1089;
+var defaultApiUrl = 'frontend.binaryws.com';
+
+var getApiUrl = function () {
+  var serverUrl = window.localStorage.getItem('config.server_url') || defaultApiUrl;
+  return 'wss://' + serverUrl + '/websockets/v3';
+};
 
 var getAppId = function () {
   return window.localStorage.getItem("config.app_id") || defaultAppId;
-}
-
-var defaultApiUrl = getApiUrl();
+};
 
 var appId = getAppId();
 var apiUrl = getApiUrl();
+
 var langCode = 'en';
 
 require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
