@@ -65,7 +65,7 @@
           "description": "Number of days for num_of_days_limit withdrawal limit"
         },
         "num_of_days_limit": {
-          "type": "integer",
+          "type": "number",
           "description": "Withdrawal limit for num_of_days days"
         },
         "remainder": {
