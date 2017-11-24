@@ -252,6 +252,12 @@
               "description": "Sell transaction id for that contract, only present when contract is already sold."
             }
           }
+        },
+       "status": {
+         "type": "string",
+           "enum": ["open","sold", "won", "lost"],
+           "title": "Contract status",
+           "description": "Contract status. Will be 'sold' if the contract was sold back before expiry, 'won' if won and 'lost' if lost at expiry. Otherwise will be 'open'"
         }
       }
     },
