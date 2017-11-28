@@ -1,0 +1,44 @@
+---
+layout: page
+permalink: best-practices/
+---
+
+<h1>Best practices</h1>
+<h2>Realtime updates</h2>
+
+<p>There is need to display actual information to client on buy, sell or expiration of contract. </p>
+
+<p>It is possible to use API-methods like
+    <a href="/api#portfolio"><code>portfolio</code></a>,
+    <a href="/api#profit_table"><code>profit_table</code></a>,
+    <a href="/api#statement"><code>statement</code></a>,
+    <a href="/api#balance"><code>balance</code></a>,
+but all they are "poll-model", i.e. slow and impose additional load on <a href="https://binary.com">Binary.com</a>,
+and as the cummulative effect might lead to lags or errors. Those calls are designed to be invoked at
+application initialization stage.
+</p>
+
+<p>The best way to be notified about contract execution or balance update is subscribe to
+    <a href="/api#transaction"><code>transaction</code></a>. All the relevant information can be
+    extracted from the <a href="/api#transaction"><code>transaction</code></a> notification on
+    money deposite/withdraw or contract buy/sell execution.
+</p>
+
+<p>For example to implement real-time portfolio updates using <a href="/api#transaction"><code>transaction</code></a>,
+you can:
+</p>
+<ol>
+    <li>If transaction returns a new contract with action ‘buy’, add it to portfolio</li>
+    <li>If transaction returns an existing contract with action ‘sell’, remove it from portfolio</li>
+</ol>
+
+<p>As the <a href="/api#transaction"><code>transaction</code></a> notification will be delived as soon
+as an event happen, the user interface will appear more <i>reactive</i>, comparing to "poll-methods"
+invocation.
+</p>
+
+<p>Please note, that to prevent missing transaction notification, at application inititialization
+it should subscribe to <a href="/api#transaction"><code>transactions</code></a> first, then actualize
+current state (<a href="/api#statement"><code>statement</code></a>, <a href="/api#portfolio"><code>portfolio</code></a>
+<a href="/api#balance"><code>balance</code></a>), and only then allow user to preform relevant actions.
+</p>
