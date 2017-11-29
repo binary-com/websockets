@@ -65,8 +65,8 @@
       "description": "Array of OHLC (open/high/low/close) price values for the given time (only for style='candles')"
     },
     "msg_type": {
-      "enum": ["candles", "history"],
-      "description": "Will read 'candles' if you requested 'candles', else 'history'",
+      "type": "string",
+      "description": "style",
       "required": 1
     },
     "req_id": {
