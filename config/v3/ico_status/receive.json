@@ -44,6 +44,11 @@
                     "enum": ["closed", "open"],
                     "description": "Status to represent whether ICO is open or closed"
                 },
+                "is_claim_allowed": {
+                  "type": "integer",
+                  "pattern": "^(0|1)$",
+                  "description": "Boolean value 1 or 0, indicating whether ico tokens can be claimed or not"
+                },
                 "initial_deposit_percentage": {
                     "type": "integer",
                     "description": "Percentage of initial deposit required to place bids on ICO"
