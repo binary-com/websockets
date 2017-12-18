@@ -5,5 +5,12 @@
     "address_city": "Test City",
     "address_state": "Test State",
     "address_postcode": "123456",
-    "phone": "1234567890"
+    "phone": "1234567890",
+    "email_consent": 0,
+    "place_of_birth": "ar",
+    "tax_residence": "hk",
+    "tax_identification_number": "987654321",
+    "account_opening_reason": "Speculative",
+    "allow_copiers": 1,
+    "request_professional_status": 1
 }

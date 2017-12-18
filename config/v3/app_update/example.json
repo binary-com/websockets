@@ -1,5 +1,5 @@
 {
-    "app_update": "999",
+    "app_update": 999,
     "name": "Test Application",
     "scopes": ["read", "trade"],
     "homepage": "https://test.example.com/",

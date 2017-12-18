@@ -1,5 +1,6 @@
 {
-    "mt5_set_settings": "1",
+    "mt5_set_settings": 1,
+    "login": "100",
     "email": "test@mailinator.com",
     "name": "Peter Pan",
     "leverage": "100",

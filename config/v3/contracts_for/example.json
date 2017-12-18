@@ -1,3 +1,5 @@
 {
-    "contracts_for": "R_50"
+    "contracts_for": "R_50",
+    "currency": "USD",
+    "product_type": "basic"
 }

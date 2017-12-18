@@ -1,5 +1,5 @@
 {
-    "new_account_real": "1",
+    "new_account_real": 1,
     "salutation" : "Mr",
     "first_name": "Peter",
     "last_name": "Pan",
@@ -12,5 +12,9 @@
     "address_postcode": "3002",
     "phone": "+6123456789",
     "secret_question": "Mother's maiden name",
-    "secret_answer": "Jones"
+    "secret_answer": "Jones",
+    "tax_residence": "ar,sg",
+    "tax_identification_number": "012142545",
+    "account_opening_reason": "Speculative",
+    "account_turnover": "Less than $25,000"
 }

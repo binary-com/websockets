@@ -1,5 +1,6 @@
 {
-    "mt5_password_change": "1",
+    "mt5_password_change": 1,
     "login": "1000",
+    "old_password": "Abc1234",
     "new_password": "abc1234"
 }

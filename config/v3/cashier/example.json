@@ -1,3 +1,5 @@
 {
-    "cashier": "deposit"
+    "cashier": "deposit",
+    "provider": "doughflow",
+    "verification_code": "my_verification_code"
 }

@@ -2,13 +2,13 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Cashier Password Request",
-  "description": "Facilities to manage the Cashier Password, which allows users to lock access to their Cashier using a special password.",
+  "description": "Facilities to manage the Cashier Password, which allows users to lock access to their Cashier using a special password. If neither lock_password nor unlock_password is passed, we'll just return the status for cashier.",
   "properties": {
     "cashier_password": {
-      "type": "string",
+      "type": "integer",
       "pattern": "^1$",
       "required": "1",
-      "description": "if neither lock_password nor unlock_password is passed, we'll just return the status for cashier"
+      "description": "Must be 1"
     },
     "unlock_password": {
       "type": "string",

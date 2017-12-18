@@ -1,6 +1,7 @@
 {
-    "mt5_new_account": "1",
+    "mt5_new_account": 1,
     "account_type": "demo",
+    "mt5_account_type": "cent",
     "email": "test@mailinator.com",
     "name": "Peter Pan",
     "mainPassword": "AbcDv1234",
