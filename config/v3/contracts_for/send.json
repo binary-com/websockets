@@ -19,14 +19,12 @@
         "product_type":{
             "type":"string",
             "description":"Set to 'multi_barrier' to get a list of contracts with predefined trading windows and barriers for a given symbol. Default to 'basic'",
-            "pattern":"^(multi_barrier|basic)$",
-            "default": "basic"
+            "pattern":"^(multi_barrier|basic)$"
         },
         "landing_company":{
             "type":"string",
             "description":"Optional landing_company field. Set to a specific landing company if you want to get a list of contracts for a specific landing company. Default to costarica.",
-            "pattern":"^\\w{2,30}$",
-            "default": "costarica"
+            "pattern":"^\\w{2,30}$"
         },
         "passthrough":{
             "type":"object",
