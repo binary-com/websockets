@@ -53,11 +53,6 @@
             "type": "string"
           }
         },
-        "allow_omnibus": {
-          "type": "integer",
-          "pattern": "^(1|0)$",
-          "description": "1 for omnibus account, 0 for normal clients"
-        },
         "upgradeable_landing_companies": {
           "type" : "array",
           "description": "List of landing company shortcodes the client can upgrade to"
@@ -98,23 +93,6 @@
               "loginid": {
                 "type": "string",
                 "description": "The account id of specified account"
-              }
-            }
-          }
-        },
-        "sub_accounts": {
-          "type": "array",
-          "description": "Sub accounts for omnibus account if any",
-          "items": {
-            "type": "object",
-            "properties": {
-              "loginid": {
-                "type": "string",
-                "description": "The account id of sub account"
-              },
-              "currency": {
-                "type": "string",
-                "description": "Currency of sub account"
               }
             }
           }
