@@ -20,11 +20,6 @@
           "type":"integer",
           "pattern": "^1$",
           "description": "Token deleted."
-        },
-        "sub_account": {
-          "type": "string",
-          "pattern": "^[A-Z]{2,4}[0-9]{1,10}$",
-          "description": "Loginid of sub account, only present when request was for sub account"
         }
       }
     },
