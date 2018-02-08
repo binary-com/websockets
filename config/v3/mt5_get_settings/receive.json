@@ -16,15 +16,15 @@
       "properties": {
         "login": {
           "type": "string",
-          "description": "Login of new MT5 account"
+          "description": "Login ID of the user's MT5 account."
         },
         "group": {
           "type": "string",
-          "description": "The group where account belongs to"
+          "description": "The group where account belongs to."
         },
         "email": {
           "type": "string",
-          "description": "Email address"
+          "description": "Email address."
         },
         "name": {
           "type": "string",
@@ -68,7 +68,11 @@
         },
         "balance": {
           "type": "string",
-          "description": "Account balance"
+          "description": "Account balance."
+        },
+        "currency": {
+          "type": "string",
+          "description": "MT5 account currency (USD or EUR) that depends on the MT5 company (vanuatu, costarica, malta)."
         }
       }
     },

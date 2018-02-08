@@ -16,19 +16,23 @@
       "properties": {
         "login": {
           "type": "string",
-          "description": "Login of new MT5 account"
+          "description": "Login ID of the user's new MT5 account."
         },
         "account_type": {
           "enum": ["demo", "gaming", "financial"],
           "description": "Account type."
         },
         "mt5_account_type": {
-          "enum": ["cent", "standard", "stp"],
+          "enum": ["standard", "advanced"],
           "description": "Sub account type, present only when account type is either demo or financial."
         },
         "balance": {
           "type": "string",
-          "description": "Account balance"
+          "description": "Account balance."
+        },
+        "currency": {
+          "type": "string",
+          "description": "MT5 account currency (USD or EUR) that depends on the MT5 company (vanuatu, costarica, malta)."
         }
       }
     },
