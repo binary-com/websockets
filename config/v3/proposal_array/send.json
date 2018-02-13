@@ -89,7 +89,13 @@
         },
         "trading_period_start": {
             "type": "integer",
-            "description":"[For japan only] An epoch value of a predefined trading period start time"
+            "description":"An epoch value of a predefined trading period start time"
+        },
+        "product_type": {
+          "type": "string",
+          "description": "The product type, either basic or multi_barrier",
+          "pattern":"^(multi_barrier|basic)$",
+          "default": "basic"
         },
         "passthrough": {
             "type": "object",
