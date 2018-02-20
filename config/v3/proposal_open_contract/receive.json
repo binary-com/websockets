@@ -261,6 +261,10 @@
         }
       }
     },
+    "multiplier": {
+          "type": "number",
+          "description": "[Only for lookback trades] Multiplier applies when calculating the final payoff for each type of lookback. e.g. (Exit spot – Lowest historical price) * multiplier = Payout"
+    },
     "msg_type": {
       "type": "string",
       "description": "proposal_open_contract"

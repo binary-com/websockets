@@ -53,6 +53,10 @@
           "type": "number",
           "description": "Example: 10",
           "required": 1
+        },
+        "multiplier": {
+          "type": "number",
+          "description": "[Only for lookback trades] Multiplier applies when calculating the final payoff for each type of lookback. e.g. (Exit spot – Lowest historical price) * multiplier = Payout"
         }
       }
     },

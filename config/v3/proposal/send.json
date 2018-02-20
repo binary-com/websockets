@@ -18,10 +18,10 @@
     "amount": {
       "type": "number",
       "minimum": 0,
-      "description":"Proposed contract payout or stake value"
+      "description":"Proposed contract payout or stake, or multiplier (for lookbacks)."
     },
     "basis": {
-      "description":"Indicate whether amount is 'payout' or 'stake'",
+      "description":"Indicates whether amount is 'payout' or 'stake', and is only used for binary options",
       "enum": ["payout", "stake"]
     },
     "contract_type": {
@@ -62,13 +62,13 @@
     },
     "barrier": {
       "type": "string",
-      "description":"Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), meaning that the entry spot would be adjusted accordingly with that amount to define a barrier.",
+      "description":"Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), meaning that the entry spot would be adjusted accordingly with that amount to define a barrier. Not needed for lookbacks.",
       "pattern": "^[+-]?\\d+\\.?\\d*$"
     },
     "barrier2": {
       "type": "string",
       "pattern": "^[+-]?\\d+\\.?\\d*$",
-      "description":"Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), meaning that the entry spot would be adjusted accordingly with that amount to define a barrier."
+      "description":"Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), meaning that the entry spot would be adjusted accordingly with that amount to define a barrier. Not needed for lookbacks."
     },
     "trading_period_start": {
       "type": "integer",
