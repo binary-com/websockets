@@ -24,8 +24,8 @@
     "amount": {
       "type": "number",
       "minimum": 1,
-      "maximum": 20001,
-      "description": "Amount to deposit. Min 1, max 20000.",
+      "maximum": 20000,
+      "description": "Amount to deposit (in the currency of from_binary)",
       "required": "1"
     },
     "passthrough": {

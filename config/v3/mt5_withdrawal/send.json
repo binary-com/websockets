@@ -24,8 +24,8 @@
     "amount": {
       "type": "number",
       "minimum": 1,
-      "maximum": 20001,
-      "description": "Amount to withdraw. Min 1, max 20000.",
+      "maximum": 20000,
+      "description": "Amount to withdraw (in the currency of the MT5 account).",
       "required": "1"
     },
     "passthrough": {
