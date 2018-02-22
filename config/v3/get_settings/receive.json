@@ -182,14 +182,17 @@
               "description": "Trading purpose (note: only set for Japan real-money accounts)"
             },
             "hedge_asset" : {
-              "type": ["string", "null"],
-              "pattern": "^(Foreign currency deposit|Margin FX|Other)$",
+              "enum": ["Foreign currency deposit", "Margin FX", "Other"],
               "description": "Classification of assets requiring hedge (note: only set for Japan real-money accounts, if 'Hedging' is selected for 'Trading purpose')"
             },
             "hedge_asset_amount" : {
               "type": ["integer", "null"],
               "pattern": "^\\d{0,20}$",
               "description": "Hedge asset amount in JPY (note: only set for Japan real-money accounts, if 'Hedging' is selected for 'Trading purpose')"
+            },
+            "motivation_circumstances" : {
+              "enum": ["Web Advertisement", "Homepage", "Introduction by acquaintance", "Others"],
+              "description": "Reason or circumstances that motivated you to open an account."
             }
           }
         }
