@@ -22,7 +22,7 @@
         },
         "basis": {
             "description":"Indicate whether amount is 'payout' or 'stake'",
-            "enum": ["payout", "stake"]
+            "enum": ["payout", "stake", "multiplier"]
         },
         "contract_type": {
             "type": "array",
