@@ -120,11 +120,6 @@
       "required": "0",
       "description": "Optional field to set currency of the account. List of supported currencies can be acquired with 'payout_currencies' call"
     },
-    "account_type": {
-      "pattern": "^ico|default$",
-      "required": "0",
-      "description": "Optional field to restrict the account type. Currently used only for ICO token accounts."
-    },
     "client_type": {
       "pattern": "^retail|professional$",
       "required": "0",

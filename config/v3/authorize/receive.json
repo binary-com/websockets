@@ -76,11 +76,6 @@
                 "pattern": "^(1|0)$",
                 "description": "Boolean value: 1 or 0, indicating whether its marked as disabled or not"
               },
-              "is_ico_only": {
-                "type": "integer",
-                "pattern": "^(1|0)$",
-                "description": "Boolean value: 1 or 0, indicating whether its ico specific account"
-              },
               "is_virtual": {
                 "type": "integer",
                 "pattern": "^(1|0)$",
