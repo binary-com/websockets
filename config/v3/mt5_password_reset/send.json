@@ -1,10 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title":"MT5 user main password check",
-  "description": "This call validates the main password for the MT5 user",
+  "title":"MT5 user main password reset",
+  "description": "This call changes main password for MT5 user",
   "properties": {
-    "mt5_password_check": {
+    "mt5_password_reset": {
       "type": "integer",
       "description": "Must be 1",
       "pattern": "^1$",
@@ -16,17 +16,23 @@
       "pattern": "^\\w{1,10}$",
       "required": "1"
     },
-    "password": {
+    "new_password": {
       "type": "string",
-      "pattern": "^[ -~]+$",
-      "description": "the password of the account.",
+      "pattern": "^[ -~]{8,25}$",
+      "description": "New password of the account (length within 8-25 chars, accepts any printable ASCII character).",
       "required": "1"
     },
     "password_type": {
       "type": "string",
-      "description": "the password type main/investor (default: main)",
+      "description": "Password type main/investor (default: main)",
       "pattern": "^(main|investor)$",
       "default": "main"
+    },
+    "verification_code": {
+      "type": "string",
+      "description": "Email verification code (received from a verify_email call, which must be done first)",
+      "pattern": "^\\w{8,128}$",
+      "required": "1"
     },
     "passthrough": {
       "type": "object",

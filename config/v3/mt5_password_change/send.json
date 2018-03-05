@@ -18,13 +18,21 @@
     },
     "old_password": {
       "type": "string",
-      "description": "Existing master password of the account.",
+      "pattern": "^[ -~]+$",
+      "description": "Old password for validation (non-empty string, accepts any printable ASCII character)",
       "required": "1"
     },
     "new_password": {
       "type": "string",
-      "description": "New master password of the account.",
+      "pattern": "^[ -~]{8,25}$",
+      "description": "New password (length within 8-25 chars, accepts any printable ASCII character)",
       "required": "1"
+    },
+    "password_type": {
+      "type": "string",
+      "description": "Password type main/investor (default: main)",
+      "pattern": "^(main|investor)$",
+      "default": "main"
     },
     "passthrough": {
       "type": "object",
