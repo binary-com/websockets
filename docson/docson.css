@@ -276,6 +276,7 @@
     color: dimgray;
     float: left;
     max-width: 600px;
+    width: 100%;
 }
 
 .docson .signature-box-container {
