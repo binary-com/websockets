@@ -43,6 +43,12 @@
     "req_id": {
       "type": "integer",
       "description": "Optional field to map request to response"
+    },
+    "expected_checksum": {
+      "type": "string",
+      "pattern":"^[[:xdigit:]]{32}",
+      "description": "The checksum of the file to be uploaded",
+      "required": 1
     }
   },
   "additionalProperties": false
