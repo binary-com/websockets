@@ -5,8 +5,8 @@
   "description": "Immediately cancel the real-time streams of messages of given type",
   "properties": {
     "forget_all": {
-      "enum": ["ticks", "candles", "proposal", "portfolio", "proposal_open_contract", "balance", "transaction", "proposal_array"],
-      "description": "Cancel all streams of a given type (which should be 'ticks', 'proposal', 'proposal_open_contract', etc)",
+      "type": ["string", "array"],
+      "description": "Cancel all streams by type (it can be a single string e.g. 'ticks', or an array of multiple values, e.g. ['ticks', 'candles']). Possible values are: 'ticks', 'candles', 'proposal', 'portfolio', 'proposal_open_contract', 'balance', 'transaction', 'proposal_array'",
       "required": "1"
     },
     "passthrough": {
