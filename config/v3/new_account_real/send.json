@@ -42,7 +42,8 @@
     "place_of_birth": {
       "type" : "string",
       "pattern": "^[a-z]{2}$",
-      "description": "Place of birth, 2-letter country code."
+      "description": "Place of birth, 2-letter country code.",
+      "required": "1"
     },
     "address_line_1": {
       "type" : "string",

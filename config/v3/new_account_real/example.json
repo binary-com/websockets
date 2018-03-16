@@ -4,6 +4,7 @@
     "first_name": "Peter",
     "last_name": "Pan",
     "date_of_birth" : "1980-01-31",
+    "place_of_birth": "id",
     "residence" : "au",
     "address_line_1": "20 Broadway Av",
     "address_line_2": "East Melbourne VIC",
