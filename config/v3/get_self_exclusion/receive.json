@@ -51,11 +51,11 @@
         },
         "exclude_until":{
           "type": "string",
-          "description": "Exclude me from the website until (date YYYY-MM-DD)"
+          "description": "Exclude me from the website (for a minimum of 6 months, up to a maximum of 5 years). Note: uplifting this self-exclusion may require contacting the company."
         },
         "timeout_until":{
           "type": "integer",
-          "description": "Exclude me from the website until (epoch time)"
+          "description": "Exclude me from the website (for up to 6 weeks). The time is in epoch format. Note: unlike exclude_until, this self-exclusion will be lifted automatically at the expiry of the timeout period."
         }
       }
     },

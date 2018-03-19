@@ -50,12 +50,12 @@
     "exclude_until":{
       "type": ["string", "null"],
       "pattern": "^\\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$",
-      "description": "Exclude me from the website until"
+      "description": "Exclude me from the website (for a minimum of 6 months, up to a maximum of 5 years). Note: uplifting this self-exclusion may require contacting the company."
     },
     "timeout_until":{
       "type": ["integer", "null"],
       "pattern": "^\\d{10}$",
-      "description": "Exclude me from the website until (epoch time)"
+      "description": "Exclude me from the website (for up to 6 weeks). Requires time in epoch format. Note: unlike exclude_until, this self-exclusion will be lifted automatically at the expiry of the timeout period."
     },
     "passthrough": {
       "type": "object",
