@@ -24,47 +24,47 @@
     },
     "residence": {
       "type": "string",
-      "description": "2-letter country code (value received from residence_list call)",
+      "description": "2-letter country code (obtained from residence_list call)",
       "pattern": "^[a-z]{2}$",
       "required": "1"
     },
     "affiliate_token": {
       "type": "string",
       "pattern": "^[\\w-]{0,32}$",
-      "description": "Affiliate token, within 32 characters."
+      "description": "[Optional] Affiliate token, within 32 characters."
     },
     "utm_source": {
       "type": "string",
-      "description": "Optional field to identify the source of traffic such as: search engine, newsletter, or other referral",
+      "description": "[Optional] Identifies the source of traffic such as: search engine, newsletter, or other referral",
       "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
     },
     "utm_medium": {
       "type": "string",
-      "description": "Optional field to identify the medium the link was used upon such as: email, CPC, or other methods of sharing",
+      "description": "[Optional] Identifies the medium the link was used upon such as: email, CPC, or other methods of sharing",
       "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
     },
     "utm_campaign": {
       "type": "string",
-      "description": "Optional field to identify a specific product promotion or strategic campaign such as a spring sale or other promotions",
+      "description": "[Optional] Identifies a specific product promotion or strategic campaign such as a spring sale or other promotions",
       "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
     },
     "email_consent": {
-      "type": "integer",
-      "pattern": "^(0|1)$",
-      "description": "Boolean value 1 or 0, indicating permission to use email address for any contact which may include marketing"
+      "enum": [0,1],
+      "description": "[Optional] 1 or 0, indicating permission to use email address for any contact which may include marketing.",
+      "default": "1"
     },
     "gclid_url": {
       "type": "string",
       "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$",
       "description": "(Google Click Identifier) to track source"
     },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    "passthrough":{
+        "type":"object",
+        "description":"[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
     },
     "req_id": {
       "type": "integer",
-      "description": "Optional field to map request to response"
+      "description": "[Optional] Used to map request to response"
     }
   },
   "additionalProperties": false

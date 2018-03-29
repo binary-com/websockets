@@ -5,18 +5,17 @@
   "description":"Binary.com has a number of licensed subsidiaries in various jurisidictions, which are called Landing Companies (and which are wholly owned subsidiaries of the Binary Group). This call provides information about each Landing Company.",
   "properties": {
     "landing_company_details": {
-      "type":"string",
-      "pattern": "^(\\w|-){3,20}$",
-      "description": "Landing company shortcode (for example: costarica, malta, maltainvest, iom)",
+      "enum":["iom","malta","maltainvest","costarica","virtual", "japan", "japan-virtual", "vanuatu", "champion", "champion-virtual"],
+      "description": "Landing company shortcode",
       "required": "1"
     },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    "passthrough":{
+        "type":"object",
+        "description":"[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
     },
     "req_id": {
       "type": "integer",
-      "description": "Optional field to map request to response"
+      "description": "[Optional] Used to map request to response"
     }
   },
   "additionalProperties": false

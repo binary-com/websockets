@@ -5,28 +5,25 @@
   "description": "Retrieve a list of all active symbols (underlying markets upon which contracts are available for trading).",
   "properties": {
     "active_symbols": {
-      "type": "string",
-      "description": "Value must be 'brief' or 'full'. If you use 'brief', only a subset of fields will be returned.",
-      "pattern": "^(brief|full)$",
+      "description": "If you use 'brief', only a subset of fields will be returned.",
+      "enum": ["brief", "full"],
       "required": "1"
     },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
     "landing_company": {
-      "type": "string",
-      "description": "Optional landing company field. If you specify this field, only symbols available for trading by that landing company will be returned.",
-      "pattern": "^(japan|costarica|malta|maltainvest|iom|champion)$"
+      "description": "[Optional] If you specify this field, only symbols available for trading by that landing company will be returned.",
+      "enum":["iom","malta","maltainvest","costarica","virtual", "japan", "japan-virtual", "vanuatu", "champion", "champion-virtual"]
     },
     "product_type":{
-        "type":"string",
-        "description":"Set to 'multi_barrier' to get a list of symbols with predefined trading windows and barriers. Default to 'basic'",
-        "pattern":"^(multi_barrier|basic)$"
+        "description":"[Optional] If you specify this field, only symbols that can be traded through that product type will be returned.",
+        "enum": ["multi_barrier", "basic"]
+    },
+    "passthrough":{
+        "type":"object",
+        "description":"[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
     },
     "req_id": {
       "type": "integer",
-      "description": "Optional field to map request to response"
+      "description": "[Optional] Used to map request to response"
     }
   },
   "additionalProperties": false

@@ -7,17 +7,17 @@
     "landing_company": {
       "type":"string",
       "title": "Landing Company",
-      "description":"Client country",
+      "description":"Client's 2-letter country code (obtained from residence_list call)",
       "pattern": "^\\w\\w$",
       "required": "1"
     },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    "passthrough":{
+        "type":"object",
+        "description":"[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
     },
     "req_id": {
       "type": "integer",
-      "description": "Optional field to map request to response"
+      "description": "[Optional] Used to map request to response"
     }
   },
   "additionalProperties": false

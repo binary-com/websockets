@@ -11,17 +11,17 @@
       "required": "1"
     },
     "add_to_login_history": {
-      "type": "integer",
-      "description": "Optional field, send this when you use api tokens for authorization and want to track activity using login_history call",
-      "pattern": "^(1|0)$"
+      "description": "[Optional] Send this when you use api tokens for authorization and want to track activity using login_history call",
+      "enum":[1,0],
+      "default" : 0
     },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    "passthrough":{
+        "type":"object",
+        "description":"[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
     },
     "req_id": {
       "type": "integer",
-      "description": "Optional field to map request to response"
+      "description": "[Optional] Used to map request to response"
     }
   },
   "additionalProperties": false

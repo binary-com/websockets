@@ -10,18 +10,17 @@
       "description": "Must be 1",
       "required": "1"
     },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
     "landing_company": {
-      "type": "string",
-      "description": "Optional landing company field. If specified, will return only the markets and contracts that this landing company can trade.",
-      "pattern": "^(japan|costarica|malta|maltainvest|iom|champion)$"
+      "description": "[Optional] If specified, will return only the markets and contracts that this landing company can trade.",
+      "enum":["iom","malta","maltainvest","costarica","virtual", "japan", "japan-virtual", "vanuatu", "champion", "champion-virtual"]
+    },
+    "passthrough":{
+        "type":"object",
+        "description":"[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
     },
     "req_id": {
       "type": "integer",
-      "description": "Optional field to map request to response"
+      "description": "[Optional] Used to map request to response"
     }
   },
   "additionalProperties": false

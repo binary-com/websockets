@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Cancel an Incoming Stream Send",
-  "description": "Immediately cancel the real-time stream of messages with id ID",
+  "description": "Immediately cancel the real-time stream of messages with a specific id",
   "properties": {
     "forget": {
       "type": "string",
@@ -10,13 +10,13 @@
       "description": "ID of the real-time stream of messages to cancel",
       "required": "1"
     },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    "passthrough":{
+        "type":"object",
+        "description":"[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
     },
     "req_id": {
       "type": "integer",
-      "description": "Optional field to map request to response"
+      "description": "[Optional] Used to map request to response"
     }
   },
   "additionalProperties": false
