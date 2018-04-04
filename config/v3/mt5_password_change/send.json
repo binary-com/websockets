@@ -29,9 +29,8 @@
       "required": "1"
     },
     "password_type": {
-      "type": "string",
+      "enum": ["main", "investor"],
       "description": "Password type main/investor (default: main)",
-      "pattern": "^(main|investor)$",
       "default": "main"
     },
     "passthrough": {
