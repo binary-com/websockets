@@ -42,7 +42,7 @@
         },
         "message": {
           "type":"string",
-          "description": "Text for site status banner. Contains problem description. Showed only if site_status is down"
+          "description": "Text for site status banner, contains problem description.  Shown only if set by the system"
         }
       }
     },
