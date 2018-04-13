@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Cancel an Incoming Stream Send",
-  "description": "Immediately cancel the real-time stream of messages with a specific id",
+  "title": "Forget Request",
+  "description": "Immediately cancel the real-time stream of messages with a specific id.",
   "properties": {
     "forget": {
       "type": "string",
       "pattern": "^[\\w-]{32,128}$",
-      "description": "ID of the real-time stream of messages to cancel",
+      "description": "ID of the real-time stream of messages to cancel.",
       "required": "1"
     },
     "passthrough":{
@@ -16,7 +16,7 @@
     },
     "req_id": {
       "type": "integer",
-      "description": "[Optional] Used to map request to response"
+      "description": "[Optional] Used to map request to response."
     }
   },
   "additionalProperties": false

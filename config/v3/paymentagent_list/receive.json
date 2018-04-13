@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Payment Agent List Receive",
+  "title": "Payment Agent List Response",
   "description": "A message with Payment Agent List",
   "properties": {
     "echo_req": {

@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Ping Send",
+  "title": "Ping Request",
   "properties": {
     "ping": {
         "type": "string",
         "pattern": "^1$",
-        "description": "Must be 1",
+        "description": "Must be 1.",
         "required": "1"
     },
     "passthrough":{
@@ -15,7 +15,7 @@
     },
     "req_id": {
       "type": "integer",
-      "description": "[Optional] Used to map request to response"
+      "description": "[Optional] Used to map request to response."
     }
   },
   "additionalProperties": false

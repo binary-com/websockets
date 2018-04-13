@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Contracts for Symbol Receive",
+  "title": "Contracts for Symbol Response",
   "description": "Get the list of currently available contracts",
   "properties": {
     "echo_req": {

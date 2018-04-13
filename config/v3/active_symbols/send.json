@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Request list of active symbols",
+  "title": "Active Symbols Request",
   "description": "Retrieve a list of all active symbols (underlying markets upon which contracts are available for trading).",
   "properties": {
     "active_symbols": {
@@ -23,7 +23,7 @@
     },
     "req_id": {
       "type": "integer",
-      "description": "[Optional] Used to map request to response"
+      "description": "[Optional] Used to map request to response."
     }
   },
   "additionalProperties": false

@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title":"Payout Currencies Send",
-  "description":"Retrieve a list of available option payout currencies. If a user is logged in, only the currency available for his account will be returned.",
+  "title":"Payout Currencies Request",
+  "description":"Retrieve a list of available option payout currencies. If a user is logged in, only the currencies available for his account will be returned.",
   "properties": {
     "payout_currencies": {
       "type": "integer",
       "pattern": "^1$",
-      "description": "Must be 1",
+      "description": "Must be 1.",
       "required": "1"
     },
     "passthrough":{
@@ -16,7 +16,7 @@
     },
     "req_id": {
       "type": "integer",
-      "description": "[Optional] Used to map request to response"
+      "description": "[Optional] Used to map request to response."
     }
   },
   "additionalProperties": false

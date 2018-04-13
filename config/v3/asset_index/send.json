@@ -1,17 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Asset Index Send",
-  "description":"Retrieve the Asset Index: a list of all available markets and a summary of the contracts available thereupon.",
+  "title": "Asset Index Request",
+  "description":"Retrieve a list of all available underlyings and the corresponding contract types and duration boundaries. If the user is logged in, only the assets available for that user's landing company will be returned.",
   "properties": {
     "asset_index": {
       "type":"integer",
       "pattern": "^1$",
-      "description": "Must be 1",
+      "description": "Must be 1.",
       "required": "1"
     },
     "landing_company": {
-      "description": "[Optional] If specified, will return only the markets and contracts that this landing company can trade.",
+      "description": "[Optional] If specified, will return only the underlyings for the specified landing company.",
       "enum":["iom","malta","maltainvest","costarica","virtual", "japan", "japan-virtual", "vanuatu", "champion", "champion-virtual"]
     },
     "passthrough":{
@@ -20,7 +20,7 @@
     },
     "req_id": {
       "type": "integer",
-      "description": "[Optional] Used to map request to response"
+      "description": "[Optional] Used to map request to response."
     }
   },
   "additionalProperties": false

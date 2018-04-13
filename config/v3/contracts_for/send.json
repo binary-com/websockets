@@ -1,18 +1,18 @@
 {
     "$schema":"http://json-schema.org/draft-04/schema#",
     "type":"object",
-    "title":"Contracts for Symbol Send",
+    "title":"Contracts for Symbol Request",
     "description":"For a given symbol, get the list of currently available contracts, and the latest barrier and duration limits for each contract.",
     "properties":{
         "contracts_for":{
             "type":"string",
-            "description":"The short symbol name (obtained from active_symbols call)",
+            "description":"The short symbol name (obtained from active_symbols call).",
             "pattern":"^\\w{2,30}$",
             "required": "1"
         },
         "currency": {
           "type": "string",
-          "description":"[Optional] Currency of the contract's stake and payout.",
+          "description":"[Optional] Currency of the contract's stake and payout (obtained from payout_currencies call).",
           "pattern": "^[A-Z]{3}$",
           "default": "USD"
         },
@@ -31,7 +31,7 @@
         },
         "req_id": {
           "type": "integer",
-          "description": "[Optional] Used to map request to response"
+          "description": "[Optional] Used to map request to response."
         }
     },
     "additionalProperties":false

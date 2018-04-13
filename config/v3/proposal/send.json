@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Get latest price for a specific contract",
-  "description": "Get latest price for a specific contract",
+  "title": "Price Proposal Request",
+  "description": "Gets latest price for a specific contract.",
   "properties": {
     "proposal": {
       "type": "integer",
-      "description":"Must be 1",
+      "description":"Must be 1.",
       "pattern": "^1$",
       "required": "1"
     },
@@ -33,7 +33,7 @@
     },
     "currency": {
       "type": "string",
-      "description":"This can only be the account-holder's currency",
+      "description":"This can only be the account-holder's currency (obtained from payout_currencies call).",
       "pattern": "^[A-Z]{3}$",
       "required": "1"
     },
@@ -45,12 +45,12 @@
     "date_expiry": {
       "type":  "integer",
       "pattern": "^\\d{1,10}$",
-      "description":"Epoch value of the expiry time of the contract. You must either specify date_expiry or duration."
+      "description":"Epoch value of the expiry time of the contract. Either date_expiry or duration is required."
     },
     "duration": {
       "minimum": 0,
       "type": "integer",
-      "description":"Duration quantity"
+      "description":"Duration quantity. Either date_expiry or duration is required."
     },
     "duration_unit": {
       "description":"[Optional] Duration unit - s(seconds), m(minutes), h(hours), d(days), t(ticks).",
@@ -59,7 +59,7 @@
     },
     "symbol": {
       "type": "string",
-      "description":"The short symbol name (obtained from active_symbols call)",
+      "description":"The short symbol name (obtained from active_symbols call).",
       "pattern": "^\\w{2,30}$",
       "required": "1"
     },
@@ -75,10 +75,10 @@
     },
     "trading_period_start": {
       "type": "integer",
-      "description":"Required only for multi-barrier trading. Defines the epoch value of the trading period start time"
+      "description":"Required only for multi-barrier trading. Defines the epoch value of the trading period start time."
     },
     "product_type": {
-      "description": "The product type, either basic or multi_barrier",
+      "description": "The product type.",
       "enum": ["multi_barrier", "basic"],
       "default": "basic"
     },
@@ -88,7 +88,7 @@
     },
     "req_id": {
       "type": "integer",
-      "description": "[Optional] Used to map request to response"
+      "description": "[Optional] Used to map request to response."
     }
   },
   "additionalProperties": false

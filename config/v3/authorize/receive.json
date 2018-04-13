@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Authorization Response",
+  "title": "Authorize Response",
   "description": "A message containing account information for the holder of that token",
   "properties": {
     "authorize": {

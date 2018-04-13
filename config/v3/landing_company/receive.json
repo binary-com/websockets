@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Landing Company Receive",
+  "title": "Landing Company Response",
   "description": "Returns the Landing Company for clients of a given country.",
   "properties": {
     "echo_req": {

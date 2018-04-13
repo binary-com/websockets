@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Asset Index Receive",
+  "title": "Asset Index Response",
   "description": "A message with Asset Index",
   "properties": {
     "echo_req": {
@@ -12,7 +12,7 @@
     "asset_index": {
       "type": "array",
       "title": "Asset Index Structure",
-      "description":"The Asset Index structure is a hierarchy as follows: Market -> Categories -> Underlyings"
+      "description":"List of underlyings and their available contract types and duration boundaries."
     },
     "msg_type": {
       "type": "string",

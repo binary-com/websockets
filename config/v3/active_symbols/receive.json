@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Get list of active symbols Receive",
+  "title": "Active Symbols Response",
   "description": "A message list of active symbols",
   "properties": {
     "echo_req": {
@@ -10,12 +10,12 @@
       "required": 1
     },
     "active_symbols": {
-      "type":"array",
+      "type": "array",
       "title": "Active symbols",
       "description": "List of active symbols. Note: if the user is authenticated, then only symbols allowed under his account will be returned.",
-      "items":{
-        "type":"object",
-        "properties":{
+      "items": {
+        "type": "object",
+        "properties": {
           "symbol": {
             "type": "string",
             "description": "Binary.com symbol code for this underlying",
@@ -31,7 +31,10 @@
             "required": "1"
           },
           "exchange_is_open": {
-            "type": ["integer", "null"],
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "1 or 0 - whether the market is currently open or closed",
             "required": "1"
           },
@@ -49,7 +52,10 @@
             "required": "1"
           },
           "spot": {
-            "type": ["number", "null"],
+            "type": [
+              "number",
+              "null"
+            ],
             "description": "Latest spot price of the underlying"
           },
           "spot_time": {

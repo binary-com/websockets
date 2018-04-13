@@ -1,30 +1,30 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title":"Create virtual account Send",
-  "description": "Create a new virtual-money account",
+  "title":"New Virtual Account Request",
+  "description": "Create a new virtual-money account.",
   "properties": {
     "new_account_virtual": {
       "type": "integer",
-      "description":"Must be 1",
+      "description":"Must be 1.",
       "pattern": "^1$",
       "required": "1"
     },
     "verification_code": {
       "type": "string",
-      "description": "Email verification code (received from a verify_email call, which must be done first)",
+      "description": "Email verification code (received from a verify_email call, which must be done first).",
       "pattern": "^\\w{8,128}$",
       "required": "1"
     },
     "client_password": {
       "type": "string",
-      "description": "Password (length within 6-25 chars, accepts any printable ASCII character)",
+      "description": "Password (length within 6-25 chars, accepts any printable ASCII character).",
       "pattern": "^[ -~]{6,25}$",
       "required": "1"
     },
     "residence": {
       "type": "string",
-      "description": "2-letter country code (obtained from residence_list call)",
+      "description": "2-letter country code (obtained from residence_list call).",
       "pattern": "^[a-z]{2}$",
       "required": "1"
     },
@@ -35,17 +35,17 @@
     },
     "utm_source": {
       "type": "string",
-      "description": "[Optional] Identifies the source of traffic such as: search engine, newsletter, or other referral",
+      "description": "[Optional] Identifies the source of traffic such as: search engine, newsletter, or other referral.",
       "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
     },
     "utm_medium": {
       "type": "string",
-      "description": "[Optional] Identifies the medium the link was used upon such as: email, CPC, or other methods of sharing",
+      "description": "[Optional] Identifies the medium the link was used upon such as: email, CPC, or other methods of sharing.",
       "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
     },
     "utm_campaign": {
       "type": "string",
-      "description": "[Optional] Identifies a specific product promotion or strategic campaign such as a spring sale or other promotions",
+      "description": "[Optional] Identifies a specific product promotion or strategic campaign such as a spring sale or other promotions.",
       "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
     },
     "email_consent": {
@@ -56,7 +56,7 @@
     "gclid_url": {
       "type": "string",
       "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$",
-      "description": "(Google Click Identifier) to track source"
+      "description": "[Optional] Google Click Identifier to track source."
     },
     "passthrough":{
         "type":"object",
@@ -64,7 +64,7 @@
     },
     "req_id": {
       "type": "integer",
-      "description": "[Optional] Used to map request to response"
+      "description": "[Optional] Used to map request to response."
     }
   },
   "additionalProperties": false

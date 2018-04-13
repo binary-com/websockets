@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Get trader statistics",
+  "title": "Copy Trading Statistics Response",
   "properties": {
     "echo_req": {
       "title": "Echo request",

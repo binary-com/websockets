@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Cancel Incoming Streams Based on Type",
-  "description": "Immediately cancel the real-time streams of messages of given type",
+  "title": "Forget All Request",
+  "description": "Immediately cancel the real-time streams of messages of given type.",
   "properties": {
     "forget_all": {
       "type": ["string", "array"],
-      "description": "Cancel all streams by type (it can be a single string e.g. 'ticks', or an array of multiple values, e.g. ['ticks', 'candles']). Possible values are: 'ticks', 'candles', 'proposal', 'portfolio', 'proposal_open_contract', 'balance', 'transaction', 'proposal_array'",
+      "description": "Cancel all streams by type (it can be a single string e.g. 'ticks', or an array of multiple values, e.g. ['ticks', 'candles']). Possible values are: 'ticks', 'candles', 'proposal', 'portfolio', 'proposal_open_contract', 'balance', 'transaction', 'proposal_array'.",
       "required": "1"
     },
     "passthrough":{
@@ -15,7 +15,7 @@
     },
     "req_id": {
       "type": "integer",
-      "description": "[Optional] Used to map request to response"
+      "description": "[Optional] Used to map request to response."
     }
   },
   "additionalProperties": false
