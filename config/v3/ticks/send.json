@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Tick Stream Request",
-  "description": "Initiate a continuous stream of spot price updates for a given symbol",
+  "description": "Initiate a continuous stream of spot price updates for a given symbol.",
   "properties": {
     "ticks": {
       "oneOf": [
@@ -14,21 +14,21 @@
               }
           }
         ],
-      "description": "The short symbol name or array of symbols. E.x [\"frxUSDJPY\", \"R_50\"]",
+      "description": "The short symbol name or array of symbols (obtained from active_symbols call).",
       "required": "1"
-    },
+    },	
+    "subscribe": {	
+      "type": "integer",	
+      "description": "If set to 1, will send updates whenever the price change.",	
+      "pattern": "^1$"	
+     },
     "passthrough": {
       "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
-    "subscribe": {
-      "type": "integer",
-      "description": "If set to 1, will send updates whenever the price changes",
-      "pattern": "^1$"
+      "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
     },
     "req_id": {
       "type": "integer",
-      "description": "Optional field to map request to response"
+      "description": "[Optional] Used to map request to response."
     }
   },
   "additionalProperties": false

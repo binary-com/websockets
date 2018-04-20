@@ -6,18 +6,18 @@
   "properties": {
     "states_list": {
       "title": "States list",
-      "description":"Two letter country code.",
+      "description":"Client's 2-letter country code (obtained from residence_list call)",
       "type":"string",
       "pattern": "^\\w\\w$",
       "required": "1"
     },
     "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+        "type": "object",
+        "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
     },
     "req_id": {
-      "type": "integer",
-      "description": "Optional field to map request to response"
+        "type": "integer",
+        "description": "[Optional] Used to map request to response."
     }
   },
   "additionalProperties": false

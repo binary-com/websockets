@@ -11,7 +11,7 @@
         },
         "proposal_array": {
             "type": "object",
-            "title":"Multiple Price Proposal Response",
+            "title":"Price Proposal for Multiple Contracts Response",
             "description":"Latest price and other details for a given contract",
             "proposals": {
                 "type": "object",

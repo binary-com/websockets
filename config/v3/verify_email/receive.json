@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Verify Email Receive",
+  "title": "Verify Email Response",
   "description": "Verify Email Receive",
   "properties": {
     "echo_req": {

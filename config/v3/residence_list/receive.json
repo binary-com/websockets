@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Residence List Receive",
+  "title": "Residence List Response",
   "description": "A message with Residence List",
   "properties": {
     "echo_req": {

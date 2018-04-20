@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Trading Times Receive",
+  "title": "Trading Times Response",
   "description": "A message with Trading Times",
   "properties": {
     "echo_req": {

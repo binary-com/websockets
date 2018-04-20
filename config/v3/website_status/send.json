@@ -1,27 +1,27 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Server Status request",
-  "description": "Request server status",
+  "title": "Server Status Request",
+  "description": "Request server status.",
   "properties": {
     "website_status": {
       "type": "integer",
       "pattern": "^1$",
-      "description": "Must be 1",
+      "description": "Must be 1.",
       "required": "1"
     },
     "subscribe": {
       "type": "integer",
       "pattern": "^(1|0)$",
-      "description": "Send this as 1 if you want to subscribe to server/website status"
+      "description": "[Optional] 1 - to receive a steam of the server/website status."
     },
     "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+        "type": "object",
+        "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
     },
     "req_id": {
-      "type": "integer",
-      "description": "Optional field to map request to response"
+        "type": "integer",
+        "description": "[Optional] Used to map request to response."
     }
   },
   "additionalProperties": false

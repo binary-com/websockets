@@ -12,7 +12,7 @@
     "history": {
       "type": "object",
       "title": "Tick History Response",
-      "description": "Historic tick data for a given symbol",
+      "description": "Historic tick data for a given symbol. Note : this will always return the latest possible set of ticks with accordance to the parameters specified.",
       "properties": {
         "times": {
           "type": "array",
