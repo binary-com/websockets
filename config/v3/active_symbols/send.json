@@ -10,7 +10,7 @@
       "required": "1"
     },
     "landing_company": {
-      "description": "[Optional] If you specify this field, only symbols available for trading by that landing company will be returned.",
+      "description": "[Optional] If you specify this field, only symbols available for trading by that landing company will be returned. If you are logged in, only symbols available for trading by your landing company will be returned regardless of what you specify in this field.",
       "enum":["iom","malta","maltainvest","costarica","virtual", "japan", "japan-virtual", "vanuatu", "champion", "champion-virtual"]
     },
     "product_type":{

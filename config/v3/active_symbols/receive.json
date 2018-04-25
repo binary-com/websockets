@@ -2,102 +2,103 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Active Symbols Response",
-  "description": "A message list of active symbols",
+  "description": "A message containing the list of active symbols.",
   "properties": {
     "echo_req": {
       "title": "Echo request",
-      "description": "Echo of the request made",
+      "description": "Echo of the request made.",
       "required": 1
     },
     "active_symbols": {
       "type": "array",
       "title": "Active symbols",
-      "description": "List of active symbols. Note: if the user is authenticated, then only symbols allowed under his account will be returned.",
+      "description": "List of active symbols.",
       "items": {
         "type": "object",
         "properties": {
-          "symbol": {
-            "type": "string",
-            "description": "Binary.com symbol code for this underlying",
-            "required": "1"
-          },
-          "intraday_interval_minutes": {
+          "allow_forward_starting": {
             "type": "integer",
-            "description": "Intraday interval minutes"
+            "description": "1 if the symbol is tradable in a forward starting contract, 0 if not."
           },
-          "symbol_type": {
+          "delay_amount": {
+            "type": "integer",
+            "description": "Amount the data feed is delayed (in minutes) due to Exchange licensing requirements. Only returned on `full` active symbols call."
+          },
+          "display_name": {
             "type": "string",
-            "description": "Symbol type (forex, commodities, etc)",
+            "description": "Display name.",
             "required": "1"
           },
           "exchange_is_open": {
-            "type": [
-              "integer",
-              "null"
-            ],
-            "description": "1 or 0 - whether the market is currently open or closed",
+            "type": "integer",
+            "description": "1 if market is currently open, 0 if closed.",
             "required": "1"
           },
           "exchange_name": {
             "type": "string",
-            "description": "Exchange name (for underlyings listed on a Stock Exchange)"
+            "description": "Exchange name (for underlyings listed on a Stock Exchange). Only returned on `full` active symbols call."
           },
-          "delay_amount": {
+          "intraday_interval_minutes": {
             "type": "integer",
-            "description": "Amount the data feed is delayed (in minutes) due to Exchange licensing requirements"
+            "description": "Intraday interval minutes. Only returned on `full` active symbols call."
           },
-          "display_name": {
-            "type": "string",
-            "description": "Display name",
+          "is_trading_suspended": {
+            "type": "integer",
+            "description": "1 indicates that trading is currently suspended, 0 if not.",
             "required": "1"
+          },
+          "market": {
+            "type": "string",
+            "description": "Market category (forex, indices, etc).",
+            "required": "1"
+          },
+          "market_display_name": {
+            "type": "string",
+            "description": "Translated market name.",
+            "required": "1"
+          },
+          "pip": {
+            "type": "number",
+            "description": "Pip size (i.e. minimum fluctuation amount).",
+            "required": "1"
+          },
+          "quoted_currency_symbol": {
+            "type": "string",
+            "description": "For stocks and stock indices, the underlying currency for that instrument. Only returned on `full` active symbols call."
           },
           "spot": {
             "type": [
               "number",
               "null"
             ],
-            "description": "Latest spot price of the underlying"
-          },
-          "spot_time": {
-            "type": "string",
-            "description": "Latest spot epoch time"
-          },
-          "is_trading_suspended": {
-            "type": "integer",
-            "description": "1 indicates that trading is currently suspended",
-            "required": "1"
-          },
-          "quoted_currency_symbol": {
-            "type": "string",
-            "description": "For stocks and stock indices, the underlying currency for that instrument"
+            "description": "Latest spot price of the underlying. Only returned on `full` active symbols call."
           },
           "spot_age": {
             "type": "string",
-            "description": "Number of seconds elapsed since the last spot price"
+            "description": "Number of seconds elapsed since the last spot price. Only returned on `full` active symbols call."
           },
-          "market": {
+          "spot_time": {
             "type": "string",
-            "description": "Market category (forex, indices etc)",
-            "required": "1"
-          },
-          "market_display_name": {
-            "type": "string",
-            "description": "Translated market name",
-            "required": "1"
+            "description": "Latest spot epoch time. Only returned on `full` active symbols call."
           },
           "submarket": {
             "type": "string",
-            "description": "Submarket name",
+            "description": "Submarket name.",
             "required": "1"
           },
           "submarket_display_name": {
             "type": "string",
-            "description": "Translated submarket name",
+            "description": "Translated submarket name.",
             "required": "1"
           },
-          "pip": {
-            "type": "number",
-            "description": "Pip size (i.e. minimum fluctuation amount)",
+          "symbol": {
+            "type": "string",
+            "description": "Binary.com symbol code for this underlying.",
+            "required": "1"
+          },
+          "symbol_type": {
+            "type": "string",
+            "description": "Symbol type (forex, commodities, etc).",
             "required": "1"
           }
         }
@@ -105,12 +106,12 @@
     },
     "msg_type": {
       "type": "string",
-      "description": "active_symbols",
+      "description": "active_symbols.",
       "required": 1
     },
     "req_id": {
       "type": "integer",
-      "description": "Optional field send in request to map to response, present only when request contains req_id"
+      "description": "ID used to map request to response, present only when the request contains req_id."
     }
   }
 }
