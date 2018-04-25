@@ -82,6 +82,10 @@
       "enum": ["multi_barrier", "basic"],
       "default": "basic"
     },
+    "selected_tick": {
+      "type": "integer",
+      "description": "The tick that is predicted to have the highest/lowest value - for tickhigh and ticklow contracts."
+    },
     "passthrough":{
       "type":"object",
       "description":"[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
