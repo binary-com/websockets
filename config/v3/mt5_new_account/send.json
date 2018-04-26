@@ -50,50 +50,54 @@
     "address": {
       "type" : "string",
       "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{0,128}$",
-      "description": "The address of the user. The maximum length of the address is 128 characters. Optional field."
+      "description": "[Optional] The address of the user. The maximum length of the address is 128 characters."
     },
     "state": {
       "type" : "string",
       "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,50}$",
-      "description": "User's state (region) of residence. Optional field."
+      "description": "[Optional] User's state (region) of residence."
     },
     "city": {
       "type" : "string",
       "pattern": "^[\\p{L}\\s'.-]{0,50}$",
-      "description": "User's city of residence. Optional field."
+      "description": "[Optional] User's city of residence."
     },
     "zipCode": {
       "type" : "string",
       "maxLength": 50,
-      "description": "User's zip code. Optional field."
+      "description": "[Optional] User's zip code. Max length 50."
     },
     "country": {
       "type" : "string",
       "pattern": "^[a-z]{2}$",
-      "description": "2-letter country code (value received from residence_list call). Optional field."
+      "description": "[Optional] 2-letter country code (value received from residence_list call)."
     },
     "company": {
       "type" : "string",
       "pattern": "^[\\p{L}\\p{Nd}\\s'.,@\/-]{0,64}$",
-      "description": "Name of the client's company. The maximum length of the company name is 64 characters. Optional field."
+      "description": "[Optional] Name of the client's company. The maximum length of the company name is 64 characters."
     },
     "phone": {
       "type" : "string",
       "pattern": "^\\+?\\d{0,50}$",
-      "description": "User's phone number. Optional field. Max length 50"
+      "description": "[Optional] User's phone number. Max length 50."
     },
     "phonePassword": {
       "type": "string",
       "maxLength": 50,
-      "description": "the user's phone password."
+      "description": "the user's phone password. Max length 50."
+    },
+    "manager_id": {
+      "type": "integer",
+      "description": "[Optional] Login id of manager whom you want to assign to manage your assets, applicable for MT5 Multiple Accounts Manager only."
     },
     "passthrough": {
       "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+      "description": "[Optional] field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
     },
     "req_id": {
       "type": "integer",
-      "description": "Optional field to map request to response"
+      "description": "[Optional] field to map request to response"
     }
   },
   "additionalProperties": false
