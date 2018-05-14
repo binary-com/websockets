@@ -10,9 +10,9 @@
       "description": "either deposit or withdraw, default to deposit"
     },
     "provider": {
-      "enum": ["doughflow", "epg"],
+      "enum": ["doughflow"],
       "default": "doughflow",
-      "description": "Note only doughflow is supported currently, epg is only for test."
+      "description": "Note only doughflow is supported currently."
     },
     "verification_code": {
       "type": "string",
