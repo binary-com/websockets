@@ -143,26 +143,6 @@
                 }
               }
             },
-            "stocks": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "turnover_limit": {
-                    "type": "number"
-                  },
-                  "payout_limit": {
-                    "type": "number"
-                  },
-                  "profile_name": {
-                    "type": "string"
-                  }
-                }
-              }
-            },
             "volidx": {
               "type": "array",
               "items": {

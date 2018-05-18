@@ -64,7 +64,7 @@
           },
           "quoted_currency_symbol": {
             "type": "string",
-            "description": "For stocks and stock indices, the underlying currency for that instrument. Only returned on `full` active symbols call."
+            "description": "For stock indices, the underlying currency for that instrument. Only returned on `full` active symbols call."
           },
           "spot": {
             "type": [
