@@ -14,9 +14,21 @@
       "title": "Assessment details",
       "description": "Client's financial asessment details",
       "properties": {
-        "score": {
+        "total_score": {
           "type": "integer",
           "description": "Total score based on client's answer for financial assessment"
+        },
+        "cfd_score": {
+          "type": "integer",
+          "description": "CFD score"
+        },
+        "trading_score": {
+          "type": "integer",
+          "description": "Trading score"
+        },
+        "financial_information_score": {
+          "type": "integer",
+          "description": "Financial information score"
         },
         "account_turnover": {
           "type":"string",
@@ -30,45 +42,29 @@
           "type": "string",
           "description": "Forex trading experience"
         },
-        "indices_trading_frequency": {
+        "binary_options_trading_frequency": {
           "type": "string",
-          "description": "Indices trading frequency"
+          "description": "Binary options trading frequency"
         },
-        "indices_trading_experience": {
+        "binary_options_trading_experience": {
           "type": "string",
-          "description": "Indices trading experience"
+          "description": "Binary options trading experience"
         },
-        "commodities_trading_frequency": {
+        "cfd_trading_frequency": {
           "type": "string",
-          "description": "Commodities trading frequency"
+          "description": "CFDs trading frequency"
         },
-        "commodities_trading_experience": {
+        "cfd_trading_experience": {
           "type": "string",
-          "description": "Commodities trading experience"
-        },
-        "stocks_trading_experience": {
-          "type": "string",
-          "description": "Stocks trading experience"
-        },
-        "stocks_trading_frequency": {
-          "type": "string",
-          "description": "Stocks trading frequency"
-        },
-        "other_derivatives_trading_frequency": {
-          "type": "string",
-          "description": "Binary options or other financial derivatives trading frequency"
-        },
-        "other_derivatives_trading_experience": {
-          "type": "string",
-          "description": "Binary options or other financial derivatives trading experience"
+          "description": "CFDs trading experience"
         },
         "other_instruments_trading_frequency": {
           "type": "string",
-          "description": "Other financial instruments trading frequency"
+          "description": "Trading frequency in other financial instruments"
         },
         "other_instruments_trading_experience": {
           "type": "string",
-          "description": "Other financial instruments trading experience"
+          "description": "Trading experience in other financial instruments"
         },
         "employment_industry": {
           "type": "string",
