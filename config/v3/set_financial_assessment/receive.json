@@ -14,21 +14,9 @@
       "title": "Financial Assessment Details",
       "description": "Financial Assessment score and appropriate status",
       "properties": {
-        "total_score": {
+        "score": {
           "type": "integer",
           "description": "Financial assessment score based on answers"
-        },
-        "cfd_score": {
-          "type": "integer",
-          "description": "CFD score based on answers"
-        },
-        "financial_information_score": {
-          "type": "integer",
-          "description": "Financial information score based on answers"
-        },
-        "trading_score": {
-          "type": "integer",
-          "description": "Trading score based on answers"
         }
       }
     },

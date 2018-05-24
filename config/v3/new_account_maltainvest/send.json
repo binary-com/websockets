@@ -108,35 +108,63 @@
     },
     "forex_trading_experience": {
       "enum": [ "0-1 year", "1-2 years", "Over 3 years" ],
-      "description": "Forex trading experience"
+      "description": "Forex trading experience",
+      "required": 1
     },
     "forex_trading_frequency": {
       "enum": [ "0-5 transactions in the past 12 months", "6-10 transactions in the past 12 months", "40 transactions or more in the past 12 months" ],
-      "description": "Forex trading frequency"
+      "description": "Forex trading frequency",
+      "required": 1
     },
-    "binary_options_trading_experience": {
+    "indices_trading_experience": {
       "enum": [ "0-1 year", "1-2 years", "Over 3 years" ],
-      "description": "Binary options trading experience"
+      "description": "Indices trading experience",
+      "required": 1
     },
-    "binary_options_trading_frequency": {
+    "indices_trading_frequency": {
       "enum": [ "0-5 transactions in the past 12 months", "6-10 transactions in the past 12 months", "40 transactions or more in the past 12 months" ],
-      "description": "Binary options trading frequency"
+      "description": "Indices trading frequency",
+      "required": 1
     },
-    "cfd_trading_experience": {
+    "commodities_trading_experience": {
       "enum": [ "0-1 year", "1-2 years", "Over 3 years" ],
-      "description": "CFDs trading experience"
+      "description": "Commodities trading experience",
+      "required": 1
     },
-    "cfd_trading_frequency": {
+    "commodities_trading_frequency": {
       "enum": [ "0-5 transactions in the past 12 months", "6-10 transactions in the past 12 months", "40 transactions or more in the past 12 months" ],
-      "description": "CFDs trading frequency"
+      "description": "Commodities trading frequency",
+      "required": 1
+    },
+    "stocks_trading_experience": {
+      "enum": [ "0-1 year", "1-2 years", "Over 3 years" ],
+      "description": "Stocks trading experience",
+      "required": 1
+    },
+    "stocks_trading_frequency": {
+      "enum": [ "0-5 transactions in the past 12 months", "6-10 transactions in the past 12 months", "40 transactions or more in the past 12 months" ],
+      "description": "Stocks trading frequency",
+      "required": 1
+    },
+    "other_derivatives_trading_experience": {
+      "enum": [ "0-1 year", "1-2 years", "Over 3 years" ],
+      "description": "Binary options or other financial derivatives trading experience",
+      "required": 1
+    },
+    "other_derivatives_trading_frequency": {
+      "enum": [ "0-5 transactions in the past 12 months", "6-10 transactions in the past 12 months", "40 transactions or more in the past 12 months" ],
+      "description": "Binary options or other financial derivatives trading frequency",
+      "required": 1
     },
     "other_instruments_trading_experience": {
       "enum": [ "0-1 year", "1-2 years", "Over 3 years" ],
-      "description": "Trading experience in other financial instruments"
+      "description": "Other financial instruments trading experience",
+      "required": 1
     },
     "other_instruments_trading_frequency": {
       "enum": [ "0-5 transactions in the past 12 months", "6-10 transactions in the past 12 months", "40 transactions or more in the past 12 months" ],
-      "description": "Trading frequency in other financial instruments"
+      "description": "Other financial instruments trading frequency",
+      "required": 1
     },
     "account_opening_reason": {
       "type": "string",
