@@ -48,11 +48,6 @@
       "description": "[Optional] Identifies a specific product promotion or strategic campaign such as a spring sale or other promotions.",
       "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
     },
-    "email_consent": {
-      "enum": [0,1],
-      "description": "[Optional] 1 or 0, indicating permission to use email address for any contact which may include marketing.",
-      "default": "1"
-    },
     "gclid_url": {
       "type": "string",
       "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$",
