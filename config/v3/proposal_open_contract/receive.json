@@ -265,6 +265,14 @@
           "type": "number",
           "description": "[Only for lookback trades] Multiplier applies when calculating the final payoff for each type of lookback. e.g. (Exit spot – Lowest historical price) * multiplier = Payout"
     },
+    "profit": {
+          "type": "number",
+          "description": "The latest bid price minus buy price."
+    },
+    "profit_percentage": {
+          "type": "number",
+          "description": "Profit in percentage."
+    },
     "msg_type": {
       "type": "string",
       "description": "proposal_open_contract"
