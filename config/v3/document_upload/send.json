@@ -49,6 +49,10 @@
       "pattern":"^[[:xdigit:]]{32}",
       "description": "The checksum of the file to be uploaded",
       "required": 1
+    },
+    "page_type": {
+      "enum" : ["front","back","photo"],
+      "description" : "Optional field to determine document side"
     }
   },
   "additionalProperties": false
