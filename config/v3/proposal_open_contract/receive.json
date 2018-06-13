@@ -265,6 +265,10 @@
           "type": "number",
           "description": "[Only for lookback trades] Multiplier applies when calculating the final payoff for each type of lookback. e.g. (Exit spot – Lowest historical price) * multiplier = Payout"
     },
+    "reset_time": {
+          "type": "integer",
+          "description": "[Only for reset trades] The epoch time of a barrier reset. Example: 1446629000"
+    },
     "profit": {
           "type": "number",
           "description": "The latest bid price minus buy price."
