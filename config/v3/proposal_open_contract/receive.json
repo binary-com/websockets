@@ -140,7 +140,7 @@
         },
         "exit_tick": {
           "type": "number",
-          "description": "This is the latest spot value at the end time of the contract. Example: 86.810"
+          "description": "Exit tick can refer to the latest tick at the end time, the tick that fulfils the contract’s winning or losing condition for path dependent contracts(Touch/No Touch and Stays Between/Goes Outside) or the tick at which the contract is sold before expiry. Example: 86.810"
         },
         "exit_tick_time": {
           "type": "integer",
@@ -175,11 +175,11 @@
         },
         "sell_spot": {
           "type": "number",
-          "description": "Latest spot value at the sell time. Example: 86.630 (only present for contracts already sold)"
+          "description": "Latest spot value at the sell time. Example: 86.630 (only present for contracts already sold). Will no longer be supported in the next API release."
         },
         "sell_spot_time": {
           "type": "integer",
-          "description": "Epoch time of the sell spot. Note that since certain underlyings don't tick every second, the sell spot time may be a few seconds before the sell time. Example: 1446629000 (only present for contracts already sold)"
+          "description": "Epoch time of the sell spot. Note that since certain underlyings don't tick every second, the sell spot time may be a few seconds before the sell time. Example: 1446629000 (only present for contracts already sold). Will no longer be supported in the next API release."
         },
         "audit_details": {
           "type": ["object", "null"],
