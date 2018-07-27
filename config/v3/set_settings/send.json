@@ -29,6 +29,11 @@
       "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,35}$",
       "description": "Note: not applicable for virtual account. Optional field for real money account."
     },
+    "citizen": {
+      "type":"string",
+      "pattern": "^[a-z]{2}$",
+      "description": "Country of legal citizenship, 2-letter country code."
+    },
     "address_postcode":{
       "type":"string",
       "pattern": "^[^+]{0,20}$",

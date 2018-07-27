@@ -21,6 +21,10 @@
           "type": ["string", "null"],
           "description": "User Country"
         },
+        "citizen":{
+            "type": "string",
+            "description": "Country of legal citizenship, 2-letter country code."
+        },
         "country_code":{
           "type": ["string", "null"],
           "pattern": "^[a-z]{0,2}$",

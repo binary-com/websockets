@@ -33,6 +33,11 @@
       "description": "Date of birth format: yyyy-mm-dd.",
       "required": "1"
     },
+    "citizen": {
+      "type" : "string",
+      "pattern": "^[a-z]{2}$",
+      "description": "Country of legal citizenship, 2-letter country code."
+    },
     "residence" : {
       "type" : "string",
       "pattern": "^[a-z]{2}$",
