@@ -11,12 +11,12 @@
     },
     "set_financial_assessment": {
       "type": "object",
-      "title": "Financial Assessment Details",
-      "description": "Financial Assessment score and appropriate status",
+      "title": "Financial Assessment Scores",
+      "description": "The financial assessment score assigned to the submitted financial assessment",
       "properties": {
         "total_score": {
           "type": "integer",
-          "description": "Financial assessment score based on answers"
+          "description": "Financial Assessment score based on answers"
         },
         "cfd_score": {
           "type": "integer",
@@ -28,7 +28,7 @@
         },
         "trading_score": {
           "type": "integer",
-          "description": "Trading score based on answers"
+          "description": "Trading experience score based on answers"
         }
       }
     },
