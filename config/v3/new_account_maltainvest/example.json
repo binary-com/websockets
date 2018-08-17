@@ -4,6 +4,7 @@
     "first_name": "Peter",
     "last_name": "Pan",
     "date_of_birth" : "1980-01-31",
+    "citizen" : "de",
     "residence" : "de",
     "place_of_birth" : "nl",
     "address_line_1": "20 Broadway Av",
