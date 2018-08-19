@@ -7,7 +7,10 @@ use Data::Dumper;
 my $ua = Mojo::UserAgent->new;
 $ua->websocket('wss://ws.binaryws.com/websockets/v3?app_id=1089' => sub {
     my ($ua, $tx) = @_;
-    say 'WebSocket handshake failed!' and return unless $tx->is_websocket;
+    unless($tx->is_websocket) {
+        say 'WebSocket handshake failed!';
+        return;
+    }
 
     $tx->on(json => sub {
         my ($tx, $data) = @_;
