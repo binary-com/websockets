@@ -86,7 +86,7 @@
         "trading_period_start": {
           "type": "integer",
           "pattern": "^\\d{1,10}$",
-          "description":"[For japan only] An epoch value of a predefined trading period start time"
+          "description":"An epoch value of a predefined trading period start time"
         }
       }
     },
