@@ -59,11 +59,6 @@
       "pattern": "^[a-z]{2}$",
       "description": "Place of birth, 2-letter country code."
     },
-    "citizen": {
-      "type" : "string",
-      "pattern": "^[a-z]{2}$",
-      "description": "Country of legal citizenship, 2-letter country code."
-    },
     "tax_residence": {
       "type": "string",
       "pattern": "^[a-z]{0,2}(?:,[a-z]{2})*$",
