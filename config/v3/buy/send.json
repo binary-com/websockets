@@ -90,6 +90,11 @@
         }
       }
     },
+    "subscribe": {
+      "type": "integer",
+      "description": "1 - to stream",
+      "pattern": "^1$"
+    },
     "passthrough": {
       "type": "object",
       "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
