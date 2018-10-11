@@ -87,8 +87,17 @@
           "type": "integer",
           "pattern": "^\\d{1,10}$",
           "description":"An epoch value of a predefined trading period start time"
+        },
+        "selected_tick": {
+          "type": "integer",
+          "description": "The tick that is predicted to have the highest/lowest value - for tickhigh and ticklow contracts."
+        },
+        "app_markup_percentage": {
+          "type": "number",
+          "description": "Markup added to contract prices (as a percentage of contract payout)"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "subscribe": {
       "type": "integer",

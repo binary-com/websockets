@@ -88,7 +88,8 @@
                         "pattern": "^[+-]?\\d+\\.?\\d*$",
                         "description":"Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers."
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "trading_period_start": {

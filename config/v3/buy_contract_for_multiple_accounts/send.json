@@ -85,8 +85,17 @@
           "type": "string",
           "pattern": "^[+-]?\\d+\\.?\\d*$",
           "description":"Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers."
-        }
-      }
+        },
+        "selected_tick": {
+          "type": "integer",
+          "description": "The tick that is predicted to have the highest/lowest value - for tickhigh and ticklow contracts."
+        },
+        "app_markup_percentage": {
+          "type": "number",
+          "description": "Markup added to contract prices (as a percentage of contract payout)"
+        }      
+      },
+      "additionalProperties": false
     },
     "passthrough": {
       "type": "object",
