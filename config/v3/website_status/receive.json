@@ -33,7 +33,7 @@
         },
         "currencies_config": {
             "type": "object",
-            "description": "Show fractional digits for supported currencies, for example USD have display of 2 fractional digits. { USD => { fractional_digits => 2 } }"
+            "description": "Configurations of supported currencies; including type, decimal digits (fractional_digits), default stake amount and minimum transfer amount"
         },
         "site_status": {
           "type":"string",
