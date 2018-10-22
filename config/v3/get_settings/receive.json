@@ -107,6 +107,10 @@
         "account_opening_reason": {
           "type": ["string", "null"],
           "description": "Purpose and reason for requesting the account opening. Only applicable for real money account."
+        },
+        "user_hash": {
+          "type": ["string", "null"],
+          "description": "Hash generated using user details to verify whether the user is legitimate for our customer support system."
         }
       }
     },
