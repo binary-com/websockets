@@ -35,8 +35,8 @@
           "description":"Proposed payout or stake value"
         },
         "basis": {
-          "description":"Indicate whether amount is 'payout' or 'stake'",
-          "enum": ["payout", "stake"]
+          "description":"Indicate whether amount is 'payout' or 'stake', or 'multiplier' for lookbacks",
+          "enum": ["payout", "stake", "multiplier"]
         },
         "contract_type": {
           "type": "string",
