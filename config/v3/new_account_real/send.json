@@ -78,8 +78,8 @@
     },
     "phone": {
       "type" : "string",
-      "pattern": "^\\+?[0-9\\s]{6,35}$",
-      "description": "Within 6-35 digits, allowing '+' in front, numbers or space.",
+      "pattern": "^\\+?((-|\\s)*[0-9]){8,35}$",
+      "description": "Within 8-35 digits, allowing '+' in front, numbers, hyphens or space.",
       "required": "1"
     },
     "secret_question": {

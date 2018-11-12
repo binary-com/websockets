@@ -41,8 +41,8 @@
     },
     "phone":{
       "type": ["string", "null"],
-      "pattern": "^\\+?[0-9\\s-]{6,35}$",
-      "description": "Note: not applicable for virtual account. Required field for real money account."
+      "pattern": "^\\+?((-|\\s)*[0-9]){8,35}$",
+      "description": "Note: not applicable for virtual account. Required field for real money account and within 8-35 digits, allowing '+' in front, numbers, hyphens or space."
     },
     "residence": {
       "type": ["string", "null"],
