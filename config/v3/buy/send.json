@@ -53,7 +53,6 @@
         },
         "duration": {
           "minimum": 0,
-          "maximum": 3600,
           "type": "integer",
           "description":"Duration quantity"
         },
