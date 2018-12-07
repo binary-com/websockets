@@ -1,59 +1,171 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Website Status Response",
-  "properties": {
-    "echo_req": {
-      "title":"Echo request",
-      "description":"Echo of the request made",
-      "required": 1
-    },
-    "website_status": {
-    	"type": "object",
-    	"properties": {
-        "terms_conditions_version": {
-          "type": "string",
-          "description":"Latest terms and conditions version"
-        },
-        "api_call_limits": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "Website Status Response",
+    "properties": {
+        "website_status": {
             "type": "object",
-            "title": "API call limits",
-            "description": "Limits for api call for each websocket connection"
+            "required": "1",
+            "properties": {
+                "clients_country": {
+                    "type": "string"
+                },
+                "terms_conditions_version": {
+                    "type": "string",
+                    "required": "1"
+                },
+                "supported_languages": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "currencies_config": {
+                    "type": "object",
+                    "required": "1",
+                    "properties": {
+                        "^[A-Z]{3-4}$": {
+                            "type": "object",
+                            "properties": {
+                                "fractional_digits": {
+                                    "type": "number",
+                                    "pattern": "^[0-9]+$",
+                                    "required": "1"
+                                },
+                                "type": {
+                                    "enum": ["fiat", "crypto"],
+                                    "required": "1"
+                                },
+                                "stake_default": {
+                                    "type": "number",
+                                    "minimum": "0",
+                                    "required": "1"
+                                },
+                                "transfer_between_accounts": {
+                                    "type": "object",
+                                    "required": "1",
+                                    "properties": {
+                                        "limits": {
+                                            "type": "object",
+                                            "required": "1",
+                                            "properties": {
+                                                "min": {
+                                                    "type": "number",
+                                                    "minimum": 0,
+                                                    "required": "1"
+                                                }
+                                            }
+                                        },
+                                        "fees": {
+                                            "type": "object",
+                                            "required": "1",
+                                            "properties": {
+                                                "^[A-Z]{3-4}$": {
+                                                    "type": "number",
+                                                    "minimum": 0,
+                                                    "maximum": 7
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "api_call_limits": {
+                    "type": "object",
+                    "required": "1",
+                    "properties": {
+                        "max_proposal_subscription": {
+                            "type": "object",
+                            "required": "1",
+                            "properties": {
+                                "max": {
+                                    "type": "number",
+                                    "pattern": "^5$",
+                                    "required": "1"
+                                },
+                                "applies_to": {
+                                    "type": "string",
+                                    "required": "1"
+                                }
+                            }
+                        },
+                        "max_requests_pricing": {
+                            "type": "object",
+                            "required": "1",
+                            "properties": {
+                                "minutely": {
+                                    "type": "number",
+                                    "pattern": "^66$",
+                                    "required": "1"
+                                },
+                                "hourly": {
+                                    "type": "number",
+                                    "pattern": "^266$",
+                                    "required": "1"
+                                },
+                                "applies_to": {
+                                    "type": "string",
+                                    "required": "1"
+                                }
+                            }
+                        },
+                        "max_requests_outcome": {
+                            "type": "object",
+                            "required": "1",
+                            "properties": {
+                                "minutely": {
+                                    "type": "number",
+                                    "pattern": "^55$",
+                                    "required": "1"
+                                },
+                                "hourly": {
+                                    "type": "number",
+                                    "pattern": "^255$",
+                                    "required": "1"
+                                },
+                                "applies_to": {
+                                    "type": "string",
+                                    "required": "1"
+                                }
+                            }
+                        },
+                        "max_requestes_general": {
+                            "type": "object",
+                            "required": "1",
+                            "properties": {
+                                "minutely": {
+                                    "type": "number",
+                                    "pattern": "^244$",
+                                    "required": "1"
+                                },
+                                "hourly": {
+                                    "type": "number",
+                                    "pattern": "^244$",
+                                    "required": "1"
+                                },
+                                "applies_to": {
+                                    "type": "string",
+                                    "required": "1"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
-        "clients_country": {
-          "type": "string",
-          "description": "Country code of connected IP"
+        "echo_req": {
+            "required": "1"
         },
-        "supported_languages": {
-          "type": "array",
-          "description": "Provides codes for languages supported",
-          "items": {
-            "type": "string"
-          }
+        "msg_type": {
+            "type": "string",
+            "pattern": "^website_status$",
+            "required": "1"
         },
-        "currencies_config": {
-            "type": "object",
-            "description": "Configurations of supported currencies; including type, decimal digits (fractional_digits), default stake amount and minimum transfer amount"
-        },
-        "site_status": {
-          "type":"string",
-          "pattern": "^(up|down)$",
-          "description": "Current status of the site. up or down"
-        },
-        "message": {
-          "type":"string",
-          "description": "Text for site status banner, contains problem description.  Shown only if set by the system"
+        "req_id": {
+            "type": "integer"
         }
-      }
-    },
-    "msg_type": {
-        "type": "string",
-        "description": "website_status",
-        "required": 1
-    },
-    "req_id": {
-        "type": "integer",
-        "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  }
 }
