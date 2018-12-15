@@ -32,7 +32,7 @@
     },
     "description": {
       "type": "string",
-      "pattern": "^[0-9A-Za-z\\s.,'-]{0,300}$",
+      "pattern": "^[0-9A-Za-z .,'-]{0,250}$",
       "description": "Optional field for remarks about the withdraw. Only letters, numbers, space, period, comma, - ' are allowed."
     },
     "dry_run": {

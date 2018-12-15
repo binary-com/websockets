@@ -24,6 +24,11 @@
       "type": "number",
       "required": "1"
     },
+    "description": {
+      "type": "string",
+      "pattern": "^[0-9A-Za-z .,'-]{0,250}$",
+      "description": "Optional field for remarks about the transfer."
+    },
     "dry_run": {
       "type": "integer",
       "pattern": "^(0|1)$",
