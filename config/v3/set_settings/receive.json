@@ -1,27 +1,30 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Set User Settings Receive",
-  "description": "A message with User Settings",
-  "properties": {
-    "echo_req": {
-      "title":"Echo request",
-      "description":"Echo of the request made",
-      "required": 1
-    },
-    "set_settings": {
-      "type": "integer",
-      "title": "Update Status",
-      "description": "1 on success"
-    },
-    "msg_type": {
-      "type": "string",
-      "description": "set_settings",
-      "required": 1
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field send in request to map to response, present only when request contains req_id"
-    }
-  }
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "required" : [
+      "echo_req",
+      "msg_type"
+   ],
+   "description" : "A message with User Settings",
+   "type" : "object",
+   "title" : "Set User Settings Receive",
+   
+   "properties" : {
+      "echo_req" : {
+         "title" : "Echo request",
+         "description" : "Echo of the request made"
+      },
+      "req_id" : {
+         "type" : "integer",
+         "description" : "Optional field send in request to map to response, present only when request contains req_id"
+      },
+      "set_settings" : {
+         "title" : "Update Status",
+         "description" : "1 on success",
+         "type" : "integer"
+      },
+      "msg_type" : {
+         "description" : "set_settings",
+         "type" : "string"
+      }
+   }
 }

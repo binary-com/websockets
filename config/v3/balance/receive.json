@@ -1,48 +1,66 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Realtime Balance",
-  "description": "Return details of user account balance",
-  "properties": {
-    "echo_req": {
-      "title":"Echo request",
-      "description":"Echo of the request made",
-      "required": 1
-    },
-    "balance": {
-      "type": "object",
-      "title": "Lastest balance of client",
-      "description": "Realtime stream of user balance changes.",
-      "properties": {
-          "balance": {
-            "type": "number",
-            "description": "Balance amount",
-            "pattern": "^([.0-9]{1,25})$"
-          },
-          "currency": {
-            "type": "string",
-            "description": "Currency Example: USD",
-            "pattern": "^(|[A-Z]{3})$"
-          },
-          "loginid": {
-            "type": "string",
-            "description": "Client loginid Example: CR000000",
-            "pattern": "^[A-Z]{2,4}[0-9]{1,10}$"
-          },
-          "id": {
-            "type": "string",
-            "description": "A stream id that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579"
-          }
-      }
-    },
-    "msg_type": {
-        "type": "string",
-        "description": "balance",
-        "required": 1
-    },
-    "req_id": {
-        "type": "integer",
-        "description": "Optional field send in request to map to response, present only when request contains req_id"
-    }
-  }
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "description" : "Return details of user account balance",
+   "type" : "object",
+   "required" : [
+      "msg_type",
+      "echo_req"
+   ],
+   "title" : "Realtime Balance",
+   
+   "properties" : {
+      "msg_type" : {
+         "description" : "balance",
+         "type" : "string"
+      },
+      "echo_req" : {
+         "title" : "Echo request",
+         "description" : "Echo of the request made"
+      },
+      "balance" : {
+         "description" : "Realtime stream of user balance changes.",
+         "type" : "object",
+         "title" : "Lastest balance of client",
+         "properties" : {
+            "loginid" : {
+               "pattern" : "^[A-Z]{2,4}[0-9]{1,10}$",
+               "description" : "Client loginid Example: CR000000",
+               "type" : "string"
+            },
+            "id" : {
+               "type" : "string",
+               "description" : "A stream id that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579"
+            },
+            "currency" : {
+               "description" : "Currency Example: USD",
+               "type" : "string",
+               "pattern" : "^(|[A-Z]{3})$"
+            },
+            "balance" : {
+                "minimum" : 0, 
+                "maximum" : 9999999999999999999999999,
+               "type" : "number",
+               "description" : "Balance amount"
+            }
+         }
+      },
+      "req_id" : {
+         "type" : "integer",
+         "description" : "Optional field send in request to map to response, present only when request contains req_id"
+      },
+      "subscription" : {
+         "title" : "Subscription information",
+         "description" : "For subscription requests only",
+         "type" : "object",
+         "required" : [
+            "id"
+         ],
+         "properties": {
+            "id" : {
+             "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
+             "type" : "string"
+            }
+         }
+     }
+   }
 }

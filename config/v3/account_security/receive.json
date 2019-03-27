@@ -1,38 +1,41 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "2-Factor Authentication Response",
-  "description": "",
-  "properties": {
-    "account_security": {
-      "type": "object",
-      "properties": {
-        "totp": {
-          "type": "object",
-          "properties": {
-            "is_enabled": {
-              "type": "integer"
-            },
-            "secret_key": {
-              "type": "string"
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "required" : [
+      "echo_req",
+      "msg_type"
+   ],
+   "type" : "object",
+   "description" : "",
+   "title" : "2-Factor Authentication Response",
+   
+   "properties" : {
+      "echo_req" : {
+         "description" : "Echo of the request made.",
+         "title" : "Echo request"
+      },
+      "req_id" : {
+         "type" : "integer",
+         "description" : "Optional field send in request to map to response, present only when request contains req_id."
+      },
+      "account_security" : {
+         "properties" : {
+            "totp" : {
+               "type" : "object",
+               "properties" : {
+                  "secret_key" : {
+                     "type" : "string"
+                  },
+                  "is_enabled" : {
+                     "type" : "integer"
+                  }
+               }
             }
-          }
-        }
+         },
+         "type" : "object"
+      },
+      "msg_type" : {
+         "description" : "account_security",
+         "type" : "string"
       }
-    },
-    "echo_req": {
-      "title": "Echo request",
-      "description": "Echo of the request made.",
-      "required": 1
-    },
-    "msg_type": {
-      "type": "string",
-      "description": "account_security",
-      "required": 1
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field send in request to map to response, present only when request contains req_id."
-    }
-  }
+   }
 }

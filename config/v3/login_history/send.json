@@ -1,29 +1,34 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Login History",
-  "description": "Retrieve a summary of login history for user.",
-  "properties": {
-     "login_history": {
-      "type": "integer",
-      "pattern": "^1$",
-      "description": "Must be 1.",
-      "required": "1"
-    },
-    "limit": {
-      "type": "integer",
-      "pattern": "^\\d+$",
-      "description": "Apply limit to count of login history records, default to 10. Max:50",
-      "default": "10"
-    },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field to map request to response"
-    }
-  },
-  "additionalProperties": false
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "description" : "Retrieve a summary of login history for user.",
+   "type" : "object",
+   "required" : [
+      "login_history"
+   ],
+   "additionalProperties" : false,
+   "title" : "Login History",
+   "properties" : {
+      "passthrough" : {
+         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+         "type" : "object"
+      },
+      "limit" : {
+         "default" : "10",
+         "minimum" : 0,
+         "type" : "integer",
+         "description" : "Apply limit to count of login history records, default to 10. Max:50",
+         "maximum" : 50
+      },
+      "login_history" : {
+         "description" : "Must be 1.",
+         "type" : "integer",
+         "enum" : [
+            1
+         ]
+      },
+      "req_id" : {
+         "description" : "Optional field to map request to response",
+         "type" : "integer"
+      }
+   }
 }

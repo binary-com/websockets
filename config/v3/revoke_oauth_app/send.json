@@ -1,21 +1,23 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Revoke Oauth Application Send",
-  "description":"Used for revoking access of particular app.",
-  "properties": {
-    "revoke_oauth_app": {
-      "type":"integer",
-      "required": "1"
-    },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field to map request to response"
-    }
-  },
-  "additionalProperties": false
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "required" : [
+      "revoke_oauth_app"
+   ],
+   "type" : "object",
+   "description" : "Used for revoking access of particular app.",
+   "title" : "Revoke Oauth Application Send",
+   "additionalProperties" : false,
+   "properties" : {
+      "revoke_oauth_app" : {
+         "type" : "integer"
+      },
+      "req_id" : {
+         "type" : "integer",
+         "description" : "Optional field to map request to response"
+      },
+      "passthrough" : {
+         "type" : "object",
+         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+      }
+   }
 }

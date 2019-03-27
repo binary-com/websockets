@@ -1,58 +1,67 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Tick History Request",
-  "description": "Get historic tick data for a given symbol.",
-  "properties": {
-    "ticks_history": {
-      "type": "string",
-      "pattern": "^\\w{2,30}$",
-      "description": "Short symbol name (obtained from the active_symbols call).",
-      "required": "1"
-    },
-    "end": {
-      "type": "string",
-      "pattern": "^(latest|\\d{1,10})$",
-      "description": "Epoch value representing the latest boundary of the returned ticks. If \"latest\" is specified, this will be the latest available timestamp.",
-      "required": "1"
-    },
-    "start": {
-      "type": "integer",
-      "pattern": "^\\d{1,10}$",
-      "description": "Epoch value representing the earliest boundary of the returned ticks (For styles: 'ticks', this will default to 1 day ago. For styles: 'candle', it will default to 1 day ago if count or granularity is undefined)."
-    },
-    "count": {
-      "type": "integer",
-      "description": "An upper limit on ticks to receive.",
-      "default": "5000"
-    },
-    "style": {
-      "enum": ["candles", "ticks"],
-      "description": "The tick-output style.",
-      "default": "ticks"
-    },
-    "granularity": {
-      "type" : "integer",
-      "description": "Only applicable for style : \"candles\". Candle time-dimension width setting. Allowed values 60, 120, 180, 300, 600, 900, 1800, 3600, 7200, 14400, 28800, 86400. Granularity is only set if style is 'candles'. Defaults to 60-second candle stick if not defined."
-    },
-    "adjust_start_time": {
-      "type": "integer",
-      "pattern": "^1$",
-      "description": "[Optional] 1 - if the market is closed at the end time, or license limit is before end time, adjust interval backwards to compensate."
-    },
-    "subscribe": {
-      "type": "integer",
-      "description": "[Optional] 1 - to send updates whenever the price changes.",
-      "pattern": "^1$"
-    },
-    "passthrough": {
-        "type": "object",
-        "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
-    "req_id": {
-        "type": "integer",
-        "description": "[Optional] Used to map request to response."
-    }
-  },
-  "additionalProperties": false
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "additionalProperties" : false,
+   "title" : "Tick History Request",
+   "description" : "Get historic tick data for a given symbol.",
+   "type" : "object",
+   "required" : [
+      "ticks_history",
+      "end"
+   ],
+   "properties" : {
+      "style" : {
+         "enum" : [
+            "candles",
+            "ticks"
+         ],
+         "default" : "ticks",
+         "description" : "The tick-output style."
+      },
+      "ticks_history" : {
+         "pattern" : "^\\w{2,30}$",
+         "description" : "Short symbol name (obtained from the active_symbols call).",
+         "type" : "string"
+      },
+      "count" : {
+         "default" : "5000",
+         "description" : "An upper limit on ticks to receive.",
+         "type" : "integer"
+      },
+      "start" : {
+         "maximum" : 9999999999,
+         "description" : "Epoch value representing the earliest boundary of the returned ticks (For styles: 'ticks', this will default to 1 day ago. For styles: 'candle', it will default to 1 day ago if count or granularity is undefined).",
+         "type" : "integer",
+         "minimum" : 0
+      },
+      "req_id" : {
+         "type" : "integer",
+         "description" : "[Optional] Used to map request to response."
+      },
+      "end" : {
+         "pattern" : "^(latest|\\d{1,10})$",
+         "type" : "string",
+         "description" : "Epoch value representing the latest boundary of the returned ticks. If \"latest\" is specified, this will be the latest available timestamp."
+      },
+      "granularity" : {
+         "description" : "Only applicable for style : \"candles\". Candle time-dimension width setting. Allowed values 60, 120, 180, 300, 600, 900, 1800, 3600, 7200, 14400, 28800, 86400 (default: '60').",
+         "type" : "integer"
+      },
+      "passthrough" : {
+         "type" : "object",
+         "description" : "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
+      },
+      "subscribe" : {
+         "enum" : [
+            1
+         ],
+         "description" : "[Optional] 1 - to send updates whenever a new tick is received."
+      },
+      "adjust_start_time" : {
+         "description" : "[Optional] 1 - if the market is closed at the end time, or license limit is before end time, adjust interval backwards to compensate.",
+         "type" : "integer",
+         "enum" : [
+            1
+         ]
+      }
+   }
 }

@@ -1,23 +1,27 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Account Statistics Send",
-  "description": "Send request to get account statistics",
-  "properties": {
-    "account_statistics": {
-      "type": "integer",
-      "pattern": "^1$",
-      "description": "Must be 1.",
-      "required": "1"
-    },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field"
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field to map request to response"
-    }
-  },
-  "additionalProperties": false
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "required" : [
+      "account_statistics"
+   ],
+   "description" : "Send request to get account statistics",
+   "type" : "object",
+   "title" : "Account Statistics Send",
+   "additionalProperties" : false,
+   "properties" : {
+      "account_statistics" : {
+         "type" : "integer",
+         "description" : "Must be 1.",
+         "enum" : [
+            1
+         ]
+      },
+      "passthrough" : {
+         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field",
+         "type" : "object"
+      },
+      "req_id" : {
+         "description" : "Optional field to map request to response",
+         "type" : "integer"
+      }
+   }
 }

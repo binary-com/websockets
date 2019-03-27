@@ -1,29 +1,34 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title":"Transaction Subscription",
-  "description": "Subscribe to transaction notifications",
-  "properties": {
-    "transaction": {
-      "type": "integer",
-      "description": "Must be 1.",
-      "pattern": "^1$",
-      "required": "1"
-    },
-    "subscribe": {
-      "type": "integer",
-      "description": "If set to 1, will send updates whenever there is an update to transactions. If not to 1 then it will not return any records.",
-      "pattern": "^1$",
-      "required": "1"
-    },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field to map request to response"
-    }
-  },
-  "additionalProperties": false
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "title" : "Transaction Subscription",
+   "additionalProperties" : false,
+   "required" : [
+      "subscribe",
+      "transaction"
+   ],
+   "type" : "object",
+   "description" : "Subscribe to transaction notifications",
+   "properties" : {
+      "req_id" : {
+         "description" : "Optional field to map request to response",
+         "type" : "integer"
+      },
+      "passthrough" : {
+         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+         "type" : "object"
+      },
+      "subscribe" : {
+         "enum" : [
+            1
+         ],
+         "description" : "If set to 1, will send updates whenever there is an update to transactions. If not to 1 then it will not return any records.",
+         "type" : "integer"
+      },
+      "transaction" : {
+         "description" : "Must be 1.",
+         "enum" : [
+            1
+         ]
+      }
+   }
 }

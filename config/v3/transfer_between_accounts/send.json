@@ -1,41 +1,45 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Transfer Between Accounts Request",
-  "description": "This call allows transfers between accounts held by a given user. Transfer funds between your fiat and cryptocurrency accounts (for a fee). Please note that account_from should be same as current authorized account.",
-  "properties": {
-    "transfer_between_accounts": {
-      "type":"integer",
-      "pattern": "^1$",
-      "required": "1",
-      "description": "If account_from or account_to is not provided, we'll just return available accounts."
-    },
-    "account_from": {
-      "type": "string",
-      "pattern": "\\w+",
-      "description": "The account_from loginid"
-    },
-    "account_to": {
-      "type": "string",
-      "pattern": "\\w+",
-      "description": "The account_to loginid"
-    },
-    "currency": {
-      "type": "string",
-      "pattern": "^[A-Z]{3}$"
-    },
-    "amount": {
-      "type": "number",
-      "minimum": 0
-    },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field to map request to response"
-    }
-  },
-  "additionalProperties": false
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "additionalProperties" : false,
+   "title" : "Transfer Between Accounts Request",
+   "required" : [
+      "transfer_between_accounts"
+   ],
+   "type" : "object",
+   "description" : "This call allows transfers between accounts held by a given user. Transfer funds between your fiat and cryptocurrency accounts (for a fee). Please note that account_from should be same as current authorized account.",
+   "properties" : {
+      "amount" : {
+         "minimum" : 0,
+         "type" : "number"
+      },
+      "account_from" : {
+         "pattern" : "\\w+",
+         "type" : "string",
+         "description" : "The account_from loginid"
+      },
+      "req_id" : {
+         "description" : "Optional field to map request to response",
+         "type" : "integer"
+      },
+      "passthrough" : {
+         "type" : "object",
+         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+      },
+      "account_to" : {
+         "type" : "string",
+         "description" : "The account_to loginid",
+         "pattern" : "\\w+"
+      },
+      "currency" : {
+         "pattern" : "^[A-Z]{3}$",
+         "type" : "string"
+      },
+      "transfer_between_accounts" : {
+         "enum" : [
+            1
+         ],
+         "type" : "integer",
+         "description" : "If account_from or account_to is not provided, we'll just return available accounts."
+      }
+   }
 }

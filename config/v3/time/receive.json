@@ -1,25 +1,29 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Server Time Response",
-  "properties": {
-    "echo_req": {
-      "title":"Echo request",
-      "description":"Echo of the request made",
-      "required": 1
-    },
-    "time": {
-    	"type": "integer",
-    	"description": "Epoch of server time."
-    },
-    "msg_type": {
-        "type": "string",
-        "description": "time",
-        "required": 1
-    },
-    "req_id": {
-        "type": "integer",
-        "description": "Optional field send in request to map to response, present only when request contains req_id"
-    }
-  }
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "type" : "object",
+   "description" : null,
+   "required" : [
+      "msg_type",
+      "echo_req"
+   ],
+   "title" : "Server Time Response",
+   
+   "properties" : {
+      "echo_req" : {
+         "title" : "Echo request",
+         "description" : "Echo of the request made"
+      },
+      "req_id" : {
+         "description" : "Optional field send in request to map to response, present only when request contains req_id",
+         "type" : "integer"
+      },
+      "msg_type" : {
+         "description" : "time",
+         "type" : "string"
+      },
+      "time" : {
+         "description" : "Epoch of server time.",
+         "type" : "integer"
+      }
+   }
 }

@@ -1,25 +1,29 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "App Delete Receive",
-  "properties": {
-    "echo_req": {
-      "title":"Echo request",
-      "description":"Echo of the request made",
-      "required": 1
-    },
-    "app_delete": {
-      "type": "string",
-      "description": "1 on success"
-    },
-    "msg_type": {
-      "type": "string",
-      "description": "app_delete",
-      "required": 1
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field send in request to map to response, present only when request contains req_id"
-    }
-  }
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   
+   "title" : "App Delete Receive",
+   "required" : [
+      "echo_req",
+      "msg_type"
+   ],
+   "description" : null,
+   "type" : "object",
+   "properties" : {
+      "msg_type" : {
+         "type" : "string",
+         "description" : "app_delete"
+      },
+      "app_delete" : {
+         "type" : "string",
+         "description" : "1 on success"
+      },
+      "req_id" : {
+         "description" : "Optional field send in request to map to response, present only when request contains req_id",
+         "type" : "integer"
+      },
+      "echo_req" : {
+         "title" : "Echo request",
+         "description" : "Echo of the request made"
+      }
+   }
 }

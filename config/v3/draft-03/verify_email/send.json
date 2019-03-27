@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "type": "object",
+  "title":"Verify Email Request",
+  "description": "Verify an email address for various purposes. The system will send an email to the address containing a security code for verification.",
+  "properties": {
+    "verify_email": {
+      "type": "string",
+      "description": "Email address to be verified.",
+      "format": "email",
+      "required": "1"
+    },
+    "type": {
+      "description": "Purpose of the email verification call.",
+      "enum": ["account_opening","reset_password","paymentagent_withdraw","payment_withdraw", "mt5_password_reset"],
+      "required": "1"
+    },
+    "passthrough": {
+        "type": "object",
+        "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
+    },
+    "req_id": {
+        "type": "integer",
+        "description": "[Optional] Used to map request to response."
+    }
+  },
+  "additionalProperties": false
+}

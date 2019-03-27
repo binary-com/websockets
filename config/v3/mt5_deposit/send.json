@@ -1,39 +1,41 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "MT5 Account Deposit Request",
-  "description": "This call allows deposit into MT5 account from Binary account.",
-  "properties": {
-    "mt5_deposit": {
-      "type":"integer",
-      "pattern": "^1$",
-      "required": "1"
-    },
-    "from_binary": {
-      "type": "string",
-      "pattern": "^\\w+\\d+$",
-      "description": "Binary account loginid to transfer money from",
-      "required": "1"
-    },
-    "to_mt5": {
-      "type": "string",
-      "pattern": "^\\d+$",
-      "description": "MT5 account login to deposit money to",
-      "required": "1"
-    },
-    "amount": {
-      "type": "number",
-      "description": "Amount to deposit (in the currency of from_binary); min = $1 or an equivalent amount, max = $20000 or an equivalent amount",
-      "required": "1"
-    },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field to map request to response"
-    }
-  },
-  "additionalProperties": false
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "required" : [
+      "mt5_deposit",
+      "to_mt5"
+   ],
+   "type" : "object",
+   "description" : "This call allows deposit into MT5 account from Binary account.",
+   "additionalProperties" : false,
+   "title" : "MT5 Account Deposit Request",
+   "properties" : {
+      "mt5_deposit" : {
+         "enum" : [
+            1
+         ],
+         "type" : "integer"
+      },
+      "passthrough" : {
+         "type" : "object",
+         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
+      },
+      "req_id" : {
+         "type" : "integer",
+         "description" : "Optional field to map request to response"
+      },
+      "from_binary" : {
+         "type" : "string",
+         "description" : "Binary account loginid to transfer money from",
+         "pattern" : "^\\w+\\d+$"
+      },
+      "amount" : {
+         "description" : "Amount to deposit (in the currency of from_binary); min = $1 or an equivalent amount, max = $20000 or an equivalent amount",
+         "type" : "number"
+      },
+      "to_mt5" : {
+         "pattern" : "^\\d+$",
+         "description" : "MT5 account login to deposit money to",
+         "type" : "string"
+      }
+   }
 }

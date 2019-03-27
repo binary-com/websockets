@@ -1,32 +1,38 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "MT5 Multiple Accounts Manager Request",
-  "description": "This call allows to manage manager for MT5 account",
-  "properties": {
-    "mt5_mamm": {
-      "type":"integer",
-      "pattern": "^1$",
-      "required": "1"
-    },
-    "login": {
-      "type": "string",
-      "pattern": "^\\d+$",
-      "description": "MT5 user login",
-      "required": "1"
-    },
-    "action": {
-      "enum": ["revoke"],
-      "description": "[Optional] Pass this if you want to revoke current manager assigned to mt5 account"
-    },
-    "passthrough": {
-      "type": "object",
-      "description": "[Optional] field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "[Optional] field to map request to response"
-    }
-  },
-  "additionalProperties": false
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "additionalProperties" : false,
+   "title" : "MT5 Multiple Accounts Manager Request",
+   "description" : "This call allows to manage manager for MT5 account",
+   "type" : "object",
+   "required" : [
+      "mt5_mamm",
+      "login"
+   ],
+   "properties" : {
+      "login" : {
+         "description" : "MT5 user login",
+         "type" : "string",
+         "pattern" : "^\\d+$"
+      },
+      "passthrough" : {
+         "description" : "[Optional] field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+         "type" : "object"
+      },
+      "action" : {
+         "enum" : [
+            "revoke"
+         ],
+         "description" : "[Optional] Pass this if you want to revoke current manager assigned to mt5 account"
+      },
+      "mt5_mamm" : {
+         "enum" : [
+            1
+         ],
+         "type" : "integer"
+      },
+      "req_id" : {
+         "type" : "integer",
+         "description" : "[Optional] field to map request to response"
+      }
+   }
 }

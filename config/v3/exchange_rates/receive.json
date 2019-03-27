@@ -1,50 +1,54 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Get Exchange Rates",
-  "properties": {
-    "echo_req": {
-      "type": "object",
-      "title": "Echo request",
-      "description": "Echo of the request json message",
-      "required" : "1"
-    },
-    "msg_type": {
-      "type": "string",
-      "pattern": "^exchange_rates$",
-      "title": "Message Type",
-      "description": "exchange_rates",
-      "required" : "1"
-    },
-    "exchange_rates": {
-      "type": "object",
-      "title": "Exchange rates",
-      "description": "Exchange rate values from base to all other currencies",
-      "properties": {
-        "base_currency": {
-          "type": "string",
-          "description": "Base currency",
-          "pattern": "^[A-Z]{3}$"
-        },
-        "date": {
-          "type": "integer",
-          "description": "Date retrieval epoch time represented as an integer number"
-        },
-        "rates": {
-          "type": "object",
-          "description": "Rates of exchanging a unit of base currency into the target currencies",
-          "properties": {
-            "^[A-Z]{3}$": {
-              "type": "number",
-              "description": "The rate of exchanging a unit of the base currency into a target currency (represented by the key)"
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "type" : "object",
+   "description" : null,
+   "required" : [
+      "echo_req",
+      "msg_type"
+   ],
+   "title" : "Get Exchange Rates",
+   
+   "properties" : {
+      "req_id" : {
+         "description" : "Optional field sent only when request contains req_id",
+         "type" : "integer"
+      },
+      "echo_req" : {
+         "title" : "Echo request",
+         "type" : "object",
+         "description" : "Echo of the request json message"
+      },
+      "exchange_rates" : {
+         "properties" : {
+            "date" : {
+               "description" : "Date retrieval epoch time represented as an integer number",
+               "type" : "integer"
+            },
+            "base_currency" : {
+               "pattern" : "^[A-Z]{3}$",
+               "type" : "string",
+               "description" : "Base currency"
+            },
+            "rates" : {
+               "type" : "object",
+               "description" : "Rates of exchanging a unit of base currency into the target currencies",
+               "patternProperties" : {
+                  "^[A-Z]{3}$" : {
+                     "type" : "number",
+                     "description" : "The rate of exchanging a unit of the base currency into a target currency (represented by the key)"
+                  }
+               }
             }
-          }
-        }
+         },
+         "title" : "Exchange rates",
+         "description" : "Exchange rate values from base to all other currencies",
+         "type" : "object"
+      },
+      "msg_type" : {
+         "type" : "string",
+         "description" : "exchange_rates",
+         "title" : "Message Type",
+         "pattern" : "^exchange_rates$"
       }
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field sent only when request contains req_id"
-    }
-  }
+   }
 }

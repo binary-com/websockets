@@ -1,41 +1,49 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Report Request Send",
-  "description": "Send report to client's registered e-mail",
-  "properties": {
-    "request_report": {
-      "type": "integer",
-      "pattern": "^1$",
-      "description": "Must be 1.",
-      "required": "1"
-    },
-    "report_type": {
-      "type": "string",
-      "enum": ["statement"],
-      "description": "Type of report to be sent to client's registered e-mail address",
-      "required": 1
-    },
-    "date_from": {
-      "type": "integer",
-      "pattern": "^[0-9]{1,10}$",
-      "description": "Start date of the report",
-      "required": 1
-    },
-    "date_to": {
-      "type": "integer",
-      "pattern": "^[0-9]{1,10}$",
-      "description": "End date of the report",
-      "required": 1
-    },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field"
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field to map request to response"
-    }
-  },
-  "additionalProperties": false
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "additionalProperties" : false,
+   "title" : "Report Request Send",
+   "required" : [
+      "request_report",
+      "report_type",
+      "date_to",
+      "date_from"
+   ],
+   "type" : "object",
+   "description" : "Send report to client's registered e-mail",
+   "properties" : {
+      "req_id" : {
+         "type" : "integer",
+         "description" : "Optional field to map request to response"
+      },
+      "date_to" : {
+         "description" : "End date of the report",
+         "type" : "integer",
+         "minimum" : 0,
+         "maximum" : 9999999999
+      },
+      "date_from" : {
+         "minimum" : 1,
+         "type" : "integer",
+         "description" : "Start date of the report",
+         "maximum" : 9999999999
+      },
+      "request_report" : {
+         "enum" : [
+            1
+         ],
+         "type" : "integer",
+         "description" : "Must be 1."
+      },
+      "passthrough" : {
+         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field",
+         "type" : "object"
+      },
+      "report_type" : {
+         "type" : "string",
+         "description" : "Type of report to be sent to client's registered e-mail address",
+         "enum" : [
+            "statement"
+         ]
+      }
+   }
 }

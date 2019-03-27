@@ -1,22 +1,25 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Ping Request",
-  "properties": {
-    "ping": {
-        "type": "string",
-        "pattern": "^1$",
-        "description": "Must be 1.",
-        "required": "1"
-    },
-    "passthrough":{
-        "type":"object",
-        "description":"[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "[Optional] Used to map request to response."
-    }
-  },
-  "additionalProperties": false
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "description" : null,
+   "type" : "object",
+   "required" : [
+      "ping"
+   ],
+   "additionalProperties" : false,
+   "title" : "Ping Request",
+   "properties" : {
+      "passthrough" : {
+         "description" : "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+         "type" : "object"
+      },
+      "ping" : {
+         "description" : "Must be 1.",
+         "type" : "string",
+         "pattern" : "^1$"
+      },
+      "req_id" : {
+         "description" : "[Optional] Used to map request to response.",
+         "type" : "integer"
+      }
+   }
 }

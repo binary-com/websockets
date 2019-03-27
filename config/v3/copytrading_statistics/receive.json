@@ -1,106 +1,116 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Copy Trading Statistics Response",
-  "properties": {
-    "echo_req": {
-      "title": "Echo request",
-      "description": "Echo of the request made",
-      "required": 1
-    },
-    "copytrading_statistics": {
-      "type":"object",
-      "description": "Statistics of the trader",
-      "properties": {
-        "active_since": {
-          "type": "integer",
-          "description": "This is the epoch the investor started trading with binary.com",
-          "required": 1
+    "$schema" : "http://json-schema.org/draft-04/schema#",
+    "type" : "object",
+    "title" : "Copy Trading Statistics Response",
+    "description" : null,
+
+    "required" : [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties" : {
+        "msg_type" : {
+            "description" : "copytrading_statistics",
+            "type" : "string"
         },
-        "monthly_profitable_trades": {
-          "type": "object",
-          "description": "Represents the net change in equity per month.",
-          "patternProperties": {
-            "^[0-9]{4}\\-[0-9]{2}$": {
-              "type": "number",
-              "description": "Monthly profitable trades in percentage.",
-              "required": 1
+        "echo_req" : {
+            "description" : "Echo of the request made",
+            "title" : "Echo request"
+        },
+        "req_id" : {
+            "type" : "integer",
+            "description" : "Optional field send in request to map to response, present only when request contains req_id"
+        },
+        "copytrading_statistics" : {
+            "required" : [
+                "copiers",
+                "performance_probability",
+                "active_since",
+                "monthly_profitable_trades",
+                "trades_breakdown", 
+                "total_trades", 
+                "trades_profitable", 
+                "avg_profit", 
+                "last_12months_profitable_trades", 
+                "avg_loss",
+                "avg_duration"
+            ],
+            "additionalProperties" : false,
+            "type" : "object",
+            "description" : "Statistics of the trader",
+            "properties" : {
+                "monthly_profitable_trades" : {
+                    "description" : "Represents the net change in equity per month.",
+                    "type" : "object",
+                    "patternProperties" : {
+                        "^[0-9]{4}\\-[0-9]{2}$" : {
+                            "type" : "number",
+                            "description" : "Monthly profitable trades in percentage."
+                        }
+                    },
+
+                    "minProperties" : 0
+                },
+                "performance_probability" : {
+                    "type" : "number",
+                    "description" : "Trader performance probability."
+                },
+                "trades_profitable" : {
+                    "description" : "Number of profit trades in percentage.",
+                    "type" : "number"
+                },
+                "avg_profit" : {
+                    "description" : "Average profit of trades in percentage.",
+                    "type" : "number"
+                },
+                "last_12months_profitable_trades" : {
+                    "description" : "Represents the net change in equity for a 12-month period.",
+                    "type" : "number"
+                },
+                "trades_breakdown" : {
+                    "patternProperties" : {
+                        "^\\w+$" : {
+                            "description" : "Number of trades in percentage.",
+                            "type" : "number"
+                        },
+                        "minProperties" : 1
+                    },
+                    "type" : "object",
+                    "description" : "Represents the portfolio distribution by markets."
+                },
+                "copiers" : {
+                    "description" : "Trader copiers count.",
+                    "type" : "number"
+                },
+                "avg_loss" : {
+                    "description" : "Average loss of trades in percentage.",
+                    "type" : "number"
+                },
+                "total_trades" : {
+                    "type" : "integer",
+                    "description" : "Total number of trades for all time."
+                },
+                "active_since" : {
+                    "type" : "integer",
+                    "description" : "This is the epoch the investor started trading with binary.com"
+                },
+                "avg_duration" : {
+                    "type" : "integer",
+                    "description" : "Average seconds of keeping positions open."
+                },
+                "yearly_profitable_trades" : {
+                    "patternProperties" : {
+                        "^[0-9]{4}$" : {
+                            "type" : "number",
+                            "description" : "Yearly profitable trades in percentage."
+                        }
+                    },
+                    "type" : "object",
+                    "minProperties" : 0,
+                    "description" : "Represents the net change in equity per year."
+                }
             }
-          }
-        },
-        "yearly_profitable_trades": {
-          "type": "object",
-          "description": "Represents the net change in equity per year.",
-          "patternProperties": {
-            "^[0-9]{4}$": {
-              "type": "number",
-              "description": "Yearly profitable trades in percentage.",
-              "required": 1
-            }
-          }
-        },
-        "last_12months_profitable_trades": {
-          "type": "number",
-          "description": "Represents the net change in equity for a 12-month period.",
-          "requred": 1
-        },
-        "total_trades": {
-          "type": "integer",
-          "description": "Total number of trades for all time.",
-          "requred": 1
-        },
-        "trades_profitable": {
-          "type": "number",
-          "description": "Number of profit trades in percentage.",
-          "requred": 1
-        },
-        "avg_duration": {
-          "type": "integer",
-          "description": "Average seconds of keeping positions open.",
-          "requred": 1
-        },
-        "avg_profit": {
-          "type": "number",
-          "description": "Average profit of trades in percentage.",
-          "requred": 1
-        },
-        "avg_loss": {
-          "type": "number",
-          "description": "Average loss of trades in percentage.",
-          "requred": 1
-        },
-        "trades_breakdown": {
-          "type": "object",
-          "description": "Represents the portfolio distribution by markets.",
-          "patternProperties": {
-            "^\\w+$": {
-              "type": "number",
-              "description": "Number of trades in percentage.",
-              "required": 1
-            }
-          }
-        },
-        "performance_probability": {
-          "type": "number",
-          "description": "Trader performance probability.",
-          "required": 1
-        },
-        "copiers": {
-          "type":"number",
-          "description": "Trader copiers count.",
-          "required": 1
         }
-      },
-      "additionalProperties": false
-    },
-    "msg_type": {
-      "type": "string",
-      "description": "copytrading_statistics",
-      "required": 1
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  }
 }
+

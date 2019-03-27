@@ -1,25 +1,29 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Logout Response",
-  "properties": {
-    "echo_req": {
-      "title":"Echo request",
-      "description":"Echo of the request made",
-      "required": 1
-    },
-    "logout": {
-      "type": "integer",
-      "title": "Logout Status"
-    },
-    "msg_type": {
-        "type": "string",
-        "description": "time",
-        "required": 1
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field send in request to map to response, present only when request contains req_id"
-    }
-  }
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "title" : "Logout Response",
+   
+   "required" : [
+      "echo_req",
+      "msg_type"
+   ],
+   "description" : null,
+   "type" : "object",
+   "properties" : {
+      "msg_type" : {
+         "description" : "time",
+         "type" : "string"
+      },
+      "echo_req" : {
+         "title" : "Echo request",
+         "description" : "Echo of the request made"
+      },
+      "logout" : {
+         "type" : "integer",
+         "title" : "Logout Status"
+      },
+      "req_id" : {
+         "type" : "integer",
+         "description" : "Optional field send in request to map to response, present only when request contains req_id"
+      }
+   }
 }

@@ -1,28 +1,34 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title":"Balance Send",
-  "description": "Get user account balance",
-  "properties": {
-    "balance": {
-      "type": "integer",
-      "description": "Must be 1.",
-      "pattern": "^1$",
-      "required": "1"
-    },
-    "subscribe": {
-      "type": "integer",
-      "description": "If set to 1, will send updates whenever the balance changes.",
-      "pattern": "^1$"
-    },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field to map request to response"
-    }
-  },
-  "additionalProperties": false
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "type" : "object",
+   "description" : "Get user account balance",
+   "required" : [
+      "balance"
+   ],
+   "title" : "Balance Send",
+   "additionalProperties" : false,
+   "properties" : {
+      "balance" : {
+         "enum" : [
+            1
+         ],
+         "type" : "integer",
+         "description" : "Must be 1."
+      },
+      "req_id" : {
+         "type" : "integer",
+         "description" : "Optional field to map request to response"
+      },
+      "subscribe" : {
+         "description" : "If set to 1, will send updates whenever the balance changes.",
+         "enum" : [
+            0,
+            1
+         ]
+      },
+      "passthrough" : {
+         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+         "type" : "object"
+      }
+   }
 }

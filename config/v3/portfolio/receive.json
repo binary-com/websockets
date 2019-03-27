@@ -1,90 +1,98 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Portfolio Receive",
-  "description": "Receive a list of outstanding options in the user's portfolio",
-  "properties": {
-    "echo_req": {
-      "title":"Echo request",
-      "description":"Echo of the request made",
-      "required": 1
-    },
-    "portfolio": {
-      "type": "object",
-      "title": "Portfolio",
-      "description": "Client open positions",
-      "properties": {
-        "contracts": {
-          "type": "array",
-          "title": "Contracts",
-          "description": "Client open positions",
-          "required": 1,
-          "items":{
-            "type":"object",
-            "title": "Portfolio",
-            "description": "Client open positions",
-            "properties":{
-              "contract_id": {
-                "type": "integer",
-                "description": "Binary.com internal contract identifier number (to be used in a Price Proposal - Open Contract API call)"
-              },
-              "transaction_id":{
-                "type":"integer",
-                "description":"It is the transaction id. Every contract (buy or sell) and every payment has a unique id. Example: 10867502908"
-              },
-              "purchase_time": {
-                "type": "integer",
-                "description": "Epoch of purchase time"
-              },
-              "symbol": {
-                "type": "string",
-                "description": "Symbol code"
-              },
-              "payout": {
-                "type": "number",
-                "description": "Payout price"
-              },
-              "buy_price": {
-                "type": "number",
-                "description": "Buy price"
-              },
-              "date_start": {
-                "type": "integer",
-                "description": "Epoch of start date"
-              },
-              "expiry_time": {
-                "type": "integer",
-                "description": "Epoch of expiry time"
-              },
-              "contract_type": {
-                "type": "string",
-                "description": "Contract type"
-              },
-              "currency": {
-                "type": "string",
-                "description": "Contract currency"
-              },
-              "longcode": {
-                "type": "string",
-                "description": "Contract description"
-              },
-              "app_id": {
-                "type": ["integer", "null"],
-                "description": "Id of an app from where this contract was purchased. For example, it's 1 for binary.com."
-              }
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "required" : [
+      "echo_req",
+      "msg_type"
+   ],
+   "type" : "object",
+   "description" : "Receive a list of outstanding options in the user's portfolio",
+   
+   "title" : "Portfolio Receive",
+   "properties" : {
+      "req_id" : {
+         "type" : "integer",
+         "description" : "Optional field send in request to map to response, present only when request contains req_id"
+      },
+      "portfolio" : {
+         "required" : [
+            "contracts"
+         ],
+         "description" : "Client open positions",
+         "type" : "object",
+         "title" : "Portfolio",
+         "properties" : {
+            "contracts" : {
+               "title" : "Contracts",
+               "items" : {
+                  "type" : "object",
+                  "description" : "Client open positions",
+                  "properties" : {
+                     "symbol" : {
+                        "type" : "string",
+                        "description" : "Symbol code"
+                     },
+                     "contract_id" : {
+                        "description" : "Binary.com internal contract identifier number (to be used in a Price Proposal - Open Contract API call)",
+                        "type" : "integer"
+                     },
+                     "transaction_id" : {
+                        "type" : "integer",
+                        "description" : "It is the transaction id. Every contract (buy or sell) and every payment has a unique id. Example: 10867502908"
+                     },
+                     "app_id" : {
+                        "description" : "Id of an app from where this contract was purchased. For example, it's 1 for binary.com.",
+                        "type" : [
+                           "integer",
+                           "null"
+                        ]
+                     },
+                     "date_start" : {
+                        "type" : "integer",
+                        "description" : "Epoch of start date"
+                     },
+                     "buy_price" : {
+                        "type" : "number",
+                        "description" : "Buy price"
+                     },
+                     "payout" : {
+                        "description" : "Payout price",
+                        "type" : "number"
+                     },
+                     "currency" : {
+                        "description" : "Contract currency",
+                        "type" : "string"
+                     },
+                     "contract_type" : {
+                        "description" : "Contract type",
+                        "type" : "string"
+                     },
+                     "purchase_time" : {
+                        "type" : "integer",
+                        "description" : "Epoch of purchase time"
+                     },
+                     "longcode" : {
+                        "description" : "Contract description",
+                        "type" : "string"
+                     },
+                     "expiry_time" : {
+                        "type" : "integer",
+                        "description" : "Epoch of expiry time"
+                     }
+                  },
+                  "title" : "Portfolio"
+               },
+               "description" : "Client open positions",
+               "type" : "array"
             }
-          }
-        }
+         }
+      },
+      "echo_req" : {
+         "description" : "Echo of the request made",
+         "title" : "Echo request"
+      },
+      "msg_type" : {
+         "description" : "portfolio",
+         "type" : "string"
       }
-    },
-    "msg_type": {
-      "type": "string",
-      "description": "portfolio",
-      "required": 1
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field send in request to map to response, present only when request contains req_id"
-    }
-  }
+   }
 }

@@ -1,39 +1,45 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Get List of MT5 accounts for client",
-  "description": "Get list of MT5 accounts for client",
-  "properties": {
-    "echo_req": {
-      "title":"Echo request",
-      "description":"Echo of the request made",
-      "required": "1"
-    },
-    "mt5_login_list": {
-      "type": ["array", "null"],
-      "items": {
-        "type": "object",
-        "title": "Application object",
-        "properties": {
-          "login": {
-            "type": "string",
-            "description": "Login of MT5 account"
-          },
-          "group": {
-            "type": "string",
-            "description": "Group type of the MT5 account, e.g. real, vanuatu, etc."
-          }
-        }
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "title" : "Get List of MT5 accounts for client",
+   
+   "required" : [
+      "msg_type",
+      "echo_req"
+   ],
+   "description" : "Get list of MT5 accounts for client",
+   "type" : "object",
+   "properties" : {
+      "mt5_login_list" : {
+         "type" : [
+            "array",
+            "null"
+         ],
+         "items" : {
+            "type" : "object",
+            "title" : "Application object",
+            "properties" : {
+               "login" : {
+                  "description" : "Login of MT5 account",
+                  "type" : "string"
+               },
+               "group" : {
+                  "description" : "Group type of the MT5 account, e.g. real, vanuatu, etc.",
+                  "type" : "string"
+               }
+            }
+         }
+      },
+      "msg_type" : {
+         "description" : "mt5_login_list",
+         "type" : "string"
+      },
+      "echo_req" : {
+         "title" : "Echo request",
+         "description" : "Echo of the request made"
+      },
+      "req_id" : {
+         "type" : "integer",
+         "description" : "Optional field send in request to map to response, present only when request contains req_id"
       }
-    },
-    "msg_type": {
-      "type": "string",
-      "description": "mt5_login_list",
-      "required": "1"
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field send in request to map to response, present only when request contains req_id"
-    }
-  }
+   }
 }
