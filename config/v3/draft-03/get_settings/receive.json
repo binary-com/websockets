@@ -17,9 +17,13 @@
           "type":"string",
           "description": "User Email"
         },
-        "country":{
+        "residence":{
           "type": ["string", "null"],
           "description": "User Country"
+        },
+        "country":{
+          "type": ["string", "null"],
+          "description": "User Country (same as residence field) - deprecated"
         },
         "citizen":{
             "type": "string",
