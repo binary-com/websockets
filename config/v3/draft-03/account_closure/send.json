@@ -1,0 +1,29 @@
+{
+	"$schema": "http://json-schema.org/draft-03/schema#",
+	"type": "object",
+	"description": "This call allows clients to close all their accounts (including virtual-money account). It is assumed that all their accounts (excluding virtual) have no balance left.",
+	"title": "Account closure Send",
+	"properties": {
+		"account_closure": {
+			"description": "Must be 1",
+			"type": "integer",
+			"pattern": "^1$",
+			"required": "1"
+		},
+		"reason": {
+			"type": "string",
+			"description": "Reason for closing off accounts.",
+			"pattern": "^[0-9A-Za-z .,'-]{5,250}$",
+			"required": "1"
+		},
+		"req_id": {
+			"type": "integer",
+			"description": "Optional field to map request to response"
+		},
+		"passthrough": {
+			"description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+			"type": "object"
+		}
+	},
+	"additionalProperties": false
+}

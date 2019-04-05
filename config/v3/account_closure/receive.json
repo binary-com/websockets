@@ -1,0 +1,33 @@
+{
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "title" : "Account closure response",
+   
+   "type" : "object",
+   "description" : "",
+   "required" : [
+      "msg_type",
+      "echo_req"
+   ],
+   "properties" : {
+      "msg_type" : {
+         "description" : "account_closure",
+         "type" : "string"
+      },
+      "req_id" : {
+         "type" : "integer",
+         "description" : "Optional field send in request to map to response, present only when request contains req_id"
+      },
+      "echo_req" : {
+         "description" : "Echo of the request made",
+         "title" : "Echo request"
+      },
+      "account_closure" : {
+         "enum" : [
+            0,
+            1
+         ],
+         "description" : "If 1, all accounts closed.",
+         "type" : "integer"
+      }
+   }
+}
