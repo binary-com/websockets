@@ -16,7 +16,7 @@
     },
     "limit": {
       "type": "number",
-      "pattern": "^\\d{1,3}$",
+      "pattern": "^[0-9]{1,3}$",
       "description": "Apply upper limit to count of transactions received"
     },
     "offset": {
@@ -25,12 +25,12 @@
     },
     "date_from": {
       "type": "string",
-      "pattern": "^(\\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|\\d{1,10})$",
+      "pattern" : "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|[0-9]{1,10})$",
       "description": "Optional start date (epoch or YYYY-MM-DD)"
     },
     "date_to": {
       "type": "string",
-      "pattern": "^(\\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|\\d{1,10})$",
+      "pattern" : "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|[0-9]{1,10})$",
       "description": "Optional end date (epoch or YYYY-MM-DD)"
     },
     "sort": {

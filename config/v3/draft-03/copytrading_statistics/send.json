@@ -12,7 +12,7 @@
     },
     "trader_id": {
       "type": "string",
-      "pattern": "^[A-Za-z]+\\d+$",
+      "pattern": "^[A-Za-z]+[0-9]+$",
       "required": "1",
       "description":"The id of the target trader."
     },

@@ -5,7 +5,7 @@
   "properties": {
     "app_delete": {
       "type":"integer",
-      "pattern": "^\\d{1,20}$",
+      "pattern": "^[0-9]{1,20}$",
       "required": "1",
       "description": "Application app_id"
     },

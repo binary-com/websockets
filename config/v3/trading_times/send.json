@@ -13,7 +13,7 @@
          "description" : "[Optional] Used to map request to response."
       },
       "trading_times" : {
-         "pattern" : "^(\\d{4}-\\d{1,2}-\\d{1,2}|today)$",
+         "pattern" : "^([0-9]{4}-[0-9]{1,2}-[0-9]{1,2}|today)$",
          "type" : "string",
          "description" : "Date to receive market opening times for. (yyyy-mm-dd format. 'today' can also be specified)."
       },

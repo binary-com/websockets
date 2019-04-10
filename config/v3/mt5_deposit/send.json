@@ -26,14 +26,14 @@
       "from_binary" : {
          "type" : "string",
          "description" : "Binary account loginid to transfer money from",
-         "pattern" : "^\\w+\\d+$"
+         "pattern" : "^[A-Za-z]+[0-9]+$"
       },
       "amount" : {
          "description" : "Amount to deposit (in the currency of from_binary); min = $1 or an equivalent amount, max = $20000 or an equivalent amount",
          "type" : "number"
       },
       "to_mt5" : {
-         "pattern" : "^\\d+$",
+         "pattern" : "^[0-9]+$",
          "description" : "MT5 account login to deposit money to",
          "type" : "string"
       }

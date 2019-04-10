@@ -7,7 +7,7 @@
     "trading_times": {
       "type":"string",
       "description": "Date to receive market opening times for. (yyyy-mm-dd format. 'today' can also be specified).",
-      "pattern": "^(\\d{4}-\\d{1,2}-\\d{1,2}|today)$",
+      "pattern": "^([0-9]{4}-[0-9]{1,2}-[0-9]{1,2}|today)$",
       "required": "1"
     },
     "passthrough": {

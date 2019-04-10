@@ -38,12 +38,12 @@
     },
     "date_start": {
       "type":  "integer",
-      "pattern": "^\\d{1,10}$",
+      "pattern": "^[0-9]{1,10}$",
       "description":"[Optional] Indicates epoch value of the starting time of the contract. If left empty, the start time of the contract is now."
     },
     "date_expiry": {
       "type":  "integer",
-      "pattern": "^\\d{1,10}$",
+      "pattern": "^[0-9]{1,10}$",
       "description":"Epoch value of the expiry time of the contract. Either date_expiry or duration is required."
     },
     "duration": {
@@ -66,11 +66,11 @@
     "barrier": {
       "type": "string",
       "description":"Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers. Not needed for lookbacks.",
-      "pattern": "^[+-]?\\d+\\.?\\d*$"
+      "pattern": "^[+-]?[0-9]+\\.?[0-9]*$"
     },
     "barrier2": {
       "type": "string",
-      "pattern": "^[+-]?\\d+\\.?\\d*$",
+      "pattern": "^[+-]?[0-9]+\\.?[0-9]*$",
       "description":"Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers. Not needed for lookbacks."
     },
     "trading_period_start": {

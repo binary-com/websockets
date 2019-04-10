@@ -11,7 +11,7 @@
     },
     "transfer_to": {
       "type": "string",
-      "pattern": "^\\w+\\d+$",
+      "pattern": "^[A-Za-z]+[0-9]+$",
       "description": "The transfer_to loginid",
       "required": "1"
     },

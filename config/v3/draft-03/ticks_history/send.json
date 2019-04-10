@@ -12,13 +12,13 @@
     },
     "end": {
       "type": "string",
-      "pattern": "^(latest|\\d{1,10})$",
+      "pattern": "^(latest|[0-9]{1,10})$",
       "description": "Epoch value representing the latest boundary of the returned ticks. If \"latest\" is specified, this will be the latest available timestamp.",
       "required": "1"
     },
     "start": {
       "type": "integer",
-      "pattern": "^\\d{1,10}$",
+      "pattern": "^[0-9]{1,10}$",
       "description": "Epoch value representing the earliest boundary of the returned ticks (For styles: 'ticks', this will default to 1 day ago. For styles: 'candle', it will default to 1 day ago if count or granularity is undefined)."
     },
     "count": {

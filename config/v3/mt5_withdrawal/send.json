@@ -12,7 +12,7 @@
    ],
    "properties" : {
       "from_mt5" : {
-         "pattern" : "^\\d+$",
+         "pattern" : "^[0-9]+$",
          "description" : "MT5 account login to withdraw money from",
          "type" : "string"
       },
@@ -21,7 +21,7 @@
          "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
       },
       "to_binary" : {
-         "pattern" : "^\\w+\\d+$",
+         "pattern" : "^[A-Za-z]+[0-9]+$",
          "type" : "string",
          "description" : "Binary account loginid to transfer money to"
       },

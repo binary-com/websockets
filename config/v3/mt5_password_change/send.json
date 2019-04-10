@@ -43,7 +43,7 @@
       "login" : {
          "description" : "MT5 user login",
          "type" : "string",
-         "pattern" : "^\\d+$"
+         "pattern" : "^[0-9]+$"
       },
       "passthrough" : {
          "type" : "object",

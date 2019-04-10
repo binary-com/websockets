@@ -95,7 +95,7 @@
          ]
       },
       "exclude_until" : {
-         "pattern" : "^\\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$",
+         "pattern" : "^[0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$",
          "description" : "Exclude me from the website (for a minimum of 6 months, up to a maximum of 5 years). Note: uplifting this self-exclusion may require contacting the company.",
          "type" : [
             "string",

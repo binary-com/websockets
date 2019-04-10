@@ -32,7 +32,7 @@
       "paymentagent_loginid" : {
          "type" : "string",
          "description" : "The payment agent loginid received from the paymentagent_list call",
-         "pattern" : "^\\w+\\d+$"
+         "pattern" : "^[A-Za-z]+[0-9]+$"
       },
       "dry_run" : {
          "enum" : [

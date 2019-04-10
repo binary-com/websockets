@@ -11,7 +11,7 @@
       "date_to" : {
          "description" : "Optional end date (epoch or YYYY-MM-DD)",
          "type" : "string",
-         "pattern" : "^(\\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|\\d{1,10})$"
+         "pattern" : "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|[0-9]{1,10})$"
       },
       "offset" : {
          "description" : "Skip this many transactions",
@@ -37,7 +37,7 @@
       "date_from" : {
          "type" : "string",
          "description" : "Optional start date (epoch or YYYY-MM-DD)",
-         "pattern" : "^(\\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|\\d{1,10})$"
+         "pattern" : "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|[0-9]{1,10})$"
       },
       "limit" : {
          "type" : "number",

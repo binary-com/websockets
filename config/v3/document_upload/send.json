@@ -64,7 +64,7 @@
          "description" : "Optional field to determine document side"
       },
       "expiration_date" : {
-         "pattern" : "^\\d{4}-\\d{2}-\\d{2}$",
+         "pattern" : "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
          "description" : "[Optional] Document expiration date (required for Passport, Proof of ID and Driver's License)",
          "type" : "string"
       },

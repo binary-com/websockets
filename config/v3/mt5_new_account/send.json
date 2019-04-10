@@ -96,7 +96,7 @@
          "description" : "[Optional] field to map request to response"
       },
       "phone" : {
-         "pattern" : "^\\+?\\d{0,50}$",
+         "pattern" : "^\\+?[0-9]{0,50}$",
          "description" : "[Optional] User's phone number. Max length 50.",
          "type" : "string"
       },

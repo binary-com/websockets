@@ -25,7 +25,7 @@
          ]
       },
       "trader_id" : {
-         "pattern" : "^[A-Za-z]+\\d+$",
+         "pattern" : "^[A-Za-z]+[0-9]+$",
          "type" : "string",
          "description" : "The id of the target trader."
       }

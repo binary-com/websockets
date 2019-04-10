@@ -11,7 +11,7 @@
     },
     "paymentagent_loginid": {
       "type": "string",
-      "pattern": "^\\w+\\d+$",
+      "pattern": "^[A-Za-z]+[0-9]+$",
       "description": "The payment agent loginid received from the paymentagent_list call",
       "required": "1"
     },

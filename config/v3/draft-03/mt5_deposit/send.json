@@ -11,12 +11,12 @@
     },
     "from_binary": {
       "type": "string",
-      "pattern": "^\\w+\\d+$",
+      "pattern": "^[A-Za-z]+[0-9]+$",
       "description": "Binary account loginid to transfer money from"
     },
     "to_mt5": {
       "type": "string",
-      "pattern": "^\\d+$",
+      "pattern": "^[0-9]+$",
       "description": "MT5 account loginid to deposit money to",
       "required": "1"
     },

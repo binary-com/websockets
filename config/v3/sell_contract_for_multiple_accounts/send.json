@@ -21,7 +21,7 @@
       "shortcode" : {
          "type" : "string",
          "description" : "An internal ID used to identify the contract which was originally bought. This is returned from the buy and buy_for_multiple_accounts calls",
-         "pattern" : "^([\\w\\d_.-]+)$"
+         "pattern" : "^([A-Za-z0-9_.-]+)$"
       },
       "tokens" : {
          "description" : "Authorisation tokens which select the accounts to sell use for the affected accounts",

@@ -38,7 +38,7 @@
          "description" : "[Optional] Used to map request to response."
       },
       "end" : {
-         "pattern" : "^(latest|\\d{1,10})$",
+         "pattern" : "^(latest|[0-9]{1,10})$",
          "type" : "string",
          "description" : "Epoch value representing the latest boundary of the returned ticks. If \"latest\" is specified, this will be the latest available timestamp."
       },

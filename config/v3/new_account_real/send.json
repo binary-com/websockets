@@ -73,7 +73,7 @@
       "date_of_birth" : {
          "description" : "Date of birth format: yyyy-mm-dd.",
          "type" : "string",
-         "pattern" : "^\\d{4}-\\d\\d?-\\d\\d?$"
+         "pattern" : "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
       },
       "first_name" : {
          "pattern" : "^[\\p{L}\\s'.-]{2,30}$",

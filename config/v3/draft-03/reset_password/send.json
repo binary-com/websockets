@@ -17,7 +17,7 @@
     },
     "date_of_birth" : {
       "type": "string",
-      "pattern": "^\\d{4}-\\d\\d?-\\d\\d?$",
+      "pattern": "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$",
       "description": "Date of birth format: yyyy-mm-dd. Only required for clients with real-money accounts."
     },
     "verification_code": {

@@ -15,7 +15,7 @@
          "type" : "integer"
       },
       "date_to" : {
-         "pattern" : "^(\\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01]) ([01]?\\d|2[0-3]):([0-5]?\\d):([0-5]?\\d)|\\d{1,10})$",
+         "pattern" : "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01]) ([01]?[0-9]|2[0-3]):([0-5]?[0-9]):([0-5]?[0-9])|[0-9]{1,10})$",
          "description" : "End date (epoch or YYYY-MM-DD HH::MM::SS). Results are inclusive of this time.",
          "type" : "string"
       },
@@ -30,7 +30,7 @@
       "date_from" : {
          "description" : "Start date (epoch or YYYY-MM-DD HH:MM:SS). Results are inclusive of this time.",
          "type" : "string",
-         "pattern" : "^(\\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01]) ([01]?\\d|2[0-3]):([0-5]?\\d):([0-5]?\\d)|\\d{1,10})$"
+         "pattern" : "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01]) ([01]?[0-9]|2[0-3]):([0-5]?[0-9]):([0-5]?[0-9])|[0-9]{1,10})$"
       },
       "description" : {
          "description" : "If set to 1, will return app_markup transaction details.",
@@ -56,7 +56,7 @@
          "type" : "integer"
       },
       "client_loginid" : {
-         "pattern" : "^\\w{2,5}\\d{2,20}$",
+         "pattern" : "^[A-Za-z]{2,5}[0-9]{2,20}$",
          "type" : "string",
          "description" : "Optional: specific client loginid to report on, like CR12345"
       },

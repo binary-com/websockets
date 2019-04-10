@@ -12,7 +12,7 @@
     },
     "limit": {
       "type": "integer",
-      "pattern": "^\\d+$",
+      "pattern": "^[0-9]+$",
       "description": "Apply limit to count of login history records, default to 10. Max:50",
       "default": "10"
     },
