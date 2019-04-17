@@ -95,17 +95,14 @@
                         "required" : [ "code", "message_to_client", "token" ],
                         "properties" : {
                            "code" : {
-                              "required" : "1",
                               "type" : "string",
                               "description" : "An error code"
                            },
                            "message_to_client" : {
                               "description" : "An error message localized according to the websocket",
-                              "type" : ["string","null" ],
-                              "required" : "1"
+                              "type" : "string" 
                            },
                            "token" : {
-                              "required" : "1",
                               "type" : "string",
                               "description" : "The token designating the account"
                            }

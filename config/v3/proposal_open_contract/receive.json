@@ -280,6 +280,40 @@
                         },
                         "type" : "object"
                      }
+                  },
+                  "all_ticks" : {
+                     "type" : "array",
+                     "description" : "Ticks for tick expiry contract from start time till expiry.",
+                     "item" : {
+                        "properties" : {
+                           "epoch" : {
+                              "type" : "integer",
+                              "description" : "Epoch time of a tick or the contract start or end time."
+                           },
+                           "flag" : {
+                              "description" : "A flag used to highlight the record in front-end applications.",
+                              "type" : [
+                                 "string",
+                                 "null"
+                              ]
+                           },
+                           "name" : {
+                              "type" : [
+                                 "string",
+                                 "null"
+                              ],
+                              "description" : "A short description of the data. It could be a tick or a time associated with the contract."
+                           },
+                           "tick" : {
+                              "description" : "The spot value at the given epoch.",
+                              "type" : [
+                                 "number",
+                                 "null"
+                              ]
+                           }
+                        },
+                        "type" : "object"
+                     }
                   }
                },
                "title" : "Audit details for expired contract.",
