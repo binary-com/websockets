@@ -1,0 +1,86 @@
+{
+   "$schema" : "http://json-schema.org/draft-04/schema#",
+   "required" : [
+      "echo_req",
+      "msg_type"
+   ],
+
+   "title" : "copytrading list",
+   "description" : "Details of copiers and/or traders for Copy Trading",
+   "type" : "object",
+
+   "properties" : {
+      "echo_req" : {
+         "title" : "Echo request",
+         "description" : "Echo of the request made"
+      },
+      "req_id" : {
+         "description" : "Optional field send in request to map to response, present only when request contains req_id",
+         "type" : "integer"
+      },
+      "msg_type" : {
+         "type" : "string",
+         "description" : "copytrading_list"
+      },
+      "copytrading_list" : {
+         "title" : "copytrading list",
+         "description" : "trading copiers or traders info",
+         "type" : "object",
+         "required" : [
+            "copiers",
+            "traders"
+         ],
+         "properties" : {
+            "copiers" : {
+               "description" : "List of users who are currently copy trading the authenticated user",
+               "type" : "array",
+               "items" : {
+                  "type" : "object",
+                  "required" : [
+                     "loginid"
+                  ],
+                  "properties" : {
+                     "loginid" : {
+                        "type" : "string"
+                     }
+                  }
+               }
+            },
+
+            "traders" : {
+               "description" : "List of traders being followed by the authenticated user",
+               "type" : "array",
+               "items" : {
+                  "type" : "object",
+                  "properties" : {
+                     "loginid" : {
+                        "type" : "string"
+                     },
+                     "token" : {
+                        "type" : "string"
+                     },
+                     "assets" : {
+                        "type" : "array",
+                        "items" : {
+                            "type" : "string"
+                         }
+                     },
+                     "trade_types" : {
+                        "type" : "array",
+                        "items" : {
+                            "type" : "string"
+                         }
+                     },
+                     "max_trade_stake" : {
+                        "type" : ["number", "null"]
+                     },
+                     "min_trade_stake" : {
+                        "type" : ["number", "null"]
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
