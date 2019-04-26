@@ -8,7 +8,8 @@
       "contract_type",
       "proposal_array",
       "currency",
-      "symbol"
+      "symbol",
+      "amount"
    ],
    "additionalProperties" : false,
    "title" : "Price Proposal for Multiple Contracts Request",
