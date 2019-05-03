@@ -6,7 +6,7 @@
    ],
    "type" : "object",
    "description" : "Get MT5 user settings",
-   
+
    "title" : "Get MT5 user settings Receive",
    "properties" : {
       "echo_req" : {
@@ -70,7 +70,7 @@
             },
             "currency" : {
                "type" : "string",
-               "description" : "MT5 account currency (USD or EUR) that depends on the MT5 company (vanuatu, costarica, malta)."
+               "description" : "MT5 account currency (USD or EUR) that depends on the MT5 company (vanuatu, svg, malta)."
             },
             "leverage" : {
                "description" : "Client leverage (from 1 to 1000).",

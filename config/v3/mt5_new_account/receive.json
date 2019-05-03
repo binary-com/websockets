@@ -1,7 +1,7 @@
 {
    "$schema" : "http://json-schema.org/draft-04/schema#",
    "title" : "Create MT5 account Receive",
-   
+
    "required" : [
       "msg_type",
       "echo_req"
@@ -34,7 +34,7 @@
                "description" : "Account balance."
             },
             "currency" : {
-               "description" : "MT5 account currency (USD or EUR) that depends on the MT5 company (vanuatu, costarica, malta).",
+               "description" : "MT5 account currency (USD or EUR) that depends on the MT5 company (vanuatu, svg, malta).",
                "type" : "string"
             },
             "login" : {

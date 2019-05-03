@@ -22,7 +22,7 @@
          "description" : "Tax identification number. Only applicable for real money account. Required for maltainvest landing company."
       },
       "salutation" : {
-         "description" : "Accept any value in enum list (can only be changed on unauthenticated costarica accounts).",
+         "description" : "Accept any value in enum list (can only be changed on unauthenticated svg accounts).",
          "enum" : [
             "Mr",
             "Mrs",
@@ -32,16 +32,16 @@
       },
       "first_name" : {
          "pattern" : "^[\\p{L}\\s'.-]{2,30}$",
-         "description" : "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated costarica accounts).",
+         "description" : "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).",
          "type" : "string"
       },
       "last_name" : {
          "pattern" : "^[\\p{L}\\s'.-]{2,30}$",
-         "description" : "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated costarica accounts).",
+         "description" : "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).",
          "type" : "string"
       },
       "date_of_birth" : {
-         "description" : "Date of birth format: yyyy-mm-dd (can only be changed on unauthenticated costarica accounts).",
+         "description" : "Date of birth format: yyyy-mm-dd (can only be changed on unauthenticated svg accounts).",
          "type" : "string",
          "pattern" : "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
       },

@@ -21,9 +21,9 @@
             "description":"[Optional] If you specify this field, only contracts tradable through that contract type will be returned."
         },
         "landing_company":{
-            "enum":["iom","malta","maltainvest","costarica","virtual", "vanuatu", "champion", "champion-virtual"],
+            "enum":["iom", "malta", "maltainvest", "costarica", "svg", "virtual", "vanuatu", "champion", "champion-virtual"],
             "description":"[Optional] Indicates which landing_company to get a list of contracts for. If you are logged in, your landing company will override this field.",
-            "default": "costarica"
+            "default": "svg"
         },
         "passthrough":{
             "type":"object",

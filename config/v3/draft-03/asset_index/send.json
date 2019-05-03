@@ -12,7 +12,7 @@
     },
     "landing_company": {
       "description": "[Optional] If specified, will return only the underlyings for the specified landing company.",
-      "enum":["iom","malta","maltainvest","costarica","virtual", "vanuatu", "champion", "champion-virtual"]
+      "enum":["iom", "malta", "maltainvest", "costarica", "svg", "virtual", "vanuatu", "champion", "champion-virtual"]
     },
     "passthrough":{
         "type":"object",

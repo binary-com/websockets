@@ -21,12 +21,13 @@
             "malta",
             "maltainvest",
             "costarica",
+            "svg",
             "virtual",
             "vanuatu",
             "champion",
             "champion-virtual"
          ],
-         "default" : "costarica",
+         "default" : "svg",
          "description" : "[Optional] Indicates which landing_company to get a list of contracts for. If you are logged in, your landing company will override this field."
       },
       "req_id" : {
