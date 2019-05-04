@@ -19,6 +19,30 @@
       "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#\/-]{0,70}$",
       "description": "Note: not applicable for virtual account. Optional field for real money account."
     },
+    "salutation" : {
+      "description" : "Accept any value in enum list (can only be changed on unauthenticated svg accounts).",
+      "enum" : [
+            "Mr",
+            "Mrs",
+            "Ms",
+            "Miss"
+      ]
+    },
+    "first_name" : {
+      "pattern" : "^[\\p{L}\\s'.-]{2,30}$",
+      "description" : "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).",
+      "type" : "string"
+    },
+    "last_name" : {
+      "pattern" : "^[\\p{L}\\s'.-]{2,30}$",
+      "description" : "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).",
+      "type" : "string"
+    },
+    "date_of_birth" : {
+      "description" : "Date of birth format: yyyy-mm-dd (can only be changed on unauthenticated svg accounts).",
+      "type" : "string",
+      "pattern" : "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
+    },
     "address_city":{
       "type":"string",
       "pattern": "^[\\p{L}\\s'.-]{1,35}$",
