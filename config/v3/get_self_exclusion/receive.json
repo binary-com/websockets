@@ -55,7 +55,15 @@
             "exclude_until" : {
                "type" : "string",
                "description" : "Exclude me from the website (for a minimum of 6 months, up to a maximum of 5 years). Note: uplifting this self-exclusion may require contacting the company."
-            }
+            },
+	    "max_deposit" : {
+	    	"type" : "number",
+		"description" : "Deposit limit."
+	    },
+	    "max_deposit_end_date" : {
+	    	"type" : "string",
+		"description" : "Exclude me from making deposits when the cumulative sum of deposits exceeds specified deposit limit starting from the date the limit has been set."
+	    }
          },
          "title" : "Self-Exclusion Structure"
       },

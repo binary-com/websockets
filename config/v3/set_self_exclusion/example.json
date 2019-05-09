@@ -10,5 +10,7 @@
     "max_open_bets": 1000,
     "session_duration_limit": 3600,
     "exclude_until": "2020-01-01",
-    "timeout_until": 1497357184
+    "timeout_until": 1497357184,
+    "max_deposit": 1000,
+    "max_deposit_end_date": "2020-01-01"
 }

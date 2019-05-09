@@ -102,6 +102,21 @@
             "null"
          ]
       },
+      "max_deposit" : {
+         "description" : "Deposit limit.",
+         "type" : [
+            "number",
+            "null"
+         ]
+      },
+      "max_deposit_end_date" : {
+         "pattern" : "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$",
+         "description" : "Exclude me from making deposits when the cumulative sum of deposits exceeds specified deposit limit.",
+         "type" : [
+            "string",
+            "null"
+         ]
+      },
       "passthrough" : {
          "type" : "object",
          "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
