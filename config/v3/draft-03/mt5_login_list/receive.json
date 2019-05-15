@@ -10,19 +10,53 @@
       "required": "1"
     },
     "mt5_login_list": {
-      "type": ["array", "null"],
-      "items": {
-        "type": "object",
-        "title": "Application object",
-        "properties": {
-          "login": {
-            "type": "string",
-            "description": "Login of MT5 account"
-          },
-          "group": {
-            "type": "string",
-            "description": "Group type of the MT5 account, e.g. real, vanuatu, etc."
-          }
+      "description" : "Array containing MT5 account objects.",
+      "type": "array",
+      "items" : {
+        "type" : "object",
+        "title" : "Details of each MT5 loginid.",
+        "properties" : {
+           "login" : {
+              "description" : "Login of MT5 account.",
+              "type" : "integer"
+           },
+           "group" : {
+              "description" : "Group type of the MT5 account, e.g. real, vanuatu, etc.",
+              "type" : "string"
+           },
+           "balance": {
+              "description": "Balance of the MT5 account.",
+              "type": "number"
+           },
+           "country": {
+              "description": "Residence of the MT5 account.",
+              "type": "string"
+           },
+           "currency": {
+              "description": "Currency of the MT5 account.",
+              "type": "string"
+           },
+           "email": {
+              "description": "Email address of the MT5 account.",
+              "type": "string"
+           },
+           "leverage": {
+              "description": "Leverage of the MT5 account (1 to 1000).",
+              "type": "number"
+           },
+           "mamm_status": {
+              "description": "Status to depict whether the MT5 account is a MAMM or not.",
+              "pattern" : "^(1|0)$",
+              "type" : "integer"
+           },
+           "manager_id": {
+              "description": "ID of the MT5 account, if it is a MAMM.",
+              "type": "string"
+           },
+           "name": {
+              "description": "Name of the owner of the MT5 account.",
+              "type": "string"
+           }
         }
       }
     },
