@@ -57,7 +57,7 @@
                             },
                             "display_name" : {
                                 "type": "string",
-                                "description" : "Translaxnted symbol name."
+                                "description" : "Translated symbol name."
                             }
                         }
                     }
