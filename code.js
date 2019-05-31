@@ -8,6 +8,9 @@ function getBaseUrl(url) {
 
 require.config({
     baseUrl: getBaseUrl(document.location.href),
+    paths: {
+        jquery: 'lib/jquery', // To fix the error caused by require("jquery") in select2.min.js
+    },
 });
 
 var LiveApi = window['binary-live-api'].LiveApi;
