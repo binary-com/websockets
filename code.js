@@ -43,9 +43,9 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
     $('#connected').hide();
 
     function endpointNotification() {
-        const end_note = document.getElementById('end-note');
+        var end_note = document.getElementById('end-note');
         if (end_note) {
-            const server = getServerUrl();
+            var server = getServerUrl();
             if (server && server !== defaultApiUrl) {
                 end_note.innerHTML = 'The server <a href="https://developers.binary.com/endpoint/">endpoint</a> is: ' + server;
                 end_note.classList.remove('invisible');
@@ -250,7 +250,6 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
     }
 
     function jsonToPretty(json, offset) {
-
         var spaces = function(n) {
             return new Array(n + 1).join(" ");
         };
@@ -347,7 +346,6 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
     }
 
     function updatePlaygroundWithRequestAndResponse() {
-
         try {
             var json = JSON.parse($('#playground-request').val());
         } catch (err) {
@@ -375,7 +373,34 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
         loadAndDisplaySchema($this, $this.attr('data-schema'));
     });
 
-    $('#api-call-selector').select2().on('change', function() {
+    function customMatcher(params, data) {
+        var search_term = (params.term || '').trim();
+
+        if (!search_term) {
+            return data;
+        }
+
+        if (typeof data.children === 'undefined') {
+            return null;
+        }
+
+        var regexp = new RegExp(search_term, 'i');
+        var filtered_children = data.children.filter(function(child) {
+            return regexp.test([child.text, child.id]);
+        });
+
+        if (filtered_children.length) {
+            var modified_data = $.extend({}, data, true);
+            modified_data.children = filtered_children;
+            return modified_data;
+        }
+
+        return null;
+    }
+
+    $('#api-call-selector').select2({
+        matcher: customMatcher,
+    }).on('change', function() {
         var verStr = 'v3',
             apiStr = $('#api-call-selector').val(),
             urlPath = '/config/' + verStr + '/' + apiStr + '/',
