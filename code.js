@@ -305,7 +305,7 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
 
     function loadAndDisplaySchema($node, schemaUrl) {
         $.get(schemaUrl, function(schema) {
-            docson.doc($node, schema);
+            docson.doc($node, schema, null, getBaseUrl(document.location.href));
         });
     }
 
@@ -403,7 +403,7 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
     }).on('change', function() {
         var verStr = 'v3',
             apiStr = $('#api-call-selector').val(),
-            urlPath = '/config/' + verStr + '/' + apiStr + '/',
+            urlPath = getBaseUrl(document.location.href) + 'config/' + verStr + '/' + apiStr + '/',
             requestSchemaUrl = urlPath + 'send.json',
             responseSchemaUrl = urlPath + 'receive.json',
             exampleJsonUrl = urlPath + 'example.json';
