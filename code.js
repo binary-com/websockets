@@ -7,11 +7,21 @@ function isLocal(url) {
 }
 
 function getBaseUrl(url) {
+    url = url || document.location.href;
     return (isProduction(url) || isLocal(url) ? '' : '/' + url.split('/')[3]) + '/';
 }
 
+function getJsonPaths(method_name) {
+    url_path = getBaseUrl() + 'config/v3/' + method_name + '/';
+    return {
+        send   : url_path + 'send.json',
+        receive: url_path + 'receive.json',
+        example: url_path + 'example.json',
+    };
+}
+
 require.config({
-    baseUrl: getBaseUrl(document.location.href),
+    baseUrl: getBaseUrl(),
     paths: {
         jquery: 'lib/jquery', // To fix the error caused by require("jquery") in select2.min.js
     },
@@ -305,7 +315,7 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
 
     function loadAndDisplaySchema($node, schemaUrl) {
         $.get(schemaUrl, function(schema) {
-            docson.doc($node, schema, null, getBaseUrl(document.location.href));
+            docson.doc($node, schema, null, getBaseUrl());
         });
     }
 
@@ -401,16 +411,14 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
     $('#api-call-selector').select2({
         matcher: customMatcher,
     }).on('change', function() {
-        var verStr = 'v3',
-            apiStr = $('#api-call-selector').val(),
-            urlPath = getBaseUrl(document.location.href) + 'config/' + verStr + '/' + apiStr + '/',
-            requestSchemaUrl = urlPath + 'send.json',
-            responseSchemaUrl = urlPath + 'receive.json',
-            exampleJsonUrl = urlPath + 'example.json';
-        loadAndDisplaySchema($('#playground-req-schema'), requestSchemaUrl);
-        loadAndDisplaySchema($('#playground-res-schema'), responseSchemaUrl);
-        loadAndEditJson($('#playground-request'), exampleJsonUrl);
-        window.location.hash = apiStr;
+        var method_name = $('#api-call-selector').val();
+        var json_paths  = getJsonPaths(method_name);
+
+        loadAndDisplaySchema($('#playground-req-schema'), json_paths.send);
+        loadAndDisplaySchema($('#playground-res-schema'), json_paths.receive);
+        loadAndEditJson(     $('#playground-request'),    json_paths.example);
+
+        window.location.hash = method_name;
     });
 
     $('#api-language-selector').on('change', function() {
