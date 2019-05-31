@@ -2,8 +2,12 @@ function isProduction(url) {
     return url && url.indexOf('developers.binary.com') > 0;
 }
 
+function isLocal(url) {
+    return url && url.indexOf('//localhost') > 0;
+}
+
 function getBaseUrl(url) {
-    return (isProduction('' + url) ? '' : '/' + url.split('/')[3]) + '/';
+    return (isProduction(url) || isLocal(url) ? '' : '/' + url.split('/')[3]) + '/';
 }
 
 require.config({
