@@ -313,8 +313,13 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
             '</pre>';
     }
 
-    function loadAndDisplaySchema($node, schemaUrl) {
-        $.get(schemaUrl, function(schema) {
+    function loadAndDisplaySchema($node, schema_url, method_name) {
+        $.get(schema_url, function(schema) {
+            // Ensure method name is the first item displayed in both Request and Response
+            var method_obj = {};
+            method_obj[method_name] = schema.properties[method_name];
+            schema.properties = Object.assign(method_obj, schema.properties);
+
             docson.doc($node, schema, null, getBaseUrl());
         });
     }
@@ -414,8 +419,8 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
         var method_name = $('#api-call-selector').val();
         var json_paths  = getJsonPaths(method_name);
 
-        loadAndDisplaySchema($('#playground-req-schema'), json_paths.send);
-        loadAndDisplaySchema($('#playground-res-schema'), json_paths.receive);
+        loadAndDisplaySchema($('#playground-req-schema'), json_paths.send,    method_name);
+        loadAndDisplaySchema($('#playground-res-schema'), json_paths.receive, method_name);
         loadAndEditJson(     $('#playground-request'),    json_paths.example);
 
         window.location.hash = method_name;
