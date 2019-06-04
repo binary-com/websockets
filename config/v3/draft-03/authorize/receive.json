@@ -81,6 +81,10 @@
           "type": "string",
           "description": "The account ID that the token was issued for."
         },
+        "user_id" : {
+         "type" : "integer",
+         "description" : "The internal user ID for this account."
+        },
         "scopes": {
           "type": "array",
           "description": "Scopes available to the token.",

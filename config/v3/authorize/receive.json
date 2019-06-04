@@ -90,6 +90,10 @@
                "type" : "string",
                "description" : "The account ID that the token was issued for."
             },
+            "user_id" : {
+               "type" : "integer",
+               "description" : "The internal user ID for this account."
+            },
             "is_virtual" : {
                "description" : "Boolean value: 1 or 0, indicating whether the account is a virtual-money account.",
                "type" : "integer"
