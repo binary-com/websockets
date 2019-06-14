@@ -14,8 +14,7 @@
       },
       "ping" : {
          "description" : "Must be 1.",
-         "type" : "string",
-         "pattern" : "^1$"
+         "enum" : [1] 
       },
       "req_id" : {
          "description" : "[Optional] Used to map request to response.",

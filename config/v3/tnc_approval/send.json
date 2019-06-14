@@ -24,8 +24,8 @@
          "description" : "for ASK_UK_FUNDS_PROTECTION in cashier"
       },
       "tnc_approval" : {
-         "pattern" : "^1$",
-         "type" : "string",
+         "enum" : [1],
+         "type" : "number",
          "description" : "Must be 1"
       }
    }

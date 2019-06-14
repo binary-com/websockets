@@ -37,12 +37,14 @@
                     ]
                 },
                 "high_barrier" : {
-                    "type" : "number",
-                    "description" : "High barrier of the contract (if any). Example: 42.123"
+                    "description" : "High barrier of the contract (if any). Example: 42.123",
+                    "type" : "string",
+                    "pattern" : "^[+-]?[0-9]+\\.?[0-9]*$"
                 },
                 "low_barrier" : {
-                    "type" : "number",
-                    "description" : "Low barrier of the contract (if any). Example: 40.132"
+                    "description" : "Low barrier of the contract (if any). Example: 40.132",
+                    "type" : "string",
+                    "pattern" : "^[+-]?[0-9]+\\.?[0-9]*$"
                 },
                 "sell_spot_time" : {
                     "type" : "integer",
@@ -137,7 +139,7 @@
                 },
                 "barrier" : {
                     "description" : "Barrier of the contract (if any). Example: 42.123",
-                    "type" : "number"
+                    "type" : ["string", null]
                 },
                 "date_expiry" : {
                     "description" : "Expiry date (epoch) of the Contract. Example: 1446629000. Please note that it is not applicable for tick trade contracts.",
@@ -203,7 +205,7 @@
                 },
                 "display_value" : {
                     "description" : "Example: 5.14, same as ask_price",
-                    "type" : "number"
+                    "type" : "string"
                 },
                 "entry_tick_time" : {
                     "type" : "integer",
@@ -222,7 +224,7 @@
                     ],
                     "properties" : {
                         "contract_end" : {
-                            "item" : {
+                            "items" : {
                                 "properties" : {
                                     "name" : {
                                         "type" : [
@@ -258,7 +260,7 @@
                         "contract_start" : {
                             "type" : "array",
                             "description" : "Ticks around contract start time.",
-                            "item" : {
+                            "items" : {
                                 "properties" : {
                                     "epoch" : {
                                         "type" : "integer",
@@ -292,7 +294,7 @@
                         "all_ticks" : {
                             "type" : "array",
                             "description" : "Ticks for tick expiry contract from start time till expiry.",
-                            "item" : {
+                            "items" : {
                                 "properties" : {
                                     "epoch" : {
                                         "type" : "integer",
@@ -335,7 +337,7 @@
                     "type" : "number"
                 },
                 "tick_stream" : {
-                    "item" : {
+                    "items" : {
                         "properties" : {
                             "tick" : {
                                 "description" : "The spot value at the given epoch.",

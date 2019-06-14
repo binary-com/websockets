@@ -140,19 +140,19 @@
                 },
                 "site_status" : {
                     "enum": ["up", "down"],
-                    "description" : "The current status of the website."
+                    "description" : "the current status of the website."
                 },
                 "clients_country" : {
                     "type" : "string",
-                    "description" : "Country code of connected IP"
+                    "description" : "country code of connected ip"
                 },
                 "terms_conditions_version" : {
-                    "description" : "Latest terms and conditions version",
+                    "description" : "latest terms and conditions version",
                     "type" : "string"
                 },
                 "message": {
                     "type":"string",
-                    "description": "Text for site status banner, contains problem description.  Shown only if set by the system"
+                    "description": "text for site status banner, contains problem description.  shown only if set by the system"
                 }
             },
             "type" : "object"

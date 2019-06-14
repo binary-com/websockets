@@ -55,20 +55,19 @@
          "properties" : {
             "prices" : {
                "type" : "array",
-               "items" : [
+               "items" : 
                   {
                      "type" : "number",
                      "description" : "Tick value."
                   }
-               ]
+               
             },
             "times" : {
-               "items" : [
+               "items" : 
                   {
                      "type" : "integer",
                      "description" : "Epoch of the tick."
-                  }
-               ],
+                  },
                "type" : "array"
             }
          },

@@ -15,15 +15,15 @@
             "description": "Latest price and other details for an open contract",
             "properties": {
                 "high_barrier": {
-                    "type": "number",
+                    "type": "string",
                     "description": "High barrier of the contract (if any). Example: 42.123"
                 },
                 "low_barrier": {
-                    "type": "number",
+                    "type": "string",
                     "description": "Low barrier of the contract (if any). Example: 40.132"
                 },
                 "barrier": {
-                    "type": "number",
+                    "type": ["string",null],
                     "description": "Barrier of the contract (if any). Example: 42.123"
                 },
                 "barrier_count": {
@@ -119,7 +119,7 @@
                     "description": "Coded description of the contract purchased, Example: CALL_R_100_90_1446704187_1446704787_S0P_0"
                 },
                 "display_value": {
-                    "type": "number",
+                    "type": "string",
                     "description": "Example: 5.14, same as ask_price"
                 },
                 "underlying": {
@@ -189,7 +189,7 @@
                         "contract_start": {
                             "type": "array",
                             "description": "Ticks around contract start time.",
-                            "item": {
+                            "items": {
                                 "type": "object",
                                 "properties": {
                                     "epoch": {
@@ -214,7 +214,7 @@
                         "contract_end": {
                             "type": "array",
                             "description": "Ticks around contract end time.",
-                            "item": {
+                            "items": {
                                 "type": "object",
                                 "properties": {
                                     "epoch": {
@@ -239,7 +239,7 @@
                     "all_ticks" : {
                         "type" : "array",
                         "description" : "Ticks for tick expiry contract from start time till expiry.",
-                        "item" : {
+                        "items" : {
                             "properties" : {
                                 "epoch" : {
                                     "type" : "integer",
@@ -298,7 +298,7 @@
                     "description": "[Only for lookback trades] Multiplier applies when calculating the final payoff for each type of lookback. e.g. (Exit spot – Lowest historical price) * multiplier = Payout"
                 },
                 "tick_stream" : {
-                    "item" : {
+                    "items" : {
                         "properties" : {
                             "tick" : {
                                 "description" : "The spot value at the given epoch.",

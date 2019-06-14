@@ -34,7 +34,7 @@
             "status" : {
                "type" : "array",
                "description" : "Account status. Possible status: authenticated (client is fully authenticated), age_verification (client is age-verified), cashier_locked (cashier is locked), disabled (account is disabled), unwelcome (client cannot deposit or buy contracts, but can withdraw or sell contracts), withdrawal_locked (deposits allowed but withdrawals locked), ukgc_funds_protection (client has acknowledged UKGC funds protection notice), crs_tin_information (client has updated tax related information), financial_assessment_not_complete (client has not completed financial assessment), professional (this client has opted for a professional account), document_expired (client's submitted proof-of-identity documents have expired), document_expiring_soon (client's submitted proof-of-identity documents are expiring within a month)",
-               "item" : {
+               "items" : {
                   "type" : "string"
                }
             }
