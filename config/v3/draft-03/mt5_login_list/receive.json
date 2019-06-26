@@ -18,7 +18,7 @@
         "properties" : {
            "login" : {
               "description" : "Login of MT5 account.",
-              "type" : "integer"
+              "type" : "string"
            },
            "group" : {
               "description" : "Group type of the MT5 account, e.g. real, vanuatu, etc.",

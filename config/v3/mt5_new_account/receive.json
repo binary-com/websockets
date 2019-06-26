@@ -30,8 +30,12 @@
                "description" : "Account type."
             },
             "balance" : {
-               "type" : "string",
+               "type" : "number",
                "description" : "Account balance."
+            },
+            "display_balance": {
+               "type": "string",
+               "description": "Account balance, formatted to appropriate decimal places."
             },
             "currency" : {
                "description" : "MT5 account currency (USD or EUR) that depends on the MT5 company (vanuatu, svg, malta).",

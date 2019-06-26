@@ -27,8 +27,12 @@
           "description": "Sub account type, present only when account type is either demo or financial."
         },
         "balance": {
-          "type": "string",
+          "type": "number",
           "description": "Account balance."
+        },
+        "display_balance": {
+            "type": "string",
+            "description": "Account balance, formatted to appropriate decimal places."
         },
         "currency": {
           "type": "string",
