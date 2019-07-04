@@ -1,7 +1,0 @@
-{
-    "document_upload": 1,
-    "document_type": "bankstatement",
-    "document_format": "JPG",
-    "file_size": 12345,
-    "expected_checksum": "1a79a4d60de6718e8e5b326e338ae533"
-}

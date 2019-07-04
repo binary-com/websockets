@@ -1,5 +1,0 @@
-{
-    "change_password": 1,
-    "old_password": "my_old_pass",
-    "new_password": "my_hardtoguess_new_pass"
-}

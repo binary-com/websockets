@@ -1,5 +1,0 @@
-{
-    "api_token": 1,
-    "new_token": "Token example",
-    "new_token_scopes": ["read", "trade", "admin"]
-}
