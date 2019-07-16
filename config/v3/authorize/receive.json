@@ -24,7 +24,7 @@
                "items" : {
                   "properties" : {
                      "is_virtual" : {
-                        "pattern" : "^(1|0)$",
+                        "enum" : [1,0],
                         "type" : "integer",
                         "description" : "Boolean value: 1 or 0, indicating whether the account is a virtual-money account."
                      },
@@ -43,7 +43,7 @@
                      "is_disabled" : {
                         "type" : "integer",
                         "description" : "Boolean value: 1 or 0, indicating whether the account is marked as disabled or not.",
-                        "pattern" : "^(1|0)$"
+                        "enum" : [1,0]
                      },
                      "landing_company_name" : {
                         "type" : "string",

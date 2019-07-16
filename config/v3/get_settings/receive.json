@@ -56,7 +56,8 @@
             },
             "is_authenticated_payment_agent" : {
                "description" : "Boolean value 1 or 0, indicating whether is payment agent (note: not applicable for virtual money accounts)",
-               "type" : "integer"
+               "type" : "integer",
+               "enum" : [0,1]
             },
             "allow_copiers" : {
                "enum" : [
@@ -152,7 +153,8 @@
             },
             "has_secret_answer" : {
                "enum" : [0, 1],
-               "description" : "Returns 1 if the client has a secret answer, 0 otherwise."
+               "description" : "Returns 1 if the client has a secret answer, 0 otherwise.",
+               "type" :"integer"
             }
          },
          "title" : "User Details",

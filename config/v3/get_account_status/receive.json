@@ -27,9 +27,9 @@
                "description" : "Client risk classification: low, standard, high"
             },
             "prompt_client_to_authenticate" : {
-               "pattern" : "^(1|0)$",
+               "enum" : [1,0],
                "description" : "Indicates whether the client should be prompted to authenticate their account.",
-               "type" : "string"
+               "type" : "integer"
             },
             "status" : {
                "type" : "array",

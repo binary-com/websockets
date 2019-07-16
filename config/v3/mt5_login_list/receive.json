@@ -46,7 +46,7 @@
                },
                "mamm_status": {
                   "description": "Status to depict whether the MT5 account is a MAMM or not.",
-                  "pattern" : "^(1|0)$",
+                  "enum" : [0,1],
                   "type" : "integer"
                },
                "manager_id": {

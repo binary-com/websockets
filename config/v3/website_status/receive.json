@@ -46,11 +46,11 @@
                                     "properties": {
                                         "limits": {
                                             "type": "object",
+                                            "required" : ["min"],
                                             "properties": {
                                                 "min": {
                                                     "type": "number",
-                                                    "minimum": 0,
-                                                    "required": "1"
+                                                    "minimum": 0
                                                 },
                                                 "max": {
                                                     "type": "number",

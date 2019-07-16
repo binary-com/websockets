@@ -23,40 +23,42 @@
       },
       "oauth_apps" : {
          "items" : {
+            "type" : "object",
             "title" : "Application object",
+            "required" : [
+                "name",
+                "app_markup_percentage",
+                "scopes", 
+                "app_id",
+                "last_used" 
+            ],
             "properties" : {
                "name" : {
-                  "required" : 1,
                   "type" : "string",
                   "description" : "Application name"
                },
                "app_markup_percentage" : {
                   "description" : "Markup added to contract prices (as a percentage of contract payout)",
-                  "type" : "number",
-                  "required" : 1
+                  "type" : "number"
                },
                "scopes" : {
                   "type" : "array",
-                  "required" : 1,
                   "items" : {
                      "type" : "string"
                   }
                },
                "app_id" : {
                   "type" : "integer",
-                  "description" : "Application id",
-                  "required" : 1
+                  "description" : "Application id"
                },
                "last_used" : {
                   "description" : "Application last used",
                   "type" : [
                      "string",
                      "null"
-                  ],
-                  "required" : 1
+                  ]
                }
-            },
-            "type" : "object"
+            }
          },
          "type" : "array"
       }

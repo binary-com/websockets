@@ -13,6 +13,7 @@
          "type" : "object"
       },
       "ping" : {
+         "type": "integer",
          "description" : "Must be 1.",
          "enum" : [1] 
       },

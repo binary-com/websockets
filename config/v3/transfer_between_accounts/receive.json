@@ -38,7 +38,7 @@
          "description" : "transfer_between_accounts"
       },
       "accounts" : {
-         "description" : "the avaiable accounts to transfer",
+         "description" : "the available accounts to transfer",
          "type" : "array",
          "items" : {
             "properties" : {

@@ -14,7 +14,7 @@
          "type" : "string"
       },
       "revoke_oauth_app" : {
-         "type" : "string",
+         "type" : "integer",
          "description" : "1 on success"
       },
       "echo_req" : {
