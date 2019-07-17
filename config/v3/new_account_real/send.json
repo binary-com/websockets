@@ -87,7 +87,6 @@
       },
       "currency" : {
          "description" : "Optional field to set currency of the account. List of supported currencies can be acquired with 'payout_currencies' call",
-         "required" : "0",
          "pattern" : "^[A-Z]{3}$"
       },
       "salutation" : {
@@ -161,8 +160,7 @@
       },
       "client_type" : {
          "pattern" : "^retail|professional$",
-         "description" : "Optional field, indicates whether this is for a client requesting an account with professional status. Defaults to retail.",
-         "required" : "0"
+         "description" : "Optional field, indicates whether this is for a client requesting an account with professional status. Defaults to retail."
       }
    }
 }

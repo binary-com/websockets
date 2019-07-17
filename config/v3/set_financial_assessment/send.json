@@ -7,10 +7,9 @@
       "occupation",
       "net_income",
       "set_financial_assessment",
-      "employment_industry",
-      "cfd_trading_experience"
+      "employment_industry"
    ],
-   "description" : "This call sets the financial assessement details based on the client's answers to analyse whether he possess the experience and knowledge to understand the risks involved with binary options trading.",
+   "description" : "This call sets the financial assessment details based on the client's answers to analyze whether they possess the experience and knowledge to understand the risks involved with binary options trading.",
    "type" : "object",
    "additionalProperties" : false,
    "title" : "Save Financial assessment details send",
@@ -44,8 +43,7 @@
             "1-2 years",
             "Over 3 years"
          ],
-         "description" : "Forex trading experience",
-         "required" : "0"
+         "description" : "Forex trading experience"
       },
       "education_level" : {
          "enum" : [
@@ -85,7 +83,6 @@
             "1-2 years",
             "Over 3 years"
          ],
-         "required" : "0",
          "description" : "Trading experience in other financial instruments"
       },
       "employment_status" : {
