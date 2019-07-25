@@ -28,6 +28,10 @@
                   "description": "Balance of the MT5 account.",
                   "type": "number"
                },
+               "display_balance": {
+                  "type": "string",
+                  "description": "Account balance, formatted to appropriate decimal places."
+               },
                "country": {
                   "description": "Residence of the MT5 account.",
                   "type": "string"
