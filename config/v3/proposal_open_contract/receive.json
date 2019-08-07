@@ -130,20 +130,6 @@
                     "description" : "Error message if validation fails",
                     "type" : "string"
                 },
-                "entry_spot" : {
-                    "description" : "Example: 9874.52",
-                    "type" : [
-                        "number",
-                        "null"
-                    ]
-                },
-                "entry_spot_display_value" : {
-                    "description" : "Example: 9874.520",
-                    "type" : [
-                        "string",
-                        "null"
-                    ]
-                },
                 "buy_price" : {
                     "type" : "number",
                     "description" : "Price at which contract was purchased"
@@ -187,18 +173,36 @@
                     "description" : "This is the entry spot of the contract. For contracts starting immediately it is the next tick after the start time. For forward-starting contracts it is the spot at the start time. Example: 86.630.",
                     "type" : "number"
                 },
+                "entry_spot" : {
+                    "description" : "Same as entry_tick. For backwards compatibility.",
+                    "type" : [
+                        "number",
+                        "null"
+                    ]
+                },                
                 "entry_tick_display_value" : {
                     "description" : "This is the entry spot with the correct precision of the contract. For contracts starting immediately it is the next tick after the start time. For forward-starting contracts it is the spot at the start time. Example: 86.630.",
                     "type" : "string"
                 },
-                "tick_count" : {
+                "entry_spot_display_value" : {
+                    "description" : "Same as entry_tick_display_value. For backwards compatibility.",
+                    "type" : [
+                        "string",
+                        "null"
+                    ]
+                },                  
+                "entry_tick_time" : {
                     "type" : "integer",
-                    "description" : "Only for tick trades, number of ticks"
+                    "description" : "This is the epoch time of the entry tick. Example: 1446629000"
                 },
                 "bid_price" : {
                     "description" : "Price at which the contract could be sold back to Binary.com. Example: 5.14",
                     "type" : "number"
                 },
+                "display_value" : {
+                    "description" : "bid_price with the correct precision",
+                    "type" : "string"
+                },                
                 "sell_time" : {
                     "description" : "Epoch time of when the contract was sold (only present for contracts already sold)",
                     "type" : [
@@ -218,6 +222,10 @@
                     "type" : "string",
                     "description" : "Exit tick can refer to the latest tick at the end time, the tick that fulfils the contract’s winning or losing condition for path dependent contracts(Touch/No Touch and Stays Between/Goes Outside) or the tick at which the contract is sold before expiry. Example: 86.810"
                 },
+                "tick_count" : {
+                    "type" : "integer",
+                    "description" : "Only for tick trades, number of ticks"
+                },
                 "underlying" : {
                     "description" : "Example: BSESENSEX30",
                     "type" : "string"
@@ -225,14 +233,6 @@
                 "is_expired" : {
                     "description" : "Whether the contract is expired or not. Boolean value 1 or 0",
                     "type" : "integer"
-                },
-                "display_value" : {
-                    "description" : "Example: 5.14, same as ask_price",
-                    "type" : "string"
-                },
-                "entry_tick_time" : {
-                    "type" : "integer",
-                    "description" : "This is the epoch time of the entry tick. Example: 1446629000"
                 },
                 "is_path_dependent" : {
                     "type" : "integer",
