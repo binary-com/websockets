@@ -1,6 +1,6 @@
 {
    "$schema" : "http://json-schema.org/draft-04/schema#",
-   "description" : "Get latest prices for a specific contract with different barriers.",
+   "description" : "(This API call is deprecated) Get latest prices for a specific contract with different barriers.",
    "type" : "object",
    "required" : [
       "basis",
