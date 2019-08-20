@@ -51,9 +51,9 @@
          "description" : "[Optional] field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
       },
       "name" : {
-         "description" : "Client's name. The maximum length of name is 128 characters.",
+         "description" : "Client's name. The maximum length here is 101 characters.",
          "type" : "string",
-         "pattern" : "^[\\p{L}\\s'.-]{1,128}$"
+         "pattern" : "^[\\p{L}\\s'.-]{1,101}$"
       },
       "company" : {
          "description" : "[Optional] Name of the client's company. The maximum length of the company name is 64 characters.",
@@ -89,7 +89,7 @@
       "address" : {
          "pattern" : "^[\\p{L}\\p{Nd}\\s'.,@/-]{0,128}$",
          "type" : "string",
-         "description" : "[Optional] The address of the user. The maximum length of the address is 128 characters."
+         "description" : "[Optional] The address of the user. The maximum length of this address field is 128 characters."
       },
       "req_id" : {
          "type" : "integer",
@@ -111,7 +111,7 @@
          "description" : "Client leverage (from 1 to 1000)."
       },
       "investPassword" : {
-         "description" : "the investor password of the account. The password must contain at least two of three types of characters (lower case, upper case and digits) and meet the minimum length requirements set for the group. This field is required.",
+         "description" : "The investor password of the account. The password must contain at least two of three types of characters (lower case, upper case and digits) and meet the minimum length requirements set for the group. This field is required.",
          "type" : "string",
          "sensitive" : 1
       }

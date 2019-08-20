@@ -31,13 +31,13 @@
          ]
       },
       "first_name" : {
-         "pattern" : "^[\\p{L}\\s'.-]{2,30}$",
-         "description" : "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).",
+         "pattern" : "^[\\p{L}\\s'.-]{2,50}$",
+         "description" : "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).",
          "type" : "string"
       },
       "last_name" : {
-         "pattern" : "^[\\p{L}\\s'.-]{2,30}$",
-         "description" : "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).",
+         "pattern" : "^[\\p{L}\\s'.-]{2,50}$",
+         "description" : "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).",
          "type" : "string"
       },
       "date_of_birth" : {

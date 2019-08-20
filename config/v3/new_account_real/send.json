@@ -76,8 +76,8 @@
          "pattern" : "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
       },
       "first_name" : {
-         "pattern" : "^[\\p{L}\\s'.-]{2,30}$",
-         "description" : "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+         "pattern" : "^[\\p{L}\\s'.-]{2,50}$",
+         "description" : "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
          "type" : "string"
       },
       "address_city" : {
@@ -100,8 +100,8 @@
       },
       "last_name" : {
          "type" : "string",
-         "description" : "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
-         "pattern" : "^[\\p{L}\\s'.-]{2,30}$"
+         "description" : "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+         "pattern" : "^[\\p{L}\\s'.-]{2,50}$"
       },
       "account_opening_reason" : {
          "enum" : [
