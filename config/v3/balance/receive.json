@@ -7,7 +7,6 @@
       "echo_req"
    ],
    "title" : "Realtime Balance",
-   
    "properties" : {
       "msg_type" : {
          "description" : "balance",
@@ -17,33 +16,84 @@
          "title" : "Echo request",
          "description" : "Echo of the request made"
       },
-      "balance" : {
-         "description" : "Realtime stream of user balance changes.",
-         "type" : "object",
-         "title" : "Lastest balance of client",
-         "properties" : {
-            "loginid" : {
-               "pattern" : "^[A-Z]{2,4}[0-9]{1,10}$",
-               "description" : "Client loginid Example: CR000000",
-               "type" : "string"
-            },
-            "id" : {
-               "type" : "string",
-               "description" : "A stream id that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579"
-            },
-            "currency" : {
-               "description" : "Currency Example: USD",
-               "type" : "string",
-               "pattern" : "^(|[A-Z]{3})$"
-            },
-            "balance" : {
-                "minimum" : 0, 
-                "maximum" : 9999999999999999999999999,
-               "type" : "number",
-               "description" : "Balance amount"
-            }
-         }
-      },
+       "balance" : {
+           "description" : "Realtime stream of user balance changes.",
+           "type" : "object",
+           "title" : "Lastest balance of client",
+           "required" : [
+               "balance",
+               "currency",
+               "loginid"
+           ],
+           "properties" : {
+               "loginid" : {
+                   "pattern" : "^[A-Z]{2,4}[0-9]{1,10}$",
+                   "description" : "Client loginid Example: CR000000",
+                   "type" : "string"
+               },
+               "id" : {
+                   "type" : "string",
+                   "description" : "A stream id that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579"
+               },
+               "currency" : {
+                   "description" : "Currency Example: USD",
+                   "type" : "string",
+                   "pattern" : "^(|[A-Z]{3})$"
+               },
+               "balance" : {
+                   "minimum" : 0, 
+                   "type" : "number",
+                   "description" : "Balance amount"
+               },
+               "total" : {
+                   "type": "object",
+                   "description": "Total amounts of balances",
+                   "properties" : {
+                       "real": {
+                           "type": "object",
+                           "description": "Total amount of balance in all real accounts (excluding MT5)",
+                           "properties" : {
+                               "currency" : {
+                                   "description" : "Currency Example: USD",
+                                   "type" : "string",
+                                   "pattern" : "^(|[A-Z]{3})$"
+                               },
+                               "amount" : {
+                                   "minimum" : 0, 
+                                   "type" : "number",
+                                   "description" : "total amount of all balances of all real accounts"
+                               }
+                           },
+                           "required" : [
+                               "amount",
+                               "currency"
+                           ]
+
+                       },
+                       "mt5": {
+                           "type": "object",
+                           "description": "Total balance of all MT5 accounts",
+                           "properties" : {
+                               "currency" : {
+                                   "description" : "Currency Example: USD",
+                                   "type" : "string",
+                                   "pattern" : "^(|[A-Z]{3})$"
+                               },
+                               "amount" : {
+                                   "minimum" : 0, 
+                                   "type" : "number",
+                                   "description": "Total balance of all MT5 accounts"
+                               }
+                           },
+                           "required" : [
+                               "amount",
+                               "currency"
+                           ]
+                       }
+                   }
+               }
+           }
+       },
       "req_id" : {
          "type" : "integer",
          "description" : "Optional field send in request to map to response, present only when request contains req_id"
