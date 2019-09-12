@@ -6,7 +6,6 @@
       "msg_type",
       "echo_req"
    ],
-   
    "title" : "Get Limits Receive",
    "properties" : {
       "echo_req" : {

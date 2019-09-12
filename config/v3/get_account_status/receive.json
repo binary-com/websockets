@@ -1,6 +1,5 @@
 {
    "$schema" : "http://json-schema.org/draft-04/schema#",
-   
    "title" : "Get Account Status Receive",
    "required" : [
       "echo_req",
@@ -37,6 +36,70 @@
                "items" : {
                   "type" : "string"
                }
+            },
+            "authentication" : {
+                "description" : "This represents the authentication status of the user and it includes what authentication is needed.",
+                "type" : "object",
+                "required": [
+                    "needs_verification"
+                ],
+                "properties": {
+                    "needs_verification": {
+                        "type": "array",
+                        "items" : {
+                            "type": "string",
+                            "description" : "This represents the current type of authentication required, possible values are identity and document."
+                        }
+                    },
+                    "identity": {
+                        "type": "object",
+                        "properties": {
+                            "status": {
+                                "enum": [
+                                    "none",
+                                    "pending",
+                                    "rejected",
+                                    "verified",
+                                    "expired",
+                                    "suspected"
+                                ],
+                                "description": "This represent the current status for proof of identity document submitted for authentication."
+                            },
+                            "expiry_date": {
+                                "type": "integer",
+                                "description": "This is the epoch of the document expiry date."
+                            },
+                            "further_submissions_allowed": {
+                                "type": "integer",
+                                "description": "This represent the number times a client is allowed to submit documents"
+                            }
+                        }
+                    },
+                    "document": {
+                        "type": "object",
+                        "properties": {
+                            "status": {
+                                "enum": [
+                                    "none",
+                                    "pending",
+                                    "rejected",
+                                    "verified",
+                                    "expired",
+                                    "suspected"
+                                ],
+                                "description": "This represents the current status of the proof of address document submitted for authentication."
+                            },
+                            "expiry_date": {
+                                "type": "integer",
+                                "description": "This is the epoch of the document expiry date."
+                            },
+                            "further_submissions_allowed": {
+                                "type": "integer",
+                                "description": "This represent the number of submissions allowed for client to submit documents"
+                            }
+                        }
+                    }
+                }
             }
          }
       },
