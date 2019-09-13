@@ -41,10 +41,14 @@
             "basis" : {
                "enum" : [
                   "payout",
-                  "stake",
-                  "multiplier"
+                  "stake"
                ],
-               "description" : "Indicate whether amount is 'payout' or 'stake', or 'multiplier' for lookbacks"
+               "description" : "Indicate whether amount is 'payout' or 'stake'."
+            },
+            "multiplier": {
+               "description": "The multiplier for non-binary options. E.g. lookbacks.",
+               "type" : "number",
+               "minimum" : 0
             },
             "amount" : {
                "type" : "number",

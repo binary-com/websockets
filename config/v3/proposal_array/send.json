@@ -3,13 +3,11 @@
    "description" : "(This API call is deprecated) Get latest prices for a specific contract with different barriers.",
    "type" : "object",
    "required" : [
-      "basis",
       "barriers",
       "contract_type",
       "proposal_array",
       "currency",
-      "symbol",
-      "amount"
+      "symbol"
    ],
    "additionalProperties" : false,
    "title" : "Price Proposal for Multiple Contracts Request",
@@ -37,9 +35,13 @@
          "description" : "Indicate whether amount is 'payout' or 'stake'.",
          "enum" : [
             "payout",
-            "stake",
-            "multiplier"
+            "stake"
          ]
+      },
+      "multiplier": {
+         "description": "The multiplier for non-binary options. E.g. lookbacks.",
+         "type" : "number",
+         "minimum" : 0
       },
       "duration" : {
          "description" : "Duration quantity.",
