@@ -19,7 +19,6 @@
       "new_account_maltainvest",
       "tax_identification_number",
       "address_city",
-      "place_of_birth",
       "salutation"
    ],
    "title" : "Create maltainvest account Send",
