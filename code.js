@@ -8,6 +8,18 @@ function getBaseUrl(url) {
 
 require.config({
     baseUrl: getBaseUrl(document.location.href),
+    path: {
+        'docson': '/docson/docson.js',
+        'binary-live-api': '/lib/binary-live-api.js',
+        'handlebars': '/lib/handlebars.js',
+        'highlights': '/lib/highlights.js',
+        'jquery': '/lib/jquery.js',
+        'jsonpointer': '/lib/jsonpointer.js',
+        'marked': '/lib/marked.js',
+        'rainbow': '/lib/rainbow.js',
+        'select2.min': '/lib/select2.min.js',
+        'traverse': '/lib/traverse.js',
+    }
 });
 
 var LiveApi = window['binary-live-api'].LiveApi;
@@ -25,7 +37,7 @@ var getAppId = function () {
 
 var langCode = 'en';
 
-require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
+require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function(docson) {
 
     var api,
         $console = $('#playground-console');
