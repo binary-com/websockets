@@ -37,7 +37,7 @@ var getAppId = function () {
 
 var langCode = 'en';
 
-require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function(docson) {
+require(["docson", "jquery", "select2.min"], function(docson) {
 
     var api,
         $console = $('#playground-console');
