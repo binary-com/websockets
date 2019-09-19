@@ -9,16 +9,16 @@ function getBaseUrl(url) {
 require.config({
     baseUrl: getBaseUrl(document.location.href),
     path: {
-        '/docson/docson': '/docson/docson',
-        '/lib/binary-live-api': '/lib/binary-live-api',
-        '/lib/handlebars': '/lib/handlebars',
-        '/lib/highlights': '/lib/highlights',
-        '/lib/jquery': '/lib/jquery',
-        '/lib/jsonpointer': '/lib/jsonpointer',
-        '/lib/marked': '/lib/marked',
-        '/lib/rainbow': '/lib/rainbow',
-        '/lib/select2.min': '/lib/select2.min',
-        '/lib/traverse': '/lib/traverse',
+        '/docson/docson': '/docson/docson.js',
+        '/lib/binary-live-api': '/lib/binary-live-api.js',
+        '/lib/handlebars': '/lib/handlebars.js',
+        '/lib/highlights': '/lib/highlights.js',
+        '/lib/jquery': '/lib/jquery.js',
+        '/lib/jsonpointer': '/lib/jsonpointer.js',
+        '/lib/marked': '/lib/marked.js',
+        '/lib/rainbow': '/lib/rainbow.js',
+        '/lib/select2.min': '/lib/select2.min.js',
+        '/lib/traverse': '/lib/traverse.js',
     }
 });
 
