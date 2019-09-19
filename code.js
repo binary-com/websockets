@@ -5,7 +5,7 @@ function isProduction(url) {
 function getBaseUrl(url) {
     return (isProduction('' + url) ? '' : '/' + url.split('/')[3]) + '/';
 }
-
+// Add paths with same names as keys for fallback
 require.config({
     baseUrl: getBaseUrl(document.location.href),
     path: {
