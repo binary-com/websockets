@@ -42,8 +42,8 @@
     <script src="https://liveapi.binary.com/27.0.0/binary-live-api.js"></script>
     <script src="/lib/require.js"></script>
 
-    <title>Binary.com Developers</title>
-    <link rel="canonical" href="https://developers.binary.com/">
+    <title>Faq</title>
+    <link rel="canonical" href="https://developers.binary.com/faq/">
 </head>
 
 
@@ -103,27 +103,66 @@
 </div>
 
     <div class="page-content">
-        <h1>Welcome to the Binary.com API</h1>
+        <h1>FAQ</h1>
 
-<p>The Binary.com API allows developers to build applications and trading interfaces that interact with our Binary.com system.</p>
-
-<p>The API allows for most of the read and write methods that you will need to support your application. If you have uses or needs that are not currently supported by the API, visit our <a target=_blank href="https://binary.vanillacommunity.com">dev forum</a> and let us know!</p>
-
-<p>Starting with the API is easy:</p>
-
-<ul class="bullet">
-    <li>Read the <a href="/websockets">Quickstart</a> and look at the <a href="/demos">code samples</a> in different languages</li>
-    <li><a href="/applications">Register</a> your application to obtain an <code>app_id</code></li>
-    <li>Read the <a href="/guide">API guide</a></li>
-    <li>Explore the API using <a href="/api">API playground</a></li>
-</ul>
-
-<p>We also provide a high-level API library to help you use our service easier. <br>Get <strong>binary-live-api</strong> from <a href="https://github.com/binary-com/binary-live-api">GitHub</a>!</p>
-
-<p>Have more questions?</p>
+<h2>
+    What is the easiest way to get started with Binary.com API?
+</h2>
 <p>
-    <a class="button" href="https://binary.vanillacommunity.com"><span>Visit dev forum</span></a> or email <a href="mailto:api-support@binary.com?subject=API+Question:+">api-support@binary.com</a>
+     View <a href="https://developers.binary.com/demos/">code samples</a>. You can use these code snippets in your apps to open a connection to the Binary.com WebSocket API service.
 </p>
+<h2>
+    What is the easiest way to build my own Binary.com front-end application?
+</h2>
+<p>
+    Simply copy our open-source code, and adapt it to meet your needs. Follow these steps to get started:
+    <OL><LI>Open a <a target=_blank href="http://www.github.com">GitHub</a> account.
+    <LI>Download the <a target=_blank href="https://desktop.github.com">GitHub Desktop application</a>.
+    <LI>Fork one of Binary.com's front-end repositories, such as <a target=_blank href="https://github.com/binary-com/webtrader">Binary Webtrader</a> (<a target=_blank href="https://webtrader.binary.com">view app</a>) or any of the other open-source front-end repositories listed <a href="https://developers.binary.com/open-source/">here</a>.
+    <LI>Make your code changes in your fork.
+    <LI>Publish your fork using the <a href="https://pages.github.com" target=_blank>GitHub Pages</a> facility.
+    <LI>For SSL and website acceleration for your app, open a free account on <a target=_blank href="http://www.cloudflare.com">Cloudflare</a>.
+    </OL>
+</p>
+<h2>
+    Will I earn commissions if users signed up to Binary.com using my app?
+</h2>
+<p>
+     Yes. Please follow these steps:
+     <OL><LI>Sign up as an <a target=_blank href="https://www.binary.com/en/affiliate/signup.html">affiliate</a>.
+     <LI>Insert your affiliate token into the <a href="https://developers.binary.com/api/#new_account_virtual"><code>new_account_virtual</code></a> call in your app.
+     </OL>
+</p>
+<h2>
+    How else can I earn commission or revenue?
+</h2>
+<p>
+     You can:
+     <OL><LI>Sign up as a <a href="https://www.binary.com/en/payment-agent.html">payment agent</a> to process local payments for Binary.com clients in your country. You may automate your payment agent facility using the <a href="https://developers.binary.com/api/#paymentagent_transfer"><code>paymentagent_transfer</code></a> API call.
+     <LI>Sell your app on the <a target=_blank href="https://shop.binary.com">Binary.com Shop</a>. You will earn 80% of the revenue for every app sold on your behalf through our e-commerce site.
+     <LI>If you are prepared for your app to offer higher contract prices than the Binary.com website, you may add a <b>markup percentage</b> when you <a href="https://developers.binary.com/applications/">register</a> your app. This markup percentage is a percentage of contract payouts, and is added to all contract prices in your app. At every month-end, the aggregate markup is paid to you. Please sign up as an affiliate and contact your Affiliate Manager to learn more about this facility.
+     </OL>
+</p>
+<h2>
+    Can someone build an app for me?
+</h2>
+<p>
+     Sure! You can hire developers on sites such as <a target=_blank href="http://www.upwork.com">UpWork</a>. Just look for developers who are familiar with JavaScript and WebSocket technology.
+</p>
+<h2>
+    What does it mean if a schema property has the "sensitive" attribute?
+</h2>
+<p>
+     This means we will treat the value of this property as confidential, and will never return it in any API response. It is used for passwords and tokens.
+</p>
+<h2>
+    How do I get help?
+</h2>
+<p>
+     Please visit Binary.com API <a target=_blank href="https://binary.vanillacommunity.com/">dev forum</a> or email <a href="mailto:api-support@binary.com?subject=API+Question:+">api-support@binary.com</a>.
+</p>
+
+
 
     </div>
 </div>

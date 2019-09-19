@@ -42,8 +42,8 @@
     <script src="https://liveapi.binary.com/27.0.0/binary-live-api.js"></script>
     <script src="/lib/require.js"></script>
 
-    <title>Binary.com Developers</title>
-    <link rel="canonical" href="https://developers.binary.com/">
+    <title>Endpoint</title>
+    <link rel="canonical" href="https://developers.binary.com/endpoint/">
 </head>
 
 
@@ -103,27 +103,20 @@
 </div>
 
     <div class="page-content">
-        <h1>Welcome to the Binary.com API</h1>
-
-<p>The Binary.com API allows developers to build applications and trading interfaces that interact with our Binary.com system.</p>
-
-<p>The API allows for most of the read and write methods that you will need to support your application. If you have uses or needs that are not currently supported by the API, visit our <a target=_blank href="https://binary.vanillacommunity.com">dev forum</a> and let us know!</p>
-
-<p>Starting with the API is easy:</p>
-
-<ul class="bullet">
-    <li>Read the <a href="/websockets">Quickstart</a> and look at the <a href="/demos">code samples</a> in different languages</li>
-    <li><a href="/applications">Register</a> your application to obtain an <code>app_id</code></li>
-    <li>Read the <a href="/guide">API guide</a></li>
-    <li>Explore the API using <a href="/api">API playground</a></li>
-</ul>
-
-<p>We also provide a high-level API library to help you use our service easier. <br>Get <strong>binary-live-api</strong> from <a href="https://github.com/binary-com/binary-live-api">GitHub</a>!</p>
-
-<p>Have more questions?</p>
-<p>
-    <a class="button" href="https://binary.vanillacommunity.com"><span>Visit dev forum</span></a> or email <a href="mailto:api-support@binary.com?subject=API+Question:+">api-support@binary.com</a>
-</p>
+        <div style="padding-bottom: 20px" title="eg. www2.binary.com">
+    <input id="endpoint-input" type="text" placeholder="Custom endpoint url" autocomplete="on"/>
+    <input id="appid-input" type="text" placeholder="App ID of endpoint" autocomplete="on"/>
+    <button id="endpoint-button">Use New Endpoint</button>
+    <p id="conn-error" class="errorfield">Failed to connect, fallback to default endpoint</p>
+    <p>
+        <span id="connecting">Connecting ...</span>
+        <span id="connected" style="font-weight: bold">
+            <span>Connected to: </span>
+            <span id="api-url"></span>
+        </span>
+    </p>
+    <button id="use-default-button">Use Default Endpoint</button>
+</div>
 
     </div>
 </div>

@@ -42,8 +42,8 @@
     <script src="https://liveapi.binary.com/27.0.0/binary-live-api.js"></script>
     <script src="/lib/require.js"></script>
 
-    <title>Binary.com Developers</title>
-    <link rel="canonical" href="https://developers.binary.com/">
+    <title>Server status updates</title>
+    <link rel="canonical" href="https://developers.binary.com/server-status-updates/">
 </head>
 
 
@@ -103,27 +103,34 @@
 </div>
 
     <div class="page-content">
-        <h1>Welcome to the Binary.com API</h1>
+        <h1 class="post-title">Server status updates</h1>
 
-<p>The Binary.com API allows developers to build applications and trading interfaces that interact with our Binary.com system.</p>
+<h2>What is it?</h2>
 
-<p>The API allows for most of the read and write methods that you will need to support your application. If you have uses or needs that are not currently supported by the API, visit our <a target=_blank href="https://binary.vanillacommunity.com">dev forum</a> and let us know!</p>
+<p>The API provides a way to let clients check on whether the website is online or not through the <a href="https://developers.binary.com/api/#website_status">website status</a> call.</p>
 
-<p>Starting with the API is easy:</p>
+<h2>Subscribing to server status notifications</h2>
 
-<ul class="bullet">
-    <li>Read the <a href="/websockets">Quickstart</a> and look at the <a href="/demos">code samples</a> in different languages</li>
-    <li><a href="/applications">Register</a> your application to obtain an <code>app_id</code></li>
-    <li>Read the <a href="/guide">API guide</a></li>
-    <li>Explore the API using <a href="/api">API playground</a></li>
-</ul>
+<p>Here is a JavaScript code snippet that opens a websocket and makes a subscription for server status notifications.  On receipt of a message, it emits the website status as well a message about the status, if available:</p>
 
-<p>We also provide a high-level API library to help you use our service easier. <br>Get <strong>binary-live-api</strong> from <a href="https://github.com/binary-com/binary-live-api">GitHub</a>!</p>
+<pre data-language="javascript">const WebSocket = require('ws');
+const ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?l=EN&app_id=1089');
 
-<p>Have more questions?</p>
-<p>
-    <a class="button" href="https://binary.vanillacommunity.com"><span>Visit dev forum</span></a> or email <a href="mailto:api-support@binary.com?subject=API+Question:+">api-support@binary.com</a>
-</p>
+ws.on('open', function open() {
+    ws.send(JSON.stringify({
+        website_status: 1,
+        subscribe: 1
+    }));
+});
+
+ws.on('message', function incoming(data) {
+    data = JSON.parse(data);
+    console.log('website status: %s', data.website_status.site_status);
+    if (data.website_status.message) {
+        console.log('status message: %s', data.website_status.message);
+    }
+});
+</pre>
 
     </div>
 </div>

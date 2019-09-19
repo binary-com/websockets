@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+  
+  
+
+  <head>
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+        if (self === top) {
+            var antiClickjack = document.getElementById("antiClickjack");
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
+            top.location = self.location;
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+
+    <link href='https://style.binary.com/images/favicons/favicon-96x96.png' rel='icon' sizes='96x96' type='image/png'/>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' />
+
+    <link rel="stylesheet" href="https://style.binary.com/binary.css" />
+    <link rel="stylesheet" href="/docson/docson.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/select2.min.css">
+
+    <script src="/lib/rainbow.js"></script>
+
+    <script src="/lib/language/generic.js"></script>
+    <script src="/lib/language/javascript.js"></script>
+    <script src="/lib/language/coffeescript.js"></script>
+    <script src="/lib/language/csharp.js"></script>
+    <script src="/lib/language/go.js"></script>
+    <script src="/lib/language/java.js"></script>
+    <!-- <script src="/lib/language/perl.js"></script> -->
+    <script src="/lib/language/php.js"></script>
+    <script src="/lib/language/ruby.js"></script>
+    <script src="/lib/language/python.js"></script>
+    <!-- <script src="/lib/language/swift.js"></script> -->
+
+    <script src="https://liveapi.binary.com/27.0.0/binary-live-api.js"></script>
+    <script src="/lib/require.js"></script>
+
+    <title>Guide</title>
+    <link rel="canonical" href="https://developers.binary.com/guide/">
+</head>
+
+
+  <body>
+
+    <div id="topbar"></div>
+<header>
+    <div class="header-content">
+        <a href="/"><img id="logo" alt="Binary" src="https://www.binary.com/images/pages/binary-symbol-logo.svg"><h1>Binary.com Developers</h1></a>
+
+        <div class="spacer"></div>
+    </div>
+</header>
+
+
+    <div id="content">
+
+        
+
+
+<select id="mobile-page-selector">
+    <option value="/">Welcome</option>
+    <option value="/applications/">Applications</option>
+    <option value='-' disabled>────────────</option>
+    <option value="/demos/">Code Samples</option>
+    <option value="/api/">API Playground</option>
+    <option value="/faq/">FAQ</option>
+    <option value='-' disabled>────────────</option>
+    <option value="/schemas/">JSON Schemas</option>
+    <option value="/websockets/">Websockets</option>
+    <option value="/schemas/">JSON Schemas</option>
+    <option value="/guide/">API Guide</option>
+    <option value="/open-source/">Open Source</option>
+    <option value="/security/">Security</option>
+    <option value="/careers/">Careers</option>
+</select>
+
+
+<div class="page-wrapper">
+    <div class="sidebar-left">
+    <ul>
+        <li><a href="/">Welcome</a></li>
+        <li><a href="/websockets/">Quickstart</a></li>
+        <li><a href="/demos/">Code samples</a></li>
+        <li><a href="/applications/">App registration</a></li>
+        <li><a href="/api/">API playground</a></li>
+        <li><a href="/guide/">API guide</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/copytrading/">Copy trading facilities</a></li>
+        <li><a href="/server-status-updates/">Server status updates</a></li>
+        <li><a href="https://binary.vanillacommunity.com" target=_blank>Dev forum</a></li>
+        <li><a href="/schemas/">JSON Schemas</a></li>
+        <li><a href="/open-source/">Open source</a></li>
+        <li><a href="/security/">Security</a></li>
+        <li><a href="/careers/">Careers</a></li>
+    </ul>
+</div>
+
+    <div class="page-content">
+        <h1>API guide</h1>
+<h2>App registration</h2>
+<p>Before using the API, you must register your application:</p>
+<ol>
+    <li>Open an account at <a href="https://binary.com">Binary.com</a> (either a Virtual Account or a Real Account).</li>
+    <li>Go to <strong>Security & Limits</strong>, select <a href="https://www.binary.com/en/user/security/api_tokenws.html">API token</a> and create a new token with the <strong>admin</strong> scope<a href="/applications/">.</li>
+    <li>Register</a> your app to obtain your <code>app_id</code>.</li>
+</ol>
+<h2>Client authentication</h2>
+<p>Certain API calls require client authentication (e.g. <a href="/api#portfolio"><code>portfolio</code></a>) whilst other calls do not (e.g. <a href="/api#ticks"><code>ticks</code></a>).</p>
+There are 2 ways to do client authentication:</p>
+<ol>
+    <li><strong>Client authentication by app-specific API tokens</strong> - Binary.com users can generate tokens by logging into their accounts and navigate to the <a href="https://www.binary.com/en/user/security/api_tokenws.html">API token</a> page under <strong>Security & Limits</strong>.
+    </li>
+    <li><strong>Client authentication by OAuth</strong> - To use OAuth, get your <code>app_id</code> (see instructions above):
+        <p>To authenticate your users, navigate them to Binary.com OAuth URL: <pre>https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..]</pre>Our system will authenticate the user, and redirect him to the redirect URI specified during app registration, with a valid token returned in the URL in the <code>token</code> parameter.</p>
+        <p>To display the authentication form in another language, append the language code to the OAuth URL as follows:<pre>https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..]&l=ZH_CN</pre></p>
+    </li>
+</ol>.
+<p>With a user's API token (either a per-app token, or a token obtained via OAuth), you may call <a href="/api#authorize"><code>authorize</code></a>.</p>
+<h2>Token scopes</h2>
+<p>Tokens can possess one or more of these scopes:</p>
+<ul class="bullet">
+    <li><strong>read</strong> - for API calls that only read client data</li>
+    <li><strong>trade</strong> - for API calls that can create trades in the client account</li>
+    <li><strong>payments</strong> - for API calls that can access the cashier (deposits and withdrawals)</li>
+    <li><strong>admin</strong> - for API calls that change client settings</li>
+</ul>
+<p>The drop-down list in the <a href="/api">API playground</a> indicates which call needs which scope.</p>
+<h2>Binary.com accounts opening</h2>
+<p>To open Binary.com accounts via the API, start by verifying the user's email address using <a href="/api#verify_email"><code>verify_email</code></a>.</p>
+<p>To open a Virtual Account, you may call <a href="/api#new_account_virtual"><code>new_account_virtual</code></a>. Then, you may call <a href="/api#topup_virtual"><code>topup_virtual</code></a> to top-up virtual-money fund.</p>
+<p>To open a Real Account, you may use
+    <a href="/api#residence_list"><code>residence_list</code></a> and
+    <a href="/api#states_list"><code>states_list</code></a> to retrieve data to create the account opening form. Once you have the required data from the user, call
+    <a href="/api#new_account_real"><code>new_account_real</code></a>.</p>
+    <p>If you are a registered affiliate, remember to pass in the <code>affiliate_token</code> parameter, so that you may earn affiliate commissions for the new account. You can determine which Landing Company (i.e counter-party) the account will be opened with, based on the user's jurisdiction, using <a href="/api#landing_company"><code>landing_company</code></a>, and you can find out details about that landing company using
+    <a href="/api#landing_company_details"><code>landing_company_details</code></a>.
+</p>
+<h2>Accounting functionalites</h2>
+<p>You may generate a user's
+    <a href="/api#portfolio"><code>portfolio</code></a>,
+    <a href="/api#statement"><code>statement</code></a> and
+    <a href="/api#profit_table"><code>profit_table</code></a>, as well as retrieve his account <a href="/api#balance"><code>balance</code></a>. You may also
+    sell expired contract with <a href="/api#sell_expired"><code>sell_expired</code></a>, and generate a realtime stream of <a href="/api#transaction"><code>transactions</code></a>.
+</p>
+<h2>Option prices</h2>
+<ul class="bullet">
+    <li>To price an option, call <a href="/api#proposal"><code>proposal</code></a></li>
+    <li>To price options which are open in a user's portfolio, call <a href="/api#proposal_open_contract"><code>proposal_open_contract</code></a></li>
+</ul>
+<h2>Payment agents</h2>
+<ul class="bullet">
+    <li>Clients may withdraw to a payment agent using <a href="/api#paymentagent_withdraw"><code>paymentagent_withdraw</code></a></li>
+    <li>Payment agents may credit a client account using <a href="/api#paymentagent_transfer"><code>paymentagent_transfer</code></a></li>
+</ul>
+<h2>Utility calls</h2>
+<ul class="bullet">
+    <li>To keep the connection alive, use <a href="/api#ping"><code>ping</code></a></li>
+    <li>You can get the server time with <a href="/api#time"><code>time</code></a></li>
+    <li>You can also get the status of the website with <a href="/api#website_status"><code>website_status</code></a></li>
+</ul>
+<h2>Streams</h2>
+<p><strong>Note</strong>: Certain functions generate streams (e.g. <a href="/api#ticks"><code>ticks</code></a>) whilst other functions do not. Please use <a href="/api#forget"><code>forget</code></a> to cancel an outstanding stream.</p>
+
+    </div>
+</div>
+
+    </div>
+
+    <footer>
+    <div id="end-note" class="invisible content-inverse-color center-text"></div>
+</footer>
+
+<script src="/code.js"></script>
+
+
+  </body>
+
+</html>
