@@ -6,6 +6,7 @@ function getBaseUrl(url) {
     return (isProduction('' + url) ? '' : '/' + url.split('/')[3]) + '/';
 }
 // Add paths with same names as keys for fallback
+// Extra comment for diff to refresh gh pages
 require.config({
     baseUrl: getBaseUrl(document.location.href),
     path: {
