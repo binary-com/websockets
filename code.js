@@ -9,16 +9,16 @@ function getBaseUrl(url) {
 require.config({
     baseUrl: getBaseUrl(document.location.href),
     path: {
-        'docson': '/docson/docson.js',
-        'binary-live-api': '/lib/binary-live-api.js',
-        'handlebars': '/lib/handlebars.js',
-        'highlights': '/lib/highlights.js',
-        'jquery': '/lib/jquery.js',
-        'jsonpointer': '/lib/jsonpointer.js',
-        'marked': '/lib/marked.js',
-        'rainbow': '/lib/rainbow.js',
-        'select2.min': '/lib/select2.min.js',
-        'traverse': '/lib/traverse.js',
+        '/docson/docson': '/docson/docson',
+        '/lib/binary-live-api': '/lib/binary-live-api',
+        '/lib/handlebars': '/lib/handlebars',
+        '/lib/highlights': '/lib/highlights',
+        '/lib/jquery': '/lib/jquery',
+        '/lib/jsonpointer': '/lib/jsonpointer',
+        '/lib/marked': '/lib/marked',
+        '/lib/rainbow': '/lib/rainbow',
+        '/lib/select2.min': '/lib/select2.min',
+        '/lib/traverse': '/lib/traverse',
     }
 });
 
@@ -37,7 +37,7 @@ var getAppId = function () {
 
 var langCode = 'en';
 
-require(["docson", "jquery", "select2.min"], function(docson) {
+require(["/docson/docson", "/lib/jquery", "/lib/select2.min"], function(docson) {
 
     var api,
         $console = $('#playground-console');
