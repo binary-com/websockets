@@ -5,7 +5,6 @@
    "description" : "This call creates new MT5 user, either demo or real money user.",
    "type" : "object",
    "required" : [
-      "investPassword",
       "mt5_new_account",
       "mainPassword",
       "name",
