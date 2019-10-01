@@ -19,7 +19,7 @@
        "balance" : {
            "description" : "Realtime stream of user balance changes.",
            "type" : "object",
-           "title" : "Lastest balance of client",
+           "title" : "Latest balance of client",
            "required" : [
                "balance",
                "currency",
