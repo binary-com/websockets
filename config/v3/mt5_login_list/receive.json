@@ -48,15 +48,6 @@
                   "description": "Leverage of the MT5 account (1 to 1000).",
                   "type": "number"
                },
-               "mamm_status": {
-                  "description": "Status to depict whether the MT5 account is a MAMM or not.",
-                  "enum" : [0,1],
-                  "type" : "integer"
-               },
-               "manager_id": {
-                  "description": "ID of the MT5 account, if it is a MAMM.",
-                  "type": "string"
-               },
                "name": {
                   "description": "Name of the owner of the MT5 account.",
                   "type": "string"
