@@ -5,9 +5,22 @@ function isProduction(url) {
 function getBaseUrl(url) {
     return (isProduction('' + url) ? '' : '/' + url.split('/')[3]) + '/';
 }
+// Add paths with same names as keys for fallback
 
 require.config({
     baseUrl: getBaseUrl(document.location.href),
+    path: {
+        '/docson/docson': '/docson/docson.js',
+        '/lib/binary-live-api': '/lib/binary-live-api.js',
+        '/lib/handlebars': '/lib/handlebars.js',
+        '/lib/highlights': '/lib/highlights.js',
+        '/lib/jquery': '/lib/jquery.js',
+        '/lib/jsonpointer': '/lib/jsonpointer.js',
+        '/lib/marked': '/lib/marked.js',
+        '/lib/rainbow': '/lib/rainbow.js',
+        '/lib/select2.min': '/lib/select2.min.js',
+        '/lib/traverse': '/lib/traverse.js',
+    }
 });
 
 var LiveApi = window['binary-live-api'].LiveApi;
@@ -25,7 +38,7 @@ var getAppId = function () {
 
 var langCode = 'en';
 
-require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
+require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function(docson) {
 
     var api,
         $console = $('#playground-console');
