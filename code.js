@@ -13,7 +13,7 @@ require.config({
         '/docson/docson': '/docson/docson.js',
         '/lib/binary-live-api': '/lib/binary-live-api.js',
         '/lib/handlebars': '/lib/handlebars.js',
-        '/lib/highlights': '/lib/highlights.js',
+        '/lib/highlight': '/lib/highlight.js',
         '/lib/jquery': '/lib/jquery.js',
         '/lib/jsonpointer': '/lib/jsonpointer.js',
         '/lib/marked': '/lib/marked.js',
