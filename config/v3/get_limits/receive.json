@@ -91,7 +91,7 @@
                      },
                      "type" : "array"
                   },
-                  "volidx" : {
+                  "synthetic_index" : {
                      "items" : {
                         "properties" : {
                            "profile_name" : {
