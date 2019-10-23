@@ -1,20 +1,19 @@
-extern crate websocket;    // websocket = "~0.12.2"
+extern crate ws;
+extern crate env_logger;
 
-use std::string::String;
-use websocket::client::request::Url;
-use websocket::{Client, Message, Sender, Receiver};
+use ws::{connect, CloseCode};
 
 fn main() {
-    let url = Url::parse("wss://ws.binaryws.com/websockets/v3?app_id=1089").unwrap();
-    let request = Client::connect(url).unwrap();
-    let response = request.send().unwrap();
-    let (mut sender, mut receiver) = response.begin().split();
-    let req = Message::Text(String::from("{\"ticks\": \"R_100\"}"));
-    sender.send_message(req).unwrap();
-    for message in receiver.incoming_messages::&lt;Message&gt;() {
-        match message {
-            Ok(Message::Text(m))    => { println!("tick update: {:?}", m) },
-            _                       => { break },
-        };
-    }
+    env_logger::init();
+        println!("Starting connection");
+        connect("wss://frontend.binaryws.com/websockets/v3?app_id=1089", |out| {
+        println!("Connection established");
+                out.send("{\"ping\" : 1}").unwrap();
+
+                move |msg| {
+                        println!("Got message: {}", msg);
+                        out.close(CloseCode::Normal)
+                }
+        }).unwrap();
+        println!("Event loop ended");
 }
