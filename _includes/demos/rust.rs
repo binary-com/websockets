@@ -10,7 +10,7 @@ fn main() {
         "wss://frontend.binaryws.com/websockets/v3?app_id=1089",
         |out| { 
             println!("Connection established");
-            out.send("{\"ping\" : 1}").unwrap();
+            out.send("{\"ticks\": \"R_100\"}").unwrap();
                         
             move |msg| {
                 println!("Got message: {}", msg);
