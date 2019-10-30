@@ -73,7 +73,7 @@
       "address_postcode" : {
          "type" : "string",
          "description" : "Note: not applicable for virtual account. Optional field for real money account.",
-         "pattern" : "^[^+]{0,20}$"
+         "pattern" : "^[\\w\\s-]{0,20}$"
       },
       "tax_residence" : {
          "pattern" : "^[a-z]{0,2}(?:,[a-z]{2})*$",

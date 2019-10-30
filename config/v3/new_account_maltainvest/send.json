@@ -32,7 +32,7 @@
          "description" : "Must be 1"
       },
       "address_postcode" : {
-         "pattern" : "^[^+]{0,20}$",
+         "pattern" : "^[\\w\\s-]{0,20}$",
          "description" : "Optional field, within 20 characters and may not contain '+'.",
          "type" : "string"
       },
@@ -300,7 +300,7 @@
             "Information & Communications Technology",
             "Science & Engineering",
             "Legal",
-            "Social & Cultural", 
+            "Social & Cultural",
             "Agriculture",
             "Real Estate",
             "Food Services",
