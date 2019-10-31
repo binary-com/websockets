@@ -33,10 +33,6 @@
          "type" : "string",
          "sensitive" : 1
       },
-      "manager_id" : {
-         "description" : "[Optional] Login id of manager whom you want to assign to manage your assets, applicable for MT5 Multiple Accounts Manager only.",
-         "type" : "integer"
-      },
       "mt5_new_account" : {
          "enum" : [
             1
