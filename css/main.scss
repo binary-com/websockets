@@ -115,7 +115,7 @@ header {
 #api-token,
 #demo-language,
 #playground-request {
-    width: 100%;
+    width: calc(100% - 16px);
     font-size: 16px;
 }
 #api-token{
@@ -296,6 +296,7 @@ pre {
     max-width: 100%;
     overflow: auto;
     white-space: pre-wrap;
+    word-break: break-word;
 }
 #unauthorized-error {
     display: none;
@@ -372,6 +373,11 @@ code {
     a {
         color: white;
     }
+}
+
+// Main action (call name) selector
+.docson > .box > .box-body > .signature:nth-child(2) > .signature-header > .property-name {
+    color: darkblue;
 }
 
 @import "monokai.css";
