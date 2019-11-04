@@ -37,12 +37,14 @@
                     ]
                 },
                 "high_barrier" : {
-                    "type" : "number",
-                    "description" : "High barrier of the contract (if any). Example: 42.123"
+                    "description" : "High barrier of the contract (if any). Example: 42.123",
+                    "type" : "string",
+                    "pattern" : "^[+-]?[0-9]+\\.?[0-9]*$"
                 },
                 "low_barrier" : {
-                    "type" : "number",
-                    "description" : "Low barrier of the contract (if any). Example: 40.132"
+                    "description" : "Low barrier of the contract (if any). Example: 40.132",
+                    "type" : "string",
+                    "pattern" : "^[+-]?[0-9]+\\.?[0-9]*$"
                 },
                 "sell_spot_time" : {
                     "type" : "integer",
@@ -63,6 +65,10 @@
                 "current_spot" : {
                     "description" : "Spot value if we have license to stream this symbol. Example: 9874.52",
                     "type" : "number"
+                },
+                "current_spot_display_value" : {
+                    "description" : "Spot value with the correct precision if we have license to stream this symbol. Example: 9874.520",
+                    "type" : "string"
                 },
                 "date_settlement" : {
                     "description" : "Settlement date (epoch) of the contract. Example: 1446629000",
@@ -90,7 +96,11 @@
                 },
                 "sell_spot" : {
                     "type" : "number",
-                    "description" : "Latest spot value at the sell time. Example: 86.630 (only present for contracts already sold). Will no longer be supported in the next API release."
+                    "description" : "Latest spot value at the sell time. Example: 86.63 (only present for contracts already sold). Will no longer be supported in the next API release."
+                },
+                "sell_spot_display_value" : {
+                    "type" : "string",
+                    "description" : "Latest spot value with the correct precision at the sell time. Example: 86.630 (only present for contracts already sold). Will no longer be supported in the next API release."
                 },
                 "id" : {
                     "type" : "string",
@@ -120,24 +130,17 @@
                     "description" : "Error message if validation fails",
                     "type" : "string"
                 },
-                "entry_spot" : {
-                    "description" : "Example: 9874.52",
-                    "type" : [
-                        "number",
-                        "null"
-                    ]
-                },
                 "buy_price" : {
                     "type" : "number",
                     "description" : "Price at which contract was purchased"
                 },
                 "payout" : {
                     "type" : "number",
-                    "description" : "Payout value of the contract. Example: 10.50"
+                    "description" : "Payout value of the contract. Example: 10.5"
                 },
                 "barrier" : {
                     "description" : "Barrier of the contract (if any). Example: 42.123",
-                    "type" : "number"
+                    "type" : ["string", "null"]
                 },
                 "date_expiry" : {
                     "description" : "Expiry date (epoch) of the Contract. Example: 1446629000. Please note that it is not applicable for tick trade contracts.",
@@ -170,14 +173,36 @@
                     "description" : "This is the entry spot of the contract. For contracts starting immediately it is the next tick after the start time. For forward-starting contracts it is the spot at the start time. Example: 86.630.",
                     "type" : "number"
                 },
-                "tick_count" : {
+                "entry_spot" : {
+                    "description" : "Same as entry_tick. For backwards compatibility.",
+                    "type" : [
+                        "number",
+                        "null"
+                    ]
+                },                
+                "entry_tick_display_value" : {
+                    "description" : "This is the entry spot with the correct precision of the contract. For contracts starting immediately it is the next tick after the start time. For forward-starting contracts it is the spot at the start time. Example: 86.630.",
+                    "type" : "string"
+                },
+                "entry_spot_display_value" : {
+                    "description" : "Same as entry_tick_display_value. For backwards compatibility.",
+                    "type" : [
+                        "string",
+                        "null"
+                    ]
+                },                  
+                "entry_tick_time" : {
                     "type" : "integer",
-                    "description" : "Only for tick trades, number of ticks"
+                    "description" : "This is the epoch time of the entry tick. Example: 1446629000"
                 },
                 "bid_price" : {
                     "description" : "Price at which the contract could be sold back to Binary.com. Example: 5.14",
                     "type" : "number"
                 },
+                "display_value" : {
+                    "description" : "bid_price with the correct precision",
+                    "type" : "string"
+                },                
                 "sell_time" : {
                     "description" : "Epoch time of when the contract was sold (only present for contracts already sold)",
                     "type" : [
@@ -191,7 +216,15 @@
                 },
                 "exit_tick" : {
                     "type" : "number",
+                    "description" : "Exit tick can refer to the latest tick at the end time, the tick that fulfils the contract’s winning or losing condition for path dependent contracts(Touch/No Touch and Stays Between/Goes Outside) or the tick at which the contract is sold before expiry. Example: 86.81"
+                },
+                "exit_tick_display_value" : {
+                    "type" : "string",
                     "description" : "Exit tick can refer to the latest tick at the end time, the tick that fulfils the contract’s winning or losing condition for path dependent contracts(Touch/No Touch and Stays Between/Goes Outside) or the tick at which the contract is sold before expiry. Example: 86.810"
+                },
+                "tick_count" : {
+                    "type" : "integer",
+                    "description" : "Only for tick trades, number of ticks"
                 },
                 "underlying" : {
                     "description" : "Example: BSESENSEX30",
@@ -200,14 +233,6 @@
                 "is_expired" : {
                     "description" : "Whether the contract is expired or not. Boolean value 1 or 0",
                     "type" : "integer"
-                },
-                "display_value" : {
-                    "description" : "Example: 5.14, same as ask_price",
-                    "type" : "number"
-                },
-                "entry_tick_time" : {
-                    "type" : "integer",
-                    "description" : "This is the epoch time of the entry tick. Example: 1446629000"
                 },
                 "is_path_dependent" : {
                     "type" : "integer",
@@ -222,7 +247,7 @@
                     ],
                     "properties" : {
                         "contract_end" : {
-                            "item" : {
+                            "items" : {
                                 "properties" : {
                                     "name" : {
                                         "type" : [
@@ -235,6 +260,13 @@
                                         "description" : "The spot value at the given epoch.",
                                         "type" : [
                                             "number",
+                                            "null"
+                                        ]
+                                    },
+                                    "tick_display_value": {
+                                        "description" : "The spot value with the correct precision at the given epoch.",
+                                        "type" : [
+                                            "string",
                                             "null"
                                         ]
                                     },
@@ -258,7 +290,7 @@
                         "contract_start" : {
                             "type" : "array",
                             "description" : "Ticks around contract start time.",
-                            "item" : {
+                            "items" : {
                                 "properties" : {
                                     "epoch" : {
                                         "type" : "integer",
@@ -282,6 +314,13 @@
                                         "description" : "The spot value at the given epoch.",
                                         "type" : [
                                             "number",
+                                            "null"
+                                        ]
+                                    },
+                                    "tick_display_value": {
+                                        "description" : "The spot value with the correct precision at the given epoch.",
+                                        "type" : [
+                                            "string",
                                             "null"
                                         ]
                                     }
@@ -292,7 +331,7 @@
                         "all_ticks" : {
                             "type" : "array",
                             "description" : "Ticks for tick expiry contract from start time till expiry.",
-                            "item" : {
+                            "items" : {
                                 "properties" : {
                                     "epoch" : {
                                         "type" : "integer",
@@ -316,6 +355,13 @@
                                         "description" : "The spot value at the given epoch.",
                                         "type" : [
                                             "number",
+                                            "null"
+                                        ]
+                                    },
+                                    "tick_display_value": {
+                                        "description" : "The spot value with the correct precision at the given epoch.",
+                                        "type" : [
+                                            "string",
                                             "null"
                                         ]
                                     }
@@ -335,12 +381,19 @@
                     "type" : "number"
                 },
                 "tick_stream" : {
-                    "item" : {
+                    "items" : {
                         "properties" : {
                             "tick" : {
                                 "description" : "The spot value at the given epoch.",
                                 "type" : [
                                     "number",
+                                    "null"
+                                ]
+                            },
+                            "tick_display_value": {
+                                "description" : "The spot value with the correct precision at the given epoch.",
+                                "type" : [
+                                    "string",
                                     "null"
                                 ]
                             },

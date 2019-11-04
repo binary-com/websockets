@@ -44,7 +44,7 @@
                "type" : "integer"
             },
             "display_value" : {
-               "type" : "number",
+               "type" : "string",
                "description" : "Example: 5.14, same as ask_price"
             },
             "spot_time" : {

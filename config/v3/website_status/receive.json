@@ -13,8 +13,24 @@
             "type" : "string"
         },
         "website_status" : {
-            "required" : ["currencies_config", "api_call_limits"],
+            "required" : ["crypto_config", "currencies_config", "api_call_limits"],
             "properties" : {
+                "crypto_config": {
+                    "description" : "Provides minimum withdrawal for all crypto currency in USD",
+                    "type": "object",
+                    "minProperties" :  1,
+                    "patternProperties": {
+                        "^[A-Z]{3,4}$": {
+                            "type": "object",
+                            "required": ["minimum_withdrawal"],
+                            "properties": {
+                                "minimum_withdrawal": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                },
                 "supported_languages" : {
                     "description" : "Provides codes for languages supported",
                     "type" : "array",
@@ -46,11 +62,11 @@
                                     "properties": {
                                         "limits": {
                                             "type": "object",
+                                            "required" : ["min"],
                                             "properties": {
                                                 "min": {
                                                     "type": "number",
-                                                    "minimum": 0,
-                                                    "required": "1"
+                                                    "minimum": 0
                                                 },
                                                 "max": {
                                                     "type": "number",
@@ -140,19 +156,19 @@
                 },
                 "site_status" : {
                     "enum": ["up", "down"],
-                    "description" : "The current status of the website."
+                    "description" : "the current status of the website."
                 },
                 "clients_country" : {
                     "type" : "string",
-                    "description" : "Country code of connected IP"
+                    "description" : "country code of connected ip"
                 },
                 "terms_conditions_version" : {
-                    "description" : "Latest terms and conditions version",
+                    "description" : "latest terms and conditions version",
                     "type" : "string"
                 },
                 "message": {
                     "type":"string",
-                    "description": "Text for site status banner, contains problem description.  Shown only if set by the system"
+                    "description": "text for site status banner, contains problem description.  shown only if set by the system"
                 }
             },
             "type" : "object"

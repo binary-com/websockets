@@ -38,18 +38,33 @@
          "description" : "transfer_between_accounts"
       },
       "accounts" : {
-         "description" : "the avaiable accounts to transfer",
+         "description" : "the available accounts to transfer, or the accounts affected by a successful transfer.",
          "type" : "array",
          "items" : {
             "properties" : {
                "currency" : {
-                  "type" : "string"
+                  "type" : "string",
+                  "description" : "Default account currency Example: USD"
                },
                "loginid" : {
-                  "type" : "string"
+                  "type" : "string",
+                  "description" : "Client loginid Example: CR000000"
                },
                "balance" : {
+                  "type" : "string",
+                  "description" : "Account balance."
+               },
+               "account_type" : {
+                  "enum" : [
+                     "binary",
+                     "mt5"
+                  ],
+                  "description" : "Type of the account Example: binary",
                   "type" : "string"
+               },
+               "mt5_group" : {
+                  "type" : "string",
+                  "description" : "The group of mt5 account Example: real\\vanuatu_standard"
                }
             },
             "type" : "object"

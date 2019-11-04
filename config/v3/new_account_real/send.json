@@ -5,7 +5,6 @@
       "date_of_birth",
       "first_name",
       "last_name",
-      "salutation",
       "residence"
    ],
    "type" : "object",
@@ -53,7 +52,7 @@
       "address_postcode" : {
          "description" : "Optional field, within 20 characters and may not contain '+'.",
          "type" : "string",
-         "pattern" : "^[^+]{0,20}$"
+         "pattern" : "^[\\w\\s-]{0,20}$"
       },
       "tax_residence" : {
          "description" : "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for maltainvest landing company.",
@@ -76,8 +75,8 @@
          "pattern" : "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
       },
       "first_name" : {
-         "pattern" : "^[\\p{L}\\s'.-]{2,30}$",
-         "description" : "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+         "pattern" : "^[\\p{L}\\s'.-]{2,50}$",
+         "description" : "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
          "type" : "string"
       },
       "address_city" : {
@@ -87,7 +86,6 @@
       },
       "currency" : {
          "description" : "Optional field to set currency of the account. List of supported currencies can be acquired with 'payout_currencies' call",
-         "required" : "0",
          "pattern" : "^[A-Z]{3}$"
       },
       "salutation" : {
@@ -101,8 +99,8 @@
       },
       "last_name" : {
          "type" : "string",
-         "description" : "Within 2-30 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
-         "pattern" : "^[\\p{L}\\s'.-]{2,30}$"
+         "description" : "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+         "pattern" : "^[\\p{L}\\s'.-]{2,50}$"
       },
       "account_opening_reason" : {
          "enum" : [
@@ -161,8 +159,7 @@
       },
       "client_type" : {
          "pattern" : "^retail|professional$",
-         "description" : "Optional field, indicates whether this is for a client requesting an account with professional status. Defaults to retail.",
-         "required" : "0"
+         "description" : "Optional field, indicates whether this is for a client requesting an account with professional status. Defaults to retail."
       }
    }
 }

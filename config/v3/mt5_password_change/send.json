@@ -33,12 +33,14 @@
       "old_password" : {
          "pattern" : "^[ -~]+$",
          "description" : "Old password for validation (non-empty string, accepts any printable ASCII character)",
-         "type" : "string"
+         "type" : "string",
+         "sensitive" : 1
       },
       "new_password" : {
          "type" : "string",
          "description" : "New password (length within 8-25 chars, accepts any printable ASCII character)",
-         "pattern" : "^[ -~]{8,25}$"
+         "pattern" : "^[ -~]{8,25}$",
+         "sensitive" : 1
       },
       "login" : {
          "description" : "MT5 user login",

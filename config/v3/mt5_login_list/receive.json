@@ -18,7 +18,7 @@
             "properties" : {
                "login" : {
                   "description" : "Login of MT5 account.",
-                  "type" : "integer"
+                  "type" : "string"
                },
                "group" : {
                   "description" : "Group type of the MT5 account, e.g. real, vanuatu, etc.",
@@ -27,6 +27,10 @@
                "balance": {
                   "description": "Balance of the MT5 account.",
                   "type": "number"
+               },
+               "display_balance": {
+                  "type": "string",
+                  "description": "Account balance, formatted to appropriate decimal places."
                },
                "country": {
                   "description": "Residence of the MT5 account.",
@@ -43,15 +47,6 @@
                "leverage": {
                   "description": "Leverage of the MT5 account (1 to 1000).",
                   "type": "number"
-               },
-               "mamm_status": {
-                  "description": "Status to depict whether the MT5 account is a MAMM or not.",
-                  "pattern" : "^(1|0)$",
-                  "type" : "integer"
-               },
-               "manager_id": {
-                  "description": "ID of the MT5 account, if it is a MAMM.",
-                  "type": "string"
                },
                "name": {
                   "description": "Name of the owner of the MT5 account.",

@@ -7,7 +7,7 @@
       "echo_req"
    ],
    "type" : "object",
-   "description" : "A summary of account statistics's response",
+   "description" : "A summary of account statistics",
    "properties" : {
       "msg_type" : {
          "type" : "string",

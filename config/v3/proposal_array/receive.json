@@ -1,109 +1,131 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   
-   "title" : "Multiple Price Proposal Response",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "type" : "object",
-   "description" : "Latest price and other details for a given contract",
-   "properties" : {
-      "proposal_array" : {
-          "required" : ["id", "date_start", "proposals", "spot_time" ], 
-         "spot" : {
-            "description" : "Spot value (if there are no exchange data-feed licensing restrictions for the underlying symbol). Example: 9874.52",
-            "type" : "number"
-         },
-         "type" : "object",
-         "description" : "Latest price and other details for a given contract",
-         "title" : "Price Proposal for Multiple Contracts Response",
-         "id" : {
-            "type" : "string",
-            "description" : "A stream id that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579"
-         },
-         "date_start" : {
-            "type" : "integer",
-            "description" : "Starting date for available contracts (epoch time). Example: 1439999053"
-         },
-         "proposals" : {
-            "description" : "Latest price and other details for available contracts",
-            "type" : "object",
-            "title" : "Multiple Price Proposal Response",
-            "patternProperties" : {
-               "^\\w{2,30}$" : {
-                  "required" : ["payout", "ask_require", "longcode", "display_value" ], 
-                  "items" : {
-                     "type" : "object",
-                     "description" : "Price Proposal result",
-                     "properties" : {
-                        "error" : {
-                           "description" : "Error message",
-                           "type" : "object"
-                        },
-                        "barrier" : {
-                           "type" : "string",
-                           "description" : "Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers.",
-                           "pattern" : "^[+-]?[0-9]+\\.?[0-9]*$"
-                        },
-                        "payout" : {
-                           "type" : "number",
-                           "description" : "Example: 10"
-                        },
-                        "barrier2" : {
-                           "type" : "string",
-                           "description" : "Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers.",
-                           "pattern" : "^[+-]?[0-9]+\\.?[0-9]*$"
-                        },
-                        "ask_price" : {
-                           "type" : "number",
-                           "description" : "Example: 5.14"
-                        },
-                        "longcode" : {
-                           "description" : "Example: Win payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time.",
-                           "type" : "string"
-                        },
-                        "display_value" : {
-                           "description" : "Example: 5.14, same as ask_price",
-                           "type" : "number"
-                        }
-                     }
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Multiple Price Proposal Response",
+  "required": [
+    "echo_req",
+    "msg_type"
+  ],
+  "type": "object",
+  "description": "Latest price and other details for a given contract",
+  "properties": {
+    "proposal_array": {
+      "required": [
+        "id",
+        "proposals"
+      ],
+      "type": "object",
+      "description": "Latest price and other details for a given contract",
+      "title": "Price Proposal for Multiple Contracts Response",
+      "properties": {
+        "spot": {
+          "description": "Spot value (if there are no exchange data-feed licensing restrictions for the underlying symbol). Example: 9874.52",
+          "type": "number"
+        },
+        "id": {
+          "type": "string",
+          "description": "A stream id that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579"
+        },
+        "date_start": {
+          "type": "integer",
+          "description": "Starting date for available contracts (epoch time). Example: 1439999053"
+        },
+        "proposals": {
+          "description": "Latest price and other details for available contracts",
+          "type": "object",
+          "title": "Multiple Price Proposal Response",
+          "patternProperties": {
+            "^\\w{2,30}$": {
+              "description": "Multiple Price Proposal Result",
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "description": "Price Proposal result",
+                    "required": [
+                      "payout",
+                      "ask_price",
+                      "longcode",
+                      "display_value"
+                    ],
+                    "properties": {
+                      "barrier": {
+                        "type": "string",
+                        "description": "Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers.",
+                        "pattern": "^[+-]?[0-9]+\\.?[0-9]*$"
+                      },
+                      "payout": {
+                        "type": "number",
+                        "description": "Example: 10"
+                      },
+                      "barrier2": {
+                        "type": "string",
+                        "description": "Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers.",
+                        "pattern": "^[+-]?[0-9]+\\.?[0-9]*$"
+                      },
+                      "ask_price": {
+                        "type": "number",
+                        "description": "Example: 5.14"
+                      },
+                      "longcode": {
+                        "description": "Example: Win payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time.",
+                        "type": "string"
+                      },
+                      "display_value": {
+                        "description": "Example: 5.14, same as ask_price",
+                        "type": "string"
+                      }
+                    }
                   },
-                  "description" : "Multiple Price Proposal Result",
-                  "type" : "array"
-               }
+                  {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "required": [
+                      "error"
+                    ],
+                    "properties": {
+                      "error": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                ]
+              }
             }
-         },
-         "spot_time" : {
-            "description" : "Timestamp for latest spot (epoch time). Example: 1439999052",
-            "type" : "integer"
-         }
+          }
+        },
+        "spot_time": {
+          "description": "Timestamp for latest spot (epoch time). Example: 1439999052",
+          "type": "integer"
+        }
       },
-      "msg_type" : {
-         "description" : "proposal_array",
-         "type" : "string"
+      "msg_type": {
+        "description": "proposal_array",
+        "type": "string"
       },
-      "echo_req" : {
-         "description" : "Echo of the request made",
-         "title" : "Echo request"
+      "echo_req": {
+        "description": "Echo of the request made",
+        "title": "Echo request"
       },
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
+      "req_id": {
+        "description": "Optional field send in request to map to response, present only when request contains req_id",
+        "type": "integer"
       },
-      "subscription" : {
-         "title" : "Subscription information",
-         "description" : "For subscription requests only",
-         "type" : "object",
-         "required" : [
-            "id"
-         ],
-         "properties": {
-            "id" : {
-             "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
-             "type" : "string"
-            }
-         }
-     }
-   }
+      "subscription": {
+        "title": "Subscription information",
+        "description": "For subscription requests only",
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
 }

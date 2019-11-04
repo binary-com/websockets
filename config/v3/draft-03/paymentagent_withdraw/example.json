@@ -1,7 +1,0 @@
-{
-    "paymentagent_withdraw": 1,
-    "paymentagent_loginid": "CR100001",
-    "currency": "USD",
-    "amount": 1000,
-    "verification_code": "my_verification_code"
-}

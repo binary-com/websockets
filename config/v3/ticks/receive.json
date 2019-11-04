@@ -13,6 +13,7 @@
          "type" : "object",
          "description" : "Tick by tick list of streamed data",
          "title" : "TickSpotData",
+         "required" : ["pip_size"],
          "properties" : {
             "id" : {
                "description" : "A stream id that can be used to cancel this stream using the Forget request",
@@ -37,6 +38,10 @@
             "ask" : {
                "type" : "number",
                "description" : "Market ask at the epoch"
+            },
+            "pip_size" : {
+                "type": "number",
+                "description" : "Indicates the number of decimal points that the returned amounts must be displayed with"
             }
          }
       },

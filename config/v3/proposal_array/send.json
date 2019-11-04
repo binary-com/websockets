@@ -1,15 +1,13 @@
 {
    "$schema" : "http://json-schema.org/draft-04/schema#",
-   "description" : "Get latest prices for a specific contract with different barriers.",
+   "description" : "(This API call is deprecated) Get latest prices for a specific contract with different barriers.",
    "type" : "object",
    "required" : [
-      "basis",
       "barriers",
       "contract_type",
       "proposal_array",
       "currency",
-      "symbol",
-      "amount"
+      "symbol"
    ],
    "additionalProperties" : false,
    "title" : "Price Proposal for Multiple Contracts Request",
@@ -37,9 +35,13 @@
          "description" : "Indicate whether amount is 'payout' or 'stake'.",
          "enum" : [
             "payout",
-            "stake",
-            "multiplier"
+            "stake"
          ]
+      },
+      "multiplier": {
+         "description": "The multiplier for non-binary options. E.g. lookbacks.",
+         "type" : "number",
+         "minimum" : 0
       },
       "duration" : {
          "description" : "Duration quantity.",
@@ -55,12 +57,12 @@
                "barrier2" : {
                   "description" : "Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers.",
                   "type" : "string",
-                  "pattern" : "^[+-]?[0-9]+\\.?[0-9]*$"
+                  "pattern" : "^(?=.{1,20}$)[+-]?[0-9]+\\.?[0-9]*$"
                },
                "barrier" : {
                   "description" : "Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers. .",
                   "type" : "string",
-                  "pattern" : "^[+-]?[0-9]+\\.?[0-9]*$"
+                  "pattern" : "^(?=.{1,20}$)[+-]?[0-9]+\\.?[0-9]*$"
                }
             },
             "additionalProperties" : false

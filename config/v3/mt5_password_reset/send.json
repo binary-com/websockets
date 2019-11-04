@@ -14,7 +14,8 @@
       "new_password" : {
          "pattern" : "^[ -~]{8,25}$",
          "type" : "string",
-         "description" : "New password of the account (length within 8-25 chars, accepts any printable ASCII character)."
+         "description" : "New password of the account (length within 8-25 chars, accepts any printable ASCII character).",
+         "sensitive" : 1
       },
       "passthrough" : {
          "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",

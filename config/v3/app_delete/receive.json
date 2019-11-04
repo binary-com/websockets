@@ -14,7 +14,7 @@
          "description" : "app_delete"
       },
       "app_delete" : {
-         "type" : "string",
+         "type" : "integer",
          "description" : "1 on success"
       },
       "req_id" : {

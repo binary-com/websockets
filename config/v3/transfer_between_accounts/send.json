@@ -34,6 +34,14 @@
          "pattern" : "^[A-Z]{3}$",
          "type" : "string"
       },
+      "accounts" : {
+         "enum" : [
+            "all", 
+            "brief"
+         ],
+         "default" : "brief",
+         "description" : "Optional field to control the list of accounts returned when account_from or account_to is not provided. 'Brief' will only include standard trading accounts and can be faster."
+      },      
       "transfer_between_accounts" : {
          "enum" : [
             1

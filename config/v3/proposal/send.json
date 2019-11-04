@@ -6,9 +6,7 @@
       "currency",
       "symbol",
       "contract_type",
-      "basis",
-      "proposal",
-      "amount"
+      "proposal"
    ],
    "additionalProperties" : false,
    "title" : "Price Proposal Request",
@@ -57,12 +55,12 @@
       "barrier2" : {
          "description" : "Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers. Not needed for lookbacks.",
          "type" : "string",
-         "pattern" : "^[+-]?[0-9]+\\.?[0-9]*$"
+         "pattern" : "^(?=.{1,20}$)[+-]?[0-9]+\\.?[0-9]*$"
       },
       "barrier" : {
          "type" : "string",
          "description" : "Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers. Not needed for lookbacks.",
-         "pattern" : "^[+-]?[0-9]+\\.?[0-9]*$"
+         "pattern" : "^(?=.{1,20}$)[+-]?[0-9]+\\.?[0-9]*$"
       },
       "product_type" : {
          "description" : "The product type.",
@@ -102,10 +100,14 @@
       "basis" : {
          "enum" : [
             "payout",
-            "stake",
-            "multiplier"
+            "stake"
          ],
-         "description" : "Indicates whether amount is 'payout' or 'stake' for binary options, and 'multiplier' for lookbacks."
+         "description" : "Indicates whether amount is 'payout' or 'stake'."
+      },
+      "multiplier": {
+         "description": "The multiplier for non-binary options. E.g. lookbacks.",
+         "type" : "number",
+         "minimum" : 0
       },
       "req_id" : {
          "type" : "integer",

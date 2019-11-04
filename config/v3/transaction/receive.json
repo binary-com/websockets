@@ -59,10 +59,8 @@
             },
             "low_barrier" : {
                "description" : "The low barrier of a contract. Only applicable to double barrier contracts.",
-               "type" : [
-                  "number",
-                  "string"
-               ]
+               "type" : "string"
+               
             },
             "transaction_id" : {
                "type" : "integer",

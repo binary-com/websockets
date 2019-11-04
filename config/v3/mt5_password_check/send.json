@@ -13,7 +13,8 @@
       "password" : {
          "type" : "string",
          "description" : "the password of the account.",
-         "pattern" : "^[ -~]+$"
+         "pattern" : "^[ -~]+$",
+         "sensitive" : 1
       },
       "passthrough" : {
          "type" : "object",
