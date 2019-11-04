@@ -313,26 +313,12 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
             '</pre>';
     }
 
-    function sortKeys(schema, method_name) {
-        if (!schema.properties) return;
-
-        // Alphabetic (recursive)
-        var obj = {};
-        Object.keys(schema.properties).sort().forEach(function (prop) {
-            obj[prop] = schema.properties[prop];
-            if (schema.properties[prop].type === 'object') {
-                sortKeys(schema.properties[prop]);
-            } else if (schema.properties[prop].type === 'array' && /object/.test((schema.properties[prop].items || {}).type)) {
-                sortKeys(schema.properties[prop].items); // array of objects
-            }
-        });
-        schema.properties = Object.assign(obj, schema.properties);
-
-        // Method name first, then Required
+    function sortRequiredFirst(schema, method_name) {
         if ((schema.required || []).length) {
             var req_obj = {};
             schema.required
                 .sort(function(a, b) {
+                    // Method name first, then Required
                     return a === method_name ? -1 : b === method_name ? +1 : a.localeCompare(b);
                 })
                 .forEach(function(prop) {
@@ -342,23 +328,9 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
         }
     }
 
-    function sortSchema(schema, method_name) { // docson displays in the same order
-        sortKeys(schema, method_name);
-
-        // Move additional parameters to the end
-        ['echo_req', 'msg_type', 'passthrough', 'req_id'].forEach(function(prop) {
-            var obj = {};
-            if (prop in schema.properties) {
-                obj[prop] = schema.properties[prop];
-                delete schema.properties[prop];
-            }
-            Object.assign(schema.properties, obj);
-        });
-    }
-
-    function loadAndDisplaySchema($node, schema_url, method_name) {
+    function loadAndDisplaySchema($node, schema_url, method_name, required_first) {
         $.get(schema_url, function(schema) {
-            sortSchema(schema, method_name);
+            if (required_first) sortRequiredFirst(schema, method_name);
             docson.doc($node, schema, null, getBaseUrl());
         });
     }
@@ -458,8 +430,8 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
         var method_name = $('#api-call-selector').val();
         var json_paths  = getJsonPaths(method_name);
 
-        loadAndDisplaySchema($('#playground-req-schema'), json_paths.send,    method_name);
-        loadAndDisplaySchema($('#playground-res-schema'), json_paths.receive, method_name);
+        loadAndDisplaySchema($('#playground-req-schema'), json_paths.send,    method_name, true);
+        loadAndDisplaySchema($('#playground-res-schema'), json_paths.receive, method_name, false);
         loadAndEditJson(     $('#playground-request'),    json_paths.example);
 
         window.location.hash = method_name;
