@@ -1,7 +1,6 @@
 ---
 ---
 #content {
-    width: 100%;
     padding: 4rem 0.5rem 2rem;
     margin: 0 auto;
     max-width: 1000px;
@@ -378,6 +377,31 @@ code {
 // Main action (call name) selector
 .docson > .box > .box-body > .signature:nth-child(2) > .signature-header > .property-name {
     color: darkblue;
+}
+
+.source-button.button {
+    z-index: 2;
+}
+
+.deprecated, .deprecated ~ #playground-res-schema {
+    background: #e8e8e8;
+    position: relative;
+
+    &:after {
+        content: 'DEPRECATED';
+        position: absolute;
+        top: 7px;
+        right: 5px;
+        display: inline-block;
+        background: #fffde7;
+        color: #777;
+        border: 1px dashed #777;
+        border-radius: 5px;
+        padding: 3px 7px;
+    }
+    .box-title .title {
+        padding-right: 110px;
+    }
 }
 
 @import "monokai.css";

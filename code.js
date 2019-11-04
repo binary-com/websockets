@@ -331,7 +331,12 @@ require(["docson/docson", "lib/jquery", "lib/select2.min"], function(docson) {
     function loadAndDisplaySchema($node, schema_url, method_name, required_first) {
         $.get(schema_url, function(schema) {
             if (required_first) sortRequiredFirst(schema, method_name);
+
             docson.doc($node, schema, null, getBaseUrl());
+
+            setTimeout(function() {
+                    $node[schema.deprecated ? 'addClass' : 'removeClass']('deprecated');
+                }, 100);
         });
     }
 
