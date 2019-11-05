@@ -1,5 +1,5 @@
 function isProduction(url) {
-    return url && url.indexOf('developers.binary.com') > 0;
+    return url && /(developers\.binary\.com|binary\.sx)/i.test(url);
 }
 
 function isLocal(url) {

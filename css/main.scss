@@ -3,6 +3,7 @@
 #content {
     padding: 4rem 0.5rem 2rem;
     margin: 0 auto;
+    width: calc(100% - 1rem);
     max-width: 1000px;
     flex-direction: column;
 }
@@ -376,10 +377,6 @@ code {
     color: darkblue;
 }
 
-.source-button.button {
-    z-index: 2;
-}
-
 .deprecated, .deprecated ~ #playground-res-schema {
     background: #e8e8e8;
     position: relative;
@@ -398,6 +395,9 @@ code {
     }
     .box-title .title {
         padding-right: 110px;
+    }
+    .source-button.button {
+        z-index: 2;
     }
 }
 
