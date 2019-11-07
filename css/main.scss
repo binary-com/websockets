@@ -401,4 +401,8 @@ code {
     }
 }
 
+.select2-selection, .select2-selection__rendered {
+    line-height: 32px !important;
+}
+
 @import "monokai.css";
