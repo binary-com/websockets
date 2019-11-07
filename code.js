@@ -1,25 +1,39 @@
 function isProduction(url) {
-    return url && url.indexOf('developers.binary.com') > 0;
+    return url && /(developers\.binary\.com|binary\.sx)/i.test(url);
+}
+
+function isLocal(url) {
+    return url && url.indexOf('//localhost') > 0;
 }
 
 function getBaseUrl(url) {
-    return (isProduction('' + url) ? '' : '/' + url.split('/')[3]) + '/';
+    url = url || document.location.href;
+    return (isProduction(url) || isLocal(url) ? '' : '/' + url.split('/')[3]) + '/';
 }
-// Add paths with same names as keys for fallback
 
+function getJsonPaths(method_name) {
+    url_path = getBaseUrl() + 'config/v3/' + method_name + '/';
+    return {
+        send   : url_path + 'send.json',
+        receive: url_path + 'receive.json',
+        example: url_path + 'example.json',
+    };
+}
+
+// Add paths with same names as keys for fallback
 require.config({
-    baseUrl: getBaseUrl(document.location.href),
+    baseUrl: getBaseUrl(),
     path: {
-        '/docson/docson': '/docson/docson.js',
+        '/docson/docson'      : '/docson/docson.js',
         '/lib/binary-live-api': '/lib/binary-live-api.js',
-        '/lib/handlebars': '/lib/handlebars.js',
-        '/lib/highlight': '/lib/highlight.js',
-        '/lib/jquery': '/lib/jquery.js',
-        '/lib/jsonpointer': '/lib/jsonpointer.js',
-        '/lib/marked': '/lib/marked.js',
-        '/lib/rainbow': '/lib/rainbow.js',
-        '/lib/select2.min': '/lib/select2.min.js',
-        '/lib/traverse': '/lib/traverse.js',
+        '/lib/handlebars'     : '/lib/handlebars.js',
+        '/lib/highlight'      : '/lib/highlight.js',
+        '/lib/jquery'         : '/lib/jquery.js',
+        '/lib/jsonpointer'    : '/lib/jsonpointer.js',
+        '/lib/marked'         : '/lib/marked.js',
+        '/lib/rainbow'        : '/lib/rainbow.js',
+        '/lib/select2.min'    : '/lib/select2.min.js',
+        '/lib/traverse'       : '/lib/traverse.js',
     }
 });
 
@@ -49,9 +63,9 @@ require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function
     $('#connected').hide();
 
     function endpointNotification() {
-        const end_note = document.getElementById('end-note');
+        var end_note = document.getElementById('end-note');
         if (end_note) {
-            const server = getServerUrl();
+            var server = getServerUrl();
             if (server && server !== defaultApiUrl) {
                 end_note.innerHTML = 'The server <a href="https://developers.binary.com/endpoint/">endpoint</a> is: ' + server;
                 end_note.classList.remove('invisible');
@@ -256,7 +270,6 @@ require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function
     }
 
     function jsonToPretty(json, offset) {
-
         var spaces = function(n) {
             return new Array(n + 1).join(" ");
         };
@@ -310,9 +323,30 @@ require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function
             '</pre>';
     }
 
-    function loadAndDisplaySchema($node, schemaUrl) {
-        $.get(schemaUrl, function(schema) {
-            docson.doc($node, schema);
+    function sortRequiredFirst(schema, method_name) {
+        if ((schema.required || []).length) {
+            var req_obj = {};
+            schema.required
+                .sort(function(a, b) {
+                    // Method name first, then Required
+                    return a === method_name ? -1 : b === method_name ? +1 : a.localeCompare(b);
+                })
+                .forEach(function(prop) {
+                    req_obj[prop] = schema.properties[prop];
+                });
+            schema.properties = Object.assign(req_obj, schema.properties);
+        }
+    }
+
+    function loadAndDisplaySchema($node, schema_url, method_name, required_first) {
+        $.get(schema_url, function(schema) {
+            if (required_first) sortRequiredFirst(schema, method_name);
+
+            docson.doc($node, schema, null, getBaseUrl());
+
+            setTimeout(function() {
+                    $node[schema.deprecated ? 'addClass' : 'removeClass']('deprecated');
+                }, 100);
         });
     }
 
@@ -353,7 +387,6 @@ require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function
     }
 
     function updatePlaygroundWithRequestAndResponse() {
-
         try {
             var json = JSON.parse($('#playground-request').val());
         } catch (err) {
@@ -381,17 +414,42 @@ require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function
         loadAndDisplaySchema($this, $this.attr('data-schema'));
     });
 
-    $('#api-call-selector').select2().on('change', function() {
-        var verStr = 'v3',
-            apiStr = $('#api-call-selector').val(),
-            urlPath = '/config/' + verStr + '/' + apiStr + '/',
-            requestSchemaUrl = urlPath + 'send.json',
-            responseSchemaUrl = urlPath + 'receive.json',
-            exampleJsonUrl = urlPath + 'example.json';
-        loadAndDisplaySchema($('#playground-req-schema'), requestSchemaUrl);
-        loadAndDisplaySchema($('#playground-res-schema'), responseSchemaUrl);
-        loadAndEditJson($('#playground-request'), exampleJsonUrl);
-        window.location.hash = apiStr;
+    function customMatcher(params, data) {
+        var search_term = (params.term || '').trim();
+
+        if (!search_term) {
+            return data;
+        }
+
+        if (typeof data.children === 'undefined') {
+            return null;
+        }
+
+        var regexp = new RegExp(search_term, 'i');
+        var filtered_children = data.children.filter(function(child) {
+            return regexp.test([child.text, child.id]);
+        });
+
+        if (filtered_children.length) {
+            var modified_data = $.extend({}, data, true);
+            modified_data.children = filtered_children;
+            return modified_data;
+        }
+
+        return null;
+    }
+
+    $('#api-call-selector').select2({
+        matcher: customMatcher,
+    }).on('change', function() {
+        var method_name = $('#api-call-selector').val();
+        var json_paths  = getJsonPaths(method_name);
+
+        loadAndDisplaySchema($('#playground-req-schema'), json_paths.send,    method_name, true);
+        loadAndDisplaySchema($('#playground-res-schema'), json_paths.receive, method_name, false);
+        loadAndEditJson(     $('#playground-request'),    json_paths.example);
+
+        window.location.hash = method_name;
     });
 
     $('#api-language-selector').on('change', function() {
