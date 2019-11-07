@@ -1,29 +1,29 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "additionalProperties" : false,
-   "title" : "Sell a Contract Send",
-   "type" : "object",
-   "description" : "Sell a Contract as identified from a previous Portfolio call",
-   "required" : [
-      "sell",
-      "price"
-   ],
-   "properties" : {
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "sell" : {
-         "description" : "Pass contract_id received from the Portfolio call",
-         "type" : "integer"
-      },
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      },
-      "price" : {
-         "description" : "Minimum price at which to sell the contract, or '0' for 'sell at market'",
-         "type" : "number"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Sell Contract (request)",
+    "description": "Sell a Contract as identified from a previous Portfolio call",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "price",
+        "sell"
+    ],
+    "properties": {
+        "sell": {
+            "description": "Pass contract_id received from the Portfolio call",
+            "type": "integer"
+        },
+        "price": {
+            "description": "Minimum price at which to sell the contract, or '0' for 'sell at market'",
+            "type": "number"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

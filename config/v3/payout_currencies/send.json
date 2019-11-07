@@ -1,27 +1,27 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "payout_currencies"
-   ],
-   "type" : "object",
-   "description" : "Retrieve a list of available option payout currencies. If a user is logged in, only the currencies available for his account will be returned.",
-   "additionalProperties" : false,
-   "title" : "Payout Currencies Request",
-   "properties" : {
-      "req_id" : {
-         "type" : "integer",
-         "description" : "[Optional] Used to map request to response."
-      },
-      "passthrough" : {
-         "description" : "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-         "type" : "object"
-      },
-      "payout_currencies" : {
-         "type" : "integer",
-         "description" : "Must be 1.",
-         "enum" : [
-            1
-         ]
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Payout Currencies (request)",
+    "description": "Retrieve a list of available option payout currencies. If a user is logged in, only the currencies available for his account will be returned.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "payout_currencies"
+    ],
+    "properties": {
+        "payout_currencies": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

@@ -1,21 +1,23 @@
 {
-    "$schema" : "http://json-schema.org/draft-04/schema#",
-    "title" : "Verify Email Request",
-    "additionalProperties" : false,
-    "required" : [
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Verify Email (request)",
+    "description": "Verify an email address for various purposes. The system will send an email to the address containing a security code for verification.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
         "type",
         "verify_email"
     ],
-    "description" : "Verify an email address for various purposes. The system will send an email to the address containing a security code for verification.",
-    "type" : "object",
-    "properties" : {
-        "passthrough" : {
-            "description" : "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-            "type" : "object"
+    "properties": {
+        "verify_email": {
+            "description": "Email address to be verified.",
+            "type": "string",
+            "format": "email"
         },
-        "type" : {
-            "description" : "Purpose of the email verification call.",
-            "enum" : [
+        "type": {
+            "description": "Purpose of the email verification call.",
+            "type": "string",
+            "enum": [
                 "account_opening",
                 "reset_password",
                 "paymentagent_withdraw",
@@ -23,55 +25,58 @@
                 "mt5_password_reset"
             ]
         },
-        "req_id" : {
-            "type" : "integer",
-            "description" : "[Optional] Used to map request to response."
-        },
-        "verify_email" : {
-            "format" : "email",
-            "description" : "Email address to be verified.",
-            "type" : "string"
-        },
         "url_parameters": {
-            "type": "object",
             "description": "Extra parameters that can be attached to the verify email link url",
-            "additionalProperties" : false,
+            "type": "object",
+            "additionalProperties": false,
             "properties": {
-                "utm_medium": {
-                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$",
+                "affiliate_token": {
+                    "description": "[Optional] Affiliate token, within 32 characters.",
                     "type": "string",
-                    "description": "[Optional] Identifies the medium the link was used upon such as: email, CPC, or other methods of sharing."
+                    "pattern": "^[\\w-]{0,32}$"
+                },
+                "date_first_contact": {
+                    "description": "[Optional] Date of first contact, format: yyyy-mm-dd in GMT timezone.",
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+                },
+                "gclid_url": {
+                    "description": "[Optional] Google Click Identifier to track source.",
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+                },
+                "signup_device": {
+                    "description": "[Optional] Show whether user has used mobile or desktop.",
+                    "type": "string",
+                    "enum": [
+                        "desktop",
+                        "mobile"
+                    ]
+                },
+                "utm_campaign": {
+                    "description": "[Optional] Identifies a specific product promotion or strategic campaign such as a spring sale or other promotions.",
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+                },
+                "utm_medium": {
+                    "description": "[Optional] Identifies the medium the link was used upon such as: email, CPC, or other methods of sharing.",
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
                 },
                 "utm_source": {
                     "description": "[Optional] Identifies the source of traffic such as: search engine, newsletter, or other referral.",
                     "type": "string",
                     "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
-                },
-                "utm_campaign": {
-                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$",
-                    "description": "[Optional] Identifies a specific product promotion or strategic campaign such as a spring sale or other promotions.",
-                    "type": "string"
-                },
-                "affiliate_token": {
-                    "type": "string",
-                    "pattern": "^[\\w-]{0,32}$",
-                    "description": "[Optional] Affiliate token, within 32 characters."
-                },
-                "gclid_url": {
-                    "type": "string",
-                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$",
-                    "description": "[Optional] Google Click Identifier to track source."
-                },
-                "signup_device": {
-                    "enum":["desktop" , "mobile"],
-                    "description": "[Optional] Show whether user has used mobile or desktop."
-                },
-                "date_first_contact": {
-                    "type": "string",
-                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
-                    "description": "[Optional] Date of first contact, format: yyyy-mm-dd in GMT timezone."
                 }
             }
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
         }
     }
 }

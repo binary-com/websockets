@@ -1,35 +1,38 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Sell expired contracts",
-   
-   "description" : "Sell expired contract response",
-   "type" : "object",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "properties" : {
-      "echo_req" : {
-         "description" : "Echo of the request made",
-         "title" : "Echo request"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      },
-      "sell_expired" : {
-         "type" : "object",
-         "description" : "Sell expired contract object containing count of contracts sold",
-         "properties" : {
-            "count" : {
-               "type" : "integer",
-               "description" : "Example: 10"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Sell Expired Contracts (response)",
+    "description": "The result of sell expired contract",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "sell_expired": {
+            "title": "sell_expired",
+            "description": "Sell expired contract object containing count of contracts sold",
+            "type": "object",
+            "properties": {
+                "count": {
+                    "description": "Example: 10",
+                    "type": "integer"
+                }
             }
-         }
-      },
-      "msg_type" : {
-         "description" : "sell_expired",
-         "type" : "string"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "sell_expired"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

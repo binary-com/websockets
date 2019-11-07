@@ -1,27 +1,27 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "get_account_status"
-   ],
-   "type" : "object",
-   "description" : "Get Account Status",
-   "title" : "Get Account Status Send",
-   "additionalProperties" : false,
-   "properties" : {
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field to map request to response"
-      },
-      "get_account_status" : {
-         "enum" : [
-            1
-         ],
-         "type" : "integer",
-         "description" : "Must be 1"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Account Status (request)",
+    "description": "Get Account Status",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "get_account_status"
+    ],
+    "properties": {
+        "get_account_status": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

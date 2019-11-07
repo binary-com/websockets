@@ -1,87 +1,214 @@
 {
-    "$schema" : "http://json-schema.org/draft-04/schema#",
-    "required" : [
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Server Status (response)",
+    "description": "Server status alongside general settings like call limits, currencies information, supported languages, etc.",
+    "type": "object",
+    "required": [
         "echo_req",
         "msg_type"
     ],
-    "type" : "object",
-    "description" : null,
-    "title" : "Website Status Response",
-    "properties" : {
-        "msg_type" : {
-            "description" : "website_status",
-            "type" : "string"
-        },
-        "website_status" : {
-            "required" : ["crypto_config", "currencies_config", "api_call_limits"],
-            "properties" : {
-                "crypto_config": {
-                    "description" : "Provides minimum withdrawal for all crypto currency in USD",
+    "properties": {
+        "website_status": {
+            "title": "website_status",
+            "description": "Server status and other information regarding general settings",
+            "type": "object",
+            "required": [
+                "api_call_limits",
+                "crypto_config",
+                "currencies_config"
+            ],
+            "properties": {
+                "api_call_limits": {
+                    "description": "Maximum number of API calls during specified period of time.",
                     "type": "object",
-                    "minProperties" :  1,
-                    "patternProperties": {
-                        "^[A-Z]{3,4}$": {
+                    "required": [
+                        "max_proposal_subscription",
+                        "max_requestes_general",
+                        "max_requests_outcome",
+                        "max_requests_pricing"
+                    ],
+                    "properties": {
+                        "max_proposal_subscription": {
+                            "description": "Maximum subscription to proposal calls.",
                             "type": "object",
-                            "required": ["minimum_withdrawal"],
+                            "required": [
+                                "applies_to",
+                                "max"
+                            ],
                             "properties": {
-                                "minimum_withdrawal": {
+                                "applies_to": {
+                                    "description": "Describes which calls this limit applies to.",
+                                    "type": "string"
+                                },
+                                "max": {
+                                    "description": "Maximum number of allowed calls.",
+                                    "type": "number"
+                                }
+                            }
+                        },
+                        "max_requestes_general": {
+                            "description": "Maximum number of general requests allowed during specified period of time.",
+                            "type": "object",
+                            "required": [
+                                "applies_to",
+                                "hourly",
+                                "minutely"
+                            ],
+                            "properties": {
+                                "applies_to": {
+                                    "description": "Describes which calls this limit applies to.",
+                                    "type": "string"
+                                },
+                                "hourly": {
+                                    "description": "The maximum of allowed calls per hour.",
+                                    "type": "number"
+                                },
+                                "minutely": {
+                                    "description": "The maximum of allowed calls per minute.",
+                                    "type": "number"
+                                }
+                            }
+                        },
+                        "max_requests_outcome": {
+                            "description": "Maximum number of outcome requests allowed during specified period of time.",
+                            "type": "object",
+                            "required": [
+                                "applies_to",
+                                "hourly",
+                                "minutely"
+                            ],
+                            "properties": {
+                                "applies_to": {
+                                    "description": "Describes which calls this limit applies to.",
+                                    "type": "string"
+                                },
+                                "hourly": {
+                                    "description": "The maximum of allowed calls per hour.",
+                                    "type": "number"
+                                },
+                                "minutely": {
+                                    "description": "The maximum of allowed calls per minute.",
+                                    "type": "number"
+                                }
+                            }
+                        },
+                        "max_requests_pricing": {
+                            "description": "Maximum number of pricing requests allowed during specified period of time.",
+                            "type": "object",
+                            "required": [
+                                "applies_to",
+                                "hourly",
+                                "minutely"
+                            ],
+                            "properties": {
+                                "applies_to": {
+                                    "description": "Describes which calls this limit applies to.",
+                                    "type": "string"
+                                },
+                                "hourly": {
+                                    "description": "The maximum of allowed calls per hour.",
+                                    "type": "number"
+                                },
+                                "minutely": {
+                                    "description": "The maximum of allowed calls per minute.",
                                     "type": "number"
                                 }
                             }
                         }
                     }
                 },
-                "supported_languages" : {
-                    "description" : "Provides codes for languages supported",
-                    "type" : "array",
-                    "items" : {
-                        "type" : "string"
+                "clients_country": {
+                    "description": "Country code of connected IP",
+                    "type": "string"
+                },
+                "crypto_config": {
+                    "description": "Provides minimum withdrawal for all crypto currency in USD",
+                    "type": "object",
+                    "minProperties": 1,
+                    "patternProperties": {
+                        "^[A-Z]{3,4}$": {
+                            "description": "Crypto-currency code",
+                            "type": "object",
+                            "required": [
+                                "minimum_withdrawal"
+                            ],
+                            "properties": {
+                                "minimum_withdrawal": {
+                                    "description": "Minimum withdrawal for the currency in USD.",
+                                    "type": "number"
+                                }
+                            }
+                        }
                     }
                 },
                 "currencies_config": {
+                    "description": "Available currencies and their information",
                     "type": "object",
-                    "minProperties" :  1,
+                    "minProperties": 1,
                     "patternProperties": {
                         "^[A-Z]{3,4}$": {
+                            "description": "Currency code",
                             "type": "object",
-                            "required": ["fractional_digits", "type", "stake_default", "transfer_between_accounts"],
+                            "required": [
+                                "fractional_digits",
+                                "stake_default",
+                                "transfer_between_accounts",
+                                "type"
+                            ],
                             "properties": {
+                                "type": {
+                                    "description": "Type of the currency.",
+                                    "type": "string",
+                                    "enum": [
+                                        "fiat",
+                                        "crypto"
+                                    ]
+                                },
                                 "fractional_digits": {
+                                    "description": "Number of fractional digits.",
                                     "type": "number"
                                 },
-                                "type": {
-                                    "enum": ["fiat", "crypto"]
-                                },
                                 "stake_default": {
+                                    "description": "Default stake value for the currency.",
                                     "type": "number",
                                     "minimum": 0
                                 },
                                 "transfer_between_accounts": {
+                                    "description": "Fees and range of allowed amount for transfer between accounts with different types of currencies.",
                                     "type": "object",
-                                    "required": ["limits","fees"],
+                                    "required": [
+                                        "fees",
+                                        "limits"
+                                    ],
                                     "properties": {
-                                        "limits": {
+                                        "fees": {
+                                            "description": "The fee that applies for transfer between accounts with different types of currencies.",
                                             "type": "object",
-                                            "required" : ["min"],
-                                            "properties": {
-                                                "min": {
+                                            "patternProperties": {
+                                                "^[A-Z]{3,4}$": {
+                                                    "description": "Currency code.",
                                                     "type": "number",
-                                                    "minimum": 0
-                                                },
-                                                "max": {
-                                                    "type": "number",
-                                                    "description": "Maximum allowed amount for transfer between accounts with different types of currencies",
+                                                    "maximum": 7,
                                                     "minimum": 0
                                                 }
                                             }
                                         },
-                                        "fees": {
+                                        "limits": {
+                                            "description": "Range of allowed amount for transfer between accounts.",
                                             "type": "object",
-                                            "patternProperties": {
-                                                "^[A-Z]{3,4}$": {
+                                            "required": [
+                                                "min"
+                                            ],
+                                            "properties": {
+                                                "max": {
+                                                    "description": "Maximum allowed amount for transfer between accounts with different types of currencies.",
                                                     "type": "number",
-                                                    "minimum": 0,
-                                                    "maximum": 7
+                                                    "minimum": 0
+                                                },
+                                                "min": {
+                                                    "description": "Minimum allowed amount for transfer between accounts with different types of currencies.",
+                                                    "type": "number",
+                                                    "minimum": 0
                                                 }
                                             }
                                         }
@@ -91,109 +218,59 @@
                         }
                     }
                 },
-                "api_call_limits": {
-                    "type": "object",
-                    "required": ["max_proposal_subscription", "max_requests_pricing","max_requests_outcome","max_requestes_general"],
-                    "properties": {
-                        "max_proposal_subscription": {
-                            "type": "object",
-                            "required": ["max","applies_to"],
-                            "properties": {
-                                "max": {
-                                    "type": "number"
-                                },
-                                "applies_to": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "max_requests_pricing": {
-                            "type": "object",
-                            "required": ["minutely","hourly", "applies_to"],
-                            "properties": {
-                                "minutely": {
-                                    "type": "number"
-                                },
-                                "hourly": {
-                                    "type": "number"
-                                },
-                                "applies_to": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "max_requests_outcome": {
-                            "type": "object",
-                            "required": ["minutely","hourly","applies_to"],
-                            "properties": {
-                                "minutely": {
-                                    "type": "number"
-                                },
-                                "hourly": {
-                                    "type": "number"
-                                },
-                                "applies_to": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "max_requestes_general": {
-                            "type": "object",
-                            "required": ["minutely","hourly","applies_to"],
-                            "properties": {
-                                "minutely": {
-                                    "type": "number"
-                                },
-                                "hourly": {
-                                    "type": "number"
-                                },
-                                "applies_to": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                "message": {
+                    "description": "Text for site status banner, contains problem description. shown only if set by the system.",
+                    "type": "string"
+                },
+                "site_status": {
+                    "description": "The current status of the website.",
+                    "type": "string",
+                    "enum": [
+                        "up",
+                        "down"
+                    ]
+                },
+                "supported_languages": {
+                    "description": "Provides codes for languages supported.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
                     }
                 },
-                "site_status" : {
-                    "enum": ["up", "down"],
-                    "description" : "the current status of the website."
-                },
-                "clients_country" : {
-                    "type" : "string",
-                    "description" : "country code of connected ip"
-                },
-                "terms_conditions_version" : {
-                    "description" : "latest terms and conditions version",
-                    "type" : "string"
-                },
-                "message": {
-                    "type":"string",
-                    "description": "text for site status banner, contains problem description.  shown only if set by the system"
+                "terms_conditions_version": {
+                    "description": "Latest terms and conditions version.",
+                    "type": "string"
                 }
-            },
-            "type" : "object"
+            }
         },
-        "req_id" : {
-            "description" : "Optional field send in request to map to response, present only when request contains req_id",
-            "type" : "integer"
-        },
-        "echo_req" : {
-            "description" : "Echo of the request made",
-            "title" : "Echo request"
-        },
-        "subscription" : {
-            "title" : "Subscription information",
-            "description" : "For subscription requests only",
-            "type" : "object",
-            "required" : [
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only",
+            "type": "object",
+            "required": [
                 "id"
             ],
             "properties": {
-                "id" : {
+                "id": {
                     "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
-                    "type" : "string"
+                    "type": "string"
                 }
             }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "website_status"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
         }
     }
 }

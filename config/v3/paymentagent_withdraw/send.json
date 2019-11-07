@@ -1,60 +1,63 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "additionalProperties" : false,
-   "title" : "Payment Agent Withdrawal Request",
-   "description" : "Initiate a withdrawal to an approved Payment Agent.",
-   "type" : "object",
-   "required" : [
-      "verification_code",
-      "paymentagent_withdraw",
-      "paymentagent_loginid",
-      "currency",
-      "amount"
-   ],
-   "properties" : {
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field to map request to response"
-      },
-      "verification_code" : {
-         "pattern" : "^\\w{8,128}$",
-         "type" : "string",
-         "description" : "Email verification code (received from a verify_email call, which must be done first)"
-      },
-      "description" : {
-         "description" : "Optional field for remarks about the withdraw. Only letters, numbers, space, period, comma, - ' are allowed.",
-         "type" : "string",
-         "pattern" : "^[0-9A-Za-z .,'-]{0,250}$"
-      },
-      "amount" : {
-         "type" : "number"
-      },
-      "paymentagent_loginid" : {
-         "type" : "string",
-         "description" : "The payment agent loginid received from the paymentagent_list call",
-         "pattern" : "^[A-Za-z]+[0-9]+$"
-      },
-      "dry_run" : {
-         "enum" : [
-            0,
-            1
-         ],
-         "description" : "If 1, just do validation",
-         "type" : "integer"
-      },
-      "paymentagent_withdraw" : {
-         "enum" : [
-            1
-         ],
-         "type" : "integer"
-      },
-      "passthrough" : {
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-         "type" : "object"
-      },
-      "currency" : {
-         "pattern" : "^[A-Z]{3}$",
-         "type" : "string"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Payment Agent: Withdraw (request)",
+    "description": "Initiate a withdrawal to an approved Payment Agent.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "amount",
+        "currency",
+        "paymentagent_loginid",
+        "paymentagent_withdraw",
+        "verification_code"
+    ],
+    "properties": {
+        "paymentagent_withdraw": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "description": {
+            "description": "Optional field for remarks about the withdraw. Only letters, numbers, space, period, comma, - ' are allowed.",
+            "type": "string",
+            "pattern": "^[0-9A-Za-z .,'-]{0,250}$"
+        },
+        "amount": {
+            "description": "The amount to withdraw to the payment agent.",
+            "type": "number"
+        },
+        "currency": {
+            "description": "The currency code.",
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+        },
+        "dry_run": {
+            "description": "If set to 1, just do validation",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "paymentagent_loginid": {
+            "description": "The payment agent loginid received from the paymentagent_list call",
+            "type": "string",
+            "pattern": "^[A-Za-z]+[0-9]+$"
+        },
+        "verification_code": {
+            "description": "Email verification code (received from a verify_email call, which must be done first)",
+            "type": "string",
+            "pattern": "^\\w{8,128}$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

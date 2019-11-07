@@ -1,161 +1,173 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "additionalProperties" : false,
-   "title" : "Set User Settings Send",
-   "description" : "Set User Settings (this call should be used in conjunction with get_settings)",
-   "type" : "object",
-   "required" : [
-      "set_settings"
-   ],
-   "properties" : {
-      "phone" : {
-         "type" : [
-            "string",
-            "null"
-         ],
-         "description" : "Note: not applicable for virtual account. Required field for real money account and within 8-35 digits, allowing '+' in front, numbers, hyphens or space.",
-         "pattern" : "^\\+?((-|\\s)*[0-9]){8,35}$"
-      },
-      "tax_identification_number" : {
-         "pattern" : "^[\\w-]{0,20}$",
-         "type" : "string",
-         "description" : "Tax identification number. Only applicable for real money account. Required for maltainvest landing company."
-      },
-      "salutation" : {
-         "description" : "Accept any value in enum list (can only be changed on unauthenticated svg accounts).",
-         "enum" : [
-            "Mr",
-            "Mrs",
-            "Ms",
-            "Miss"
-         ]
-      },
-      "first_name" : {
-         "pattern" : "^[\\p{L}\\s'.-]{2,50}$",
-         "description" : "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).",
-         "type" : "string"
-      },
-      "last_name" : {
-         "pattern" : "^[\\p{L}\\s'.-]{2,50}$",
-         "description" : "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).",
-         "type" : "string"
-      },
-      "date_of_birth" : {
-         "description" : "Date of birth format: yyyy-mm-dd (can only be changed on unauthenticated svg accounts).",
-         "type" : "string",
-         "pattern" : "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
-      },
-      "place_of_birth" : {
-         "type" : "string",
-         "description" : "Place of birth, 2-letter country code.",
-         "pattern" : "^[a-z]{2}$"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field to map request to response"
-      },
-      "email_consent" : {
-         "enum" : [
-            0,
-            1
-         ],
-         "type" : "integer",
-         "description" : "Boolean value 1 or 0, indicating permission to use email address for any contact which may include marketing"
-      },
-      "residence" : {
-         "pattern" : "^[a-z]{2}$",
-         "description" : "2-letter country code. Note: not applicable for real money account. Only allow for Virtual account without residence set.",
-         "type" : [
-            "string",
-            "null"
-         ]
-      },
-      "address_postcode" : {
-         "type" : "string",
-         "description" : "Note: not applicable for virtual account. Optional field for real money account.",
-         "pattern" : "^[\\w\\s-]{0,20}$"
-      },
-      "tax_residence" : {
-         "pattern" : "^[a-z]{0,2}(?:,[a-z]{2})*$",
-         "description" : "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for maltainvest landing company.",
-         "type" : "string"
-      },
-      "address_state" : {
-         "type" : "string",
-         "description" : "Note: not applicable for virtual account. Optional field for real money account.",
-         "pattern" : "^[\\p{L}\\p{Nd}\\s'.,-]{0,35}$"
-      },
-      "allow_copiers" : {
-         "enum" : [
-            0,
-            1
-         ],
-         "type" : "integer",
-         "description" : "Boolean value 1 or 0, indicating permission to allow others to follow your trades. Note: not applicable for Virtual account. Only allow for real money account."
-      },
-      "address_city" : {
-         "type" : "string",
-         "description" : "Note: not applicable for virtual account. Required field for real money account.",
-         "pattern" : "^[\\p{L}\\s'.-]{1,35}$"
-      },
-      "account_opening_reason" : {
-         "description" : "Purpose and reason for requesting the account opening. Only applicable for real money account. Required for clients that have not set it yet. Can only be set once.",
-         "type" : "string",
-         "enum" : [
-            "Speculative",
-            "Income Earning",
-            "Hedging"
-         ]
-      },
-      "address_line_1" : {
-         "pattern" : "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{1,70}$",
-         "type" : "string",
-         "description" : "Note: not applicable for virtual account. Required field for real money account."
-      },
-      "address_line_2" : {
-         "pattern" : "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{0,70}$",
-         "description" : "Note: not applicable for virtual account. Optional field for real money account.",
-         "type" : [
-            "string",
-            "null"
-         ]
-      },
-      "citizen" : {
-         "pattern" : "^([a-z]{2})?$",
-         "description" : "Country of legal citizenship, 2-letter country code.",
-         "type" : [
-            "string",
-            "null"
-         ]
-      },
-      "secret_question": {
-        "enum": [ "Mother's maiden name", "Name of your pet", "Name of first love", "Memorable town/city", "Memorable date", "Favourite dish", "Brand of first car", "Favourite artist" ],
-        "description": "Accept any value in enum list. Required for new account and existing client details will be used if client opens another account."
-      },
-      "secret_answer": {
-        "sensitive": 1,
-        "type": "string",
-        "minLength": 4,
-        "maxLength": 50,
-        "pattern": "^[\\w\\-\\,\\.\\' ]+",
-        "description": "Answer to secret question, within 4-50 characters. Required for new account and existing client details will be used if client opens another account."
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "request_professional_status" : {
-         "type" : "integer",
-         "description" : "Required when client wants to be treated as professional. Applicable for financial accounts only.",
-         "enum" : [
-            1
-         ]
-      },
-      "set_settings" : {
-         "enum" : [
-            1
-         ],
-         "type" : "integer"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Set Account Settings (request)",
+    "description": "Set User Settings (this call should be used in conjunction with get_settings)",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "set_settings"
+    ],
+    "properties": {
+        "set_settings": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "account_opening_reason": {
+            "description": "Purpose and reason for requesting the account opening. Only applicable for real money account. Required for clients that have not set it yet. Can only be set once.",
+            "type": "string",
+            "enum": [
+                "Speculative",
+                "Income Earning",
+                "Hedging"
+            ]
+        },
+        "address_city": {
+            "description": "Note: not applicable for virtual account. Required field for real money account.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\s'.-]{1,35}$"
+        },
+        "address_line_1": {
+            "description": "Note: not applicable for virtual account. Required field for real money account.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{1,70}$"
+        },
+        "address_line_2": {
+            "description": "Note: not applicable for virtual account. Optional field for real money account.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{0,70}$"
+        },
+        "address_postcode": {
+            "description": "Note: not applicable for virtual account. Optional field for real money account.",
+            "type": "string",
+            "pattern": "^[\\w\\s-]{0,20}$"
+        },
+        "address_state": {
+            "description": "Note: not applicable for virtual account. Optional field for real money account.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,35}$"
+        },
+        "allow_copiers": {
+            "description": "Boolean value 1 or 0, indicating permission to allow others to follow your trades. Note: not applicable for Virtual account. Only allow for real money account.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "citizen": {
+            "description": "Country of legal citizenship, 2-letter country code.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "pattern": "^([a-z]{2})?$"
+        },
+        "date_of_birth": {
+            "description": "Date of birth format: yyyy-mm-dd (can only be changed on unauthenticated svg accounts).",
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
+        },
+        "email_consent": {
+            "description": "Boolean value 1 or 0, indicating permission to use email address for any contact which may include marketing",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "first_name": {
+            "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).",
+            "type": "string",
+            "pattern": "^[\\p{L}\\s'.-]{2,50}$"
+        },
+        "last_name": {
+            "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).",
+            "type": "string",
+            "pattern": "^[\\p{L}\\s'.-]{2,50}$"
+        },
+        "phone": {
+            "description": "Note: not applicable for virtual account. Required field for real money account and within 8-35 digits, allowing '+' in front, numbers, hyphens or space.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "pattern": "^\\+?((-|\\s)*[0-9]){8,35}$"
+        },
+        "place_of_birth": {
+            "description": "Place of birth, 2-letter country code.",
+            "type": "string",
+            "pattern": "^[a-z]{2}$"
+        },
+        "request_professional_status": {
+            "description": "Required when client wants to be treated as professional. Applicable for financial accounts only.",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "residence": {
+            "description": "2-letter country code. Note: not applicable for real money account. Only allow for Virtual account without residence set.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "pattern": "^[a-z]{2}$"
+        },
+        "salutation": {
+            "description": "Accept any value in enum list (can only be changed on unauthenticated svg accounts).",
+            "type": "string",
+            "enum": [
+                "Mr",
+                "Mrs",
+                "Ms",
+                "Miss"
+            ]
+        },
+        "secret_answer": {
+            "description": "Answer to secret question, within 4-50 characters. Required for new account and existing client details will be used if client opens another account.",
+            "type": "string",
+            "pattern": "^[\\w\\-\\,\\.\\' ]+",
+            "maxLength": 50,
+            "minLength": 4,
+            "sensitive": 1
+        },
+        "secret_question": {
+            "description": "Accept any value in enum list. Required for new account and existing client details will be used if client opens another account.",
+            "type": "string",
+            "enum": [
+                "Mother's maiden name",
+                "Name of your pet",
+                "Name of first love",
+                "Memorable town/city",
+                "Memorable date",
+                "Favourite dish",
+                "Brand of first car",
+                "Favourite artist"
+            ]
+        },
+        "tax_identification_number": {
+            "description": "Tax identification number. Only applicable for real money account. Required for maltainvest landing company.",
+            "type": "string",
+            "pattern": "^[\\w-]{0,20}$"
+        },
+        "tax_residence": {
+            "description": "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for maltainvest landing company.",
+            "type": "string",
+            "pattern": "^[a-z]{0,2}(?:,[a-z]{2})*$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

@@ -1,78 +1,81 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   
-   "title" : "App Get Receive",
-   "type" : "object",
-   "description" : "A message with requested application",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "properties" : {
-      "msg_type" : {
-         "description" : "app_get",
-         "type" : "string"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      },
-      "app_get" : {
-         "title" : "Application object",
-         "properties" : {
-            "googleplay" : {
-               "type" : "string",
-               "description" : "Application's Google Play URL"
-            },
-            "name" : {
-               "type" : "string",
-               "description" : "Application name"
-            },
-            "app_markup_percentage" : {
-               "description" : "Markup added to contract prices (as a percentage of contract payout)",
-               "type" : "number"
-            },
-            "verification_uri" : {
-               "type" : "string",
-               "description" : "Application verification_uri"
-            },
-            "homepage" : {
-               "type" : "string",
-               "description" : "Application's homepage"
-            },
-            "app_id" : {
-               "description" : "Application id",
-               "type" : "integer"
-            },
-            "redirect_uri" : {
-               "type" : "string",
-               "description" : "Application redirect_uri"
-            },
-            "appstore" : {
-               "description" : "Application's App Store URL",
-               "type" : "string"
-            },
-            "github" : {
-               "type" : "string",
-               "description" : "Application's GitHub page (for open-source projects)"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Application: Get Details (response)",
+    "description": "A message with requested application details",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "app_get": {
+            "title": "app_get",
+            "description": "The information of the requested application.",
+            "type": "object",
+            "required": [
+                "app_id",
+                "app_markup_percentage",
+                "appstore",
+                "github",
+                "googleplay",
+                "homepage",
+                "name",
+                "redirect_uri",
+                "verification_uri"
+            ],
+            "properties": {
+                "app_id": {
+                    "description": "Application ID",
+                    "type": "integer"
+                },
+                "app_markup_percentage": {
+                    "description": "Markup added to contract prices (as a percentage of contract payout)",
+                    "type": "number"
+                },
+                "appstore": {
+                    "description": "Application's App Store URL",
+                    "type": "string"
+                },
+                "github": {
+                    "description": "Application's GitHub page (for open-source projects)",
+                    "type": "string"
+                },
+                "googleplay": {
+                    "description": "Application's Google Play URL",
+                    "type": "string"
+                },
+                "homepage": {
+                    "description": "Application's homepage",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Application name",
+                    "type": "string"
+                },
+                "redirect_uri": {
+                    "description": "Application redirect_uri",
+                    "type": "string"
+                },
+                "verification_uri": {
+                    "description": "Application verification_uri",
+                    "type": "string"
+                }
             }
-         },
-         "required" : [
-            "github",
-            "verification_uri",
-            "appstore",
-            "homepage",
-            "app_markup_percentage",
-            "googleplay",
-            "name",
-            "redirect_uri",
-            "app_id"
-         ],
-         "type" : "object"
-      },
-      "echo_req" : {
-         "description" : "Echo of the request made",
-         "title" : "Echo request"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "app_get"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

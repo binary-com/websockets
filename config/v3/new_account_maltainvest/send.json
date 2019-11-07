@@ -1,342 +1,362 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "type" : "object",
-   "description" : "This call opens a new real-money account with the 'maltainvest' Landing Company. This call can be made from a virtual-money account or real-money account at Binary (Europe) Ltd. If it’s the latter, client information fields in this call will be ignored and data from your existing real-money account will be used.",
-   "required" : [
-      "occupation",
-      "tax_residence",
-      "education_level",
-      "first_name",
-      "employment_industry",
-      "date_of_birth",
-      "last_name",
-      "address_line_1",
-      "income_source",
-      "estimated_worth",
-      "net_income",
-      "accept_risk",
-      "residence",
-      "new_account_maltainvest",
-      "tax_identification_number",
-      "address_city",
-      "salutation"
-   ],
-   "title" : "Create maltainvest account Send",
-   "additionalProperties" : false,
-   "properties" : {
-      "new_account_maltainvest" : {
-         "enum" : [
-            1
-         ],
-         "type" : "integer",
-         "description" : "Must be 1"
-      },
-      "address_postcode" : {
-         "pattern" : "^[\\w\\s-]{0,20}$",
-         "description" : "Optional field, within 20 characters and may not contain '+'.",
-         "type" : "string"
-      },
-      "tax_residence" : {
-         "pattern" : "^[a-z]{0,2}(?:,[a-z]{2})*$",
-         "description" : "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for maltainvest landing company.",
-         "type" : "string"
-      },
-      "forex_trading_experience" : {
-         "enum" : [
-            "0-1 year",
-            "1-2 years",
-            "Over 3 years"
-         ],
-         "description" : "Forex trading experience"
-      },
-      "address_state" : {
-         "pattern" : "^[\\p{L}\\p{Nd}\\s'.,-]{0,35}$",
-         "description" : "Optional field, possible value receive from states_list call.",
-         "type" : "string"
-      },
-      "date_of_birth" : {
-         "type" : "string",
-         "description" : "Date of birth format: yyyy-mm-dd.",
-         "pattern" : "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
-      },
-      "first_name" : {
-         "pattern" : "^[\\p{L}\\s'.-]{2,50}$",
-         "description" : "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
-         "type" : "string"
-      },
-      "residence" : {
-         "pattern" : "^[a-z]{2}$",
-         "type" : "string",
-         "description" : "2-letter country code, possible value receive from residence_list call."
-      },
-      "tax_identification_number" : {
-         "type" : "string",
-         "description" : "Tax identification number. Only applicable for real money account. Required for maltainvest landing company.",
-         "pattern" : "^[\\w-]{0,20}$"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field to map request to response"
-      },
-      "income_source" : {
-         "description" : "Income Source",
-         "enum" : [
-            "Salaried Employee",
-            "Self-Employed",
-            "Investments & Dividends",
-            "Pension",
-            "State Benefits",
-            "Savings & Inheritance"
-         ]
-      },
-      "cfd_trading_experience" : {
-         "enum" : [
-            "0-1 year",
-            "1-2 years",
-            "Over 3 years"
-         ],
-         "description" : "CFDs trading experience"
-      },
-      "affiliate_token" : {
-         "type" : "string",
-         "description" : "Affiliate token, within 32 characters.",
-         "pattern" : "^[\\w-]{0,32}$"
-      },
-      "employment_status" : {
-         "enum" : [
-            "Employed",
-            "Pensioner",
-            "Self-Employed",
-            "Student",
-            "Unemployed"
-         ],
-         "description" : "Employment Status"
-      },
-      "passthrough" : {
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-         "type" : "object"
-      },
-      "client_type" : {
-         "pattern" : "^retail|professional$",
-         "description" : "Optional field, indicates whether this is for a client requesting an account with professional status. Defaults to retail."
-      },
-      "estimated_worth" : {
-         "description" : "Estimated Net Worth",
-         "enum" : [
-            "Less than $100,000",
-            "$100,000 - $250,000",
-            "$250,001 - $500,000",
-            "$500,001 - $1,000,000",
-            "Over $1,000,000"
-         ]
-      },
-      "account_turnover" : {
-         "enum" : [
-            "Less than $25,000",
-            "$25,000 - $50,000",
-            "$50,001 - $100,000",
-            "$100,001 - $500,000",
-            "Over $500,000"
-         ],
-         "description" : "The anticipated account turnover"
-      },
-      "source_of_wealth" : {
-         "description" : "Source of wealth",
-         "enum" : [
-            "Accumulation of Income/Savings",
-            "Cash Business",
-            "Company Ownership",
-            "Divorce Settlement",
-            "Inheritance",
-            "Investment Income",
-            "Sale of Property"
-         ]
-      },
-      "citizen" : {
-         "description" : "Country of legal citizenship, 2-letter country code.",
-         "type" : "string",
-         "pattern" : "^[a-z]{2}$"
-      },
-      "other_instruments_trading_frequency" : {
-         "description" : "Trading frequency in other financial instruments",
-         "enum" : [
-            "0-5 transactions in the past 12 months",
-            "6-10 transactions in the past 12 months",
-            "11-39 transactions in the past 12 months",
-            "40 transactions or more in the past 12 months"
-         ]
-      },
-      "address_line_2" : {
-         "type" : "string",
-         "description" : "Optional field, within 70 characters.",
-         "pattern" : "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{0,70}$"
-      },
-      "education_level" : {
-         "enum" : [
-            "Primary",
-            "Secondary",
-            "Tertiary"
-         ],
-         "description" : "Level of Education"
-      },
-      "forex_trading_frequency" : {
-         "enum" : [
-            "0-5 transactions in the past 12 months",
-            "6-10 transactions in the past 12 months",
-            "11-39 transactions in the past 12 months",
-            "40 transactions or more in the past 12 months"
-         ],
-         "description" : "Forex trading frequency"
-      },
-      "binary_options_trading_experience" : {
-         "description" : "Binary options trading experience",
-         "enum" : [
-            "0-1 year",
-            "1-2 years",
-            "Over 3 years"
-         ]
-      },
-      "salutation" : {
-         "description" : "Accept any value in enum list.",
-         "enum" : [
-            "Mr",
-            "Mrs",
-            "Ms",
-            "Miss"
-         ]
-      },
-      "last_name" : {
-         "pattern" : "^[\\p{L}\\s'.-]{2,50}$",
-         "description" : "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
-         "type" : "string"
-      },
-      "accept_risk" : {
-         "description" : "Show whether client has accepted risk disclaimer, boolean value 1 or 0",
-         "type" : "integer"
-      },
-      "address_city" : {
-         "description" : "Within 35 characters",
-         "type" : "string",
-         "pattern" : "^[\\p{L}\\s'.-]{1,35}$"
-      },
-      "phone" : {
-         "pattern" : "^\\+?((-|\\s)*[0-9]){8,35}$",
-         "description" : "Within 8-35 digits, allowing '+' in front, numbers, hyphens or space.",
-         "type" : "string"
-      },
-      "secret_question" : {
-         "description" : "Accept any value in enum list.",
-         "enum" : [
-            "Mother's maiden name",
-            "Name of your pet",
-            "Name of first love",
-            "Memorable town/city",
-            "Memorable date",
-            "Favourite dish",
-            "Brand of first car",
-            "Favourite artist"
-         ]
-      },
-      "place_of_birth" : {
-         "pattern" : "^[a-z]{2}$",
-         "type" : "string",
-         "description" : "Place of birth, 2-letter country code."
-      },
-      "cfd_trading_frequency" : {
-         "enum" : [
-            "0-5 transactions in the past 12 months",
-            "6-10 transactions in the past 12 months",
-            "11-39 transactions in the past 12 months",
-            "40 transactions or more in the past 12 months"
-         ],
-         "description" : "CFDs trading frequency"
-      },
-      "occupation" : {
-         "enum" : [
-            "Chief Executives, Senior Officials and Legislators",
-            "Managers",
-            "Professionals",
-            "Clerks",
-            "Personal Care, Sales and Service Workers",
-            "Agricultural, Forestry and Fishery Workers",
-            "Craft, Metal, Electrical and Electronics Workers",
-            "Plant and Machine Operators and Assemblers",
-            "Cleaners and Helpers",
-            "Mining, Construction, Manufacturing and Transport Workers",
-            "Armed Forces",
-            "Government Officers",
-            "Students",
-            "Unemployed"
-         ],
-         "description" : "Occupation"
-      },
-      "binary_options_trading_frequency" : {
-         "description" : "Binary options trading frequency",
-         "enum" : [
-            "0-5 transactions in the past 12 months",
-            "6-10 transactions in the past 12 months",
-            "11-39 transactions in the past 12 months",
-            "40 transactions or more in the past 12 months"
-         ]
-      },
-      "net_income" : {
-         "description" : "Net Annual Income",
-         "enum" : [
-            "Less than $25,000",
-            "$25,000 - $50,000",
-            "$50,001 - $100,000",
-            "$100,001 - $500,000",
-            "Over $500,000"
-         ]
-      },
-      "employment_industry" : {
-         "description" : "Industry of Employment",
-         "enum" : [
-            "Construction",
-            "Education",
-            "Finance",
-            "Health",
-            "Tourism",
-            "Information & Communications Technology",
-            "Science & Engineering",
-            "Legal",
-            "Social & Cultural",
-            "Agriculture",
-            "Real Estate",
-            "Food Services",
-            "Manufacturing",
-            "Unemployed"
-         ]
-      },
-      "address_line_1" : {
-         "type" : "string",
-         "description" : "Within 70 characters.",
-         "pattern" : "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{1,70}$"
-      },
-      "secret_answer" : {
-         "maxLength" : 50,
-         "minLength" : 4,
-         "sensitive" : 1,
-         "type" : "string",
-         "description" : "Answer to secret question, within 4-50 characters.",
-         "pattern" : "^[\\w\\-\\,\\.\\' ]+"
-      },
-      "other_instruments_trading_experience" : {
-         "enum" : [
-            "0-1 year",
-            "1-2 years",
-            "Over 3 years"
-         ],
-         "description" : "Trading experience in other financial instruments"
-      },
-      "account_opening_reason" : {
-         "enum" : [
-            "Speculative",
-            "Income Earning",
-            "Hedging"
-         ],
-         "description" : "Purpose and reason for requesting the account opening",
-         "type" : "string"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "New Real-Money Account: Binary Investment (Europe) Ltd. (request)",
+    "description": "This call opens a new real-money account with the 'maltainvest' Landing Company. This call can be made from a virtual-money account or real-money account at Binary (Europe) Ltd. If it is the latter, client information fields in this call will be ignored and data from your existing real-money account will be used.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "accept_risk",
+        "address_city",
+        "address_line_1",
+        "date_of_birth",
+        "education_level",
+        "employment_industry",
+        "estimated_worth",
+        "first_name",
+        "income_source",
+        "last_name",
+        "net_income",
+        "new_account_maltainvest",
+        "occupation",
+        "residence",
+        "salutation",
+        "tax_identification_number",
+        "tax_residence"
+    ],
+    "properties": {
+        "new_account_maltainvest": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "accept_risk": {
+            "description": "Show whether client has accepted risk disclaimer, boolean value 1 or 0",
+            "type": "integer"
+        },
+        "account_opening_reason": {
+            "description": "Purpose and reason for requesting the account opening",
+            "type": "string",
+            "enum": [
+                "Speculative",
+                "Income Earning",
+                "Hedging"
+            ]
+        },
+        "account_turnover": {
+            "description": "The anticipated account turnover",
+            "type": "string",
+            "enum": [
+                "Less than $25,000",
+                "$25,000 - $50,000",
+                "$50,001 - $100,000",
+                "$100,001 - $500,000",
+                "Over $500,000"
+            ]
+        },
+        "address_city": {
+            "description": "Within 35 characters",
+            "type": "string",
+            "pattern": "^[\\p{L}\\s'.-]{1,35}$"
+        },
+        "address_line_1": {
+            "description": "Within 70 characters.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{1,70}$"
+        },
+        "address_line_2": {
+            "description": "Optional field, within 70 characters.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{0,70}$"
+        },
+        "address_postcode": {
+            "description": "Optional field, within 20 characters and may not contain '+'.",
+            "type": "string",
+            "pattern": "^[\\w\\s-]{0,20}$"
+        },
+        "address_state": {
+            "description": "Optional field, possible value receive from states_list call.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,35}$"
+        },
+        "affiliate_token": {
+            "description": "Affiliate token, within 32 characters.",
+            "type": "string",
+            "pattern": "^[\\w-]{0,32}$"
+        },
+        "binary_options_trading_experience": {
+            "description": "Binary options trading experience",
+            "type": "string",
+            "enum": [
+                "0-1 year",
+                "1-2 years",
+                "Over 3 years"
+            ]
+        },
+        "binary_options_trading_frequency": {
+            "description": "Binary options trading frequency",
+            "type": "string",
+            "enum": [
+                "0-5 transactions in the past 12 months",
+                "6-10 transactions in the past 12 months",
+                "11-39 transactions in the past 12 months",
+                "40 transactions or more in the past 12 months"
+            ]
+        },
+        "cfd_trading_experience": {
+            "description": "CFDs trading experience",
+            "type": "string",
+            "enum": [
+                "0-1 year",
+                "1-2 years",
+                "Over 3 years"
+            ]
+        },
+        "cfd_trading_frequency": {
+            "description": "CFDs trading frequency",
+            "type": "string",
+            "enum": [
+                "0-5 transactions in the past 12 months",
+                "6-10 transactions in the past 12 months",
+                "11-39 transactions in the past 12 months",
+                "40 transactions or more in the past 12 months"
+            ]
+        },
+        "citizen": {
+            "description": "Country of legal citizenship, 2-letter country code.",
+            "type": "string",
+            "pattern": "^[a-z]{2}$"
+        },
+        "client_type": {
+            "description": "Optional field, indicates whether this is for a client requesting an account with professional status. Defaults to retail.",
+            "type": "string",
+            "pattern": "^retail|professional$"
+        },
+        "date_of_birth": {
+            "description": "Date of birth format: yyyy-mm-dd.",
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
+        },
+        "education_level": {
+            "description": "Level of Education",
+            "type": "string",
+            "enum": [
+                "Primary",
+                "Secondary",
+                "Tertiary"
+            ]
+        },
+        "employment_industry": {
+            "description": "Industry of Employment",
+            "type": "string",
+            "enum": [
+                "Construction",
+                "Education",
+                "Finance",
+                "Health",
+                "Tourism",
+                "Information & Communications Technology",
+                "Science & Engineering",
+                "Legal",
+                "Social & Cultural",
+                "Agriculture",
+                "Real Estate",
+                "Food Services",
+                "Manufacturing",
+                "Unemployed"
+            ]
+        },
+        "employment_status": {
+            "description": "Employment Status",
+            "type": "string",
+            "enum": [
+                "Employed",
+                "Pensioner",
+                "Self-Employed",
+                "Student",
+                "Unemployed"
+            ]
+        },
+        "estimated_worth": {
+            "description": "Estimated Net Worth",
+            "type": "string",
+            "enum": [
+                "Less than $100,000",
+                "$100,000 - $250,000",
+                "$250,001 - $500,000",
+                "$500,001 - $1,000,000",
+                "Over $1,000,000"
+            ]
+        },
+        "first_name": {
+            "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\s'.-]{2,50}$"
+        },
+        "forex_trading_experience": {
+            "description": "Forex trading experience",
+            "type": "string",
+            "enum": [
+                "0-1 year",
+                "1-2 years",
+                "Over 3 years"
+            ]
+        },
+        "forex_trading_frequency": {
+            "description": "Forex trading frequency",
+            "type": "string",
+            "enum": [
+                "0-5 transactions in the past 12 months",
+                "6-10 transactions in the past 12 months",
+                "11-39 transactions in the past 12 months",
+                "40 transactions or more in the past 12 months"
+            ]
+        },
+        "income_source": {
+            "description": "Income Source",
+            "type": "string",
+            "enum": [
+                "Salaried Employee",
+                "Self-Employed",
+                "Investments & Dividends",
+                "Pension",
+                "State Benefits",
+                "Savings & Inheritance"
+            ]
+        },
+        "last_name": {
+            "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\s'.-]{2,50}$"
+        },
+        "net_income": {
+            "description": "Net Annual Income",
+            "type": "string",
+            "enum": [
+                "Less than $25,000",
+                "$25,000 - $50,000",
+                "$50,001 - $100,000",
+                "$100,001 - $500,000",
+                "Over $500,000"
+            ]
+        },
+        "occupation": {
+            "description": "Occupation",
+            "type": "string",
+            "enum": [
+                "Chief Executives, Senior Officials and Legislators",
+                "Managers",
+                "Professionals",
+                "Clerks",
+                "Personal Care, Sales and Service Workers",
+                "Agricultural, Forestry and Fishery Workers",
+                "Craft, Metal, Electrical and Electronics Workers",
+                "Plant and Machine Operators and Assemblers",
+                "Cleaners and Helpers",
+                "Mining, Construction, Manufacturing and Transport Workers",
+                "Armed Forces",
+                "Government Officers",
+                "Students",
+                "Unemployed"
+            ]
+        },
+        "other_instruments_trading_experience": {
+            "description": "Trading experience in other financial instruments",
+            "type": "string",
+            "enum": [
+                "0-1 year",
+                "1-2 years",
+                "Over 3 years"
+            ]
+        },
+        "other_instruments_trading_frequency": {
+            "description": "Trading frequency in other financial instruments",
+            "type": "string",
+            "enum": [
+                "0-5 transactions in the past 12 months",
+                "6-10 transactions in the past 12 months",
+                "11-39 transactions in the past 12 months",
+                "40 transactions or more in the past 12 months"
+            ]
+        },
+        "phone": {
+            "description": "Within 8-35 digits, allowing '+' in front, numbers, hyphens or space.",
+            "type": "string",
+            "pattern": "^\\+?((-|\\s)*[0-9]){8,35}$"
+        },
+        "place_of_birth": {
+            "description": "Place of birth, 2-letter country code.",
+            "type": "string",
+            "pattern": "^[a-z]{2}$"
+        },
+        "residence": {
+            "description": "2-letter country code, possible value receive from residence_list call.",
+            "type": "string",
+            "pattern": "^[a-z]{2}$"
+        },
+        "salutation": {
+            "description": "Accept any value in enum list.",
+            "type": "string",
+            "enum": [
+                "Mr",
+                "Mrs",
+                "Ms",
+                "Miss"
+            ]
+        },
+        "secret_answer": {
+            "description": "Answer to secret question, within 4-50 characters.",
+            "type": "string",
+            "pattern": "^[\\w\\-\\,\\.\\' ]+",
+            "maxLength": 50,
+            "minLength": 4,
+            "sensitive": 1
+        },
+        "secret_question": {
+            "description": "Accept any value in enum list.",
+            "type": "string",
+            "enum": [
+                "Mother's maiden name",
+                "Name of your pet",
+                "Name of first love",
+                "Memorable town/city",
+                "Memorable date",
+                "Favourite dish",
+                "Brand of first car",
+                "Favourite artist"
+            ]
+        },
+        "source_of_wealth": {
+            "description": "Source of wealth",
+            "type": "string",
+            "enum": [
+                "Accumulation of Income/Savings",
+                "Cash Business",
+                "Company Ownership",
+                "Divorce Settlement",
+                "Inheritance",
+                "Investment Income",
+                "Sale of Property"
+            ]
+        },
+        "tax_identification_number": {
+            "description": "Tax identification number. Only applicable for real money account. Required for maltainvest landing company.",
+            "type": "string",
+            "pattern": "^[\\w-]{0,20}$"
+        },
+        "tax_residence": {
+            "description": "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for maltainvest landing company.",
+            "type": "string",
+            "pattern": "^[a-z]{0,2}(?:,[a-z]{2})*$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

@@ -1,38 +1,42 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Top Up Virtual Response",
-   
-   "type" : "object",
-   "description" : "",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "properties" : {
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      },
-      "topup_virtual" : {
-         "type" : "object",
-         "properties" : {
-            "currency" : {
-               "type" : "string",
-               "description" : "Top up currency string"
-            },
-            "amount" : {
-               "description" : "Top up amount",
-               "type" : "number"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Top Up Virtual-Money Account (response)",
+    "description": "The result of virtual money top up",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "topup_virtual": {
+            "title": "topup_virtual",
+            "description": "The information regarding a successful top up for a virtual money account",
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "description": "Top up amount",
+                    "type": "number"
+                },
+                "currency": {
+                    "description": "Top up currency string",
+                    "type": "string"
+                }
             }
-         }
-      },
-      "msg_type" : {
-         "type" : "string",
-         "description" : "topup_virtual"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "topup_virtual"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

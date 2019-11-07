@@ -1,81 +1,83 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "type" : "object",
-   "description" : "Per transaction reporting of app_markup",
-   
-   "title" : "Arbitrary App Markup Details",
-   "properties" : {
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "app_markup_details" : {
-         "description" : "App Markup transaction details",
-         "type" : "object",
-         "title" : "App Markup Details",
-         "properties" : {
-            "transactions" : {
-               "type" : "array",
-               "description" : "Array of returned transactions",
-               "items" : {
-                  "type" : "object",
-                  "properties" : {
-                     "app_id" : {
-                        "type" : "integer",
-                        "description" : "App id of app where this transaction was performed. For example, it's 1 for binary.com."
-                     },
-                     "app_markup_usd" : {
-                        "description" : "The markup the client paid in USD",
-                        "type" : "number"
-                     },
-                     "transaction_id" : {
-                        "description" : "It is the transaction id. Every contract (buy or sell) and every payment has a unique id. Example: 10867502908",
-                        "type" : "integer"
-                     },
-                     "app_markup" : {
-                        "description" : "The markup the client paid in their currency",
-                        "type" : "number"
-                     },
-                     "dev_loginid" : {
-                        "description" : "Login ID of the app developer",
-                        "type" : "string"
-                     },
-                     "app_markup_value" : {
-                        "description" : "The markup the client paid in the app developer's currency",
-                        "type" : "number"
-                     },
-                     "transaction_time" : {
-                        "description" : "It is the purchase time of transaction",
-                        "type" : "string"
-                     },
-                     "client_loginid" : {
-                        "type" : "string",
-                        "description" : "Login ID of the client"
-                     },
-                     "client_currcode" : {
-                        "description" : "Currency code of the client",
-                        "type" : "string"
-                     },
-                     "dev_currcode" : {
-                        "description" : "Currency code of the app developer",
-                        "type" : "string"
-                     }
-                  }
-               }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Application: Markup Details (response)",
+    "description": "Per transaction reporting of app_markup",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "app_markup_details": {
+            "title": "app_markup_details",
+            "description": "App Markup transaction details",
+            "type": "object",
+            "properties": {
+                "transactions": {
+                    "description": "Array of returned transactions",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "app_id": {
+                                "description": "App ID of app where this transaction was performed. For example, it's 1 for binary.com.",
+                                "type": "integer"
+                            },
+                            "app_markup": {
+                                "description": "The markup the client paid in their currency",
+                                "type": "number"
+                            },
+                            "app_markup_usd": {
+                                "description": "The markup the client paid in USD",
+                                "type": "number"
+                            },
+                            "app_markup_value": {
+                                "description": "The markup the client paid in the app developer's currency",
+                                "type": "number"
+                            },
+                            "client_currcode": {
+                                "description": "Currency code of the client",
+                                "type": "string"
+                            },
+                            "client_loginid": {
+                                "description": "Login ID of the client",
+                                "type": "string"
+                            },
+                            "dev_currcode": {
+                                "description": "Currency code of the app developer",
+                                "type": "string"
+                            },
+                            "dev_loginid": {
+                                "description": "Login ID of the app developer",
+                                "type": "string"
+                            },
+                            "transaction_id": {
+                                "description": "The transaction ID. Every contract (buy or sell) and every payment has a unique ID. Example: 10867502908",
+                                "type": "integer"
+                            },
+                            "transaction_time": {
+                                "description": "The epoch value of purchase time of transaction",
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
             }
-         }
-      },
-      "msg_type" : {
-         "type" : "string",
-         "description" : "app_markup_details"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "app_markup_details"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

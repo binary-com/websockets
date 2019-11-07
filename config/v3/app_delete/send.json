@@ -1,24 +1,24 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "App Delete Send",
-   "additionalProperties" : false,
-   "required" : [
-      "app_delete"
-   ],
-   "description" : null,
-   "type" : "object",
-   "properties" : {
-      "req_id" : {
-         "description" : "Optional field to map request to response",
-         "type" : "integer"
-      },
-      "app_delete" : {
-         "description" : "Application app_id",
-         "type" : "integer"
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Application: Delete (request)",
+    "description": "The request for deleting an application.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "app_delete"
+    ],
+    "properties": {
+        "app_delete": {
+            "description": "Application app_id",
+            "type": "integer"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

@@ -1,27 +1,27 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "forget_all"
-   ],
-   "type" : "object",
-   "description" : "Immediately cancel the real-time streams of messages of given type.",
-   "title" : "Forget All Request",
-   "additionalProperties" : false,
-   "properties" : {
-      "passthrough" : {
-         "type" : "object",
-         "description" : "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "forget_all" : {
-         "type" : [
-            "string",
-            "array"
-         ],
-         "description" : "Cancel all streams by type (it can be a single string e.g. 'ticks', or an array of multiple values, e.g. ['ticks', 'candles']). Possible values are: 'ticks', 'candles', 'proposal', 'proposal_open_contract', 'balance', 'transaction', 'proposal_array', 'website_status'."
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "[Optional] Used to map request to response."
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Forget All (request)",
+    "description": "Immediately cancel the real-time streams of messages of given type.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "forget_all"
+    ],
+    "properties": {
+        "forget_all": {
+            "description": "Cancel all streams by type (it can be a single string e.g. 'ticks', or an array of multiple values, e.g. ['ticks', 'candles']). Possible values are: 'ticks', 'candles', 'proposal', 'proposal_open_contract', 'balance', 'transaction', 'proposal_array', 'website_status'.",
+            "type": [
+                "array",
+                "string"
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

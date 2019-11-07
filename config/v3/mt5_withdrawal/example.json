@@ -1,6 +1,6 @@
 {
     "mt5_withdrawal": 1,
+    "amount": 1000,
     "from_mt5": "1000",
-    "to_binary": "CR100001",
-    "amount": 1000
+    "to_binary": "CR100001"
 }

@@ -1,27 +1,27 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Portfolio Send",
-   "additionalProperties" : false,
-   "description" : "Receive information about my current portfolio of outstanding options",
-   "type" : "object",
-   "required" : [
-      "portfolio"
-   ],
-   "properties" : {
-      "portfolio" : {
-         "type" : "integer",
-         "description" : "Must be 1",
-         "enum" : [
-            1
-         ]
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field to map request to response"
-      },
-      "passthrough" : {
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-         "type" : "object"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Portfolio (request)",
+    "description": "Receive information about my current portfolio of outstanding options",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "portfolio"
+    ],
+    "properties": {
+        "portfolio": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

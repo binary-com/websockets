@@ -1,43 +1,44 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "MT5 Account Withdrawal Request",
-   "additionalProperties" : false,
-   "description" : "This call allows withdrawal from MT5 account to Binary account.",
-   "type" : "object",
-   "required" : [
-      "amount",
-      "mt5_withdrawal",
-      "from_mt5",
-      "to_binary"
-   ],
-   "properties" : {
-      "from_mt5" : {
-         "pattern" : "^[0-9]+$",
-         "description" : "MT5 account login to withdraw money from",
-         "type" : "string"
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "to_binary" : {
-         "pattern" : "^[A-Za-z]+[0-9]+$",
-         "type" : "string",
-         "description" : "Binary account loginid to transfer money to"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field to map request to response"
-      },
-      "mt5_withdrawal" : {
-         "type" : "integer",
-         "enum" : [
-            1
-         ]
-      },
-      "amount" : {
-         "description" : "Amount to withdraw (in the currency of the MT5 account); min = $1 or an equivalent amount, max = $20000 or an equivalent amount.",
-         "type" : "number"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MT5: Withdrawal (request)",
+    "description": "This call allows withdrawal from MT5 account to Binary account.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "amount",
+        "from_mt5",
+        "mt5_withdrawal",
+        "to_binary"
+    ],
+    "properties": {
+        "mt5_withdrawal": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "amount": {
+            "description": "Amount to withdraw (in the currency of the MT5 account); min = $1 or an equivalent amount, max = $20000 or an equivalent amount.",
+            "type": "number"
+        },
+        "from_mt5": {
+            "description": "MT5 account login to withdraw money from",
+            "type": "string",
+            "pattern": "^[0-9]+$"
+        },
+        "to_binary": {
+            "description": "Binary account loginid to transfer money to",
+            "type": "string",
+            "pattern": "^[A-Za-z]+[0-9]+$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

@@ -1,48 +1,50 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Set Financial Assessment Receive",
-   
-   "description" : "Set Financial Assessment Receive",
-   "type" : "object",
-   "required" : [
-      "msg_type",
-      "echo_req"
-   ],
-   "properties" : {
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      },
-      "set_financial_assessment" : {
-         "title" : "Financial Assessment Scores",
-         "properties" : {
-            "financial_information_score" : {
-               "type" : "integer",
-               "description" : "Financial information score based on answers"
-            },
-            "total_score" : {
-               "description" : "Financial Assessment score based on answers",
-               "type" : "integer"
-            },
-            "trading_score" : {
-               "description" : "Trading experience score based on answers",
-               "type" : "integer"
-            },
-            "cfd_score" : {
-               "type" : "integer",
-               "description" : "CFD score based on answers"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Set Financial Assessment (response)",
+    "description": "Set Financial Assessment Receive",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "set_financial_assessment": {
+            "title": "set_financial_assessment",
+            "description": "The financial assessment score assigned to the submitted financial assessment",
+            "type": "object",
+            "properties": {
+                "cfd_score": {
+                    "description": "CFD score based on answers",
+                    "type": "integer"
+                },
+                "financial_information_score": {
+                    "description": "Financial information score based on answers",
+                    "type": "integer"
+                },
+                "total_score": {
+                    "description": "Financial Assessment score based on answers",
+                    "type": "integer"
+                },
+                "trading_score": {
+                    "description": "Trading experience score based on answers",
+                    "type": "integer"
+                }
             }
-         },
-         "description" : "The financial assessment score assigned to the submitted financial assessment",
-         "type" : "object"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "msg_type" : {
-         "description" : "set_financial_assessment",
-         "type" : "string"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "set_financial_assessment"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

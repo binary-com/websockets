@@ -1,33 +1,33 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "copytrading_statistics",
-      "trader_id"
-   ],
-   "description" : "Retrieve performance, trading, risk and copiers statistics of trader.",
-   "type" : "object",
-   "title" : "Copy Trading Statistics Request",
-   "additionalProperties" : false,
-   "properties" : {
-      "passthrough" : {
-         "type" : "object",
-         "description" : "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "[Optional] Used to map request to response."
-      },
-      "copytrading_statistics" : {
-         "description" : "Must be 1.",
-         "type" : "integer",
-         "enum" : [
-            1
-         ]
-      },
-      "trader_id" : {
-         "pattern" : "^[A-Za-z]+[0-9]+$",
-         "type" : "string",
-         "description" : "The id of the target trader."
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Copy Trading: Statistics (request)",
+    "description": "Retrieve performance, trading, risk and copiers statistics of trader.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "copytrading_statistics",
+        "trader_id"
+    ],
+    "properties": {
+        "copytrading_statistics": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "trader_id": {
+            "description": "The ID of the target trader.",
+            "type": "string",
+            "pattern": "^[A-Za-z]+[0-9]+$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

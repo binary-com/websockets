@@ -1,31 +1,31 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "additionalProperties" : false,
-   "title" : "Payment Agent List Request",
-   "description" : "Will return a list of Payment Agents for a given country for a given currency. Payment agents allow Binary.com users to deposit and withdraw funds using local payment methods that might not be available via the main Binary.com cashier system.",
-   "type" : "object",
-   "required" : [
-      "paymentagent_list"
-   ],
-   "properties" : {
-      "req_id" : {
-         "type" : "integer",
-         "description" : "[Optional] Used to map request to response."
-      },
-      "paymentagent_list" : {
-         "pattern" : "^\\w\\w$",
-         "title" : "Payment Agent Target Country",
-         "description" : "Client's 2-letter country code (obtained from residence_list call).",
-         "type" : "string"
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "currency" : {
-         "type" : "string",
-         "description" : "[Optional] If specified, only payment agents that supports that currency will be returned (obtained from payout_currencies call).",
-         "pattern" : "^[A-Z]{3}$"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Payment Agent: List (request)",
+    "description": "Will return a list of Payment Agents for a given country for a given currency. Payment agents allow Binary.com users to deposit and withdraw funds using local payment methods that might not be available via the main Binary.com cashier system.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "paymentagent_list"
+    ],
+    "properties": {
+        "paymentagent_list": {
+            "title": "Payment Agent Target Country",
+            "description": "Client's 2-letter country code (obtained from residence_list call).",
+            "type": "string",
+            "pattern": "^\\w\\w$"
+        },
+        "currency": {
+            "description": "[Optional] If specified, only payment agents that supports that currency will be returned (obtained from payout_currencies call).",
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

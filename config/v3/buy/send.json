@@ -1,135 +1,141 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "additionalProperties" : false,
-   "title" : "Buy a Contract Send",
-   "type" : "object",
-   "description" : "Buy a Contract",
-   "required" : [
-      "price",
-      "buy"
-   ],
-   "properties" : {
-      "req_id" : {
-         "description" : "Optional field to map request to response",
-         "type" : "integer"
-      },
-      "price" : {
-         "minimum" : 0,
-         "type" : "number",
-         "description" : "Maximum price at which to purchase the contract."
-      },
-      "parameters" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass the parameters for contract buy",
-         "additionalProperties" : false,
-         "required": [ "contract_type", "currency", "symbol" ], 
-         "properties" : {
-            "symbol" : {
-               "pattern" : "^\\w{2,30}$",
-               "type" : "string",
-               "description" : "Symbol code"
-            },
-            "app_markup_percentage" : {
-               "type" : "number",
-               "description" : "Markup added to contract prices (as a percentage of contract payout)"
-            },
-            "date_start" : {
-               "minimum" : 0,
-               "type" : "integer",
-               "description" : "For forward-starting contracts, epoch value of the starting time of the contract.",
-               "maximum" : 9999999999
-            },
-            "product_type" : {
-               "type" : "string",
-               "description" : "The product type, either basic or multi_barrier",
-               "default" : "basic",
-               "pattern" : "^(multi_barrier|basic)$"
-            },
-            "barrier" : {
-               "description" : "Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers.",
-               "type" : "string",
-               "pattern" : "^(?=.{1,20}$)[+-]?[0-9]+\\.?[0-9]*$"
-            },
-            "barrier2" : {
-               "type" : "string",
-               "description" : "Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers.",
-               "pattern" : "^(?=.{1,20}$)[+-]?[0-9]+\\.?[0-9]*$"
-            },
-            "currency" : {
-               "type" : "string",
-               "description" : "This can only be the account-holder's currency",
-               "pattern" : "^[A-Z]{3}$"
-            },
-            "date_expiry" : {
-               "minimum" : 1,
-               "type" : "integer",
-               "description" : "Epoch value of the expiry time of the contract. You must either specify date_expiry or duration.",
-               "maximum" : 9999999999
-            },
-            "duration_unit" : {
-               "description" : "Duration unit is s(seconds), m(minutes), h(hours), d(days), t(ticks)",
-               "enum" : [
-                  "d",
-                  "m",
-                  "s",
-                  "h",
-                  "t",
-                  "c"
-               ]
-            },
-            "trading_period_start" : {
-               "minimum" : 1,
-               "type" : "integer",
-               "description" : "An epoch value of a predefined trading period start time",
-               "maximum" : 9999999999
-            },
-            "contract_type" : {
-               "type" : "string",
-               "description" : "A valid contract-type",
-               "pattern" : "^\\w{2,30}$"
-            },
-            "basis" : {
-               "description" : "Indicates whether amount is 'payout' or 'stake' for binary options.",
-               "enum" : [
-                  "payout",
-                  "stake"
-               ]
-            },
-            "multiplier": {
-               "description": "The multiplier for non-binary options. E.g. lookbacks.",
-               "type" : "number",
-               "minimum" : 0
-            },
-            "amount" : {
-               "type" : "number",
-               "description" : "Proposed payout or stake value",
-               "minimum" : 0
-            },
-            "duration" : {
-               "type" : "integer",
-               "description" : "Duration quantity",
-               "minimum" : 0
-            },
-            "selected_tick" : {
-               "type" : "integer",
-               "description" : "The tick that is predicted to have the highest/lowest value - for tickhigh and ticklow contracts."
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Buy Contract (request)",
+    "description": "Buy a Contract",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "buy",
+        "price"
+    ],
+    "properties": {
+        "buy": {
+            "description": "Either the ID received from a Price Proposal (proposal) call, or '1' if contract buy parameters are passed in the parameters field.",
+            "type": "string",
+            "pattern": "^(?:[\\w-]{32,128}|1)$"
+        },
+        "parameters": {
+            "description": "Optional field, used to pass the parameters for contract buy",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "contract_type",
+                "currency",
+                "symbol"
+            ],
+            "properties": {
+                "amount": {
+                    "description": "Proposed payout or stake value",
+                    "type": "number",
+                    "minimum": 0
+                },
+                "app_markup_percentage": {
+                    "description": "Markup added to contract prices (as a percentage of contract payout)",
+                    "type": "number"
+                },
+                "barrier": {
+                    "description": "Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers.",
+                    "type": "string",
+                    "pattern": "^(?=.{1,20}$)[+-]?[0-9]+\\.?[0-9]*$"
+                },
+                "barrier2": {
+                    "description": "Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers.",
+                    "type": "string",
+                    "pattern": "^(?=.{1,20}$)[+-]?[0-9]+\\.?[0-9]*$"
+                },
+                "basis": {
+                    "description": "Indicates whether amount is 'payout' or 'stake' for binary options.",
+                    "type": "string",
+                    "enum": [
+                        "payout",
+                        "stake"
+                    ]
+                },
+                "contract_type": {
+                    "description": "A valid contract-type",
+                    "type": "string",
+                    "pattern": "^\\w{2,30}$"
+                },
+                "currency": {
+                    "description": "This can only be the account-holder's currency",
+                    "type": "string",
+                    "pattern": "^[A-Z]{3}$"
+                },
+                "date_expiry": {
+                    "description": "Epoch value of the expiry time of the contract. You must either specify date_expiry or duration.",
+                    "type": "integer",
+                    "maximum": 9999999999,
+                    "minimum": 1
+                },
+                "date_start": {
+                    "description": "For forward-starting contracts, epoch value of the starting time of the contract.",
+                    "type": "integer",
+                    "maximum": 9999999999,
+                    "minimum": 0
+                },
+                "duration": {
+                    "description": "Duration quantity",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "duration_unit": {
+                    "description": "Duration unit is s(seconds), m(minutes), h(hours), d(days), t(ticks)",
+                    "type": "string",
+                    "enum": [
+                        "d",
+                        "m",
+                        "s",
+                        "h",
+                        "t"
+                    ]
+                },
+                "multiplier": {
+                    "description": "The multiplier for non-binary options. E.g. lookbacks.",
+                    "type": "number",
+                    "minimum": 0
+                },
+                "product_type": {
+                    "description": "The product type, either basic or multi_barrier",
+                    "type": "string",
+                    "pattern": "^(multi_barrier|basic)$",
+                    "default": "basic"
+                },
+                "selected_tick": {
+                    "description": "The tick that is predicted to have the highest/lowest value - for tickhigh and ticklow contracts.",
+                    "type": "integer"
+                },
+                "symbol": {
+                    "description": "Symbol code",
+                    "type": "string",
+                    "pattern": "^\\w{2,30}$"
+                },
+                "trading_period_start": {
+                    "description": "An epoch value of a predefined trading period start time",
+                    "type": "integer",
+                    "maximum": 9999999999,
+                    "minimum": 1
+                }
             }
-         }
-      },
-      "passthrough" : {
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-         "type" : "object"
-      },
-      "buy" : {
-         "description" : "Either the id received from a Price Proposal (proposal) call, or 1 if contract buy parameters are passed in the parameters field",
-         "type" : "string",
-         "pattern" : "^(?:[\\w-]{32,128}|1)$"
-      },
-      "subscribe" : {
-         "description" : "1 - to stream",
-         "enum" : [
-            1
-         ]
-      }
-   }
+        },
+        "price": {
+            "description": "Maximum price at which to purchase the contract.",
+            "type": "number",
+            "minimum": 0
+        },
+        "subscribe": {
+            "description": "1 - to stream",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

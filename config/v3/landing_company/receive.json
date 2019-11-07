@@ -1,58 +1,25 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Landing Company Response",
+    "title": "Landing Company (response)",
+    "description": "Returns the Landing Company for clients of a given country.",
+    "type": "object",
     "required": [
         "echo_req",
         "msg_type"
     ],
-    "type": "object",
-    "description": "Returns the Landing Company for clients of a given country.",
     "properties": {
-        "msg_type": {
-            "description": "landing_company",
-            "type": "string"
-        },
-        "req_id": {
-            "type": "integer",
-            "description": "Optional field send in request to map to response, present only when request contains req_id"
-        },
         "landing_company": {
-            "type": "object",
+            "title": "landing_company",
             "description": "Landing Company",
-            "title": "Landing Company",
+            "type": "object",
             "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Country code"
-                },
-                "mt_gaming_company": {
+                "financial_company": {
+                    "description": "Landing Company for financial contracts (all except Volatility Indices)",
                     "type": [
                         "null",
                         "object"
                     ],
-                    "description": "Landing Company for MT5 gaming contracts (Volatility Indices)",
                     "properties": {
-                        "legal_allowed_markets": {
-                            "description": "Allowable markets",
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            }
-                        },
-                        "legal_allowed_contract_categories": {
-                            "type": "array",
-                            "description": "Allowed contract types",
-                            "items": {
-                                "type": "string"
-                            }
-                        },
-                        "legal_allowed_currencies": {
-                            "type": "array",
-                            "description": "Allowable currencies",
-                            "items": {
-                                "type": "string"
-                            }
-                        },
                         "address": {
                             "description": "Landing Company address",
                             "type": [
@@ -63,237 +30,56 @@
                                 "type": "string"
                             }
                         },
-                        "name": {
-                            "type": "string",
-                            "description": "Landing Company legal name"
-                        },
-                        "legal_default_currency": {
-                            "description": "Default account currency",
-                            "type": "string"
-                        },
-                        "country": {
-                            "type": "string",
-                            "description": "Landing Company country of incorporation"
-                        },
-                        "requirements" : {
-                          "type" : "object",
-                          "description": "Legal requirements for the Landing Company"
-                          
-                        },
-                        "shortcode": {
-                            "type": "string",
-                            "description": "Landing Company short code"
-                        }
-                    }
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Country name"
-                },
-                "financial_company": {
-                    "properties": {
-                        "name": {
-                            "description": "Landing Company legal name",
-                            "type": "string"
+                        "changeable_fields": {
+                            "description": "Special conditions for changing sensitive fields",
+                            "type": "object"
                         },
                         "country": {
                             "description": "Landing Company country of incorporation",
                             "type": "string"
                         },
+                        "has_reality_check": {
+                            "description": "Flag to indicate whether reality check is applicable for this Landing Company. 1: applicable, 0: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
+                            "type": "integer",
+                            "enum": [
+                                1,
+                                0
+                            ]
+                        },
+                        "legal_allowed_contract_categories": {
+                            "description": "Allowed contract types for this Landing Company",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "legal_allowed_currencies": {
+                            "description": "Allowed account currencies for this Landing Company",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "legal_allowed_markets": {
+                            "description": "Allowed markets for this Landing Company",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
                         "legal_default_currency": {
                             "description": "Default account currency",
                             "type": "string"
                         },
+                        "name": {
+                            "description": "Landing Company legal name",
+                            "type": "string"
+                        },
                         "shortcode": {
-                            "type": "string",
-                            "description": "Landing Company short code"
-                        },
-                        "has_reality_check": {
-                            "enum": [
-                                1,
-                                0
-                            ],
-                            "description": "Flag to indicate whether reality check is applicable for this Landing Company. 1: applicable, 0: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
-                            "type": "integer"
-                        },
-                        "address": {
-                            "type": [
-                                "array",
-                                "null"
-                            ],
-                            "description": "Landing Company address",
-                            "items": {
-                                "type": "string"
-                            }
-                        },
-                        "changeable_fields" : {
-                          "type" : "object",
-                          "description": "Special conditions for changing sensitive fields"
-                        },
-                        "legal_allowed_currencies": {
-                            "items": {
-                                "type": "string"
-                            },
-                            "description": "Allowed account currencies for this Landing Company",
-                            "type": "array"
-                        },
-                        "legal_allowed_markets": {
-                            "type": "array",
-                            "description": "Allowed markets for this Landing Company",
-                            "items": {
-                                "type": "string"
-                            }
-                        },
-                        "legal_allowed_contract_categories": {
-                            "items": {
-                                "type": "string"
-                            },
-                            "description": "Allowed contract types for this Landing Company",
-                            "type": "array"
+                            "description": "Landing Company short code",
+                            "type": "string"
                         }
-                    },
-                    "type": [
-                        "null",
-                        "object"
-                    ],
-                    "description": "Landing Company for financial contracts (all except Volatility Indices)"
-                },
-                "mt_financial_company": {
-                    "properties": {
-                        "advanced": {
-                            "type": [
-                                "null",
-                                "object"
-                            ],
-                            "description": "Contain details for landing company for advanced subtype. The Advanced account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers.",
-                            "properties": {
-                                "address": {
-                                    "type": [
-                                        "array",
-                                        "null"
-                                    ],
-                                    "description": "Landing Company address",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "country": {
-                                    "description": "Landing Company country of incorporation",
-                                    "type": "string"
-                                },
-                                "legal_default_currency": {
-                                    "type": "string",
-                                    "description": "Default account currency"
-                                },
-                                "name": {
-                                    "description": "Landing Company legal name",
-                                    "type": "string"
-                                },
-                                "shortcode": {
-                                    "description": "Landing Company short code",
-                                    "type": "string"
-                                },
-                                "has_reality_check": {
-                                    "enum": [
-                                        0,
-                                        1
-                                    ],
-                                    "description": "Flag to indicate whether reality check is applicable for this Landing Company. 1: applicable, 0: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
-                                    "type": "integer"
-                                },
-                                "legal_allowed_markets": {
-                                    "items": {
-                                        "type": "string"
-                                    },
-                                    "type": "array",
-                                    "description": "Allowed markets for this Landing Company"
-                                },
-                                "legal_allowed_contract_categories": {
-                                    "description": "Allowed contract types for this Landing Company",
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "legal_allowed_currencies": {
-                                    "items": {
-                                        "type": "string"
-                                    },
-                                    "type": "array",
-                                    "description": "Allowed account currencies for this Landing Company"
-                                }
-                            }
-                        },
-                        "standard": {
-                            "type": [
-                                "null",
-                                "object"
-                            ],
-                            "description": "Contain details for landing company for standard subtype. The Standard account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market.",
-                            "properties": {
-                                "address": {
-                                    "type": [
-                                        "array",
-                                        "null"
-                                    ],
-                                    "description": "Landing Company address",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "country": {
-                                    "description": "Landing Company country of incorporation",
-                                    "type": "string"
-                                },
-                                "legal_default_currency": {
-                                    "type": "string",
-                                    "description": "Default account currency"
-                                },
-                                "name": {
-                                    "description": "Landing Company legal name",
-                                    "type": "string"
-                                },
-                                "shortcode": {
-                                    "description": "Landing Company short code",
-                                    "type": "string"
-                                },
-                                "has_reality_check": {
-                                    "enum": [
-                                        0,
-                                        1
-                                    ],
-                                    "description": "Flag to indicate whether reality check is applicable for this Landing Company. 1: applicable, 0: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
-                                    "type": "integer"
-                                },
-                                "legal_allowed_markets": {
-                                    "items": {
-                                        "type": "string"
-                                    },
-                                    "type": "array",
-                                    "description": "Allowed markets for this Landing Company"
-                                },
-                                "legal_allowed_contract_categories": {
-                                    "description": "Allowed contract types for this Landing Company",
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "legal_allowed_currencies": {
-                                    "items": {
-                                        "type": "string"
-                                    },
-                                    "type": "array",
-                                    "description": "Allowed account currencies for this Landing Company"
-                                }
-                            }
-                        }
-                    },
-                    "type": [
-                        "null",
-                        "object"
-                    ],
-                    "description": "Landing Company for MT5 financial contracts (all except Volatility Indices), currently divided into advanced and standard as subtypes."
+                    }
                 },
                 "gaming_company": {
                     "description": "Landing Company for gaming contracts (Volatility Indices)",
@@ -302,16 +88,27 @@
                         "object"
                     ],
                     "properties": {
-                        "legal_allowed_contract_categories": {
-                            "type": "array",
-                            "description": "Allowed contract types",
+                        "address": {
+                            "description": "Landing Company address",
+                            "type": [
+                                "array",
+                                "null"
+                            ],
                             "items": {
                                 "type": "string"
                             }
                         },
-                        "legal_allowed_markets": {
+                        "changeable_fields": {
+                            "description": "Special conditions for changing sensitive fields",
+                            "type": "object"
+                        },
+                        "country": {
+                            "description": "Landing Company country of incorporation",
+                            "type": "string"
+                        },
+                        "legal_allowed_contract_categories": {
+                            "description": "Allowed contract types",
                             "type": "array",
-                            "description": "Allowable markets",
                             "items": {
                                 "type": "string"
                             }
@@ -323,10 +120,175 @@
                                 "type": "string"
                             }
                         },
-                        "changeable_fields" : {
-                          "type" : "object",
-                          "description": "Special conditions for changing sensitive fields"
+                        "legal_allowed_markets": {
+                            "description": "Allowable markets",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
                         },
+                        "legal_default_currency": {
+                            "description": "Default account currency",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Landing Company legal name",
+                            "type": "string"
+                        },
+                        "shortcode": {
+                            "description": "Landing Company short code",
+                            "type": "string"
+                        }
+                    }
+                },
+                "id": {
+                    "description": "Country code",
+                    "type": "string"
+                },
+                "mt_financial_company": {
+                    "description": "Landing Company for MT5 financial contracts (all except Volatility Indices), currently divided into advanced and standard as subtypes.",
+                    "type": [
+                        "null",
+                        "object"
+                    ],
+                    "properties": {
+                        "advanced": {
+                            "description": "Contain details for landing company for advanced subtype. The Advanced account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers.",
+                            "type": [
+                                "null",
+                                "object"
+                            ],
+                            "properties": {
+                                "address": {
+                                    "description": "Landing Company address",
+                                    "type": [
+                                        "array",
+                                        "null"
+                                    ],
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "country": {
+                                    "description": "Landing Company country of incorporation",
+                                    "type": "string"
+                                },
+                                "has_reality_check": {
+                                    "description": "Flag to indicate whether reality check is applicable for this Landing Company. 1: applicable, 0: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
+                                },
+                                "legal_allowed_contract_categories": {
+                                    "description": "Allowed contract types for this Landing Company",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "legal_allowed_currencies": {
+                                    "description": "Allowed account currencies for this Landing Company",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "legal_allowed_markets": {
+                                    "description": "Allowed markets for this Landing Company",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "legal_default_currency": {
+                                    "description": "Default account currency",
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "description": "Landing Company legal name",
+                                    "type": "string"
+                                },
+                                "shortcode": {
+                                    "description": "Landing Company short code",
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "standard": {
+                            "description": "Contain details for landing company for standard subtype. The Standard account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market.",
+                            "type": [
+                                "null",
+                                "object"
+                            ],
+                            "properties": {
+                                "address": {
+                                    "description": "Landing Company address",
+                                    "type": [
+                                        "array",
+                                        "null"
+                                    ],
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "country": {
+                                    "description": "Landing Company country of incorporation",
+                                    "type": "string"
+                                },
+                                "has_reality_check": {
+                                    "description": "Flag to indicate whether reality check is applicable for this Landing Company. 1: applicable, 0: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
+                                },
+                                "legal_allowed_contract_categories": {
+                                    "description": "Allowed contract types for this Landing Company",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "legal_allowed_currencies": {
+                                    "description": "Allowed account currencies for this Landing Company",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "legal_allowed_markets": {
+                                    "description": "Allowed markets for this Landing Company",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "legal_default_currency": {
+                                    "description": "Default account currency",
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "description": "Landing Company legal name",
+                                    "type": "string"
+                                },
+                                "shortcode": {
+                                    "description": "Landing Company short code",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "mt_gaming_company": {
+                    "description": "Landing Company for MT5 gaming contracts (Volatility Indices)",
+                    "type": [
+                        "null",
+                        "object"
+                    ],
+                    "properties": {
                         "address": {
                             "description": "Landing Company address",
                             "type": [
@@ -337,29 +299,69 @@
                                 "type": "string"
                             }
                         },
-                        "shortcode": {
-                            "type": "string",
-                            "description": "Landing Company short code"
-                        },
                         "country": {
                             "description": "Landing Company country of incorporation",
                             "type": "string"
+                        },
+                        "legal_allowed_contract_categories": {
+                            "description": "Allowed contract types",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "legal_allowed_currencies": {
+                            "description": "Allowable currencies",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "legal_allowed_markets": {
+                            "description": "Allowable markets",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "legal_default_currency": {
                             "description": "Default account currency",
                             "type": "string"
                         },
                         "name": {
-                            "type": "string",
-                            "description": "Landing Company legal name"
+                            "description": "Landing Company legal name",
+                            "type": "string"
+                        },
+                        "requirements": {
+                            "description": "Legal requirements for the Landing Company",
+                            "type": "object"
+                        },
+                        "shortcode": {
+                            "description": "Landing Company short code",
+                            "type": "string"
                         }
                     }
+                },
+                "name": {
+                    "description": "Country name",
+                    "type": "string"
                 }
             }
         },
         "echo_req": {
-            "title": "Echo request",
-            "description": "Echo of the request made"
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "landing_company"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
         }
     }
 }

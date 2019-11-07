@@ -1,34 +1,36 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   
-   "title" : "Verify Email Response",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "description" : "Verify Email Receive",
-   "type" : "object",
-   "properties" : {
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      },
-      "verify_email" : {
-         "description" : "1 for success (secure code has been sent to the email address)",
-         "type" : "integer",
-         "title" : "verify email response",
-         "enum" : [
-            0,
-            1
-         ]
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "msg_type" : {
-         "type" : "string",
-         "description" : "verify_email"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Verify Email (response)",
+    "description": "Verify Email Receive",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "verify_email": {
+            "title": "verify_email",
+            "description": "1 for success (secure code has been sent to the email address)",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "verify_email"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

@@ -1,165 +1,171 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "new_account_real",
-      "date_of_birth",
-      "first_name",
-      "last_name",
-      "residence"
-   ],
-   "type" : "object",
-   "description" : "This call opens a new real-money account. This call can be made from a virtual-money or a real-money account. If it’s the latter, client information fields in this call will be ignored and data from your existing real-money account will be used.",
-   "additionalProperties" : false,
-   "title" : "Create real account Send",
-   "properties" : {
-      "tax_identification_number" : {
-         "pattern" : "^[\\w-]{0,20}$",
-         "description" : "Tax identification number. Only applicable for real money account. Required for maltainvest landing company.",
-         "type" : "string"
-      },
-      "phone" : {
-         "description" : "Within 8-35 digits, allowing '+' in front, numbers, hyphens or space.",
-         "type" : "string",
-         "pattern" : "^\\+?((-|\\s)*[0-9]){8,35}$"
-      },
-      "secret_question" : {
-         "enum" : [
-            "Mother's maiden name",
-            "Name of your pet",
-            "Name of first love",
-            "Memorable town/city",
-            "Memorable date",
-            "Favourite dish",
-            "Brand of first car",
-            "Favourite artist"
-         ],
-         "description" : "Accept any value in enum list. Required for new account and existing client details will be used if client open another account."
-      },
-      "place_of_birth" : {
-         "type" : "string",
-         "description" : "Place of birth, 2-letter country code.",
-         "pattern" : "^[a-z]{2}$"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field to map request to response"
-      },
-      "affiliate_token" : {
-         "type" : "string",
-         "description" : "Affiliate token, within 32 characters.",
-         "pattern" : "^[\\w-]{0,32}$"
-      },
-      "address_postcode" : {
-         "description" : "Optional field, within 20 characters and may not contain '+'.",
-         "type" : "string",
-         "pattern" : "^[\\w\\s-]{0,20}$"
-      },
-      "tax_residence" : {
-         "description" : "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for maltainvest landing company.",
-         "type" : "string",
-         "pattern" : "^[a-z]{0,2}(?:,[a-z]{2})*$"
-      },
-      "address_state" : {
-         "pattern" : "^[\\p{L}\\p{Nd}\\s'.,-]{0,35}$",
-         "type" : "string",
-         "description" : "Optional field, possible value receive from states_list call."
-      },
-      "residence" : {
-         "type" : "string",
-         "description" : "2-letter country code, possible value receive from residence_list call.",
-         "pattern" : "^[a-z]{2}$"
-      },
-      "date_of_birth" : {
-         "description" : "Date of birth format: yyyy-mm-dd.",
-         "type" : "string",
-         "pattern" : "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
-      },
-      "first_name" : {
-         "pattern" : "^[\\p{L}\\s'.-]{2,50}$",
-         "description" : "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
-         "type" : "string"
-      },
-      "address_city" : {
-         "pattern" : "^[\\p{L}\\s'.-]{1,35}$",
-         "type" : "string",
-         "description" : "Within 35 characters"
-      },
-      "currency" : {
-         "description" : "Optional field to set currency of the account. List of supported currencies can be acquired with 'payout_currencies' call",
-         "pattern" : "^[A-Z]{3}$"
-      },
-      "salutation" : {
-         "description" : "Accept any value in enum list.",
-         "enum" : [
-            "Mr",
-            "Mrs",
-            "Ms",
-            "Miss"
-         ]
-      },
-      "last_name" : {
-         "type" : "string",
-         "description" : "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
-         "pattern" : "^[\\p{L}\\s'.-]{2,50}$"
-      },
-      "account_opening_reason" : {
-         "enum" : [
-            "Speculative",
-            "Income Earning",
-            "Hedging"
-         ],
-         "type" : "string",
-         "description" : "Purpose and reason for requesting the account opening"
-      },
-      "address_line_1" : {
-         "type" : "string",
-         "pattern" : "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{1,70}$"
-      },
-      "address_line_2" : {
-         "pattern" : "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{0,70}$",
-         "type" : "string",
-         "description" : "Optional field, within 70 characters."
-      },
-      "secret_answer" : {
-         "pattern" : "^[\\w\\-\\,\\.\\' ]+",
-         "type" : "string",
-         "sensitive" : 1,
-         "description" : "Answer to secret question, within 4-50 characters. Required for new account and existing client details will be used if client open another account.",
-         "minLength" : 4,
-         "maxLength" : 50
-      },
-      "account_turnover" : {
-         "description" : "The anticipated account turnover",
-         "enum" : [
-            "Less than $25,000",
-            "$25,000 - $50,000",
-            "$50,001 - $100,000",
-            "$100,001 - $500,000",
-            "Over $500,000"
-         ]
-      },
-      "new_account_real" : {
-         "description" : "Must be 1",
-         "type" : "integer",
-         "enum" : [
-            1
-         ]
-      },
-      "citizen" : {
-         "pattern" : "^([a-z]{2})?$",
-         "description" : "Country of legal citizenship, 2-letter country code.",
-         "type" : [
-            "string",
-            "null"
-         ]
-      },
-      "passthrough" : {
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-         "type" : "object"
-      },
-      "client_type" : {
-         "pattern" : "^retail|professional$",
-         "description" : "Optional field, indicates whether this is for a client requesting an account with professional status. Defaults to retail."
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "New Real-Money Account: Default Landing Company (request)",
+    "description": "This call opens a new real-money account. This call can be made from a virtual-money or a real-money account. If it is the latter, client information fields in this call will be ignored and data from your existing real-money account will be used.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "date_of_birth",
+        "first_name",
+        "last_name",
+        "new_account_real",
+        "residence"
+    ],
+    "properties": {
+        "new_account_real": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "account_opening_reason": {
+            "description": "Purpose and reason for requesting the account opening",
+            "type": "string",
+            "enum": [
+                "Speculative",
+                "Income Earning",
+                "Hedging"
+            ]
+        },
+        "account_turnover": {
+            "description": "The anticipated account turnover",
+            "type": "string",
+            "enum": [
+                "Less than $25,000",
+                "$25,000 - $50,000",
+                "$50,001 - $100,000",
+                "$100,001 - $500,000",
+                "Over $500,000"
+            ]
+        },
+        "address_city": {
+            "description": "Within 35 characters",
+            "type": "string",
+            "pattern": "^[\\p{L}\\s'.-]{1,35}$"
+        },
+        "address_line_1": {
+            "description": "Mailing address.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{1,70}$"
+        },
+        "address_line_2": {
+            "description": "Optional field, within 70 characters.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{0,70}$"
+        },
+        "address_postcode": {
+            "description": "Optional field, within 20 characters and may not contain '+'.",
+            "type": "string",
+            "pattern": "^[\\w\\s-]{0,20}$"
+        },
+        "address_state": {
+            "description": "Optional field, possible value receive from 'states_list' call.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,35}$"
+        },
+        "affiliate_token": {
+            "description": "Affiliate token, within 32 characters.",
+            "type": "string",
+            "pattern": "^[\\w-]{0,32}$"
+        },
+        "citizen": {
+            "description": "Country of legal citizenship, 2-letter country code.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "pattern": "^([a-z]{2})?$"
+        },
+        "client_type": {
+            "description": "Optional field, indicates whether this is for a client requesting an account with professional status. Defaults to retail.",
+            "type": "string",
+            "pattern": "^retail|professional$"
+        },
+        "currency": {
+            "description": "Optional field to set currency of the account. List of supported currencies can be acquired with 'payout_currencies' call",
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+        },
+        "date_of_birth": {
+            "description": "Date of birth format: yyyy-mm-dd.",
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
+        },
+        "first_name": {
+            "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\s'.-]{2,50}$"
+        },
+        "last_name": {
+            "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\s'.-]{2,50}$"
+        },
+        "phone": {
+            "description": "Within 8-35 digits, allowing '+' in front, numbers, hyphens or space.",
+            "type": "string",
+            "pattern": "^\\+?((-|\\s)*[0-9]){8,35}$"
+        },
+        "place_of_birth": {
+            "description": "Place of birth, 2-letter country code.",
+            "type": "string",
+            "pattern": "^[a-z]{2}$"
+        },
+        "residence": {
+            "description": "2-letter country code, possible value receive from residence_list call.",
+            "type": "string",
+            "pattern": "^[a-z]{2}$"
+        },
+        "salutation": {
+            "description": "Accept any value in enum list.",
+            "type": "string",
+            "enum": [
+                "Mr",
+                "Mrs",
+                "Ms",
+                "Miss"
+            ]
+        },
+        "secret_answer": {
+            "description": "Answer to secret question, within 4-50 characters. Required for new account and existing client details will be used if client open another account.",
+            "type": "string",
+            "pattern": "^[\\w\\-\\,\\.\\' ]+",
+            "maxLength": 50,
+            "minLength": 4,
+            "sensitive": 1
+        },
+        "secret_question": {
+            "description": "Accept any value in enum list. Required for new account and existing client details will be used if client open another account.",
+            "type": "string",
+            "enum": [
+                "Mother's maiden name",
+                "Name of your pet",
+                "Name of first love",
+                "Memorable town/city",
+                "Memorable date",
+                "Favourite dish",
+                "Brand of first car",
+                "Favourite artist"
+            ]
+        },
+        "tax_identification_number": {
+            "description": "Tax identification number. Only applicable for real money account. Required for maltainvest landing company.",
+            "type": "string",
+            "pattern": "^[\\w-]{0,20}$"
+        },
+        "tax_residence": {
+            "description": "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for maltainvest landing company.",
+            "type": "string",
+            "pattern": "^[a-z]{0,2}(?:,[a-z]{2})*$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

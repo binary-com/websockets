@@ -1,25 +1,25 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "type" : "object",
-   "description" : "Receive a list of market opening times for a given date.",
-   "required" : [
-      "trading_times"
-   ],
-   "title" : "Trading Times Request",
-   "additionalProperties" : false,
-   "properties" : {
-      "req_id" : {
-         "type" : "integer",
-         "description" : "[Optional] Used to map request to response."
-      },
-      "trading_times" : {
-         "pattern" : "^([0-9]{4}-[0-9]{1,2}-[0-9]{1,2}|today)$",
-         "type" : "string",
-         "description" : "Date to receive market opening times for. (yyyy-mm-dd format. 'today' can also be specified)."
-      },
-      "passthrough" : {
-         "description" : "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-         "type" : "object"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Trading Times (request)",
+    "description": "Receive a list of market opening times for a given date.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "trading_times"
+    ],
+    "properties": {
+        "trading_times": {
+            "description": "Date to receive market opening times for. (yyyy-mm-dd format. 'today' can also be specified).",
+            "type": "string",
+            "pattern": "^([0-9]{4}-[0-9]{1,2}-[0-9]{1,2}|today)$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

@@ -1,53 +1,55 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   
-   "title" : "Create maltainvest account Receive",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "type" : "object",
-   "description" : "Create maltainvest account Receive",
-   "properties" : {
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      },
-      "echo_req" : {
-         "description" : "Echo of the request made",
-         "title" : "Echo request"
-      },
-      "msg_type" : {
-         "description" : "new_account_maltainvest",
-         "type" : "string"
-      },
-      "new_account_maltainvest" : {
-         "title" : "New maltainvest account",
-         "properties" : {
-            "client_id" : {
-               "type" : "string",
-               "description" : "Client id of new maltainvest account"
-            },
-            "landing_company" : {
-               "type" : "string",
-               "description" : "landing company full name"
-            },
-            "landing_company_short" : {
-               "description" : "landing company shortcode",
-               "type" : "string"
-            },
-            "oauth_token" : {
-               "type" : "string",
-               "description" : "oauth token for client's login session"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "New Real-Money Account: Binary Investment (Europe) Ltd. (response)",
+    "description": "Create maltainvest account Receive",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "new_account_maltainvest": {
+            "title": "new_account_maltainvest",
+            "description": "New maltainvest account details",
+            "type": "object",
+            "required": [
+                "client_id",
+                "landing_company",
+                "oauth_token"
+            ],
+            "properties": {
+                "client_id": {
+                    "description": "Client ID of new maltainvest account",
+                    "type": "string"
+                },
+                "landing_company": {
+                    "description": "Landing company full name",
+                    "type": "string"
+                },
+                "landing_company_short": {
+                    "description": "Landing company shortcode",
+                    "type": "string"
+                },
+                "oauth_token": {
+                    "description": "OAuth token for client's login session",
+                    "type": "string"
+                }
             }
-         },
-         "required" : [
-            "oauth_token",
-            "client_id",
-            "landing_company"
-         ],
-         "description" : "New maltainvest account details",
-         "type" : "object"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "new_account_maltainvest"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

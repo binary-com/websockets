@@ -1,123 +1,130 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Trading Durations Response",
-   "required" : [
-      "msg_type",
-      "echo_req"
-   ],
-   "description" : "A message with trading duration information for symbol and contract combinations.",
-   "type" : "object",
-   "properties" : {
-      "req_id" : {
-         "description" : "ID used to map request to response, present only when the request contains req_id.",
-         "type" : "integer"
-      },
-      "trading_durations" : {
-         "title" : "Trading Durations List",
-         "description" : "List of underlyings by their display name and symbol followed by their available contract types and trading duration boundaries.",
-         "type" : "array",
-         "items" : {
-            "type" : "object",
-            "properties" : {
-                "market" : {
-                    "type" : "object",
-                    "properties" : {
-                        "name" : {
-                            "type": "string",
-                            "description" : "market name"
-                        },
-                        "display_name" : {
-                            "type": "string",
-                            "description" : "Translated market name."
-                        }
-                    }
-                },
-                "submarket" : {
-                    "type" : "object",
-                    "properties" : {
-                        "name" : {
-                            "type": "string",
-                            "description" : "Submarket name."
-                        },
-                        "display_name" : {
-                            "type": "string",
-                            "description" : "Translated submarket name."
-                        }
-                    }
-                },
-                "symbol" : {
-                    "type" : "array",
-                    "description" : "List of underlying symbols.",
-                    "items" : {
-                        "type" : "object",
-                        "properties" : {
-                            "name" : {
-                                "type": "string",
-                                "description" : "Symbol name."
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Trading Durations (response)",
+    "description": "A message with trading duration information for symbol and contract combinations.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "trading_durations": {
+            "title": "trading_durations",
+            "description": "List of underlyings by their display name and symbol followed by their available contract types and trading duration boundaries.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "market": {
+                        "description": "The market in which the underlyings listed in 'symbol' located.",
+                        "type": "object",
+                        "properties": {
+                            "display_name": {
+                                "description": "Translated market name.",
+                                "type": "string"
                             },
-                            "display_name" : {
-                                "type": "string",
-                                "description" : "Translated symbol name."
+                            "name": {
+                                "description": "Market name.",
+                                "type": "string"
                             }
                         }
-                    }
-                },
-                "trade_durations" : {
-                    "type" : "array",
-                    "description" : "List of trade durations available for symbol and contract conbinations.",
-                    "items" : {
-                        "type" : "object",
-                        "properties" : {
-                            "trade_type" : {
-                                "type": "object",
-                                "properties" : {
-                                    "name" : {
-                                        "type": "string",
-                                        "description" : "Trade type name."
-                                    },
-                                    "display_name" : {
-                                        "type": "string",
-                                        "description" : "Translated trade type name."
-                                    }
-                                }
+                    },
+                    "submarket": {
+                        "description": "The submarket in which the underlyings listed in 'symbol' located.",
+                        "type": "object",
+                        "properties": {
+                            "display_name": {
+                                "description": "Translated submarket name.",
+                                "type": "string"
                             },
-                            "durations" : {
-                                "type" : "array",
-                                "items": {
-                                    "type" : "object",
-                                    "properties" : {
-                                        "name" : {
-                                            "type": "string",
-                                            "description" : "Duration type name."
-                                        },
-                                        "display_name" : {
-                                            "type": "string",
-                                            "description" : "Translated duration type name."
-                                        },
-                                        "min" : {
-                                            "type": "integer",
-                                            "description" : "Minimum allowed duration for this type."
-                                        },
-                                        "max" : {
-                                            "type": "integer",
-                                            "description" : "Maximum allowed duration for this type."
+                            "name": {
+                                "description": "Submarket name.",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "symbol": {
+                        "description": "List of underlying symbols.",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "display_name": {
+                                    "description": "Translated symbol name.",
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "description": "Symbol name.",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "trade_durations": {
+                        "description": "List of trade durations available for symbols and contract combinations.",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "durations": {
+                                    "description": "List of trade durations available for the symbols.",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "display_name": {
+                                                "description": "Translated duration type name.",
+                                                "type": "string"
+                                            },
+                                            "max": {
+                                                "description": "Maximum allowed duration for this type.",
+                                                "type": "integer"
+                                            },
+                                            "min": {
+                                                "description": "Minimum allowed duration for this type.",
+                                                "type": "integer"
+                                            },
+                                            "name": {
+                                                "description": "Duration type name.",
+                                                "type": "string"
+                                            }
                                         }
-                                   }
+                                    }
+                                },
+                                "trade_type": {
+                                    "description": "List of trade types available for the symbols.",
+                                    "type": "object",
+                                    "properties": {
+                                        "display_name": {
+                                            "description": "Translated trade type name.",
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "description": "Trade type name.",
+                                            "type": "string"
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-         }
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made."
-      },
-      "msg_type" : {
-         "type" : "string",
-         "description" : "trading_durations"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "trading_durations"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

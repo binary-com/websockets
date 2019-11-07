@@ -1,176 +1,185 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Get User Settings Receive",
-   
-   "description" : "A message with User Settings",
-   "type" : "object",
-   "required" : [
-      "msg_type",
-      "echo_req"
-   ],
-   "properties" : {
-      "get_settings" : {
-         "properties" : {
-            "email_consent" : {
-               "description" : "Boolean value 1 or 0, indicating permission to use email address for any contact which may include marketing",
-               "type" : "integer"
-            },
-            "residence" : {
-               "type" : [
-                  "string",
-                  "null"
-               ],
-               "description" : "User Country"
-            },
-            "country" : {
-               "type" : [
-                  "string",
-                  "null"
-               ],
-               "description" : "User Country (same as residence field) - deprecated"
-            },
-            "client_tnc_status" : {
-               "type" : [
-                  "string",
-                  "null"
-               ],
-               "description" : "Latest terms and conditions version accepted by client"
-            },
-            "phone" : {
-               "type" : "string",
-               "description" : "Telephone (note: not set for virtual-money accounts)"
-            },
-            "tax_identification_number" : {
-               "type" : [
-                  "string",
-                  "null"
-               ],
-               "description" : "Tax identification number. Only applicable for real money account."
-            },
-            "place_of_birth" : {
-               "description" : "Place of birth, 2-letter country code.",
-               "type" : [
-                  "string",
-                  "null"
-               ]
-            },
-            "is_authenticated_payment_agent" : {
-               "description" : "Boolean value 1 or 0, indicating whether is payment agent (note: not applicable for virtual money accounts)",
-               "type" : "integer",
-               "enum" : [0,1]
-            },
-            "allow_copiers" : {
-               "enum" : [
-                  0,
-                  1
-               ],
-               "description" : "Boolean value 1 or 0, indicating permission to allow others to follow your trades. Note: not applicable for Virtual account. Only allow for real money account.",
-               "type" : "integer"
-            },
-            "address_city" : {
-               "description" : "City (note: not set for virtual-money accounts)",
-               "type" : "string"
-            },
-            "date_of_birth" : {
-               "description" : "Epoch of user's birthday (note: not set for virtual-money accounts)",
-               "type" : [
-                  "integer",
-                  "null"
-               ]
-            },
-            "first_name" : {
-               "type" : "string",
-               "description" : "First name (note: not set for virtual-money accounts)"
-            },
-            "address_postcode" : {
-               "type" : "string",
-               "description" : "Post Code (note: not set for virtual-money accounts)"
-            },
-            "address_state" : {
-               "description" : "State (note: not set for virtual-money accounts)",
-               "type" : "string"
-            },
-            "tax_residence" : {
-               "description" : "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account.",
-               "type" : [
-                  "string",
-                  "null"
-               ]
-            },
-            "email" : {
-               "type" : "string",
-               "description" : "User Email"
-            },
-            "address_line_2" : {
-               "type" : "string",
-               "description" : "Address line 2 (note: not set for virtual-money accounts)"
-            },
-            "address_line_1" : {
-               "type" : "string",
-               "description" : "Address line 1 (note: not set for virtual-money accounts)"
-            },
-            "last_name" : {
-               "description" : "Last name (note: not set for virtual-money accounts)",
-               "type" : "string"
-            },
-            "account_opening_reason" : {
-               "description" : "Purpose and reason for requesting the account opening. Only applicable for real money account.",
-               "type" : [
-                  "string",
-                  "null"
-               ]
-            },
-            "salutation" : {
-               "type" : "string",
-               "description" : "Salutation (note: not set for virtual-money accounts)"
-            },
-            "user_hash" : {
-               "type" : [
-                  "string",
-                  "null"
-               ],
-               "description" : "Hash generated using user details to verify whether the user is legitimate for our customer support system."
-            },
-            "request_professional_status" : {
-               "enum" : [
-                  0,
-                  1
-               ],
-               "description" : "Boolean value 1 or 0, indicating if client has requested professional status.",
-               "type" : "integer"
-            },
-            "citizen" : {
-               "type" : "string",
-               "description" : "Country of legal citizenship, 2-letter country code."
-            },
-            "country_code" : {
-               "description" : "2-letter country code ISO standard",
-               "type" : [
-                  "string",
-                  "null"
-               ],
-               "pattern" : "^[a-z]{0,2}$"
-            },
-            "has_secret_answer" : {
-               "enum" : [0, 1],
-               "description" : "Returns 1 if the client has a secret answer, 0 otherwise.",
-               "type" :"integer"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Get Account Settings (response)",
+    "description": "A message with User Settings",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "get_settings": {
+            "title": "get_settings",
+            "description": "User information and settings.",
+            "type": "object",
+            "properties": {
+                "account_opening_reason": {
+                    "description": "Purpose and reason for requesting the account opening. Only applicable for real money account.",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "address_city": {
+                    "description": "City (note: not set for virtual-money accounts)",
+                    "type": "string"
+                },
+                "address_line_1": {
+                    "description": "Address line 1 (note: not set for virtual-money accounts)",
+                    "type": "string"
+                },
+                "address_line_2": {
+                    "description": "Address line 2 (note: not set for virtual-money accounts)",
+                    "type": "string"
+                },
+                "address_postcode": {
+                    "description": "Post Code (note: not set for virtual-money accounts)",
+                    "type": "string"
+                },
+                "address_state": {
+                    "description": "State (note: not set for virtual-money accounts)",
+                    "type": "string"
+                },
+                "allow_copiers": {
+                    "description": "Boolean value 1 or 0, indicating permission to allow others to follow your trades. Note: not applicable for Virtual account. Only allow for real money account.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "citizen": {
+                    "description": "Country of legal citizenship, 2-letter country code.",
+                    "type": "string"
+                },
+                "client_tnc_status": {
+                    "description": "Latest terms and conditions version accepted by client",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "country": {
+                    "description": "User Country (same as residence field) - deprecated",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "country_code": {
+                    "description": "2-letter country code ISO standard",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "pattern": "^[a-z]{0,2}$"
+                },
+                "date_of_birth": {
+                    "description": "Epoch of user's birthday (note: not set for virtual-money accounts)",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "email": {
+                    "description": "User Email",
+                    "type": "string"
+                },
+                "email_consent": {
+                    "description": "Boolean value 1 or 0, indicating permission to use email address for any contact which may include marketing",
+                    "type": "integer"
+                },
+                "first_name": {
+                    "description": "First name (note: not set for virtual-money accounts)",
+                    "type": "string"
+                },
+                "has_secret_answer": {
+                    "description": "Returns 1 if the client has a secret answer, 0 otherwise.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "is_authenticated_payment_agent": {
+                    "description": "Boolean value 1 or 0, indicating whether is payment agent (note: not applicable for virtual money accounts)",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "last_name": {
+                    "description": "Last name (note: not set for virtual-money accounts)",
+                    "type": "string"
+                },
+                "phone": {
+                    "description": "Telephone (note: not set for virtual-money accounts)",
+                    "type": "string"
+                },
+                "place_of_birth": {
+                    "description": "Place of birth, 2-letter country code.",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "request_professional_status": {
+                    "description": "Boolean value 1 or 0, indicating if client has requested professional status.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "residence": {
+                    "description": "User Country",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "salutation": {
+                    "description": "Salutation (note: not set for virtual-money accounts)",
+                    "type": "string"
+                },
+                "tax_identification_number": {
+                    "description": "Tax identification number. Only applicable for real money account.",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "tax_residence": {
+                    "description": "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account.",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "user_hash": {
+                    "description": "Hash generated using user details to verify whether the user is legitimate for our customer support system.",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                }
             }
-         },
-         "title" : "User Details",
-         "type" : "object"
-      },
-      "msg_type" : {
-         "description" : "get_settings",
-         "type" : "string"
-      },
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "get_settings"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

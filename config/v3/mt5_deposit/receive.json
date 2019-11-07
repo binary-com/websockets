@@ -1,34 +1,36 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   
-   "title" : "MT5 Account Deposit Response",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "type" : "object",
-   "description" : "",
-   "properties" : {
-      "binary_transaction_id" : {
-         "description" : "Withdrawal reference id of Binary account",
-         "type" : "integer"
-      },
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "mt5_deposit" : {
-         "type" : "integer",
-         "description" : "1 on success",
-         "title" : "MT5 Account Deposit Status"
-      },
-      "msg_type" : {
-         "type" : "string",
-         "description" : "mt5_deposit"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MT5: Deposit (response)",
+    "description": "The result of MT5 deposit request.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "mt5_deposit": {
+            "title": "mt5_deposit",
+            "description": "1 on success",
+            "type": "integer"
+        },
+        "binary_transaction_id": {
+            "description": "Withdrawal reference ID of Binary account",
+            "type": "integer"
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "mt5_deposit"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

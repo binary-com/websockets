@@ -1,41 +1,42 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "mt5_deposit",
-      "to_mt5"
-   ],
-   "type" : "object",
-   "description" : "This call allows deposit into MT5 account from Binary account.",
-   "additionalProperties" : false,
-   "title" : "MT5 Account Deposit Request",
-   "properties" : {
-      "mt5_deposit" : {
-         "enum" : [
-            1
-         ],
-         "type" : "integer"
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field to map request to response"
-      },
-      "from_binary" : {
-         "type" : "string",
-         "description" : "Binary account loginid to transfer money from",
-         "pattern" : "^[A-Za-z]+[0-9]+$"
-      },
-      "amount" : {
-         "description" : "Amount to deposit (in the currency of from_binary); min = $1 or an equivalent amount, max = $20000 or an equivalent amount",
-         "type" : "number"
-      },
-      "to_mt5" : {
-         "pattern" : "^[0-9]+$",
-         "description" : "MT5 account login to deposit money to",
-         "type" : "string"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MT5: Deposit (request)",
+    "description": "This call allows deposit into MT5 account from Binary account.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "mt5_deposit",
+        "to_mt5"
+    ],
+    "properties": {
+        "mt5_deposit": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "amount": {
+            "description": "Amount to deposit (in the currency of from_binary); min = $1 or an equivalent amount, max = $20000 or an equivalent amount",
+            "type": "number"
+        },
+        "from_binary": {
+            "description": "Binary account loginid to transfer money from",
+            "type": "string",
+            "pattern": "^[A-Za-z]+[0-9]+$"
+        },
+        "to_mt5": {
+            "description": "MT5 account login to deposit money to",
+            "type": "string",
+            "pattern": "^[0-9]+$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

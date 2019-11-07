@@ -1,116 +1,118 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Get financial assessment details",
-   
-   "description" : "This call gets the financial assessment details of client's account.",
-   "type" : "object",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "properties" : {
-      "get_financial_assessment" : {
-         "title" : "Assessment details",
-         "properties" : {
-            "cfd_trading_frequency" : {
-               "type" : "string",
-               "description" : "CFDs trading frequency"
-            },
-            "estimated_worth" : {
-               "description" : "Estimated Net Worth",
-               "type" : "string"
-            },
-            "occupation" : {
-               "type" : "string",
-               "description" : "Occupation"
-            },
-            "employment_status" : {
-               "description" : "Employment Status",
-               "type" : "string"
-            },
-            "employment_industry" : {
-               "description" : "Industry of Employment",
-               "type" : "string"
-            },
-            "trading_score" : {
-               "type" : "integer",
-               "description" : "Trading Experience Score"
-            },
-            "other_instruments_trading_frequency" : {
-               "description" : "Trading frequency in other financial instruments",
-               "type" : "string"
-            },
-            "source_of_wealth" : {
-               "description" : "Source of wealth",
-               "type" : "string"
-            },
-            "binary_options_trading_frequency" : {
-               "description" : "Binary options trading frequency",
-               "type" : "string"
-            },
-            "account_turnover" : {
-               "description" : "The anticipated account turnover",
-               "type" : "string"
-            },
-            "net_income" : {
-               "type" : "string",
-               "description" : "Net Annual Income"
-            },
-            "education_level" : {
-               "description" : "Level of Education",
-               "type" : "string"
-            },
-            "forex_trading_frequency" : {
-               "type" : "string",
-               "description" : "Forex trading frequency"
-            },
-            "other_instruments_trading_experience" : {
-               "type" : "string",
-               "description" : "Trading experience in other financial instruments"
-            },
-            "binary_options_trading_experience" : {
-               "description" : "Binary options trading experience",
-               "type" : "string"
-            },
-            "financial_information_score" : {
-               "description" : "Financial Information Score",
-               "type" : "integer"
-            },
-            "forex_trading_experience" : {
-               "type" : "string",
-               "description" : "Forex trading experience"
-            },
-            "total_score" : {
-               "description" : "Total Score",
-               "type" : "integer"
-            },
-            "income_source" : {
-               "type" : "string",
-               "description" : "Income Source"
-            },
-            "cfd_score" : {
-               "type" : "integer",
-               "description" : "CFD Score"
-            },
-            "cfd_trading_experience" : {
-               "description" : "CFDs trading experience",
-               "type" : "string"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Get Financial Assessment (response)",
+    "description": "This call gets the financial assessment details of client's account.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "get_financial_assessment": {
+            "title": "get_financial_assessment",
+            "description": "Client's financial asessment details",
+            "type": "object",
+            "properties": {
+                "account_turnover": {
+                    "description": "The anticipated account turnover",
+                    "type": "string"
+                },
+                "binary_options_trading_experience": {
+                    "description": "Binary options trading experience",
+                    "type": "string"
+                },
+                "binary_options_trading_frequency": {
+                    "description": "Binary options trading frequency",
+                    "type": "string"
+                },
+                "cfd_score": {
+                    "description": "CFD Score",
+                    "type": "integer"
+                },
+                "cfd_trading_experience": {
+                    "description": "CFDs trading experience",
+                    "type": "string"
+                },
+                "cfd_trading_frequency": {
+                    "description": "CFDs trading frequency",
+                    "type": "string"
+                },
+                "education_level": {
+                    "description": "Level of Education",
+                    "type": "string"
+                },
+                "employment_industry": {
+                    "description": "Industry of Employment",
+                    "type": "string"
+                },
+                "employment_status": {
+                    "description": "Employment Status",
+                    "type": "string"
+                },
+                "estimated_worth": {
+                    "description": "Estimated Net Worth",
+                    "type": "string"
+                },
+                "financial_information_score": {
+                    "description": "Financial Information Score",
+                    "type": "integer"
+                },
+                "forex_trading_experience": {
+                    "description": "Forex trading experience",
+                    "type": "string"
+                },
+                "forex_trading_frequency": {
+                    "description": "Forex trading frequency",
+                    "type": "string"
+                },
+                "income_source": {
+                    "description": "Income Source",
+                    "type": "string"
+                },
+                "net_income": {
+                    "description": "Net Annual Income",
+                    "type": "string"
+                },
+                "occupation": {
+                    "description": "Occupation",
+                    "type": "string"
+                },
+                "other_instruments_trading_experience": {
+                    "description": "Trading experience in other financial instruments",
+                    "type": "string"
+                },
+                "other_instruments_trading_frequency": {
+                    "description": "Trading frequency in other financial instruments",
+                    "type": "string"
+                },
+                "source_of_wealth": {
+                    "description": "Source of wealth",
+                    "type": "string"
+                },
+                "total_score": {
+                    "description": "Total Score",
+                    "type": "integer"
+                },
+                "trading_score": {
+                    "description": "Trading Experience Score",
+                    "type": "integer"
+                }
             }
-         },
-         "type" : "object",
-         "description" : "Client's financial asessment details"
-      },
-      "msg_type" : {
-         "description" : "get_financial_assessment",
-         "type" : "string"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "get_financial_assessment"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

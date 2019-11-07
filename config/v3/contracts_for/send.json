@@ -1,52 +1,54 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "description" : "For a given symbol, get the list of currently available contracts, and the latest barrier and duration limits for each contract.",
-   "type" : "object",
-   "required" : [
-      "contracts_for"
-   ],
-   "additionalProperties" : false,
-   "title" : "Contracts for Symbol Request",
-   "properties" : {
-      "product_type" : {
-         "description" : "[Optional] If you specify this field, only contracts tradable through that contract type will be returned.",
-         "enum" : [
-            "basic",
-            "multi_barrier"
-         ]
-      },
-      "landing_company" : {
-         "enum" : [
-            "iom",
-            "malta",
-            "maltainvest",
-            "svg",
-            "virtual",
-            "vanuatu",
-            "champion",
-            "champion-virtual"
-         ],
-         "default" : "svg",
-         "description" : "[Optional] Indicates which landing_company to get a list of contracts for. If you are logged in, your landing company will override this field."
-      },
-      "req_id" : {
-         "description" : "[Optional] Used to map request to response.",
-         "type" : "integer"
-      },
-      "contracts_for" : {
-         "description" : "The short symbol name (obtained from active_symbols call).",
-         "type" : "string",
-         "pattern" : "^\\w{2,30}$"
-      },
-      "passthrough" : {
-         "description" : "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-         "type" : "object"
-      },
-      "currency" : {
-         "default" : "USD",
-         "description" : "[Optional] Currency of the contract's stake and payout (obtained from payout_currencies call).",
-         "type" : "string",
-         "pattern" : "^[A-Z]{3}$"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Contracts For Symbol (request)",
+    "description": "For a given symbol, get the list of currently available contracts, and the latest barrier and duration limits for each contract.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "contracts_for"
+    ],
+    "properties": {
+        "contracts_for": {
+            "description": "The short symbol name (obtained from active_symbols call).",
+            "type": "string",
+            "pattern": "^\\w{2,30}$"
+        },
+        "currency": {
+            "description": "[Optional] Currency of the contract's stake and payout (obtained from payout_currencies call).",
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "default": "USD"
+        },
+        "landing_company": {
+            "description": "[Optional] Indicates which landing_company to get a list of contracts for. If you are logged in, your landing company will override this field.",
+            "type": "string",
+            "default": "svg",
+            "enum": [
+                "iom",
+                "malta",
+                "maltainvest",
+                "svg",
+                "virtual",
+                "vanuatu",
+                "champion",
+                "champion-virtual"
+            ]
+        },
+        "product_type": {
+            "description": "[Optional] If you specify this field, only contracts tradable through that contract type will be returned.",
+            "type": "string",
+            "enum": [
+                "basic",
+                "multi_barrier"
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

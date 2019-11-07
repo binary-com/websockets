@@ -1,86 +1,99 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-
-   "title" : "copytrading list",
-   "description" : "Details of copiers and/or traders for Copy Trading",
-   "type" : "object",
-
-   "properties" : {
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      },
-      "msg_type" : {
-         "type" : "string",
-         "description" : "copytrading_list"
-      },
-      "copytrading_list" : {
-         "title" : "copytrading list",
-         "description" : "trading copiers or traders info",
-         "type" : "object",
-         "required" : [
-            "copiers",
-            "traders"
-         ],
-         "properties" : {
-            "copiers" : {
-               "description" : "List of users who are currently copy trading the authenticated user",
-               "type" : "array",
-               "items" : {
-                  "type" : "object",
-                  "required" : [
-                     "loginid"
-                  ],
-                  "properties" : {
-                     "loginid" : {
-                        "type" : "string"
-                     }
-                  }
-               }
-            },
-
-            "traders" : {
-               "description" : "List of traders being followed by the authenticated user",
-               "type" : "array",
-               "items" : {
-                  "type" : "object",
-                  "properties" : {
-                     "loginid" : {
-                        "type" : "string"
-                     },
-                     "token" : {
-                        "type" : "string"
-                     },
-                     "assets" : {
-                        "type" : "array",
-                        "items" : {
-                            "type" : "string"
-                         }
-                     },
-                     "trade_types" : {
-                        "type" : "array",
-                        "items" : {
-                            "type" : "string"
-                         }
-                     },
-                     "max_trade_stake" : {
-                        "type" : ["number", "null"]
-                     },
-                     "min_trade_stake" : {
-                        "type" : ["number", "null"]
-                     }
-                  }
-               }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Copy Trading: List (response)",
+    "description": "Details of copiers and/or traders for Copy Trading",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "copytrading_list": {
+            "title": "copytrading_list",
+            "description": "The trading information of copiers or traders.",
+            "type": "object",
+            "required": [
+                "copiers",
+                "traders"
+            ],
+            "properties": {
+                "copiers": {
+                    "description": "List of users who are currently copy trading the authenticated user",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "loginid"
+                        ],
+                        "properties": {
+                            "loginid": {
+                                "description": "The loginid of the copier's account.",
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "traders": {
+                    "description": "List of traders being followed by the authenticated user",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "assets": {
+                                "description": "The assets set to copy the trades of.",
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "loginid": {
+                                "description": "The loginid of the trader's account.",
+                                "type": "string"
+                            },
+                            "max_trade_stake": {
+                                "description": "Maximum trading stake set for the trader.",
+                                "type": [
+                                    "null",
+                                    "number"
+                                ]
+                            },
+                            "min_trade_stake": {
+                                "description": "Minimum trading stake set for the trader.",
+                                "type": [
+                                    "null",
+                                    "number"
+                                ]
+                            },
+                            "token": {
+                                "description": "The token provided for the trader.",
+                                "type": "string"
+                            },
+                            "trade_types": {
+                                "description": "The type of trades set.",
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
             }
-         }
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "copytrading_list"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

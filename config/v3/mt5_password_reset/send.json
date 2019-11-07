@@ -1,52 +1,52 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "MT5 user main password reset",
-   "additionalProperties" : false,
-   "description" : "This call changes main password for MT5 user",
-   "type" : "object",
-   "required" : [
-      "verification_code",
-      "login",
-      "mt5_password_reset",
-      "new_password"
-   ],
-   "properties" : {
-      "new_password" : {
-         "pattern" : "^[ -~]{8,25}$",
-         "type" : "string",
-         "description" : "New password of the account (length within 8-25 chars, accepts any printable ASCII character).",
-         "sensitive" : 1
-      },
-      "passthrough" : {
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-         "type" : "object"
-      },
-      "login" : {
-         "pattern" : "^\\w{1,10}$",
-         "description" : "MT5 user login",
-         "type" : "string"
-      },
-      "mt5_password_reset" : {
-         "enum" : [
-            1
-         ],
-         "description" : "Must be 1",
-         "type" : "integer"
-      },
-      "password_type" : {
-         "pattern" : "^(main|investor)$",
-         "type" : "string",
-         "description" : "Password type main/investor (default: main)",
-         "default" : "main"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field to map request to response"
-      },
-      "verification_code" : {
-         "pattern" : "^\\w{8,128}$",
-         "type" : "string",
-         "description" : "Email verification code (received from a verify_email call, which must be done first)"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MT5: Password Reset (request)",
+    "description": "To reset the password of MT5 account.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "login",
+        "mt5_password_reset",
+        "new_password",
+        "verification_code"
+    ],
+    "properties": {
+        "mt5_password_reset": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "login": {
+            "description": "MT5 user login",
+            "type": "string",
+            "pattern": "^\\w{1,10}$"
+        },
+        "new_password": {
+            "description": "New password of the account (length within 8-25 chars, accepts any printable ASCII character).",
+            "type": "string",
+            "pattern": "^[ -~]{8,25}$",
+            "sensitive": 1
+        },
+        "password_type": {
+            "description": "Password type main/investor (default: main)",
+            "type": "string",
+            "pattern": "^(main|investor)$",
+            "default": "main"
+        },
+        "verification_code": {
+            "description": "Email verification code (received from a verify_email call, which must be done first)",
+            "type": "string",
+            "pattern": "^\\w{8,128}$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

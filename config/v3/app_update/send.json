@@ -1,76 +1,76 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "additionalProperties" : false,
-   "title" : "App Update Send",
-   "description" : "Update a new OAuth application",
-   "type" : "object",
-   "required" : [
-      "scopes",
-      "name",
-      "app_update",
-      "redirect_uri"
-   ],
-   "properties" : {
-      "app_markup_percentage" : {
-         "description" : "Markup to be added to contract prices (as a percentage of contract payout). Min: 0, Max: 5",
-         "type" : "number",
-         "minimum" : 0, 
-         "maximum" : 5 
-      },
-      "homepage" : {
-         "description" : "Application's homepage",
-         "type" : "string",
-         "pattern" : "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
-      },
-      "verification_uri" : {
-         "pattern" : "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$",
-         "description" : "Application verification_uri",
-         "type" : "string"
-      },
-      "redirect_uri" : {
-         "type" : "string",
-         "description" : "Application redirect_uri",
-         "pattern" : "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
-      },
-      "appstore" : {
-         "type" : "string",
-         "description" : "Application's App Store URL (if applicable)",
-         "pattern" : "^https?://itunes\\.apple\\.com/\\S+$"
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "github" : {
-         "pattern" : "^https?://(www\\.)?github\\.com/\\S+$",
-         "description" : "Application's GitHub page (for open-source projects)",
-         "type" : "string"
-      },
-      "app_update" : {
-         "type" : "integer",
-         "description" : "Application app_id"
-      },
-      "req_id" : {
-         "description" : "Optional field to map request to response",
-         "type" : "integer"
-      },
-      "googleplay" : {
-         "pattern" : "^https?://play\\.google\\.com/store/apps/details\\?id=[\\w \\.]+$",
-         "description" : "Application's Google Play URL (if applicable)",
-         "type" : "string"
-      },
-      "scopes" : {
-         "items" : {
-            "type" : "string",
-            "pattern" : "^(read|trade|payments|admin)$"
-         },
-         "type" : "array",
-         "description" : "Change scopes will revoke all user's grants and log them out."
-      },
-      "name" : {
-         "pattern" : "^[\\w\\s-]{1,48}$",
-         "type" : "string",
-         "description" : "Application name"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Application: Update (request)",
+    "description": "Update a new OAuth application",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "app_update",
+        "name",
+        "redirect_uri",
+        "scopes"
+    ],
+    "properties": {
+        "app_update": {
+            "description": "Application app_id",
+            "type": "integer"
+        },
+        "app_markup_percentage": {
+            "description": "Markup to be added to contract prices (as a percentage of contract payout). Min: 0, Max: 5",
+            "type": "number",
+            "maximum": 5,
+            "minimum": 0
+        },
+        "appstore": {
+            "description": "Application's App Store URL (if applicable)",
+            "type": "string",
+            "pattern": "^https?://itunes\\.apple\\.com/\\S+$"
+        },
+        "github": {
+            "description": "Application's GitHub page (for open-source projects)",
+            "type": "string",
+            "pattern": "^https?://(www\\.)?github\\.com/\\S+$"
+        },
+        "googleplay": {
+            "description": "Application's Google Play URL (if applicable)",
+            "type": "string",
+            "pattern": "^https?://play\\.google\\.com/store/apps/details\\?id=[\\w \\.]+$"
+        },
+        "homepage": {
+            "description": "Application's homepage",
+            "type": "string",
+            "pattern": "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
+        },
+        "name": {
+            "description": "Application name",
+            "type": "string",
+            "pattern": "^[\\w\\s-]{1,48}$"
+        },
+        "redirect_uri": {
+            "description": "Application redirect_uri",
+            "type": "string",
+            "pattern": "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
+        },
+        "scopes": {
+            "description": "Change scopes will revoke all user's grants and log them out.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "pattern": "^(read|trade|payments|admin)$"
+            }
+        },
+        "verification_uri": {
+            "description": "Application verification_uri",
+            "type": "string",
+            "pattern": "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

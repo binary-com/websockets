@@ -1,27 +1,27 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "additionalProperties" : false,
-   "title" : "Sell expired contracts",
-   "required" : [
-      "sell_expired"
-   ],
-   "description" : "This call will try to sell any expired contracts and return the number of sold contracts.",
-   "type" : "object",
-   "properties" : {
-      "req_id" : {
-         "description" : "Optional field to map request to response",
-         "type" : "integer"
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "sell_expired" : {
-         "description" : "Must be 1.",
-         "type" : "integer",
-         "enum" : [
-            1
-         ]
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Sell Expired Contracts (request)",
+    "description": "This call will try to sell any expired contracts and return the number of sold contracts.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "sell_expired"
+    ],
+    "properties": {
+        "sell_expired": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

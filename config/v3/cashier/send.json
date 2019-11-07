@@ -1,39 +1,41 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Cashier Request",
-   "additionalProperties" : false,
-   "required" : [
-      "cashier"
-   ],
-   "type" : "object",
-   "description" : "Cashier",
-   "properties" : {
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "provider" : {
-         "enum" : [
-            "doughflow"
-         ],
-         "description" : "Note only doughflow is supported currently.",
-         "default" : "doughflow"
-      },
-      "req_id" : {
-         "description" : "Optional field to map request to response",
-         "type" : "integer"
-      },
-      "cashier" : {
-         "description" : "either deposit or withdraw, default to deposit",
-         "enum" : [
-            "deposit",
-            "withdraw"
-         ]
-      },
-      "verification_code" : {
-         "type" : "string",
-         "description" : "Email verification code (received from a verify_email call, which must be done first)",
-         "pattern" : "^\\w{8,128}$"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Cashier URL (request)",
+    "description": "Request the cashier URL.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "cashier"
+    ],
+    "properties": {
+        "cashier": {
+            "description": "Either deposit or withdraw, default to deposit.",
+            "type": "string",
+            "enum": [
+                "deposit",
+                "withdraw"
+            ]
+        },
+        "provider": {
+            "description": "Note only doughflow is supported currently.",
+            "type": "string",
+            "default": "doughflow",
+            "enum": [
+                "doughflow"
+            ]
+        },
+        "verification_code": {
+            "description": "Email verification code (received from a verify_email call, which must be done first)",
+            "type": "string",
+            "pattern": "^\\w{8,128}$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

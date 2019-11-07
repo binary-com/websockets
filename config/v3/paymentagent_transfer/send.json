@@ -1,54 +1,57 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Payment Agent Transfer Request",
-   "additionalProperties" : false,
-   "description" : "Payment Agent Transfer - this call is available only to accounts that are approved Payment Agents.",
-   "type" : "object",
-   "required" : [
-      "amount",
-      "currency",
-      "transfer_to",
-      "paymentagent_transfer"
-   ],
-   "properties" : {
-      "passthrough" : {
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-         "type" : "object"
-      },
-      "currency" : {
-         "pattern" : "^[A-Z]{3}$",
-         "type" : "string"
-      },
-      "dry_run" : {
-         "description" : "If 1, just do validation",
-         "type" : "integer",
-         "enum" : [
-            0,
-            1
-         ]
-      },
-      "description": {
-          "type": "string",
-          "pattern": "^[0-9A-Za-z .,'-]{0,250}$",
-          "description": "Optional field for remarks about the transfer."
-      },
-      "paymentagent_transfer" : {
-         "type" : "integer",
-         "enum" : [
-            1
-         ]
-      },
-      "amount" : {
-         "type" : "number"
-      },
-      "transfer_to" : {
-         "pattern" : "^[A-Za-z]+[0-9]+$",
-         "description" : "The transfer_to loginid",
-         "type" : "string"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field to map request to response"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Payment Agent: Transfer (request)",
+    "description": "Payment Agent Transfer - this call is available only to accounts that are approved Payment Agents.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "amount",
+        "currency",
+        "paymentagent_transfer",
+        "transfer_to"
+    ],
+    "properties": {
+        "paymentagent_transfer": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "description": {
+            "description": "Optional field for remarks about the transfer.",
+            "type": "string",
+            "pattern": "^[0-9A-Za-z .,'-]{0,250}$"
+        },
+        "amount": {
+            "description": "The amount to transfer.",
+            "type": "number"
+        },
+        "currency": {
+            "description": "Currency code.",
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+        },
+        "dry_run": {
+            "description": "If set to 1, just do validation.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "transfer_to": {
+            "description": "The loginid of the recipient account.",
+            "type": "string",
+            "pattern": "^[A-Za-z]+[0-9]+$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

@@ -1,63 +1,67 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Statement Send",
-   "additionalProperties" : false,
-   "description" : "Retrieve a summary of account transactions, according to given search criteria",
-   "type" : "object",
-   "required" : [
-      "statement"
-   ],
-   "properties" : {
-      "action_type" : {
-         "description" : "Optional filter for statement (deposit,withdrawal,buy,sell)",
-         "type" : "string",
-         "enum" : [
-            "buy",
-            "sell",
-            "deposit",
-            "withdrawal"
-         ]
-      },
-      "limit" : {
-         "minimum" : 0,
-         "maximum" : 999,
-         "description" : "Apply upper limit to count of transactions received",
-         "type" : "number"
-      },
-      "statement" : {
-         "description" : "Must be 1.",
-         "type" : "integer",
-         "enum" : [
-            1
-         ]
-      },
-      "date_from" : {
-         "minimum" : 0,
-         "description" : "Optional start date (epoch)",
-         "type" : "integer",
-         "maximum" : 9999999999
-      },
-      "description" : {
-         "description" : "If set to 1, will return full contracts description.",
-         "type" : "integer"
-      },
-      "req_id" : {
-         "description" : "Optional field to map request to response",
-         "type" : "integer"
-      },
-      "passthrough" : {
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-         "type" : "object"
-      },
-      "offset" : {
-         "description" : "Skip this many transactions",
-         "type" : "number"
-      },
-      "date_to" : {
-         "maximum" : 9999999999,
-         "minimum" : 0,
-         "description" : "Optional end date (epoch)",
-         "type" : "integer"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Statement (request)",
+    "description": "Retrieve a summary of account transactions, according to given search criteria",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "statement"
+    ],
+    "properties": {
+        "statement": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "description": {
+            "description": "If set to 1, will return full contracts description.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "action_type": {
+            "description": "Optional filter for statement (deposit,withdrawal,buy,sell)",
+            "type": "string",
+            "enum": [
+                "buy",
+                "sell",
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        "date_from": {
+            "description": "Optional start date (epoch)",
+            "type": "integer",
+            "maximum": 9999999999,
+            "minimum": 0
+        },
+        "date_to": {
+            "description": "Optional end date (epoch)",
+            "type": "integer",
+            "maximum": 9999999999,
+            "minimum": 0
+        },
+        "limit": {
+            "description": "Apply upper limit to count of transactions received",
+            "type": "number",
+            "maximum": 999,
+            "minimum": 0
+        },
+        "offset": {
+            "description": "Skip this many transactions",
+            "type": "number"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

@@ -1,44 +1,48 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Sell multiple contracts",
-   "additionalProperties" : false,
-   "required" : [
-      "price",
-      "tokens",
-      "shortcode",
-      "sell_contract_for_multiple_accounts"
-   ],
-   "type" : "object",
-   "description" : "Sell contracts for multiple accounts simultaneously. Uses the shortcode response from buy_contract_for_multiple_accounts to identify the contract, and authorisation tokens to select which accounts to sell those contracts on. Note that only the accounts identified by the tokens will be affected. This will not sell the contract on the currently-authorised account unless you include the token for the current account.",
-   "properties" : {
-      "sell_contract_for_multiple_accounts" : {
-         "type" : "integer"
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field used to pass data through the websocket API. May be retrieved via the echo_req output field."
-      },
-      "shortcode" : {
-         "type" : "string",
-         "description" : "An internal ID used to identify the contract which was originally bought. This is returned from the buy and buy_for_multiple_accounts calls",
-         "pattern" : "^([A-Za-z0-9_.-]+)$"
-      },
-      "tokens" : {
-         "description" : "Authorisation tokens which select the accounts to sell use for the affected accounts",
-         "type" : "array",
-         "sensitive" : 1,
-         "items" : {
-            "pattern" : "^([a-zA-Z0-9-]+)$",
-            "type" : "string"
-         }
-      },
-      "price" : {
-         "description" : "Minimum price at which to sell the contract, or '0' for 'sell at market'",
-         "type" : "number"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Sell Contracts: Multiple Accounts (request)",
+    "description": "Sell contracts for multiple accounts simultaneously. Uses the shortcode response from buy_contract_for_multiple_accounts to identify the contract, and authorisation tokens to select which accounts to sell those contracts on. Note that only the accounts identified by the tokens will be affected. This will not sell the contract on the currently-authorised account unless you include the token for the current account.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "price",
+        "sell_contract_for_multiple_accounts",
+        "shortcode",
+        "tokens"
+    ],
+    "properties": {
+        "sell_contract_for_multiple_accounts": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "price": {
+            "description": "Minimum price at which to sell the contract, or '0' for 'sell at market'",
+            "type": "number"
+        },
+        "shortcode": {
+            "description": "An internal ID used to identify the contract which was originally bought. This is returned from the buy and buy_for_multiple_accounts calls",
+            "type": "string",
+            "pattern": "^([A-Za-z0-9_.-]+)$"
+        },
+        "tokens": {
+            "description": "Authorisation tokens which select the accounts to sell use for the affected accounts",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "pattern": "^([a-zA-Z0-9-]+)$"
+            },
+            "sensitive": 1
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

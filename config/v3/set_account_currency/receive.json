@@ -1,34 +1,36 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Set Account Currency Response",
-   
-   "required" : [
-      "msg_type",
-      "echo_req"
-   ],
-   "type" : "object",
-   "description" : "Status of set account currency call",
-   "properties" : {
-      "msg_type" : {
-         "description" : "set_account_currency",
-         "type" : "string"
-      },
-      "set_account_currency" : {
-         "title" : "set account currency response",
-         "enum" : [
-            0,
-            1
-         ],
-         "description" : "1: success, 0: no change",
-         "type" : "integer"
-      },
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Set Account Currency (response)",
+    "description": "Status of set account currency call",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "set_account_currency": {
+            "title": "set_account_currency",
+            "description": "1: success, 0: no change",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "set_account_currency"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

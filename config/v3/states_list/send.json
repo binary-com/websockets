@@ -1,26 +1,26 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "description" : "For a given country, returns a list of States of that country. This is useful to populate the account opening form.",
-   "type" : "object",
-   "required" : [
-      "states_list"
-   ],
-   "title" : "States List Send",
-   "additionalProperties" : false,
-   "properties" : {
-      "req_id" : {
-         "type" : "integer",
-         "description" : "[Optional] Used to map request to response."
-      },
-      "states_list" : {
-         "title" : "States list",
-         "pattern" : "^\\w\\w$",
-         "type" : "string",
-         "description" : "Client's 2-letter country code (obtained from residence_list call)"
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "States List (request)",
+    "description": "For a given country, returns a list of States of that country. This is useful to populate the account opening form.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "states_list"
+    ],
+    "properties": {
+        "states_list": {
+            "title": "States list",
+            "description": "Client's 2-letter country code (obtained from residence_list call)",
+            "type": "string",
+            "pattern": "^\\w\\w$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

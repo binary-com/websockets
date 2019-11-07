@@ -1,55 +1,58 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Request Customer Authentication",
-   
-   "description" : "Receive details of uploaded authentication documents",
-   "type" : "object",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "properties" : {
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      },
-      "echo_req" : {
-         "description" : "Echo of the request made",
-         "title" : "Echo request"
-      },
-      "document_upload" : {
-         "required" : [
-            "upload_id",
-            "call_type"
-         ],
-         "type" : "object",
-         "title" : "Document Upload",
-         "properties" : {
-            "call_type" : {
-               "description" : "Current call type, add this to your binary payload metadata",
-               "type" : "number"
-            },
-            "status" : {
-               "description" : "Upload status (success|failure)",
-               "type" : "string"
-            },
-            "checksum" : {
-               "description" : "Hex encoded SHA-1 checksum of the file",
-               "type" : "string"
-            },
-            "upload_id" : {
-               "description" : "Current upload ID, add this to your binary payload metadata",
-               "type" : "number"
-            },
-            "size" : {
-               "description" : "File size",
-               "type" : "number"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Document Upload (response)",
+    "description": "Receive details of uploaded authentication documents",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "document_upload": {
+            "title": "document_upload",
+            "description": "Details of the uploaded documents.",
+            "type": "object",
+            "required": [
+                "call_type",
+                "upload_id"
+            ],
+            "properties": {
+                "call_type": {
+                    "description": "Current call type, add this to your binary payload metadata",
+                    "type": "number"
+                },
+                "checksum": {
+                    "description": "Hex encoded SHA-1 checksum of the file",
+                    "type": "string"
+                },
+                "size": {
+                    "description": "File size",
+                    "type": "number"
+                },
+                "status": {
+                    "description": "Upload status (success|failure)",
+                    "type": "string"
+                },
+                "upload_id": {
+                    "description": "Current upload ID, add this to your binary payload metadata",
+                    "type": "number"
+                }
             }
-         }
-      },
-      "msg_type" : {
-         "type" : "string",
-         "description" : "get_settings"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "document_upload"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

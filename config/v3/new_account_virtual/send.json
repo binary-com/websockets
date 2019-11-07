@@ -1,83 +1,84 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "type" : "object",
-   "description" : "Create a new virtual-money account.",
-   "required" : [
-      "residence",
-      "client_password",
-      "new_account_virtual",
-      "verification_code"
-   ],
-   "additionalProperties" : false,
-   "title" : "New Virtual Account Request",
-   "properties" : {
-      "date_first_contact" : {
-         "description" : "[Optional] Date of first contact, format: yyyy-mm-dd in GMT timezone.",
-         "type" : "string",
-         "pattern" : "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
-      },
-      "gclid_url" : {
-         "type" : "string",
-         "description" : "[Optional] Google Click Identifier to track source.",
-         "pattern" : "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
-      },
-      "residence" : {
-         "pattern" : "^[a-z]{2}$",
-         "type" : "string",
-         "description" : "2-letter country code (obtained from residence_list call)."
-      },
-      "utm_medium" : {
-         "pattern" : "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$",
-         "type" : "string",
-         "description" : "[Optional] Identifies the medium the link was used upon such as: email, CPC, or other methods of sharing."
-      },
-      "passthrough" : {
-         "description" : "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-         "type" : "object"
-      },
-      "client_password" : {
-         "pattern" : "^[ -~]{6,25}$",
-         "sensitive" : 1,
-         "description" : "Password (length within 6-25 chars, accepts any printable ASCII character).",
-         "type" : "string"
-      },
-      "utm_source" : {
-         "description" : "[Optional] Identifies the source of traffic such as: search engine, newsletter, or other referral.",
-         "type" : "string",
-         "pattern" : "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
-      },
-      "signup_device" : {
-         "description" : "[Optional] Show whether user has used mobile or desktop.",
-         "enum" : [
-            "desktop",
-            "mobile"
-         ]
-      },
-      "affiliate_token" : {
-         "pattern" : "^[\\w-]{0,32}$",
-         "type" : "string",
-         "description" : "[Optional] Affiliate token, within 32 characters."
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "[Optional] Used to map request to response."
-      },
-      "verification_code" : {
-         "pattern" : "^\\w{8,128}$",
-         "description" : "Email verification code (received from a verify_email call, which must be done first).",
-         "type" : "string"
-      },
-      "new_account_virtual" : {
-         "type" : "integer",
-         "description" : "Must be 1.",
-         "enum" : [
-            1
-         ]
-      },
-      "utm_campaign" : {
-         "pattern" : "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$",
-         "description" : "[Optional] Identifies a specific product promotion or strategic campaign such as a spring sale or other promotions.",
-         "type" : "string"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "New Virtual-Money Account (request)",
+    "description": "Create a new virtual-money account.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "client_password",
+        "new_account_virtual",
+        "residence",
+        "verification_code"
+    ],
+    "properties": {
+        "new_account_virtual": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "affiliate_token": {
+            "description": "[Optional] Affiliate token, within 32 characters.",
+            "type": "string",
+            "pattern": "^[\\w-]{0,32}$"
+        },
+        "client_password": {
+            "description": "Password (length within 6-25 chars, accepts any printable ASCII character).",
+            "type": "string",
+            "pattern": "^[ -~]{6,25}$",
+            "sensitive": 1
+        },
+        "date_first_contact": {
+            "description": "[Optional] Date of first contact, format: yyyy-mm-dd in GMT timezone.",
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "gclid_url": {
+            "description": "[Optional] Google Click Identifier to track source.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+        },
+        "residence": {
+            "description": "2-letter country code (obtained from residence_list call).",
+            "type": "string",
+            "pattern": "^[a-z]{2}$"
+        },
+        "signup_device": {
+            "description": "[Optional] Show whether user has used mobile or desktop.",
+            "type": "string",
+            "enum": [
+                "desktop",
+                "mobile"
+            ]
+        },
+        "utm_campaign": {
+            "description": "[Optional] Identifies a specific product promotion or strategic campaign such as a spring sale or other promotions.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+        },
+        "utm_medium": {
+            "description": "[Optional] Identifies the medium the link was used upon such as: email, CPC, or other methods of sharing.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+        },
+        "utm_source": {
+            "description": "[Optional] Identifies the source of traffic such as: search engine, newsletter, or other referral.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+        },
+        "verification_code": {
+            "description": "Email verification code (received from a verify_email call, which must be done first).",
+            "type": "string",
+            "pattern": "^\\w{8,128}$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

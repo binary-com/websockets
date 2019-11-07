@@ -1,103 +1,106 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   
-   "title" : "Sell for multiple contracts response",
-   "description" : "Confirmation of the sale status for the selected contracts and accounts.",
-   "type" : "object",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "properties" : {
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      },
-      "echo_req" : {
-         "description" : "Echo of the request made",
-         "title" : "Echo request"
-      },
-      "msg_type" : {
-         "description" : "sell",
-         "type" : "string"
-      },
-      "sell_contract_for_multiple_accounts" : {
-         "description" : "Status information for each affected acccount",
-         "type" : "object",
-         "additionalProperties" : false,
-         "title" : "Transaction confirmation",
-         "properties" : {
-            "result" : {
-               "type" : "array",
-               "items" : {
-                  "anyOf" : [
-                     {
-                        "title" : "Receipt for the transaction",
-                        "additionalProperties" : false,
-                        "required" : [
-                            "reference_id",
-                            "sell_price",
-                            "balance_after",
-                            "transaction_id",
-                            "contract_id"  
-                        ],
-                        "properties" : {
-                           "sell_price" : {
-                              "type" : "number",
-                              "description" : "Actual effected sale price"
-                           },
-                           "reference_id" : {
-                              "description" : "Internal transaction identifier for the corresponding transaction",
-                              "type" : "integer"
-                           },
-                           "balance_after" : {
-                              "type" : "number",
-                              "description" : "New account balance after completion of the sale"
-                           },
-                           "transaction_id" : {
-                              "type" : "integer",
-                              "description" : "Internal transaction identifier for the contract sale transaction"
-                           },
-                           "contract_id" : {
-                              "description" : "Internal contract identifier",
-                              "type" : "integer"
-                           },
-                           "sell_time" : {
-                               "type" : "string",
-                               "description" : "date and time of sale YYYY-MM-dd hh:mm:ss format"
-                           }
-                        },
-                        "type" : "object",
-                        "description" : "Receipt for the transaction"
-                     },
-                     {
-                        "description" : "Error message",
-                        "type" : "object",
-                        "required": [
-                            "token",
-                            "code",
-                            "message_to_client"  
-                        ],
-                        "properties" : {
-                           "token" : {
-                              "description" : "The token designating the account",
-                              "type" : "string"
-                           },
-                           "code" : {
-                              "type" : "string",
-                              "description" : "An error code"
-                           },
-                           "message_to_client" : {
-                              "description" : "An error message localized according to the websocket",
-                              "type" : "string"
-                           }
-                        },
-                        "additionalProperties" : false
-                     }
-                  ]
-               }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Sell Contracts: Multiple Accounts (response)",
+    "description": "Confirmation of the sale status for the selected contracts and accounts.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "sell_contract_for_multiple_accounts": {
+            "title": "sell_contract_for_multiple_accounts",
+            "description": "Status information for each affected account.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "result": {
+                    "description": "The result of sell for multiple accounts request.",
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "title": "Receipt for the transaction",
+                                "description": "Receipt for the transaction",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                    "reference_id",
+                                    "sell_price",
+                                    "balance_after",
+                                    "transaction_id",
+                                    "contract_id"
+                                ],
+                                "properties": {
+                                    "balance_after": {
+                                        "description": "New account balance after completion of the sale",
+                                        "type": "number"
+                                    },
+                                    "contract_id": {
+                                        "description": "Internal contract identifier",
+                                        "type": "integer"
+                                    },
+                                    "reference_id": {
+                                        "description": "Internal transaction identifier for the corresponding transaction",
+                                        "type": "integer"
+                                    },
+                                    "sell_price": {
+                                        "description": "Actual effected sale price",
+                                        "type": "number"
+                                    },
+                                    "sell_time": {
+                                        "description": "date and time of sale YYYY-MM-dd hh:mm:ss format",
+                                        "type": "string"
+                                    },
+                                    "transaction_id": {
+                                        "description": "Internal transaction identifier for the contract sale transaction",
+                                        "type": "integer"
+                                    }
+                                }
+                            },
+                            {
+                                "description": "Error message",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                    "token",
+                                    "code",
+                                    "message_to_client"
+                                ],
+                                "properties": {
+                                    "code": {
+                                        "description": "An error code",
+                                        "type": "string"
+                                    },
+                                    "message_to_client": {
+                                        "description": "An error message localized according to the websocket",
+                                        "type": "string"
+                                    },
+                                    "token": {
+                                        "description": "The token designating the account",
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
             }
-         }
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "sell_contract_for_multiple_accounts"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

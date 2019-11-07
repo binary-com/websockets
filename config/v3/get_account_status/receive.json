@@ -1,115 +1,127 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Get Account Status Receive",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "type" : "object",
-   "description" : "A message with Account Status",
-   "properties" : {
-      "msg_type" : {
-         "type" : "string",
-         "description" : "get_account_status"
-      },
-      "get_account_status" : {
-         "description" : "Account status details",
-         "type" : "object",
-         "required" : [
-            "risk_classification",
-            "status",
-            "prompt_client_to_authenticate"
-         ],
-         "properties" : {
-            "risk_classification" : {
-               "type" : "string",
-               "description" : "Client risk classification: low, standard, high"
-            },
-            "prompt_client_to_authenticate" : {
-               "enum" : [1,0],
-               "description" : "Indicates whether the client should be prompted to authenticate their account.",
-               "type" : "integer"
-            },
-            "status" : {
-               "type" : "array",
-               "description" : "Account status. Possible status: authenticated (client is fully authenticated), age_verification (client is age-verified), cashier_locked (cashier is locked), disabled (account is disabled), unwelcome (client cannot deposit or buy contracts, but can withdraw or sell contracts), withdrawal_locked (deposits allowed but withdrawals locked), ukgc_funds_protection (client has acknowledged UKGC funds protection notice), crs_tin_information (client has updated tax related information), financial_assessment_not_complete (client has not completed financial assessment), professional (this client has opted for a professional account), document_expired (client's submitted proof-of-identity documents have expired), document_expiring_soon (client's submitted proof-of-identity documents are expiring within a month)",
-               "items" : {
-                  "type" : "string"
-               }
-            },
-            "authentication" : {
-                "description" : "This represents the authentication status of the user and it includes what authentication is needed.",
-                "type" : "object",
-                "required": [
-                    "needs_verification"
-                ],
-                "properties": {
-                    "needs_verification": {
-                        "type": "array",
-                        "items" : {
-                            "type": "string",
-                            "description" : "This represents the current type of authentication required, possible values are identity and document."
-                        }
-                    },
-                    "identity": {
-                        "type": "object",
-                        "properties": {
-                            "status": {
-                                "enum": [
-                                    "none",
-                                    "pending",
-                                    "rejected",
-                                    "verified",
-                                    "expired",
-                                    "suspected"
-                                ],
-                                "description": "This represent the current status for proof of identity document submitted for authentication."
-                            },
-                            "expiry_date": {
-                                "type": "integer",
-                                "description": "This is the epoch of the document expiry date."
-                            },
-                            "further_submissions_allowed": {
-                                "type": "integer",
-                                "description": "This represent the number times a client is allowed to submit documents"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Account Status (response)",
+    "description": "A message with Account Status",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "get_account_status": {
+            "title": "get_account_status",
+            "description": "Account status details",
+            "type": "object",
+            "required": [
+                "prompt_client_to_authenticate",
+                "risk_classification",
+                "status"
+            ],
+            "properties": {
+                "authentication": {
+                    "description": "This represents the authentication status of the user and it includes what authentication is needed.",
+                    "type": "object",
+                    "required": [
+                        "needs_verification"
+                    ],
+                    "properties": {
+                        "document": {
+                            "description": "The authentication status for document.",
+                            "type": "object",
+                            "properties": {
+                                "expiry_date": {
+                                    "description": "This is the epoch of the document expiry date.",
+                                    "type": "integer"
+                                },
+                                "further_submissions_allowed": {
+                                    "description": "This represent the number of submissions allowed for client to submit documents",
+                                    "type": "integer"
+                                },
+                                "status": {
+                                    "description": "This represents the current status of the proof of address document submitted for authentication.",
+                                    "type": "string",
+                                    "enum": [
+                                        "none",
+                                        "pending",
+                                        "rejected",
+                                        "verified",
+                                        "expired",
+                                        "suspected"
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    "document": {
-                        "type": "object",
-                        "properties": {
-                            "status": {
-                                "enum": [
-                                    "none",
-                                    "pending",
-                                    "rejected",
-                                    "verified",
-                                    "expired",
-                                    "suspected"
-                                ],
-                                "description": "This represents the current status of the proof of address document submitted for authentication."
-                            },
-                            "expiry_date": {
-                                "type": "integer",
-                                "description": "This is the epoch of the document expiry date."
-                            },
-                            "further_submissions_allowed": {
-                                "type": "integer",
-                                "description": "This represent the number of submissions allowed for client to submit documents"
+                        },
+                        "identity": {
+                            "description": "The authentication status for identity.",
+                            "type": "object",
+                            "properties": {
+                                "expiry_date": {
+                                    "description": "This is the epoch of the document expiry date.",
+                                    "type": "integer"
+                                },
+                                "further_submissions_allowed": {
+                                    "description": "This represent the number times a client is allowed to submit documents",
+                                    "type": "integer"
+                                },
+                                "status": {
+                                    "description": "This represent the current status for proof of identity document submitted for authentication.",
+                                    "type": "string",
+                                    "enum": [
+                                        "none",
+                                        "pending",
+                                        "rejected",
+                                        "verified",
+                                        "expired",
+                                        "suspected"
+                                    ]
+                                }
+                            }
+                        },
+                        "needs_verification": {
+                            "description": "An array containing the list of required authentication.",
+                            "type": "array",
+                            "items": {
+                                "description": "This represents the current type of authentication required, possible values are identity and document.",
+                                "type": "string"
                             }
                         }
                     }
+                },
+                "prompt_client_to_authenticate": {
+                    "description": "Indicates whether the client should be prompted to authenticate their account.",
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        0
+                    ]
+                },
+                "risk_classification": {
+                    "description": "Client risk classification: low, standard, high",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "Account status. Possible status: authenticated (client is fully authenticated), age_verification (client is age-verified), cashier_locked (cashier is locked), disabled (account is disabled), unwelcome (client cannot deposit or buy contracts, but can withdraw or sell contracts), withdrawal_locked (deposits allowed but withdrawals locked), ukgc_funds_protection (client has acknowledged UKGC funds protection notice), crs_tin_information (client has updated tax related information), financial_assessment_not_complete (client has not completed financial assessment), professional (this client has opted for a professional account), document_expired (client's submitted proof-of-identity documents have expired), document_expiring_soon (client's submitted proof-of-identity documents are expiring within a month)",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             }
-         }
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "get_account_status"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

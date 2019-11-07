@@ -1,5 +1,9 @@
 {
     "api_token": 1,
     "new_token": "Token example",
-    "new_token_scopes": ["read", "trade", "admin"]
+    "new_token_scopes": [
+        "admin",
+        "read",
+        "trade"
+    ]
 }

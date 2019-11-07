@@ -1,121 +1,126 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "description" : "A message with Landing Company.",
-   "type" : "object",
-   "required" : [
-      "msg_type",
-      "echo_req"
-   ],
-   
-   "title" : "Landing Company Response",
-   "properties" : {
-      "landing_company_details" : {
-         "type" : "object",
-         "properties" : {
-            "legal_allowed_currencies" : {
-               "description" : "Allowable currencies for accounts with this Landing Company.",
-               "type" : "array",
-               "items" : {
-                  "type" : "string"
-               }
-            },
-            "legal_allowed_markets" : {
-               "type" : "array",
-               "items" : {
-                  "type" : "string"
-               }
-            },
-            "changeable_fields" : {
-              "type" : "object",
-              "description": "Special conditions for changing sensitive fields"
-            },
-            "legal_allowed_contract_categories" : {
-               "type" : "array",
-               "items" : {
-                  "type" : "string"
-               }
-            },
-            "name" : {
-               "type" : "string",
-               "description" : "Landing Company name."
-            },
-            "currency_config" : {
-               "title" : "Currency Config Structure",
-               "properties" : {
-                  "market" : {
-                     "description" : "Name of market.",
-                     "type" : "object",
-                     "properties" : {
-                        "currency" : {
-                           "description" : "Currency Symbol.",
-                           "type" : "object",
-                           "title" : "Currency",
-                           "properties" : {
-                              "max_payout" : {
-                                 "description" : "Maximum payout for this currency in this market.",
-                                 "type" : "integer"
-                              },
-                              "min_stake" : {
-                                 "description" : "Minimum stake for this currency in this market.",
-                                 "type" : "integer"
-                              }
-                           }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Landing Company Details (response)",
+    "description": "A message with Landing Company.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "landing_company_details": {
+            "title": "landing_company_details",
+            "description": "The detailed information of the requested landing company.",
+            "type": "object",
+            "properties": {
+                "address": {
+                    "description": "Landing Company address.",
+                    "type": [
+                        "array",
+                        "null"
+                    ],
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "changeable_fields": {
+                    "description": "Special conditions for changing sensitive fields",
+                    "type": "object"
+                },
+                "country": {
+                    "description": "Landing Company country.",
+                    "type": "string"
+                },
+                "currency_config": {
+                    "title": "Currency Config Structure",
+                    "description": "The configuration of each currency.",
+                    "type": "object",
+                    "properties": {
+                        "market": {
+                            "title": "Market",
+                            "description": "Name of market.",
+                            "type": "object",
+                            "properties": {
+                                "currency": {
+                                    "title": "Currency",
+                                    "description": "Currency Symbol.",
+                                    "type": "object",
+                                    "properties": {
+                                        "max_payout": {
+                                            "description": "Maximum payout for this currency in this market.",
+                                            "type": "integer"
+                                        },
+                                        "min_stake": {
+                                            "description": "Minimum stake for this currency in this market.",
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
                         }
-                     },
-                     "title" : "Market"
-                  }
-               },
-               "type" : "object"
-            },
-            "legal_default_currency" : {
-               "description" : "Default currency of client accounts with this Landing Company.",
-               "type" : "string"
-            },
-            "country" : {
-               "type" : "string",
-               "description" : "Landing Company country."
-            },
-            "shortcode" : {
-               "description" : "Landing Company shortcode.",
-               "type" : "string"
-            },
-            "has_reality_check" : {
-               "enum" : [
-                  0,
-                  1
-               ],
-               "type" : "integer",
-               "description" : "Flag to indicate whether reality check is applicable for this Landing Company. 1: applicable, 0: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies."
-            },
-            "requirements" : {
-              "type" : "object",
-              "description" : "Legal requirements for the given Landing Company."
-              
-            },
-            "address" : {
-               "items" : {
-                  "type" : "string"
-               },
-               "description" : "Landing Company address.",
-               "type" : [
-                  "array",
-                  "null"
-               ]
+                    }
+                },
+                "has_reality_check": {
+                    "description": "Flag to indicate whether reality check is applicable for this Landing Company. 1: applicable, 0: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "legal_allowed_contract_categories": {
+                    "description": "Allowed contract types for this Landing Company",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "legal_allowed_currencies": {
+                    "description": "Allowable currencies for accounts with this Landing Company.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "legal_allowed_markets": {
+                    "description": "Allowed markets for this Landing Company",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "legal_default_currency": {
+                    "description": "Default currency of client accounts with this Landing Company.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Landing Company name.",
+                    "type": "string"
+                },
+                "requirements": {
+                    "description": "Legal requirements for the given Landing Company.",
+                    "type": "object"
+                },
+                "shortcode": {
+                    "description": "Landing Company shortcode.",
+                    "type": "string"
+                }
             }
-         },
-         "title" : "Landing Company Details Structure"
-      },
-      "msg_type" : {
-         "description" : "landing_company_details.",
-         "type" : "string"
-      },
-      "echo_req" : {
-         "description" : "Echo of the request made.",
-         "title" : "Echo request"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id."
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "landing_company_details"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

@@ -1,33 +1,33 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "type" : "object",
-   "description" : "Get MT5 user account settings",
-   "required" : [
-      "login",
-      "mt5_get_settings"
-   ],
-   "additionalProperties" : false,
-   "title" : "Get MT5 user setting",
-   "properties" : {
-      "mt5_get_settings" : {
-         "enum" : [
-            1
-         ],
-         "type" : "integer",
-         "description" : "Must be 1"
-      },
-      "req_id" : {
-         "description" : "Optional field to map request to response",
-         "type" : "integer"
-      },
-      "login" : {
-         "description" : "MT5 user login",
-         "type" : "string",
-         "pattern" : "^[0-9]+$"
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MT5: Get Setting (request)",
+    "description": "Get MT5 user account settings",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "login",
+        "mt5_get_settings"
+    ],
+    "properties": {
+        "mt5_get_settings": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "login": {
+            "description": "MT5 user login",
+            "type": "string",
+            "pattern": "^[0-9]+$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

@@ -1,94 +1,96 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Profit Table Receive",
-   
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "type" : "object",
-   "description" : "A summary of account profit table is received",
-   "properties" : {
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      },
-      "profit_table" : {
-         "properties" : {
-            "count" : {
-               "description" : "Number of transactions returned in this call",
-               "type" : "number"
-            },
-            "transactions" : {
-               "description" : "Array of returned transactions",
-               "type" : "array",
-               "items" : {
-                  "properties" : {
-                     "sell_price" : {
-                        "description" : "sold price",
-                        "type" : "number"
-                     },
-                     "shortcode" : {
-                        "type" : "string",
-                        "description" : "Compact description of the contract purchased if description is set to 1"
-                     },
-                     "purchase_time" : {
-                        "type" : "integer",
-                        "description" : "It is the purchase time of transaction"
-                     },
-                     "longcode" : {
-                        "description" : "The description of contract purchased if description is set to 1",
-                        "type" : "string"
-                     },
-                     "sell_time" : {
-                        "description" : "It is the sell time of transaction",
-                        "type" : [
-                           "integer",
-                           "null"
-                        ]
-                     },
-                     "payout" : {
-                        "type" : "number",
-                        "description" : "Payout price"
-                     },
-                     "transaction_id" : {
-                        "description" : "It is the transaction id. every contract (buy or sell) and every payment has a unique id. Example: 10867502908",
-                        "type" : "integer"
-                     },
-                     "contract_id" : {
-                        "description" : "It is the contract id Example: 4867502908",
-                        "type" : [
-                           "integer",
-                           "null"
-                        ]
-                     },
-                     "buy_price" : {
-                        "type" : "number",
-                        "description" : "buy price"
-                     },
-                     "app_id" : {
-                        "description" : "App id of app where this transaction was performed. For example, it's 1 for binary.com.",
-                        "type" : [
-                           "integer",
-                           "null"
-                        ]
-                     }
-                  },
-                  "type" : "object"
-               }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Profit Table (response)",
+    "description": "A summary of account profit table is received",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "profit_table": {
+            "title": "profit_table",
+            "description": "Account Profit Table.",
+            "type": "object",
+            "properties": {
+                "count": {
+                    "description": "Number of transactions returned in this call",
+                    "type": "number"
+                },
+                "transactions": {
+                    "description": "Array of returned transactions",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "app_id": {
+                                "description": "App ID of app where this transaction was performed. For example, it's 1 for binary.com.",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "buy_price": {
+                                "description": "The buy price",
+                                "type": "number"
+                            },
+                            "contract_id": {
+                                "description": "It is the contract ID. Example: 4867502908",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "longcode": {
+                                "description": "The description of contract purchased if description is set to 1",
+                                "type": "string"
+                            },
+                            "payout": {
+                                "description": "Payout price",
+                                "type": "number"
+                            },
+                            "purchase_time": {
+                                "description": "It is the purchase time of transaction",
+                                "type": "integer"
+                            },
+                            "sell_price": {
+                                "description": "The sold price",
+                                "type": "number"
+                            },
+                            "sell_time": {
+                                "description": "It is the sell time of transaction",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "shortcode": {
+                                "description": "Compact description of the contract purchased if description is set to 1",
+                                "type": "string"
+                            },
+                            "transaction_id": {
+                                "description": "It is the transaction ID. every contract (buy or sell) and every payment has a unique ID. Example: 10867502908",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
             }
-         },
-         "title" : "Profit Table list",
-         "description" : "Account Profit Table.",
-         "type" : "object"
-      },
-      "msg_type" : {
-         "type" : "string",
-         "description" : "statement"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "profit_table"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

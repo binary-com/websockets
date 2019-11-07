@@ -1,48 +1,49 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "password",
-      "mt5_password_check",
-      "login"
-   ],
-   "type" : "object",
-   "description" : "This call validates the main password for the MT5 user",
-   "additionalProperties" : false,
-   "title" : "MT5 user main password check",
-   "properties" : {
-      "password" : {
-         "type" : "string",
-         "description" : "the password of the account.",
-         "pattern" : "^[ -~]+$",
-         "sensitive" : 1
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "login" : {
-         "pattern" : "^\\w{1,10}$",
-         "type" : "string",
-         "description" : "MT5 user login"
-      },
-      "password_type" : {
-         "enum" : [
-            "main",
-            "investor"
-         ],
-         "default" : "main",
-         "description" : "the password type main/investor (default: main)"
-      },
-      "mt5_password_check" : {
-         "description" : "Must be 1",
-         "type" : "integer",
-         "enum" : [
-            1
-         ]
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field to map request to response"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MT5: Password Check (request)",
+    "description": "This call validates the main password for the MT5 user",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "login",
+        "mt5_password_check",
+        "password"
+    ],
+    "properties": {
+        "mt5_password_check": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "login": {
+            "description": "MT5 user login",
+            "type": "string",
+            "pattern": "^\\w{1,10}$"
+        },
+        "password": {
+            "description": "The password of the account.",
+            "type": "string",
+            "pattern": "^[ -~]+$",
+            "sensitive": 1
+        },
+        "password_type": {
+            "description": "The password type main/investor (default: 'main')",
+            "type": "string",
+            "default": "main",
+            "enum": [
+                "main",
+                "investor"
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

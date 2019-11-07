@@ -1,59 +1,61 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "type" : "object",
-   "title" : "Login History Response",
-   "description" : "Recent login/logout history records",
-   
-   "required" : [
-       "echo_req",
-       "msg_type"
-   ],
-   "properties" : {
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      },
-      "login_history" : {
-         "type" : "array",
-         "items" : {
-            "required" : [
-               "status",
-               "action",
-               "time",
-               "environment"
-            ],
-            "description" : "User login history",
-            "type" : "object",
-            "properties" : {
-               "status" : {
-                  "description" : "Status of activity: 1 - success, 0 - failure",
-                  "type" : "integer",
-                  "pattern" : "^(1|0)$"
-               },
-               "action" : {
-                  "type" : "string",
-                  "description" : "Type of action. Example: login, logout"
-               },
-               "time" : {
-                  "description" : "Epoch time of the activity",
-                  "type" : "integer"
-               },
-               "environment" : {
-                  "description" : "Provides details about browser, device used during login or logout",
-                  "type" : "string"
-               }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Login History (response)",
+    "description": "Recent login/logout history records",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "login_history": {
+            "title": "login_history",
+            "description": "Array of records of client login/logout activities",
+            "type": "array",
+            "items": {
+                "description": "User login history",
+                "type": "object",
+                "required": [
+                    "action",
+                    "environment",
+                    "status",
+                    "time"
+                ],
+                "properties": {
+                    "action": {
+                        "description": "Type of action. Example: login, logout",
+                        "type": "string"
+                    },
+                    "environment": {
+                        "description": "Provides details about browser, device used during login or logout",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status of activity: 1 - success, 0 - failure",
+                        "type": "integer",
+                        "pattern": "^(1|0)$"
+                    },
+                    "time": {
+                        "description": "Epoch time of the activity",
+                        "type": "integer"
+                    }
+                }
             }
-         },
-         "description" : "Array of records of client login/logout activities",
-         "title" : "List of details of login/logout activity"
-      },
-      "msg_type" : {
-         "description" : "login_history",
-         "type" : "string"
-      },
-      "echo_req" : {
-         "description" : "Echo of the request made",
-         "title" : "Echo request"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "login_history"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

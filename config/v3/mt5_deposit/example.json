@@ -1,6 +1,6 @@
 {
     "mt5_deposit": 1,
+    "amount": 1000,
     "from_binary": "CR100001",
-    "to_mt5": "1000",
-    "amount": 1000
+    "to_mt5": "1000"
 }

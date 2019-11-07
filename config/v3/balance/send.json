@@ -1,39 +1,40 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "type" : "object",
-   "description" : "Get user account balance",
-   "required" : [
-      "balance"
-   ],
-   "title" : "Balance Send",
-   "additionalProperties" : false,
-   "properties" : {
-      "balance" : {
-         "enum" : [
-            1
-         ],
-         "type" : "integer",
-         "description" : "Must be 1."
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field to map request to response"
-      },
-      "subscribe" : {
-         "description" : "If set to 1, will send updates whenever the balance changes.",
-         "enum" : [
-            0,
-            1
-         ]
-      },
-      "account" : {
-          "description" : "[Optional] If set to 'all', return the balances of all accounts one by one; if set to 'current', return the balance of current account; if set as an account id,  return the balance of that account. Default is current",
-          "pattern": "^(current|all|[A-Z]{2,4}[0-9]{1,10})$",
-          "type": "string"
-      },
-      "passthrough" : {
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-         "type" : "object"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Balance (request)",
+    "description": "Get user account balance",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "balance"
+    ],
+    "properties": {
+        "balance": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "account": {
+            "description": "[Optional] If set to 'all', return the balances of all accounts one by one; if set to 'current', return the balance of current account; if set as an account id,  return the balance of that account. Default is current",
+            "type": "string",
+            "pattern": "^(current|all|[A-Z]{2,4}[0-9]{1,10})$"
+        },
+        "subscribe": {
+            "description": "If set to 1, will send updates whenever the balance changes.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

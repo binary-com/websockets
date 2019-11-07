@@ -1,30 +1,32 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "msg_type",
-      "echo_req"
-   ],
-   "type" : "object",
-   "description" : "MT5 user password reset receive",
-   "title" : "MT5 user password reset receive",
-   
-   "properties" : {
-      "mt5_password_reset" : {
-         "title" : "Password reset Status",
-         "type" : "integer",
-         "description" : "1 on success"
-      },
-      "msg_type" : {
-         "type" : "string",
-         "description" : "mt5_password_reset"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MT5: Password Reset (response)",
+    "description": "MT5 user password reset receive",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "mt5_password_reset": {
+            "title": "mt5_password_reset",
+            "description": "1 on success",
+            "type": "integer"
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "mt5_password_reset"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

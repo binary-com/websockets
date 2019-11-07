@@ -2,6 +2,6 @@
     "transfer_between_accounts": 1,
     "account_from": "MLT100",
     "account_to": "MF100",
-    "currency": "EUR",
-    "amount": 1000
+    "amount": 1000,
+    "currency": "EUR"
 }

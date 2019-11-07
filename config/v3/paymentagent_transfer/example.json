@@ -1,6 +1,6 @@
 {
     "paymentagent_transfer": 1,
-    "transfer_to": "CR100001",
+    "amount": 1000,
     "currency": "USD",
-    "amount": 1000
+    "transfer_to": "CR100001"
 }

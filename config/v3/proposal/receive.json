@@ -1,91 +1,94 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "msg_type",
-      "echo_req"
-   ],
-   "type" : "object",
-   "description" : "Latest price and other details for a given contract",
-   "title" : "Price Proposal Response",
-   "properties" : {
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      },
-      "echo_req" : {
-         "description" : "Echo of the request made",
-         "title" : "Echo request"
-      },
-      "proposal" : {
-         "title" : "Price Proposal Response",
-         "properties" : {
-            "longcode" : {
-               "type" : "string",
-               "description" : "Example: Win payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time."
-            },
-            "ask_price" : {
-               "description" : "Example: 5.14",
-               "type" : "number"
-            },
-            "spot" : {
-               "description" : "Spot value (if there are no Exchange data-feed licensing restrictions for the underlying symbol). Example: 9874.52",
-               "type" : "number"
-            },
-            "id" : {
-               "type" : "string",
-               "description" : "A stream id that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579"
-            },
-            "multiplier" : {
-               "description" : "[Only for lookback trades] Multiplier applies when calculating the final payoff for each type of lookback. e.g. (Exit spot – Lowest historical price) * multiplier = Payout",
-               "type" : "number"
-            },
-            "date_start" : {
-               "description" : "Example: 1439999053",
-               "type" : "integer"
-            },
-            "display_value" : {
-               "type" : "string",
-               "description" : "Example: 5.14, same as ask_price"
-            },
-            "spot_time" : {
-               "description" : "Example: 1439999052",
-               "type" : "integer"
-            },
-            "payout" : {
-               "type" : "number",
-               "description" : "Example: 10"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Price Proposal (response)",
+    "description": "Latest price and other details for a given contract",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "proposal": {
+            "title": "proposal",
+            "description": "Latest price and other details for a given contract",
+            "type": "object",
+            "required": [
+                "ask_price",
+                "date_start",
+                "display_value",
+                "id",
+                "longcode",
+                "payout",
+                "spot",
+                "spot_time"
+            ],
+            "properties": {
+                "ask_price": {
+                    "description": "Example: 5.14",
+                    "type": "number"
+                },
+                "date_start": {
+                    "description": "Example: 1439999053",
+                    "type": "integer"
+                },
+                "display_value": {
+                    "description": "Example: 5.14, same as ask_price",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A stream ID that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579",
+                    "type": "string"
+                },
+                "longcode": {
+                    "description": "Example: Win payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time.",
+                    "type": "string"
+                },
+                "multiplier": {
+                    "description": "[Only for lookback trades] Multiplier applies when calculating the final payoff for each type of lookback. e.g. (Exit spot - Lowest historical price) * multiplier = Payout",
+                    "type": "number"
+                },
+                "payout": {
+                    "description": "Example: 10",
+                    "type": "number"
+                },
+                "spot": {
+                    "description": "Spot value (if there are no Exchange data-feed licensing restrictions for the underlying symbol). Example: 9874.52",
+                    "type": "number"
+                },
+                "spot_time": {
+                    "description": "Example: 1439999052",
+                    "type": "integer"
+                }
             }
-         },
-         "required" : [
-            "spot",
-            "date_start",
-            "longcode",
-            "ask_price",
-            "display_value",
-            "id",
-            "spot_time",
-            "payout"
-         ],
-         "description" : "Latest price and other details for a given contract",
-         "type" : "object"
-      },
-      "msg_type" : {
-         "description" : "proposal",
-         "type" : "string"
-      },
-      "subscription" : {
-         "title" : "Subscription information",
-         "description" : "For subscription requests only",
-         "type" : "object",
-         "required" : [
-            "id"
-         ],
-         "properties": {
-            "id" : {
-             "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
-             "type" : "string"
+        },
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only",
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
+                    "type": "string"
+                }
             }
-         }
-     }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "proposal"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

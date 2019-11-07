@@ -1,30 +1,32 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "description" : "MT5 user password change receive",
-   "type" : "object",
-   "required" : [
-      "msg_type",
-      "echo_req"
-   ],
-   
-   "title" : "MT5 user password change receive",
-   "properties" : {
-      "msg_type" : {
-         "description" : "mt5_password_change",
-         "type" : "string"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "mt5_password_change" : {
-         "title" : "Password Change Status",
-         "type" : "integer",
-         "description" : "1 on success"
-      },
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MT5: Password Change (response)",
+    "description": "MT5 user password change receive",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "mt5_password_change": {
+            "title": "mt5_password_change",
+            "description": "1 on success",
+            "type": "integer"
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "mt5_password_change"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

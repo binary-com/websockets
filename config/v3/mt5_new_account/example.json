@@ -1,18 +1,18 @@
 {
     "mt5_new_account": 1,
     "account_type": "demo",
-    "mt5_account_type": "standard",
+    "address": "Dummy address",
+    "city": "Valletta",
+    "company": "Binary Limited",
+    "country": "mt",
     "email": "test@mailinator.com",
-    "name": "Peter Pan",
-    "mainPassword": "AbcDv1234",
     "investPassword": "AbcDv12345",
     "leverage": "100",
-    "address": "Dummy address",
-    "state": "Valleta",
-    "city": "Valletta",
-    "zipCode": "VLT 1117",
-    "country": "mt",
-    "company": "Binary Limited",
+    "mainPassword": "AbcDv1234",
+    "mt5_account_type": "standard",
+    "name": "Peter Pan",
     "phone": "+6123456789",
-    "phonePassword": "AbcDv1234"
+    "phonePassword": "AbcDv1234",
+    "state": "Valleta",
+    "zipCode": "VLT 1117"
 }

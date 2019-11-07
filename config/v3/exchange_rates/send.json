@@ -1,33 +1,33 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "type" : "object",
-   "description" : "Retrieves the exchange rates from a base currency to all currencies supported by the system.",
-   "required" : [
-      "base_currency",
-      "exchange_rates"
-   ],
-   "additionalProperties" : false,
-   "title" : "Get Exchange Rates",
-   "properties" : {
-      "exchange_rates" : {
-         "description" : "Must be 1",
-         "type" : "integer",
-         "enum" : [
-            1
-         ]
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "[Optional] Used to map request to response."
-      },
-      "base_currency" : {
-         "description" : "Base currency (can be obtained from payout_currencies call)",
-         "type" : "string",
-         "pattern" : "^[A-Z]{3}$"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Exchange Rates (request)",
+    "description": "Retrieves the exchange rates from a base currency to all currencies supported by the system.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "base_currency",
+        "exchange_rates"
+    ],
+    "properties": {
+        "exchange_rates": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "base_currency": {
+            "description": "Base currency (can be obtained from payout_currencies call)",
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

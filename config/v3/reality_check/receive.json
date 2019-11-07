@@ -1,68 +1,70 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "type" : "object",
-   "description" : "This gives summary of client's trades and account for reality check",
-   
-   "title" : "Reality check receive",
-   "properties" : {
-      "reality_check" : {
-         "properties" : {
-            "sell_count" : {
-               "description" : "Total count of contract sold.",
-               "type" : "integer"
-            },
-            "open_contract_count" : {
-               "description" : "Total count of contracts that are not yet expired.",
-               "type" : "integer"
-            },
-            "currency" : {
-               "type" : "string",
-               "description" : "Currency of client account i.e currency for trading"
-            },
-            "potential_profit" : {
-               "description" : "Indicative profit of contract as per current market price.",
-               "type" : "number"
-            },
-            "buy_amount" : {
-               "description" : "Total amount of contract purchased.",
-               "type" : "number"
-            },
-            "start_time" : {
-               "type" : "integer",
-               "description" : "Reality check summary start time epoch"
-            },
-            "sell_amount" : {
-               "type" : "number",
-               "description" : "Total amount of contracts sold."
-            },
-            "buy_count" : {
-               "description" : "Total count of contract purchased.",
-               "type" : "integer"
-            },
-            "loginid" : {
-               "type" : "string",
-               "description" : "Client loginid Example: CR000000"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Reality Check (response)",
+    "description": "This gives summary of client's trades and account for reality check",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "reality_check": {
+            "title": "reality_check",
+            "description": "Reality check summary of trades.",
+            "type": "object",
+            "properties": {
+                "buy_amount": {
+                    "description": "Total amount of contract purchased.",
+                    "type": "number"
+                },
+                "buy_count": {
+                    "description": "Total count of contract purchased.",
+                    "type": "integer"
+                },
+                "currency": {
+                    "description": "Currency of client account i.e currency for trading",
+                    "type": "string"
+                },
+                "loginid": {
+                    "description": "Client loginid Example: CR000000",
+                    "type": "string"
+                },
+                "open_contract_count": {
+                    "description": "Total count of contracts that are not yet expired.",
+                    "type": "integer"
+                },
+                "potential_profit": {
+                    "description": "Indicative profit of contract as per current market price.",
+                    "type": "number"
+                },
+                "sell_amount": {
+                    "description": "Total amount of contracts sold.",
+                    "type": "number"
+                },
+                "sell_count": {
+                    "description": "Total count of contract sold.",
+                    "type": "integer"
+                },
+                "start_time": {
+                    "description": "Reality check summary start time epoch",
+                    "type": "integer"
+                }
             }
-         },
-         "title" : "Reality check summary",
-         "description" : "Reality check summary of trades.",
-         "type" : "object"
-      },
-      "msg_type" : {
-         "description" : "reality_check",
-         "type" : "string"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "reality_check"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

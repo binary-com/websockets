@@ -1,27 +1,27 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "additionalProperties" : false,
-   "title" : "Get User Settings Send",
-   "required" : [
-      "get_settings"
-   ],
-   "description" : "Get User Settings (email, date of birth, address etc)",
-   "type" : "object",
-   "properties" : {
-      "get_settings" : {
-         "description" : "Must be 1",
-         "type" : "integer",
-         "enum" : [
-            1
-         ]
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "req_id" : {
-         "description" : "Optional field to map request to response",
-         "type" : "integer"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Get Account Settings (request)",
+    "description": "Get User Settings (email, date of birth, address etc)",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "get_settings"
+    ],
+    "properties": {
+        "get_settings": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

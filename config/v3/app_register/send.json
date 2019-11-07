@@ -1,78 +1,84 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "type" : "object",
-   "description" : "Register a new OAuth application",
-   "required" : [
-      "app_register",
-      "redirect_uri",
-      "name",
-      "scopes"
-   ],
-   "title" : "App Register Send",
-   "additionalProperties" : false,
-   "properties" : {
-      "redirect_uri" : {
-         "pattern" : "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$",
-         "type" : "string",
-         "description" : "Application redirect_uri"
-      },
-      "appstore" : {
-         "description" : "Application's App Store URL (if applicable)",
-         "type" : "string",
-         "pattern" : "^https?://itunes\\.apple\\.com/\\S+$"
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "github" : {
-         "type" : "string",
-         "description" : "Application's GitHub page (for open-source projects)",
-         "pattern" : "^https?://(www\\.)?github\\.com/\\S+$"
-      },
-      "app_markup_percentage" : {
-         "minimum" : 0,
-         "maximum" : 5, 
-         "type" : "number",
-         "description" : "Markup to be added to contract prices (as a percentage of contract payout). Min: 0, Max: 5"
-      },
-      "verification_uri" : {
-         "type" : "string",
-         "description" : "Application verification_uri",
-         "pattern" : "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
-      },
-      "homepage" : {
-         "description" : "Application's homepage",
-         "type" : "string",
-         "pattern" : "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
-      },
-      "app_register" : {
-         "type" : "integer",
-         "description" : "Must be 1",
-         "enum" : [
-            1
-         ]
-      },
-      "name" : {
-         "pattern" : "^[\\w\\s-]{1,48}$",
-         "description" : "Application name",
-         "type" : "string"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field to map request to response"
-      },
-      "scopes" : {
-         "type" : "array",
-         "items" : {
-            "type" : "string",
-            "pattern" : "^(read|trade|payments|admin)$"
-         }
-      },
-      "googleplay" : {
-         "description" : "Application's Google Play URL (if applicable)",
-         "type" : "string",
-         "pattern" : "^https?://play\\.google\\.com/store/apps/details\\?id=[\\w \\.]+$"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Application: Register (request)",
+    "description": "Register a new OAuth application",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "app_register",
+        "name",
+        "redirect_uri",
+        "scopes"
+    ],
+    "properties": {
+        "app_register": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "app_markup_percentage": {
+            "description": "Markup to be added to contract prices (as a percentage of contract payout). Min: 0, Max: 5",
+            "type": "number",
+            "maximum": 5,
+            "minimum": 0
+        },
+        "appstore": {
+            "description": "Application's App Store URL (if applicable)",
+            "type": "string",
+            "pattern": "^https?://itunes\\.apple\\.com/\\S+$"
+        },
+        "github": {
+            "description": "Application's GitHub page (for open-source projects)",
+            "type": "string",
+            "pattern": "^https?://(www\\.)?github\\.com/\\S+$"
+        },
+        "googleplay": {
+            "description": "Application's Google Play URL (if applicable)",
+            "type": "string",
+            "pattern": "^https?://play\\.google\\.com/store/apps/details\\?id=[\\w \\.]+$"
+        },
+        "homepage": {
+            "description": "Application's homepage",
+            "type": "string",
+            "pattern": "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
+        },
+        "name": {
+            "description": "Application name",
+            "type": "string",
+            "pattern": "^[\\w\\s-]{1,48}$"
+        },
+        "redirect_uri": {
+            "description": "Application redirect_uri",
+            "type": "string",
+            "pattern": "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
+        },
+        "scopes": {
+            "description": "List of permission scopes to grant the application.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "read",
+                    "trade",
+                    "payments",
+                    "admin"
+                ]
+            }
+        },
+        "verification_uri": {
+            "description": "Application verification_uri",
+            "type": "string",
+            "pattern": "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

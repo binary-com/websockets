@@ -1,26 +1,26 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Copy Stop Send",
-   "additionalProperties" : false,
-   "required" : [
-      "copy_stop"
-   ],
-   "description" : "Stop copy trader bets",
-   "type" : "object",
-   "properties" : {
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "req_id" : {
-         "description" : "Optional field to map request to response",
-         "type" : "integer"
-      },
-      "copy_stop" : {
-         "pattern" : "^[\\w\\s-]{15,32}$",
-         "sensitive" : 1,
-         "description" : "API tokens identifying the accounts which needs not to be copied",
-         "type" : "string"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Copy Trading: Stop (request)",
+    "description": "Stop copy trader bets",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "copy_stop"
+    ],
+    "properties": {
+        "copy_stop": {
+            "description": "API tokens identifying the accounts which needs not to be copied",
+            "type": "string",
+            "pattern": "^[\\w\\s-]{15,32}$",
+            "sensitive": 1
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

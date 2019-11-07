@@ -1,75 +1,79 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   
-   "title" : "Tick Stream Response",
-   "description" : "Latest spot price for a given symbol. Continous responses with a frequency of up to one second",
-   "type" : "object",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "properties" : {
-      "tick" : {
-         "type" : "object",
-         "description" : "Tick by tick list of streamed data",
-         "title" : "TickSpotData",
-         "required" : ["pip_size"],
-         "properties" : {
-            "id" : {
-               "description" : "A stream id that can be used to cancel this stream using the Forget request",
-               "type" : "string"
-            },
-            "quote" : {
-               "description" : "Market value at the epoch",
-               "type" : "number"
-            },
-            "symbol" : {
-               "description" : "Symbol",
-               "type" : "string"
-            },
-            "bid" : {
-               "description" : "Market bid at the epoch",
-               "type" : "number"
-            },
-            "epoch" : {
-               "description" : "Epoch time of the tick",
-               "type" : "integer"
-            },
-            "ask" : {
-               "type" : "number",
-               "description" : "Market ask at the epoch"
-            },
-            "pip_size" : {
-                "type": "number",
-                "description" : "Indicates the number of decimal points that the returned amounts must be displayed with"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Ticks Stream (response)",
+    "description": "Latest spot price for a given symbol. Continous responses with a frequency of up to one second",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only",
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
+                    "type": "string"
+                }
             }
-         }
-      },
-      "msg_type" : {
-         "type" : "string",
-         "description" : "tick"
-      },
-      "echo_req" : {
-         "description" : "Echo of the request made",
-         "title" : "Echo request"
-      },
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      },
-      "subscription" : {
-         "title" : "Subscription information",
-         "description" : "For subscription requests only",
-         "type" : "object",
-         "required" : [
-            "id"
-         ],
-         "properties": {
-            "id" : {
-             "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
-             "type" : "string"
+        },
+        "tick": {
+            "title": "TickSpotData",
+            "description": "Tick by tick list of streamed data",
+            "type": "object",
+            "required": [
+                "pip_size"
+            ],
+            "properties": {
+                "ask": {
+                    "description": "Market ask at the epoch",
+                    "type": "number"
+                },
+                "bid": {
+                    "description": "Market bid at the epoch",
+                    "type": "number"
+                },
+                "epoch": {
+                    "description": "Epoch time of the tick",
+                    "type": "integer"
+                },
+                "id": {
+                    "description": "A stream ID that can be used to cancel this stream using the Forget request",
+                    "type": "string"
+                },
+                "pip_size": {
+                    "description": "Indicates the number of decimal points that the returned amounts must be displayed with",
+                    "type": "number"
+                },
+                "quote": {
+                    "description": "Market value at the epoch",
+                    "type": "number"
+                },
+                "symbol": {
+                    "description": "Symbol",
+                    "type": "string"
+                }
             }
-         }
-     }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Type of the response.",
+            "type": "string",
+            "enum": [
+                "tick"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

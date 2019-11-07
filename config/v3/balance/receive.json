@@ -1,116 +1,118 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "description" : "Return details of user account balance",
-   "type" : "object",
-   "required" : [
-      "msg_type",
-      "echo_req"
-   ],
-   "title" : "Realtime Balance",
-   "properties" : {
-      "msg_type" : {
-         "description" : "balance",
-         "type" : "string"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-       "balance" : {
-           "description" : "Realtime stream of user balance changes.",
-           "type" : "object",
-           "title" : "Latest balance of client",
-           "required" : [
-               "balance",
-               "currency",
-               "loginid"
-           ],
-           "properties" : {
-               "loginid" : {
-                   "pattern" : "^[A-Z]{2,4}[0-9]{1,10}$",
-                   "description" : "Client loginid Example: CR000000",
-                   "type" : "string"
-               },
-               "id" : {
-                   "type" : "string",
-                   "description" : "A stream id that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579"
-               },
-               "currency" : {
-                   "description" : "Currency Example: USD",
-                   "type" : "string",
-                   "pattern" : "^(|[A-Z]{3})$"
-               },
-               "balance" : {
-                   "minimum" : 0, 
-                   "type" : "number",
-                   "description" : "Balance amount"
-               },
-               "total" : {
-                   "type": "object",
-                   "description": "Total amounts of balances",
-                   "properties" : {
-                       "real": {
-                           "type": "object",
-                           "description": "Total amount of balance in all real accounts (excluding MT5)",
-                           "properties" : {
-                               "currency" : {
-                                   "description" : "Currency Example: USD",
-                                   "type" : "string",
-                                   "pattern" : "^(|[A-Z]{3})$"
-                               },
-                               "amount" : {
-                                   "minimum" : 0, 
-                                   "type" : "number",
-                                   "description" : "total amount of all balances of all real accounts"
-                               }
-                           },
-                           "required" : [
-                               "amount",
-                               "currency"
-                           ]
-
-                       },
-                       "mt5": {
-                           "type": "object",
-                           "description": "Total balance of all MT5 accounts",
-                           "properties" : {
-                               "currency" : {
-                                   "description" : "Currency Example: USD",
-                                   "type" : "string",
-                                   "pattern" : "^(|[A-Z]{3})$"
-                               },
-                               "amount" : {
-                                   "minimum" : 0, 
-                                   "type" : "number",
-                                   "description": "Total balance of all MT5 accounts"
-                               }
-                           },
-                           "required" : [
-                               "amount",
-                               "currency"
-                           ]
-                       }
-                   }
-               }
-           }
-       },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      },
-      "subscription" : {
-         "title" : "Subscription information",
-         "description" : "For subscription requests only",
-         "type" : "object",
-         "required" : [
-            "id"
-         ],
-         "properties": {
-            "id" : {
-             "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
-             "type" : "string"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Balance (response)",
+    "description": "Return details of user account balance",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "balance": {
+            "title": "balance",
+            "description": "Realtime stream of user balance changes.",
+            "type": "object",
+            "required": [
+                "balance",
+                "currency",
+                "loginid"
+            ],
+            "properties": {
+                "balance": {
+                    "description": "Balance amount",
+                    "type": "number",
+                    "minimum": 0
+                },
+                "currency": {
+                    "description": "Currency Example: USD",
+                    "type": "string",
+                    "pattern": "^(|[A-Z]{3})$"
+                },
+                "id": {
+                    "description": "A stream ID that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579",
+                    "type": "string"
+                },
+                "loginid": {
+                    "description": "Client loginid Example: CR000000",
+                    "type": "string",
+                    "pattern": "^[A-Z]{2,4}[0-9]{1,10}$"
+                },
+                "total": {
+                    "description": "Total amounts of balances",
+                    "type": "object",
+                    "properties": {
+                        "mt5": {
+                            "description": "Total balance of all MT5 accounts",
+                            "type": "object",
+                            "required": [
+                                "amount",
+                                "currency"
+                            ],
+                            "properties": {
+                                "amount": {
+                                    "description": "Total balance of all MT5 accounts",
+                                    "type": "number",
+                                    "minimum": 0
+                                },
+                                "currency": {
+                                    "description": "Currency Example: USD",
+                                    "type": "string",
+                                    "pattern": "^(|[A-Z]{3})$"
+                                }
+                            }
+                        },
+                        "real": {
+                            "description": "Total amount of balance in all real accounts (excluding MT5)",
+                            "type": "object",
+                            "required": [
+                                "amount",
+                                "currency"
+                            ],
+                            "properties": {
+                                "amount": {
+                                    "description": "Total amount of all balances of all real accounts",
+                                    "type": "number",
+                                    "minimum": 0
+                                },
+                                "currency": {
+                                    "description": "Currency Example: USD",
+                                    "type": "string",
+                                    "pattern": "^(|[A-Z]{3})$"
+                                }
+                            }
+                        }
+                    }
+                }
             }
-         }
-     }
-   }
+        },
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only",
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
+                    "type": "string"
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "balance"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

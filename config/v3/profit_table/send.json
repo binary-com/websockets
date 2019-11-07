@@ -1,56 +1,60 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Profit Table Send",
-   "additionalProperties" : false,
-   "required" : [
-      "profit_table"
-   ],
-   "type" : "object",
-   "description" : "Retrieve a summary of account Profit Table, according to given search criteria",
-   "properties" : {
-      "date_to" : {
-         "description" : "Optional end date (epoch or YYYY-MM-DD)",
-         "type" : "string",
-         "pattern" : "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|[0-9]{1,10})$"
-      },
-      "offset" : {
-         "description" : "Skip this many transactions",
-         "type" : "number"
-      },
-      "passthrough" : {
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-         "type" : "object"
-      },
-      "sort" : {
-         "type" : "string",
-         "description" : "sort direction, default DESC",
-         "pattern" : "^(ASC|DESC)$"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field to map request to response"
-      },
-      "description" : {
-         "description" : "If set to 1, will return full contracts description.",
-         "type" : "integer"
-      },
-      "date_from" : {
-         "type" : "string",
-         "description" : "Optional start date (epoch or YYYY-MM-DD)",
-         "pattern" : "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|[0-9]{1,10})$"
-      },
-      "limit" : {
-         "type" : "number",
-         "description" : "Apply upper limit to count of transactions received",
-         "minimum" : 0, 
-         "maximum" :999
-      },
-      "profit_table" : {
-         "enum" : [
-            1
-         ],
-         "description" : "Must be 1.",
-         "type" : "integer"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Profit Table (request)",
+    "description": "Retrieve a summary of account Profit Table, according to given search criteria",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "profit_table"
+    ],
+    "properties": {
+        "profit_table": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "description": {
+            "description": "If set to 1, will return full contracts description.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "date_from": {
+            "description": "Optional start date (epoch or YYYY-MM-DD)",
+            "type": "string",
+            "pattern": "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|[0-9]{1,10})$"
+        },
+        "date_to": {
+            "description": "Optional end date (epoch or YYYY-MM-DD)",
+            "type": "string",
+            "pattern": "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|[0-9]{1,10})$"
+        },
+        "limit": {
+            "description": "Apply upper limit to count of transactions received",
+            "type": "number",
+            "maximum": 999,
+            "minimum": 0
+        },
+        "offset": {
+            "description": "Skip this many transactions",
+            "type": "number"
+        },
+        "sort": {
+            "description": "Sort direction, default DESC",
+            "type": "string",
+            "pattern": "^(ASC|DESC)$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

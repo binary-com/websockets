@@ -1,29 +1,32 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "type" : "object",
-   "description" : null,
-   "title" : "Forget All Response",
-   
-   "properties" : {
-      "msg_type" : {
-         "type" : "string",
-         "description" : "forget_all"
-      },
-      "forget_all" : {
-         "type" : "array",
-         "description" : "Ids of the cancelled streams"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Forget All (response)",
+    "description": "The result of forget all request made.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "forget_all": {
+            "title": "forget_all",
+            "description": "IDs of the cancelled streams",
+            "type": "array"
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "forget_all"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

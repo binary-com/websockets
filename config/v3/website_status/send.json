@@ -1,33 +1,35 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "additionalProperties" : false,
-   "title" : "Server Status Request",
-   "required" : [
-      "website_status"
-   ],
-   "description" : "Request server status.",
-   "type" : "object",
-   "properties" : {
-      "req_id" : {
-         "type" : "integer",
-         "description" : "[Optional] Used to map request to response."
-      },
-      "website_status" : {
-         "enum" : [
-            1
-         ],
-         "description" : "Must be 1."
-      },
-      "subscribe" : {
-         "description" : "[Optional] 1 - to stream the server/website status updates (default = 1)",
-         "enum" : [
-            0,
-            1
-         ]
-      },
-      "passthrough" : {
-         "description" : "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
-         "type" : "object"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Server Status (request)",
+    "description": "Request server status.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "website_status"
+    ],
+    "properties": {
+        "website_status": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "subscribe": {
+            "description": "[Optional] 1 - to stream the server/website status updates (default = 1)",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

@@ -1,51 +1,53 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "msg_type",
-      "echo_req"
-   ],
-   "type" : "object",
-   "description" : "A message with Residence List",
-   
-   "title" : "Residence List Response",
-   "properties" : {
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      },
-      "residence_list" : {
-         "title" : "Countries list",
-         "type" : "array",
-         "description" : "List of countries for account opening",
-         "items" : {
-            "properties" : {
-               "value" : {
-                  "type" : "string",
-                  "description" : "2-letter country code",
-                  "pattern" : "^\\w\\w$"
-               },
-               "text" : {
-                  "description" : "Country full name",
-                  "type" : "string"
-               },
-               "phone_idd" : {
-                  "type" : [
-                     "string",
-                     "null"
-                  ],
-                  "description" : "IDD code of country"
-               }
-            },
-            "type" : "object"
-         }
-      },
-      "echo_req" : {
-         "description" : "Echo of the request made",
-         "title" : "Echo request"
-      },
-      "msg_type" : {
-         "description" : "residence_list",
-         "type" : "string"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Countries List (response)",
+    "description": "A message with Residence List",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "residence_list": {
+            "title": "residence_list",
+            "description": "List of countries for account opening",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "phone_idd": {
+                        "description": "IDD code of country",
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "text": {
+                        "description": "Country full name",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "2-letter country code",
+                        "type": "string",
+                        "pattern": "^\\w\\w$"
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "residence_list"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

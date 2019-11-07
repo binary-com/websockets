@@ -1,92 +1,94 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "type" : "object",
-   "description" : "Get MT5 user settings",
-
-   "title" : "Get MT5 user settings Receive",
-   "properties" : {
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      },
-      "mt5_get_settings" : {
-         "title" : "",
-         "properties" : {
-            "phonePassword" : {
-               "description" : "the user's phone password.",
-               "type" : "string"
-            },
-            "phone" : {
-               "description" : "User's phone number. Optional field.",
-               "type" : "string"
-            },
-            "address" : {
-               "description" : "The address of the user. The maximum length of the address is 128 characters. Optional field.",
-               "type" : "string"
-            },
-            "country" : {
-               "description" : "2-letter country code. Optional field.",
-               "type" : "string"
-            },
-            "zipCode" : {
-               "description" : "User's zip code. Optional field.",
-               "type" : "string"
-            },
-            "login" : {
-               "description" : "Login ID of the user's MT5 account.",
-               "type" : "string"
-            },
-            "name" : {
-               "type" : "string",
-               "description" : "Client's name. The maximum length of a client's symbol name is 128 characters. Optional field."
-            },
-            "company" : {
-               "type" : "string",
-               "description" : "Name of the client's company. The maximum length of the company name is 64 characters. Optional field."
-            },
-            "email" : {
-               "description" : "Email address.",
-               "type" : "string"
-            },
-            "group" : {
-               "type" : "string",
-               "description" : "The group where account belongs to."
-            },
-            "city" : {
-               "type" : "string",
-               "description" : "User's city of residence. Optional field."
-            },
-            "balance" : {
-               "type" : "string",
-               "description" : "Account balance."
-            },
-            "currency" : {
-               "type" : "string",
-               "description" : "MT5 account currency (USD or EUR) that depends on the MT5 company (vanuatu, svg, malta)."
-            },
-            "leverage" : {
-               "description" : "Client leverage (from 1 to 1000).",
-               "type" : "string"
-            },
-            "state" : {
-               "description" : "User's state (region) of residence. Optional field.",
-               "type" : "string"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MT5: Get Setting (response)",
+    "description": "Get MT5 user settings",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "mt5_get_settings": {
+            "title": "mt5_get_settings",
+            "description": "MT5 user account details",
+            "type": "object",
+            "properties": {
+                "address": {
+                    "description": "The address of the user. The maximum length of the address is 128 characters. Optional field.",
+                    "type": "string"
+                },
+                "balance": {
+                    "description": "Account balance.",
+                    "type": "string"
+                },
+                "city": {
+                    "description": "User's city of residence. Optional field.",
+                    "type": "string"
+                },
+                "company": {
+                    "description": "Name of the client's company. The maximum length of the company name is 64 characters. Optional field.",
+                    "type": "string"
+                },
+                "country": {
+                    "description": "2-letter country code. Optional field.",
+                    "type": "string"
+                },
+                "currency": {
+                    "description": "MT5 account currency (USD or EUR) that depends on the MT5 company (vanuatu, svg, malta).",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "Email address.",
+                    "type": "string"
+                },
+                "group": {
+                    "description": "The group where account belongs to.",
+                    "type": "string"
+                },
+                "leverage": {
+                    "description": "Client leverage (from 1 to 1000).",
+                    "type": "string"
+                },
+                "login": {
+                    "description": "Login ID of the user's MT5 account.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Client's name. The maximum length of a client's symbol name is 128 characters. Optional field.",
+                    "type": "string"
+                },
+                "phone": {
+                    "description": "User's phone number. Optional field.",
+                    "type": "string"
+                },
+                "phonePassword": {
+                    "description": "The user's phone password.",
+                    "type": "string"
+                },
+                "state": {
+                    "description": "User's state (region) of residence. Optional field.",
+                    "type": "string"
+                },
+                "zipCode": {
+                    "description": "User's zip code. Optional field.",
+                    "type": "string"
+                }
             }
-         },
-         "type" : "object",
-         "description" : "MT5 user account details"
-      },
-      "msg_type" : {
-         "type" : "string",
-         "description" : "mt5_get_settings"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "mt5_get_settings"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

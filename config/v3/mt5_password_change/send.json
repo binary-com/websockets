@@ -1,55 +1,56 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "additionalProperties" : false,
-   "title" : "MT5 user main password change",
-   "type" : "object",
-   "description" : "This call change main password for MT5 user",
-   "required" : [
-      "old_password",
-      "login",
-      "mt5_password_change",
-      "new_password"
-   ],
-   "properties" : {
-      "mt5_password_change" : {
-         "description" : "Must be 1",
-         "type" : "integer",
-         "enum" : [
-            1
-         ]
-      },
-      "req_id" : {
-         "description" : "Optional field to map request to response",
-         "type" : "integer"
-      },
-      "password_type" : {
-         "description" : "Password type main/investor (default: main)",
-         "default" : "main",
-         "enum" : [
-            "main",
-            "investor"
-         ]
-      },
-      "old_password" : {
-         "pattern" : "^[ -~]+$",
-         "description" : "Old password for validation (non-empty string, accepts any printable ASCII character)",
-         "type" : "string",
-         "sensitive" : 1
-      },
-      "new_password" : {
-         "type" : "string",
-         "description" : "New password (length within 8-25 chars, accepts any printable ASCII character)",
-         "pattern" : "^[ -~]{8,25}$",
-         "sensitive" : 1
-      },
-      "login" : {
-         "description" : "MT5 user login",
-         "type" : "string",
-         "pattern" : "^[0-9]+$"
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MT5: Password Change (request)",
+    "description": "To change passwords of the MT5 account.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "login",
+        "mt5_password_change",
+        "new_password",
+        "old_password"
+    ],
+    "properties": {
+        "mt5_password_change": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "login": {
+            "description": "MT5 user login",
+            "type": "string",
+            "pattern": "^[0-9]+$"
+        },
+        "new_password": {
+            "description": "New password (length within 8-25 chars, accepts any printable ASCII character)",
+            "type": "string",
+            "pattern": "^[ -~]{8,25}$",
+            "sensitive": 1
+        },
+        "old_password": {
+            "description": "Old password for validation (non-empty string, accepts any printable ASCII character)",
+            "type": "string",
+            "pattern": "^[ -~]+$",
+            "sensitive": 1
+        },
+        "password_type": {
+            "description": "Password type main/investor (default: 'main')",
+            "type": "string",
+            "default": "main",
+            "enum": [
+                "main",
+                "investor"
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

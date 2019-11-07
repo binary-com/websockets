@@ -1,45 +1,48 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Payment Agent Transfer Response",
-   
-   "description" : "",
-   "type" : "object",
-   "required" : [
-      "msg_type",
-      "echo_req"
-   ],
-   "properties" : {
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      },
-      "transaction_id" : {
-         "description" : "Reference id of transfer performed",
-         "type" : "integer"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "paymentagent_transfer" : {
-         "description" : "If 1, transfer success. If 2, dry-run success.",
-         "type" : "integer",
-         "enum" : [
-            1,
-            2
-         ]
-      },
-      "msg_type" : {
-         "type" : "string",
-         "description" : "paymentagent_transfer"
-      },
-      "client_to_full_name" : {
-         "description" : "The transfer_to client full name",
-         "type" : "string"
-      },
-      "client_to_loginid" : {
-         "type" : "string",
-         "description" : "The transfer_to client loginid"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Payment Agent: Transfer (response)",
+    "description": "The result of transfer request made.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "paymentagent_transfer": {
+            "title": "paymentagent_transfer",
+            "description": "If set to 1, transfer success. If set to 2, dry-run success.",
+            "type": "integer",
+            "enum": [
+                1,
+                2
+            ]
+        },
+        "client_to_full_name": {
+            "description": "The transfer_to client full name",
+            "type": "string"
+        },
+        "client_to_loginid": {
+            "description": "The transfer_to client loginid",
+            "type": "string"
+        },
+        "transaction_id": {
+            "description": "Reference ID of transfer performed",
+            "type": "integer"
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "paymentagent_transfer"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

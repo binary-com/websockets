@@ -1,128 +1,130 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "description" : "Return transaction updates",
-   "type" : "object",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "title" : "Transaction Updates",
-   
-   "properties" : {
-      "msg_type" : {
-         "type" : "string",
-         "description" : "transaction"
-      },
-      "transaction" : {
-         "type" : "object",
-         "description" : "Realtime stream of user transaction updates.",
-         "properties" : {
-            "amount" : {
-               "description" : "It is the amount of transaction performed Example: -83.2300",
-               "type" : "number"
-            },
-            "id" : {
-               "type" : "string",
-               "description" : "A stream id that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579"
-            },
-            "balance" : {
-                "minimum" : 0, 
-                "maximum" : 9999999999999999999999999,
-               "type" : "number",
-               "description" : "Balance amount"
-            },
-            "high_barrier" : {
-               "type" : [
-                  "number",
-                  "string"
-               ],
-               "description" : "The high barrier of a contract. Only applicable to double barrier contracts."
-            },
-            "longcode" : {
-               "type" : "string",
-               "description" : "Description of contract purchased"
-            },
-            "purchase_time" : {
-               "type" : "integer",
-               "description" : "Time at which contract was purchased, present only for sell transaction"
-            },
-            "symbol" : {
-               "description" : "Symbol code",
-               "type" : "string"
-            },
-            "contract_id" : {
-               "type" : [
-                  "integer",
-                  "null"
-               ],
-               "description" : "It is the contract id Example: 4867502908"
-            },
-            "low_barrier" : {
-               "description" : "The low barrier of a contract. Only applicable to double barrier contracts.",
-               "type" : "string"
-               
-            },
-            "transaction_id" : {
-               "type" : "integer",
-               "description" : "It is the transaction id. Every contract (buy or sell) or payment has a unique id. Example: 10867502908"
-            },
-            "display_name" : {
-               "description" : "Display name of symbol",
-               "type" : "string"
-            },
-            "currency" : {
-               "type" : "string",
-               "description" : "Transaction currency"
-            },
-            "date_expiry" : {
-               "type" : "integer",
-               "description" : "Epoch value of the expiry time of the contract. Please note that in case of buy transaction this is approximate value not exact one."
-            },
-            "barrier" : {
-               "description" : "Barrier of the contract. Only applicable to single barrier contracts. Could be undefined if a contract does not have a barrier.",
-               "type" : [
-                  "number",
-                  "string",
-                  "null"
-               ]
-            },
-            "action" : {
-               "type" : "string",
-               "enum" : [
-                  "deposit",
-                  "withdrawal",
-                  "buy",
-                  "sell"
-               ]
-            },
-            "transaction_time" : {
-               "description" : "Time at which transaction was performed, for buy its purchase time, for sell its sell time",
-               "type" : "integer"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Transactions Stream (response)",
+    "description": "Return transaction updates",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "transaction": {
+            "title": "transaction",
+            "description": "Realtime stream of user transaction updates.",
+            "type": "object",
+            "properties": {
+                "action": {
+                    "description": "The transaction type.",
+                    "type": "string",
+                    "enum": [
+                        "deposit",
+                        "withdrawal",
+                        "buy",
+                        "sell"
+                    ]
+                },
+                "amount": {
+                    "description": "It is the amount of transaction performed Example: -83.2300",
+                    "type": "number"
+                },
+                "balance": {
+                    "description": "Balance amount",
+                    "type": "number",
+                    "maximum": 9999999999999999999,
+                    "minimum": 0
+                },
+                "barrier": {
+                    "description": "Barrier of the contract. Only applicable to single barrier contracts. Could be undefined if a contract does not have a barrier.",
+                    "type": [
+                        "null",
+                        "number",
+                        "string"
+                    ]
+                },
+                "contract_id": {
+                    "description": "It is the contract ID. Example: 4867502908",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "currency": {
+                    "description": "Transaction currency",
+                    "type": "string"
+                },
+                "date_expiry": {
+                    "description": "Epoch value of the expiry time of the contract. Please note that in case of buy transaction this is approximate value not exact one.",
+                    "type": "integer"
+                },
+                "display_name": {
+                    "description": "Display name of symbol",
+                    "type": "string"
+                },
+                "high_barrier": {
+                    "description": "The high barrier of a contract. Only applicable to double barrier contracts.",
+                    "type": [
+                        "number",
+                        "string"
+                    ]
+                },
+                "id": {
+                    "description": "A stream ID that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579",
+                    "type": "string"
+                },
+                "longcode": {
+                    "description": "Description of contract purchased",
+                    "type": "string"
+                },
+                "low_barrier": {
+                    "description": "The low barrier of a contract. Only applicable to double barrier contracts.",
+                    "type": "string"
+                },
+                "purchase_time": {
+                    "description": "Time at which contract was purchased, present only for sell transaction",
+                    "type": "integer"
+                },
+                "symbol": {
+                    "description": "Symbol code",
+                    "type": "string"
+                },
+                "transaction_id": {
+                    "description": "It is the transaction ID. Every contract (buy or sell) or payment has a unique ID. Example: 10867502908",
+                    "type": "integer"
+                },
+                "transaction_time": {
+                    "description": "Time at which transaction was performed, for buy its purchase time, for sell its sell time",
+                    "type": "integer"
+                }
             }
-         },
-         "title" : "Latest update to transaction"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      },
-      "subscription" : {
-         "title" : "Subscription information",
-         "description" : "For subscription requests only",
-         "type" : "object",
-         "required" : [
-            "id"
-         ],
-         "properties": {
-            "id" : {
-             "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
-             "type" : "string"
+        },
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only",
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
+                    "type": "string"
+                }
             }
-         }
-     }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "transaction"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

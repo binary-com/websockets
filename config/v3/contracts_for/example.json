@@ -1,6 +1,6 @@
 {
     "contracts_for": "R_50",
     "currency": "USD",
-    "product_type": "basic",
-    "landing_company": "svg"
+    "landing_company": "svg",
+    "product_type": "basic"
 }

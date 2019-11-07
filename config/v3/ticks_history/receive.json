@@ -1,95 +1,101 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "description" : "Historic tick data for a single symbol",
-   "type" : "object",
-   "required" : [
-      "msg_type",
-      "echo_req"
-   ],
-   "title" : "Tick History Response",
-   "properties" : {
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      },
-      "pip_size" : {
-          "description" : "Indicates the number of decimal points that the returned amounts must be displayed with",
-          "type" : "number"
-      },
-      "candles" : {
-         "type" : "array",
-         "description" : "Array of OHLC (open/high/low/close) price values for the given time (only for style='candles')",
-         "items" : {
-            "properties" : {
-               "open" : {
-                  "description" : "It is the open price value for the given time",
-                  "type" : "number"
-               },
-               "low" : {
-                  "description" : "It is the low price value for the given time",
-                  "type" : "number"
-               },
-               "high" : {
-                  "type" : "number",
-                  "description" : "It is the high price value for the given time"
-               },
-               "epoch" : {
-                  "type" : "integer",
-                  "description" : "It is an epoch value"
-               },
-               "close" : {
-                  "description" : "It is the close price value for the given time",
-                  "type" : "number"
-               }
-            },
-            "type" : "object"
-         }
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "msg_type" : {
-         "type" : "string",
-         "description" : "style"
-      },
-      "history" : {
-         "type" : "object",
-         "description" : "Historic tick data for a given symbol. Note : this will always return the latest possible set of ticks with accordance to the parameters specified.",
-         "properties" : {
-            "prices" : {
-               "type" : "array",
-               "items" : 
-                  {
-                     "type" : "number",
-                     "description" : "Tick value."
-                  }
-               
-            },
-            "times" : {
-               "items" : 
-                  {
-                     "type" : "integer",
-                     "description" : "Epoch of the tick."
-                  },
-               "type" : "array"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Ticks History (response)",
+    "description": "Historic tick data for a single symbol",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "candles": {
+            "title": "candles",
+            "description": "Array of OHLC (open/high/low/close) price values for the given time (only for style='candles')",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "close": {
+                        "description": "It is the close price value for the given time",
+                        "type": "number"
+                    },
+                    "epoch": {
+                        "description": "It is an epoch value",
+                        "type": "integer"
+                    },
+                    "high": {
+                        "description": "It is the high price value for the given time",
+                        "type": "number"
+                    },
+                    "low": {
+                        "description": "It is the low price value for the given time",
+                        "type": "number"
+                    },
+                    "open": {
+                        "description": "It is the open price value for the given time",
+                        "type": "number"
+                    }
+                }
             }
-         },
-         "title" : "Tick History Response"
-      },
-      "subscription" : {
-         "title" : "Subscription information",
-         "description" : "For subscription requests only",
-         "type" : "object",
-         "required" : [
-            "id"
-         ],
-         "properties": {
-            "id" : {
-             "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
-             "type" : "string"
+        },
+        "history": {
+            "title": "history",
+            "description": "Historic tick data for a given symbol. Note: this will always return the latest possible set of ticks with accordance to the parameters specified.",
+            "type": "object",
+            "properties": {
+                "prices": {
+                    "description": "An array containing list of tick values for the corresponding epoch values in 'times' array.",
+                    "type": "array",
+                    "items": {
+                        "description": "Tick value.",
+                        "type": "number"
+                    }
+                },
+                "times": {
+                    "description": "An array containing list of epoch values for the corresponding tick values in 'prices' array.",
+                    "type": "array",
+                    "items": {
+                        "description": "Epoch of the tick.",
+                        "type": "integer"
+                    }
+                }
             }
-         }
-     }
-   }
+        },
+        "pip_size": {
+            "description": "Indicates the number of decimal points that the returned amounts must be displayed with",
+            "type": "number"
+        },
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only",
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
+                    "type": "string"
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Type of the response according to the 'style' sent in request. Would be 'history' or 'candles' for the first response, and 'tick' or 'ohlc' for the rest when subscribed.",
+            "type": "string",
+            "enum": [
+                "history",
+                "tick",
+                "candles",
+                "ohlc"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

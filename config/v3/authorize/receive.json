@@ -1,119 +1,127 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "type" : "object",
-   "description" : "A message containing account information for the holder of that token.",
-   "title" : "Authorize Response",
-   
-   "properties" : {
-      "msg_type" : {
-         "description" : "authorize.",
-         "type" : "string"
-      },
-      "authorize" : {
-         "title" : "Authorization Response",
-         "properties" : {
-            "landing_company_name" : {
-               "description" : "Landing company shortcode the account belongs to.",
-               "type" : "string"
-            },
-            "account_list" : {
-               "items" : {
-                  "properties" : {
-                     "is_virtual" : {
-                        "enum" : [1,0],
-                        "type" : "integer",
-                        "description" : "Boolean value: 1 or 0, indicating whether the account is a virtual-money account."
-                     },
-                     "excluded_until" : {
-                        "type" : "integer",
-                        "description" : "Epoch of date till client has excluded him/herself from the website, only present if client is self excluded."
-                     },
-                     "currency" : {
-                        "type" : "string",
-                        "description" : "Currency of specified account."
-                     },
-                     "loginid" : {
-                        "description" : "The account id of specified account.",
-                        "type" : "string"
-                     },
-                     "is_disabled" : {
-                        "type" : "integer",
-                        "description" : "Boolean value: 1 or 0, indicating whether the account is marked as disabled or not.",
-                        "enum" : [1,0]
-                     },
-                     "landing_company_name" : {
-                        "type" : "string",
-                        "description" : "Landing company shortcode the account belongs to."
-                     }
-                  },
-                  "type" : "object"
-               },
-               "type" : "array",
-               "description" : "List of accounts for current user."
-            },
-            "fullname" : {
-               "type" : "string",
-               "description" : "User's full name. Will be empty for virtual accounts."
-            },
-            "balance" : {
-               "description" : "Cash balance of the account.",
-               "type" : "number"
-            },
-            "currency" : {
-               "description" : "Currency of the account.",
-               "type" : "string"
-            },
-            "scopes" : {
-               "items" : {
-                  "type" : "string"
-               },
-               "description" : "Scopes available to the token.",
-               "type" : "array"
-            },
-            "landing_company_fullname" : {
-               "type" : "string",
-               "description" : "Landing company name the account belongs to."
-            },
-            "upgradeable_landing_companies" : {
-               "description" : "List of landing company shortcodes the account can upgrade to.",
-               "type" : "array"
-            },
-            "email" : {
-               "description" : "User email.",
-               "type" : "string"
-            },
-            "loginid" : {
-               "type" : "string",
-               "description" : "The account ID that the token was issued for."
-            },
-            "user_id" : {
-               "type" : "integer",
-               "description" : "The internal user ID for this account."
-            },
-            "is_virtual" : {
-               "description" : "Boolean value: 1 or 0, indicating whether the account is a virtual-money account.",
-               "type" : "integer"
-            },
-            "country" : {
-               "type" : "string",
-               "description" : "2-letter country code (ISO standard).",
-               "pattern" : "^[a-z]{0,2}$"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Authorize (response)",
+    "description": "A message containing account information for the holder of that token.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "authorize": {
+            "title": "authorize",
+            "description": "Account information for the holder of the token.",
+            "type": "object",
+            "properties": {
+                "account_list": {
+                    "description": "List of accounts for current user.",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "currency": {
+                                "description": "Currency of specified account.",
+                                "type": "string"
+                            },
+                            "excluded_until": {
+                                "description": "Epoch of date till client has excluded him/herself from the website, only present if client is self excluded.",
+                                "type": "integer"
+                            },
+                            "is_disabled": {
+                                "description": "Boolean value: 1 or 0, indicating whether the account is marked as disabled or not.",
+                                "type": "integer",
+                                "enum": [
+                                    1,
+                                    0
+                                ]
+                            },
+                            "is_virtual": {
+                                "description": "Boolean value: 1 or 0, indicating whether the account is a virtual-money account.",
+                                "type": "integer",
+                                "enum": [
+                                    1,
+                                    0
+                                ]
+                            },
+                            "landing_company_name": {
+                                "description": "Landing company shortcode the account belongs to.",
+                                "type": "string"
+                            },
+                            "loginid": {
+                                "description": "The account ID of specified account.",
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "balance": {
+                    "description": "Cash balance of the account.",
+                    "type": "number"
+                },
+                "country": {
+                    "description": "2-letter country code (ISO standard).",
+                    "type": "string",
+                    "pattern": "^[a-z]{0,2}$"
+                },
+                "currency": {
+                    "description": "Currency of the account.",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "User email.",
+                    "type": "string"
+                },
+                "fullname": {
+                    "description": "User's full name. Will be empty for virtual accounts.",
+                    "type": "string"
+                },
+                "is_virtual": {
+                    "description": "Boolean value: 1 or 0, indicating whether the account is a virtual-money account.",
+                    "type": "integer"
+                },
+                "landing_company_fullname": {
+                    "description": "Landing company name the account belongs to.",
+                    "type": "string"
+                },
+                "landing_company_name": {
+                    "description": "Landing company shortcode the account belongs to.",
+                    "type": "string"
+                },
+                "loginid": {
+                    "description": "The account ID that the token was issued for.",
+                    "type": "string"
+                },
+                "scopes": {
+                    "description": "Scopes available to the token.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "upgradeable_landing_companies": {
+                    "description": "List of landing company shortcodes the account can upgrade to.",
+                    "type": "array"
+                },
+                "user_id": {
+                    "description": "The internal user ID for this account.",
+                    "type": "integer"
+                }
             }
-         },
-         "description" : "Account information for the holder of the token.",
-         "type" : "object"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made."
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "ID used to map request to response, present only when the request contains req_id."
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "authorize"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

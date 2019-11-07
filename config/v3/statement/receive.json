@@ -1,114 +1,116 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Statement Receive",
-   
-   "type" : "object",
-   "description" : "A summary of account statement is received",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "properties" : {
-      "msg_type" : {
-         "type" : "string",
-         "description" : "statement"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "statement" : {
-         "type" : "object",
-         "description" : "Account statement.",
-         "properties" : {
-            "transactions" : {
-               "items" : {
-                  "type" : "object",
-                  "properties" : {
-                     "purchase_time" : {
-                        "type" : "integer",
-                        "description" : "Time at which contract was purchased, present only for sell transaction"
-                     },
-                     "amount" : {
-                        "type" : "number",
-                        "description" : "It is the amount of transaction Example: -83.2300"
-                     },
-                     "longcode" : {
-                        "type" : "string",
-                        "description" : "The description of contract purchased if description is set to 1"
-                     },
-                     "shortcode" : {
-                        "description" : "Compact description of the contract purchased if description is set to 1",
-                        "type" : [
-                           "string",
-                           "null"
-                        ]
-                     },
-                     "reference_id" : {
-                        "type" : [
-                           "integer",
-                           "null"
-                        ],
-                        "description" : "Internal transaction identifier for the corresponding buy transaction ( set only for contract selling )"
-                     },
-                     "action_type" : {
-                        "description" : "It is the type of action Example: buy",
-                        "type" : "string",
-                        "enum" : [
-                           "buy",
-                           "sell",
-                           "deposit",
-                           "withdrawal"
-                        ]
-                     },
-                     "contract_id" : {
-                        "type" : [
-                           "integer",
-                           "null"
-                        ],
-                        "description" : "It is the contract id Example: 4867502908"
-                     },
-                     "transaction_id" : {
-                        "description" : "It is the transaction id. In statement every contract (buy or sell) and every payment has a unique id. Example: 10867502908",
-                        "type" : "integer"
-                     },
-                     "app_id" : {
-                        "type" : [
-                           "integer",
-                           "null"
-                        ],
-                        "description" : "Id of an app where this transaction was performed. For example, it's 1 for binary.com."
-                     },
-                     "balance_after" : {
-                        "description" : "It is the remaining balance Example: 10150.1300",
-                        "type" : "number"
-                     },
-                     "transaction_time" : {
-                        "description" : "It is the time of transaction Example: 1441175849",
-                        "type" : "integer"
-                     },
-                     "payout" : {
-                        "description" : "Payout price",
-                        "type" : [
-                           "number",
-                           "null"
-                        ]
-                     }
-                  }
-               },
-               "type" : "array",
-               "description" : "Array of returned transactions"
-            },
-            "count" : {
-               "description" : "Number of transactions returned in this call",
-               "type" : "number"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Statement (response)",
+    "description": "A summary of account statement is received",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "statement": {
+            "title": "statement",
+            "description": "Account statement.",
+            "type": "object",
+            "properties": {
+                "count": {
+                    "description": "Number of transactions returned in this call",
+                    "type": "number"
+                },
+                "transactions": {
+                    "description": "Array of returned transactions",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "action_type": {
+                                "description": "It is the type of action Example: buy",
+                                "type": "string",
+                                "enum": [
+                                    "buy",
+                                    "sell",
+                                    "deposit",
+                                    "withdrawal"
+                                ]
+                            },
+                            "amount": {
+                                "description": "It is the amount of transaction Example: -83.2300",
+                                "type": "number"
+                            },
+                            "app_id": {
+                                "description": "ID of an app where this transaction was performed. For example, it's 1 for binary.com.",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "balance_after": {
+                                "description": "It is the remaining balance Example: 10150.1300",
+                                "type": "number"
+                            },
+                            "contract_id": {
+                                "description": "It is the contract ID. Example: 4867502908",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "longcode": {
+                                "description": "The description of contract purchased if description is set to 1",
+                                "type": "string"
+                            },
+                            "payout": {
+                                "description": "Payout price",
+                                "type": [
+                                    "null",
+                                    "number"
+                                ]
+                            },
+                            "purchase_time": {
+                                "description": "Time at which contract was purchased, present only for sell transaction",
+                                "type": "integer"
+                            },
+                            "reference_id": {
+                                "description": "Internal transaction identifier for the corresponding buy transaction ( set only for contract selling )",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "shortcode": {
+                                "description": "Compact description of the contract purchased if description is set to 1",
+                                "type": [
+                                    "null",
+                                    "string"
+                                ]
+                            },
+                            "transaction_id": {
+                                "description": "It is the transaction ID. In statement every contract (buy or sell) and every payment has a unique ID. Example: 10867502908",
+                                "type": "integer"
+                            },
+                            "transaction_time": {
+                                "description": "It is the time of transaction Example: 1441175849",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
             }
-         },
-         "title" : "statement list"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "statement"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

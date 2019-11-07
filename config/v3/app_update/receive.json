@@ -1,67 +1,70 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   
-   "title" : "App Update Receive",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "type" : "object",
-   "description" : "A message with created application",
-   "properties" : {
-      "msg_type" : {
-         "type" : "string",
-         "description" : "app_update"
-      },
-      "app_update" : {
-         "type" : "object",
-         "properties" : {
-            "googleplay" : {
-               "description" : "Application's Google Play URL",
-               "type" : "string"
-            },
-            "name" : {
-               "type" : "string",
-               "description" : "Application name"
-            },
-            "verification_uri" : {
-               "type" : "string",
-               "description" : "Application verification_uri"
-            },
-            "homepage" : {
-               "description" : "Application's homepage",
-               "type" : "string"
-            },
-            "app_markup_percentage" : {
-               "description" : "Markup added to contract prices (as a percentage of contract payout)",
-               "type" : "number"
-            },
-            "app_id" : {
-               "description" : "Application id",
-               "type" : "integer"
-            },
-            "appstore" : {
-               "description" : "Application's App Store URL",
-               "type" : "string"
-            },
-            "redirect_uri" : {
-               "description" : "Application redirect_uri",
-               "type" : "string"
-            },
-            "github" : {
-               "type" : "string",
-               "description" : "Application's GitHub page (for open-source projects)"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Application: Update (response)",
+    "description": "A message with created application",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "app_update": {
+            "title": "app_update",
+            "description": "Information of the updated application.",
+            "type": "object",
+            "properties": {
+                "app_id": {
+                    "description": "Application ID",
+                    "type": "integer"
+                },
+                "app_markup_percentage": {
+                    "description": "Markup added to contract prices (as a percentage of contract payout)",
+                    "type": "number"
+                },
+                "appstore": {
+                    "description": "Application's App Store URL",
+                    "type": "string"
+                },
+                "github": {
+                    "description": "Application's GitHub page (for open-source projects)",
+                    "type": "string"
+                },
+                "googleplay": {
+                    "description": "Application's Google Play URL",
+                    "type": "string"
+                },
+                "homepage": {
+                    "description": "Application's homepage",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Application name",
+                    "type": "string"
+                },
+                "redirect_uri": {
+                    "description": "Application redirect_uri",
+                    "type": "string"
+                },
+                "verification_uri": {
+                    "description": "Application verification_uri",
+                    "type": "string"
+                }
             }
-         },
-         "title" : "Application object"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "app_update"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

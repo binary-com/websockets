@@ -1,26 +1,26 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "additionalProperties" : false,
-   "title" : "Landing Company Request",
-   "description" : "Binary.com has a number of licensed subsidiaries in various jurisidictions, which are called Landing Companies. This call will return the appropriate Landing Company for clients of a given country. The landing company may differ for gaming contracts (Volatility Indices) and financial contracts (forex, stock indices, commodities).",
-   "type" : "object",
-   "required" : [
-      "landing_company"
-   ],
-   "properties" : {
-      "passthrough" : {
-         "type" : "object",
-         "description" : "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "[Optional] Used to map request to response."
-      },
-      "landing_company" : {
-         "pattern" : "^\\w\\w$",
-         "title" : "Landing Company",
-         "type" : "string",
-         "description" : "Client's 2-letter country code (obtained from residence_list call)."
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Landing Company (request)",
+    "description": "Binary.com has a number of licensed subsidiaries in various jurisidictions, which are called Landing Companies. This call will return the appropriate Landing Company for clients of a given country. The landing company may differ for gaming contracts (Volatility Indices) and financial contracts (forex, stock indices, commodities).",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "landing_company"
+    ],
+    "properties": {
+        "landing_company": {
+            "title": "Landing Company",
+            "description": "Client's 2-letter country code (obtained from residence_list call).",
+            "type": "string",
+            "pattern": "^\\w\\w$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

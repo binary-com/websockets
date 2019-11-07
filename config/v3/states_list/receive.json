@@ -1,41 +1,45 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   
-   "title" : "States List Receive",
-   "required" : [
-      "echo_req",
-      "msg_type"
-   ],
-   "description" : "A message with States List",
-   "type" : "object",
-   "properties" : {
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "msg_type" : {
-         "description" : "states_list",
-         "type" : "string"
-      },
-      "states_list" : {
-         "type" : "array",
-         "description" : "List of states.",
-         "items" : {
-            "type" : "object",
-            "properties" : {
-               "text" : {
-                  "type" : "string"
-               },
-               "value" : {
-                  "type" : "string"
-               }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "States List (response)",
+    "description": "A message with States List",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "states_list": {
+            "title": "states_list",
+            "description": "List of states.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "text": {
+                        "description": "The state name.",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "The state code.",
+                        "type": "string"
+                    }
+                }
             }
-         },
-         "title" : "List of states"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "states_list"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

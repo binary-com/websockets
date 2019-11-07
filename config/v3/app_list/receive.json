@@ -1,96 +1,100 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "type" : "object",
-   "description" : "A message with created applications",
-   "required" : [
-       "echo_req",
-       "msg_type"
-   ],
-   "title" : "App List Receive",
-   
-   "properties" : {
-      "app_list" : {
-         "items" : {
-            "required" : [
-               "name",
-               "app_markup_percentage",
-               "app_id",
-               "appstore",
-               "github",
-               "verification_uri",
-               "googleplay",
-               "redirect_uri",
-               "homepage"
-            ],
-            "title" : "Application object",
-            "properties" : {
-               "name" : {
-                  "description" : "Application name",
-                  "type" : "string"
-               },
-               "app_markup_percentage" : {
-                  "type" : "number",
-                  "description" : "Markup added to contract prices (as a percentage of contract payout)"
-               },
-               "app_id" : {
-                  "type" : "integer",
-                  "description" : "Application id"
-               },
-               "appstore" : {
-                  "description" : "Application's App Store URL",
-                  "type" : [
-                     "string",
-                     "null"
-                  ]
-               },
-               "github" : {
-                  "description" : "Application's GitHub page (for open-source projects)",
-                  "type" : [
-                     "string",
-                     "null"
-                  ]
-               },
-               "verification_uri" : {
-                  "description" : "Application verification_uri",
-                  "type" : [
-                     "string",
-                     "null"
-                  ]
-               },
-               "googleplay" : {
-                  "description" : "Application's Google Play URL",
-                  "type" : [
-                     "string",
-                     "null"
-                  ]
-               },
-               "redirect_uri" : {
-                  "type" : "string",
-                  "description" : "Application redirect_uri"
-               },
-               "homepage" : {
-                  "description" : "Application's homepage",
-                  "type" : [
-                     "string",
-                     "null"
-                  ]
-               }
-            },
-            "type" : "object"
-         },
-         "type" : "array"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "msg_type" : {
-         "description" : "app_list",
-         "type" : "string"
-      },
-      "req_id" : {
-         "type" : "integer",
-         "description" : "Optional field send in request to map to response, present only when request contains req_id"
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Application: List (response)",
+    "description": "A message with created applications",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "app_list": {
+            "title": "app_list",
+            "description": "List of created applications for the authorized account.",
+            "type": "array",
+            "items": {
+                "title": "Application object",
+                "type": "object",
+                "required": [
+                    "app_id",
+                    "app_markup_percentage",
+                    "appstore",
+                    "github",
+                    "googleplay",
+                    "homepage",
+                    "name",
+                    "redirect_uri",
+                    "verification_uri"
+                ],
+                "properties": {
+                    "app_id": {
+                        "description": "Application ID",
+                        "type": "integer"
+                    },
+                    "app_markup_percentage": {
+                        "description": "Markup added to contract prices (as a percentage of contract payout)",
+                        "type": "number"
+                    },
+                    "appstore": {
+                        "description": "Application's App Store URL",
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "github": {
+                        "description": "Application's GitHub page (for open-source projects)",
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "googleplay": {
+                        "description": "Application's Google Play URL",
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "homepage": {
+                        "description": "Application's homepage",
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
+                    "name": {
+                        "description": "Application name",
+                        "type": "string"
+                    },
+                    "redirect_uri": {
+                        "description": "Application redirect_uri",
+                        "type": "string"
+                    },
+                    "verification_uri": {
+                        "description": "Application verification_uri",
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "app_list"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

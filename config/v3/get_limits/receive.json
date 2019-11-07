@@ -1,188 +1,139 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "type" : "object",
-   "description" : "Trading and Withdrawal Limits",
-   "required" : [
-      "msg_type",
-      "echo_req"
-   ],
-   "title" : "Get Limits Receive",
-   "properties" : {
-      "echo_req" : {
-         "description" : "Echo of the request made",
-         "title" : "Echo request"
-      },
-      "get_limits" : {
-         "type" : "object",
-         "description" : "Trading limits of real account user",
-         "properties" : {
-            "open_positions" : {
-               "type" : "integer",
-               "description" : "Maximum number of open positions"
-            },
-            "payout_per_symbol_and_contract_type" : {
-               "type" : "number",
-               "description" : "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position."
-            },
-            "account_balance" : {
-               "description" : "Maximum account cash balance",
-               "type" : "number"
-            },
-            "market_specific" : {
-               "type" : "object",
-               "properties" : {
-                  "forex" : {
-                     "items" : {
-                        "type" : "object",
-                        "properties" : {
-                           "profile_name" : {
-                              "type" : "string"
-                           },
-                           "name" : {
-                              "type" : "string"
-                           },
-                           "payout_limit" : {
-                              "type" : "number"
-                           },
-                           "turnover_limit" : {
-                              "type" : "number"
-                           }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Account Limits (response)",
+    "description": "Trading and Withdrawal Limits",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "get_limits": {
+            "title": "get_limits",
+            "description": "Trading limits of real account user",
+            "type": "object",
+            "properties": {
+                "account_balance": {
+                    "description": "Maximum account cash balance",
+                    "type": "number"
+                },
+                "daily_turnover": {
+                    "description": "Maximum daily turnover",
+                    "type": "number"
+                },
+                "lifetime_limit": {
+                    "description": "Lifetime withdrawal limit",
+                    "type": "number"
+                },
+                "market_specific": {
+                    "description": "Contains limitation information for each market.",
+                    "type": "object",
+                    "patternProperties": {
+                        "^(commodities|forex|indices|synthetic_index)$": {
+                            "description": "List of limitation profiles for each market",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "description": "The submarket display name.",
+                                        "type": "string"
+                                    },
+                                    "payout_limit": {
+                                        "description": "The limit of payout for the submarket",
+                                        "type": "number"
+                                    },
+                                    "profile_name": {
+                                        "description": "The limitation profile name.",
+                                        "type": "string"
+                                    },
+                                    "turnover_limit": {
+                                        "description": "The limit of turnover for the submarket",
+                                        "type": "number"
+                                    }
+                                }
+                            }
                         }
-                     },
-                     "type" : "array"
-                  },
-                  "indices" : {
-                     "type" : "array",
-                     "items" : {
-                        "type" : "object",
-                        "properties" : {
-                           "name" : {
-                              "type" : "string"
-                           },
-                           "turnover_limit" : {
-                              "type" : "number"
-                           },
-                           "payout_limit" : {
-                              "type" : "number"
-                           },
-                           "profile_name" : {
-                              "type" : "string"
-                           }
-                        }
-                     }
-                  },
-                  "commodities" : {
-                     "items" : {
-                        "type" : "object",
-                        "properties" : {
-                           "turnover_limit" : {
-                              "type" : "number"
-                           },
-                           "payout_limit" : {
-                              "type" : "number"
-                           },
-                           "name" : {
-                              "type" : "string"
-                           },
-                           "profile_name" : {
-                              "type" : "string"
-                           }
-                        }
-                     },
-                     "type" : "array"
-                  },
-                  "synthetic_index" : {
-                     "items" : {
-                        "properties" : {
-                           "profile_name" : {
-                              "type" : "string"
-                           },
-                           "payout_limit" : {
-                              "type" : "number"
-                           },
-                           "turnover_limit" : {
-                              "type" : "number"
-                           },
-                           "name" : {
-                              "type" : "string"
-                           }
+                    }
+                },
+                "num_of_days": {
+                    "description": "Number of days for num_of_days_limit withdrawal limit",
+                    "type": "integer"
+                },
+                "num_of_days_limit": {
+                    "description": "Withdrawal limit for num_of_days days",
+                    "type": "number"
+                },
+                "open_positions": {
+                    "description": "Maximum number of open positions",
+                    "type": "integer"
+                },
+                "payout": {
+                    "description": "Maximum aggregate payouts on open positions",
+                    "type": "number"
+                },
+                "payout_per_symbol": {
+                    "description": "Maximum payout for each symbol based on different barrier types.",
+                    "type": [
+                        "null",
+                        "object"
+                    ],
+                    "properties": {
+                        "atm": {
+                            "description": "Maximum aggregate payouts on open positions per symbol for contracts where barrier is same as entry spot.",
+                            "type": [
+                                "null",
+                                "number"
+                            ]
                         },
-                        "type" : "object"
-                     },
-                     "type" : "array"
-                  }
-               }
-            },
-            "daily_turnover" : {
-               "description" : "Maximum daily turnover",
-               "type" : "number"
-            },
-            "num_of_days" : {
-               "type" : "integer",
-               "description" : "Number of days for num_of_days_limit withdrawal limit"
-            },
-            "payout_per_symbol" : {
-               "type" : [
-                  "object",
-                  "null"
-               ],
-               "properties" : {
-                  "atm" : {
-                     "description" : "Maximum aggregate payouts on open positions per symbol for contracts where barrier is same as entry spot.",
-                     "type" : [
-                        "number",
-                        "null"
-                     ]
-                  },
-                  "non_atm" : {
-                     "type" : "object",
-                     "properties" : {
-                        "more_than_seven_days" : {
-                           "description" : "Maximum aggregate payouts on open positions per symbol for contract where barrier is different from entry spot and duration is more to seven days",
-                           "type" : "number"
-                        },
-                        "less_than_seven_days" : {
-                           "type" : "number",
-                           "description" : "Maximum aggregate payouts on open positions per symbol for contract where barrier is different from entry spot and duration is less than and equal to seven days"
+                        "non_atm": {
+                            "description": "Maximum aggregate payouts on open positions per symbol for contract where barrier is different from entry spot.",
+                            "type": "object",
+                            "properties": {
+                                "less_than_seven_days": {
+                                    "description": "Maximum aggregate payouts on open positions per symbol for contract where barrier is different from entry spot and duration is less than and equal to seven days",
+                                    "type": "number"
+                                },
+                                "more_than_seven_days": {
+                                    "description": "Maximum aggregate payouts on open positions per symbol for contract where barrier is different from entry spot and duration is more to seven days",
+                                    "type": "number"
+                                }
+                            }
                         }
-                     }
-                  }
-               }
-            },
-            "withdrawal_since_inception_monetary" : {
-               "type" : "number",
-               "description" : "Total withdrawal since inception"
-            },
-            "remainder" : {
-               "description" : "Amount left to reach withdrawal limit",
-               "type" : "number"
-            },
-            "num_of_days_limit" : {
-               "description" : "Withdrawal limit for num_of_days days",
-               "type" : "number"
-            },
-            "lifetime_limit" : {
-               "description" : "Lifetime withdrawal limit",
-               "type" : "number"
-            },
-            "withdrawal_for_x_days_monetary" : {
-               "description" : "Total withdrawal for num_of_days days",
-               "type" : "number"
-            },
-            "payout" : {
-               "type" : "number",
-               "description" : "Maximum aggregate payouts on open positions"
+                    }
+                },
+                "payout_per_symbol_and_contract_type": {
+                    "description": "Maximum aggregate payouts on open positions per symbol and contract type. This limit can be exceeded up to the overall payout limit if there is no prior open position.",
+                    "type": "number"
+                },
+                "remainder": {
+                    "description": "Amount left to reach withdrawal limit",
+                    "type": "number"
+                },
+                "withdrawal_for_x_days_monetary": {
+                    "description": "Total withdrawal for num_of_days days",
+                    "type": "number"
+                },
+                "withdrawal_since_inception_monetary": {
+                    "description": "Total withdrawal since inception",
+                    "type": "number"
+                }
             }
-         },
-         "title" : "Get Limits"
-      },
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      },
-      "msg_type" : {
-         "type" : "string",
-         "description" : "get_limits"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "get_limits"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

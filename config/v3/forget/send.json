@@ -1,25 +1,25 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   "title" : "Forget Request",
-   "additionalProperties" : false,
-   "description" : "Immediately cancel the real-time stream of messages with a specific id.",
-   "type" : "object",
-   "required" : [
-      "forget"
-   ],
-   "properties" : {
-      "req_id" : {
-         "description" : "[Optional] Used to map request to response.",
-         "type" : "integer"
-      },
-      "forget" : {
-         "pattern" : "^[\\w-]{32,128}$",
-         "description" : "ID of the real-time stream of messages to cancel.",
-         "type" : "string"
-      },
-      "passthrough" : {
-         "type" : "object",
-         "description" : "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field."
-      }
-   }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Forget (request)",
+    "description": "Immediately cancel the real-time stream of messages with a specific ID.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "forget"
+    ],
+    "properties": {
+        "forget": {
+            "description": "ID of the real-time stream of messages to cancel.",
+            "type": "string",
+            "pattern": "^[\\w-]{32,128}$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
 }

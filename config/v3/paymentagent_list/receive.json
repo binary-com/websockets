@@ -1,44 +1,121 @@
 {
-   "$schema" : "http://json-schema.org/draft-04/schema#",
-   
-   "title" : "Payment Agent List Response",
-   "required" : [
-      "msg_type",
-      "echo_req"
-   ],
-   "type" : "object",
-   "description" : "A message with Payment Agent List",
-   "properties" : {
-      "req_id" : {
-         "description" : "Optional field send in request to map to response, present only when request contains req_id",
-         "type" : "integer"
-      },
-      "echo_req" : {
-         "title" : "Echo request",
-         "description" : "Echo of the request made"
-      },
-      "msg_type" : {
-         "description" : "paymentagent_list",
-         "type" : "string"
-      },
-      "paymentagent_list" : {
-         "type" : "object",
-         "description" : "Payment Agent List",
-         "required" : [
-            "list"
-         ],
-         "properties" : {
-            "list" : {
-               "items" : {
-                  "type" : "object"
-               },
-               "type" : "array"
-            },
-            "available_countries" : {
-               "type" : "array"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Payment Agent: List (response)",
+    "description": "A message with Payment Agent List",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "paymentagent_list": {
+            "title": "paymentagent_list",
+            "description": "Payment Agent List",
+            "type": "object",
+            "required": [
+                "list"
+            ],
+            "properties": {
+                "available_countries": {
+                    "description": "The list of countries in which payment agent is available.",
+                    "type": "array",
+                    "items": {
+                        "description": "The 'country_code' and 'country_name'",
+                        "type": "array",
+                        "items": {
+                            "type": [
+                                "null",
+                                "string"
+                            ]
+                        }
+                    }
+                },
+                "list": {
+                    "description": "List of payment agents available in the requested country.",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "currencies": {
+                                "description": "Currencies that are accepted by this payment agent.",
+                                "type": "string"
+                            },
+                            "deposit_commission": {
+                                "description": "Commission amount applied on deposits made through this payment agent.",
+                                "type": "string"
+                            },
+                            "email": {
+                                "description": "Payment agent's email address.",
+                                "type": "string"
+                            },
+                            "further_information": {
+                                "description": "More descriptions about this payment agent.",
+                                "type": "string"
+                            },
+                            "max_withdrawal": {
+                                "description": "Maximum withdrawal allowed for transactions through this payment agent.",
+                                "type": [
+                                    "null",
+                                    "string"
+                                ]
+                            },
+                            "min_withdrawal": {
+                                "description": "Minimum withdrawal allowed for transactions through this payment agent.",
+                                "type": [
+                                    "null",
+                                    "string"
+                                ]
+                            },
+                            "name": {
+                                "description": "Payment agent's name.",
+                                "type": "string"
+                            },
+                            "paymentagent_loginid": {
+                                "description": "Payment agent's loginid.",
+                                "type": "string"
+                            },
+                            "summary": {
+                                "description": "A summary about payment agent.",
+                                "type": "string"
+                            },
+                            "supported_banks": {
+                                "description": "Comma separated list of supported banks.",
+                                "type": [
+                                    "null",
+                                    "string"
+                                ]
+                            },
+                            "telephone": {
+                                "description": "Payment agent's phone number.",
+                                "type": "string"
+                            },
+                            "url": {
+                                "description": "Payment agent's website URL.",
+                                "type": "string"
+                            },
+                            "withdrawal_commission": {
+                                "description": "Commission amount applied on withdrawals made through this payment agent.",
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
             }
-         },
-         "title" : "Payment Agent List"
-      }
-   }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "paymentagent_list"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
 }

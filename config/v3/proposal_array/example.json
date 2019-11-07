@@ -1,12 +1,21 @@
 {
     "proposal_array": 1,
-    "basis": "payout",
     "amount": 100,
+    "barriers": [
+        {
+            "barrier": "+0.1"
+        },
+        {
+            "barrier": "-0.1"
+        }
+    ],
+    "basis": "payout",
+    "contract_type": [
+        "CALL",
+        "PUT"
+    ],
     "currency": "USD",
-    "symbol": "frxAUDUSD",
-    "trading_period_start": 1480291200,
     "date_expiry": 1480712400,
-    "contract_type": ["CALL", "PUT"],
-    "barriers": [{"barrier": "+0.1"},
-                {"barrier": "-0.1"}]
+    "symbol": "frxAUDUSD",
+    "trading_period_start": 1480291200
 }
