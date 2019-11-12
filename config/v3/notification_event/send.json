@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-"title": "Notification Event (request)  Authorization scope(s). [admin]",
+    "title": "Notification Event (request)",
     "description": "Notify the backend about a specific event.",
     "hidden": 1,
     "type": "object",

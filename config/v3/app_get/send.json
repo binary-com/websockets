@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-"title": "Application: Get Details (request)  Authorization scope(s). [read]",
+    "title": "Application: Get Details (request)",
     "description": "To get the information of the OAuth application specified by 'app_id'",
     "type": "object",
     "additionalProperties": false,

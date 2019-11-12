@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-"title": "Payment Agent: List (request). Unauthenticated",
+    "title": "Payment Agent: List (request)",
     "description": "Will return a list of Payment Agents for a given country for a given currency. Payment agents allow Binary.com users to deposit and withdraw funds using local payment methods that might not be available via the main Binary.com cashier system.",
     "type": "object",
     "additionalProperties": false,

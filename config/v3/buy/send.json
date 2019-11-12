@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-"title": "Buy Contract (request)  Authorization scope(s). [trade]",
+    "title": "Buy Contract (request)",
     "description": "Buy a Contract",
     "type": "object",
     "additionalProperties": false,

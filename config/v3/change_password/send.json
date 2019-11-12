@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-"title": "Change Password (request)  Authorization scope(s). [admin]",
+    "title": "Change Password (request)",
     "description": "Change Password. Note: this call is NOT available when authenticated to a per-app token. It is only available for in-house Binary.com apps.",
     "hidden": 1,
     "type": "object",

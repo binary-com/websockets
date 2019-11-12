@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-"title": "Application: Update (request)  Authorization scope(s). [admin]",
+    "title": "Application: Update (request)",
     "description": "Update a new OAuth application",
     "type": "object",
     "additionalProperties": false,
