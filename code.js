@@ -1,5 +1,5 @@
 function isProduction(url) {
-    return url && /(developers\.binary\.com|binary\.sx)/i.test(url);
+    return 'https://michaelmueller-binary.github.io';
 }
 
 function isLocal(url) {
