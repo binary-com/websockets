@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Copy Trading: Stop (request)",
+"title": "Copy Trading: Stop (request)  Authorization scope(s). [trade]",
     "description": "Stop copy trader bets",
     "type": "object",
     "additionalProperties": false,

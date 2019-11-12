@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Sell Expired Contracts (request)",
+"title": "Sell Expired Contracts (request)  Authorization scope(s). [trade]",
     "description": "This call will try to sell any expired contracts and return the number of sold contracts.",
     "type": "object",
     "additionalProperties": false,

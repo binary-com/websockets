@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Account Status (request)",
+"title": "Account Status (request)  Authorization scope(s). [read]",
     "description": "Get Account Status",
     "type": "object",
     "additionalProperties": false,

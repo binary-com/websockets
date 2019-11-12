@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Report Request (request)",
+"title": "Report Request (request)  Authorization scope(s). [read]",
     "description": "Send report to client's registered e-mail",
     "hidden": 1,
     "type": "object",
