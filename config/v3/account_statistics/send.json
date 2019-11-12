@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-"title": "Account Statistics (request)  Required scope(s): [read, trading_information]",
+    "title": "Account Statistics (request)",
     "description": "Send request to get account statistics",
     "hidden": 1,
     "type": "object",

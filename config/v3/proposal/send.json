@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-"title": "Price Proposal (request). Unauthenticated",
+    "title": "Price Proposal (request)",
     "description": "Gets latest price for a specific contract.",
     "type": "object",
     "additionalProperties": false,

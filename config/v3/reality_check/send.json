@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-"title": "Reality Check (request)  Required scope(s): [read, trading_information]",
+    "title": "Reality Check (request)",
     "description": "Retrieve summary of client's trades and account for the Reality Check facility. A 'reality check' means a display of time elapsed since the session began, and associated client profit/loss. The Reality Check facility is a regulatory requirement for certain landing companies.",
     "type": "object",
     "additionalProperties": false,

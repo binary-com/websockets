@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-"title": "2-Factor Authentication (request)  Required scope(s): [admin]",
+    "title": "2-Factor Authentication (request)",
     "description": "This call manages two-factor account authentication",
     "hidden": 1,
     "type": "object",

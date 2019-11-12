@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-"title": "Statement (request)  Required scope(s): [read, trading_information]",
+    "title": "Statement (request)",
     "description": "Retrieve a summary of account transactions, according to given search criteria",
     "type": "object",
     "additionalProperties": false,

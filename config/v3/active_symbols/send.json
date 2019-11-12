@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-"title": "Active Symbols (request). Unauthenticated",
+    "title": "Active Symbols (request)",
     "description": "Retrieve a list of all currently active symbols (underlying markets upon which contracts are available for trading).",
     "type": "object",
     "additionalProperties": false,

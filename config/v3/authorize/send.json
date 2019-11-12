@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-"title": "Authorize (request). Unauthenticated",
+    "title": "Authorize (request)",
     "description": "Authorize current WebSocket session to act on behalf of the owner of a given token. Must precede request thats needs to access client account, for example purchasing and selling contracts or viewing portfolio.",
     "type": "object",
     "additionalProperties": false,

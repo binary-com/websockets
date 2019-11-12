@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-"title": "States List (request). Unauthenticated",
+    "title": "States List (request)",
     "description": "For a given country, returns a list of States of that country. This is useful to populate the account opening form.",
     "type": "object",
     "additionalProperties": false,
