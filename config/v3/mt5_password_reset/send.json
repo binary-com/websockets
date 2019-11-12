@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MT5: Password Reset (request)",
+    "description": "To reset the password of MT5 account.. Required authorization scope(s). ["admin"]",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "login",
+        "mt5_password_reset",
+        "new_password",
+        "verification_code"
+    ],
+    "properties": {
+        "mt5_password_reset": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "login": {
+            "description": "MT5 user login",
+            "type": "string",
+            "pattern": "^\\w{1,10}$"
+        },
+        "new_password": {
+            "description": "New password of the account (length within 8-25 chars, accepts any printable ASCII character).",
+            "type": "string",
+            "pattern": "^[ -~]{8,25}$",
+            "sensitive": 1
+        },
+        "password_type": {
+            "description": "Password type main/investor (default: main)",
+            "type": "string",
+            "pattern": "^(main|investor)$",
+            "default": "main"
+        },
+        "verification_code": {
+            "description": "Email verification code (received from a verify_email call, which must be done first)",
+            "type": "string",
+            "pattern": "^\\w{8,128}$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

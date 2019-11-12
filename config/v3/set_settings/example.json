@@ -1,0 +1,16 @@
+{
+    "set_settings": 1,
+    "account_opening_reason": "Speculative",
+    "address_city": "Test City",
+    "address_line_1": "Test Address Line 1",
+    "address_line_2": "Test Address Line 2",
+    "address_postcode": "123456",
+    "address_state": "Test State",
+    "allow_copiers": 1,
+    "email_consent": 0,
+    "phone": "+1 541 754 3010",
+    "place_of_birth": "ar",
+    "request_professional_status": 1,
+    "tax_identification_number": "987654321",
+    "tax_residence": "hk"
+}

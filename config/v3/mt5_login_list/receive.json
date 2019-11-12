@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MT5: Accounts List (response)",
+    "description": "Get list of MT5 accounts for client.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "mt5_login_list": {
+            "title": "mt5_login_list",
+            "description": "Array containing MT5 account objects.",
+            "type": "array",
+            "items": {
+                "title": "Details of each MT5 loginid.",
+                "type": "object",
+                "properties": {
+                    "balance": {
+                        "description": "Balance of the MT5 account.",
+                        "type": "number"
+                    },
+                    "country": {
+                        "description": "Residence of the MT5 account.",
+                        "type": "string"
+                    },
+                    "currency": {
+                        "description": "Currency of the MT5 account.",
+                        "type": "string"
+                    },
+                    "display_balance": {
+                        "description": "Account balance, formatted to appropriate decimal places.",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Email address of the MT5 account.",
+                        "type": "string"
+                    },
+                    "group": {
+                        "description": "Group type of the MT5 account, e.g. demo\\svg_standard",
+                        "type": "string"
+                    },
+                    "leverage": {
+                        "description": "Leverage of the MT5 account (1 to 1000).",
+                        "type": "number"
+                    },
+                    "login": {
+                        "description": "Login of MT5 account.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name of the owner of the MT5 account.",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "mt5_login_list"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
+}

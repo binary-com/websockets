@@ -1,0 +1,18 @@
+{
+    "app_markup_details": 1,
+    "description": 1,
+    "app_id": 1234,
+    "client_loginid": "CR12345",
+    "date_from": "2017-08-01 00:00:00",
+    "date_to": "2017-08-31 23:59:59",
+    "limit": 100,
+    "offset": 0,
+    "sort": "ASC",
+    "sort_fields": [
+        "app_id",
+        "client_loginid",
+        "transaction_time"
+    ],
+    "passthrough": {},
+    "req_id": 3
+}
