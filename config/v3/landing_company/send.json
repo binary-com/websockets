@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Landing Company (request)",
-    "description": "Binary.com has a number of licensed subsidiaries in various jurisidictions, which are called Landing Companies. This call will return the appropriate Landing Company for clients of a given country. The landing company may differ for gaming contracts (Volatility Indices) and financial contracts (forex, stock indices, commodities).. Unauthenticated",
+    "description": "Binary.com has a number of licensed subsidiaries in various jurisidictions, which are called Landing Companies. This call will return the appropriate Landing Company for clients of a given country. The landing company may differ for gaming contracts (Volatility Indices) and financial contracts (forex, stock indices, commodities).. Unauthenticated. Unauthenticated",
     "type": "object",
     "additionalProperties": false,
     "required": [

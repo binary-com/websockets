@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Trading Durations (request)",
-    "description": "Retrieve a list of all available underlyings and the corresponding contract types and trading duration boundaries. If the user is logged in, only the assets available for that user's landing company will be returned.. Unauthenticated",
+    "description": "Retrieve a list of all available underlyings and the corresponding contract types and trading duration boundaries. If the user is logged in, only the assets available for that user's landing company will be returned.. Unauthenticated. Unauthenticated",
     "type": "object",
     "additionalProperties": false,
     "required": [

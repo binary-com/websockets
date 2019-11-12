@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Balance (request)",
-    "description": "Get user account balance. Required authorization scope(s). ["read", trading_information"]",
+    "description": "Get user account balance. Required authorization scope(s). ["read", trading_information"]. Required authorization scope(s). ["read", trading_information"]",
     "type": "object",
     "additionalProperties": false,
     "required": [

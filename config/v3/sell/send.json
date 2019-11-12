@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Sell Contract (request)",
-    "description": "Sell a Contract as identified from a previous Portfolio call. Required authorization scope(s). ["trade"]",
+    "description": "Sell a Contract as identified from a previous Portfolio call. Required authorization scope(s). ["trade"]. Required authorization scope(s). ["trade"]",
     "type": "object",
     "additionalProperties": false,
     "required": [

@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Buy Contract for Multiple Accounts (request)",
-    "description": "Buy a Contract for multiple Accounts specified by the 'tokens' parameter. Note, although this is an authorized call, the contract is not bought for the authorized account.. Required authorization scope(s). ["trade"]",
+    "description": "Buy a Contract for multiple Accounts specified by the 'tokens' parameter. Note, although this is an authorized call, the contract is not bought for the authorized account.. Required authorization scope(s). ["trade"]. Required authorization scope(s). ["trade"]",
     "type": "object",
     "additionalProperties": false,
     "required": [

@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Price Proposal: Multiple Contracts (request)",
-    "description": "(This API call is deprecated) Get latest prices for a specific contract with different barriers.. Unauthenticated",
+    "description": "(This API call is deprecated) Get latest prices for a specific contract with different barriers.. Unauthenticated. Unauthenticated",
     "deprecated": 1,
     "type": "object",
     "additionalProperties": false,

@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Server Time (request)",
-    "description": "Request back-end server epoch time.. Unauthenticated",
+    "description": "Request back-end server epoch time.. Unauthenticated. Unauthenticated",
     "type": "object",
     "additionalProperties": false,
     "required": [

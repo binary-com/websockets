@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Copy Trading: List (request)",
-    "description": "Retrieves a list of active copiers and/or traders for Copy Trading. Required authorization scope(s). ["admin"]",
+    "description": "Retrieves a list of active copiers and/or traders for Copy Trading. Required authorization scope(s). ["admin"]. Required authorization scope(s). ["admin"]",
     "type": "object",
     "additionalProperties": false,
     "required": [

@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Application: List (request)",
-    "description": "List all of the account's OAuth applications. Required authorization scope(s). ["read"]",
+    "description": "List all of the account's OAuth applications. Required authorization scope(s). ["read"]. Required authorization scope(s). ["read"]",
     "type": "object",
     "additionalProperties": false,
     "required": [

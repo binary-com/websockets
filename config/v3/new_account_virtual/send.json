@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "New Virtual-Money Account (request)",
-    "description": "Create a new virtual-money account.. Unauthenticated",
+    "description": "Create a new virtual-money account.. Unauthenticated. Unauthenticated",
     "type": "object",
     "additionalProperties": false,
     "required": [

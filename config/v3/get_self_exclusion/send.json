@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Get Self-Exclusion (request)",
-    "description": "Binary.com allows users to exclude themselves from the website for certain periods of time, or to set limits on their trading activities. This facility is a regulatory requirement for certain Landing Companies.. Required authorization scope(s). ["read"]",
+    "description": "Binary.com allows users to exclude themselves from the website for certain periods of time, or to set limits on their trading activities. This facility is a regulatory requirement for certain Landing Companies.. Required authorization scope(s). ["read"]. Required authorization scope(s). ["read"]",
     "type": "object",
     "additionalProperties": false,
     "required": [

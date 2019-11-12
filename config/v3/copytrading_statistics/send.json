@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Copy Trading: Statistics (request)",
-    "description": "Retrieve performance, trading, risk and copiers statistics of trader.. Unauthenticated",
+    "description": "Retrieve performance, trading, risk and copiers statistics of trader.. Unauthenticated. Unauthenticated",
     "type": "object",
     "additionalProperties": false,
     "required": [

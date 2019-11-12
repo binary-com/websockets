@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Ping (request)",
-    "description": "To send the ping request to the server. Mostly used to test the connection or keep it alive.. Unauthenticated",
+    "description": "To send the ping request to the server. Mostly used to test the connection or keep it alive.. Unauthenticated. Unauthenticated",
     "type": "object",
     "additionalProperties": false,
     "required": [
