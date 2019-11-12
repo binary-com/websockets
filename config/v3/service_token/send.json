@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Service Token (request)",
+"title": "Service Token (request)  Required scope(s): [admin]",
     "description": "Retrieves the authorization token for the specified service.",
     "hidden": 1,
     "type": "object",

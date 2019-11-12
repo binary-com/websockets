@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Reset Password (request)",
+"title": "Reset Password (request). Unauthenticated",
     "description": "Reset Password.",
     "hidden": 1,
     "type": "object",

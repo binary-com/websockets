@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "MT5: Withdrawal (request)",
+"title": "MT5: Withdrawal (request)  Required scope(s): [admin]",
     "description": "This call allows withdrawal from MT5 account to Binary account.",
     "type": "object",
     "additionalProperties": false,

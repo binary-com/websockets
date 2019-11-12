@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Verify Email (request)",
+"title": "Verify Email (request). Unauthenticated",
     "description": "Verify an email address for various purposes. The system will send an email to the address containing a security code for verification.",
     "type": "object",
     "additionalProperties": false,

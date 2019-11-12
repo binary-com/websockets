@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Account Limits (request)",
+"title": "Account Limits (request)  Required scope(s): [read]",
     "description": "Trading and Withdrawal Limits for a given user",
     "type": "object",
     "additionalProperties": false,

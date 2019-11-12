@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Document Upload (request)",
+"title": "Document Upload (request)  Required scope(s): [admin]",
     "description": "Request KYC information from client",
     "type": "object",
     "additionalProperties": false,
