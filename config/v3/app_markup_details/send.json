@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Application: Markup Details (request)",
-    "description": "Retrieve details of app_markup according to criteria specified",
+    "description": "Retrieve details of app_markup according to criteria specified. Required authorization scope(s). ["read"]",
     "type": "object",
     "additionalProperties": false,
     "required": [

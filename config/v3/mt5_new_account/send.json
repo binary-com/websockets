@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "MT5: New Account (request)",
-    "description": "This call creates new MT5 user, either demo or real money user.",
+    "description": "This call creates new MT5 user, either demo or real money user.. Required authorization scope(s). ["admin"]",
     "type": "object",
     "additionalProperties": false,
     "required": [

@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Ticks Stream (request)",
-    "description": "Initiate a continuous stream of spot price updates for a given symbol.",
+    "description": "Initiate a continuous stream of spot price updates for a given symbol.. Unauthenticated",
     "type": "object",
     "additionalProperties": false,
     "required": [

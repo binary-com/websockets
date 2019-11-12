@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Set Financial Assessment (request)",
-    "description": "This call sets the financial assessment details based on the client's answers to analyze whether they possess the experience and knowledge to understand the risks involved with binary options trading.",
+    "description": "This call sets the financial assessment details based on the client's answers to analyze whether they possess the experience and knowledge to understand the risks involved with binary options trading.. Required authorization scope(s). ["admin"]",
     "type": "object",
     "additionalProperties": false,
     "required": [

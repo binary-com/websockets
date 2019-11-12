@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Log Out (request)",
-    "description": "Logout the session",
+    "description": "Logout the session. Unauthenticated",
     "type": "object",
     "additionalProperties": false,
     "required": [

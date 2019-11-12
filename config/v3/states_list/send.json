@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "States List (request)",
-    "description": "For a given country, returns a list of States of that country. This is useful to populate the account opening form.",
+    "description": "For a given country, returns a list of States of that country. This is useful to populate the account opening form.. Unauthenticated",
     "type": "object",
     "additionalProperties": false,
     "required": [

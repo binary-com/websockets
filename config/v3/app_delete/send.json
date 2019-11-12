@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Application: Delete (request)",
-    "description": "The request for deleting an application.",
+    "description": "The request for deleting an application.. Required authorization scope(s). ["admin"]",
     "type": "object",
     "additionalProperties": false,
     "required": [

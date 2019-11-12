@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Server Status (request)",
-    "description": "Request server status.",
+    "description": "Request server status.. Unauthenticated",
     "type": "object",
     "additionalProperties": false,
     "required": [

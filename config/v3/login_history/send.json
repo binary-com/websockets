@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Login History (request)",
-    "description": "Retrieve a summary of login history for user.",
+    "description": "Retrieve a summary of login history for user.. Required authorization scope(s). ["read"]",
     "type": "object",
     "additionalProperties": false,
     "required": [

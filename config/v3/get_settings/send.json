@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Get Account Settings (request)",
-    "description": "Get User Settings (email, date of birth, address etc)",
+    "description": "Get User Settings (email, date of birth, address etc). Required authorization scope(s). ["read"]",
     "type": "object",
     "additionalProperties": false,
     "required": [

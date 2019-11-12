@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Payment Agent: Transfer (request)",
-    "description": "Payment Agent Transfer - this call is available only to accounts that are approved Payment Agents.",
+    "description": "Payment Agent Transfer - this call is available only to accounts that are approved Payment Agents.. Required authorization scope(s). ["payments"]",
     "type": "object",
     "additionalProperties": false,
     "required": [
