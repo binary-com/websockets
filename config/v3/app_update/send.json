@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Application: Update (request)",
-    "description": "Update a new OAuth application. Required authorization scope(s). ["admin"]. Required authorization scope(s). ["admin"]",
+    "description": "Update a new OAuth application",
     "type": "object",
     "additionalProperties": false,
     "required": [

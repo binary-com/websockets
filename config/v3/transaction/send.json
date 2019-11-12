@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Transactions Stream (request)",
-    "description": "Subscribe to transaction notifications. Required authorization scope(s). ["read", trading_information"]. Required authorization scope(s). ["read", trading_information"]",
+    "description": "Subscribe to transaction notifications",
     "type": "object",
     "additionalProperties": false,
     "required": [

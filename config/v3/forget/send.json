@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Forget (request)",
-    "description": "Immediately cancel the real-time stream of messages with a specific ID.. Unauthenticated. Unauthenticated",
+    "description": "Immediately cancel the real-time stream of messages with a specific ID.",
     "type": "object",
     "additionalProperties": false,
     "required": [

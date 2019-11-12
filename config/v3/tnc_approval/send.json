@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Terms and Conditions Approval (request)",
-    "description": "To approve the latest version of terms and conditions.. Required authorization scope(s). ["admin"]. Required authorization scope(s). ["admin"]",
+    "description": "To approve the latest version of terms and conditions.",
     "type": "object",
     "additionalProperties": false,
     "required": [

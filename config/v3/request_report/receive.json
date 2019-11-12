@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Report Request (response)",
+    "description": "A summary of request report is received",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "request_report": {
+            "title": "request_report",
+            "description": "Response of request report",
+            "type": "object",
+            "properties": {
+                "report_status": {
+                    "description": "1 indicates that report will be e-mailed, otherwise an error with error_code and error_message will be returned",
+                    "type": "integer"
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "request_report"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
+    }
+}

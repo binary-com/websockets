@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Contracts For Symbol (request)",
-    "description": "For a given symbol, get the list of currently available contracts, and the latest barrier and duration limits for each contract.. Unauthenticated. Unauthenticated",
+    "description": "For a given symbol, get the list of currently available contracts, and the latest barrier and duration limits for each contract.",
     "type": "object",
     "additionalProperties": false,
     "required": [

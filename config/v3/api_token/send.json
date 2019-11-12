@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "API Token (request)",
-    "description": "This call manages API tokens. Required authorization scope(s). ["admin"]. Required authorization scope(s). ["admin"]",
+    "description": "This call manages API tokens",
     "type": "object",
     "additionalProperties": false,
     "required": [
@@ -34,6 +34,7 @@
                 "enum": [
                     "read",
                     "trade",
+                    "trading_information",
                     "payments",
                     "admin"
                 ]
