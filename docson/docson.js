@@ -58,7 +58,7 @@ define(["/lib/jquery.js", "/lib/handlebars.js", "/lib/highlight.js", "/lib/jsonp
             marked.setOptions({gfm: true, breaks: true})
             return new Handlebars.SafeString(marked(text));
         } else {
-            return text;
+            return text+'<br>fred';
         }
     });
 
