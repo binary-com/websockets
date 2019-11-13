@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Ticks History (request)",
+    "title": "Ticks History (request). Unauthenticated",
     "description": "Get historic tick data for a given symbol.",
     "type": "object",
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Trading Times (request)",
+    "title": "Trading Times (request). Unauthenticated",
     "description": "Receive a list of market opening times for a given date.",
     "type": "object",
     "additionalProperties": false,

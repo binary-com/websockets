@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Set Self-Exclusion (request)",
+    "title": "Set Self-Exclusion (request)  Required scope(s): [admin]",
     "description": "Set Self-Exclusion (this call should be used in conjunction with get_self_exclusion)",
     "type": "object",
     "additionalProperties": false,

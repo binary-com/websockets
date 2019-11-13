@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Application: Register (request)",
+    "title": "Application: Register (request)  Required scope(s): [admin]",
     "description": "Register a new OAuth application",
     "type": "object",
     "additionalProperties": false,

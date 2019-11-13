@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Forget All (request)",
+    "title": "Forget All (request). Unauthenticated",
     "description": "Immediately cancel the real-time streams of messages of given type.",
     "type": "object",
     "additionalProperties": false,

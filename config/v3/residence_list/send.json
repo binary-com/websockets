@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Countries List (request)",
+    "title": "Countries List (request). Unauthenticated",
     "description": "This call returns a list of countries and 2-letter country codes, suitable for populating the account opening form.",
     "type": "object",
     "additionalProperties": false,

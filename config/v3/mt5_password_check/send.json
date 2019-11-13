@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "MT5: Password Check (request)",
+    "title": "MT5: Password Check (request)  Required scope(s): [admin]",
     "description": "This call validates the main password for the MT5 user",
     "type": "object",
     "additionalProperties": false,

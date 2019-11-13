@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "API Token (request)",
+    "title": "API Token (request)  Required scope(s): [admin]",
     "description": "This call manages API tokens",
     "type": "object",
     "additionalProperties": false,
