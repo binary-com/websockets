@@ -63,10 +63,11 @@ define(["/lib/jquery.js", "/lib/handlebars.js", "/lib/highlight.js", "/lib/jsonp
     });
      
     
-    Handlebars.registerHelper('scopes', function(scope) {
-        if (!scope) { return ('unauthenticated') }
-         return scope;
-    }); 
+    Handlebars.registerHelper('scopes', function(schema) {
+        var scopes = schema.auth_required;
+        if (!scopes) { return (['unauthenticated']) }
+        return scopes;
+    });
         
     
 
