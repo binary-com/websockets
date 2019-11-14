@@ -56,17 +56,16 @@ define(["/lib/jquery.js", "/lib/handlebars.js", "/lib/highlight.js", "/lib/jsonp
         var text = description;
         if(marked) {
             marked.setOptions({gfm: true, breaks: true})
-            return new Handlebars.SafeString(marked(text+'<br>fred'));
+            return new Handlebars.SafeString(marked(text));
         } else {
-            return text+'<br>fred';
+            return text;
         }
     });
      
     
-    Handlebars.registerHelper('scopes', function(schema) {
-        var scopes = schema.auth_required;
-        if (!scopes) { return ('unauthenticated') }
-         var test  = scopes.join(',');
+    Handlebars.registerHelper('scopes', function(scope) {
+        if (!scope) { return ('unauthenticated') }
+         return scope;
     }); 
         
     
