@@ -56,11 +56,15 @@ define(["/lib/jquery.js", "/lib/handlebars.js", "/lib/highlight.js", "/lib/jsonp
         var text = description;
         if(marked) {
             marked.setOptions({gfm: true, breaks: true})
-            return new Handlebars.SafeString(marked(text));
+            return new Handlebars.SafeString(marked(text+'<br>fred'));
         } else {
             return text+'<br>fred';
         }
     });
+     
+    
+    Handlebars.registerHelper('scopes', function(
+    
 
     Handlebars.registerHelper('equals', function(lvalue, rvalue, options) {
         if (arguments.length < 3)
@@ -321,7 +325,7 @@ define(["/lib/jquery.js", "/lib/handlebars.js", "/lib/highlight.js", "/lib/jsonp
         });
     };
 
-    docson.doc = function(element, schema, ref, baseUrl) {
+    docson.doc = function(element, schema, ref, baseUrl, meta_data) {
         var d = $.Deferred();
         if(baseUrl === undefined) baseUrl='';
         docson.templateBaseUrl = baseUrl + 'docson';
