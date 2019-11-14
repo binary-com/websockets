@@ -3,6 +3,7 @@ groups:
     methods:
       - name: active_symbols
         title: Active Symbols
+        scopes: 'read, admin'
       - name: api_token
         title: API Token
       - name: app_delete

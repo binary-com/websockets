@@ -441,7 +441,7 @@ require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function
 
     $('#api-call-selector').select2({
         matcher: customMatcher,
-    }).on('change', function() {
+    }).on('change', function(event) {
         var method_name = $('#api-call-selector').val();
         var json_paths  = getJsonPaths(method_name);
 
