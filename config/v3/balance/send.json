@@ -2,6 +2,7 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Balance (request)  Required scope(s): [read, trading_information]",
     "description": "Get user account balance",
+    "auth_required": ["admin", "read"],
     "type": "object",
     "additionalProperties": false,
     "required": [
