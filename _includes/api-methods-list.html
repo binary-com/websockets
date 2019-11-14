@@ -4,7 +4,7 @@
     <optgroup label="{{ group.label }}">
         {%- assign sorted_methods = group.methods | sort: "title") -%}
         {%- for method in sorted_methods %}
-        <option value="{{ method.name }}">{{ method.title }}</option>
+        <option data-scopes="{{ method.scope }}" value="{{ method.name }}">{{ method.title }}</option>
         {%- endfor %}
     </optgroup>
     {% endfor %}
