@@ -466,3 +466,8 @@
     color: #080;
     font-style: italic;
 }
+
+.docson .scopes {
+    float:left;
+    display: inline-block
+}
