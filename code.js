@@ -342,7 +342,7 @@ require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function
         $.get(schema_url, function(schema) {
             if (required_first) sortRequiredFirst(schema, method_name);
 
-            docson.doc($node, schema, null, getBaseUrl(),["type":type]);
+            docson.doc($node, schema, null, getBaseUrl(),{"type":type});
 
             setTimeout(function() {
                     $node[schema.deprecated ? 'addClass' : 'removeClass']('deprecated');
