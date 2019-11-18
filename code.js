@@ -337,8 +337,8 @@ require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function
             schema.properties = Object.assign(req_obj, schema.properties);
         }
     }
-
-    function loadAndDisplaySchema($node, schema_url, method_name, required_first) {
+//type is either send or receive
+    function loadAndDisplaySchema($node, schema_url, method_name, required_first, type) {
         $.get(schema_url, function(schema) {
             if (required_first) sortRequiredFirst(schema, method_name);
 
@@ -445,8 +445,8 @@ require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function
         var method_name = $('#api-call-selector').val();
         var json_paths  = getJsonPaths(method_name);
 
-        loadAndDisplaySchema($('#playground-req-schema'), json_paths.send,    method_name, true);
-        loadAndDisplaySchema($('#playground-res-schema'), json_paths.receive, method_name, false);
+        loadAndDisplaySchema($('#playground-req-schema'), json_paths.send,    method_name, true, 'send');
+        loadAndDisplaySchema($('#playground-res-schema'), json_paths.receive, method_name, false, 'receive');
         loadAndEditJson(     $('#playground-request'),    json_paths.example);
 
         window.location.hash = method_name;
