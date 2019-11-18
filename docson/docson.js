@@ -73,7 +73,7 @@ define(["/lib/jquery.js", "/lib/handlebars.js", "/lib/highlight.js", "/lib/jsonp
     Handlebars.registerHelper('schemaType', function (type) {
         if (metaData.type == type) { return true; }
         return false;
-    }
+    });
     
 
     Handlebars.registerHelper('equals', function(lvalue, rvalue, options) {
