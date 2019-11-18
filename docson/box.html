@@ -19,7 +19,7 @@
         <div class="box-title" ref="{{__ref}}">
             {{#name this}}<div class="box-name {{#if root}}title{{/if}}">{{__name}}</div>{{/name}}
             <div class="box-description desc">{{desc this}}</div>
-		{{if root}}
+		{{#if root}}
             <div class="scopes">Auth Required: 
                   {{#if auth_required }} 
                             {{#each auth_required }} 
