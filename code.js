@@ -3,7 +3,7 @@ function isProduction(url) {
 }
 
 function isLocal(url) {
-    return url && url.indexOf('//localhost') > 0;
+    return url && url.match(/(\/\/localhost|github\.io/));
 }
 
 function getBaseUrl(url) {
