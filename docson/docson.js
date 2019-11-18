@@ -70,8 +70,9 @@ define(["/lib/jquery.js", "/lib/handlebars.js", "/lib/highlight.js", "/lib/jsonp
         return scopes;
     });
         
-    Handlebars.registerHelper('metaData', function (attr) {
-        return metaData[attr];
+    Handlebars.registerHelper('schemaType', function (type) {
+        if (metaData.type == type) { return true; }
+        return false;
     }
     
 
