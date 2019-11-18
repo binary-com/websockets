@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Get Financial Assessment (request)  Required scope(s): [read]",
+    "title": "Get Financial Assessment (request)",
     "description": "This call gets the financial assessement details. The 'financial assessment' is a questionnaire that clients of certain Landing Companies need to complete, due to regulatory and KYC (know your client) requirements.",
     "type": "object",
+    "auth_required": ["read"],
     "additionalProperties": false,
     "required": [
         "get_financial_assessment"

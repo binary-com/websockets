@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "MT5: Accounts List (request)  Required scope(s): [read]",
+    "title": "MT5: Accounts List (request)",
     "description": "Get list of MT5 accounts for client",
     "type": "object",
+    "auth_required": ["read"],
     "additionalProperties": false,
     "required": [
         "mt5_login_list"

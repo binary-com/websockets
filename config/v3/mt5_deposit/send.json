@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "MT5: Deposit (request)  Required scope(s): [admin]",
+    "title": "MT5: Deposit (request)",
     "description": "This call allows deposit into MT5 account from Binary account.",
     "type": "object",
+    "auth_required": ["admin"],
     "additionalProperties": false,
     "required": [
         "mt5_deposit",

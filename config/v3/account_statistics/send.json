@@ -4,6 +4,7 @@
     "description": "Send request to get account statistics",
     "hidden": 1,
     "type": "object",
+    "auth_required": ["read", "trading_information"],
     "additionalProperties": false,
     "required": [
         "account_statistics"

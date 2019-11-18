@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "OAuth Applications (request)  Required scope(s): [read]",
+    "title": "OAuth Applications (request)",
     "description": "List all my used OAuth applications.",
     "type": "object",
+    "auth_required": ["read"],
     "additionalProperties": false,
     "required": [
         "oauth_apps"

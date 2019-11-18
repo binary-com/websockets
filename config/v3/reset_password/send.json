@@ -4,6 +4,7 @@
     "description": "Reset Password.",
     "hidden": 1,
     "type": "object",
+    "auth_required": ["none"],
     "additionalProperties": false,
     "required": [
         "new_password",

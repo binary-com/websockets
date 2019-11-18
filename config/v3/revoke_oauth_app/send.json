@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Revoke Oauth Application (request)  Required scope(s): [admin]",
+    "title": "Revoke Oauth Application (request)",
     "description": "Used for revoking access of particular app.",
     "type": "object",
+    "auth_required": ["admin"],
     "additionalProperties": false,
     "required": [
         "revoke_oauth_app"

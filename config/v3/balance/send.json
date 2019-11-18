@@ -1,9 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Balance (request)  Required scope(s): [read, trading_information]",
+    "title": "Balance (request)",
     "description": "Get user account balance",
-    "auth_required": ["admin", "read"],
     "type": "object",
+    "auth_required": ["read", "trading_information"],
     "additionalProperties": false,
     "required": [
         "balance"

@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Account Status (request)  Required scope(s): [read]",
+    "title": "Account Status (request)",
     "description": "Get Account Status",
     "type": "object",
+    "auth_required": ["read"],
     "additionalProperties": false,
     "required": [
         "get_account_status"

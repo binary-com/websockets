@@ -4,6 +4,7 @@
     "description": "Change Password. Note: this call is NOT available when authenticated to a per-app token. It is only available for in-house Binary.com apps.",
     "hidden": 1,
     "type": "object",
+    "auth_required": ["admin"],
     "additionalProperties": false,
     "required": [
         "change_password",

@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Application: Get Details (request)  Required scope(s): [read]",
+    "title": "Application: Get Details (request)",
     "description": "To get the information of the OAuth application specified by 'app_id'",
     "type": "object",
+    "auth_required": ["read"],
     "additionalProperties": false,
     "required": [
         "app_get"

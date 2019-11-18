@@ -4,6 +4,7 @@
     "description": "This call manages two-factor account authentication",
     "hidden": 1,
     "type": "object",
+    "auth_required": ["admin"],
     "additionalProperties": false,
     "required": [
         "account_security"

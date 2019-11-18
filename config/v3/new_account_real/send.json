@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "New Real-Money Account: Default Landing Company (request)  Required scope(s): [admin]",
+    "title": "New Real-Money Account: Default Landing Company (request)",
     "description": "This call opens a new real-money account. This call can be made from a virtual-money or a real-money account. If it is the latter, client information fields in this call will be ignored and data from your existing real-money account will be used.",
     "type": "object",
+    "auth_required": ["admin"],
     "additionalProperties": false,
     "required": [
         "date_of_birth",

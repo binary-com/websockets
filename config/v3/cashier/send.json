@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Cashier URL (request)  Required scope(s): [payments]",
+    "title": "Cashier URL (request)",
     "description": "Request the cashier URL.",
     "type": "object",
+    "auth_required": ["payments"],
     "additionalProperties": false,
     "required": [
         "cashier"

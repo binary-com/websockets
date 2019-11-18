@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Buy Contract (request)  Required scope(s): [trade]",
+    "title": "Buy Contract (request)",
     "description": "Buy a Contract",
     "type": "object",
+    "auth_required": ["trade"],
     "additionalProperties": false,
     "required": [
         "buy",

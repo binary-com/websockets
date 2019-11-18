@@ -4,6 +4,7 @@
     "description": "Send report to client's registered e-mail",
     "hidden": 1,
     "type": "object",
+    "auth_required": ["read"],
     "additionalProperties": false,
     "required": [
         "date_from",

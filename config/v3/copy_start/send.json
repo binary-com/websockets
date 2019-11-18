@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Copy Trading: Start (request)  Required scope(s): [trade]",
+    "title": "Copy Trading: Start (request)",
     "description": "Start copy trader bets",
     "type": "object",
+    "auth_required": ["trade"],
     "additionalProperties": false,
     "required": [
         "copy_start"

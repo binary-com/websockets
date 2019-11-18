@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Payment Agent: Withdraw (request)  Required scope(s): [payments]",
+    "title": "Payment Agent: Withdraw (request)",
     "description": "Initiate a withdrawal to an approved Payment Agent.",
     "type": "object",
+    "auth_required": ["payments"],
     "additionalProperties": false,
     "required": [
         "amount",

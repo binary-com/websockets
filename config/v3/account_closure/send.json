@@ -4,6 +4,7 @@
     "description": "This call allows clients to close all their accounts (including virtual-money account). It is assumed that all their accounts (excluding virtual) have no balance left.",
     "hidden": 1,
     "type": "object",
+    "auth_required": ["admin"],
     "additionalProperties": false,
     "required": [
         "account_closure",

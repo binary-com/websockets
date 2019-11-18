@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Copy Trading: List (request)  Required scope(s): [admin]",
+    "title": "Copy Trading: List (request)",
     "description": "Retrieves a list of active copiers and/or traders for Copy Trading",
     "type": "object",
+    "auth_required": ["admin"],
     "additionalProperties": false,
     "required": [
         "copytrading_list"

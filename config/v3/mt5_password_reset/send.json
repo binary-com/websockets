@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "MT5: Password Reset (request)  Required scope(s): [admin]",
+    "title": "MT5: Password Reset (request)",
     "description": "To reset the password of MT5 account.",
     "type": "object",
+    "auth_required": ["admin"],
     "additionalProperties": false,
     "required": [
         "login",

@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "MT5: Get Setting (request)  Required scope(s): [read]",
+    "title": "MT5: Get Setting (request)",
     "description": "Get MT5 user account settings",
     "type": "object",
+    "auth_required": ["read"],
     "additionalProperties": false,
     "required": [
         "login",

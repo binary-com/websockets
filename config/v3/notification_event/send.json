@@ -4,6 +4,7 @@
     "description": "Notify the backend about a specific event.",
     "hidden": 1,
     "type": "object",
+    "auth_required": ["admin"],
     "additionalProperties": false,
     "required": [
         "category",

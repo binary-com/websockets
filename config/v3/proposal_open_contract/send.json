@@ -1,8 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Price Proposal: Open Contracts (request)  Required scope(s): [read, trading_information]",
+    "title": "Price Proposal: Open Contracts (request)",
     "description": "Get latest price (and other information) for a contract in the user's portfolio",
     "type": "object",
+    "auth_required": ["read", "trading_information"],
     "additionalProperties": false,
     "required": [
         "proposal_open_contract"
