@@ -71,8 +71,8 @@ define(["/lib/jquery.js", "/lib/handlebars.js", "/lib/highlight.js", "/lib/jsonp
     });
         
     Handlebars.registerHelper('schemaType', function (type) {
-        if (metaData.type == type) { return true; }
-        return false;
+        if (metaData.type == type) { return 1; }
+        return null;
     });
     
 
