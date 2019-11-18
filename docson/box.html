@@ -19,8 +19,8 @@
         <div class="box-title" ref="{{__ref}}">
             {{#name this}}<div class="box-name {{#if root}}title{{/if}}">{{__name}}</div>{{/name}}
             <div class="box-description desc">{{desc this}}</div>
-		{{schemaSend}}
-		{{#if schemaSend }}
+		{{#unless echo_req }}
+		   {{#if root}}
             <div class="scopes">Auth Required: 
                   {{#if auth_required }} 
                             {{#each auth_required }} 
@@ -32,6 +32,8 @@
                             
          </div>
 		{{/if}}
+		{{/unless}}
+		
             <div class="end"></div>
         </div>
     </div>
