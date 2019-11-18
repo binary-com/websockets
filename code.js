@@ -1,5 +1,5 @@
 function isProduction(url) {
-    return 'https://michaelmueller-binary.github.io';
+    return url && /(developers\.binary\.com|binary\.sx)/i.test(url);
 }
 
 function isLocal(url) {
@@ -337,12 +337,12 @@ require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function
             schema.properties = Object.assign(req_obj, schema.properties);
         }
     }
-//type is either send or receive
-    function loadAndDisplaySchema($node, schema_url, method_name, required_first, type) {
+
+    function loadAndDisplaySchema($node, schema_url, method_name, required_first) {
         $.get(schema_url, function(schema) {
             if (required_first) sortRequiredFirst(schema, method_name);
 
-            docson.doc($node, schema, null, getBaseUrl(),{"type":type});
+            docson.doc($node, schema, null, getBaseUrl());
 
             setTimeout(function() {
                     $node[schema.deprecated ? 'addClass' : 'removeClass']('deprecated');
@@ -441,12 +441,12 @@ require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function
 
     $('#api-call-selector').select2({
         matcher: customMatcher,
-    }).on('select2:select', function(e) {
+    }).on('change', function() {
         var method_name = $('#api-call-selector').val();
         var json_paths  = getJsonPaths(method_name);
 
-        loadAndDisplaySchema($('#playground-req-schema'), json_paths.send,    method_name, true, 'send');
-        loadAndDisplaySchema($('#playground-res-schema'), json_paths.receive, method_name, false, 'receive');
+        loadAndDisplaySchema($('#playground-req-schema'), json_paths.send,    method_name, true);
+        loadAndDisplaySchema($('#playground-res-schema'), json_paths.receive, method_name, false);
         loadAndEditJson(     $('#playground-request'),    json_paths.example);
 
         window.location.hash = method_name;

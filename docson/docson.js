@@ -26,7 +26,6 @@ define(["/lib/jquery.js", "/lib/handlebars.js", "/lib/highlight.js", "/lib/jsonp
     var source;
     var stack = [];
     var boxes=[];
-    var metaData= {}; 
 
     Handlebars.registerHelper('scope', function(schema, options) {
         var result;
@@ -62,19 +61,6 @@ define(["/lib/jquery.js", "/lib/handlebars.js", "/lib/highlight.js", "/lib/jsonp
             return text;
         }
     });
-     
-    
-    Handlebars.registerHelper('scopes', function(schema) {
-        var scopes = schema.auth_required;
-        if (!scopes) { return (['unauthenticated']) }
-        return scopes;
-    });
-        
-    Handlebars.registerHelper('schemaSend', function () {
-        if (metaData.type == 'send') { return 'send'; }
-        return null;
-    });
-    
 
     Handlebars.registerHelper('equals', function(lvalue, rvalue, options) {
         if (arguments.length < 3)
@@ -335,9 +321,8 @@ define(["/lib/jquery.js", "/lib/handlebars.js", "/lib/highlight.js", "/lib/jsonp
         });
     };
 
-    docson.doc = function(element, schema, ref, baseUrl, meta_data) {
+    docson.doc = function(element, schema, ref, baseUrl) {
         var d = $.Deferred();
-        metaData = meta_data;
         if(baseUrl === undefined) baseUrl='';
         docson.templateBaseUrl = baseUrl + 'docson';
         init();
