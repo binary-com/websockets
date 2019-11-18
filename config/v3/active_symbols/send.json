@@ -3,6 +3,7 @@
     "title": "Active Symbols (request). Unauthenticated",
     "description": "Retrieve a list of all currently active symbols (underlying markets upon which contracts are available for trading).",
     "type": "object",
+    "auth_req" : ["none"],
     "additionalProperties": false,
     "required": [
         "active_symbols"
