@@ -26,7 +26,7 @@ define(["/lib/jquery.js", "/lib/handlebars.js", "/lib/highlight.js", "/lib/jsonp
     var source;
     var stack = [];
     var boxes=[];
-    var metaData= []; 
+    var metaData= {}; 
 
     Handlebars.registerHelper('scope', function(schema, options) {
         var result;
