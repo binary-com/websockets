@@ -1,74 +1,126 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Set Self-Exclusion Send",
-  "description":"Set Self-Exclusion (this call should be used in conjunction with get_self_exclusion)",
-  "properties": {
-    "set_self_exclusion": {
-      "type":"integer",
-      "pattern": "^1$"
-    },
-    "max_balance":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,20}$",
-      "description": "Maximum account cash balance"
-    },
-    "max_turnover":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,20}$",
-      "description": "Daily turnover limit"
-    },
-    "max_losses":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,20}$",
-      "description": "Daily limit on losses"
-    },
-    "max_7day_turnover":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,20}$",
-      "description": "7-day turnover limit"
-    },
-    "max_7day_losses":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,20}$",
-      "description": "7-day limit on losses"
-    },
-    "max_30day_turnover":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,20}$",
-      "description": "30-day turnover limit"
-    },
-    "max_30day_losses":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,20}$",
-      "description": "30-day limit on losses"
-    },
-    "max_open_bets":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,4}$",
-      "description": "Maximum number of open positions"
-    },
-    "session_duration_limit":{
-      "type": ["integer", "null"],
-      "pattern": "^\\d{0,5}$",
-      "description": "Session duration limit, in minutes"
-    },
-    "exclude_until":{
-      "type": ["string", "null"],
-      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
-      "description": "Exclude me from the website until"
-    },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field to map request to response"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Set Self-Exclusion (request)",
+    "description": "Set Self-Exclusion (this call should be used in conjunction with get_self_exclusion)",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "set_self_exclusion"
+    ],
+    "properties": {
+        "set_self_exclusion": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "exclude_until": {
+            "description": "Exclude me from the website (for a minimum of 6 months, up to a maximum of 5 years). Note: uplifting this self-exclusion may require contacting the company.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "pattern": "^[0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$"
+        },
+        "max_30day_losses": {
+            "description": "30-day limit on losses",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "max_30day_turnover": {
+            "description": "30-day turnover limit",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "max_7day_losses": {
+            "description": "7-day limit on losses",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "max_7day_turnover": {
+            "description": "7-day turnover limit",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "max_balance": {
+            "description": "Maximum account cash balance",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "max_deposit": {
+            "description": "Deposit limit.",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "max_deposit_end_date": {
+            "description": "Exclude me from making deposits when the cumulative sum of deposits exceeds specified deposit limit.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "pattern": "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
+        },
+        "max_losses": {
+            "description": "Daily limit on losses",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "max_open_bets": {
+            "description": "Maximum number of open positions",
+            "type": [
+                "integer",
+                "null"
+            ],
+            "maximum": 9999,
+            "minimum": 0
+        },
+        "max_turnover": {
+            "description": "Daily turnover limit",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "session_duration_limit": {
+            "description": "Session duration limit, in minutes",
+            "type": [
+                "integer",
+                "null"
+            ],
+            "maximum": 99999,
+            "minimum": 0
+        },
+        "timeout_until": {
+            "description": "Exclude me from the website (for up to 6 weeks). Requires time in epoch format. Note: unlike exclude_until, this self-exclusion will be lifted automatically at the expiry of the timeout period.",
+            "type": [
+                "integer",
+                "null"
+            ],
+            "maximum": 9999999999,
+            "minimum": 0
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
     }
-  },
-  "additionalProperties": false,
-  "required": [
-    "set_self_exclusion"
-  ]
 }

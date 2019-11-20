@@ -1,79 +1,101 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Tick History Response",
-  "description": "Historic tick data for a single symbol",
-  "properties": {
-    "echo_req": {
-      "title": "Echo request",
-      "description": "Echo of the request made"
-    },
-    "history": {
-      "type": "object",
-      "title": "Tick History Response",
-      "description": "Historic tick data for a given symbol",
-      "properties": {
-        "times": {
-          "type": "array",
-          "items": [
-            {
-              "type": "integer",
-              "description": "Epoch of the tick."
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Ticks History (response)",
+    "description": "Historic tick data for a single symbol",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "candles": {
+            "title": "candles",
+            "description": "Array of OHLC (open/high/low/close) price values for the given time (only for style='candles')",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "close": {
+                        "description": "It is the close price value for the given time",
+                        "type": "number"
+                    },
+                    "epoch": {
+                        "description": "It is an epoch value",
+                        "type": "integer"
+                    },
+                    "high": {
+                        "description": "It is the high price value for the given time",
+                        "type": "number"
+                    },
+                    "low": {
+                        "description": "It is the low price value for the given time",
+                        "type": "number"
+                    },
+                    "open": {
+                        "description": "It is the open price value for the given time",
+                        "type": "number"
+                    }
+                }
             }
-          ]
         },
-        "prices": {
-          "type": "array",
-          "items": [
-            {
-              "type": "number",
-              "description": "Tick value."
+        "history": {
+            "title": "history",
+            "description": "Historic tick data for a given symbol. Note: this will always return the latest possible set of ticks with accordance to the parameters specified.",
+            "type": "object",
+            "properties": {
+                "prices": {
+                    "description": "An array containing list of tick values for the corresponding epoch values in 'times' array.",
+                    "type": "array",
+                    "items": {
+                        "description": "Tick value.",
+                        "type": "number"
+                    }
+                },
+                "times": {
+                    "description": "An array containing list of epoch values for the corresponding tick values in 'prices' array.",
+                    "type": "array",
+                    "items": {
+                        "description": "Epoch of the tick.",
+                        "type": "integer"
+                    }
+                }
             }
-          ]
+        },
+        "pip_size": {
+            "description": "Indicates the number of decimal points that the returned amounts must be displayed with",
+            "type": "number"
+        },
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only",
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
+                    "type": "string"
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Type of the response according to the 'style' sent in request. Would be 'history' or 'candles' for the first response, and 'tick' or 'ohlc' for the rest when subscribed.",
+            "type": "string",
+            "enum": [
+                "history",
+                "tick",
+                "candles",
+                "ohlc"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
         }
-      }
-    },
-    "candles": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "epoch": {
-            "type": "integer",
-            "description": "It is an epoch value"
-          },
-          "open": {
-            "type": "number",
-            "description": "It is the open price value for the given time"
-          },
-          "high": {
-            "type": "number",
-            "description": "It is the high price value for the given time"
-          },
-          "low": {
-            "type": "number",
-            "description": "It is the low price value for the given time"
-          },
-          "close": {
-            "type": "number",
-            "description": "It is the close price value for the given time"
-          }
-        }
-      },
-      "minItems": "1",
-      "description": "Array of OHLC price values for the given time (only for style='candles')"
-    },
-    "msg_type": {
-      "type": "string",
-      "description": "style"
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "msg_type"
-  ]
 }

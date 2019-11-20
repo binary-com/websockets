@@ -1,137 +1,191 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Contracts for Symbol Receive",
-  "description": "Get the list of currently available contracts",
-  "properties": {
-    "echo_req": {
-      "title":"Echo request",
-      "description":"Echo of the request made"
-    },
-    "contracts_for": {
-        "type": "object",
-        "properties":{
-            "available":{
-                "type":"array",
-                "items":{
-                  "type":"object",
-                  "properties":{
-                      "market":{
-                          "type":"string",
-                          "description":"Type of market (forex, indices, random, ...)"
-                      },
-                      "contracts_display":{
-                          "type":"string",
-                          "description":"Type of contract (example: asian up)"
-                      },
-                      "max_contract_duration":{
-                          "type":"string",
-                          "description":"Maximum contract duration (example: 10)"
-                      },
-                      "barrier_category":{
-                          "type":"string",
-                          "description":"Category of barrier (example: asian)"
-                      },
-                      "payout_limit":{
-                          "type":"number",
-                          "description":"Maximum payout (example: 10000)"
-                      },
-                      "submarket":{
-                          "type":"string",
-                          "description":"Type of submarket (example: random_index)"
-                      },
-                      "exchange_name":{
-                          "type":"string",
-                          "description":"Name of exchange (example: RANDOM)"
-                      },
-                      "contract_category_display":{
-                          "type":"string",
-                          "description":"Category of the contract (example: Asians)"
-                      },
-                      "contract_type":{
-                          "type":"string",
-                          "description":"Type of contract (example: ASIANU)"
-                      },
-                      "min_contract_duration":{
-                          "type":"string",
-                          "description":"Minimum contract duration (example: 5)"
-                      },
-                      "sentiment":{
-                          "type":"string",
-                          "description":"Type of sentiment (example: up)"
-                      },
-                      "barriers":{
-                          "type":"number",
-                          "description":"Barriers (example: 0)"
-                      },
-                      "contract_category":{
-                          "type":"string",
-                          "description":"Category of contract (example: asian)"
-                      },
-                      "start_type":{
-                          "type":"string",
-                          "description":"Start Type (example: spot)"
-                      },
-                      "expiry_type":{
-                          "type":"string",
-                          "description":"Expiry Type (example: tick)"
-                      },
-                      "underlying_symbol":{
-                          "type":"string",
-                          "description":"Symbol code (example: R_50)"
-                      },
-                      "forward_starting_options":{
-                          "type":"array",
-                          "items":{
-                            "type":"object"
-                          },
-                          "minItems":"1",
-                          "description":"Array of returned forward starting options"
-                      },
-                      "available_barriers":{
-                          "type":"array",
-                          "minItems":"1",
-                          "description":"Array of available barriers"
-                      },
-                      "trading_period":{
-                          "type":"object",
-                          "description":"A hash of trading period"
-                      }
-                  }
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Contracts For Symbol (response)",
+    "description": "Get the list of currently available contracts",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "contracts_for": {
+            "title": "contracts_for",
+            "description": "List of available contracts. Note: if the user is authenticated, then only contracts allowed under his account will be returned.",
+            "type": "object",
+            "required": [
+                "available"
+            ],
+            "properties": {
+                "available": {
+                    "description": "Array of available contracts details",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "barrier_category",
+                            "barriers",
+                            "contract_category",
+                            "contract_category_display",
+                            "contract_type",
+                            "exchange_name",
+                            "expiry_type",
+                            "market",
+                            "max_contract_duration",
+                            "min_contract_duration",
+                            "sentiment",
+                            "start_type",
+                            "submarket",
+                            "underlying_symbol"
+                        ],
+                        "properties": {
+                            "available_barriers": {
+                                "description": "Array of available barriers for a predefined trading period",
+                                "type": "array",
+                                "minItems": 1
+                            },
+                            "barrier_category": {
+                                "description": "Category of barrier (example: asian)",
+                                "type": "string"
+                            },
+                            "barriers": {
+                                "description": "Barriers (example: 0)",
+                                "type": "number"
+                            },
+                            "contract_category": {
+                                "description": "Category of contract (example: asian)",
+                                "type": "string"
+                            },
+                            "contract_category_display": {
+                                "description": "Category of the contract (example: Asians)",
+                                "type": "string"
+                            },
+                            "contract_type": {
+                                "description": "Type of contract (example: ASIANU)",
+                                "type": "string"
+                            },
+                            "contracts_display": {
+                                "description": "Type of contract (example: asian up)",
+                                "type": "string"
+                            },
+                            "exchange_name": {
+                                "description": "Name of exchange (example: EURONEXT)",
+                                "type": "string"
+                            },
+                            "expired_barriers": {
+                                "description": "Array of barriers already expired",
+                                "type": "array"
+                            },
+                            "expiry_type": {
+                                "description": "Expiry Type (example: tick)",
+                                "type": "string"
+                            },
+                            "forward_starting_options": {
+                                "description": "Array of returned forward starting options",
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "close": {
+                                            "description": "The epoch value for the closing date of forward starting session.",
+                                            "type": "string"
+                                        },
+                                        "date": {
+                                            "description": "The epoch value for the date of forward starting session.",
+                                            "type": "string"
+                                        },
+                                        "open": {
+                                            "description": "The epoch value for the opening date of forward starting session.",
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "minItems": 1
+                            },
+                            "market": {
+                                "description": "Type of market (forex, indices, ...)",
+                                "type": "string"
+                            },
+                            "max_contract_duration": {
+                                "description": "Maximum contract duration (example: 10)",
+                                "type": "string"
+                            },
+                            "min_contract_duration": {
+                                "description": "Minimum contract duration (example: 5)",
+                                "type": "string"
+                            },
+                            "payout_limit": {
+                                "description": "Maximum payout (example: 10000)",
+                                "type": "number"
+                            },
+                            "sentiment": {
+                                "description": "Type of sentiment (example: up)",
+                                "type": "string"
+                            },
+                            "start_type": {
+                                "description": "Start Type (example: spot)",
+                                "type": "string"
+                            },
+                            "submarket": {
+                                "description": "Type of submarket (example: major_pairs)",
+                                "type": "string"
+                            },
+                            "trading_period": {
+                                "description": "A hash of predefined trading period",
+                                "type": "object"
+                            },
+                            "underlying_symbol": {
+                                "description": "Symbol code (example: R_50)",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "minItems": 1
                 },
-                "minItems":"1",
-                "description":"Array of available contracts details"
-            },
-            "close":{
-            	"type":["integer", "null"],
-            	"description":"Symbol's next market-close time as an epoch value"
-            },
-            "open":{
-                "type":["integer", "null"],
-                "description":"Symbol's next market-open time as an epoch value"
-            },
-            "hit_count":{
-              	"type":"number",
-              	"description":"Count of contracts available"
-            },
-            "spot":{
-                "type":"number",
-                "description":"Current spot price for this underlying"
+                "close": {
+                    "description": "Symbol's next market-close time as an epoch value",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "feed_license": {
+                    "description": "Indicates the feed license for symbol, for example whether its realtime or delayed",
+                    "type": "string"
+                },
+                "hit_count": {
+                    "description": "Count of contracts available",
+                    "type": "number"
+                },
+                "open": {
+                    "description": "Symbol's next market-open time as an epoch value",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "spot": {
+                    "description": "Current spot price for this underlying",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                }
             }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "contracts_for"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
         }
-    },
-    "msg_type": {
-      "type": "string",
-      "description": "contracts_for"
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "contracts_for",
-    "msg_type"
-  ]
 }

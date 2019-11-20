@@ -1,7 +1,6 @@
 {
-    "new_account_virtual": "1",
-    "email": "test@mailinator.com",
-    "client_password": "abc123",
+    "new_account_virtual": 1,
+    "client_password": "Abc123de",
     "residence": "id",
-    "verification_code": "Ag76JL9+B/g="
+    "verification_code": "uoJvVuQ6"
 }

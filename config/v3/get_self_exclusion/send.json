@@ -1,24 +1,27 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Get User Self-Exclusion Send",
-  "description":"Since trading can be an addicitive activity, Binary.com allows users to exclude themselves from the website for certain periods of time, or to set limits on their trading activities.",
-  "properties": {
-    "get_self_exclusion": {
-      "type":"integer",
-      "pattern": "^1$"
-    },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field to map request to response"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Get Self-Exclusion (request)",
+    "description": "Binary.com allows users to exclude themselves from the website for certain periods of time, or to set limits on their trading activities. This facility is a regulatory requirement for certain Landing Companies.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "get_self_exclusion"
+    ],
+    "properties": {
+        "get_self_exclusion": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
     }
-  },
-  "additionalProperties": false,
-  "required": [
-    "get_self_exclusion"
-  ]
 }

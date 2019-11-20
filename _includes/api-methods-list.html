@@ -1,0 +1,11 @@
+<select id="api-call-selector">
+    <option selected disabled hidden>Select API Call - Version 3</option>
+    {%- for group in site.data.v3.groups %}
+    <optgroup label="{{ group.label }}">
+        {%- assign sorted_methods = group.methods | sort: "title") -%}
+        {%- for method in sorted_methods %}
+        <option value="{{ method.name }}">{{ method.title }}</option>
+        {%- endfor %}
+    </optgroup>
+    {% endfor %}
+</select>

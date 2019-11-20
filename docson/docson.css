@@ -82,7 +82,7 @@
 .docson .box-description {
     color: dimgray;
     float: left;
-    max-width: 600px;
+    width:100%;
 }
 
 .docson .end {
@@ -182,7 +182,10 @@
     color: purple;
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 90%;
-    padding-left: 2px;
+    border: 1px solid #dedede;
+    padding: 2px 5px;
+    white-space: nowrap;
+    border-radius: 4px;
 }
 
 .docson .type-default {
@@ -273,6 +276,7 @@
     color: dimgray;
     float: left;
     max-width: 600px;
+    width: 100%;
 }
 
 .docson .signature-box-container {

@@ -1,103 +1,136 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Get list of active symbols Receive",
-  "description": "A message list of active symbols",
-  "properties": {
-    "echo_req": {
-      "title": "Echo request",
-      "description": "Echo of the request made"
-    },
-    "active_symbols": {
-      "type":"array",
-      "title": "Active symbols",
-      "description": "List of active symbols. Note: if the user is authenticated, then only symbols allowed under his account will be returned.",
-      "items":{
-        "type":"object",
-        "properties":{
-          "symbol": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Active Symbols (response)",
+    "description": "A message containing the list of active symbols.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "active_symbols": {
+            "title": "active_symbols",
+            "description": "List of active symbols.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "display_name",
+                    "exchange_is_open",
+                    "is_trading_suspended",
+                    "market",
+                    "market_display_name",
+                    "pip",
+                    "submarket",
+                    "submarket_display_name",
+                    "symbol",
+                    "symbol_type"
+                ],
+                "properties": {
+                    "allow_forward_starting": {
+                        "description": "1 if the symbol is tradable in a forward starting contract, 0 if not.",
+                        "type": "integer",
+                        "enum": [
+                            0,
+                            1
+                        ]
+                    },
+                    "delay_amount": {
+                        "description": "Amount the data feed is delayed (in minutes) due to Exchange licensing requirements. Only returned on `full` active symbols call.",
+                        "type": "integer"
+                    },
+                    "display_name": {
+                        "description": "Display name.",
+                        "type": "string"
+                    },
+                    "exchange_is_open": {
+                        "description": "1 if market is currently open, 0 if closed.",
+                        "type": "integer",
+                        "enum": [
+                            0,
+                            1
+                        ]
+                    },
+                    "exchange_name": {
+                        "description": "Exchange name (for underlyings listed on a Stock Exchange). Only returned on `full` active symbols call.",
+                        "type": "string"
+                    },
+                    "intraday_interval_minutes": {
+                        "description": "Intraday interval minutes. Only returned on `full` active symbols call.",
+                        "type": "integer"
+                    },
+                    "is_trading_suspended": {
+                        "description": "1 indicates that trading is currently suspended, 0 if not.",
+                        "type": "integer",
+                        "enum": [
+                            0,
+                            1
+                        ]
+                    },
+                    "market": {
+                        "description": "Market category (forex, indices, etc).",
+                        "type": "string"
+                    },
+                    "market_display_name": {
+                        "description": "Translated market name.",
+                        "type": "string"
+                    },
+                    "pip": {
+                        "description": "Pip size (i.e. minimum fluctuation amount).",
+                        "type": "number"
+                    },
+                    "quoted_currency_symbol": {
+                        "description": "For stock indices, the underlying currency for that instrument. Only returned on `full` active symbols call.",
+                        "type": "string"
+                    },
+                    "spot": {
+                        "description": "Latest spot price of the underlying. Only returned on `full` active symbols call.",
+                        "type": [
+                            "null",
+                            "number"
+                        ]
+                    },
+                    "spot_age": {
+                        "description": "Number of seconds elapsed since the last spot price. Only returned on `full` active symbols call.",
+                        "type": "string"
+                    },
+                    "spot_time": {
+                        "description": "Latest spot epoch time. Only returned on `full` active symbols call.",
+                        "type": "string"
+                    },
+                    "submarket": {
+                        "description": "Submarket name.",
+                        "type": "string"
+                    },
+                    "submarket_display_name": {
+                        "description": "Translated submarket name.",
+                        "type": "string"
+                    },
+                    "symbol": {
+                        "description": "Binary.com symbol code for this underlying.",
+                        "type": "string"
+                    },
+                    "symbol_type": {
+                        "description": "Symbol type (forex, commodities, etc).",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
             "type": "string",
-            "description": "Binary.com symbol code for this underlying"
-          },
-          "intraday_interval_minutes": {
-            "type": "integer",
-            "description": "Intraday interval minutes"
-          },
-          "symbol_type": {
-            "type": "string",
-            "description": "Symbol type (forex, commodities, etc)"
-          },
-          "exchange_is_open": {
-            "type": ["integer", "null"],
-            "description": "1 or 0 - whether the market is currently open or closed"
-          },
-          "exchange_name": {
-            "type": "string",
-            "description": "Exchange name (for underlyings listed on a Stock Exchange)"
-          },
-          "delay_amount": {
-            "type": "integer",
-            "description": "Amount the feed is delayed (in minutes) due to Exchange licensing requirements"
-          },
-          "display_name": {
-            "type": "string",
-            "description": "Display name"
-          },
-          "spot": {
-            "type": ["number", "null"],
-            "description": "Latest spot price"
-          },
-          "spot_time": {
-            "type": "string",
-            "description": "Latest spot epoch time"
-          },
-          "is_trading_suspended": {
-            "type": "integer",
-            "description": "1 indicates that trading is currently suspended"
-          },
-          "quoted_currency_symbol": {
-            "type": "string",
-            "description": "For stocks and stock indices, the underlying currency for that instrument"
-          },
-          "spot_age": {
-            "type": "string",
-            "description": "Number of seconds elapsed since the last spot price"
-          },
-          "market": {
-            "type": "string",
-            "description": "Market category (forex, indices etc)"
-          },
-          "market_display_name": {
-            "type": "string",
-            "description": "Translated market name"
-          },
-          "submarket": {
-            "type": "string",
-            "description": "Submarket name"
-          },
-          "submarket_display_name": {
-            "type": "string",
-            "description": "Translated submarket name"
-          },
-          "pip": {
-            "type": "number",
-            "description": "pip size"
-          }
+            "enum": [
+                "active_symbols"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
         }
-      }
-    },
-    "msg_type": {
-      "type": "string",
-      "description": "active_symbols"
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field send in request to map to response, present only when request contains req_id"
     }
-  },
-  "required": [
-    "echo_req",
-    "active_symbols",
-    "msg_type"
-  ]
 }

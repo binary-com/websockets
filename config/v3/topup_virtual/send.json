@@ -1,23 +1,27 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Top Up Virtual Request",
-  "description": "Top up virtual account",
-  "properties": {
-    "topup_virtual": {
-      "type": "integer",
-      "pattern": "^1$",
-      "required": "1",
-      "description": "it's only allowed for virtual account."
-    },
-    "passthrough": {
-      "type": "object",
-      "description": "Optional field, used to pass data through the websocket, which may be retrieved via the echo_req output field."
-    },
-    "req_id": {
-      "type": "integer",
-      "description": "Optional field to map request to response"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Top Up Virtual-Money Account (request)",
+    "description": "When a virtual-money's account balance becomes low, it can be topped up using this call.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "topup_virtual"
+    ],
+    "properties": {
+        "topup_virtual": {
+            "description": "It's only allowed for virtual account.",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
     }
-  },
-  "additionalProperties": false
 }

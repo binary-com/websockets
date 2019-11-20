@@ -1,28 +1,33 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "title": "Ping Receive",
-  "properties": {
-    "echo_req": {
-      "title":"Echo request",
-      "description":"Echo of the request made"
-    },
-    "ping": {
-    	"type": "string",
-    	"description": "Will return 'pong'",
-    	"pattern": "^pong$"
-    },
-    "msg_type": {
-        "type": "string",
-        "description": "ping"
-    },
-    "req_id": {
-        "type": "integer",
-        "description": "Optional field send in request to map to response, present only when request contains req_id"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Ping (response)",
+    "description": "The response of ping request.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "ping": {
+            "title": "ping",
+            "description": "Will return 'pong'",
+            "type": "string",
+            "pattern": "^pong$"
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "ping"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "type": "integer"
+        }
     }
-  },
-  "required": [
-    "echo_req",
-    "msg_type"
-  ]
 }

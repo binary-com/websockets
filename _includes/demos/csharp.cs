@@ -10,7 +10,7 @@ namespace BinaryWSDemo
     class BinaryWS
     {
     	private ClientWebSocket ws = new ClientWebSocket();
-        private Uri uri = new Uri("wss://ws.binaryws.com/websockets/v3");
+        private Uri uri = new Uri("wss://ws.binaryws.com/websockets/v3?app_id=1089");
             
         public async Task SendRequest(string data)
         {
