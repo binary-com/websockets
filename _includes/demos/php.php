@@ -1,21 +1,31 @@
-require_once("vendor/autoload.php");
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
 
 $loop = \React\EventLoop\Factory::create();
+$reactConnector = new \React\Socket\Connector($loop, [
+    'timeout' => 10
+]);
+$connector = new \Ratchet\Client\Connector($loop, $reactConnector);
 
-$logger = new \Zend\Log\Logger();
-$writer = new Zend\Log\Writer\Stream("php://output");
-$logger->addWriter($writer);
+$connector('wss://ws.binaryws.com/websockets/v3?app_id=1089')
+->then(function(Ratchet\Client\WebSocket $conn) {
+    $conn->on('message', function(\Ratchet\RFC6455\Messaging\MessageInterface $msg) use ($conn) {
+        echo "Received: {$msg}\n";
+    });
 
-$client = new \Devristo\Phpws\Client\WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089", $loop, $logger);
+    $conn->on('close', function($code = null, $reason = null) {
+        echo "Connection closed ({$code} - {$reason})\n";
+    });
 
-$client->on("connect", function($headers) use ($client, $logger){
-    $logger->notice("connected!");
-    $client->send("{\"ticks\":\"R_100\"}");
+    $conn->send("{\"ticks\":\"R_100\"}");
+}, function(\Exception $e) use ($loop) {
+    echo "Could not connect: {$e->getMessage()}\n";
+    $loop->stop();
 });
 
-$client->on("message", function($message) use ($client, $logger){
-    $logger->notice("ticks update: ".$message->getData());
+$loop->addTimer(10, function () use ($loop) {
+    $loop->stop();
 });
 
-$client->open();
 $loop->run();
