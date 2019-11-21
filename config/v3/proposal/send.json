@@ -45,6 +45,8 @@
             "description": "The proposed contract type",
             "type": "string",
             "enum": [
+                "MULTUP",
+                "MULTDOWN",
                 "UPORDOWN",
                 "EXPIRYRANGE",
                 "ONETOUCH",
@@ -111,6 +113,21 @@
                 "h",
                 "t"
             ]
+        },
+        "limit_order": {
+            "description": "Add an order to close the contract once the order condition is met (only for MULTUP and MULTDOWN). Supported order (take_profit, stop_loss)",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "stop_loss": {
+                    "description": "Contract will be automatically closed when the value of the contract reaches a specific loss.",
+                    "type": "number"
+                },
+                "take_profit": {
+                    "description": "Contract will be automatically closed when the value of the contract reaches a specific profit.",
+                    "type": "number"
+                }
+            }
         },
         "multiplier": {
             "description": "The multiplier for non-binary options. E.g. lookbacks.",

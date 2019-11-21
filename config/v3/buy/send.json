@@ -89,6 +89,21 @@
                         "t"
                     ]
                 },
+                "limit_order": {
+                    "description": "Add an order to close the contract once the order condition is met (currently only for MULTUP and MULTDOWN)",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "stop_loss": {
+                            "description": "Contract will be automatically closed when the value of the contract reaches a specific loss.",
+                            "type": "number"
+                        },
+                        "take_profit": {
+                            "description": "Contract will be automatically closed when the value of the contract reaches a specific profit.",
+                            "type": "number"
+                        }
+                    }
+                },
                 "multiplier": {
                     "description": "The multiplier for non-binary options. E.g. lookbacks.",
                     "type": "number",

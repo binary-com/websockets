@@ -99,6 +99,8 @@ groups:
         title: Buy Contract
       - name: buy_contract_for_multiple_accounts
         title: Buy Contract for Multiple Accounts
+      - name: contract_update
+        title: Contract Update
       - name: copy_start
         title: 'Copy Trading: Start'
       - name: copy_stop
