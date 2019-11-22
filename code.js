@@ -52,8 +52,11 @@ var getAppId = function () {
 
 var langCode = 'en';
 
-require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function(docson) {
+require(["/lib/jquery.js"], function() {
+    require(["/docson/docson.js", "/lib/select2.min.js"], init);
+});
 
+function init(docson) {
     var api,
         $console = $('#playground-console');
 
@@ -575,5 +578,4 @@ require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function
     showDemoForLanguage('javascript');
     updateApiDisplayed();
     $apiToken.val(sessionStorage.getItem('token'));
-
-});
+}
