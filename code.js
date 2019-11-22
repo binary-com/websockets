@@ -326,14 +326,23 @@ require(["/docson/docson.js", "/lib/jquery.js", "/lib/select2.min.js"], function
     function sortRequiredFirst(schema, method_name) {
         if ((schema.required || []).length) {
             var req_obj = {};
+
+            // Method name first, then Required properties
+            if (schema.properties[method_name]) {
+                req_obj[method_name] = schema.properties[method_name];
+            }
+
             schema.required
+                .filter(function(prop) {
+                    return prop !== method_name;
+                })
                 .sort(function(a, b) {
-                    // Method name first, then Required
-                    return a === method_name ? -1 : b === method_name ? +1 : a.localeCompare(b);
+                    return a.localeCompare(b);
                 })
                 .forEach(function(prop) {
                     req_obj[prop] = schema.properties[prop];
                 });
+
             schema.properties = Object.assign(req_obj, schema.properties);
         }
     }
