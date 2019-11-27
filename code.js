@@ -31,16 +31,14 @@ function init(docson) {
 
     docson.templateBaseUrl = '/docson';
 
-    $('#conn-error').hide();
-    $('#connected').hide();
-
     $('[data-schema]').each(function() {
         var $this = $(this);
         loadAndDisplaySchema($this, $this.attr('data-schema'));
     });
 
     addEventListeners();
-    initConnection();
+    endpointNotification();
+    initEndpoint();
     showDemoForLanguage('javascript');
     updateApiDisplayed();
     $('#api-token').val(sessionStorage.getItem('token'));
@@ -50,33 +48,43 @@ function init(docson) {
 // ===== Connection Handling =====
 // -------------------------------
 function initConnection(language) {
-    $('#connected').hide();
-    $('#connecting').show();
     if (api && api.disconnect) {
         api.disconnect();
     }
+
     var LiveApi = window['binary-live-api'].LiveApi;
     api = new LiveApi({
         apiUrl  : 'wss://' + getServerUrl() + '/websockets/v3',
-        language: language || DEFAULT_LANGUAGE,
+        language: getLanguage(),
         appId   : getAppId()
     });
+
     api.socket.onopen = function(e) {
         api.onOpen.apply(api, e);
-        $('#connecting').hide();
-        $('#connected').show();
-        $('#api-url').text(api.apiUrl);
-        endpointNotification();
     };
+
+    api.socket.onclose = function(e) {
+        console.log('connection closed.'); // intended to help developers, not debugging
+    };
+
     api.events.on('*', incomingMessageHandler);
 }
 
-function resetEndpoint() {
-    localStorage.removeItem('config.app_id');
-    localStorage.removeItem('config.server_url');
-    $('#endpoint-input').val(getServerUrl());
-    $('#appid-input').val(getAppId());
-    initConnection();
+function sendRequest(json) {
+    if (!api) {
+        initConnection();
+    }
+
+    var lang = getLanguage();
+    if (api.language !== lang) {
+        api.changeLanguage(lang);
+    }
+
+    if (api.socket.readyState === api.socket.CLOSED || api.socket.readyState === api.socket.CLOSING) {
+        api.connect();
+    }
+
+    api.sendRaw(json);
 }
 
 function incomingMessageHandler(json) {
@@ -120,7 +128,7 @@ function updatePlaygroundWithRequestAndResponse() {
     }
 
     appendToConsoleAndScrollIntoView('<pre class="req">' + jsonToPretty(json) + '</pre>' + '<div class="progress"></div>');
-    api.sendRaw(json);
+    sendRequest(json);
 }
 
 function getJsonPaths(method_name) {
@@ -258,7 +266,7 @@ function customMatcher(params, data) {
 // ----------------------------------
 function handleApplicationsResponse(response) {
     if (response.msg_type === 'authorize' && $('#applications-table').length !== 0) {
-        api.sendRaw({"app_list": 1});
+        sendRequest({ 'app_list': 1 });
     } else if (response.msg_type === 'app_list' && response.app_list.length !== 0) {
         listAllApplications(response);
     } else if (response.msg_type === 'app_register') {
@@ -306,7 +314,7 @@ function applicationsTableRow(application) {
     $('button[id=' + application.app_id + '][class="delete"]').on('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        api.sendRaw({'app_delete':e.target.id});
+        sendRequest({ 'app_delete': e.target.id });
     });
 
     $('button[id=' + application.app_id + '][class="update"]').on('click', function(e) {
@@ -384,7 +392,7 @@ function sendApplicationRequest(app_id) {
         }
     }
     $('#playground-request').val(JSON.stringify(request, null, 2));
-    api.sendRaw(request);
+    sendRequest(request);
 }
 
 function updateApplication(response) {
@@ -401,6 +409,66 @@ function updateApplication(response) {
     });
 
     $('#' + application.app_id + ' .scopes').text(application.scopes.join(', '));
+}
+
+// --------------------------
+// ===== API Playground =====
+// --------------------------
+function initEndpoint() {
+    if (!/\/endpoint/i.test(window.location.href)) return;
+
+    showEndpointParams();
+    setEndpointValues();
+
+    $('#endpoint_btn-set').on('click', function(e) {
+        e.preventDefault();
+        setEndpointValues();
+    });
+
+    $('#endpoint_btn-reset').on('click', setEndpoint);
+}
+
+function addEndpointAPIEventListeners() {
+    api.socket.onopen = function(e) {
+        $('#endpoint_connecting').hide();
+        $('#endpoint_api-url').html(api.socket.url);
+        $('#endpoint_connected').show();
+        api.disconnect(); // because connected only for testing the new endpoint, the connection is not used here
+    };
+
+    api.socket.onerror = function() {
+        $('#endpoint_connecting').hide();
+        $('#endpoint_error').show();
+        api = undefined;
+    };
+}
+
+function showEndpointParams() {
+    $('#endpoint_txt-url').val(getServerUrl());
+    $('#endpoint_txt-appid').val(getAppId());
+}
+
+function setEndpointValues() {
+    setEndpoint($('#endpoint_txt-url').val(), $('#endpoint_txt-appid').val());
+}
+
+function setEndpoint(server_url, app_id) {
+    $('#endpoint_connecting').show();
+    $('#endpoint_connected').hide();
+    $('#endpoint_error').hide();
+
+    if (server_url && app_id) {
+        localStorage.setItem('config.server_url', server_url);
+        localStorage.setItem('config.app_id',     app_id);
+    } else {
+        localStorage.removeItem('config.server_url');
+        localStorage.removeItem('config.app_id');
+    }
+
+    showEndpointParams();
+    endpointNotification();
+    initConnection();
+    addEndpointAPIEventListeners();
 }
 
 // -----------------------------
@@ -427,6 +495,10 @@ function getAppId() {
     return window.localStorage.getItem("config.app_id") || DEFAULT_APP_ID;
 }
 
+function getLanguage() {
+    return $('#api-language-selector').val() || DEFAULT_LANGUAGE;
+}
+
 function escapeHtml(unsafe) {
     return unsafe.toString()
         .replace(/&/g, "&amp;")
@@ -445,7 +517,7 @@ function endpointNotification() {
     if (end_note) {
         var server = getServerUrl();
         if (server && server !== DEFAULT_API_URL) {
-            end_note.innerHTML = 'The server <a href="https://developers.binary.com/endpoint/">endpoint</a> is: ' + server;
+            end_note.innerHTML = 'The server <a href="/endpoint/">endpoint</a> is: ' + server;
             end_note.classList.remove('invisible');
         } else {
             end_note.innerHTML = '';
@@ -503,39 +575,15 @@ function addEventListeners() {
         window.location.hash = method_name;
     });
 
-    $('#api-language-selector').on('change', function() {
-        initConnection($(this).val());
-    });
-
-    $('#endpoint-button').on('click', function() {
-        localStorage.setItem('config.server_url', $('#endpoint-input').val());
-        localStorage.setItem('config.app_id',     $('#appid-input').val());
-        $('#conn-error').hide();
-
-        initConnection();
-
-        api.socket.onerror = function() {
-            $('#conn-error').show();
-            localStorage.removeItem('config.server_url');
-            localStorage.removeItem('config.app_id');
-            initConnection();
-            $('#endpoint-input').val('');
-            $('#appid-input').val('');
-        };
-    });
-
-    $('#use-default-button').on('click', function() {
-        $('#conn-error').hide();
-        resetEndpoint();
-    });
-
     $('#playground-send-btn').on('click', function() {
         updatePlaygroundWithRequestAndResponse();
     });
 
     $('#playground-reset-btn').on('click', function() {
         $('#playground-console').html('');
-        initConnection();
+        if (api) {
+            api.disconnect(); // the connection will be re-opened on demand
+        }
     });
 
     $('#api-token').on('change', function() {
