@@ -435,6 +435,16 @@ code {
     }
 }
 
+#select2-api-call-selector-container {
+    line-height: 32px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow:after {
+    top: 7px;
+    transform-origin: 50% 70%;
+    width: 14px;
+    height: 12px;
+}
+
 #toggle-theme {
     font-size: 12px;
     display: flex;
