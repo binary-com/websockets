@@ -42,6 +42,7 @@ function init(docson) {
     showDemoForLanguage('javascript');
     updateApiDisplayed();
     $('#api-token').val(sessionStorage.getItem('token'));
+    $console.addClass(localStorage.getItem('console.theme'));
 }
 
 // -------------------------------
@@ -542,6 +543,7 @@ function appendToConsoleAndScrollIntoView(html) {
 
     setTimeout(function() {
         $console.append(html);
+        $('#toggle-theme').show();
 
         if (consoleShouldScroll()) {
             scrollConsoleToBottom();
@@ -559,6 +561,11 @@ function appendToConsoleAndScrollIntoView(html) {
 function showDemoForLanguage(lang) {
     $('[data-language]').hide();
     $('[data-language="' + lang + '"]').show();
+}
+
+function toggleTheme() {
+    $console.toggleClass('light');
+    localStorage.setItem('console.theme', $console.hasClass('light') ? 'light' : 'dark');
 }
 
 function addEventListeners() {
@@ -580,7 +587,8 @@ function addEventListeners() {
     });
 
     $('#playground-reset-btn').on('click', function() {
-        $('#playground-console').html('');
+        $console.html('');
+        $('#toggle-theme').hide();
         if (api) {
             api.disconnect(); // the connection will be re-opened on demand
         }
@@ -630,6 +638,8 @@ function addEventListeners() {
         var shouldShow = consoleShouldScroll() && !$console.is(':animated');
         $('#scroll-to-bottom-btn').toggle(shouldShow);
     });
+
+    $('#toggle-theme').on('click', toggleTheme);
 
     $(window).on('hashchange', updateApiDisplayed);
 }

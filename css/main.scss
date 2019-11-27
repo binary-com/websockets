@@ -130,9 +130,31 @@ header {
 #playground-console {
     overflow: auto;
     height: 60vh;
-}
-#playground-console pre:last-child {
-    margin-bottom: 0;
+
+    pre:last-child {
+        margin-bottom: 0;
+    }
+    &.light {
+        pre {
+            background: #f5f5f5;
+            color: green;
+        }
+        pre.req {
+            background: #e5e5e5;
+        }
+        pre.error {
+            background: #f9ebeb;
+        }
+        pre .key {
+            color: darkblue;
+        }
+        pre .string {
+            color: #9c9128;
+        }
+        pre .number {
+            color: #e61818;
+        }
+    }
 }
 #playground-reset-buttons {
     display: flex;
@@ -411,6 +433,12 @@ code {
     .source-button.button {
         z-index: 2;
     }
+}
+
+#toggle-theme {
+    font-size: 12px;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 @import "monokai.css";
