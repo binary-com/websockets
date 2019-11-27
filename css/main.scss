@@ -116,10 +116,11 @@ header {
     font-size: 16px;
 }
 #api-token{
-  margin-right: 0.5rem;
+    margin-right: 0.5rem;
+    height: 36px;
 }
 #playground-request {
-    height: 8rem;
+    height: 10rem;
 }
 #api-call-selector,
 #api-language-selector {
@@ -136,7 +137,8 @@ header {
 #playground-reset-buttons {
     display: flex;
     justify-content: space-between;
-    margin:1rem;
+    align-items: center;
+    margin: 0 0 15px;
 }
 .progress {
     margin: 0 auto;
@@ -265,8 +267,8 @@ select {
     height: 2rem;
 }
 .header-content h1{
-  color: white;
-   margin: 1rem
+    color: white;
+    margin: 1rem
 }
 @media (max-width: 760px) {
     #mobile-page-selector {
@@ -283,7 +285,7 @@ select {
         width: 100%;
     }
     .header-content h1{
-      font-size: 1.3rem;
+        font-size: 1.3rem;
     }
 }
 pre {
@@ -298,16 +300,28 @@ pre {
 #scroll-to-bottom-btn {
     display: none;
 }
-#applications #api-token-fieldset {
-    width: 50%;
+#applications-page {
+    fieldset {
+        padding: 10px 0;
+    }
+    #applications {
+        padding: 10px;
+
+        #api-token-fieldset {
+            width: 50%;
+        }
+    }
 }
-#api-token-fieldset{
-  padding:0 0 1rem 0;
-  margin:0 1rem;
+#api-token-fieldset {
+    padding:0 0 1rem 0;
+
+    a {
+        font-size: 16px;
+    }
 }
 #playground fieldset{
-  padding: 0 0 10px;
-  margin: 0;
+    padding: 0 0 10px;
+    margin: 0;
 }
 #frmNewApplication input[type=text] {
     width: 100%;
@@ -326,24 +340,25 @@ button:focus {
 }
 
 .sidebar-left{
-  flex: 1;
-  margin-right: 2rem;
-  border-radius: 4px;
-  overflow: hidden;
-  padding: 0.0.5em 0 0.5em;
-  ul{
-    margin-top: 0;
-    padding-left: 0;
-  }
+    flex: 1;
+    margin-right: 2rem;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 0 0.5em;
+
+    ul {
+        margin-top: 0;
+        padding-left: 0;
+    }
 }
 
 #applications-table {
-  thead {
-    text-align: left;
-  }
-  th, td {
-    padding: 10px;
-  }
+    thead {
+        text-align: left;
+    }
+    th, td {
+        padding: 10px;
+    }
 }
 
 code {
