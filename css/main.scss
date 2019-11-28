@@ -1,7 +1,7 @@
 ---
 ---
 #content {
-    padding: 4rem 0.5rem 2rem;
+    padding: 2rem 0.5rem 2rem;
     margin: 0 auto;
     width: calc(100% - 1rem);
     max-width: 1000px;
@@ -109,6 +109,10 @@ header {
     margin: 0.35rem;
     max-height: 2.5rem;
 }
+#playground-req-schema,
+#playground-res-schema {
+    margin-bottom: 10px;
+}
 #api-token,
 #demo-language,
 #playground-request {
@@ -122,14 +126,19 @@ header {
 #playground-request {
     height: 10rem;
 }
-#api-call-selector,
-#api-language-selector {
+#api-call-selector {
     width: 100%;
+    font-size: 16px;
+}
+#api-language-selector {
+    width: 150px;
+    height: 38px;
     font-size: 16px;
 }
 #playground-console {
     overflow: auto;
     height: 60vh;
+    margin-top: 2px;
 
     pre:last-child {
         margin-bottom: 0;
@@ -161,6 +170,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 0 0 15px;
+    flex-wrap: wrap;
 }
 .progress {
     margin: 0 auto;
@@ -438,6 +448,9 @@ code {
 #select2-api-call-selector-container {
     line-height: 32px;
 }
+.select2-container {
+    width: 100% !important;
+}
 .select2-container--default .select2-selection--single .select2-selection__arrow:after {
     top: 7px;
     transform-origin: 50% 70%;
@@ -445,10 +458,14 @@ code {
     height: 12px;
 }
 
-#toggle-theme {
+#console-tools {
     font-size: 12px;
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    a {
+        margin-left: 15px;
+    }
 }
 
 @import "monokai.css";
