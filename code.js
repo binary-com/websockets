@@ -227,6 +227,7 @@ function loadAndDisplaySchema($node, schema_url, method_name, required_first) {
 
         setTimeout(function() {
             $node[schema.deprecated ? 'addClass' : 'removeClass']('deprecated');
+            linkToCallName();
         }, 100);
     });
 }
@@ -260,6 +261,15 @@ function customMatcher(params, data) {
     }
 
     return null;
+}
+
+function linkToCallName() {
+    $('.docson .desc code').each(function() {
+        var value = $(this).text();
+        if ($('#api-call-selector option[value="' + value + '"]').length) {
+            $(this).replaceWith($('<a/>', { href: '#' + value, html: $(this)[0].outerHTML }));
+        }
+    });
 }
 
 // ----------------------------------

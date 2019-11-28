@@ -420,6 +420,9 @@ code {
 .docson > .box > .box-body > .signature:nth-child(2) > .signature-header > .property-name {
     color: darkblue;
 }
+.docson a code {
+    text-decoration: underline;
+}
 
 .deprecated, .deprecated ~ #playground-res-schema {
     background: #e8e8e8;
