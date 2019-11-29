@@ -431,6 +431,9 @@ code {
     code.type-example {
         color: #666;
     }
+    ul, ol {
+        list-style: initial;
+    }
 }
 
 .deprecated, .deprecated ~ #playground-res-schema {
