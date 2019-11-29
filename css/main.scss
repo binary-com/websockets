@@ -420,8 +420,17 @@ code {
 .docson > .box > .box-body > .signature:nth-child(2) > .signature-header > .property-name {
     color: darkblue;
 }
-.docson a code {
-    text-decoration: underline;
+.docson {
+    a code {
+        text-decoration: underline;
+    }
+    .type-keyword.examples:before, .type-keyword.default:before {
+        content: '';
+        display: block;
+    }
+    code.type-example {
+        color: #666;
+    }
 }
 
 .deprecated, .deprecated ~ #playground-res-schema {
