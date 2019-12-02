@@ -83,9 +83,30 @@
                     "description": "Time at which contract was purchased, present only for sell transaction",
                     "type": "integer"
                 },
+                "stop_loss": {
+                    "description": "The pip-sized target spot price where the contract will be closed automatically at the loss specified by the user.",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "stop_out": {
+                    "description": "The pip-sized target spot price where the contract will be closed automatically when the value of the contract is close to zero. This is set by the us.",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
                 "symbol": {
                     "description": "Symbol code",
                     "type": "string"
+                },
+                "take_profit": {
+                    "description": "The pip-sized target spot price where the contract will be closed automatically at the profit specified by the user.",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
                 },
                 "transaction_id": {
                     "description": "It is the transaction ID. Every contract (buy or sell) or payment has a unique ID. Example: 10867502908",

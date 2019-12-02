@@ -1,0 +1,7 @@
+{
+    "contract_update": 1,
+    "contract_id": 123,
+    "limit_order": {
+        "take_profit": 1
+    }
+}

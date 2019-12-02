@@ -39,6 +39,78 @@
                     "description": "A stream ID that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579",
                     "type": "string"
                 },
+                "limit_order": {
+                    "description": "Contains limit order information. (Only applicable for contract with limit order).",
+                    "type": "object",
+                    "properties": {
+                        "stop_loss": {
+                            "description": "Contains information where the contract will be closed automatically at the loss specified by the user.",
+                            "type": "object",
+                            "properties": {
+                                "display_name": {
+                                    "description": "Localized display name",
+                                    "type": "string"
+                                },
+                                "order_amount": {
+                                    "description": "Stop loss amount",
+                                    "type": "number"
+                                },
+                                "order_date": {
+                                    "description": "Stop loss order epoch",
+                                    "type": "integer"
+                                },
+                                "value": {
+                                    "description": "Pip-sized barrier value",
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "stop_out": {
+                            "description": "Contains information where the contract will be closed automatically when the value of the contract is close to zero. This is set by the us.",
+                            "type": "object",
+                            "properties": {
+                                "display_name": {
+                                    "description": "Localized display name",
+                                    "type": "string"
+                                },
+                                "order_amount": {
+                                    "description": "Stop out amount",
+                                    "type": "number"
+                                },
+                                "order_date": {
+                                    "description": "Stop out order epoch",
+                                    "type": "integer"
+                                },
+                                "value": {
+                                    "description": "Pip-sized barrier value",
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "take_profit": {
+                            "description": "Contains information where the contract will be closed automatically at the profit specified by the user.",
+                            "type": "object",
+                            "properties": {
+                                "display_name": {
+                                    "description": "Localized display name",
+                                    "type": "string"
+                                },
+                                "order_amount": {
+                                    "description": "Take profit amount",
+                                    "type": "number"
+                                },
+                                "order_date": {
+                                    "description": "Take profit order epoch",
+                                    "type": "integer"
+                                },
+                                "value": {
+                                    "description": "Pip-sized barrier value",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
                 "longcode": {
                     "description": "Example: Win payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time.",
                     "type": "string"

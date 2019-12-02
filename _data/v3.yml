@@ -3,7 +3,6 @@ groups:
     methods:
       - name: active_symbols
         title: Active Symbols
-        scopes: 'read admin'
       - name: api_token
         title: API Token
       - name: app_delete
@@ -30,6 +29,8 @@ groups:
         title: Buy Contract for Multiple Accounts
       - name: cashier
         title: Cashier URL
+      - name: contract_update
+        title: Contract Update
       - name: contracts_for
         title: Contracts For Symbol
       - name: copy_start
