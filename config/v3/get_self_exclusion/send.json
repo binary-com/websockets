@@ -3,7 +3,10 @@
     "title": "Get Self-Exclusion (request)",
     "description": "Binary.com allows users to exclude themselves from the website for certain periods of time, or to set limits on their trading activities. This facility is a regulatory requirement for certain Landing Companies.",
     "type": "object",
-    "auth_required": ["read"],
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
     "additionalProperties": false,
     "required": [
         "get_self_exclusion"

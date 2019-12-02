@@ -3,7 +3,7 @@
     "title": "Landing Company (request)",
     "description": "Binary.com has a number of licensed subsidiaries in various jurisidictions, which are called Landing Companies. This call will return the appropriate Landing Company for clients of a given country. The landing company may differ for gaming contracts (Volatility Indices) and financial contracts (forex, stock indices, commodities).",
     "type": "object",
-    "auth_required": ["none"],
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "landing_company"

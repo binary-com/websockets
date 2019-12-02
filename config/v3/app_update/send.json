@@ -3,7 +3,10 @@
     "title": "Application: Update (request)",
     "description": "Update a new OAuth application",
     "type": "object",
-    "auth_required": ["admin"],
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
     "additionalProperties": false,
     "required": [
         "app_update",
@@ -57,7 +60,13 @@
             "type": "array",
             "items": {
                 "type": "string",
-                "pattern": "^(read|trade|payments|admin)$"
+                "enum": [
+                    "read",
+                    "trade",
+                    "trading_information",
+                    "payments",
+                    "admin"
+                ]
             }
         },
         "verification_uri": {
