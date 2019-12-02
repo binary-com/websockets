@@ -21,7 +21,7 @@
             <div class="box-description desc">{{desc this}}</div>
             {{#if auth_required }} 
             <div class="scopes">Auth Required:
-                {{#each auth_required }} 
+                {{#each auth_scopes }} 
                 <span class="type-enum">{{this}}</span>
                 {{/each}}
 
