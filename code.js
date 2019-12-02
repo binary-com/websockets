@@ -422,9 +422,9 @@ function updateApplication(response) {
     $('#' + application.app_id + ' .scopes').text(application.scopes.join(', '));
 }
 
-// --------------------------
-// ===== API Playground =====
-// --------------------------
+// --------------------
+// ===== Endpoint =====
+// --------------------
 function initEndpoint() {
     if (!/\/endpoint/i.test(window.location.href)) return;
 
