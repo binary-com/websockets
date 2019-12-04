@@ -42,7 +42,7 @@ function init(docson) {
     showDemoForLanguage('javascript');
     updateApiDisplayed();
     $('#api-token').val(sessionStorage.getItem('token'));
-    $console.addClass(localStorage.getItem('console.theme'));
+    $('#playground').addClass(localStorage.getItem('console.theme'));
 }
 
 // -------------------------------
@@ -574,8 +574,9 @@ function showDemoForLanguage(lang) {
 }
 
 function toggleTheme() {
-    $console.toggleClass('light');
-    localStorage.setItem('console.theme', $console.hasClass('light') ? 'light' : 'dark');
+    $playground = $('#playground');
+    $playground.toggleClass('light');
+    localStorage.setItem('console.theme', $playground.hasClass('light') ? 'light' : 'dark');
 }
 
 function addEventListeners() {

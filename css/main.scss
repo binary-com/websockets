@@ -143,11 +143,51 @@ header {
     pre:last-child {
         margin-bottom: 0;
     }
+}
+#playground-reset-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 15px;
+    flex-wrap: wrap;
+}
+#playground {
+    .source {
+        margin-top: 10px;
+        padding-left: 10px;
+    }
     &.light {
         pre {
             background: #f5f5f5;
             color: green;
+
+            * {
+                font-family: 'Source Code Pro', monospace;
+                font-weight: normal;
+            }
         }
+        // schema source
+        .source {
+            margin-top: 10px;
+            padding-left: 10px;
+
+            pre .json-keyword {
+                color: darkblue !important;
+            }
+            pre .json-object-key {
+                color: blue !important;
+            }
+            pre .json-string {
+                color: #9c9128 !important;
+            }
+            pre .json-number {
+                color: #e61818;
+            }
+            pre .json-punctuation {
+                color: green;
+            }
+        }
+        // console
         pre.req {
             background: #e5e5e5;
         }
@@ -164,13 +204,6 @@ header {
             color: #e61818;
         }
     }
-}
-#playground-reset-buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 0 15px;
-    flex-wrap: wrap;
 }
 .progress {
     margin: 0 auto;
