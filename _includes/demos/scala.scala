@@ -11,7 +11,4 @@ object BinaryWS extends App {
   val ws = cli.open()
 
   ws ! "{\"ticks\":\"R_100\"}"
-
-  Thread.sleep(10000)
-  cli.shutdownSync()
 }

@@ -24,6 +24,9 @@ public class WSClient  {
         WebSocketContainer container = ContainerProvider.getWebSocketContainer();
         URI apiUri = URI.create("wss://ws.binaryws.com/websockets/v3?app_id=1089");
         Session session = container.connectToServer(WSClient.class, apiUri);
-        Thread.sleep(10000);
+        while (session.isOpen()) {
+            // receive ticks
+        }
     }
 }
+

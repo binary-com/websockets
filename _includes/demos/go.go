@@ -3,23 +3,18 @@ package main
 import (
 	"fmt"
 	"log"
-	"time"
 
 	"golang.org/x/net/websocket"
 )
 
-func receive(ticks chan string, ws *websocket.Conn, done <-chan struct{}) {
+func receive(ticks chan string, ws *websocket.Conn) {
 	defer close(ticks)
 	var msg string
 	for {
 		if err := websocket.Message.Receive(ws, &msg); err != nil {
 			log.Fatalln("recv:", err)
 		}
-		select {
-		case <-done:
-			return
-		case ticks <- msg:
-		}
+		ticks <- msg
 	}
 }
 
@@ -33,25 +28,17 @@ func main() {
 	}
 	defer ws.Close()
 
-	var (
-		done  = make(chan struct{})
-		ticks = make(chan string)
-	)
-	go receive(ticks, ws, done)
+	var ticks = make(chan string)
+	go receive(ticks, ws)
 
 	if err = websocket.Message.Send(ws, `{"ticks": "R_100"}`); err != nil {
 		log.Fatalln("send:", err)
 	}
 
-	timeout := time.After(10 * time.Second)
-
 	for {
 		select {
 		case tick := <-ticks:
 			fmt.Println("ticks update:", tick)
-		case <-timeout:
-			done <- struct{}{}
-			return
 		}
 	}
 }

@@ -7,7 +7,7 @@ defmodule BinaryWS do
       [{:secure, true}, {:path, "/websockets/v3?app_id=1089"}]
     socket |> Socket.Web.send!({:text, omsg})
     spawn_link(fn -> loop(socket) end)
-    :timer.sleep(10000)
+    :timer.sleep(:infinity)
     socket |> Socket.Web.close
   end
 
