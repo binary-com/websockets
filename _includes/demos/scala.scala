@@ -1,11 +1,14 @@
-import org.jfarcand.wcs._   // "org.jfarcand" % "wcs" % "1.4"
+package com.binary.ws
+
+import com.github.andyglow.websocket._
 
 object BinaryWS extends App {
-  WebSocket().open("wss://ws.binaryws.com/websockets/v3?app_id=1089")
-      .listener(new TextListener() {
-          override def onMessage(message: String) {
-              println("ticks update: "+message)
-          }
-      })
-      .send("{\"ticks\":\"R_100\"}")
+  val uri = "wss://ws.binaryws.com/websockets/v3?app_id=1089"
+  val cli = WebsocketClient[String](uri) {
+    case str =>
+      println("ticks update: " + str)
+  }
+  val ws = cli.open()
+
+  ws ! "{\"ticks\":\"R_100\"}"
 }
