@@ -44,9 +44,15 @@
             {{/each}}
         {{/if}}
         {{#exists default}}
-            <span class="type-keyword">default</span>
-            <span class="type-default">{{__default}}</span>
+            <span class="type-keyword default">default:</span>
+            <code class="type-default">{{__default}}</code>
         {{/exists}}
+        {{#if examples}}
+            <span class="type-keyword examples">Example:</span>
+            {{#each examples}}
+                <code class="type-example">{{#primitive this}}{{__type}}{{/primitive}}{{#equals type "string"}}"{{/equals}}{{__type}}{{this}}{{#equals type "string"}}"{{/equals}}</code>
+            {{/each}}
+        {{/if}}
     {{/each}}
 {{/if}}
 {{#unless keyword}}
@@ -79,8 +85,14 @@
             {{/each}}
         {{/if}}
         {{#exists default}}
-            <span class="type-keyword">default</span>
-            <span class="type-default">{{__default}}</span>
+            <span class="type-keyword default">default:</span>
+            <code class="type-default">{{__default}}</code>
         {{/exists}}
+        {{#if examples}}
+            <span class="type-keyword examples">Example:</span>
+            {{#each examples}}
+                <code class="type-example">{{this}}</code>
+            {{/each}}
+        {{/if}}
     {{/each}}
 {{/unless}}

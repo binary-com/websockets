@@ -1,7 +1,7 @@
 ---
 ---
 #content {
-    padding: 4rem 0.5rem 2rem;
+    padding: 2rem 0.5rem 2rem;
     margin: 0 auto;
     width: calc(100% - 1rem);
     max-width: 1000px;
@@ -109,6 +109,10 @@ header {
     margin: 0.35rem;
     max-height: 2.5rem;
 }
+#playground-req-schema,
+#playground-res-schema {
+    margin-bottom: 10px;
+}
 #api-token,
 #demo-language,
 #playground-request {
@@ -116,30 +120,90 @@ header {
     font-size: 16px;
 }
 #api-token{
-  margin-right: 0.5rem;
+    margin-right: 0.5rem;
+    height: 36px;
 }
 #playground-request {
-    height: 8rem;
+    height: 10rem;
 }
-#api-call-selector,
-#api-language-selector {
+#api-call-selector {
     width: 100%;
     font-size: 16px;
 }
-#open-in-playground {
-    float: right;
+#api-language-selector {
+    width: 150px;
+    height: 38px;
+    font-size: 16px;
 }
 #playground-console {
     overflow: auto;
     height: 60vh;
-}
-#playground-console pre:last-child {
-    margin-bottom: 0;
+    margin-top: 2px;
+
+    pre:last-child {
+        margin-bottom: 0;
+    }
 }
 #playground-reset-buttons {
     display: flex;
     justify-content: space-between;
-    margin:1rem;
+    align-items: center;
+    margin: 0 0 15px;
+    flex-wrap: wrap;
+}
+#playground {
+    .source {
+        margin-top: 10px;
+        padding-left: 10px;
+    }
+    &.light {
+        pre {
+            background: #f5f5f5;
+            color: green;
+
+            * {
+                font-family: 'Source Code Pro', monospace;
+                font-weight: normal;
+            }
+        }
+        // schema source
+        .source {
+            margin-top: 10px;
+            padding-left: 10px;
+
+            pre .json-keyword {
+                color: darkblue !important;
+            }
+            pre .json-object-key {
+                color: blue !important;
+            }
+            pre .json-string {
+                color: #9c9128 !important;
+            }
+            pre .json-number {
+                color: #e61818;
+            }
+            pre .json-punctuation {
+                color: green;
+            }
+        }
+        // console
+        pre.req {
+            background: #e5e5e5;
+        }
+        pre.error {
+            background: #f9ebeb;
+        }
+        pre .key {
+            color: darkblue;
+        }
+        pre .string {
+            color: #9c9128;
+        }
+        pre .number {
+            color: #e61818;
+        }
+    }
 }
 .progress {
     margin: 0 auto;
@@ -268,8 +332,8 @@ select {
     height: 2rem;
 }
 .header-content h1{
-  color: white;
-   margin: 1rem
+    color: white;
+    margin: 1rem
 }
 @media (max-width: 760px) {
     #mobile-page-selector {
@@ -286,7 +350,7 @@ select {
         width: 100%;
     }
     .header-content h1{
-      font-size: 1.3rem;
+        font-size: 1.3rem;
     }
 }
 pre {
@@ -301,16 +365,28 @@ pre {
 #scroll-to-bottom-btn {
     display: none;
 }
-#applications #api-token-fieldset {
-    width: 50%;
+#applications-page {
+    fieldset {
+        padding: 10px 0;
+    }
+    #applications {
+        padding: 10px;
+
+        #api-token-fieldset {
+            width: 50%;
+        }
+    }
 }
-#api-token-fieldset{
-  padding:0 0 1rem 0;
-  margin:0 1rem;
+#api-token-fieldset {
+    padding:0 0 1rem 0;
+
+    a {
+        font-size: 16px;
+    }
 }
 #playground fieldset{
-  padding: 0 0 10px;
-  margin: 0;
+    padding: 0 0 10px;
+    margin: 0;
 }
 #frmNewApplication input[type=text] {
     width: 100%;
@@ -329,24 +405,25 @@ button:focus {
 }
 
 .sidebar-left{
-  flex: 1;
-  margin-right: 2rem;
-  border-radius: 4px;
-  overflow: hidden;
-  padding: 0.0.5em 0 0.5em;
-  ul{
-    margin-top: 0;
-    padding-left: 0;
-  }
+    flex: 1;
+    margin-right: 2rem;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 0 0.5em;
+
+    ul {
+        margin-top: 0;
+        padding-left: 0;
+    }
 }
 
 #applications-table {
-  thead {
-    text-align: left;
-  }
-  th, td {
-    padding: 10px;
-  }
+    thead {
+        text-align: left;
+    }
+    th, td {
+        padding: 10px;
+    }
 }
 
 code {
@@ -376,6 +453,21 @@ code {
 .docson > .box > .box-body > .signature:nth-child(2) > .signature-header > .property-name {
     color: darkblue;
 }
+.docson {
+    a code {
+        text-decoration: underline;
+    }
+    .type-keyword.examples:before, .type-keyword.default:before {
+        content: '';
+        display: block;
+    }
+    code.type-example {
+        color: #666;
+    }
+    ul, ol {
+        list-style: initial;
+    }
+}
 
 .deprecated, .deprecated ~ #playground-res-schema {
     background: #e8e8e8;
@@ -398,6 +490,29 @@ code {
     }
     .source-button.button {
         z-index: 2;
+    }
+}
+
+#select2-api-call-selector-container {
+    line-height: 32px;
+}
+.select2-container {
+    width: 100% !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow:after {
+    top: 7px;
+    transform-origin: 50% 70%;
+    width: 14px;
+    height: 12px;
+}
+
+#console-tools {
+    font-size: 12px;
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+        margin-left: 15px;
     }
 }
 
