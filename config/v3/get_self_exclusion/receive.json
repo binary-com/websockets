@@ -62,7 +62,7 @@
                     "type": "integer"
                 },
                 "timeout_until": {
-                    "description": "Exclude me from the website (for up to 6 weeks). The time is in epoch format. Note: unlike exclude_until, this self-exclusion will be lifted automatically at the expiry of the timeout period.",
+                    "description": "Exclude me from the website (for up to 6 weeks). The time is in epoch format. Note: unlike `exclude_until`, this self-exclusion will be lifted automatically at the expiry of the timeout period.",
                     "type": "integer"
                 }
             }
@@ -79,7 +79,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

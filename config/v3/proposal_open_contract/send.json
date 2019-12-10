@@ -9,25 +9,25 @@
     ],
     "properties": {
         "proposal_open_contract": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
             ]
         },
         "contract_id": {
-            "description": "Contract ID received from a Portfolio request. If not set, you will receive stream of all open contracts.",
+            "description": "[Optional] Contract ID received from a Portfolio request. If not set, you will receive stream of all open contracts.",
             "type": "integer"
         },
         "subscribe": {
-            "description": "1 - to stream",
+            "description": "[Optional] `1` to stream.",
             "type": "integer",
             "enum": [
                 1
             ]
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

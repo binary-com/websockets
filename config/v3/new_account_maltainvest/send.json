@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "New Real-Money Account: Binary Investment (Europe) Ltd. (request)",
-    "description": "This call opens a new real-money account with the 'maltainvest' Landing Company. This call can be made from a virtual-money account or real-money account at Binary (Europe) Ltd. If it is the latter, client information fields in this call will be ignored and data from your existing real-money account will be used.",
+    "description": "This call opens a new real-money account with the `maltainvest` Landing Company. This call can be made from a virtual-money account or real-money account at Binary (Europe) Ltd. If it is the latter, client information fields in this call will be ignored and data from your existing real-money account will be used.",
     "type": "object",
     "additionalProperties": false,
     "required": [
@@ -25,18 +25,22 @@
     ],
     "properties": {
         "new_account_maltainvest": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
             ]
         },
         "accept_risk": {
-            "description": "Show whether client has accepted risk disclaimer, boolean value 1 or 0",
-            "type": "integer"
+            "description": "Show whether client has accepted risk disclaimer.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
         },
         "account_opening_reason": {
-            "description": "Purpose and reason for requesting the account opening",
+            "description": "[Optional] Purpose and reason for requesting the account opening.",
             "type": "string",
             "enum": [
                 "Speculative",
@@ -45,7 +49,7 @@
             ]
         },
         "account_turnover": {
-            "description": "The anticipated account turnover",
+            "description": "[Optional] The anticipated account turnover.",
             "type": "string",
             "enum": [
                 "Less than $25,000",
@@ -66,27 +70,27 @@
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{1,70}$"
         },
         "address_line_2": {
-            "description": "Optional field, within 70 characters.",
+            "description": "[Optional] Within 70 characters.",
             "type": "string",
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{0,70}$"
         },
         "address_postcode": {
-            "description": "Optional field, within 20 characters and may not contain '+'.",
+            "description": "[Optional] Within 20 characters and may not contain '+'.",
             "type": "string",
             "pattern": "^[\\w\\s-]{0,20}$"
         },
         "address_state": {
-            "description": "Optional field, possible value receive from states_list call.",
+            "description": "[Optional] Possible value receive from `states_list` call.",
             "type": "string",
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,35}$"
         },
         "affiliate_token": {
-            "description": "Affiliate token, within 32 characters.",
+            "description": "[Optional] Affiliate token, within 32 characters.",
             "type": "string",
             "pattern": "^[\\w-]{0,32}$"
         },
         "binary_options_trading_experience": {
-            "description": "Binary options trading experience",
+            "description": "[Optional] Binary options trading experience.",
             "type": "string",
             "enum": [
                 "0-1 year",
@@ -95,7 +99,7 @@
             ]
         },
         "binary_options_trading_frequency": {
-            "description": "Binary options trading frequency",
+            "description": "[Optional] Binary options trading frequency.",
             "type": "string",
             "enum": [
                 "0-5 transactions in the past 12 months",
@@ -105,7 +109,7 @@
             ]
         },
         "cfd_trading_experience": {
-            "description": "CFDs trading experience",
+            "description": "[Optional] CFDs trading experience.",
             "type": "string",
             "enum": [
                 "0-1 year",
@@ -114,7 +118,7 @@
             ]
         },
         "cfd_trading_frequency": {
-            "description": "CFDs trading frequency",
+            "description": "[Optional] CFDs trading frequency.",
             "type": "string",
             "enum": [
                 "0-5 transactions in the past 12 months",
@@ -124,14 +128,18 @@
             ]
         },
         "citizen": {
-            "description": "Country of legal citizenship, 2-letter country code.",
+            "description": "[Optional] Country of legal citizenship, 2-letter country code. Possible value receive from `residence_list` call.",
             "type": "string",
             "pattern": "^[a-z]{2}$"
         },
         "client_type": {
-            "description": "Optional field, indicates whether this is for a client requesting an account with professional status. Defaults to retail.",
+            "description": "[Optional] Indicates whether this is for a client requesting an account with professional status.",
             "type": "string",
-            "pattern": "^retail|professional$"
+            "default": "retail",
+            "enum": [
+                "professional",
+                "retail"
+            ]
         },
         "date_of_birth": {
             "description": "Date of birth format: yyyy-mm-dd.",
@@ -148,7 +156,7 @@
             ]
         },
         "employment_industry": {
-            "description": "Industry of Employment",
+            "description": "Industry of Employment.",
             "type": "string",
             "enum": [
                 "Construction",
@@ -168,7 +176,7 @@
             ]
         },
         "employment_status": {
-            "description": "Employment Status",
+            "description": "[Optional] Employment Status.",
             "type": "string",
             "enum": [
                 "Employed",
@@ -179,7 +187,7 @@
             ]
         },
         "estimated_worth": {
-            "description": "Estimated Net Worth",
+            "description": "Estimated Net Worth.",
             "type": "string",
             "enum": [
                 "Less than $100,000",
@@ -195,7 +203,7 @@
             "pattern": "^[\\p{L}\\s'.-]{2,50}$"
         },
         "forex_trading_experience": {
-            "description": "Forex trading experience",
+            "description": "[Optional] Forex trading experience.",
             "type": "string",
             "enum": [
                 "0-1 year",
@@ -204,7 +212,7 @@
             ]
         },
         "forex_trading_frequency": {
-            "description": "Forex trading frequency",
+            "description": "[Optional] Forex trading frequency.",
             "type": "string",
             "enum": [
                 "0-5 transactions in the past 12 months",
@@ -214,7 +222,7 @@
             ]
         },
         "income_source": {
-            "description": "Income Source",
+            "description": "Income Source.",
             "type": "string",
             "enum": [
                 "Salaried Employee",
@@ -231,7 +239,7 @@
             "pattern": "^[\\p{L}\\s'.-]{2,50}$"
         },
         "net_income": {
-            "description": "Net Annual Income",
+            "description": "Net Annual Income.",
             "type": "string",
             "enum": [
                 "Less than $25,000",
@@ -242,7 +250,7 @@
             ]
         },
         "occupation": {
-            "description": "Occupation",
+            "description": "Occupation.",
             "type": "string",
             "enum": [
                 "Chief Executives, Senior Officials and Legislators",
@@ -262,7 +270,7 @@
             ]
         },
         "other_instruments_trading_experience": {
-            "description": "Trading experience in other financial instruments",
+            "description": "[Optional] Trading experience in other financial instruments.",
             "type": "string",
             "enum": [
                 "0-1 year",
@@ -271,7 +279,7 @@
             ]
         },
         "other_instruments_trading_frequency": {
-            "description": "Trading frequency in other financial instruments",
+            "description": "[Optional] Trading frequency in other financial instruments.",
             "type": "string",
             "enum": [
                 "0-5 transactions in the past 12 months",
@@ -281,17 +289,17 @@
             ]
         },
         "phone": {
-            "description": "Within 8-35 digits, allowing '+' in front, numbers, hyphens or space.",
+            "description": "[Optional] Within 8-35 digits, allowing '+' in front, numbers, hyphens or space.",
             "type": "string",
             "pattern": "^\\+?((-|\\s)*[0-9]){8,35}$"
         },
         "place_of_birth": {
-            "description": "Place of birth, 2-letter country code.",
+            "description": "[Optional] Place of birth, 2-letter country code.",
             "type": "string",
             "pattern": "^[a-z]{2}$"
         },
         "residence": {
-            "description": "2-letter country code, possible value receive from residence_list call.",
+            "description": "2-letter country code, possible value receive from `residence_list` call.",
             "type": "string",
             "pattern": "^[a-z]{2}$"
         },
@@ -306,7 +314,7 @@
             ]
         },
         "secret_answer": {
-            "description": "Answer to secret question, within 4-50 characters.",
+            "description": "[Optional] Answer to secret question, within 4-50 characters.",
             "type": "string",
             "pattern": "^[\\w\\-\\,\\.\\' ]+",
             "maxLength": 50,
@@ -314,7 +322,7 @@
             "sensitive": 1
         },
         "secret_question": {
-            "description": "Accept any value in enum list.",
+            "description": "[Optional] Accept any value in enum list.",
             "type": "string",
             "enum": [
                 "Mother's maiden name",
@@ -328,7 +336,7 @@
             ]
         },
         "source_of_wealth": {
-            "description": "Source of wealth",
+            "description": "[Optional] Source of wealth.",
             "type": "string",
             "enum": [
                 "Accumulation of Income/Savings",
@@ -341,17 +349,17 @@
             ]
         },
         "tax_identification_number": {
-            "description": "Tax identification number. Only applicable for real money account. Required for maltainvest landing company.",
+            "description": "Tax identification number. Only applicable for real money account. Required for `maltainvest` landing company.",
             "type": "string",
             "pattern": "^[\\w-]{0,20}$"
         },
         "tax_residence": {
-            "description": "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for maltainvest landing company.",
+            "description": "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for `maltainvest` landing company.",
             "type": "string",
             "pattern": "^[a-z]{0,2}(?:,[a-z]{2})*$"
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

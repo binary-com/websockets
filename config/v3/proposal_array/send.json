@@ -14,14 +14,14 @@
     ],
     "properties": {
         "proposal_array": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
             ]
         },
         "amount": {
-            "description": "Proposed contract payout or stake value.",
+            "description": "Proposed contract `payout` or `stake` value.",
             "type": "number",
             "minimum": 0
         },
@@ -34,12 +34,12 @@
                 "additionalProperties": false,
                 "properties": {
                     "barrier": {
-                        "description": "Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers. .",
+                        "description": "Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Synthetic Indices as they support both relative and absolute barriers. .",
                         "type": "string",
                         "pattern": "^(?=.{1,20}$)[+-]?[0-9]+\\.?[0-9]*$"
                     },
                     "barrier2": {
-                        "description": "Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers.",
+                        "description": "Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Synthetic Indices as they support both relative and absolute barriers.",
                         "type": "string",
                         "pattern": "^(?=.{1,20}$)[+-]?[0-9]+\\.?[0-9]*$"
                     }
@@ -47,7 +47,7 @@
             }
         },
         "basis": {
-            "description": "Indicate whether amount is 'payout' or 'stake'.",
+            "description": "Indicate type of the `amount`.",
             "type": "string",
             "enum": [
                 "payout",
@@ -100,7 +100,7 @@
             "pattern": "^[A-Z]{3}$"
         },
         "date_expiry": {
-            "description": "Epoch value of the expiry time of the contract. You must either specify date_expiry or duration.",
+            "description": "Epoch value of the expiry time of the contract. You must either specify `date_expiry` or duration.",
             "type": "integer",
             "maximum": 9999999999,
             "minimum": 0
@@ -118,7 +118,7 @@
             "minimum": 0
         },
         "duration_unit": {
-            "description": "[Optional] Duration unit - s(seconds), m(minutes), h(hours), d(days), t(ticks).",
+            "description": "[Optional] Duration unit - `s`: seconds, `m`: minutes, `h`: hours, `d`: days, `t`: ticks.",
             "type": "string",
             "default": "s",
             "enum": [
@@ -143,7 +143,7 @@
             ]
         },
         "subscribe": {
-            "description": "[Optional] 1 - to initiate a realtime stream of prices. Note that tick trades (without a user-defined barrier), digit trades and less than 24 hours at-the-money contracts for the following underlying symbols are not streamed: R_10, R_25, R_50, R_75, R_100, RDBULL, RDBEAR (this is because their price is constant).",
+            "description": "[Optional] 1 - to initiate a realtime stream of prices. Note that tick trades (without a user-defined barrier), digit trades and less than 24 hours at-the-money contracts for the following underlying symbols are not streamed: `R_10`, `R_25`, `R_50`, `R_75`, `R_100`, `RDBULL`, `RDBEAR` (this is because their price is constant).",
             "type": "integer",
             "enum": [
                 1
@@ -159,7 +159,7 @@
             "type": "integer"
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

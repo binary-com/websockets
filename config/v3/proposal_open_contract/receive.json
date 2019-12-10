@@ -146,145 +146,233 @@
                     }
                 },
                 "barrier": {
-                    "description": "Barrier of the contract (if any). Example: 42.123",
+                    "description": "Barrier of the contract (if any).",
                     "type": [
                         "null",
                         "string"
+                    ],
+                    "examples": [
+                        "42.123"
                     ]
                 },
                 "barrier_count": {
-                    "description": "The number of barriers a contract has. Example: 2",
-                    "type": "number"
+                    "description": "The number of barriers a contract has.",
+                    "type": "number",
+                    "examples": [
+                        0,
+                        1,
+                        2
+                    ]
                 },
                 "bid_price": {
-                    "description": "Price at which the contract could be sold back to Binary.com. Example: 5.14",
-                    "type": "number"
+                    "description": "Price at which the contract could be sold back to the company.",
+                    "type": "number",
+                    "examples": [
+                        5.14
+                    ]
                 },
                 "buy_price": {
                     "description": "Price at which contract was purchased",
                     "type": "number"
                 },
                 "contract_id": {
-                    "description": "Binary.com internal contract identifier",
+                    "description": "The internal contract identifier",
                     "type": "integer"
                 },
                 "contract_type": {
-                    "description": "Contract type, for example CALL, PUT",
-                    "type": "string"
+                    "description": "Contract type.",
+                    "type": "string",
+                    "examples": [
+                        "CALL",
+                        "PUT"
+                    ]
                 },
                 "currency": {
-                    "description": "Example: USD",
-                    "type": "string"
+                    "description": "The currency code of the contract.",
+                    "type": "string",
+                    "examples": [
+                        "USD"
+                    ]
                 },
                 "current_spot": {
-                    "description": "Spot value if we have license to stream this symbol. Example: 9874.52",
-                    "type": "number"
+                    "description": "Spot value if we have license to stream this symbol.",
+                    "type": "number",
+                    "examples": [
+                        9874.52
+                    ]
                 },
                 "current_spot_display_value": {
-                    "description": "Spot value with the correct precision if we have license to stream this symbol. Example: 9874.520",
-                    "type": "string"
+                    "description": "Spot value with the correct precision if we have license to stream this symbol.",
+                    "type": "string",
+                    "examples": [
+                        "9874.520"
+                    ]
                 },
                 "current_spot_time": {
-                    "description": "Example: 1439999052",
-                    "type": "integer"
+                    "description": "The corresponding time of the current spot.",
+                    "type": "integer",
+                    "examples": [
+                        1439999052
+                    ]
                 },
                 "date_expiry": {
-                    "description": "Expiry date (epoch) of the Contract. Example: 1446629000. Please note that it is not applicable for tick trade contracts.",
-                    "type": "integer"
+                    "description": "Expiry date (epoch) of the Contract. Please note that it is not applicable for tick trade contracts.",
+                    "type": "integer",
+                    "examples": [
+                        1446629000
+                    ]
                 },
                 "date_settlement": {
-                    "description": "Settlement date (epoch) of the contract. Example: 1446629000",
-                    "type": "integer"
+                    "description": "Settlement date (epoch) of the contract.",
+                    "type": "integer",
+                    "examples": [
+                        1446629000
+                    ]
                 },
                 "date_start": {
-                    "description": "Start date (epoch) of the contract. Example: 1446629000",
-                    "type": "integer"
+                    "description": "Start date (epoch) of the contract.",
+                    "type": "integer",
+                    "examples": [
+                        1446629000
+                    ]
                 },
                 "display_name": {
                     "description": "Display name of underlying",
                     "type": "string"
                 },
                 "display_value": {
-                    "description": "The 'bid_price' with the correct precision",
+                    "description": "The `bid_price` with the correct precision",
                     "type": "string"
                 },
                 "entry_spot": {
-                    "description": "Same as 'entry_tick'. For backwards compatibility.",
+                    "description": "Same as `entry_tick`. For backwards compatibility.",
                     "type": [
                         "null",
                         "number"
                     ]
                 },
                 "entry_spot_display_value": {
-                    "description": "Same as 'entry_tick_display_value'. For backwards compatibility.",
+                    "description": "Same as `entry_tick_display_value`. For backwards compatibility.",
                     "type": [
                         "null",
                         "string"
                     ]
                 },
                 "entry_tick": {
-                    "description": "This is the entry spot of the contract. For contracts starting immediately it is the next tick after the start time. For forward-starting contracts it is the spot at the start time. Example: 86.630.",
-                    "type": "number"
+                    "description": "This is the entry spot of the contract. For contracts starting immediately it is the next tick after the start time. For forward-starting contracts it is the spot at the start time.",
+                    "type": "number",
+                    "examples": [
+                        86.63
+                    ]
                 },
                 "entry_tick_display_value": {
-                    "description": "This is the entry spot with the correct precision of the contract. For contracts starting immediately it is the next tick after the start time. For forward-starting contracts it is the spot at the start time. Example: 86.630.",
-                    "type": "string"
+                    "description": "This is the entry spot with the correct precision of the contract. For contracts starting immediately it is the next tick after the start time. For forward-starting contracts it is the spot at the start time.",
+                    "type": "string",
+                    "examples": [
+                        "86.630"
+                    ]
                 },
                 "entry_tick_time": {
-                    "description": "This is the epoch time of the entry tick. Example: 1446629000",
-                    "type": "integer"
+                    "description": "This is the epoch time of the entry tick.",
+                    "type": "integer",
+                    "examples": [
+                        1446629000
+                    ]
                 },
                 "exit_tick": {
-                    "description": "Exit tick can refer to the latest tick at the end time, the tick that fulfils the contract's winning or losing condition for path dependent contracts (Touch/No Touch and Stays Between/Goes Outside) or the tick at which the contract is sold before expiry. Example: 86.81",
-                    "type": "number"
+                    "description": "Exit tick can refer to the latest tick at the end time, the tick that fulfils the contract's winning or losing condition for path dependent contracts (Touch/No Touch and Stays Between/Goes Outside) or the tick at which the contract is sold before expiry.",
+                    "type": "number",
+                    "examples": [
+                        86.81
+                    ]
                 },
                 "exit_tick_display_value": {
-                    "description": "Exit tick can refer to the latest tick at the end time, the tick that fulfils the contract's winning or losing condition for path dependent contracts (Touch/No Touch and Stays Between/Goes Outside) or the tick at which the contract is sold before expiry. Example: 86.810",
-                    "type": "string"
+                    "description": "Exit tick can refer to the latest tick at the end time, the tick that fulfils the contract's winning or losing condition for path dependent contracts (Touch/No Touch and Stays Between/Goes Outside) or the tick at which the contract is sold before expiry.",
+                    "type": "string",
+                    "examples": [
+                        "86.810"
+                    ]
                 },
                 "exit_tick_time": {
-                    "description": "This is the epoch time of the exit tick. Note that since certain instruments don't tick every second, the exit tick time may be a few seconds before the end time. Example: 1446629000",
-                    "type": "integer"
+                    "description": "This is the epoch time of the exit tick. Note that since certain instruments don't tick every second, the exit tick time may be a few seconds before the end time.",
+                    "type": "integer",
+                    "examples": [
+                        1446629000
+                    ]
                 },
                 "high_barrier": {
-                    "description": "High barrier of the contract (if any). Example: 42.123",
+                    "description": "High barrier of the contract (if any).",
                     "type": "string",
-                    "pattern": "^[+-]?[0-9]+\\.?[0-9]*$"
+                    "pattern": "^[+-]?[0-9]+\\.?[0-9]*$",
+                    "examples": [
+                        "42.123"
+                    ]
                 },
                 "id": {
-                    "description": "A stream ID that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579",
-                    "type": "string"
+                    "description": "A stream ID that can be used to cancel this stream using the Forget request.",
+                    "type": "string",
+                    "examples": [
+                        "1d6651e7d599bce6c54bd71a8283e579"
+                    ]
                 },
                 "is_expired": {
-                    "description": "Whether the contract is expired or not. Boolean value 1 or 0",
-                    "type": "integer"
+                    "description": "Whether the contract is expired or not.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
                 },
                 "is_forward_starting": {
-                    "description": "Whether the contract is forward-starting or not. Boolean value 1 or 0",
-                    "type": "integer"
+                    "description": "Whether the contract is forward-starting or not.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
                 },
                 "is_intraday": {
-                    "description": "Whether the contract is an intraday contract. Boolean value 1 or 0",
-                    "type": "integer"
+                    "description": "Whether the contract is an intraday contract.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
                 },
                 "is_path_dependent": {
-                    "description": "Whether the contract expiry price will depend on the path of the market (e.g. One Touch contract). Boolean value 1 or 0",
-                    "type": "integer"
+                    "description": "Whether the contract expiry price will depend on the path of the market (e.g. One Touch contract).",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
                 },
                 "is_settleable": {
-                    "description": "Whether the contract is settleable or not. Boolean value 1 or 0",
-                    "type": "integer"
+                    "description": "Whether the contract is settleable or not.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
                 },
                 "is_sold": {
-                    "description": "Whether the contract is sold or not. Boolean value 1 or 0",
-                    "type": "integer"
+                    "description": "Whether the contract is sold or not.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
                 },
                 "is_valid_to_sell": {
-                    "description": "Whether the contract can be sold back to Binary.com. Boolean value 1 or 0",
-                    "type": "integer"
+                    "description": "Whether the contract can be sold back to the company.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
                 },
                 "limit_order": {
-                    "description": "Orders are applicable to MULTUP and MULTDOWN only.",
+                    "description": "Orders are applicable to `MULTUP` and `MULTDOWN` only.",
                     "type": "object",
                     "properties": {
                         "stop_loss": {
@@ -372,17 +460,23 @@
                     "type": "string"
                 },
                 "low_barrier": {
-                    "description": "Low barrier of the contract (if any). Example: 40.132",
+                    "description": "Low barrier of the contract (if any).",
                     "type": "string",
-                    "pattern": "^[+-]?[0-9]+\\.?[0-9]*$"
+                    "pattern": "^[+-]?[0-9]+\\.?[0-9]*$",
+                    "examples": [
+                        "40.132"
+                    ]
                 },
                 "multiplier": {
                     "description": "[Only for lookback trades] Multiplier applies when calculating the final payoff for each type of lookback. e.g. (Exit spot - Lowest historical price) * multiplier = Payout",
                     "type": "number"
                 },
                 "payout": {
-                    "description": "Payout value of the contract. Example: 10.5",
-                    "type": "number"
+                    "description": "Payout value of the contract.",
+                    "type": "number",
+                    "examples": [
+                        10.5
+                    ]
                 },
                 "profit": {
                     "description": "The latest bid price minus buy price.",
@@ -393,28 +487,40 @@
                     "type": "number"
                 },
                 "purchase_time": {
-                    "description": "Epoch of purchase time, will be same as 'date_start' for all contracts except forward starting contracts.",
+                    "description": "Epoch of purchase time, will be same as `date_start` for all contracts except forward starting contracts.",
                     "type": "integer"
                 },
                 "reset_time": {
-                    "description": "[Only for reset trades] The epoch time of a barrier reset. Example: 1446629000",
-                    "type": "integer"
+                    "description": "[Only for reset trades] The epoch time of a barrier reset.",
+                    "type": "integer",
+                    "examples": [
+                        1446629000
+                    ]
                 },
                 "sell_price": {
                     "description": "Price at which contract was sold, only available when contract has been sold.",
                     "type": "number"
                 },
                 "sell_spot": {
-                    "description": "Latest spot value at the sell time. Example: 86.63 (only present for contracts already sold). Will no longer be supported in the next API release.",
-                    "type": "number"
+                    "description": "Latest spot value at the sell time. (only present for contracts already sold). Will no longer be supported in the next API release.",
+                    "type": "number",
+                    "examples": [
+                        86.63
+                    ]
                 },
                 "sell_spot_display_value": {
-                    "description": "Latest spot value with the correct precision at the sell time. Example: 86.630 (only present for contracts already sold). Will no longer be supported in the next API release.",
-                    "type": "string"
+                    "description": "Latest spot value with the correct precision at the sell time. (only present for contracts already sold). Will no longer be supported in the next API release.",
+                    "type": "string",
+                    "examples": [
+                        "86.630"
+                    ]
                 },
                 "sell_spot_time": {
-                    "description": "Epoch time of the sell spot. Note that since certain underlyings don't tick every second, the sell spot time may be a few seconds before the sell time. Example: 1446629000 (only present for contracts already sold). Will no longer be supported in the next API release.",
-                    "type": "integer"
+                    "description": "Epoch time of the sell spot. Note that since certain underlyings don't tick every second, the sell spot time may be a few seconds before the sell time. (only present for contracts already sold). Will no longer be supported in the next API release.",
+                    "type": "integer",
+                    "examples": [
+                        1446629000
+                    ]
                 },
                 "sell_time": {
                     "description": "Epoch time of when the contract was sold (only present for contracts already sold)",
@@ -424,12 +530,15 @@
                     ]
                 },
                 "shortcode": {
-                    "description": "Coded description of the contract purchased, Example: CALL_R_100_90_1446704187_1446704787_S0P_0",
-                    "type": "string"
+                    "description": "Coded description of the contract purchased.",
+                    "type": "string",
+                    "examples": [
+                        "CALL_R_100_90_1446704187_1446704787_S0P_0"
+                    ]
                 },
                 "status": {
                     "title": "Contract status",
-                    "description": "Contract status. Will be 'sold' if the contract was sold back before expiry, 'won' if won and 'lost' if lost at expiry. Otherwise will be 'open'",
+                    "description": "Contract status. Will be `sold` if the contract was sold back before expiry, `won` if won and `lost` if lost at expiry. Otherwise will be `open`",
                     "type": [
                         "null",
                         "string"
@@ -489,8 +598,11 @@
                     }
                 },
                 "underlying": {
-                    "description": "Example: BSESENSEX30",
-                    "type": "string"
+                    "description": "The underlying symbol code.",
+                    "type": "string",
+                    "examples": [
+                        "R_50"
+                    ]
                 },
                 "validation_error": {
                     "description": "Error message if validation fails",
@@ -524,7 +636,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

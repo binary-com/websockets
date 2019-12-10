@@ -11,7 +11,7 @@
     ],
     "properties": {
         "mt5_password_check": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
@@ -20,7 +20,7 @@
         "login": {
             "description": "MT5 user login",
             "type": "string",
-            "pattern": "^\\w{1,10}$"
+            "pattern": "^[0-9]+$"
         },
         "password": {
             "description": "The password of the account.",
@@ -29,7 +29,7 @@
             "sensitive": 1
         },
         "password_type": {
-            "description": "The password type main/investor (default: 'main')",
+            "description": "[Optional] Type of the password to check.",
             "type": "string",
             "default": "main",
             "enum": [
@@ -38,7 +38,7 @@
             ]
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

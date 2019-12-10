@@ -9,24 +9,24 @@
     ],
     "properties": {
         "transfer_between_accounts": {
-            "description": "If account_from or account_to is not provided, we'll just return available accounts.",
+            "description": "If `account_from` or `account_to` is not provided, it just returns the available accounts.",
             "type": "integer",
             "enum": [
                 1
             ]
         },
         "account_from": {
-            "description": "The account_from loginid",
+            "description": "[Optional] The loginid of the account to transfer funds from.",
             "type": "string",
             "pattern": "\\w+"
         },
         "account_to": {
-            "description": "The account_to loginid",
+            "description": "[Optional] The loginid of the account to transfer funds to.",
             "type": "string",
             "pattern": "\\w+"
         },
         "accounts": {
-            "description": "Optional field to control the list of accounts returned when account_from or account_to is not provided. 'Brief' will only include standard trading accounts and can be faster.",
+            "description": "[Optional] To control the list of accounts returned when `account_from` or `account_to` is not provided. `brief` will only include standard trading accounts and can be faster.",
             "type": "string",
             "default": "brief",
             "enum": [
@@ -35,17 +35,17 @@
             ]
         },
         "amount": {
-            "description": "The amount to transfer.",
+            "description": "[Optional] The amount to transfer.",
             "type": "number",
             "minimum": 0
         },
         "currency": {
-            "description": "Currency code",
+            "description": "[Optional] Currency code.",
             "type": "string",
             "pattern": "^[A-Z]{3}$"
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

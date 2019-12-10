@@ -12,23 +12,23 @@
     ],
     "properties": {
         "sell_contract_for_multiple_accounts": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
             ]
         },
         "price": {
-            "description": "Minimum price at which to sell the contract, or '0' for 'sell at market'",
+            "description": "Minimum price at which to sell the contract, or `0` for 'sell at market'.",
             "type": "number"
         },
         "shortcode": {
-            "description": "An internal ID used to identify the contract which was originally bought. This is returned from the buy and buy_for_multiple_accounts calls",
+            "description": "An internal ID used to identify the contract which was originally bought. This is returned from the `buy` and `buy_contract_for_multiple_accounts` calls.",
             "type": "string",
             "pattern": "^([A-Za-z0-9_.-]+)$"
         },
         "tokens": {
-            "description": "Authorisation tokens which select the accounts to sell use for the affected accounts",
+            "description": "Authorisation tokens which select the accounts to sell use for the affected accounts.",
             "type": "array",
             "items": {
                 "type": "string",
@@ -37,7 +37,7 @@
             "sensitive": 1
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

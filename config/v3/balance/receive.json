@@ -24,18 +24,27 @@
                     "minimum": 0
                 },
                 "currency": {
-                    "description": "Currency Example: USD",
+                    "description": "Currency code.",
                     "type": "string",
-                    "pattern": "^(|[A-Z]{3})$"
+                    "pattern": "^(|[A-Z]{3})$",
+                    "examples": [
+                        "USD"
+                    ]
                 },
                 "id": {
-                    "description": "A stream ID that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579",
-                    "type": "string"
+                    "description": "A stream ID that can be used to cancel this stream using the Forget request.",
+                    "type": "string",
+                    "examples": [
+                        "1d6651e7d599bce6c54bd71a8283e579"
+                    ]
                 },
                 "loginid": {
-                    "description": "Client loginid Example: CR000000",
+                    "description": "Client loginid.",
                     "type": "string",
-                    "pattern": "^[A-Z]{2,4}[0-9]{1,10}$"
+                    "pattern": "^[A-Z]{2,4}[0-9]{1,10}$",
+                    "examples": [
+                        "CR000000"
+                    ]
                 },
                 "total": {
                     "description": "Total amounts of balances",
@@ -55,9 +64,12 @@
                                     "minimum": 0
                                 },
                                 "currency": {
-                                    "description": "Currency Example: USD",
+                                    "description": "Currency code.",
                                     "type": "string",
-                                    "pattern": "^(|[A-Z]{3})$"
+                                    "pattern": "^(|[A-Z]{3})$",
+                                    "examples": [
+                                        "USD"
+                                    ]
                                 }
                             }
                         },
@@ -75,9 +87,12 @@
                                     "minimum": 0
                                 },
                                 "currency": {
-                                    "description": "Currency Example: USD",
+                                    "description": "Currency code.",
                                     "type": "string",
-                                    "pattern": "^(|[A-Z]{3})$"
+                                    "pattern": "^(|[A-Z]{3})$",
+                                    "examples": [
+                                        "USD"
+                                    ]
                                 }
                             }
                         }
@@ -111,7 +126,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

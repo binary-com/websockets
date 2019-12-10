@@ -12,45 +12,45 @@
     ],
     "properties": {
         "app_register": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
             ]
         },
         "app_markup_percentage": {
-            "description": "Markup to be added to contract prices (as a percentage of contract payout). Min: 0, Max: 5",
+            "description": "[Optional] Markup to be added to contract prices (as a percentage of contract payout).",
             "type": "number",
             "maximum": 5,
             "minimum": 0
         },
         "appstore": {
-            "description": "Application's App Store URL (if applicable)",
+            "description": "[Optional] Application's App Store URL (if applicable).",
             "type": "string",
             "pattern": "^https?://itunes\\.apple\\.com/\\S+$"
         },
         "github": {
-            "description": "Application's GitHub page (for open-source projects)",
+            "description": "[Optional] Application's GitHub page (for open-source projects).",
             "type": "string",
             "pattern": "^https?://(www\\.)?github\\.com/\\S+$"
         },
         "googleplay": {
-            "description": "Application's Google Play URL (if applicable)",
+            "description": "[Optional] Application's Google Play URL (if applicable).",
             "type": "string",
             "pattern": "^https?://play\\.google\\.com/store/apps/details\\?id=[\\w \\.]+$"
         },
         "homepage": {
-            "description": "Application's homepage",
+            "description": "[Optional] Application's homepage URL.",
             "type": "string",
             "pattern": "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
         },
         "name": {
-            "description": "Application name",
+            "description": "Application name.",
             "type": "string",
             "pattern": "^[\\w\\s-]{1,48}$"
         },
         "redirect_uri": {
-            "description": "Application redirect_uri",
+            "description": "The URL to redirect to after a successful login.",
             "type": "string",
             "pattern": "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
         },
@@ -68,12 +68,12 @@
             }
         },
         "verification_uri": {
-            "description": "Application verification_uri",
+            "description": "[Optional] Used when 'verify_email' called. If available, a URL containing the verification token will send to the client's email, otherwise only the token will be sent.",
             "type": "string",
             "pattern": "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

@@ -14,7 +14,7 @@
             "type": "object",
             "properties": {
                 "address": {
-                    "description": "The address of the user. The maximum length of the address is 128 characters. Optional field.",
+                    "description": "The address of the user. The maximum length of the address is 128 characters.",
                     "type": "string"
                 },
                 "balance": {
@@ -22,19 +22,19 @@
                     "type": "string"
                 },
                 "city": {
-                    "description": "User's city of residence. Optional field.",
+                    "description": "User's city of residence.",
                     "type": "string"
                 },
                 "company": {
-                    "description": "Name of the client's company. The maximum length of the company name is 64 characters. Optional field.",
+                    "description": "Name of the client's company. The maximum length of the company name is 64 characters.",
                     "type": "string"
                 },
                 "country": {
-                    "description": "2-letter country code. Optional field.",
+                    "description": "2-letter country code.",
                     "type": "string"
                 },
                 "currency": {
-                    "description": "MT5 account currency (USD or EUR) that depends on the MT5 company (vanuatu, svg, malta).",
+                    "description": "MT5 account currency (`USD` or `EUR`) that depends on the MT5 company (`vanuatu`, `svg`, `malta`).",
                     "type": "string"
                 },
                 "email": {
@@ -47,18 +47,18 @@
                 },
                 "leverage": {
                     "description": "Client leverage (from 1 to 1000).",
-                    "type": "string"
+                    "type": "number"
                 },
                 "login": {
                     "description": "Login ID of the user's MT5 account.",
                     "type": "string"
                 },
                 "name": {
-                    "description": "Client's name. The maximum length of a client's symbol name is 128 characters. Optional field.",
+                    "description": "Client's name. The maximum length of a client's symbol name is 128 characters.",
                     "type": "string"
                 },
                 "phone": {
-                    "description": "User's phone number. Optional field.",
+                    "description": "User's phone number.",
                     "type": "string"
                 },
                 "phonePassword": {
@@ -66,11 +66,11 @@
                     "type": "string"
                 },
                 "state": {
-                    "description": "User's state (region) of residence. Optional field.",
+                    "description": "User's state (region) of residence.",
                     "type": "string"
                 },
                 "zipCode": {
-                    "description": "User's zip code. Optional field.",
+                    "description": "User's zip code.",
                     "type": "string"
                 }
             }
@@ -87,7 +87,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

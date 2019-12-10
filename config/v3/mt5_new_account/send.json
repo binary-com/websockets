@@ -14,7 +14,7 @@
     ],
     "properties": {
         "mt5_new_account": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
@@ -46,7 +46,7 @@
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,@/-]{0,64}$"
         },
         "country": {
-            "description": "[Optional] 2-letter country code (value received from residence_list call).",
+            "description": "[Optional] 2-letter country code (value received from `residence_list` call).",
             "type": "string",
             "pattern": "^[a-z]{2}$"
         },
@@ -56,14 +56,13 @@
             "format": "email"
         },
         "investPassword": {
-            "description": "The investor password of the account. The password must contain at least two of three types of characters (lower case, upper case and digits) and meet the minimum length requirements set for the group. This field is required.",
+            "description": "[Optional] The investor password of the account. The password must contain at least two of three types of characters (lower case, upper case and digits) and meet the minimum length requirements set for the group. This field is required.",
             "type": "string",
             "sensitive": 1
         },
         "leverage": {
             "description": "Client leverage (from 1 to 1000).",
-            "type": "string",
-            "pattern": "^(?!0)([0-9]{1,3}|1000)$"
+            "type": "number"
         },
         "mainPassword": {
             "description": "The master password of the account. The password must contain at least two of three types of characters (lower case, upper case and digits) and meet the minimum length requirements set for the group. This field is required.",
@@ -71,7 +70,7 @@
             "sensitive": 1
         },
         "mt5_account_type": {
-            "description": "Standard: Variable spreads, High leverage. Advanced: Variable spreads, Medium Leverage, more products.",
+            "description": "[Optional] Standard: Variable spreads, High leverage. Advanced: Variable spreads, Medium Leverage, more products.",
             "type": "string",
             "enum": [
                 "standard",
@@ -81,15 +80,15 @@
         "name": {
             "description": "Client's name. The maximum length here is 101 characters.",
             "type": "string",
-            "pattern": "^[\\p{L}\\s'.-]{1,101}$"
+            "pattern": "^.{1,101}$"
         },
         "phone": {
-            "description": "[Optional] User's phone number. Max length 50.",
+            "description": "[Optional] User's phone number.",
             "type": "string",
             "pattern": "^\\+?[0-9]{0,50}$"
         },
         "phonePassword": {
-            "description": "The user's phone password. Max length 50.",
+            "description": "[Optional] The user's phone password.",
             "type": "string",
             "maxLength": 50,
             "sensitive": 1
@@ -97,15 +96,15 @@
         "state": {
             "description": "[Optional] User's state (region) of residence.",
             "type": "string",
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,50}$"
+            "pattern": "^.{0,50}$"
         },
         "zipCode": {
-            "description": "[Optional] User's zip code. Max length 50.",
+            "description": "[Optional] User's zip code.",
             "type": "string",
             "maxLength": 50
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

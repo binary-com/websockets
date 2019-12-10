@@ -9,14 +9,14 @@
     ],
     "properties": {
         "statement": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
             ]
         },
         "description": {
-            "description": "If set to 1, will return full contracts description.",
+            "description": "[Optional] If set to 1, will return full contracts description.",
             "type": "integer",
             "enum": [
                 0,
@@ -24,7 +24,7 @@
             ]
         },
         "action_type": {
-            "description": "Optional filter for statement (deposit,withdrawal,buy,sell)",
+            "description": "[Optional] To filter the statement according to the type of transaction.",
             "type": "string",
             "enum": [
                 "buy",
@@ -34,29 +34,30 @@
             ]
         },
         "date_from": {
-            "description": "Optional start date (epoch)",
+            "description": "[Optional] Start date (epoch)",
             "type": "integer",
             "maximum": 9999999999,
             "minimum": 0
         },
         "date_to": {
-            "description": "Optional end date (epoch)",
+            "description": "[Optional] End date (epoch)",
             "type": "integer",
             "maximum": 9999999999,
             "minimum": 0
         },
         "limit": {
-            "description": "Apply upper limit to count of transactions received",
+            "description": "[Optional] Maximum number of transactions to receive.",
             "type": "number",
+            "default": 100,
             "maximum": 999,
             "minimum": 0
         },
         "offset": {
-            "description": "Skip this many transactions",
+            "description": "[Optional] Number of transactions to skip.",
             "type": "number"
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

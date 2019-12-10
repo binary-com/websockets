@@ -13,14 +13,14 @@
     ],
     "properties": {
         "paymentagent_withdraw": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
             ]
         },
         "description": {
-            "description": "Optional field for remarks about the withdraw. Only letters, numbers, space, period, comma, - ' are allowed.",
+            "description": "[Optional] Remarks about the withdraw. Only letters, numbers, space, period, comma, - ' are allowed.",
             "type": "string",
             "pattern": "^[0-9A-Za-z .,'-]{0,250}$"
         },
@@ -34,7 +34,7 @@
             "pattern": "^[A-Z]{3}$"
         },
         "dry_run": {
-            "description": "If set to 1, just do validation",
+            "description": "[Optional] If set to 1, just do validation.",
             "type": "integer",
             "enum": [
                 0,
@@ -42,17 +42,17 @@
             ]
         },
         "paymentagent_loginid": {
-            "description": "The payment agent loginid received from the paymentagent_list call",
+            "description": "The payment agent loginid received from the `paymentagent_list` call.",
             "type": "string",
             "pattern": "^[A-Za-z]+[0-9]+$"
         },
         "verification_code": {
-            "description": "Email verification code (received from a verify_email call, which must be done first)",
+            "description": "Email verification code (received from a `verify_email` call, which must be done first)",
             "type": "string",
             "pattern": "^\\w{8,128}$"
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

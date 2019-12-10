@@ -9,21 +9,21 @@
     ],
     "properties": {
         "login_history": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
             ]
         },
         "limit": {
-            "description": "Apply limit to count of login history records, default to 10. Max:50",
+            "description": "[Optional] Apply limit to count of login history records.",
             "type": "integer",
-            "default": "10",
+            "default": 10,
             "maximum": 50,
             "minimum": 0
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

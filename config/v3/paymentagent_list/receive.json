@@ -20,7 +20,7 @@
                     "description": "The list of countries in which payment agent is available.",
                     "type": "array",
                     "items": {
-                        "description": "The 'country_code' and 'country_name'",
+                        "description": "The `country_code` and `country_name`",
                         "type": "array",
                         "items": {
                             "type": [
@@ -114,7 +114,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

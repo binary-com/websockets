@@ -9,24 +9,24 @@
     ],
     "properties": {
         "api_token": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
             ]
         },
         "delete_token": {
-            "description": "The token to remove",
+            "description": "[Optional] The token to remove.",
             "type": "string",
             "pattern": "^\\w+$"
         },
         "new_token": {
-            "description": "The name of the created token",
+            "description": "[Optional] The name of the created token.",
             "type": "string",
             "pattern": "^[\\w\\s]+$"
         },
         "new_token_scopes": {
-            "description": "List of permission scopes to provide with the token.",
+            "description": "[Optional] List of permission scopes to provide with the token.",
             "type": "array",
             "items": {
                 "description": "Required when create new token",
@@ -40,7 +40,7 @@
             }
         },
         "valid_for_current_ip_only": {
-            "description": "Optional field, if you set this parameter during token creation, then the token created will only work for the IP address that was used to create the token",
+            "description": "[Optional] If you set this parameter during token creation, then the token created will only work for the IP address that was used to create the token",
             "type": "integer",
             "enum": [
                 0,
@@ -48,7 +48,7 @@
             ]
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

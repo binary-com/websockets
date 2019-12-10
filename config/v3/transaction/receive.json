@@ -24,8 +24,11 @@
                     ]
                 },
                 "amount": {
-                    "description": "It is the amount of transaction performed Example: -83.2300",
-                    "type": "number"
+                    "description": "It is the amount of transaction performed.",
+                    "type": "number",
+                    "examples": [
+                        -83.23
+                    ]
                 },
                 "balance": {
                     "description": "Balance amount",
@@ -42,10 +45,13 @@
                     ]
                 },
                 "contract_id": {
-                    "description": "It is the contract ID. Example: 4867502908",
+                    "description": "It is the contract ID.",
                     "type": [
                         "integer",
                         "null"
+                    ],
+                    "examples": [
+                        4867502908
                     ]
                 },
                 "currency": {
@@ -68,8 +74,11 @@
                     ]
                 },
                 "id": {
-                    "description": "A stream ID that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579",
-                    "type": "string"
+                    "description": "A stream ID that can be used to cancel this stream using the Forget request.",
+                    "type": "string",
+                    "examples": [
+                        "1d6651e7d599bce6c54bd71a8283e579"
+                    ]
                 },
                 "longcode": {
                     "description": "Description of contract purchased",
@@ -109,8 +118,11 @@
                     ]
                 },
                 "transaction_id": {
-                    "description": "It is the transaction ID. Every contract (buy or sell) or payment has a unique ID. Example: 10867502908",
-                    "type": "integer"
+                    "description": "It is the transaction ID. Every contract (buy or sell) or payment has a unique ID.",
+                    "type": "integer",
+                    "examples": [
+                        10867502908
+                    ]
                 },
                 "transaction_time": {
                     "description": "Time at which transaction was performed, for buy its purchase time, for sell its sell time",
@@ -144,7 +156,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

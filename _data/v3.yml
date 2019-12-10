@@ -99,8 +99,6 @@ groups:
         title: Buy Contract
       - name: buy_contract_for_multiple_accounts
         title: Buy Contract for Multiple Accounts
-      - name: contract_update
-        title: Contract Update
       - name: copy_start
         title: 'Copy Trading: Start'
       - name: copy_stop
@@ -113,6 +111,8 @@ groups:
         title: Sell Expired Contracts
       - name: topup_virtual
         title: Top Up Virtual-Money Account
+      - name: contract_update
+        title: Update Contract
   - label: "Authenticated Calls: 'admin' scope"
     methods:
       - name: api_token

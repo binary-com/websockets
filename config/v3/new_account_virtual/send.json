@@ -12,7 +12,7 @@
     ],
     "properties": {
         "new_account_virtual": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
@@ -30,7 +30,7 @@
             "sensitive": 1
         },
         "date_first_contact": {
-            "description": "[Optional] Date of first contact, format: yyyy-mm-dd in GMT timezone.",
+            "description": "[Optional] Date of first contact, format: `yyyy-mm-dd` in GMT timezone.",
             "type": "string",
             "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
         },
@@ -40,7 +40,7 @@
             "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
         },
         "residence": {
-            "description": "2-letter country code (obtained from residence_list call).",
+            "description": "2-letter country code (obtained from `residence_list` call).",
             "type": "string",
             "pattern": "^[a-z]{2}$"
         },
@@ -68,12 +68,12 @@
             "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
         },
         "verification_code": {
-            "description": "Email verification code (received from a verify_email call, which must be done first).",
+            "description": "Email verification code (received from a `verify_email` call, which must be done first).",
             "type": "string",
             "pattern": "^\\w{8,128}$"
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

@@ -15,7 +15,7 @@
             "sensitive": 1
         },
         "assets": {
-            "description": "Optional field, used to set assets to be copied. E.x [\"frxUSDJPY\", \"R_50\"]",
+            "description": "[Optional] Used to set assets to be copied. E.x [\"frxUSDJPY\", \"R_50\"]",
             "oneOf": [
                 {
                     "type": "string",
@@ -31,15 +31,15 @@
             ]
         },
         "max_trade_stake": {
-            "description": "Optional field, used to set maximum trade stake to be copied",
+            "description": "[Optional] Used to set maximum trade stake to be copied.",
             "type": "number"
         },
         "min_trade_stake": {
-            "description": "Optional field, used to set minimal trade stake to be copied",
+            "description": "[Optional] Used to set minimal trade stake to be copied.",
             "type": "number"
         },
         "trade_types": {
-            "description": "Optional field, used to set trade types to be copied. E.x [\"CALL\", \"PUT\"]",
+            "description": "[Optional] Used to set trade types to be copied. E.x [\"CALL\", \"PUT\"]",
             "oneOf": [
                 {
                     "type": "string",
@@ -55,7 +55,7 @@
             ]
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Payout Currencies (request)",
-    "description": "Retrieve a list of available option payout currencies. If a user is logged in, only the currencies available for his account will be returned.",
+    "description": "Retrieve a list of available option payout currencies. If a user is logged in, only the currencies available for the account will be returned.",
     "type": "object",
     "additionalProperties": false,
     "required": [
@@ -9,14 +9,14 @@
     ],
     "properties": {
         "payout_currencies": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
             ]
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

@@ -9,7 +9,7 @@
     ],
     "properties": {
         "active_symbols": {
-            "description": "If you use 'brief', only a subset of fields will be returned.",
+            "description": "If you use `brief`, only a subset of fields will be returned.",
             "type": "string",
             "enum": [
                 "brief",
@@ -39,7 +39,7 @@
             ]
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

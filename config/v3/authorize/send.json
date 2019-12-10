@@ -15,7 +15,7 @@
             "sensitive": 1
         },
         "add_to_login_history": {
-            "description": "[Optional] Send this when you use api tokens for authorization and want to track activity using login_history call.",
+            "description": "[Optional] Send this when you use api tokens for authorization and want to track activity using `login_history` call.",
             "type": "integer",
             "default": 0,
             "enum": [
@@ -24,7 +24,7 @@
             ]
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

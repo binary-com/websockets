@@ -12,7 +12,7 @@
     ],
     "properties": {
         "mt5_password_reset": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
@@ -30,18 +30,21 @@
             "sensitive": 1
         },
         "password_type": {
-            "description": "Password type main/investor (default: main)",
+            "description": "[Optional] Type of the password to reset.",
             "type": "string",
-            "pattern": "^(main|investor)$",
-            "default": "main"
+            "default": "main",
+            "enum": [
+                "main",
+                "investor"
+            ]
         },
         "verification_code": {
-            "description": "Email verification code (received from a verify_email call, which must be done first)",
+            "description": "Email verification code (received from a `verify_email` call, which must be done first)",
             "type": "string",
             "pattern": "^\\w{8,128}$"
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

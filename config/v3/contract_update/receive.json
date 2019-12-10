@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Contract Update (response)",
+    "title": "Update Contract (response)",
     "description": "Contract update status",
     "type": "object",
     "required": [
@@ -9,6 +9,7 @@
     ],
     "properties": {
         "contract_update": {
+            "title": "contract_update",
             "description": "Contains the update status of the request",
             "type": "object",
             "properties": {
@@ -83,7 +84,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

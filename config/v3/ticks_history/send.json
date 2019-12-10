@@ -10,7 +10,7 @@
     ],
     "properties": {
         "ticks_history": {
-            "description": "Short symbol name (obtained from the active_symbols call).",
+            "description": "Short symbol name (obtained from the `active_symbols` call).",
             "type": "string",
             "pattern": "^\\w{2,30}$"
         },
@@ -22,27 +22,41 @@
             ]
         },
         "count": {
-            "description": "An upper limit on ticks to receive.",
+            "description": "[Optional] An upper limit on ticks to receive.",
             "type": "integer",
             "default": "5000"
         },
         "end": {
-            "description": "Epoch value representing the latest boundary of the returned ticks. If \"latest\" is specified, this will be the latest available timestamp.",
+            "description": "Epoch value representing the latest boundary of the returned ticks. If `latest` is specified, this will be the latest available timestamp.",
             "type": "string",
             "pattern": "^(latest|[0-9]{1,10})$"
         },
         "granularity": {
-            "description": "Only applicable for style : \"candles\". Candle time-dimension width setting. Allowed values 60, 120, 180, 300, 600, 900, 1800, 3600, 7200, 14400, 28800, 86400 (default: '60').",
-            "type": "integer"
+            "description": "[Optional] Only applicable for style: `candles`. Candle time-dimension width setting. (default: `60`).",
+            "type": "integer",
+            "enum": [
+                60,
+                120,
+                180,
+                300,
+                600,
+                900,
+                1800,
+                3600,
+                7200,
+                14400,
+                28800,
+                86400
+            ]
         },
         "start": {
-            "description": "Epoch value representing the earliest boundary of the returned ticks (For styles: 'ticks', this will default to 1 day ago. For styles: 'candle', it will default to 1 day ago if count or granularity is undefined).",
+            "description": "[Optional] Epoch value representing the earliest boundary of the returned ticks (For styles: 'ticks', this will default to 1 day ago. For styles: 'candle', it will default to 1 day ago if count or granularity is undefined).",
             "type": "integer",
             "maximum": 9999999999,
             "minimum": 0
         },
         "style": {
-            "description": "The tick-output style.",
+            "description": "[Optional] The tick-output style.",
             "type": "string",
             "default": "ticks",
             "enum": [
@@ -58,7 +72,7 @@
             ]
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

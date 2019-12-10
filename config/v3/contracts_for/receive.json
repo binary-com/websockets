@@ -44,40 +44,75 @@
                                 "minItems": 1
                             },
                             "barrier_category": {
-                                "description": "Category of barrier (example: asian)",
-                                "type": "string"
+                                "description": "Category of barrier.",
+                                "type": "string",
+                                "examples": [
+                                    "american",
+                                    "asian",
+                                    "euro_atm",
+                                    "euro_non_atm"
+                                ]
                             },
                             "barriers": {
-                                "description": "Barriers (example: 0)",
-                                "type": "number"
+                                "description": "Number of barriers.",
+                                "type": "number",
+                                "examples": [
+                                    0,
+                                    1,
+                                    2
+                                ]
                             },
                             "contract_category": {
-                                "description": "Category of contract (example: asian)",
-                                "type": "string"
+                                "description": "Category of contract.",
+                                "type": "string",
+                                "examples": [
+                                    "asian",
+                                    "callput"
+                                ]
                             },
                             "contract_category_display": {
-                                "description": "Category of the contract (example: Asians)",
-                                "type": "string"
+                                "description": "Category of the contract.",
+                                "type": "string",
+                                "examples": [
+                                    "Asians",
+                                    "Up/Down"
+                                ]
                             },
                             "contract_type": {
-                                "description": "Type of contract (example: ASIANU)",
-                                "type": "string"
+                                "description": "Type of contract.",
+                                "type": "string",
+                                "examples": [
+                                    "ASIANU",
+                                    "CALL"
+                                ]
                             },
                             "contracts_display": {
-                                "description": "Type of contract (example: asian up)",
-                                "type": "string"
+                                "description": "Type of contract.",
+                                "type": "string",
+                                "examples": [
+                                    "Asian Up",
+                                    "Higher"
+                                ]
                             },
                             "exchange_name": {
-                                "description": "Name of exchange (example: EURONEXT)",
-                                "type": "string"
+                                "description": "Name of exchange",
+                                "type": "string",
+                                "examples": [
+                                    "RANDOM"
+                                ]
                             },
                             "expired_barriers": {
                                 "description": "Array of barriers already expired",
                                 "type": "array"
                             },
                             "expiry_type": {
-                                "description": "Expiry Type (example: tick)",
-                                "type": "string"
+                                "description": "Expiry Type.",
+                                "type": "string",
+                                "examples": [
+                                    "daily",
+                                    "intraday",
+                                    "tick"
+                                ]
                             },
                             "forward_starting_options": {
                                 "description": "Array of returned forward starting options",
@@ -102,40 +137,72 @@
                                 "minItems": 1
                             },
                             "market": {
-                                "description": "Type of market (forex, indices, ...)",
-                                "type": "string"
+                                "description": "Type of market.",
+                                "type": "string",
+                                "examples": [
+                                    "forex",
+                                    "indices",
+                                    "synthetic_index"
+                                ]
                             },
                             "max_contract_duration": {
-                                "description": "Maximum contract duration (example: 10)",
-                                "type": "string"
+                                "description": "Maximum contract duration",
+                                "type": "string",
+                                "examples": [
+                                    "10"
+                                ]
                             },
                             "min_contract_duration": {
-                                "description": "Minimum contract duration (example: 5)",
-                                "type": "string"
+                                "description": "Minimum contract duration.",
+                                "type": "string",
+                                "examples": [
+                                    "5"
+                                ]
                             },
                             "payout_limit": {
-                                "description": "Maximum payout (example: 10000)",
-                                "type": "number"
+                                "description": "Maximum payout.",
+                                "type": "number",
+                                "examples": [
+                                    10000
+                                ]
                             },
                             "sentiment": {
-                                "description": "Type of sentiment (example: up)",
-                                "type": "string"
+                                "description": "Type of sentiment.",
+                                "type": "string",
+                                "examples": [
+                                    "differ",
+                                    "down",
+                                    "match",
+                                    "up"
+                                ]
                             },
                             "start_type": {
-                                "description": "Start Type (example: spot)",
-                                "type": "string"
+                                "description": "Start Type.",
+                                "type": "string",
+                                "examples": [
+                                    "forward",
+                                    "spot"
+                                ]
                             },
                             "submarket": {
-                                "description": "Type of submarket (example: major_pairs)",
-                                "type": "string"
+                                "description": "Type of submarket.",
+                                "type": "string",
+                                "examples": [
+                                    "major_pairs",
+                                    "random_index"
+                                ]
                             },
                             "trading_period": {
                                 "description": "A hash of predefined trading period",
                                 "type": "object"
                             },
                             "underlying_symbol": {
-                                "description": "Symbol code (example: R_50)",
-                                "type": "string"
+                                "description": "Symbol code",
+                                "type": "string",
+                                "examples": [
+                                    "R_50",
+                                    "frxEURUSD"
+                                ]
                             }
                         }
                     },
@@ -184,7 +251,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

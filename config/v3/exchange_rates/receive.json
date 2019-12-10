@@ -42,13 +42,12 @@
             "title": "Message Type",
             "description": "Action name of the request made.",
             "type": "string",
-            "pattern": "^exchange_rates$",
             "enum": [
                 "exchange_rates"
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Ping (request)",
-    "description": "To send the ping request to the server. Mostly used to test the connection or keep it alive.",
+    "description": "To send the ping request to the server. Mostly used to test the connection or to keep it alive.",
     "type": "object",
     "additionalProperties": false,
     "required": [
@@ -9,14 +9,14 @@
     ],
     "properties": {
         "ping": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
             ]
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

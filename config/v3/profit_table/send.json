@@ -9,14 +9,14 @@
     ],
     "properties": {
         "profit_table": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
             ]
         },
         "description": {
-            "description": "If set to 1, will return full contracts description.",
+            "description": "[Optional] If set to 1, will return full contracts description.",
             "type": "integer",
             "enum": [
                 0,
@@ -24,32 +24,37 @@
             ]
         },
         "date_from": {
-            "description": "Optional start date (epoch or YYYY-MM-DD)",
+            "description": "[Optional] Start date (epoch or YYYY-MM-DD)",
             "type": "string",
             "pattern": "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|[0-9]{1,10})$"
         },
         "date_to": {
-            "description": "Optional end date (epoch or YYYY-MM-DD)",
+            "description": "[Optional] End date (epoch or YYYY-MM-DD)",
             "type": "string",
             "pattern": "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|[0-9]{1,10})$"
         },
         "limit": {
-            "description": "Apply upper limit to count of transactions received",
+            "description": "[Optional] Apply upper limit to count of transactions received.",
             "type": "number",
+            "default": 50,
             "maximum": 999,
             "minimum": 0
         },
         "offset": {
-            "description": "Skip this many transactions",
+            "description": "[Optional] Number of transactions to skip.",
             "type": "number"
         },
         "sort": {
-            "description": "Sort direction, default DESC",
+            "description": "[Optional] Sort direction.",
             "type": "string",
-            "pattern": "^(ASC|DESC)$"
+            "default": "DESC",
+            "enum": [
+                "ASC",
+                "DESC"
+            ]
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

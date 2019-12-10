@@ -15,14 +15,14 @@
     ],
     "properties": {
         "set_financial_assessment": {
-            "description": "Must be 1",
+            "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
             ]
         },
         "account_turnover": {
-            "description": "The anticipated account turnover",
+            "description": "[Optional] The anticipated account turnover.",
             "type": "string",
             "enum": [
                 "Less than $25,000",
@@ -33,7 +33,7 @@
             ]
         },
         "binary_options_trading_experience": {
-            "description": "Binary options trading experience",
+            "description": "[Optional] Binary options trading experience.",
             "type": "string",
             "enum": [
                 "0-1 year",
@@ -42,7 +42,7 @@
             ]
         },
         "binary_options_trading_frequency": {
-            "description": "Binary options trading frequency",
+            "description": "[Optional] Binary options trading frequency.",
             "type": "string",
             "enum": [
                 "0-5 transactions in the past 12 months",
@@ -52,7 +52,7 @@
             ]
         },
         "cfd_trading_experience": {
-            "description": "CFDs trading experience",
+            "description": "[Optional] CFDs trading experience.",
             "type": "string",
             "enum": [
                 "0-1 year",
@@ -61,7 +61,7 @@
             ]
         },
         "cfd_trading_frequency": {
-            "description": "CFDs trading frequency",
+            "description": "[Optional] CFDs trading frequency.",
             "type": "string",
             "enum": [
                 "0-5 transactions in the past 12 months",
@@ -71,7 +71,7 @@
             ]
         },
         "education_level": {
-            "description": "Level of Education",
+            "description": "Level of Education.",
             "type": "string",
             "enum": [
                 "Primary",
@@ -80,7 +80,7 @@
             ]
         },
         "employment_industry": {
-            "description": "Industry of Employment",
+            "description": "Industry of Employment.",
             "type": "string",
             "enum": [
                 "Construction",
@@ -100,7 +100,7 @@
             ]
         },
         "employment_status": {
-            "description": "Employment Status",
+            "description": "[Optional] Employment Status.",
             "type": "string",
             "enum": [
                 "Employed",
@@ -111,7 +111,7 @@
             ]
         },
         "estimated_worth": {
-            "description": "Estimated Net Worth",
+            "description": "Estimated Net Worth.",
             "type": "string",
             "enum": [
                 "Less than $100,000",
@@ -122,7 +122,7 @@
             ]
         },
         "forex_trading_experience": {
-            "description": "Forex trading experience",
+            "description": "[Optional] Forex trading experience.",
             "type": "string",
             "enum": [
                 "0-1 year",
@@ -131,7 +131,7 @@
             ]
         },
         "forex_trading_frequency": {
-            "description": "Forex trading frequency",
+            "description": "[Optional] Forex trading frequency.",
             "type": "string",
             "enum": [
                 "0-5 transactions in the past 12 months",
@@ -141,7 +141,7 @@
             ]
         },
         "income_source": {
-            "description": "Income Source",
+            "description": "Income Source.",
             "type": "string",
             "enum": [
                 "Salaried Employee",
@@ -153,7 +153,7 @@
             ]
         },
         "net_income": {
-            "description": "Net Annual Income",
+            "description": "Net Annual Income.",
             "type": "string",
             "enum": [
                 "Less than $25,000",
@@ -164,7 +164,7 @@
             ]
         },
         "occupation": {
-            "description": "Occupation",
+            "description": "Occupation.",
             "type": "string",
             "enum": [
                 "Chief Executives, Senior Officials and Legislators",
@@ -184,7 +184,7 @@
             ]
         },
         "other_instruments_trading_experience": {
-            "description": "Trading experience in other financial instruments",
+            "description": "[Optional] Trading experience in other financial instruments.",
             "type": "string",
             "enum": [
                 "0-1 year",
@@ -193,7 +193,7 @@
             ]
         },
         "other_instruments_trading_frequency": {
-            "description": "Trading frequency in other financial instruments",
+            "description": "[Optional] Trading frequency in other financial instruments.",
             "type": "string",
             "enum": [
                 "0-5 transactions in the past 12 months",
@@ -203,7 +203,7 @@
             ]
         },
         "source_of_wealth": {
-            "description": "Source of wealth",
+            "description": "[Optional] Source of wealth.",
             "type": "string",
             "enum": [
                 "Accumulation of Income/Savings",
@@ -216,7 +216,7 @@
             ]
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {

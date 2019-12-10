@@ -16,7 +16,7 @@
             "pattern": "^(?:[\\w-]{32,128}|1)$"
         },
         "parameters": {
-            "description": "Optional field, used to pass the parameters for contract buy",
+            "description": "[Optional] Used to pass the parameters for contract buy.",
             "type": "object",
             "additionalProperties": false,
             "required": [
@@ -26,26 +26,26 @@
             ],
             "properties": {
                 "amount": {
-                    "description": "Proposed payout or stake value",
+                    "description": "[Optional] Proposed `payout` or `stake` value",
                     "type": "number",
                     "minimum": 0
                 },
                 "app_markup_percentage": {
-                    "description": "Markup added to contract prices (as a percentage of contract payout)",
+                    "description": "[Optional] Markup added to contract prices (as a percentage of contract payout)",
                     "type": "number"
                 },
                 "barrier": {
-                    "description": "Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers.",
+                    "description": "[Optional] Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Synthetic Indices as they support both relative and absolute barriers.",
                     "type": "string",
                     "pattern": "^(?=.{1,20}$)[+-]?\\d+\\.?\\d*$"
                 },
                 "barrier2": {
-                    "description": "Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers.",
+                    "description": "[Optional] Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Synthetic Indices as they support both relative and absolute barriers.",
                     "type": "string",
                     "pattern": "^(?=.{1,20}$)[+-]?\\d+\\.?\\d*$"
                 },
                 "basis": {
-                    "description": "Indicate whether amount is 'payout' or 'stake'.",
+                    "description": "[Optional] Indicate whether amount is 'payout' or 'stake'.",
                     "type": "string",
                     "enum": [
                         "payout",
@@ -63,25 +63,25 @@
                     "pattern": "^[A-Z]{3}$"
                 },
                 "date_expiry": {
-                    "description": "Epoch value of the expiry time of the contract. You must either specify date_expiry or duration.",
+                    "description": "[Optional] Epoch value of the expiry time of the contract. You must either specify `date_expiry` or `duration`.",
                     "type": "integer",
                     "maximum": 9999999999,
                     "minimum": 0
                 },
                 "date_start": {
-                    "description": "For forward-starting contracts, epoch value of the starting time of the contract.",
+                    "description": "[Optional] For forward-starting contracts, epoch value of the starting time of the contract.",
                     "type": "integer",
                     "maximum": 9999999999,
                     "minimum": 0
                 },
                 "duration": {
-                    "description": "Duration quantity",
+                    "description": "[Optional] Duration quantity",
                     "type": "integer",
                     "maximum": 3600,
                     "minimum": 0
                 },
                 "duration_unit": {
-                    "description": "Duration unit is s(seconds), m(minutes), h(hours), d(days), t(ticks)",
+                    "description": "[Optional] Duration unit is `s`: seconds, `m`: minutes, `h`: hours, `d`: days, `t`: ticks",
                     "type": "string",
                     "enum": [
                         "d",
@@ -92,12 +92,12 @@
                     ]
                 },
                 "multiplier": {
-                    "description": "The multiplier for non-binary options. E.g. lookbacks.",
+                    "description": "[Optional] The multiplier for non-binary options. E.g. lookbacks.",
                     "type": "number",
                     "minimum": 0
                 },
                 "selected_tick": {
-                    "description": "The tick that is predicted to have the highest/lowest value - for tickhigh and ticklow contracts.",
+                    "description": "[Optional] The tick that is predicted to have the highest/lowest value - for tickhigh and ticklow contracts.",
                     "type": "integer"
                 },
                 "symbol": {
@@ -123,7 +123,7 @@
             "sensitive": 1
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the echo_req output field.",
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
         },
         "req_id": {
