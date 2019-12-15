@@ -7,7 +7,7 @@
     "country": "mt",
     "email": "test@mailinator.com",
     "investPassword": "AbcDv12345",
-    "leverage": "100",
+    "leverage": 100,
     "mainPassword": "AbcDv1234",
     "mt5_account_type": "standard",
     "name": "Peter Pan",

@@ -24,20 +24,32 @@
             ],
             "properties": {
                 "ask_price": {
-                    "description": "Example: 5.14",
-                    "type": "number"
+                    "description": "The ask price.",
+                    "type": "number",
+                    "examples": [
+                        5.14
+                    ]
                 },
                 "date_start": {
-                    "description": "Example: 1439999053",
-                    "type": "integer"
+                    "description": "The start date of the contract.",
+                    "type": "integer",
+                    "examples": [
+                        1439999053
+                    ]
                 },
                 "display_value": {
-                    "description": "Example: 5.14, same as ask_price",
-                    "type": "string"
+                    "description": "Same as `ask_price`.",
+                    "type": "string",
+                    "examples": [
+                        "5.14"
+                    ]
                 },
                 "id": {
-                    "description": "A stream ID that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579",
-                    "type": "string"
+                    "description": "A stream ID that can be used to cancel this stream using the Forget request.",
+                    "type": "string",
+                    "examples": [
+                        "1d6651e7d599bce6c54bd71a8283e579"
+                    ]
                 },
                 "limit_order": {
                     "description": "Contains limit order information. (Only applicable for contract with limit order).",
@@ -120,16 +132,25 @@
                     "type": "number"
                 },
                 "payout": {
-                    "description": "Example: 10",
-                    "type": "number"
+                    "description": "The payout amount of the contract.",
+                    "type": "number",
+                    "examples": [
+                        10
+                    ]
                 },
                 "spot": {
-                    "description": "Spot value (if there are no Exchange data-feed licensing restrictions for the underlying symbol). Example: 9874.52",
-                    "type": "number"
+                    "description": "Spot value (if there are no Exchange data-feed licensing restrictions for the underlying symbol).",
+                    "type": "number",
+                    "examples": [
+                        9874.52
+                    ]
                 },
                 "spot_time": {
-                    "description": "Example: 1439999052",
-                    "type": "integer"
+                    "description": "The corresponding time of the spot value.",
+                    "type": "integer",
+                    "examples": [
+                        1439999052
+                    ]
                 }
             }
         },
@@ -159,7 +180,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

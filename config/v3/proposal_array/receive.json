@@ -18,12 +18,18 @@
             ],
             "properties": {
                 "date_start": {
-                    "description": "Starting date for available contracts (epoch time). Example: 1439999053",
-                    "type": "integer"
+                    "description": "Starting date for available contracts (epoch time).",
+                    "type": "integer",
+                    "examples": [
+                        1439999053
+                    ]
                 },
                 "id": {
-                    "description": "A stream ID that can be used to cancel this stream using the Forget request. Example: 1d6651e7d599bce6c54bd71a8283e579",
-                    "type": "string"
+                    "description": "A stream ID that can be used to cancel this stream using the Forget request.",
+                    "type": "string",
+                    "examples": [
+                        "1d6651e7d599bce6c54bd71a8283e579"
+                    ]
                 },
                 "proposals": {
                     "title": "Multiple Price Proposal",
@@ -47,30 +53,39 @@
                                         ],
                                         "properties": {
                                             "ask_price": {
-                                                "description": "Example: 5.14",
-                                                "type": "number"
+                                                "description": "The ask price.",
+                                                "type": "number",
+                                                "examples": [
+                                                    5.14
+                                                ]
                                             },
                                             "barrier": {
-                                                "description": "Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers.",
+                                                "description": "Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Synthetic Indices as they support both relative and absolute barriers.",
                                                 "type": "string",
                                                 "pattern": "^[+-]?[0-9]+\\.?[0-9]*$"
                                             },
                                             "barrier2": {
-                                                "description": "Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Volatility Indices as they support both relative and absolute barriers.",
+                                                "description": "Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Synthetic Indices as they support both relative and absolute barriers.",
                                                 "type": "string",
                                                 "pattern": "^[+-]?[0-9]+\\.?[0-9]*$"
                                             },
                                             "display_value": {
-                                                "description": "Example: 5.14, same as ask_price",
-                                                "type": "string"
+                                                "description": "Same as `ask_price`",
+                                                "type": "string",
+                                                "examples": [
+                                                    "5.14"
+                                                ]
                                             },
                                             "longcode": {
                                                 "description": "Example: Win payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time.",
                                                 "type": "string"
                                             },
                                             "payout": {
-                                                "description": "Example: 10",
-                                                "type": "number"
+                                                "description": "The payout amount of the contract.",
+                                                "type": "number",
+                                                "examples": [
+                                                    10
+                                                ]
                                             }
                                         }
                                     },
@@ -92,12 +107,18 @@
                     }
                 },
                 "spot": {
-                    "description": "Spot value (if there are no exchange data-feed licensing restrictions for the underlying symbol). Example: 9874.52",
-                    "type": "number"
+                    "description": "Spot value (if there are no exchange data-feed licensing restrictions for the underlying symbol).",
+                    "type": "number",
+                    "examples": [
+                        9874.52
+                    ]
                 },
                 "spot_time": {
-                    "description": "Timestamp for latest spot (epoch time). Example: 1439999052",
-                    "type": "integer"
+                    "description": "Timestamp for latest spot (epoch time).",
+                    "type": "integer",
+                    "examples": [
+                        1439999052
+                    ]
                 }
             },
             "subscription": {
@@ -127,7 +148,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

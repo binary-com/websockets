@@ -24,7 +24,7 @@
                         "type": "object",
                         "properties": {
                             "app_id": {
-                                "description": "App ID of app where this transaction was performed. For example, it's 1 for binary.com.",
+                                "description": "ID of the application where this contract was purchased.",
                                 "type": [
                                     "integer",
                                     "null"
@@ -35,10 +35,13 @@
                                 "type": "number"
                             },
                             "contract_id": {
-                                "description": "It is the contract ID. Example: 4867502908",
+                                "description": "The unique contract identifier.",
                                 "type": [
                                     "integer",
                                     "null"
+                                ],
+                                "examples": [
+                                    4867502908
                                 ]
                             },
                             "longcode": {
@@ -50,15 +53,15 @@
                                 "type": "number"
                             },
                             "purchase_time": {
-                                "description": "It is the purchase time of transaction",
+                                "description": "Epoch purchase time of the transaction",
                                 "type": "integer"
                             },
                             "sell_price": {
-                                "description": "The sold price",
+                                "description": "The price the contract sold for.",
                                 "type": "number"
                             },
                             "sell_time": {
-                                "description": "It is the sell time of transaction",
+                                "description": "Epoch sell time of the transaction",
                                 "type": [
                                     "integer",
                                     "null"
@@ -69,8 +72,11 @@
                                 "type": "string"
                             },
                             "transaction_id": {
-                                "description": "It is the transaction ID. every contract (buy or sell) and every payment has a unique ID. Example: 10867502908",
-                                "type": "integer"
+                                "description": "The transaction Identifier. Every contract (buy or sell) and every payment has a unique transaction identifier.",
+                                "type": "integer",
+                                "examples": [
+                                    10867502908
+                                ]
                             }
                         }
                     }
@@ -89,7 +95,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

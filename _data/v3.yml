@@ -30,7 +30,7 @@ groups:
       - name: cashier
         title: Cashier URL
       - name: contract_update
-        title: Contract Update
+        title: Update Contract
       - name: contracts_for
         title: Contracts For Symbol
       - name: copy_start

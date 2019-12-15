@@ -87,7 +87,11 @@
                 },
                 "email_consent": {
                     "description": "Boolean value 1 or 0, indicating permission to use email address for any contact which may include marketing",
-                    "type": "integer"
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
                 },
                 "first_name": {
                     "description": "First name (note: not set for virtual-money accounts)",
@@ -178,7 +182,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

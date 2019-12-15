@@ -40,7 +40,7 @@
                         "type": "object",
                         "properties": {
                             "assets": {
-                                "description": "The assets set to copy the trades of.",
+                                "description": "The list of assets to copy the trades of.",
                                 "type": "array",
                                 "items": {
                                     "type": "string"
@@ -92,7 +92,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

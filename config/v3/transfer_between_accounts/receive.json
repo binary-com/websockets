@@ -24,7 +24,7 @@
                 "type": "object",
                 "properties": {
                     "account_type": {
-                        "description": "Type of the account Example: binary",
+                        "description": "Type of the account.",
                         "type": "string",
                         "enum": [
                             "binary",
@@ -36,16 +36,25 @@
                         "type": "string"
                     },
                     "currency": {
-                        "description": "Default account currency Example: USD",
-                        "type": "string"
+                        "description": "Default account currency.",
+                        "type": "string",
+                        "examples": [
+                            "USD"
+                        ]
                     },
                     "loginid": {
-                        "description": "Client loginid Example: CR000000",
-                        "type": "string"
+                        "description": "Client loginid.",
+                        "type": "string",
+                        "examples": [
+                            "CR000000"
+                        ]
                     },
                     "mt5_group": {
-                        "description": "The group of mt5 account Example: real\\vanuatu_standard",
-                        "type": "string"
+                        "description": "The group of mt5 account.",
+                        "type": "string",
+                        "examples": [
+                            "real\\vanuatu_standard"
+                        ]
                     }
                 }
             }
@@ -74,7 +83,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

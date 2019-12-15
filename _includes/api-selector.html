@@ -1,23 +1,13 @@
 <fieldset>
-    <div class="row">
-        <div class="col" style="flex: 2">
-            {% include api-methods-list.html %}
-        </div>
-        <div class="col">
-            <select id="api-language-selector">
-                <option value="DE">Deutsch</option>
-                <option value="EN" selected="selected">English</option>
-                <option value="ES">Español</option>
-                <option value="FR">Français</option>
-                <option value="ID">Indonesia</option>
-                <option value="PL">Polish</option>
-                <option value="PT">Português</option>
-                <option value="RU">Русский</option>
-                <option value="TH">Thai</option>
-                <option value="VI">Tiếng Việt</option>
-                <option value="ZH_CN">简体中文</option>
-                <option value="ZH_TW">繁體中文</option>
-            </select>
-        </div>
-    </div>
+    <select id="api-call-selector">
+        <option selected disabled hidden>Select API Call - Version 3</option>
+        {%- for group in site.data.v3.groups %}
+        <optgroup label="{{ group.label }}">
+            {%- assign sorted_methods = group.methods | sort: "title") -%}
+            {%- for method in sorted_methods %}
+            <option value="{{ method.name }}">{{ method.title }}</option>
+            {%- endfor %}
+        </optgroup>
+        {% endfor %}
+    </select>
 </fieldset>

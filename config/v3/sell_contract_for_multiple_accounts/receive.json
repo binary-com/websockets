@@ -49,7 +49,7 @@
                                         "type": "number"
                                     },
                                     "sell_time": {
-                                        "description": "date and time of sale YYYY-MM-dd hh:mm:ss format",
+                                        "description": "date and time of sale `YYYY-MM-dd hh:mm:ss` format",
                                         "type": "string"
                                     },
                                     "transaction_id": {
@@ -99,7 +99,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

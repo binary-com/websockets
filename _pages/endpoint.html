@@ -3,16 +3,18 @@ layout: page
 permalink: endpoint/
 ---
 <div style="padding-bottom: 20px" title="eg. www2.binary.com">
-    <input id="endpoint-input" type="text" placeholder="Custom endpoint url" autocomplete="on"/>
-    <input id="appid-input" type="text" placeholder="App ID of endpoint" autocomplete="on"/>
-    <button id="endpoint-button">Use New Endpoint</button>
-    <p id="conn-error" class="errorfield">Failed to connect, fallback to default endpoint</p>
-    <p>
-        <span id="connecting">Connecting ...</span>
-        <span id="connected" style="font-weight: bold">
-            <span>Connected to: </span>
-            <span id="api-url"></span>
-        </span>
-    </p>
-    <button id="use-default-button">Use Default Endpoint</button>
+    <form>
+        <input id="endpoint_txt-url" type="text" placeholder="Custom endpoint url" autocomplete="on"/>
+        <input id="endpoint_txt-appid" type="text" placeholder="App ID of endpoint" autocomplete="on"/>
+        <button id="endpoint_btn-set" type="submit">Use This Endpoint</button>
+        <p id="endpoint_error" class="error-msg" style="display: none;">Failed to connect.</p>
+        <p>
+            <span id="endpoint_connecting" style="display: none;">Connecting ...</span>
+            <span id="endpoint_connected" style="font-weight: bold; display: none;">
+                <span>Connected to: </span>
+                <code id="endpoint_api-url"></code>
+            </span>
+        </p>
+    </form>
+    <button id="endpoint_btn-reset">Use Default Endpoint</button>
 </div>

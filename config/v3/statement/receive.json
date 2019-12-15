@@ -24,7 +24,7 @@
                         "type": "object",
                         "properties": {
                             "action_type": {
-                                "description": "It is the type of action Example: buy",
+                                "description": "It is the type of action.",
                                 "type": "string",
                                 "enum": [
                                     "buy",
@@ -34,29 +34,38 @@
                                 ]
                             },
                             "amount": {
-                                "description": "It is the amount of transaction Example: -83.2300",
-                                "type": "number"
+                                "description": "It is the amount of transaction.",
+                                "type": "number",
+                                "examples": [
+                                    -83.23
+                                ]
                             },
                             "app_id": {
-                                "description": "ID of an app where this transaction was performed. For example, it's 1 for binary.com.",
+                                "description": "ID of the application where this contract was purchased.",
                                 "type": [
                                     "integer",
                                     "null"
                                 ]
                             },
                             "balance_after": {
-                                "description": "It is the remaining balance Example: 10150.1300",
-                                "type": "number"
+                                "description": "It is the remaining balance.",
+                                "type": "number",
+                                "examples": [
+                                    10150.13
+                                ]
                             },
                             "contract_id": {
-                                "description": "It is the contract ID. Example: 4867502908",
+                                "description": "It is the contract ID.",
                                 "type": [
                                     "integer",
                                     "null"
+                                ],
+                                "examples": [
+                                    4867502908
                                 ]
                             },
                             "longcode": {
-                                "description": "The description of contract purchased if description is set to 1",
+                                "description": "The description of contract purchased if description is set to `1`.",
                                 "type": "string"
                             },
                             "payout": {
@@ -78,19 +87,25 @@
                                 ]
                             },
                             "shortcode": {
-                                "description": "Compact description of the contract purchased if description is set to 1",
+                                "description": "Compact description of the contract purchased if description is set to `1`.",
                                 "type": [
                                     "null",
                                     "string"
                                 ]
                             },
                             "transaction_id": {
-                                "description": "It is the transaction ID. In statement every contract (buy or sell) and every payment has a unique ID. Example: 10867502908",
-                                "type": "integer"
+                                "description": "It is the transaction ID. In statement every contract (buy or sell) and every payment has a unique ID.",
+                                "type": "integer",
+                                "examples": [
+                                    10867502908
+                                ]
                             },
                             "transaction_time": {
-                                "description": "It is the time of transaction Example: 1441175849",
-                                "type": "integer"
+                                "description": "It is the time of transaction.",
+                                "type": "integer",
+                                "examples": [
+                                    1441175849
+                                ]
                             }
                         }
                     }
@@ -109,7 +124,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

@@ -10,7 +10,7 @@
     "properties": {
         "portfolio": {
             "title": "portfolio",
-            "description": "Client open positions",
+            "description": "Current account's open positions.",
             "type": "object",
             "required": [
                 "contracts"
@@ -18,15 +18,15 @@
             "properties": {
                 "contracts": {
                     "title": "Contracts",
-                    "description": "Client open positions",
+                    "description": "List of open positions.",
                     "type": "array",
                     "items": {
                         "title": "Portfolio",
-                        "description": "Client open positions",
+                        "description": "The details of each open position.",
                         "type": "object",
                         "properties": {
                             "app_id": {
-                                "description": "ID of an app from where this contract was purchased. For example, it's 1 for binary.com.",
+                                "description": "ID of the application where this contract was purchased.",
                                 "type": [
                                     "integer",
                                     "null"
@@ -37,7 +37,7 @@
                                 "type": "number"
                             },
                             "contract_id": {
-                                "description": "Binary.com internal contract identifier number (to be used in a Price Proposal - Open Contract API call)",
+                                "description": "Internal contract identifier number (to be used in a 'proposal_open_contract' API call)",
                                 "type": "integer"
                             },
                             "contract_type": {
@@ -73,8 +73,11 @@
                                 "type": "string"
                             },
                             "transaction_id": {
-                                "description": "It is the transaction ID. Every contract (buy or sell) and every payment has a unique ID. Example: 10867502908",
-                                "type": "integer"
+                                "description": "It is the transaction ID. Every contract (buy or sell) and every payment has a unique ID.",
+                                "type": "integer",
+                                "examples": [
+                                    "10867502908"
+                                ]
                             }
                         }
                     }
@@ -93,7 +96,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }

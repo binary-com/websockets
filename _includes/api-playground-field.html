@@ -3,10 +3,27 @@
 </fieldset>
 <p id="playground-reset-buttons">
     <button id="playground-send-btn">Send Request</button>
-    <a id="scroll-to-bottom-btn">Scroll To Bottom</a>
-    <a id="playground-reset-btn">Reset Connection</a>
+    <select id="api-language-selector">
+        <option value="DE">Deutsch</option>
+        <option value="EN" selected="selected">English</option>
+        <option value="ES">Español</option>
+        <option value="FR">Français</option>
+        <option value="ID">Indonesia</option>
+        <option value="PL">Polish</option>
+        <option value="PT">Português</option>
+        <option value="RU">Русский</option>
+        <option value="TH">Thai</option>
+        <option value="VI">Tiếng Việt</option>
+        <option value="ZH_CN">简体中文</option>
+        <option value="ZH_TW">繁體中文</option>
+    </select>
+    <a id="playground-reset-btn" href="javascript:;">Reset Connection</a>
 </p>
 <div id="unauthorized-error" >
-    <p class="errorfield">You are not authenticated.</p>
+    <p class="notice-msg">You are not authenticated.</p>
+</div>
+<div id="console-tools">
+    <a id="scroll-to-bottom-btn" href="javascript:;">Scroll To Bottom</a>
+    <a id="toggle-theme" href="javascript:;" style="display: none;">Toggle Theme</a>
 </div>
 <div id="playground-console"></div>

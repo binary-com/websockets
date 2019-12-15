@@ -28,7 +28,7 @@
             ],
             "properties": {
                 "active_since": {
-                    "description": "This is the epoch the investor started trading with binary.com",
+                    "description": "This is the epoch the investor started trading.",
                     "type": "integer"
                 },
                 "avg_duration": {
@@ -40,11 +40,11 @@
                     "type": "number"
                 },
                 "avg_profit": {
-                    "description": "Average profit of trades in percentage.",
+                    "description": "Average profitable trades in percentage.",
                     "type": "number"
                 },
                 "copiers": {
-                    "description": "Trader copiers count.",
+                    "description": "Number of copiers for this trader.",
                     "type": "number"
                 },
                 "last_12months_profitable_trades": {
@@ -110,7 +110,7 @@
             ]
         },
         "req_id": {
-            "description": "Optional field sent in request to map to response, present only when request contains req_id.",
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
             "type": "integer"
         }
     }
