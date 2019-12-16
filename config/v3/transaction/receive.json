@@ -17,10 +17,11 @@
                     "description": "The transaction type.",
                     "type": "string",
                     "enum": [
+                        "buy",
+                        "sell",
                         "deposit",
                         "withdrawal",
-                        "buy",
-                        "sell"
+                        "escrow"
                     ]
                 },
                 "amount": {

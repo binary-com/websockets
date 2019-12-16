@@ -30,7 +30,8 @@
                                     "buy",
                                     "sell",
                                     "deposit",
-                                    "withdrawal"
+                                    "withdrawal",
+                                    "escrow"
                                 ]
                             },
                             "amount": {

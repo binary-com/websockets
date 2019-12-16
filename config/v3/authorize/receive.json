@@ -61,7 +61,7 @@
                 "country": {
                     "description": "2-letter country code (ISO standard).",
                     "type": "string",
-                    "pattern": "^[a-zA-Z]{0,2}$"
+                    "pattern": "^[a-z]{0,2}$"
                 },
                 "currency": {
                     "description": "Currency of the account.",
