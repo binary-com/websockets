@@ -3,6 +3,7 @@
     "title": "New Virtual-Money Account (request)",
     "description": "Create a new virtual-money account.",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "client_password",

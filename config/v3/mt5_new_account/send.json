@@ -3,6 +3,10 @@
     "title": "MT5: New Account (request)",
     "description": "This call creates new MT5 user, either demo or real money user.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
     "additionalProperties": false,
     "required": [
         "account_type",

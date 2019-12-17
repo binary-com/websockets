@@ -3,6 +3,10 @@
     "title": "Copy Trading: Start (request)",
     "description": "Start copy trader bets",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "trade"
+    ],
     "additionalProperties": false,
     "required": [
         "copy_start"

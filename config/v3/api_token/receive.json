@@ -50,6 +50,7 @@
                                     "enum": [
                                         "read",
                                         "trade",
+                                        "trading_information",
                                         "payments",
                                         "admin"
                                     ]

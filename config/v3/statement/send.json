@@ -3,6 +3,11 @@
     "title": "Statement (request)",
     "description": "Retrieve a summary of account transactions, according to given search criteria",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read",
+        "trading_information"
+    ],
     "additionalProperties": false,
     "required": [
         "statement"

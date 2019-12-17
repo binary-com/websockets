@@ -3,6 +3,7 @@
     "title": "Forget (request)",
     "description": "Immediately cancel the real-time stream of messages with a specific ID.",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "forget"

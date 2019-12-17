@@ -3,6 +3,10 @@
     "title": "MT5: Password Change (request)",
     "description": "To change passwords of the MT5 account.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
     "additionalProperties": false,
     "required": [
         "login",

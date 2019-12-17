@@ -3,6 +3,10 @@
     "title": "Buy Contract for Multiple Accounts (request)",
     "description": "Buy a Contract for multiple Accounts specified by the 'tokens' parameter. Note, although this is an authorized call, the contract is not bought for the authorized account.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "trade"
+    ],
     "additionalProperties": false,
     "required": [
         "buy_contract_for_multiple_accounts",

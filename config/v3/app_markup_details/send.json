@@ -3,6 +3,10 @@
     "title": "Application: Markup Details (request)",
     "description": "Retrieve details of `app_markup` according to criteria specified.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
     "additionalProperties": false,
     "required": [
         "app_markup_details",

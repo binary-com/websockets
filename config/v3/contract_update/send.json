@@ -3,6 +3,10 @@
     "title": "Update Contract (request)",
     "description": "Update a contract condition.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "trade"
+    ],
     "additionalProperties": false,
     "required": [
         "contract_id",

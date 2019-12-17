@@ -3,6 +3,10 @@
     "title": "Cashier URL (request)",
     "description": "Request the cashier URL.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "payments"
+    ],
     "additionalProperties": false,
     "required": [
         "cashier"

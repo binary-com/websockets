@@ -3,6 +3,10 @@
     "title": "Application: Update (request)",
     "description": "Update a new OAuth application",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
     "additionalProperties": false,
     "required": [
         "app_update",
@@ -59,6 +63,7 @@
                 "enum": [
                     "read",
                     "trade",
+                    "trading_information",
                     "payments",
                     "admin"
                 ]

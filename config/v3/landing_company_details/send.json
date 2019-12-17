@@ -3,6 +3,7 @@
     "title": "Landing Company Details (request)",
     "description": "The company has a number of licensed subsidiaries in various jurisdictions, which are called Landing Companies (and which are wholly owned subsidiaries of the Binary Group). This call provides information about each Landing Company.",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "landing_company_details"

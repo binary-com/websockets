@@ -3,6 +3,10 @@
     "title": "Buy Contract (request)",
     "description": "Buy a Contract",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "trade"
+    ],
     "additionalProperties": false,
     "required": [
         "buy",

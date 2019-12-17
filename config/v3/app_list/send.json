@@ -3,6 +3,10 @@
     "title": "Application: List (request)",
     "description": "List all of the account's OAuth applications",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
     "additionalProperties": false,
     "required": [
         "app_list"

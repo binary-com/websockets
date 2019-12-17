@@ -3,6 +3,11 @@
     "title": "Balance (request)",
     "description": "Get user account balance",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read",
+        "trading_information"
+    ],
     "additionalProperties": false,
     "required": [
         "balance"

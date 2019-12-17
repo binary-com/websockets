@@ -3,6 +3,7 @@
     "title": "Copy Trading: Statistics (request)",
     "description": "Retrieve performance, trading, risk and copiers statistics of trader.",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "copytrading_statistics",

@@ -3,6 +3,7 @@
     "title": "Log Out (request)",
     "description": "Logout the session",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "logout"

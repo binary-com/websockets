@@ -3,6 +3,11 @@
     "title": "Portfolio (request)",
     "description": "Receive information about my current portfolio of outstanding options",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read",
+        "trading_information"
+    ],
     "additionalProperties": false,
     "required": [
         "portfolio"

@@ -3,6 +3,10 @@
     "title": "Document Upload (request)",
     "description": "Request KYC information from client",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
     "additionalProperties": false,
     "required": [
         "document_format",

@@ -3,6 +3,7 @@
     "title": "Server Time (request)",
     "description": "Request back-end server epoch time.",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "time"

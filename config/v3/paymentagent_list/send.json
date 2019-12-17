@@ -3,6 +3,7 @@
     "title": "Payment Agent: List (request)",
     "description": "Will return a list of Payment Agents for a given country for a given currency. Payment agents allow users to deposit and withdraw funds using local payment methods that might not be available via the main website's cashier system.",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "paymentagent_list"

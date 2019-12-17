@@ -3,6 +3,7 @@
     "title": "Contracts For Symbol (request)",
     "description": "For a given symbol, get the list of currently available contracts, and the latest barrier and duration limits for each contract.",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "contracts_for"

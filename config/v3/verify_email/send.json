@@ -3,6 +3,7 @@
     "title": "Verify Email (request)",
     "description": "Verify an email address for various purposes. The system will send an email to the address containing a security code for verification.",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "type",

@@ -3,6 +3,10 @@
     "title": "Application: Get Details (request)",
     "description": "To get the information of the OAuth application specified by 'app_id'",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
     "additionalProperties": false,
     "required": [
         "app_get"

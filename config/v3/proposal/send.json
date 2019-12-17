@@ -3,6 +3,7 @@
     "title": "Price Proposal (request)",
     "description": "Gets latest price for a specific contract.",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "contract_type",

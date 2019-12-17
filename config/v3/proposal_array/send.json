@@ -4,6 +4,7 @@
     "description": "(This API call is deprecated) Get latest prices for a specific contract with different barriers.",
     "deprecated": 1,
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "barriers",

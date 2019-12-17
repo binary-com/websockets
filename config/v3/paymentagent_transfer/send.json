@@ -3,6 +3,10 @@
     "title": "Payment Agent: Transfer (request)",
     "description": "Payment Agent Transfer - this call is available only to accounts that are approved Payment Agents.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "payments"
+    ],
     "additionalProperties": false,
     "required": [
         "amount",

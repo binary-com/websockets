@@ -1,162 +1,78 @@
 groups:
-  - label: Unauthenticated Calls
+  - label: All Calls
     methods:
       - name: active_symbols
         title: Active Symbols
-      - name: asset_index
-        title: Asset Index
-      - name: authorize
-        title: Authorize
-      - name: contracts_for
-        title: Contracts For Symbol
-      - name: copytrading_statistics
-        title: 'Copy Trading: Statistics'
-      - name: residence_list
-        title: Countries List
-      - name: exchange_rates
-        title: Exchange Rates
-      - name: forget
-        title: Forget
-      - name: forget_all
-        title: Forget All
-      - name: landing_company
-        title: Landing Company
-      - name: landing_company_details
-        title: Landing Company Details
-      - name: logout
-        title: Log Out
-      - name: new_account_virtual
-        title: New Virtual-Money Account
-      - name: paymentagent_list
-        title: 'Payment Agent: List'
-      - name: payout_currencies
-        title: Payout Currencies
-      - name: ping
-        title: Ping
-      - name: proposal
-        title: Price Proposal
-      - name: proposal_array
-        title: 'Price Proposal: Multiple Contracts'
-      - name: website_status
-        title: Server Status
-      - name: time
-        title: Server Time
-      - name: states_list
-        title: States List
-      - name: ticks_history
-        title: Ticks History
-      - name: ticks
-        title: Ticks Stream
-      - name: trading_durations
-        title: Trading Durations
-      - name: trading_times
-        title: Trading Times
-      - name: verify_email
-        title: Verify Email
-  - label: "Authenticated Calls: 'read' scope"
-    methods:
-      - name: get_limits
-        title: Account Limits
-      - name: get_account_status
-        title: Account Status
+      - name: api_token
+        title: API Token
+      - name: app_delete
+        title: 'Application: Delete'
       - name: app_get
         title: 'Application: Get Details'
       - name: app_list
         title: 'Application: List'
       - name: app_markup_details
         title: 'Application: Markup Details'
-      - name: balance
-        title: Balance
-      - name: get_settings
-        title: Get Account Settings
-      - name: get_financial_assessment
-        title: Get Financial Assessment
-      - name: get_self_exclusion
-        title: Get Self-Exclusion
-      - name: login_history
-        title: Login History
-      - name: mt5_login_list
-        title: 'MT5: Accounts List'
-      - name: mt5_get_settings
-        title: 'MT5: Get Setting'
-      - name: oauth_apps
-        title: OAuth Applications
-      - name: portfolio
-        title: Portfolio
-      - name: proposal_open_contract
-        title: 'Price Proposal: Open Contracts'
-      - name: profit_table
-        title: Profit Table
-      - name: reality_check
-        title: Reality Check
-      - name: statement
-        title: Statement
-      - name: transaction
-        title: Transactions Stream
-  - label: "Authenticated Calls: 'trade' scope"
-    methods:
-      - name: buy
-        title: Buy Contract
-      - name: buy_contract_for_multiple_accounts
-        title: Buy Contract for Multiple Accounts
-      - name: copy_start
-        title: 'Copy Trading: Start'
-      - name: copy_stop
-        title: 'Copy Trading: Stop'
-      - name: sell
-        title: Sell Contract
-      - name: sell_contract_for_multiple_accounts
-        title: 'Sell Contracts: Multiple Accounts'
-      - name: sell_expired
-        title: Sell Expired Contracts
-      - name: topup_virtual
-        title: Top Up Virtual-Money Account
-      - name: contract_update
-        title: Update Contract
-  - label: "Authenticated Calls: 'admin' scope"
-    methods:
-      - name: api_token
-        title: API Token
-      - name: app_delete
-        title: 'Application: Delete'
       - name: app_register
         title: 'Application: Register'
       - name: app_update
         title: 'Application: Update'
-      - name: copytrading_list
-        title: 'Copy Trading: List'
-      - name: document_upload
-        title: Document Upload
-      - name: new_account_maltainvest
-        title: 'New Real-Money Account: Binary Investment (Europe) Ltd.'
-      - name: new_account_real
-        title: 'New Real-Money Account: Default Landing Company'
-      - name: revoke_oauth_app
-        title: Revoke Oauth Application
-      - name: set_account_currency
-        title: Set Account Currency
-      - name: set_settings
-        title: Set Account Settings
-      - name: set_financial_assessment
-        title: Set Financial Assessment
-      - name: set_self_exclusion
-        title: Set Self-Exclusion
-      - name: tnc_approval
-        title: Terms and Conditions Approval
-  - label: "Authenticated Calls: 'payments' scope"
-    methods:
+      - name: asset_index
+        title: Asset Index
+      - name: authorize
+        title: Authorize
+      - name: balance
+        title: Balance
+      - name: buy
+        title: Buy Contract
+      - name: buy_contract_for_multiple_accounts
+        title: Buy Contract for Multiple Accounts
       - name: cashier
         title: Cashier URL
-      - name: paymentagent_transfer
-        title: 'Payment Agent: Transfer'
-      - name: paymentagent_withdraw
-        title: 'Payment Agent: Withdraw'
-      - name: transfer_between_accounts
-        title: Transfer Between Accounts
-  - label: "MT5-related Calls: 'admin' scope"
-    methods:
+      - name: contract_update
+        title: Update Contract
+      - name: contracts_for
+        title: Contracts For Symbol
+      - name: copy_start
+        title: 'Copy Trading: Start'
+      - name: copy_stop
+        title: 'Copy Trading: Stop'
+      - name: copytrading_list
+        title: 'Copy Trading: List'
+      - name: copytrading_statistics
+        title: 'Copy Trading: Statistics'
+      - name: document_upload
+        title: Document Upload
+      - name: exchange_rates
+        title: Exchange Rates
+      - name: forget
+        title: Forget
+      - name: forget_all
+        title: Forget All
+      - name: get_account_status
+        title: Account Status
+      - name: get_financial_assessment
+        title: Get Financial Assessment
+      - name: get_limits
+        title: Account Limits
+      - name: get_self_exclusion
+        title: Get Self-Exclusion
+      - name: get_settings
+        title: Get Account Settings
+      - name: landing_company
+        title: Landing Company
+      - name: landing_company_details
+        title: Landing Company Details
+      - name: login_history
+        title: Login History
+      - name: logout
+        title: Log Out
       - name: mt5_deposit
         title: 'MT5: Deposit'
+      - name: mt5_get_settings
+        title: 'MT5: Get Setting'
+      - name: mt5_login_list
+        title: 'MT5: Accounts List'
       - name: mt5_new_account
         title: 'MT5: New Account'
       - name: mt5_password_change
@@ -167,3 +83,77 @@ groups:
         title: 'MT5: Password Reset'
       - name: mt5_withdrawal
         title: 'MT5: Withdrawal'
+      - name: new_account_maltainvest
+        title: 'New Real-Money Account: Binary Investment (Europe) Ltd.'
+      - name: new_account_real
+        title: 'New Real-Money Account: Default Landing Company'
+      - name: new_account_virtual
+        title: New Virtual-Money Account
+      - name: oauth_apps
+        title: OAuth Applications
+      - name: paymentagent_list
+        title: 'Payment Agent: List'
+      - name: paymentagent_transfer
+        title: 'Payment Agent: Transfer'
+      - name: paymentagent_withdraw
+        title: 'Payment Agent: Withdraw'
+      - name: payout_currencies
+        title: Payout Currencies
+      - name: ping
+        title: Ping
+      - name: portfolio
+        title: Portfolio
+      - name: profit_table
+        title: Profit Table
+      - name: proposal
+        title: Price Proposal
+      - name: proposal_array
+        title: 'Price Proposal: Multiple Contracts'
+      - name: proposal_open_contract
+        title: 'Price Proposal: Open Contracts'
+      - name: reality_check
+        title: Reality Check
+      - name: residence_list
+        title: Countries List
+      - name: revoke_oauth_app
+        title: Revoke Oauth Application
+      - name: sell
+        title: Sell Contract
+      - name: sell_contract_for_multiple_accounts
+        title: 'Sell Contracts: Multiple Accounts'
+      - name: sell_expired
+        title: Sell Expired Contracts
+      - name: set_account_currency
+        title: Set Account Currency
+      - name: set_financial_assessment
+        title: Set Financial Assessment
+      - name: set_self_exclusion
+        title: Set Self-Exclusion
+      - name: set_settings
+        title: Set Account Settings
+      - name: statement
+        title: Statement
+      - name: states_list
+        title: States List
+      - name: ticks
+        title: Ticks Stream
+      - name: ticks_history
+        title: Ticks History
+      - name: time
+        title: Server Time
+      - name: tnc_approval
+        title: Terms and Conditions Approval
+      - name: topup_virtual
+        title: Top Up Virtual-Money Account
+      - name: trading_durations
+        title: Trading Durations
+      - name: trading_times
+        title: Trading Times
+      - name: transaction
+        title: Transactions Stream
+      - name: transfer_between_accounts
+        title: Transfer Between Accounts
+      - name: verify_email
+        title: Verify Email
+      - name: website_status
+        title: Server Status

@@ -466,3 +466,13 @@
     color: #080;
     font-style: italic;
 }
+
+.docson .scopes {
+    float:left;
+    display: inline-block
+    padding-left: 6px;
+    margin-top: 5px;
+}
+.docson .scopes .type-enum {
+    background: #fff;
+}

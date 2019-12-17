@@ -3,6 +3,7 @@
     "title": "Landing Company (request)",
     "description": "The company has a number of licensed subsidiaries in various jurisdictions, which are called Landing Companies. This call will return the appropriate Landing Company for clients of a given country. The landing company may differ for Gaming contracts (Synthetic Indices) and Financial contracts (Forex, Stock Indices, Commodities).",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "landing_company"

@@ -3,6 +3,10 @@
     "title": "MT5: Get Setting (request)",
     "description": "Get MT5 user account settings",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
     "additionalProperties": false,
     "required": [
         "login",

@@ -3,6 +3,10 @@
     "title": "Get Financial Assessment (request)",
     "description": "This call gets the financial assessement details. The 'financial assessment' is a questionnaire that clients of certain Landing Companies need to complete, due to regulatory and KYC (know your client) requirements.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
     "additionalProperties": false,
     "required": [
         "get_financial_assessment"

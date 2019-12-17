@@ -3,6 +3,10 @@
     "title": "OAuth Applications (request)",
     "description": "List all my used OAuth applications.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
     "additionalProperties": false,
     "required": [
         "oauth_apps"

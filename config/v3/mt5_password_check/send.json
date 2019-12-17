@@ -3,6 +3,10 @@
     "title": "MT5: Password Check (request)",
     "description": "This call validates the main password for the MT5 user",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
     "additionalProperties": false,
     "required": [
         "login",

@@ -3,6 +3,10 @@
     "title": "Set Account Settings (request)",
     "description": "Set User Settings (this call should be used in conjunction with get_settings)",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
     "additionalProperties": false,
     "required": [
         "set_settings"

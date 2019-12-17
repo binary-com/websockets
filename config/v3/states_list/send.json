@@ -3,6 +3,7 @@
     "title": "States List (request)",
     "description": "For a given country, returns a list of States of that country. This is useful to populate the account opening form.",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "states_list"

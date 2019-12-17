@@ -3,6 +3,10 @@
     "title": "Sell Contract (request)",
     "description": "Sell a Contract as identified from a previous Portfolio call",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "trade"
+    ],
     "additionalProperties": false,
     "required": [
         "price",

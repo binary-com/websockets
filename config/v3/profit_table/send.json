@@ -3,6 +3,11 @@
     "title": "Profit Table (request)",
     "description": "Retrieve a summary of account Profit Table, according to given search criteria",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read",
+        "trading_information"
+    ],
     "additionalProperties": false,
     "required": [
         "profit_table"

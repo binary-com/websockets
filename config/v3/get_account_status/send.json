@@ -3,6 +3,10 @@
     "title": "Account Status (request)",
     "description": "Get Account Status",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
     "additionalProperties": false,
     "required": [
         "get_account_status"

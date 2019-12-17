@@ -3,6 +3,10 @@
     "title": "Get Account Settings (request)",
     "description": "Get User Settings (email, date of birth, address etc)",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
     "additionalProperties": false,
     "required": [
         "get_settings"

@@ -3,6 +3,7 @@
     "title": "Asset Index (request)",
     "description": "Retrieve a list of all available underlyings and the corresponding contract types and duration boundaries. If the user is logged in, only the assets available for that user's landing company will be returned.",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "asset_index"

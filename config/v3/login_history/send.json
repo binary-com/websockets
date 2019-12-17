@@ -3,6 +3,10 @@
     "title": "Login History (request)",
     "description": "Retrieve a summary of login history for user.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
     "additionalProperties": false,
     "required": [
         "login_history"

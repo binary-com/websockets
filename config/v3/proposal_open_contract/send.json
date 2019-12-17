@@ -3,6 +3,11 @@
     "title": "Price Proposal: Open Contracts (request)",
     "description": "Get latest price (and other information) for a contract in the user's portfolio",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read",
+        "trading_information"
+    ],
     "additionalProperties": false,
     "required": [
         "proposal_open_contract"

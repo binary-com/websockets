@@ -3,6 +3,10 @@
     "title": "MT5: Password Reset (request)",
     "description": "To reset the password of MT5 account.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
     "additionalProperties": false,
     "required": [
         "login",

@@ -3,6 +3,10 @@
     "title": "Account Limits (request)",
     "description": "Trading and Withdrawal Limits for a given user",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
     "additionalProperties": false,
     "required": [
         "get_limits"

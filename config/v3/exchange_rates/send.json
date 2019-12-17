@@ -3,6 +3,7 @@
     "title": "Exchange Rates (request)",
     "description": "Retrieves the exchange rates from a base currency to all currencies supported by the system.",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "base_currency",

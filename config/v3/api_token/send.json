@@ -3,6 +3,10 @@
     "title": "API Token (request)",
     "description": "This call manages API tokens",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
     "additionalProperties": false,
     "required": [
         "api_token"
@@ -34,6 +38,7 @@
                 "enum": [
                     "read",
                     "trade",
+                    "trading_information",
                     "payments",
                     "admin"
                 ]

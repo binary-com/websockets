@@ -3,6 +3,10 @@
     "title": "Sell Expired Contracts (request)",
     "description": "This call will try to sell any expired contracts and return the number of sold contracts.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "trade"
+    ],
     "additionalProperties": false,
     "required": [
         "sell_expired"

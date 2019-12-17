@@ -3,6 +3,10 @@
     "title": "Application: Delete (request)",
     "description": "The request for deleting an application.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
     "additionalProperties": false,
     "required": [
         "app_delete"

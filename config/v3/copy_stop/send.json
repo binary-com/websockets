@@ -3,6 +3,10 @@
     "title": "Copy Trading: Stop (request)",
     "description": "Stop copy trader bets",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "trade"
+    ],
     "additionalProperties": false,
     "required": [
         "copy_stop"

@@ -3,6 +3,10 @@
     "title": "MT5: Withdrawal (request)",
     "description": "This call allows withdrawal from MT5 account to Binary account.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
     "additionalProperties": false,
     "required": [
         "amount",

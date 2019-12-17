@@ -3,6 +3,10 @@
     "title": "Copy Trading: List (request)",
     "description": "Retrieves a list of active copiers and/or traders for Copy Trading",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
     "additionalProperties": false,
     "required": [
         "copytrading_list"

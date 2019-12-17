@@ -3,6 +3,10 @@
     "title": "New Real-Money Account: Binary Investment (Europe) Ltd. (request)",
     "description": "This call opens a new real-money account with the `maltainvest` Landing Company. This call can be made from a virtual-money account or real-money account at Binary (Europe) Ltd. If it is the latter, client information fields in this call will be ignored and data from your existing real-money account will be used.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
     "additionalProperties": false,
     "required": [
         "accept_risk",

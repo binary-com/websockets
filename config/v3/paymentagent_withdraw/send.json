@@ -3,6 +3,10 @@
     "title": "Payment Agent: Withdraw (request)",
     "description": "Initiate a withdrawal to an approved Payment Agent.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "payments"
+    ],
     "additionalProperties": false,
     "required": [
         "amount",

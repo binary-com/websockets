@@ -3,6 +3,10 @@
     "title": "Set Self-Exclusion (request)",
     "description": "Set Self-Exclusion (this call should be used in conjunction with `get_self_exclusion`)",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
     "additionalProperties": false,
     "required": [
         "set_self_exclusion"

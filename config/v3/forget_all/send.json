@@ -3,6 +3,7 @@
     "title": "Forget All (request)",
     "description": "Immediately cancel the real-time streams of messages of given type.",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "forget_all"

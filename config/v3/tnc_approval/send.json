@@ -3,6 +3,10 @@
     "title": "Terms and Conditions Approval (request)",
     "description": "To approve the latest version of terms and conditions.",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
     "additionalProperties": false,
     "required": [
         "tnc_approval"

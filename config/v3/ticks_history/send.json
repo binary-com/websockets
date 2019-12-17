@@ -3,6 +3,7 @@
     "title": "Ticks History (request)",
     "description": "Get historic tick data for a given symbol.",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "end",

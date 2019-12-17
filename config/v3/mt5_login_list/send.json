@@ -3,6 +3,10 @@
     "title": "MT5: Accounts List (request)",
     "description": "Get list of MT5 accounts for client",
     "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
     "additionalProperties": false,
     "required": [
         "mt5_login_list"

@@ -3,6 +3,7 @@
     "title": "Payout Currencies (request)",
     "description": "Retrieve a list of available option payout currencies. If a user is logged in, only the currencies available for the account will be returned.",
     "type": "object",
+    "auth_required": 0,
     "additionalProperties": false,
     "required": [
         "payout_currencies"
