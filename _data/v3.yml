@@ -51,6 +51,8 @@ groups:
         title: Forget All
       - name: get_account_status
         title: Account Status
+      - name: account_closure
+        title: Account Closure
       - name: get_financial_assessment
         title: Get Financial Assessment
       - name: get_limits
