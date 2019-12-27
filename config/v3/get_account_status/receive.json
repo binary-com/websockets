@@ -63,6 +63,38 @@
                                     "description": "This represent the number times a client is allowed to submit documents",
                                     "type": "integer"
                                 },
+                                "services": {
+                                    "description": "This shows the information about the authentication services implemented",
+                                    "type": "object",
+                                    "properties": {
+                                        "onfido": {
+                                            "description": "This shows the information related to Onfido supported services",
+                                            "type": "object",
+                                            "properties": {
+                                                "documents": {
+                                                    "description": "This shows the list of documents types supported by Onfido",
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "examples": [
+                                                            "Driving Licence",
+                                                            "National Identity Card",
+                                                            "Passport"
+                                                        ]
+                                                    }
+                                                },
+                                                "is_country_supported": {
+                                                    "description": "This shows the information if the country is supported by Onfido",
+                                                    "type": "integer",
+                                                    "enum": [
+                                                        1,
+                                                        0
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
                                 "status": {
                                     "description": "This represent the current status for proof of identity document submitted for authentication.",
                                     "type": "string",
