@@ -6,6 +6,11 @@ permalink: endpoint/
     <form>
         <input id="endpoint_txt-url" type="text" placeholder="Custom endpoint url" autocomplete="on"/>
         <input id="endpoint_txt-appid" type="text" placeholder="App ID of endpoint" autocomplete="on"/>
+        Brand:
+        <select id="endpoint_ddl-brand">
+            <option value="binary">binary</option>
+            <option value="deriv">deriv</option>
+        </select>
         <button id="endpoint_btn-set" type="submit">Use This Endpoint</button>
         <p id="endpoint_error" class="error-msg" style="display: none;">Failed to connect.</p>
         <p>
