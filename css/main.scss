@@ -435,6 +435,32 @@ code {
     font-weight: 400;
 }
 
+.endpoint-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.input-container {
+    position: relative;
+    margin: 5px 5px 5px 0;
+
+    input, select {
+        height: 2.4rem;
+        padding: 0 7px;
+    }
+    label {
+        position: absolute;
+        left: 5px;
+        top: -5px;
+        font-size: 0.6rem;
+        line-height: 0.6rem;
+        padding: 0 5px;
+        color: #2a3052;
+        background: #fff;
+    }
+}
+
 #end-note {
     line-height: 25px;
     background: #c03;
