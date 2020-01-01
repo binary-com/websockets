@@ -536,8 +536,9 @@ function endpointNotification() {
     var end_note = document.getElementById('end-note');
     if (end_note) {
         var server = getServerUrl();
-        if (server && server !== DEFAULT_API_URL) {
-            end_note.innerHTML = 'The server <a href="/endpoint/">endpoint</a> is: ' + server + ' (Brand: ' + getBrand() + ')';
+        var brand  = getBrand();
+        if (server !== DEFAULT_API_URL || brand !== DEFAULT_BRAND) {
+            end_note.innerHTML = 'The server <a href="/endpoint/">endpoint</a> is: ' + server + ' (Brand: ' + brand + ')';
             end_note.classList.remove('invisible');
         } else {
             end_note.innerHTML = '';
