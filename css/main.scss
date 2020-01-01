@@ -137,7 +137,7 @@ header {
 }
 #playground-console {
     overflow: auto;
-    height: 60vh;
+    max-height: 60vh;
     margin-top: 2px;
 
     pre:last-child {
