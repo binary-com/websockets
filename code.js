@@ -1,6 +1,7 @@
 var DEFAULT_APP_ID   = 1089;
 var DEFAULT_API_URL  = 'frontend.binaryws.com';
 var DEFAULT_LANGUAGE = 'EN';
+var DEFAULT_BRAND    = 'binary';
 
 var api;
 var $console;
@@ -57,7 +58,8 @@ function initConnection(language) {
     api = new LiveApi({
         apiUrl  : 'wss://' + getServerUrl() + '/websockets/v3',
         language: getLanguage(),
-        appId   : getAppId()
+        appId   : getAppId(),
+        brand   : getBrand(),
     });
 
     api.socket.onopen = function(e) {
@@ -457,13 +459,14 @@ function addEndpointAPIEventListeners() {
 function showEndpointParams() {
     $('#endpoint_txt-url').val(getServerUrl());
     $('#endpoint_txt-appid').val(getAppId());
+    $('#endpoint_ddl-brand').val(getBrand());
 }
 
 function setEndpointValues() {
-    setEndpoint($('#endpoint_txt-url').val(), $('#endpoint_txt-appid').val());
+    setEndpoint($('#endpoint_txt-url').val(), $('#endpoint_txt-appid').val(), $('#endpoint_ddl-brand').val());
 }
 
-function setEndpoint(server_url, app_id) {
+function setEndpoint(server_url, app_id, brand) {
     $('#endpoint_connecting').show();
     $('#endpoint_connected').hide();
     $('#endpoint_error').hide();
@@ -471,9 +474,11 @@ function setEndpoint(server_url, app_id) {
     if (server_url && app_id) {
         localStorage.setItem('config.server_url', server_url);
         localStorage.setItem('config.app_id',     app_id);
+        localStorage.setItem('config.brand',      brand);
     } else {
         localStorage.removeItem('config.server_url');
         localStorage.removeItem('config.app_id');
+        localStorage.removeItem('config.brand');
     }
 
     showEndpointParams();
@@ -503,7 +508,11 @@ function getServerUrl() {
 }
 
 function getAppId() {
-    return window.localStorage.getItem("config.app_id") || DEFAULT_APP_ID;
+    return window.localStorage.getItem('config.app_id') || DEFAULT_APP_ID;
+}
+
+function getBrand() {
+    return window.localStorage.getItem('config.brand') || DEFAULT_BRAND;
 }
 
 function getLanguage() {
@@ -527,8 +536,9 @@ function endpointNotification() {
     var end_note = document.getElementById('end-note');
     if (end_note) {
         var server = getServerUrl();
-        if (server && server !== DEFAULT_API_URL) {
-            end_note.innerHTML = 'The server <a href="/endpoint/">endpoint</a> is: ' + server;
+        var brand  = getBrand();
+        if (server !== DEFAULT_API_URL || brand !== DEFAULT_BRAND) {
+            end_note.innerHTML = 'The server <a href="/endpoint/">endpoint</a> is: ' + server + ' (Brand: ' + brand + ')';
             end_note.classList.remove('invisible');
         } else {
             end_note.innerHTML = '';

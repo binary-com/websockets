@@ -469,7 +469,7 @@
 
 .docson .scopes {
     float:left;
-    display: inline-block
+    display: inline-block;
     padding-left: 6px;
     margin-top: 5px;
 }
