@@ -54,6 +54,15 @@
             "type": "string",
             "pattern": "^[a-z]{2}$"
         },
+        "dry_run": {
+            "description": "[Optional] If set to 1, only validation is performed.",
+            "type": "integer",
+            "default": 0,
+            "enum": [
+                0,
+                1
+            ]
+        },
         "email": {
             "description": "Email address",
             "type": "string",
