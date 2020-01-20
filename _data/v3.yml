@@ -31,6 +31,8 @@ groups:
         title: Cashier URL
       - name: contract_update
         title: Update Contract
+      - name: contract_update_history
+        title: Update Contract History
       - name: contracts_for
         title: Contracts For Symbol
       - name: copy_start

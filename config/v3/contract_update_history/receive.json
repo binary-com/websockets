@@ -1,0 +1,62 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Update Contract History (response)",
+    "description": "Contract update history status",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "contract_update_history": {
+            "title": "contract_update_history",
+            "description": "Contains the historical and the most recent update status of the contract",
+            "type": "array",
+            "item": {
+                "description": "Contains the changed parameter.",
+                "type": "object",
+                "properties": {
+                    "display_name": {
+                        "description": "Display name of the changed parameter.",
+                        "type": "string"
+                    },
+                    "order_amount": {
+                        "description": "The amount.",
+                        "type": "string"
+                    },
+                    "order_date": {
+                        "description": "The epoch when the changed was done.",
+                        "type": "integer"
+                    },
+                    "order_type": {
+                        "description": "The contract parameter updated.",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "The pip-sized barrier value.",
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "title": "Echo request",
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "contract_update_history"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}
