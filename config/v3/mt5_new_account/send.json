@@ -69,8 +69,9 @@
             "format": "email"
         },
         "investPassword": {
-            "description": "[Optional] The investor password of the account. The password must contain at least two of three types of characters (lower case, upper case and digits) and meet the minimum length requirements set for the group. This field is required.",
+            "description": "[Optional] The investor password of the account. For validation (length within 8-25 chars, accepts at least 2 out of the following 3 types of characters: uppercase letters, lowercase letters, and numbers).",
             "type": "string",
+            "pattern": "^(?=.*[a-zA-Z])(?=.*[a-z0-9])(?=.*[A-Z0-9])[ -~]{8,25}$",
             "sensitive": 1
         },
         "leverage": {
@@ -78,8 +79,9 @@
             "type": "number"
         },
         "mainPassword": {
-            "description": "The master password of the account. The password must contain at least two of three types of characters (lower case, upper case and digits) and meet the minimum length requirements set for the group. This field is required.",
+            "description": "The master password of the account. For validation (length within 8-25 chars, accepts at least 2 out of the following 3 types of characters: uppercase letters, lowercase letters, and numbers). This field is required.",
             "type": "string",
+            "pattern": "^(?=.*[a-zA-Z])(?=.*[a-z0-9])(?=.*[A-Z0-9])[ -~]{8,25}$",
             "sensitive": 1
         },
         "mt5_account_type": {

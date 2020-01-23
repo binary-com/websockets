@@ -28,9 +28,9 @@
             "pattern": "^\\w{1,10}$"
         },
         "new_password": {
-            "description": "New password of the account (length within 8-25 chars, accepts any printable ASCII character).",
+            "description": "New password of the account. For validation (length within 8-25 chars, accepts at least 2 out of the following 3 types of characters: uppercase letters, lowercase letters, and numbers).",
             "type": "string",
-            "pattern": "^[ -~]{8,25}$",
+            "pattern": "^(?=.*[a-zA-Z])(?=.*[a-z0-9])(?=.*[A-Z0-9])[ -~]{8,25}$",
             "sensitive": 1
         },
         "password_type": {
