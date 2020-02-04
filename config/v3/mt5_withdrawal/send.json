@@ -29,7 +29,7 @@
         "from_mt5": {
             "description": "MT5 account login to withdraw money from",
             "type": "string",
-            "pattern": "^[0-9]+$"
+            "pattern": "^MT[DR]?[0-9]+$"
         },
         "to_binary": {
             "description": "Binary account loginid to transfer money to",

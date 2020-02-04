@@ -24,7 +24,7 @@
         "login": {
             "description": "MT5 user login",
             "type": "string",
-            "pattern": "^[0-9]+$"
+            "pattern": "^MT[DR]?[0-9]+$"
         },
         "password": {
             "description": "The password of the account.",

@@ -51,7 +51,8 @@
                 },
                 "login": {
                     "description": "Login ID of the user's MT5 account.",
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "^MT[DR]?[0-9]+$"
                 },
                 "name": {
                     "description": "Client's name. The maximum length of a client's symbol name is 128 characters.",

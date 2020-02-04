@@ -32,7 +32,7 @@
         "to_mt5": {
             "description": "MT5 account login to deposit money to",
             "type": "string",
-            "pattern": "^[0-9]+$"
+            "pattern": "^MT[DR]?[0-9]+$"
         },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",

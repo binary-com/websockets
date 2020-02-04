@@ -35,8 +35,9 @@
                     "type": "string"
                 },
                 "login": {
-                    "description": "Login ID of the user's new MT5 account.",
-                    "type": "string"
+                    "description": "Login ID of the user's new MT5 account. Login could have 2 types of prefixes: MTD, MTR. MTD - for demo accounts and MTR for real money accounts.",
+                    "type": "string",
+                    "pattern": "^MT[DR]?[0-9]+$"
                 },
                 "mt5_account_type": {
                     "description": "Sub account type, present only when account type is either `demo` or `financial`.",

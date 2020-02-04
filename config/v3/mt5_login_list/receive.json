@@ -46,7 +46,8 @@
                     },
                     "login": {
                         "description": "Login of MT5 account.",
-                        "type": "string"
+                        "type": "string",
+                        "pattern": "^MT[DR]?[0-9]+$"
                     },
                     "name": {
                         "description": "Name of the owner of the MT5 account.",
