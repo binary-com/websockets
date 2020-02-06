@@ -13,7 +13,7 @@
         "verify_email": {
             "description": "Email address to be verified.",
             "type": "string",
-            "format": "email"
+            "pattern": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,63}$"
         },
         "type": {
             "description": "Purpose of the email verification call.",

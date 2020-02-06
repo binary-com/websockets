@@ -151,6 +151,9 @@
                             "type": "object",
                             "required": [
                                 "fractional_digits",
+                                "is_deposit_suspended",
+                                "is_suspended",
+                                "is_withdrawal_suspended",
                                 "stake_default",
                                 "transfer_between_accounts",
                                 "type"
@@ -167,6 +170,30 @@
                                 "fractional_digits": {
                                     "description": "Number of fractional digits.",
                                     "type": "number"
+                                },
+                                "is_deposit_suspended": {
+                                    "description": "Current status for payment deposit for the currency",
+                                    "type": "number",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
+                                },
+                                "is_suspended": {
+                                    "description": "Current status for the currency",
+                                    "type": "number",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
+                                },
+                                "is_withdrawal_suspended": {
+                                    "description": "Current status for payment withdrawal for the currency",
+                                    "type": "number",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 },
                                 "stake_default": {
                                     "description": "Default stake value for the currency.",
