@@ -53,7 +53,7 @@
         "redirect_uri": {
             "description": "The URL to redirect to after a successful login.",
             "type": "string",
-            "pattern": "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
+            "pattern": "^[a-z][a-z0-9.+\\-]*://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
         },
         "scopes": {
             "description": "Change scopes will revoke all user's grants and log them out.",
@@ -72,7 +72,7 @@
         "verification_uri": {
             "description": "[Optional] Used when 'verify_email' called. If available, a URL containing the verification token will send to the client's email, otherwise only the token will be sent.",
             "type": "string",
-            "pattern": "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
+            "pattern": "^[a-z][a-z0-9.+\\-]*://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
         },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
