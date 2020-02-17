@@ -415,6 +415,15 @@ button:focus {
         margin-top: 0;
         padding-left: 0;
     }
+
+    #api-token {
+        display: inline-block;
+        background-color: rgb(242, 242, 242);
+        padding: 5px 5px 10px 10px;
+        text-decoration: none;
+        font-size: 18px;
+        overflow: auto;
+    }
 }
 
 #applications-table {
