@@ -353,6 +353,11 @@ select {
         font-size: 1.3rem;
     }
 }
+@media (min-width: 761px) and (max-width: 830px) {
+    .sidebar-left #api-token {
+        overflow: auto;
+    }
+}
 pre {
     max-width: 100%;
     overflow: auto;
@@ -422,7 +427,6 @@ button:focus {
         padding: 5px 5px 10px 10px;
         text-decoration: none;
         font-size: 18px;
-        overflow: auto;
     }
 }
 
