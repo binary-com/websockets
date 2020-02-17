@@ -354,7 +354,7 @@ select {
     }
 }
 @media (min-width: 761px) and (max-width: 830px) {
-    .sidebar-left #api-token {
+    .sidebar-left #api-token-link {
         overflow: auto;
     }
 }
@@ -421,14 +421,14 @@ button:focus {
         padding-left: 0;
     }
 
-    #api-token {
+    #api-token-link {
         display: inline-block;
         background-color: rgb(242, 242, 242);
         padding: 5px 5px 10px 10px;
         text-decoration: none;
         font-size: 18px;
     }
-    #api-token:hover {
+    #api-token-link:hover {
         background: #dedede;
     }
 }
