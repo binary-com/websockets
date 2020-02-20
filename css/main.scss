@@ -353,6 +353,11 @@ select {
         font-size: 1.3rem;
     }
 }
+@media (min-width: 761px) and (max-width: 830px) {
+    .sidebar-left #api-token-link {
+        overflow: auto;
+    }
+}
 pre {
     max-width: 100%;
     overflow: auto;
@@ -414,6 +419,22 @@ button:focus {
     ul {
         margin-top: 0;
         padding-left: 0;
+    }
+
+    #api-token-link {
+        display: inline-block;
+        color: #2a3052;
+        background-color: rgb(242, 242, 242);
+        padding: 10px 5px 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        border-radius: 4px;
+    }
+    #api-token-link:active,
+    #api-token-link:hover,
+    #api-token-link:visited:active,
+    #api-token-link:visited:hover {
+        text-decoration: underline;
     }
 }
 
