@@ -6,8 +6,8 @@
     "auth_required": 0,
     "additionalProperties": false,
     "required": [
-        "end",
-        "ticks_history"
+        "ticks_history",
+        "end"
     ],
     "properties": {
         "ticks_history": {

@@ -20,14 +20,6 @@
                 1
             ]
         },
-        "description": {
-            "description": "[Optional] If set to 1, will return full contracts description.",
-            "type": "integer",
-            "enum": [
-                0,
-                1
-            ]
-        },
         "action_type": {
             "description": "[Optional] To filter the statement according to the type of transaction.",
             "type": "string",
@@ -50,6 +42,14 @@
             "type": "integer",
             "maximum": 9999999999,
             "minimum": 0
+        },
+        "description": {
+            "description": "[Optional] If set to 1, will return full contracts description.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
         },
         "limit": {
             "description": "[Optional] Maximum number of transactions to receive.",

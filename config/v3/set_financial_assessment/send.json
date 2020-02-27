@@ -9,13 +9,13 @@
     ],
     "additionalProperties": false,
     "required": [
+        "set_financial_assessment",
         "education_level",
         "employment_industry",
         "estimated_worth",
         "income_source",
         "net_income",
-        "occupation",
-        "set_financial_assessment"
+        "occupation"
     ],
     "properties": {
         "set_financial_assessment": {

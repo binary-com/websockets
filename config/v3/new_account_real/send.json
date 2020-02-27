@@ -9,10 +9,10 @@
     ],
     "additionalProperties": false,
     "required": [
+        "new_account_real",
         "date_of_birth",
         "first_name",
         "last_name",
-        "new_account_real",
         "residence"
     ],
     "properties": {

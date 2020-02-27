@@ -25,11 +25,11 @@
                                 "type": "object",
                                 "additionalProperties": false,
                                 "required": [
+                                    "balance_after",
+                                    "contract_id",
                                     "reference_id",
                                     "sell_price",
-                                    "balance_after",
-                                    "transaction_id",
-                                    "contract_id"
+                                    "transaction_id"
                                 ],
                                 "properties": {
                                     "balance_after": {
@@ -63,9 +63,9 @@
                                 "type": "object",
                                 "additionalProperties": false,
                                 "required": [
-                                    "token",
                                     "code",
-                                    "message_to_client"
+                                    "message_to_client",
+                                    "token"
                                 ],
                                 "properties": {
                                     "code": {

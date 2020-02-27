@@ -9,8 +9,8 @@
     ],
     "additionalProperties": false,
     "required": [
-        "login",
         "mt5_password_change",
+        "login",
         "new_password",
         "old_password"
     ],

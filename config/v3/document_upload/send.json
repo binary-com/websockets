@@ -9,9 +9,9 @@
     ],
     "additionalProperties": false,
     "required": [
+        "document_upload",
         "document_format",
         "document_type",
-        "document_upload",
         "expected_checksum",
         "file_size"
     ],

@@ -27,15 +27,15 @@
                                 "type": "object",
                                 "additionalProperties": false,
                                 "required": [
-                                    "shortcode",
-                                    "purchase_time",
-                                    "contract_id",
-                                    "transaction_id",
-                                    "token",
-                                    "payout",
-                                    "start_time",
                                     "buy_price",
-                                    "longcode"
+                                    "contract_id",
+                                    "longcode",
+                                    "payout",
+                                    "purchase_time",
+                                    "shortcode",
+                                    "start_time",
+                                    "token",
+                                    "transaction_id"
                                 ],
                                 "properties": {
                                     "buy_price": {

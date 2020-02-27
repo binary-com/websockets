@@ -20,14 +20,6 @@
                 1
             ]
         },
-        "description": {
-            "description": "[Optional] If set to 1, will return full contracts description.",
-            "type": "integer",
-            "enum": [
-                0,
-                1
-            ]
-        },
         "date_from": {
             "description": "[Optional] Start date (epoch or YYYY-MM-DD)",
             "type": "string",
@@ -37,6 +29,14 @@
             "description": "[Optional] End date (epoch or YYYY-MM-DD)",
             "type": "string",
             "pattern": "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|[0-9]{1,10})$"
+        },
+        "description": {
+            "description": "[Optional] If set to 1, will return full contracts description.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
         },
         "limit": {
             "description": "[Optional] Apply upper limit to count of transactions received.",

@@ -9,11 +9,11 @@
     ],
     "additionalProperties": false,
     "required": [
+        "mt5_new_account",
         "account_type",
         "email",
         "leverage",
         "mainPassword",
-        "mt5_new_account",
         "name"
     ],
     "properties": {

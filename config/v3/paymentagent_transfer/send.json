@@ -9,9 +9,9 @@
     ],
     "additionalProperties": false,
     "required": [
+        "paymentagent_transfer",
         "amount",
         "currency",
-        "paymentagent_transfer",
         "transfer_to"
     ],
     "properties": {
@@ -22,11 +22,6 @@
                 1
             ]
         },
-        "description": {
-            "description": "[Optional] Remarks about the transfer.",
-            "type": "string",
-            "pattern": "^[0-9A-Za-z .,'-]{0,250}$"
-        },
         "amount": {
             "description": "The amount to transfer.",
             "type": "number"
@@ -35,6 +30,11 @@
             "description": "Currency code.",
             "type": "string",
             "pattern": "^[A-Z]{3}$"
+        },
+        "description": {
+            "description": "[Optional] Remarks about the transfer.",
+            "type": "string",
+            "pattern": "^[0-9A-Za-z .,'-]{0,250}$"
         },
         "dry_run": {
             "description": "[Optional] If set to `1`, just do validation.",

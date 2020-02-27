@@ -9,6 +9,7 @@
     ],
     "additionalProperties": false,
     "required": [
+        "new_account_maltainvest",
         "accept_risk",
         "address_city",
         "address_line_1",
@@ -20,7 +21,6 @@
         "income_source",
         "last_name",
         "net_income",
-        "new_account_maltainvest",
         "occupation",
         "residence",
         "salutation",

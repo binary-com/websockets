@@ -9,9 +9,9 @@
     ],
     "additionalProperties": false,
     "required": [
+        "mt5_withdrawal",
         "amount",
         "from_mt5",
-        "mt5_withdrawal",
         "to_binary"
     ],
     "properties": {

@@ -9,8 +9,8 @@
     ],
     "additionalProperties": false,
     "required": [
-        "price",
         "sell_contract_for_multiple_accounts",
+        "price",
         "shortcode",
         "tokens"
     ],

@@ -6,8 +6,8 @@
     "auth_required": 0,
     "additionalProperties": false,
     "required": [
-        "client_password",
         "new_account_virtual",
+        "client_password",
         "residence",
         "verification_code"
     ],

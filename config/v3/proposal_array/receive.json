@@ -46,10 +46,10 @@
                                         "type": "object",
                                         "additionalProperties": false,
                                         "required": [
-                                            "payout",
                                             "ask_price",
+                                            "display_value",
                                             "longcode",
-                                            "display_value"
+                                            "payout"
                                         ],
                                         "properties": {
                                             "ask_price": {

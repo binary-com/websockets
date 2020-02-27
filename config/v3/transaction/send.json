@@ -10,8 +10,8 @@
     ],
     "additionalProperties": false,
     "required": [
-        "subscribe",
-        "transaction"
+        "transaction",
+        "subscribe"
     ],
     "properties": {
         "transaction": {

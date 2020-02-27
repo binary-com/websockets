@@ -9,8 +9,8 @@
     ],
     "additionalProperties": false,
     "required": [
-        "login",
-        "mt5_get_settings"
+        "mt5_get_settings",
+        "login"
     ],
     "properties": {
         "mt5_get_settings": {
