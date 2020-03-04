@@ -516,12 +516,10 @@ code {
     }
 }
 
-.deprecated, .deprecated ~ #playground-res-schema {
-    background: #e8e8e8;
+.labeled, .labeled ~ #playground-res-schema {
     position: relative;
 
     &:after {
-        content: 'DEPRECATED';
         position: absolute;
         top: 7px;
         right: 5px;
@@ -537,6 +535,18 @@ code {
     }
     .source-button.button {
         z-index: 2;
+    }
+}
+.labeled.beta {
+    &:after, & ~ #playground-res-schema:after {
+        content: 'BETA';
+    }
+}
+.labeled.deprecated, .labeled.deprecated ~ #playground-res-schema {
+    background: #e8e8e8;
+
+    &:after {
+        content: 'DEPRECATED';
     }
 }
 

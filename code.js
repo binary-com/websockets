@@ -2,6 +2,10 @@ var DEFAULT_APP_ID   = 1089;
 var DEFAULT_API_URL  = 'frontend.binaryws.com';
 var DEFAULT_LANGUAGE = 'EN';
 var DEFAULT_BRAND    = 'binary';
+var VALID_LABELS     = [
+    'beta',
+    'deprecated',
+];
 
 var api;
 var $console;
@@ -228,7 +232,14 @@ function loadAndDisplaySchema($node, schema_url, method_name, required_first) {
         docson.doc($node, schema, null, getBaseUrl());
 
         setTimeout(function() {
-            $node[schema.deprecated ? 'addClass' : 'removeClass']('deprecated');
+            $node.removeClass('labeled ' + VALID_LABELS.join(' '));
+            var label = VALID_LABELS.find(function(lbl) {
+                return schema[lbl];
+            });
+            if (label) {
+                $node.addClass('labeled ' + label);
+            }
+
             linkToCallName();
         }, 100);
     });
