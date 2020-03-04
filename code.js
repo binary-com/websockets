@@ -495,7 +495,7 @@ function isProduction(url) {
 }
 
 function isLocal(url) {
-    return url && url.indexOf('//localhost') > 0;
+    return /\/\/(localhost|127\.0\.0\.1)/.test(url);
 }
 
 function getBaseUrl(url) {
