@@ -93,6 +93,30 @@ groups:
         title: New Virtual-Money Account
       - name: oauth_apps
         title: OAuth Applications
+      - name: p2p_advert_create
+        title: P2P Advert Create
+      - name: p2p_advert_info
+        title: P2P Advert Information
+      - name: p2p_advert_list
+        title: P2P Adverts List
+      - name: p2p_advert_update
+        title: P2P Advert Update
+      - name: p2p_advertiser_adverts
+        title: P2P Advertiser Adverts
+      - name: p2p_advertiser_info
+        title: P2P Advertiser Information
+      - name: p2p_advertiser_update
+        title: P2P Advertiser Update
+      - name: p2p_order_cancel
+        title: P2P Order Cancel
+      - name: p2p_order_confirm
+        title: P2P Order Confirm
+      - name: p2p_order_create
+        title: P2P Order Create
+      - name: p2p_order_info
+        title: P2P Order Information
+      - name: p2p_order_list
+        title: P2P Order List
       - name: paymentagent_list
         title: 'Payment Agent: List'
       - name: paymentagent_transfer

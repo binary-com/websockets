@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Order Cancel (response)",
+    "description": "Result of the P2P order cancellation.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "p2p_order_cancel": {
+            "description": "Cancellation details",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "status"
+            ],
+            "properties": {
+                "id": {
+                    "description": "The unique identifier for the order.",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "The new status of the order.",
+                    "type": "string",
+                    "enum": [
+                        "cancelled"
+                    ]
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "p2p_order_cancel"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

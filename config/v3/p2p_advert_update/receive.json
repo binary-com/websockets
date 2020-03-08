@@ -1,0 +1,220 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Advert Update (response)",
+    "description": "Returns information about the updated advert.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "p2p_advert_update": {
+            "title": "p2p_advert_update",
+            "description": "P2P updated advert information.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "account_currency",
+                "advertiser_details",
+                "amount",
+                "amount_display",
+                "counterparty_type",
+                "country",
+                "created_time",
+                "description",
+                "id",
+                "is_active",
+                "local_currency",
+                "max_order_amount",
+                "max_order_amount_display",
+                "max_order_amount_limit",
+                "max_order_amount_limit_display",
+                "min_order_amount",
+                "min_order_amount_display",
+                "min_order_amount_limit",
+                "min_order_amount_limit_display",
+                "payment_method",
+                "price",
+                "price_display",
+                "rate",
+                "rate_display",
+                "remaining_amount",
+                "remaining_amount_display",
+                "type"
+            ],
+            "properties": {
+                "account_currency": {
+                    "description": "Currency for this advert. This is the system currency to be transferred between advertiser and client.",
+                    "type": "string",
+                    "pattern": "^[a-zA-Z]{3,}$",
+                    "examples": [
+                        "USD"
+                    ]
+                },
+                "advertiser_details": {
+                    "title": "Advertiser Details",
+                    "description": "Details of the advertiser for this advert.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "id",
+                        "name"
+                    ],
+                    "properties": {
+                        "id": {
+                            "description": "The advertiser's unique identifier.",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "The advertiser's displayed name.",
+                            "type": "string"
+                        }
+                    }
+                },
+                "amount": {
+                    "description": "The total amount specified in advert, in `account_currency`. It is only visible for advertisers.",
+                    "type": "number"
+                },
+                "amount_display": {
+                    "description": "The total amount specified in advert, in `account_currency`, formatted to appropriate decimal places. It is only visible for advertisers.",
+                    "type": "string"
+                },
+                "contact_info": {
+                    "description": "Only applicable for sell adverts. Contact details for the advertiser, which the buyer can use contact the seller.",
+                    "type": "string"
+                },
+                "counterparty_type": {
+                    "description": "Type of transaction from the opposite party's perspective.",
+                    "type": "string",
+                    "enum": [
+                        "buy",
+                        "sell"
+                    ]
+                },
+                "country": {
+                    "description": "The target country code of the advert.",
+                    "type": "string",
+                    "pattern": "^[a-z]{0,2}$"
+                },
+                "created_time": {
+                    "description": "The advert creation time in epoch.",
+                    "type": "integer"
+                },
+                "description": {
+                    "description": "Notes and general instructions from the advertiser.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "The unique identifier for this advert.",
+                    "type": "string"
+                },
+                "is_active": {
+                    "description": "The activation status of the advert.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "local_currency": {
+                    "description": "Local currency for this advert. This is the form of payment to be arranged directly between advertiser and client.",
+                    "type": "string",
+                    "pattern": "^[a-zA-Z]{3,}$",
+                    "examples": [
+                        "USD"
+                    ]
+                },
+                "max_order_amount": {
+                    "description": "Maximum order amount specified in advert, in `account_currency`. It is only visible for advertisers.",
+                    "type": "number"
+                },
+                "max_order_amount_display": {
+                    "description": "Maximum order amount specified in advert, in `account_currency`, formatted to appropriate decimal places. It is only visible for advertisers.",
+                    "type": "string"
+                },
+                "max_order_amount_limit": {
+                    "description": "Maximum order amount at this time, in `account_currency`.",
+                    "type": "number"
+                },
+                "max_order_amount_limit_display": {
+                    "description": "Maximum order amount at this time, in `account_currency`, formatted to appropriate decimal places.",
+                    "type": "string"
+                },
+                "min_order_amount": {
+                    "description": "Minimum order amount specified in advert, in `account_currency`. It is only visible for advertisers.",
+                    "type": "number"
+                },
+                "min_order_amount_display": {
+                    "description": "Minimum order amount specified in advert, in `account_currency`, formatted to appropriate decimal places. It is only visible for advertisers.",
+                    "type": "string"
+                },
+                "min_order_amount_limit": {
+                    "description": "Minimum order amount at this time, in `account_currency`.",
+                    "type": "number"
+                },
+                "min_order_amount_limit_display": {
+                    "description": "Minimum order amount at this time, in `account_currency`, formatted to appropriate decimal places.",
+                    "type": "string"
+                },
+                "payment_info": {
+                    "description": "Only applicable for sell adverts. Payment instructions for the buyer to transfer funds.",
+                    "type": "string"
+                },
+                "payment_method": {
+                    "description": "The payment method.",
+                    "type": "string",
+                    "enum": [
+                        "bank_transfer"
+                    ]
+                },
+                "price": {
+                    "description": "Cost of the advert in local currency.",
+                    "type": "number"
+                },
+                "price_display": {
+                    "description": "Cost of the advert in local currency, formatted to appropriate decimal places.",
+                    "type": "string"
+                },
+                "rate": {
+                    "description": "Conversion rate from account currency to local currency.",
+                    "type": "number"
+                },
+                "rate_display": {
+                    "description": "Conversion rate from account currency to local currency, formatted to appropriate decimal places.",
+                    "type": "string"
+                },
+                "remaining_amount": {
+                    "description": "Amount currently available for orders, in `account_currency`. It is only visible for advertisers.",
+                    "type": "number"
+                },
+                "remaining_amount_display": {
+                    "description": "Amount currently available for orders, in `account_currency`, formatted to appropriate decimal places. It is only visible for advertisers.",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Whether this is a buy or a sell.",
+                    "type": "string",
+                    "enum": [
+                        "buy",
+                        "sell"
+                    ]
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "p2p_advert_update"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

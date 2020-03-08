@@ -1,0 +1,90 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Advertiser Update (response)",
+    "description": "Returns latest information of the advertiser.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "p2p_advertiser_update": {
+            "title": "p2p_advertiser_update",
+            "description": "P2P advertiser information.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "client_loginid",
+                "created_time",
+                "id",
+                "is_approved",
+                "is_listed",
+                "name"
+            ],
+            "properties": {
+                "client_loginid": {
+                    "description": "The loginid of the advertiser.",
+                    "type": "string",
+                    "examples": [
+                        "CR12345"
+                    ]
+                },
+                "contact_info": {
+                    "description": "Advertiser's contact information.",
+                    "type": "string"
+                },
+                "created_time": {
+                    "description": "The epoch time that the client became an advertiser.",
+                    "type": "integer"
+                },
+                "default_advert_description": {
+                    "description": "Could be used as a template for general instructions for adverts.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "The advertiser's identification number.",
+                    "type": "string"
+                },
+                "is_approved": {
+                    "description": "The approval status of the advertiser.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "is_listed": {
+                    "description": "Indicates if the advertiser's active adverts are listed. When `0`, adverts won't be listed regardless of they are active or not.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "name": {
+                    "description": "The advertiser's displayed name.",
+                    "type": "string"
+                },
+                "payment_info": {
+                    "description": "Advertiser's payment information.",
+                    "type": "string"
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "p2p_advertiser_update"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

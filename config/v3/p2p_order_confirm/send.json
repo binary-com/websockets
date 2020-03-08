@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Order Confirm (request)",
+    "description": "Confirm a P2P order. **This API call is still in Beta.**",
+    "beta": 1,
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "payments"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "p2p_order_confirm",
+        "id"
+    ],
+    "properties": {
+        "p2p_order_confirm": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "id": {
+            "description": "The unique identifier for this order.",
+            "type": "string",
+            "pattern": "^[0-9]+$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

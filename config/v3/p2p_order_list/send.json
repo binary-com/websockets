@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Order List (request)",
+    "description": "List active orders. **This API call is still in Beta.**",
+    "beta": 1,
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "payments"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "p2p_order_list"
+    ],
+    "properties": {
+        "p2p_order_list": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "active": {
+            "description": "[Optional] Should be 1 to list active, 0 to list inactive (historical).",
+            "type": "number",
+            "default": 1,
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "advert_id": {
+            "description": "[Optional] If present, lists orders applying to a specific advert.",
+            "type": "string",
+            "pattern": "^[0-9]+$"
+        },
+        "limit": {
+            "description": "[Optional] Used for paging.",
+            "type": "integer",
+            "default": 50
+        },
+        "offset": {
+            "description": "[Optional] Used for paging.",
+            "type": "integer",
+            "default": 0
+        },
+        "subscribe": {
+            "description": "[Optional] If set to 1, will send updates whenever there is a change to any order belonging to you.",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}
