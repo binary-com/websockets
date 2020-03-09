@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "P2P Adverts List (response)",
+    "title": "P2P Advert List (response)",
     "description": "Available adverts matching the requested criteria.",
     "type": "object",
     "required": [
