@@ -175,6 +175,27 @@
                     "description": "Price at which contract was purchased",
                     "type": "number"
                 },
+                "cancellation": {
+                    "description": "Contains information about contract cancellation option.",
+                    "type": "object",
+                    "properties": {
+                        "ask_price": {
+                            "description": "Ask price of contract cancellation option.",
+                            "type": "number"
+                        },
+                        "date_expiry": {
+                            "description": "Expiry time in epoch for contract cancellation option.",
+                            "type": "integer"
+                        }
+                    }
+                },
+                "commision": {
+                    "description": "Commission in payout currency amount.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                },
                 "contract_id": {
                     "description": "The internal contract identifier",
                     "type": "integer"
@@ -363,6 +384,10 @@
                         1
                     ]
                 },
+                "is_valid_to_cancel": {
+                    "description": "Whether the contract can be cancenlled. Boolean value 1 or 0",
+                    "type": "integer"
+                },
                 "is_valid_to_sell": {
                     "description": "Whether the contract can be sold back to the company.",
                     "type": "integer",
@@ -548,6 +573,7 @@
                         "sold",
                         "won",
                         "lost",
+                        "cancelled",
                         null
                     ]
                 },

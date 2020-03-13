@@ -55,6 +55,10 @@
                         "stake"
                     ]
                 },
+                "cancellation": {
+                    "description": "Cancellation duration option (only for MULTUP and MULTDOWN).",
+                    "type": "string"
+                },
                 "contract_type": {
                     "description": "A valid contract-type",
                     "type": "string",

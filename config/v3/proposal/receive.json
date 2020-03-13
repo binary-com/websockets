@@ -30,6 +30,27 @@
                         5.14
                     ]
                 },
+                "cancellation": {
+                    "description": "Contains information about contract cancellation option.",
+                    "type": "object",
+                    "properties": {
+                        "ask_price": {
+                            "description": "Ask price of contract cancellation option.",
+                            "type": "number"
+                        },
+                        "date_expiry": {
+                            "description": "Expiry time in epoch for contract cancellation option.",
+                            "type": "integer"
+                        }
+                    }
+                },
+                "commission": {
+                    "description": "Commission changed in percentage (%).",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                },
                 "date_start": {
                     "description": "The start date of the contract.",
                     "type": "integer",
@@ -65,7 +86,10 @@
                                 },
                                 "order_amount": {
                                     "description": "Stop loss amount",
-                                    "type": "number"
+                                    "type": [
+                                        "null",
+                                        "number"
+                                    ]
                                 },
                                 "order_date": {
                                     "description": "Stop loss order epoch",
@@ -73,7 +97,10 @@
                                 },
                                 "value": {
                                     "description": "Pip-sized barrier value",
-                                    "type": "string"
+                                    "type": [
+                                        "null",
+                                        "string"
+                                    ]
                                 }
                             }
                         },
@@ -109,7 +136,10 @@
                                 },
                                 "order_amount": {
                                     "description": "Take profit amount",
-                                    "type": "number"
+                                    "type": [
+                                        "null",
+                                        "number"
+                                    ]
                                 },
                                 "order_date": {
                                     "description": "Take profit order epoch",
@@ -117,7 +147,10 @@
                                 },
                                 "value": {
                                     "description": "Pip-sized barrier value",
-                                    "type": "string"
+                                    "type": [
+                                        "null",
+                                        "string"
+                                    ]
                                 }
                             }
                         }

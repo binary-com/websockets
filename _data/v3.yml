@@ -27,6 +27,8 @@ groups:
         title: Buy Contract
       - name: buy_contract_for_multiple_accounts
         title: Buy Contract for Multiple Accounts
+      - name: cancel
+        title: Cancel a Contract
       - name: cashier
         title: Cashier URL
       - name: contract_update
