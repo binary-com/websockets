@@ -25,7 +25,8 @@
             "enum": [
                 "Speculative",
                 "Income Earning",
-                "Hedging"
+                "Hedging",
+                "Peer-to-peer exchange"
             ]
         },
         "address_city": {

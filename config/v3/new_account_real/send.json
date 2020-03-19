@@ -29,7 +29,8 @@
             "enum": [
                 "Speculative",
                 "Income Earning",
-                "Hedging"
+                "Hedging",
+                "Peer-to-peer exchange"
             ]
         },
         "account_turnover": {
