@@ -14,7 +14,6 @@
             "type": "object",
             "additionalProperties": false,
             "required": [
-                "client_loginid",
                 "created_time",
                 "id",
                 "is_approved",
@@ -22,13 +21,6 @@
                 "name"
             ],
             "properties": {
-                "client_loginid": {
-                    "description": "The loginid of the advertiser.",
-                    "type": "string",
-                    "examples": [
-                        "CR12345"
-                    ]
-                },
                 "contact_info": {
                     "description": "Advertiser's contact information.",
                     "type": "string"
@@ -67,6 +59,20 @@
                 },
                 "payment_info": {
                     "description": "Advertiser's payment information.",
+                    "type": "string"
+                }
+            }
+        },
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only",
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
                     "type": "string"
                 }
             }

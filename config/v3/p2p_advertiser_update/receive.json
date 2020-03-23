@@ -14,7 +14,6 @@
             "type": "object",
             "additionalProperties": false,
             "required": [
-                "client_loginid",
                 "created_time",
                 "id",
                 "is_approved",
@@ -22,13 +21,6 @@
                 "name"
             ],
             "properties": {
-                "client_loginid": {
-                    "description": "The loginid of the advertiser.",
-                    "type": "string",
-                    "examples": [
-                        "CR12345"
-                    ]
-                },
                 "contact_info": {
                     "description": "Advertiser's contact information.",
                     "type": "string"

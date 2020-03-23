@@ -20,11 +20,6 @@
                 1
             ]
         },
-        "account_currency": {
-            "description": "[Optional] Target currency, defaults to client account currency.",
-            "type": "string",
-            "pattern": "^[a-zA-Z]{3,}$"
-        },
         "advertiser_id": {
             "description": "[Optional] Which advertiser to list adverts for.",
             "type": "string"

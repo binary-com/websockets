@@ -37,12 +37,8 @@
                             "local_currency",
                             "max_order_amount",
                             "max_order_amount_display",
-                            "max_order_amount_limit",
-                            "max_order_amount_limit_display",
                             "min_order_amount",
                             "min_order_amount_display",
-                            "min_order_amount_limit",
-                            "min_order_amount_limit_display",
                             "payment_info",
                             "payment_method",
                             "price",
@@ -143,28 +139,12 @@
                                 "description": "Maximum order amount, in `account_currency`, formatted to appropriate decimal places.",
                                 "type": "string"
                             },
-                            "max_order_amount_limit": {
-                                "description": "Maximum order amount specified in advert, in `account_currency`. It is only visible for advertisers.",
-                                "type": "number"
-                            },
-                            "max_order_amount_limit_display": {
-                                "description": "Maximum order amount specified in advert, in `account_currency`, formatted to appropriate decimal places. It is only visible for advertisers.",
-                                "type": "string"
-                            },
                             "min_order_amount": {
                                 "description": "Minimum order amount, in `account_currency`.",
                                 "type": "number"
                             },
                             "min_order_amount_display": {
                                 "description": "Minimum order amount, in `account_currency`, formatted to appropriate decimal places.",
-                                "type": "string"
-                            },
-                            "min_order_amount_limit": {
-                                "description": "Minimum order amount specified in advert, in `account_currency`. It is only visible for advertisers.",
-                                "type": "number"
-                            },
-                            "min_order_amount_limit_display": {
-                                "description": "Minimum order amount specified in advert, in `account_currency`, formatted to appropriate decimal places. It is only visible for advertisers.",
                                 "type": "string"
                             },
                             "payment_info": {

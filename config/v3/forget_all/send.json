@@ -10,7 +10,7 @@
     ],
     "properties": {
         "forget_all": {
-            "description": "Cancel all streams by type (it can be a single string e.g. 'ticks', or an array of multiple values, e.g. ['ticks', 'candles']). Possible values are: 'ticks', 'candles', 'proposal', 'proposal_open_contract', 'balance', 'transaction', 'proposal_array', 'website_status', 'p2p_order'.",
+            "description": "Cancel all streams by type (it can be a single string e.g. 'ticks', or an array of multiple values, e.g. ['ticks', 'candles']). Possible values are: 'ticks', 'candles', 'proposal', 'proposal_open_contract', 'balance', 'transaction', 'proposal_array', 'website_status', 'p2p_order', 'p2p_advertiser'.",
             "type": [
                 "array",
                 "string"
