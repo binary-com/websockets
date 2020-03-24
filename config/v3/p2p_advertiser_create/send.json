@@ -27,7 +27,7 @@
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
         },
         "default_advert_description": {
-            "description": "[Optional] Could be used as a template for general instructions for adverts.",
+            "description": "[Optional] Default description that can be used every time an advert is created.",
             "type": "string",
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
         },

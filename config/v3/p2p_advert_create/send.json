@@ -31,7 +31,7 @@
             "type": "number"
         },
         "contact_info": {
-            "description": "[Optional] Only applicable for sell adverts. Contact details of the advertiser, which buyer can use to contact you in a buy order.",
+            "description": "[Optional] Advertiser contact information. Only applicable for 'sell adverts'.",
             "type": "string",
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
         },
@@ -41,7 +41,7 @@
             "pattern": "^[a-z]{0,2}$"
         },
         "description": {
-            "description": "[Optional] Notes and general instructions from the advertiser.",
+            "description": "[Optional] General information about the advert.",
             "type": "string",
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
         },
@@ -62,7 +62,7 @@
             "type": "number"
         },
         "payment_info": {
-            "description": "[Optional] Only applicable for sell adverts. Payment instructions for the buyer to transfer funds, for example: bank name and account number, or E-Wallet id.",
+            "description": "[Optional] Payment instructions. Only applicable for 'sell adverts'.",
             "type": "string",
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
         },

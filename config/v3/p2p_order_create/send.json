@@ -32,12 +32,12 @@
             "type": "number"
         },
         "contact_info": {
-            "description": "[Optional] Only available for sell orders. Details for how the buyer can contact the seller.",
+            "description": "[Optional] Seller contact information. Only applicable for 'sell orders'.",
             "type": "string",
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
         },
         "payment_info": {
-            "description": "[Optional] Only available for sell orders. Instructions for how the buyer can transfer funds, for example: bank name and account number, or E-Wallet id.",
+            "description": "[Optional] Payment instructions. Only applicable for 'sell orders'.",
             "type": "string",
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
         },

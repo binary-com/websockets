@@ -30,7 +30,7 @@
                     "type": "integer"
                 },
                 "default_advert_description": {
-                    "description": "Could be used as a template for general instructions for adverts.",
+                    "description": "Default description that can be used every time an advert is created.",
                     "type": "string"
                 },
                 "id": {

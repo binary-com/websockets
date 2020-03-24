@@ -72,7 +72,7 @@
                     "type": "string"
                 },
                 "contact_info": {
-                    "description": "Only applicable for sell adverts. Contact details for the advertiser, which the buyer can use contact the seller.",
+                    "description": "Advertiser contact information. Only applicable for 'sell adverts'. ",
                     "type": "string"
                 },
                 "counterparty_type": {
@@ -93,7 +93,7 @@
                     "type": "integer"
                 },
                 "description": {
-                    "description": "Notes and general instructions from the advertiser.",
+                    "description": "General information about the advert.",
                     "type": "string"
                 },
                 "id": {
@@ -149,7 +149,7 @@
                     "type": "string"
                 },
                 "payment_info": {
-                    "description": "Only applicable for sell adverts. Payment instructions for the buyer to transfer funds.",
+                    "description": "Payment instructions. Only applicable for 'sell adverts'.",
                     "type": "string"
                 },
                 "payment_method": {
