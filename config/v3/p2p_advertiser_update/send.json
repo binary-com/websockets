@@ -23,12 +23,12 @@
         "contact_info": {
             "description": "[Optional] Advertiser's contact information, to be used as a default for new sell adverts.",
             "type": "string",
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{0,300}$"
         },
         "default_advert_description": {
             "description": "[Optional] Default description that can be used every time an advert is created.",
             "type": "string",
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{0,300}$"
         },
         "is_listed": {
             "description": "[Optional] Used to set if the advertiser's adverts could be listed. When `0`, adverts won't be listed regardless of they are active or not. This doesn't change the `is_active` of each individual advert.",
@@ -46,7 +46,7 @@
         "payment_info": {
             "description": "[Optional] Advertiser's payment information, to be used as a default for new sell adverts.",
             "type": "string",
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{0,300}$"
         },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
