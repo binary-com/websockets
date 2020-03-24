@@ -112,7 +112,7 @@
             "pattern": "^[\\p{L}\\s'.-]{2,50}$"
         },
         "phone": {
-            "description": "[Optional] Starting with '+' followed by 8-35 digits, allowing hyphens or space.",
+            "description": "[Optional] Starting with `+` followed by 8-35 digits, allowing hyphens or space.",
             "type": "string",
             "pattern": "^\\+((-|\\s)*[0-9]){8,35}$"
         },
