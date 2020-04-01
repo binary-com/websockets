@@ -124,7 +124,7 @@
                 "crypto_config": {
                     "description": "Provides minimum withdrawal for all crypto currency in USD",
                     "type": "object",
-                    "minProperties": 1,
+                    "minProperties": 0,
                     "patternProperties": {
                         "^[A-Z]{3,4}$": {
                             "description": "Crypto-currency code",
