@@ -111,6 +111,8 @@ groups:
         title: P2P Advertiser Information
       - name: p2p_advertiser_update
         title: P2P Advertiser Update
+      - name: p2p_chat_create
+        title: P2P Chat Create
       - name: p2p_order_cancel
         title: P2P Order Cancel
       - name: p2p_order_confirm

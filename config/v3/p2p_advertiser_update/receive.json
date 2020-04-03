@@ -14,6 +14,8 @@
             "type": "object",
             "additionalProperties": false,
             "required": [
+                "chat_token",
+                "chat_user_id",
                 "created_time",
                 "id",
                 "is_approved",
@@ -21,6 +23,15 @@
                 "name"
             ],
             "properties": {
+                "chat_token": {
+                    "description": "The token to be used for authenticating the client for chat.",
+                    "type": "string",
+                    "sensitive": 1
+                },
+                "chat_user_id": {
+                    "description": "The unique identifier for the chat user.",
+                    "type": "string"
+                },
                 "contact_info": {
                     "description": "Advertiser's contact information.",
                     "type": "string"
