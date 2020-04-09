@@ -180,15 +180,18 @@
         },
         "subscription": {
             "title": "Subscription information",
-            "description": "For subscription requests only",
+            "description": "For subscription requests only.",
             "type": "object",
             "required": [
                 "id"
             ],
             "properties": {
                 "id": {
-                    "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
-                    "type": "string"
+                    "description": "A per-connection unique identifier. Can be passed to the `forget` API call to unsubscribe.",
+                    "type": "string",
+                    "examples": [
+                        "c84a793b-8a87-7999-ce10-9b22f7ceead3"
+                    ]
                 }
             }
         },

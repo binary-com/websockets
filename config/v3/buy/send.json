@@ -14,7 +14,7 @@
     ],
     "properties": {
         "buy": {
-            "description": "Either the ID received from a Price Proposal (proposal) call, or '1' if contract buy parameters are passed in the parameters field.",
+            "description": "Either the ID received from a Price Proposal (`proposal` call), or `1` if contract buy parameters are passed in the `parameters` field.",
             "type": "string",
             "pattern": "^(?:[\\w-]{32,128}|1)$"
         },
@@ -56,7 +56,7 @@
                     ]
                 },
                 "cancellation": {
-                    "description": "Cancellation duration option (only for MULTUP and MULTDOWN).",
+                    "description": "Cancellation duration option (only for `MULTUP` and `MULTDOWN` contracts).",
                     "type": "string"
                 },
                 "contract_type": {
@@ -121,7 +121,7 @@
                     "minimum": 0
                 },
                 "duration_unit": {
-                    "description": "[Optional] Duration unit is s(seconds), m(minutes), h(hours), d(days), t(ticks)",
+                    "description": "[Optional] Duration unit is `s`: seconds, `m`: minutes, `h`: hours, `d`: days, `t`: ticks",
                     "type": "string",
                     "enum": [
                         "d",
@@ -132,7 +132,7 @@
                     ]
                 },
                 "limit_order": {
-                    "description": "Add an order to close the contract once the order condition is met (currently only for MULTUP and MULTDOWN)",
+                    "description": "Add an order to close the contract once the order condition is met (only for `MULTUP` and `MULTDOWN` contracts).",
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {

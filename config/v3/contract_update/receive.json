@@ -72,7 +72,6 @@
             }
         },
         "echo_req": {
-            "title": "Echo request",
             "description": "Echo of the request made.",
             "type": "object"
         },

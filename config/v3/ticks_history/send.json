@@ -51,7 +51,7 @@
             ]
         },
         "start": {
-            "description": "[Optional] Epoch value representing the earliest boundary of the returned ticks (For styles: 'ticks', this will default to 1 day ago. For styles: 'candle', it will default to 1 day ago if count or granularity is undefined).",
+            "description": "[Optional] Epoch value representing the earliest boundary of the returned ticks. \n- For `\"style\": \"ticks\"`: this will default to 1 day ago.\n- For `\"style\": \"candles\"`: it will default to 1 day ago if count or granularity is undefined.",
             "type": "integer",
             "maximum": 9999999999,
             "minimum": 0

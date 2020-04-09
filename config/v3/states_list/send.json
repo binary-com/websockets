@@ -11,7 +11,7 @@
     "properties": {
         "states_list": {
             "title": "States list",
-            "description": "Client's 2-letter country code (obtained from residence_list call)",
+            "description": "Client's 2-letter country code (obtained from `residence_list` call)",
             "type": "string",
             "pattern": "^\\w\\w$"
         },

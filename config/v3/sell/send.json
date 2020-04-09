@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Sell Contract (request)",
-    "description": "Sell a Contract as identified from a previous Portfolio call",
+    "description": "Sell a Contract as identified from a previous `portfolio` call.",
     "type": "object",
     "auth_required": 1,
     "auth_scopes": [
@@ -14,11 +14,11 @@
     ],
     "properties": {
         "sell": {
-            "description": "Pass contract_id received from the Portfolio call",
+            "description": "Pass contract_id received from the `portfolio` call.",
             "type": "integer"
         },
         "price": {
-            "description": "Minimum price at which to sell the contract, or '0' for 'sell at market'",
+            "description": "Minimum price at which to sell the contract, or `0` for 'sell at market'.",
             "type": "number"
         },
         "passthrough": {

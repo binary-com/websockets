@@ -10,7 +10,7 @@
     ],
     "properties": {
         "ticks": {
-            "description": "The short symbol name or array of symbols (obtained from active_symbols call).",
+            "description": "The short symbol name or array of symbols (obtained from `active_symbols` call).",
             "oneOf": [
                 {
                     "type": "string",

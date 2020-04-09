@@ -20,7 +20,7 @@
             ]
         },
         "ukgc_funds_protection": {
-            "description": "[Optional] For 'ASK_UK_FUNDS_PROTECTION' in cashier.",
+            "description": "[Optional] For `ASK_UK_FUNDS_PROTECTION` in `cashier`.",
             "type": "integer",
             "enum": [
                 1

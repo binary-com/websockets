@@ -330,10 +330,10 @@
                     ]
                 },
                 "id": {
-                    "description": "A stream ID that can be used to cancel this stream using the Forget request.",
+                    "description": "A per-connection unique identifier. Can be passed to the `forget` API call to unsubscribe.",
                     "type": "string",
                     "examples": [
-                        "1d6651e7d599bce6c54bd71a8283e579"
+                        "c84a793b-8a87-7999-ce10-9b22f7ceead3"
                     ]
                 },
                 "is_expired": {
@@ -385,8 +385,12 @@
                     ]
                 },
                 "is_valid_to_cancel": {
-                    "description": "Whether the contract can be cancenlled. Boolean value 1 or 0",
-                    "type": "integer"
+                    "description": "Whether the contract can be cancelled.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
                 },
                 "is_valid_to_sell": {
                     "description": "Whether the contract can be sold back to the company.",
@@ -397,7 +401,7 @@
                     ]
                 },
                 "limit_order": {
-                    "description": "Orders are applicable to `MULTUP` and `MULTDOWN` only.",
+                    "description": "Orders are applicable to `MULTUP` and `MULTDOWN` contracts only.",
                     "type": "object",
                     "properties": {
                         "stop_loss": {
@@ -638,15 +642,18 @@
         },
         "subscription": {
             "title": "Subscription information",
-            "description": "For subscription requests only",
+            "description": "For subscription requests only.",
             "type": "object",
             "required": [
                 "id"
             ],
             "properties": {
                 "id": {
-                    "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
-                    "type": "string"
+                    "description": "A per-connection unique identifier. Can be passed to the `forget` API call to unsubscribe.",
+                    "type": "string",
+                    "examples": [
+                        "c84a793b-8a87-7999-ce10-9b22f7ceead3"
+                    ]
                 }
             }
         },

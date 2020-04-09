@@ -10,18 +10,18 @@
     ],
     "properties": {
         "contracts_for": {
-            "description": "The short symbol name (obtained from active_symbols call).",
+            "description": "The short symbol name (obtained from `active_symbols` call).",
             "type": "string",
             "pattern": "^\\w{2,30}$"
         },
         "currency": {
-            "description": "[Optional] Currency of the contract's stake and payout (obtained from payout_currencies call).",
+            "description": "[Optional] Currency of the contract's stake and payout (obtained from `payout_currencies` call).",
             "type": "string",
             "pattern": "^[A-Z]{3}$",
             "default": "USD"
         },
         "landing_company": {
-            "description": "[Optional] Indicates which landing_company to get a list of contracts for. If you are logged in, your landing company will override this field.",
+            "description": "[Optional] Indicates which landing company to get a list of contracts for. If you are logged in, your account's landing company will override this field.",
             "type": "string",
             "default": "virtual",
             "enum": [

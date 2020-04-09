@@ -8,8 +8,8 @@
         "msg_type"
     ],
     "properties": {
-        "sell": {
-            "title": "Receipt for the transaction",
+        "cancel": {
+            "title": "cancel",
             "description": "Receipt for the transaction",
             "type": "object",
             "properties": {
@@ -36,7 +36,6 @@
             }
         },
         "echo_req": {
-            "title": "Echo request",
             "description": "Echo of the request made.",
             "type": "object"
         },

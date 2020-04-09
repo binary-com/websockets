@@ -37,7 +37,7 @@
                                 "type": "number"
                             },
                             "contract_id": {
-                                "description": "Internal contract identifier number (to be used in a 'proposal_open_contract' API call)",
+                                "description": "Internal contract identifier number (to be used in a `proposal_open_contract` API call).",
                                 "type": "integer"
                             },
                             "contract_type": {

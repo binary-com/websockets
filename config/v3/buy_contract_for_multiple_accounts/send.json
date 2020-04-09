@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Buy Contract for Multiple Accounts (request)",
-    "description": "Buy a Contract for multiple Accounts specified by the 'tokens' parameter. Note, although this is an authorized call, the contract is not bought for the authorized account.",
+    "description": "Buy a Contract for multiple Accounts specified by the `tokens` parameter. Note, although this is an authorized call, the contract is not bought for the authorized account.",
     "type": "object",
     "auth_required": 1,
     "auth_scopes": [
@@ -15,7 +15,7 @@
     ],
     "properties": {
         "buy_contract_for_multiple_accounts": {
-            "description": "Either the ID received from a Price Proposal (proposal) call, or 1 if contract buy parameters are passed in the parameters field",
+            "description": "Either the ID received from a Price Proposal (`proposal` call), or `1` if contract buy parameters are passed in the `parameters` field.",
             "type": "string",
             "pattern": "^(?:[\\w-]{32,128}|1)$"
         },

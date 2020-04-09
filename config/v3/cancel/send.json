@@ -13,7 +13,7 @@
     ],
     "properties": {
         "cancel": {
-            "description": "Pass contract_id received from the Portfolio call",
+            "description": "Value should be the `contract_id` which received from the `portfolio` call.",
             "type": "integer"
         },
         "passthrough": {

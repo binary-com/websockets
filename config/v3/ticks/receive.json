@@ -1,27 +1,13 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Ticks Stream (response)",
-    "description": "Latest spot price for a given symbol. Continous responses with a frequency of up to one second",
+    "description": "Latest spot price for a given symbol. Continuous responses with a frequency of up to one second.",
     "type": "object",
     "required": [
         "echo_req",
         "msg_type"
     ],
     "properties": {
-        "subscription": {
-            "title": "Subscription information",
-            "description": "For subscription requests only",
-            "type": "object",
-            "required": [
-                "id"
-            ],
-            "properties": {
-                "id": {
-                    "description": "A per-connection unique identifier. Can be passed to the forget API call to unsubscribe.",
-                    "type": "string"
-                }
-            }
-        },
         "tick": {
             "title": "TickSpotData",
             "description": "Tick by tick list of streamed data",
@@ -43,8 +29,11 @@
                     "type": "integer"
                 },
                 "id": {
-                    "description": "A stream ID that can be used to cancel this stream using the Forget request",
-                    "type": "string"
+                    "description": "A per-connection unique identifier. Can be passed to the `forget` API call to unsubscribe.",
+                    "type": "string",
+                    "examples": [
+                        "c84a793b-8a87-7999-ce10-9b22f7ceead3"
+                    ]
                 },
                 "pip_size": {
                     "description": "Indicates the number of decimal points that the returned amounts must be displayed with",
@@ -57,6 +46,23 @@
                 "symbol": {
                     "description": "Symbol",
                     "type": "string"
+                }
+            }
+        },
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only.",
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the `forget` API call to unsubscribe.",
+                    "type": "string",
+                    "examples": [
+                        "c84a793b-8a87-7999-ce10-9b22f7ceead3"
+                    ]
                 }
             }
         },

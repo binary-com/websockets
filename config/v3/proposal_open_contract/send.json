@@ -21,7 +21,7 @@
             ]
         },
         "contract_id": {
-            "description": "[Optional] Contract ID received from a Portfolio request. If not set, you will receive stream of all open contracts.",
+            "description": "[Optional] Contract ID received from a `portfolio` request. If not set, you will receive stream of all open contracts.",
             "type": "integer"
         },
         "subscribe": {

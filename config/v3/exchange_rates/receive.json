@@ -39,7 +39,6 @@
             "type": "object"
         },
         "msg_type": {
-            "title": "Message Type",
             "description": "Action name of the request made.",
             "type": "string",
             "enum": [

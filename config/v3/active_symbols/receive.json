@@ -13,6 +13,7 @@
             "description": "List of active symbols.",
             "type": "array",
             "items": {
+                "description": "The information about each symbol.",
                 "type": "object",
                 "required": [
                     "display_name",
