@@ -111,6 +111,12 @@
             "type": "string",
             "pattern": "^[\\p{L}\\s'.-]{2,50}$"
         },
+        "non_pep_declaration": {
+            "description": "[Optional] Indicates client's self-declaration of not being a PEP/RCA.",
+            "type": "integer",
+            "maximum": 1,
+            "minimum": 0
+        },
         "phone": {
             "description": "[Optional] Starting with `+` followed by 8-35 digits, allowing hyphens or space.",
             "type": "string",

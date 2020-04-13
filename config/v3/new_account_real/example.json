@@ -10,6 +10,7 @@
     "date_of_birth": "1980-01-31",
     "first_name": "Peter",
     "last_name": "Pan",
+    "non_pep_declaration": 1,
     "phone": "+6123456789",
     "place_of_birth": "id",
     "residence": "au",

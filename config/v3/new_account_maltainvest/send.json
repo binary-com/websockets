@@ -253,6 +253,12 @@
                 "Over $500,000"
             ]
         },
+        "non_pep_declaration": {
+            "description": "[Optional] Indicates client's self-declaration of not being a PEP/RCA.",
+            "type": "integer",
+            "maximum": 1,
+            "minimum": 0
+        },
         "occupation": {
             "description": "Occupation.",
             "type": "string",
