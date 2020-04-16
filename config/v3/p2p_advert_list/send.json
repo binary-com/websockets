@@ -36,11 +36,6 @@
                 "sell"
             ]
         },
-        "country": {
-            "description": "[Optional] Which country to find adverts from.",
-            "type": "string",
-            "pattern": "^[a-z]{0,2}$"
-        },
         "limit": {
             "description": "[Optional] Used for paging.",
             "type": "integer",

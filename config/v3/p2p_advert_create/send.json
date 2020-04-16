@@ -35,11 +35,6 @@
             "type": "string",
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
         },
-        "country": {
-            "description": "[Optional] The target country code of the advert. If not provided, will use client's residence by default.",
-            "type": "string",
-            "pattern": "^[a-z]{0,2}$"
-        },
         "description": {
             "description": "[Optional] General information about the advert.",
             "type": "string",
