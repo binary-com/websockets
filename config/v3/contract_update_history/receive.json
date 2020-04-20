@@ -12,7 +12,7 @@
             "title": "contract_update_history",
             "description": "Contains the historical and the most recent update status of the contract",
             "type": "array",
-            "item": {
+            "items": {
                 "description": "Contains the changed parameter.",
                 "type": "object",
                 "properties": {
