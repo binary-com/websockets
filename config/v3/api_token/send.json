@@ -27,7 +27,7 @@
         "new_token": {
             "description": "[Optional] The name of the created token.",
             "type": "string",
-            "pattern": "^[\\w\\s]+$"
+            "pattern": "^[A-Za-z0-9\\s_]+$"
         },
         "new_token_scopes": {
             "description": "[Optional] List of permission scopes to provide with the token.",
