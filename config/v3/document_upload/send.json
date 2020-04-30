@@ -44,13 +44,16 @@
             "type": "string",
             "enum": [
                 "passport",
-                "proofid",
-                "driverslicense",
-                "proofaddress",
+                "national_identity_card",
+                "driving_licence",
+                "utility_bill",
                 "bankstatement",
                 "power_of_attorney",
                 "amlglobalcheck",
                 "docverification",
+                "proofid",
+                "driverslicense",
+                "proofaddress",
                 "other"
             ]
         },
