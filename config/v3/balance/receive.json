@@ -26,7 +26,7 @@
                 "currency": {
                     "description": "Currency code.",
                     "type": "string",
-                    "pattern": "^(|[A-Z]{3})$",
+                    "pattern": "^(|[a-zA-Z0-9]{2,20})$",
                     "examples": [
                         "USD"
                     ]
@@ -66,7 +66,7 @@
                                 "currency": {
                                     "description": "Currency code.",
                                     "type": "string",
-                                    "pattern": "^(|[A-Z]{3})$",
+                                    "pattern": "^(|[a-zA-Z0-9]{2,20})$",
                                     "examples": [
                                         "USD"
                                     ]
@@ -89,7 +89,7 @@
                                 "currency": {
                                     "description": "Currency code.",
                                     "type": "string",
-                                    "pattern": "^(|[A-Z]{3})$",
+                                    "pattern": "^(|[a-zA-Z0-9]{2,20})$",
                                     "examples": [
                                         "USD"
                                     ]

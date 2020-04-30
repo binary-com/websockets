@@ -47,7 +47,7 @@
                             "account_currency": {
                                 "description": "Currency for this advert. This is the system currency to be transferred between advertiser and client.",
                                 "type": "string",
-                                "pattern": "^[a-zA-Z]{3,}$",
+                                "pattern": "^[a-zA-Z0-9]{2,20}$",
                                 "examples": [
                                     "USD"
                                 ]
@@ -120,7 +120,7 @@
                             "local_currency": {
                                 "description": "Local currency for this advert. This is the form of payment to be arranged directly between advertiser and client.",
                                 "type": "string",
-                                "pattern": "^[a-zA-Z]{3,}$",
+                                "pattern": "^[a-zA-Z0-9]{2,20}$",
                                 "examples": [
                                     "USD"
                                 ]

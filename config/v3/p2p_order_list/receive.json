@@ -47,7 +47,7 @@
                             "account_currency": {
                                 "description": "The currency to be bought or sold.",
                                 "type": "string",
-                                "pattern": "^[a-zA-Z]{3,}$",
+                                "pattern": "^[a-zA-Z0-9]{2,20}$",
                                 "examples": [
                                     "USD"
                                 ]
@@ -145,7 +145,7 @@
                             "local_currency": {
                                 "description": "Local currency for this order.",
                                 "type": "string",
-                                "pattern": "^[a-zA-Z]{3,}$",
+                                "pattern": "^[a-zA-Z0-9]{2,20}$",
                                 "examples": [
                                     "USD"
                                 ]

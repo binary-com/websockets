@@ -18,7 +18,7 @@
         "currency": {
             "description": "[Optional] If specified, only payment agents that supports that currency will be returned (obtained from `payout_currencies` call).",
             "type": "string",
-            "pattern": "^[A-Z]{3}$"
+            "pattern": "^[a-zA-Z0-9]{2,20}$"
         },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",

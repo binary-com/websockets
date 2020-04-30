@@ -43,7 +43,7 @@
         "local_currency": {
             "description": "[Optional] Local currency for this advert. If not provided, will use the currency of client's residence by default.",
             "type": "string",
-            "pattern": "^[a-zA-Z]{3,}$",
+            "pattern": "^[a-zA-Z0-9]{2,20}$",
             "examples": [
                 "USD"
             ]

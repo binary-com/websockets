@@ -44,7 +44,7 @@
         "local_currency": {
             "description": "[Optional] Currency to conduct payment transaction in, defaults to the main currency for the client's country.",
             "type": "string",
-            "pattern": "^[a-zA-Z]{3,}$"
+            "pattern": "^[a-zA-Z0-9]{2,20}$"
         },
         "offset": {
             "description": "[Optional] Used for paging.",

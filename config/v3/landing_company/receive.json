@@ -58,7 +58,7 @@
                             "type": "array",
                             "items": {
                                 "type": "string",
-                                "pattern": "^[A-Z]{3}$"
+                                "pattern": "^[a-zA-Z0-9]{2,20}$"
                             }
                         },
                         "legal_allowed_markets": {
@@ -71,7 +71,7 @@
                         "legal_default_currency": {
                             "description": "Default account currency",
                             "type": "string",
-                            "pattern": "^[A-Z]{3}$"
+                            "pattern": "^[a-zA-Z0-9]{2,20}$"
                         },
                         "name": {
                             "description": "Landing Company legal name",

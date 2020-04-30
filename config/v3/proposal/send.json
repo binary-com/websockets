@@ -88,7 +88,7 @@
         "currency": {
             "description": "This can only be the account-holder's currency (obtained from `payout_currencies` call).",
             "type": "string",
-            "pattern": "^[A-Z]{3}$"
+            "pattern": "^[a-zA-Z0-9]{2,20}$"
         },
         "date_expiry": {
             "description": "[Optional] Epoch value of the expiry time of the contract. Either date_expiry or duration is required.",
