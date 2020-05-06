@@ -30,7 +30,7 @@ groups:
       - name: cancel
         title: Cancel a Contract
       - name: cashier
-        title: Cashier URL
+        title: Cashier Information
       - name: contract_update
         title: Update Contract
       - name: contract_update_history

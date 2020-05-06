@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Cashier URL (response)",
-    "description": "Cashier URL for the specified type.",
+    "title": "Cashier Information (response)",
+    "description": "Cashier information for the specified type.",
     "type": "object",
     "required": [
         "echo_req",
@@ -10,8 +10,36 @@
     "properties": {
         "cashier": {
             "title": "cashier",
-            "description": "Cashier URL.\n**Note:** possible error codes are:\n- `ASK_TNC_APPROVAL`: API call `tnc_approval`\n- `ASK_AUTHENTICATE`\n- `ASK_UK_FUNDS_PROTECTION`: API call `tnc_approval`\n- `ASK_CURRENCY`: API call `set_account_currency`\n- `ASK_EMAIL_VERIFY`: API call `verify_email`\n- `ASK_FIX_DETAILS`: API call `set_settings`",
-            "type": "string"
+            "description": "Possible error codes are:\n- `ASK_TNC_APPROVAL`: API call `tnc_approval`\n- `ASK_AUTHENTICATE`\n- `ASK_UK_FUNDS_PROTECTION`: API call `tnc_approval`\n- `ASK_CURRENCY`: API call `set_account_currency`\n- `ASK_EMAIL_VERIFY`: API call `verify_email`\n- `ASK_FIX_DETAILS`: API call `set_settings`",
+            "oneOf": [
+                {
+                    "description": "Response for type `url`, It will return url to cashier service.",
+                    "type": "string"
+                },
+                {
+                    "description": "Response for type `api'.",
+                    "type": "object",
+                    "properties": {
+                        "action": {
+                            "description": "Type of operation, which is requested.",
+                            "type": "string",
+                            "enum": [
+                                "deposit"
+                            ]
+                        },
+                        "deposit": {
+                            "description": "[Optional] Result for deposit operation.",
+                            "type": "object",
+                            "properties": {
+                                "address": {
+                                    "description": "Address for crypto deposit.",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
         },
         "echo_req": {
             "description": "Echo of the request made.",

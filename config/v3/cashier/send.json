@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Cashier URL (request)",
-    "description": "Request the cashier URL.",
+    "title": "Cashier Information (request)",
+    "description": "Request the cashier info for the specified type.",
     "type": "object",
     "auth_required": 1,
     "auth_scopes": [
@@ -13,7 +13,7 @@
     ],
     "properties": {
         "cashier": {
-            "description": "The cashier type to request the URL for.",
+            "description": "Operation which needs to be requested from cashier",
             "type": "string",
             "default": "deposit",
             "enum": [
@@ -22,11 +22,21 @@
             ]
         },
         "provider": {
-            "description": "[Optional] Note: only 'doughflow' is supported currently.",
+            "description": "[Optional] Cashier provider. `crypto` will be default option for crypto currency accounts.",
             "type": "string",
             "default": "doughflow",
             "enum": [
-                "doughflow"
+                "doughflow",
+                "crypto"
+            ]
+        },
+        "type": {
+            "description": "[Optional] Data need to be returned from cashier. `api` is supported only for `crypto` provider with `deposit` operation.",
+            "type": "string",
+            "default": "url",
+            "enum": [
+                "url",
+                "api"
             ]
         },
         "verification_code": {
