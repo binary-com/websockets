@@ -105,7 +105,7 @@
         "duration": {
             "description": "[Optional] Duration quantity. Either date_expiry or duration is required.",
             "type": "integer",
-            "maximum": "99999999",
+            "maximum": 99999999,
             "minimum": 0
         },
         "duration_unit": {

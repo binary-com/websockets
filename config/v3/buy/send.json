@@ -118,7 +118,7 @@
                 "duration": {
                     "description": "[Optional] Duration quantity",
                     "type": "integer",
-                    "maximum": "99999999",
+                    "maximum": 99999999,
                     "minimum": 0
                 },
                 "duration_unit": {
