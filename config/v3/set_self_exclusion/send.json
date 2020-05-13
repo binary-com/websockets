@@ -90,7 +90,6 @@
                 "integer",
                 "null"
             ],
-            "maximum": 9999,
             "minimum": 0
         },
         "max_turnover": {
