@@ -21,7 +21,9 @@
                         "sell",
                         "deposit",
                         "withdrawal",
-                        "escrow"
+                        "escrow",
+                        "adjustment",
+                        "virtual_credit"
                     ]
                 },
                 "amount": {
