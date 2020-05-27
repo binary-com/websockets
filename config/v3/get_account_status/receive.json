@@ -13,7 +13,7 @@
             "description": "Account status details",
             "type": "object",
             "required": [
-                "experimental_suspended",
+                "currency_config",
                 "prompt_client_to_authenticate",
                 "risk_classification",
                 "status"
@@ -120,8 +120,8 @@
                         }
                     }
                 },
-                "experimental_suspended": {
-                    "description": "Provides cashier details for experimental currencies.",
+                "currency_config": {
+                    "description": "Provides cashier details for client currency.",
                     "type": "object",
                     "minProperties": 0,
                     "patternProperties": {
