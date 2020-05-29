@@ -26,6 +26,13 @@
                         "description": "Country full name",
                         "type": "string"
                     },
+                    "tin_format": {
+                        "description": "Country tax identifier format",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
                     "value": {
                         "description": "2-letter country code",
                         "type": "string",
