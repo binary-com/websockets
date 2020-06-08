@@ -38,6 +38,22 @@
                     "description": "The epoch time that the client became an advertiser.",
                     "type": "integer"
                 },
+                "daily_buy": {
+                    "description": "Total of orders placed against buy adverts in the past 24 hours.",
+                    "type": "string"
+                },
+                "daily_buy_limit": {
+                    "description": "Limit for orders placed against buy adverts within a 24 hour period.",
+                    "type": "string"
+                },
+                "daily_sell": {
+                    "description": "Total of orders placed against sell adverts in the past 24 hours.",
+                    "type": "string"
+                },
+                "daily_sell_limit": {
+                    "description": "Limit for orders placed against sell adverts within a 24 hour period.",
+                    "type": "string"
+                },
                 "default_advert_description": {
                     "description": "Default description that can be used every time an advert is created.",
                     "type": "string"
