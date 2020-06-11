@@ -96,6 +96,13 @@
             "type": "string",
             "pattern": "^[\\p{L}\\s'.-]{2,50}$"
         },
+        "non_pep_declaration": {
+            "description": "[Optional] Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates). Effective for real accounts only.",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
         "phone": {
             "description": "[Optional] Note: not applicable for virtual account. Required field for real money account. Starting with `+` followed by 8-35 digits, allowing hyphens or space.",
             "type": "string",

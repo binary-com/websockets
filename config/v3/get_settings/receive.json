@@ -117,6 +117,14 @@
                     "description": "Last name (note: not set for virtual-money accounts)",
                     "type": "string"
                 },
+                "non_pep_declaration": {
+                    "description": "Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates). Note: returned for real accounts only.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
                 "phone": {
                     "description": "Telephone (note: not set for virtual-money accounts)",
                     "type": "string"

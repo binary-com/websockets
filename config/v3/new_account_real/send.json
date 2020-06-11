@@ -112,7 +112,7 @@
             "pattern": "^[\\p{L}\\s'.-]{2,50}$"
         },
         "non_pep_declaration": {
-            "description": "[Optional] Indicates client's self-declaration of not being a PEP/RCA.",
+            "description": "[Optional] Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates).",
             "type": "integer",
             "maximum": 1,
             "minimum": 0
