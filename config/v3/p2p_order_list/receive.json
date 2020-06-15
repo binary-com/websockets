@@ -178,6 +178,7 @@
                                     "buyer-confirmed",
                                     "cancelled",
                                     "timed-out",
+                                    "blocked",
                                     "refunded",
                                     "completed"
                                 ]
