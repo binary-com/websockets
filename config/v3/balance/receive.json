@@ -60,8 +60,7 @@
                             "properties": {
                                 "amount": {
                                     "description": "Total balance of all MT5 accounts",
-                                    "type": "number",
-                                    "minimum": 0
+                                    "type": "number"
                                 },
                                 "currency": {
                                     "description": "Currency code.",
