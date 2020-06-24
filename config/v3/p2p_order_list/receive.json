@@ -118,6 +118,26 @@
                                 "description": "The URL to be used to initialise the chat for this order.",
                                 "type": "string"
                             },
+                            "client_details": {
+                                "title": "Client Details",
+                                "description": "Details of the client who created the order.",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                    "id",
+                                    "name"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "description": "The client's unique P2P identifier.",
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "The client's displayed name.",
+                                        "type": "string"
+                                    }
+                                }
+                            },
                             "contact_info": {
                                 "description": "Seller contact information.",
                                 "type": "string"
