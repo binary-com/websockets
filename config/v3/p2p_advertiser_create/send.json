@@ -34,7 +34,7 @@
         "name": {
             "description": "The advertiser's displayed name.",
             "type": "string",
-            "pattern": "\\w+"
+            "pattern": "^(?!(.*(.)\\2{4,})|.*[\\.@_-]{2,}|^([\\.@_-])|.*([\\.@_-])$)[a-zA-Z0-9-_@\\.]{2,24}$"
         },
         "payment_info": {
             "description": "[Optional] Advertiser's payment information, to be used as a default for new sell adverts.",
