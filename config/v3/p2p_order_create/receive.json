@@ -84,12 +84,27 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
+                        "first_name",
                         "id",
+                        "last_name",
+                        "loginid",
                         "name"
                     ],
                     "properties": {
+                        "first_name": {
+                            "description": "The advertiser's first name.",
+                            "type": "string"
+                        },
                         "id": {
                             "description": "The advertiser's unique identifier.",
+                            "type": "string"
+                        },
+                        "last_name": {
+                            "description": "The advertiser's last name.",
+                            "type": "string"
+                        },
+                        "loginid": {
+                            "description": "The advertiser's account identifier.",
                             "type": "string"
                         },
                         "name": {
@@ -116,12 +131,27 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
+                        "first_name",
                         "id",
+                        "last_name",
+                        "loginid",
                         "name"
                     ],
                     "properties": {
+                        "first_name": {
+                            "description": "The client's first name.",
+                            "type": "string"
+                        },
                         "id": {
                             "description": "The client's unique P2P identifier.",
+                            "type": "string"
+                        },
+                        "last_name": {
+                            "description": "The client's last name.",
+                            "type": "string"
+                        },
+                        "loginid": {
+                            "description": "The client's account identifier.",
                             "type": "string"
                         },
                         "name": {

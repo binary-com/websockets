@@ -31,7 +31,8 @@
                                     "sell",
                                     "deposit",
                                     "withdrawal",
-                                    "escrow",
+                                    "hold",
+                                    "release",
                                     "adjustment",
                                     "virtual_credit"
                                 ]
