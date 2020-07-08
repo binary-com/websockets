@@ -43,8 +43,8 @@
                     "description": "Sub account type, present only when account type is either `demo` or `financial`.",
                     "type": "string",
                     "enum": [
-                        "standard",
-                        "advanced"
+                        "financial",
+                        "financial_stp"
                     ]
                 }
             }

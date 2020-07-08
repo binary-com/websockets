@@ -148,14 +148,14 @@
                     "type": "string"
                 },
                 "mt_financial_company": {
-                    "description": "Landing Company for MT5 financial contracts (all except Synthetic Indices), currently divided into advanced and standard as subtypes.",
+                    "description": "Landing Company for MT5 financial contracts (all except Synthetic Indices), currently divided into Financial STP and Financial as subtypes.",
                     "type": [
                         "null",
                         "object"
                     ],
                     "properties": {
-                        "advanced": {
-                            "description": "Contain details for landing company for advanced subtype. The Advanced account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers.",
+                        "financial": {
+                            "description": "Contain details for landing company for financial subtype. The Financial account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market.",
                             "type": [
                                 "null",
                                 "object"
@@ -218,8 +218,8 @@
                                 }
                             }
                         },
-                        "standard": {
-                            "description": "Contain details for landing company for standard subtype. The Standard account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market.",
+                        "financial_stp": {
+                            "description": "Contain details for landing company for Financial STP subtype. The Financial STP account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers.",
                             "type": [
                                 "null",
                                 "object"

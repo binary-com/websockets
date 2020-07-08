@@ -53,7 +53,7 @@
                         "description": "The group of mt5 account.",
                         "type": "string",
                         "examples": [
-                            "real\\vanuatu_standard"
+                            "real\\vanuatu_financial"
                         ]
                     }
                 }

@@ -85,11 +85,11 @@
             "sensitive": 1
         },
         "mt5_account_type": {
-            "description": "[Optional] Standard: Variable spreads, High leverage. Advanced: Variable spreads, Medium Leverage, more products.",
+            "description": "[Optional] Financial: Variable spreads, High leverage. Financial STP: Variable spreads, Medium Leverage, more products.",
             "type": "string",
             "enum": [
-                "standard",
-                "advanced"
+                "financial",
+                "financial_stp"
             ]
         },
         "name": {

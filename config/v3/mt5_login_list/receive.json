@@ -37,7 +37,7 @@
                         "type": "string"
                     },
                     "group": {
-                        "description": "Group type of the MT5 account, e.g. `demo\\svg_standard`",
+                        "description": "Group type of the MT5 account, e.g. `demo\\svg_financial`",
                         "type": "string"
                     },
                     "leverage": {

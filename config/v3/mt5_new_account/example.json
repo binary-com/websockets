@@ -9,7 +9,7 @@
     "investPassword": "AbcDv12345@",
     "leverage": 100,
     "mainPassword": "AbcDv1234@",
-    "mt5_account_type": "standard",
+    "mt5_account_type": "financial",
     "name": "Peter Pan",
     "phone": "+6123456789",
     "phonePassword": "AbcDv1234",
