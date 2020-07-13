@@ -35,7 +35,7 @@
                                     "type": "integer"
                                 },
                                 "further_resubmissions_allowed": {
-                                    "description": "This represent the number of submissions allowed for client to submit documents",
+                                    "description": "This flag indicates whether client is allowed to resubmit documents",
                                     "type": "integer",
                                     "enum": [
                                         1,
@@ -65,7 +65,7 @@
                                     "type": "integer"
                                 },
                                 "further_resubmissions_allowed": {
-                                    "description": "This represent the number times a client is allowed to submit documents",
+                                    "description": "This flag indicates whether client is allowed to resubmit documents",
                                     "type": "integer",
                                     "enum": [
                                         1,
