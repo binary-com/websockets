@@ -34,9 +34,13 @@
                                     "description": "This is the epoch of the document expiry date.",
                                     "type": "integer"
                                 },
-                                "further_submissions_allowed": {
+                                "further_resubmissions_allowed": {
                                     "description": "This represent the number of submissions allowed for client to submit documents",
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "enum": [
+                                        1,
+                                        0
+                                    ]
                                 },
                                 "status": {
                                     "description": "This represents the current status of the proof of address document submitted for authentication.",
@@ -60,9 +64,13 @@
                                     "description": "This is the epoch of the document expiry date.",
                                     "type": "integer"
                                 },
-                                "further_submissions_allowed": {
+                                "further_resubmissions_allowed": {
                                     "description": "This represent the number times a client is allowed to submit documents",
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "enum": [
+                                        1,
+                                        0
+                                    ]
                                 },
                                 "services": {
                                     "description": "This shows the information about the authentication services implemented",
