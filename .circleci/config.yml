@@ -131,7 +131,7 @@ commands:
     steps:
       - slack/status:
           include_project_field: false
-          failure_message: "Release failed for Developers with version *$(cat _site/version)*"
+          failure_message: "Release failed for developers.binary.com with version *$(cat _site/version)*"
           success_message: "Release succeeded for Developers with version *$(cat _site/version)*"
           webhook: ${SLACK_WEBHOOK}
 jobs:
