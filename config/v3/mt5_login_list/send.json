@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MT5: Accounts List (request)",
+    "description": "Get list of MT5 accounts for client",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "mt5_login_list"
+    ],
+    "properties": {
+        "mt5_login_list": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

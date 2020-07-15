@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Price Proposal: Open Contracts (request)",
+    "description": "Get latest price (and other information) for a contract in the user's portfolio",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read",
+        "trading_information"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "proposal_open_contract"
+    ],
+    "properties": {
+        "proposal_open_contract": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "contract_id": {
+            "description": "[Optional] Contract ID received from a `portfolio` request. If not set, you will receive stream of all open contracts.",
+            "type": "integer"
+        },
+        "subscribe": {
+            "description": "[Optional] `1` to stream.",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

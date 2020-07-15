@@ -1,0 +1,231 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Set Financial Assessment (request)",
+    "description": "This call sets the financial assessment details based on the client's answers to analyze whether they possess the experience and knowledge to understand the risks involved with binary options trading.",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "set_financial_assessment",
+        "education_level",
+        "employment_industry",
+        "estimated_worth",
+        "income_source",
+        "net_income",
+        "occupation"
+    ],
+    "properties": {
+        "set_financial_assessment": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "account_turnover": {
+            "description": "[Optional] The anticipated account turnover.",
+            "type": "string",
+            "enum": [
+                "Less than $25,000",
+                "$25,000 - $50,000",
+                "$50,001 - $100,000",
+                "$100,001 - $500,000",
+                "Over $500,000"
+            ]
+        },
+        "binary_options_trading_experience": {
+            "description": "[Optional] Binary options trading experience.",
+            "type": "string",
+            "enum": [
+                "0-1 year",
+                "1-2 years",
+                "Over 3 years"
+            ]
+        },
+        "binary_options_trading_frequency": {
+            "description": "[Optional] Binary options trading frequency.",
+            "type": "string",
+            "enum": [
+                "0-5 transactions in the past 12 months",
+                "6-10 transactions in the past 12 months",
+                "11-39 transactions in the past 12 months",
+                "40 transactions or more in the past 12 months"
+            ]
+        },
+        "cfd_trading_experience": {
+            "description": "[Optional] CFDs trading experience.",
+            "type": "string",
+            "enum": [
+                "0-1 year",
+                "1-2 years",
+                "Over 3 years"
+            ]
+        },
+        "cfd_trading_frequency": {
+            "description": "[Optional] CFDs trading frequency.",
+            "type": "string",
+            "enum": [
+                "0-5 transactions in the past 12 months",
+                "6-10 transactions in the past 12 months",
+                "11-39 transactions in the past 12 months",
+                "40 transactions or more in the past 12 months"
+            ]
+        },
+        "education_level": {
+            "description": "Level of Education.",
+            "type": "string",
+            "enum": [
+                "Primary",
+                "Secondary",
+                "Tertiary"
+            ]
+        },
+        "employment_industry": {
+            "description": "Industry of Employment.",
+            "type": "string",
+            "enum": [
+                "Construction",
+                "Education",
+                "Finance",
+                "Health",
+                "Tourism",
+                "Information & Communications Technology",
+                "Science & Engineering",
+                "Legal",
+                "Social & Cultural",
+                "Agriculture",
+                "Real Estate",
+                "Food Services",
+                "Manufacturing",
+                "Unemployed"
+            ]
+        },
+        "employment_status": {
+            "description": "[Optional] Employment Status.",
+            "type": "string",
+            "enum": [
+                "Employed",
+                "Pensioner",
+                "Self-Employed",
+                "Student",
+                "Unemployed"
+            ]
+        },
+        "estimated_worth": {
+            "description": "Estimated Net Worth.",
+            "type": "string",
+            "enum": [
+                "Less than $100,000",
+                "$100,000 - $250,000",
+                "$250,001 - $500,000",
+                "$500,001 - $1,000,000",
+                "Over $1,000,000"
+            ]
+        },
+        "forex_trading_experience": {
+            "description": "[Optional] Forex trading experience.",
+            "type": "string",
+            "enum": [
+                "0-1 year",
+                "1-2 years",
+                "Over 3 years"
+            ]
+        },
+        "forex_trading_frequency": {
+            "description": "[Optional] Forex trading frequency.",
+            "type": "string",
+            "enum": [
+                "0-5 transactions in the past 12 months",
+                "6-10 transactions in the past 12 months",
+                "11-39 transactions in the past 12 months",
+                "40 transactions or more in the past 12 months"
+            ]
+        },
+        "income_source": {
+            "description": "Income Source.",
+            "type": "string",
+            "enum": [
+                "Salaried Employee",
+                "Self-Employed",
+                "Investments & Dividends",
+                "Pension",
+                "State Benefits",
+                "Savings & Inheritance"
+            ]
+        },
+        "net_income": {
+            "description": "Net Annual Income.",
+            "type": "string",
+            "enum": [
+                "Less than $25,000",
+                "$25,000 - $50,000",
+                "$50,001 - $100,000",
+                "$100,001 - $500,000",
+                "Over $500,000"
+            ]
+        },
+        "occupation": {
+            "description": "Occupation.",
+            "type": "string",
+            "enum": [
+                "Chief Executives, Senior Officials and Legislators",
+                "Managers",
+                "Professionals",
+                "Clerks",
+                "Personal Care, Sales and Service Workers",
+                "Agricultural, Forestry and Fishery Workers",
+                "Craft, Metal, Electrical and Electronics Workers",
+                "Plant and Machine Operators and Assemblers",
+                "Cleaners and Helpers",
+                "Mining, Construction, Manufacturing and Transport Workers",
+                "Armed Forces",
+                "Government Officers",
+                "Students",
+                "Unemployed"
+            ]
+        },
+        "other_instruments_trading_experience": {
+            "description": "[Optional] Trading experience in other financial instruments.",
+            "type": "string",
+            "enum": [
+                "0-1 year",
+                "1-2 years",
+                "Over 3 years"
+            ]
+        },
+        "other_instruments_trading_frequency": {
+            "description": "[Optional] Trading frequency in other financial instruments.",
+            "type": "string",
+            "enum": [
+                "0-5 transactions in the past 12 months",
+                "6-10 transactions in the past 12 months",
+                "11-39 transactions in the past 12 months",
+                "40 transactions or more in the past 12 months"
+            ]
+        },
+        "source_of_wealth": {
+            "description": "[Optional] Source of wealth.",
+            "type": "string",
+            "enum": [
+                "Accumulation of Income/Savings",
+                "Cash Business",
+                "Company Ownership",
+                "Divorce Settlement",
+                "Inheritance",
+                "Investment Income",
+                "Sale of Property"
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

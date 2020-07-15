@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Chat Create (response)",
+    "description": "Information of the created P2P chat.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "p2p_chat_create": {
+            "title": "p2p_chat_create",
+            "description": "Information of the P2P chat.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "channel_url",
+                "order_id"
+            ],
+            "properties": {
+                "channel_url": {
+                    "description": "The URL to be used to initialise the chat for the requested order.",
+                    "type": "string"
+                },
+                "order_id": {
+                    "description": "The unique identifier for the order that the chat belongs to.",
+                    "type": "string"
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "p2p_chat_create"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

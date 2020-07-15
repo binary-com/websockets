@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "API Token (request)",
+    "description": "This call manages API tokens",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "api_token"
+    ],
+    "properties": {
+        "api_token": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "delete_token": {
+            "description": "[Optional] The token to remove.",
+            "type": "string",
+            "pattern": "^\\w+$"
+        },
+        "new_token": {
+            "description": "[Optional] The name of the created token.",
+            "type": "string",
+            "pattern": "^[A-Za-z0-9\\s_]+$"
+        },
+        "new_token_scopes": {
+            "description": "[Optional] List of permission scopes to provide with the token.",
+            "type": "array",
+            "items": {
+                "description": "Required when create new token",
+                "type": "string",
+                "enum": [
+                    "read",
+                    "trade",
+                    "trading_information",
+                    "payments",
+                    "admin"
+                ]
+            }
+        },
+        "valid_for_current_ip_only": {
+            "description": "[Optional] If you set this parameter during token creation, then the token created will only work for the IP address that was used to create the token",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

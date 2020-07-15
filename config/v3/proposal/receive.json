@@ -1,0 +1,223 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Price Proposal (response)",
+    "description": "Latest price and other details for a given contract",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "proposal": {
+            "title": "proposal",
+            "description": "Latest price and other details for a given contract",
+            "type": "object",
+            "required": [
+                "ask_price",
+                "date_start",
+                "display_value",
+                "id",
+                "longcode",
+                "payout",
+                "spot",
+                "spot_time"
+            ],
+            "properties": {
+                "ask_price": {
+                    "description": "The ask price.",
+                    "type": "number",
+                    "examples": [
+                        5.14
+                    ]
+                },
+                "cancellation": {
+                    "description": "Contains information about contract cancellation option.",
+                    "type": "object",
+                    "properties": {
+                        "ask_price": {
+                            "description": "Ask price of contract cancellation option.",
+                            "type": "number"
+                        },
+                        "date_expiry": {
+                            "description": "Expiry time in epoch for contract cancellation option.",
+                            "type": "integer"
+                        }
+                    }
+                },
+                "commission": {
+                    "description": "Commission changed in percentage (%).",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                },
+                "date_start": {
+                    "description": "The start date of the contract.",
+                    "type": "integer",
+                    "examples": [
+                        1439999053
+                    ]
+                },
+                "display_value": {
+                    "description": "Same as `ask_price`.",
+                    "type": "string",
+                    "examples": [
+                        "5.14"
+                    ]
+                },
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the `forget` API call to unsubscribe.",
+                    "type": "string",
+                    "examples": [
+                        "c84a793b-8a87-7999-ce10-9b22f7ceead3"
+                    ]
+                },
+                "limit_order": {
+                    "description": "Contains limit order information. (Only applicable for contract with limit order).",
+                    "type": "object",
+                    "properties": {
+                        "stop_loss": {
+                            "description": "Contains information where the contract will be closed automatically at the loss specified by the user.",
+                            "type": "object",
+                            "properties": {
+                                "display_name": {
+                                    "description": "Localized display name",
+                                    "type": "string"
+                                },
+                                "order_amount": {
+                                    "description": "Stop loss amount",
+                                    "type": [
+                                        "null",
+                                        "number"
+                                    ]
+                                },
+                                "order_date": {
+                                    "description": "Stop loss order epoch",
+                                    "type": "integer"
+                                },
+                                "value": {
+                                    "description": "Pip-sized barrier value",
+                                    "type": [
+                                        "null",
+                                        "string"
+                                    ]
+                                }
+                            }
+                        },
+                        "stop_out": {
+                            "description": "Contains information where the contract will be closed automatically when the value of the contract is close to zero. This is set by the us.",
+                            "type": "object",
+                            "properties": {
+                                "display_name": {
+                                    "description": "Localized display name",
+                                    "type": "string"
+                                },
+                                "order_amount": {
+                                    "description": "Stop out amount",
+                                    "type": "number"
+                                },
+                                "order_date": {
+                                    "description": "Stop out order epoch",
+                                    "type": "integer"
+                                },
+                                "value": {
+                                    "description": "Pip-sized barrier value",
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "take_profit": {
+                            "description": "Contains information where the contract will be closed automatically at the profit specified by the user.",
+                            "type": "object",
+                            "properties": {
+                                "display_name": {
+                                    "description": "Localized display name",
+                                    "type": "string"
+                                },
+                                "order_amount": {
+                                    "description": "Take profit amount",
+                                    "type": [
+                                        "null",
+                                        "number"
+                                    ]
+                                },
+                                "order_date": {
+                                    "description": "Take profit order epoch",
+                                    "type": "integer"
+                                },
+                                "value": {
+                                    "description": "Pip-sized barrier value",
+                                    "type": [
+                                        "null",
+                                        "string"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "longcode": {
+                    "description": "Example: Win payout if Random 100 Index is strictly higher than entry spot at 15 minutes after contract start time.",
+                    "type": "string"
+                },
+                "multiplier": {
+                    "description": "[Only for lookback trades] Multiplier applies when calculating the final payoff for each type of lookback. e.g. (Exit spot - Lowest historical price) * multiplier = Payout",
+                    "type": "number"
+                },
+                "payout": {
+                    "description": "The payout amount of the contract.",
+                    "type": "number",
+                    "examples": [
+                        10
+                    ]
+                },
+                "spot": {
+                    "description": "Spot value (if there are no Exchange data-feed licensing restrictions for the underlying symbol).",
+                    "type": "number",
+                    "examples": [
+                        9874.52
+                    ]
+                },
+                "spot_time": {
+                    "description": "The corresponding time of the spot value.",
+                    "type": "integer",
+                    "examples": [
+                        1439999052
+                    ]
+                }
+            }
+        },
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only.",
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the `forget` API call to unsubscribe.",
+                    "type": "string",
+                    "examples": [
+                        "c84a793b-8a87-7999-ce10-9b22f7ceead3"
+                    ]
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "proposal"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

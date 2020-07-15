@@ -1,0 +1,95 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Application: Markup Details (request)",
+    "description": "Retrieve details of `app_markup` according to criteria specified.",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "app_markup_details",
+        "date_from",
+        "date_to"
+    ],
+    "properties": {
+        "app_markup_details": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "app_id": {
+            "description": "[Optional] Specific application `app_id` to report on.",
+            "type": "integer"
+        },
+        "client_loginid": {
+            "description": "[Optional] Specific client loginid to report on, like CR12345",
+            "type": "string",
+            "pattern": "^[A-Za-z]{2,5}[0-9]{2,20}$"
+        },
+        "date_from": {
+            "description": "Start date (epoch or YYYY-MM-DD HH:MM:SS). Results are inclusive of this time.",
+            "type": "string",
+            "pattern": "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01]) ([01]?[0-9]|2[0-3]):([0-5]?[0-9]):([0-5]?[0-9])|[0-9]{1,10})$"
+        },
+        "date_to": {
+            "description": "End date (epoch or YYYY-MM-DD HH::MM::SS). Results are inclusive of this time.",
+            "type": "string",
+            "pattern": "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01]) ([01]?[0-9]|2[0-3]):([0-5]?[0-9]):([0-5]?[0-9])|[0-9]{1,10})$"
+        },
+        "description": {
+            "description": "[Optional] If set to 1, will return `app_markup` transaction details.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "limit": {
+            "description": "[Optional] Apply upper limit to count of transactions received.",
+            "type": "number",
+            "default": 1000,
+            "maximum": 1000,
+            "minimum": 0
+        },
+        "offset": {
+            "description": "[Optional] Number of transactions to skip.",
+            "type": "number"
+        },
+        "sort": {
+            "description": "[Optional] Sort direction on `transaction_time`. Other fields sort order is ASC.",
+            "type": "string",
+            "default": "DESC",
+            "enum": [
+                "ASC",
+                "DESC"
+            ]
+        },
+        "sort_fields": {
+            "description": "[Optional] One or more of the specified fields to sort on. Default sort field is by `transaction_time`.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "app_id",
+                    "client_loginid",
+                    "transaction_time"
+                ]
+            },
+            "maxItems": 3,
+            "minItems": 0,
+            "uniqueItems": true
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

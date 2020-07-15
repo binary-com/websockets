@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Cashier Information (request)",
+    "description": "Request the cashier info for the specified type.",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "payments"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "cashier"
+    ],
+    "properties": {
+        "cashier": {
+            "description": "Operation which needs to be requested from cashier",
+            "type": "string",
+            "default": "deposit",
+            "enum": [
+                "deposit",
+                "withdraw"
+            ]
+        },
+        "provider": {
+            "description": "[Optional] Cashier provider. `crypto` will be default option for crypto currency accounts.",
+            "type": "string",
+            "default": "doughflow",
+            "enum": [
+                "doughflow",
+                "crypto"
+            ]
+        },
+        "type": {
+            "description": "[Optional] Data need to be returned from cashier. `api` is supported only for `crypto` provider with `deposit` operation.",
+            "type": "string",
+            "default": "url",
+            "enum": [
+                "url",
+                "api"
+            ]
+        },
+        "verification_code": {
+            "description": "[Optional] Email verification code (received from a `verify_email` call, which must be done first)",
+            "type": "string",
+            "pattern": "^\\w{8,128}$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

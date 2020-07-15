@@ -1,0 +1,68 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MT5: New Account (response)",
+    "description": "Create MT5 account Receive",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "mt5_new_account": {
+            "title": "mt5_new_account",
+            "description": "New MT5 account details",
+            "type": "object",
+            "properties": {
+                "account_type": {
+                    "description": "Account type.",
+                    "type": "string",
+                    "enum": [
+                        "demo",
+                        "gaming",
+                        "financial"
+                    ]
+                },
+                "balance": {
+                    "description": "Account balance.",
+                    "type": "number"
+                },
+                "currency": {
+                    "description": "MT5 account currency (`USD` or `EUR`) that depends on the MT5 company (`vanuatu`, `svg`, `malta`).",
+                    "type": "string"
+                },
+                "display_balance": {
+                    "description": "Account balance, formatted to appropriate decimal places.",
+                    "type": "string"
+                },
+                "login": {
+                    "description": "Login ID of the user's new MT5 account. Login could have 2 types of prefixes: MTD, MTR. MTD - for demo accounts and MTR for real money accounts.",
+                    "type": "string",
+                    "pattern": "^MT[DR]?[0-9]+$"
+                },
+                "mt5_account_type": {
+                    "description": "Sub account type, present only when account type is either `demo` or `financial`.",
+                    "type": "string",
+                    "enum": [
+                        "financial",
+                        "financial_stp"
+                    ]
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "mt5_new_account"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

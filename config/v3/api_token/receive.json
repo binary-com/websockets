@@ -1,0 +1,90 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "API Token (response)",
+    "description": "The result of the API token request made.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "api_token": {
+            "title": "api_token",
+            "description": "Contains the result of API token according to the type of request.",
+            "type": "object",
+            "properties": {
+                "delete_token": {
+                    "description": "Token deleted.",
+                    "type": "integer",
+                    "enum": [
+                        1
+                    ]
+                },
+                "new_token": {
+                    "description": "Token created.",
+                    "type": "integer",
+                    "enum": [
+                        1
+                    ]
+                },
+                "tokens": {
+                    "description": "API tokens",
+                    "type": "array",
+                    "items": {
+                        "description": "The information for each token.",
+                        "type": "object",
+                        "properties": {
+                            "display_name": {
+                                "description": "The token name specified when creating.",
+                                "type": "string"
+                            },
+                            "last_used": {
+                                "description": "The last date which the token has been used.",
+                                "type": "string"
+                            },
+                            "scopes": {
+                                "description": "List of permission scopes of the token.",
+                                "type": "array",
+                                "items": {
+                                    "description": "The permission scope.",
+                                    "type": "string",
+                                    "enum": [
+                                        "read",
+                                        "trade",
+                                        "trading_information",
+                                        "payments",
+                                        "admin"
+                                    ]
+                                }
+                            },
+                            "token": {
+                                "description": "The token that can be used to `authorize` with.",
+                                "type": "string"
+                            },
+                            "valid_for_ip": {
+                                "description": "The IP restriction for the token. No restriction if empty.",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "sensitive": 1
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "api_token"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

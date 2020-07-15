@@ -1,0 +1,11 @@
+{
+    "proposal": 1,
+    "amount": 100,
+    "barrier": "+0.1",
+    "basis": "payout",
+    "contract_type": "CALL",
+    "currency": "USD",
+    "duration": 60,
+    "duration_unit": "s",
+    "symbol": "R_100"
+}

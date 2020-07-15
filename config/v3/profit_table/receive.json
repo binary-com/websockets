@@ -1,0 +1,102 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Profit Table (response)",
+    "description": "A summary of account profit table is received",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "profit_table": {
+            "title": "profit_table",
+            "description": "Account Profit Table.",
+            "type": "object",
+            "properties": {
+                "count": {
+                    "description": "Number of transactions returned in this call",
+                    "type": "number"
+                },
+                "transactions": {
+                    "description": "Array of returned transactions",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "app_id": {
+                                "description": "ID of the application where this contract was purchased.",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "buy_price": {
+                                "description": "The buy price",
+                                "type": "number"
+                            },
+                            "contract_id": {
+                                "description": "The unique contract identifier.",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ],
+                                "examples": [
+                                    4867502908
+                                ]
+                            },
+                            "longcode": {
+                                "description": "The description of contract purchased if description is set to 1",
+                                "type": "string"
+                            },
+                            "payout": {
+                                "description": "Payout price",
+                                "type": "number"
+                            },
+                            "purchase_time": {
+                                "description": "Epoch purchase time of the transaction",
+                                "type": "integer"
+                            },
+                            "sell_price": {
+                                "description": "The price the contract sold for.",
+                                "type": "number"
+                            },
+                            "sell_time": {
+                                "description": "Epoch sell time of the transaction",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "shortcode": {
+                                "description": "Compact description of the contract purchased if description is set to 1",
+                                "type": "string"
+                            },
+                            "transaction_id": {
+                                "description": "The transaction Identifier. Every contract (buy or sell) and every payment has a unique transaction identifier.",
+                                "type": "integer",
+                                "examples": [
+                                    10867502908
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "profit_table"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

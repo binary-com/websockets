@@ -1,0 +1,197 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Account Status (response)",
+    "description": "A message with Account Status",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "get_account_status": {
+            "title": "get_account_status",
+            "description": "Account status details",
+            "type": "object",
+            "required": [
+                "currency_config",
+                "prompt_client_to_authenticate",
+                "risk_classification",
+                "status"
+            ],
+            "properties": {
+                "authentication": {
+                    "description": "This represents the authentication status of the user and it includes what authentication is needed.",
+                    "type": "object",
+                    "required": [
+                        "needs_verification"
+                    ],
+                    "properties": {
+                        "document": {
+                            "description": "The authentication status for document.",
+                            "type": "object",
+                            "properties": {
+                                "expiry_date": {
+                                    "description": "This is the epoch of the document expiry date.",
+                                    "type": "integer"
+                                },
+                                "further_resubmissions_allowed": {
+                                    "description": "This flag indicates whether client is allowed to resubmit documents",
+                                    "type": "integer",
+                                    "enum": [
+                                        1,
+                                        0
+                                    ]
+                                },
+                                "status": {
+                                    "description": "This represents the current status of the proof of address document submitted for authentication.",
+                                    "type": "string",
+                                    "enum": [
+                                        "none",
+                                        "pending",
+                                        "rejected",
+                                        "verified",
+                                        "expired",
+                                        "suspected"
+                                    ]
+                                }
+                            }
+                        },
+                        "identity": {
+                            "description": "The authentication status for identity.",
+                            "type": "object",
+                            "properties": {
+                                "expiry_date": {
+                                    "description": "This is the epoch of the document expiry date.",
+                                    "type": "integer"
+                                },
+                                "further_resubmissions_allowed": {
+                                    "description": "This flag indicates whether client is allowed to resubmit documents",
+                                    "type": "integer",
+                                    "enum": [
+                                        1,
+                                        0
+                                    ]
+                                },
+                                "services": {
+                                    "description": "This shows the information about the authentication services implemented",
+                                    "type": "object",
+                                    "properties": {
+                                        "onfido": {
+                                            "description": "This shows the information related to Onfido supported services",
+                                            "type": "object",
+                                            "properties": {
+                                                "documents": {
+                                                    "description": "This shows the list of documents types supported by Onfido",
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "examples": [
+                                                            "Driving Licence",
+                                                            "National Identity Card",
+                                                            "Passport"
+                                                        ]
+                                                    }
+                                                },
+                                                "is_country_supported": {
+                                                    "description": "This shows the information if the country is supported by Onfido",
+                                                    "type": "integer",
+                                                    "enum": [
+                                                        1,
+                                                        0
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "status": {
+                                    "description": "This represent the current status for proof of identity document submitted for authentication.",
+                                    "type": "string",
+                                    "enum": [
+                                        "none",
+                                        "pending",
+                                        "rejected",
+                                        "verified",
+                                        "expired",
+                                        "suspected"
+                                    ]
+                                }
+                            }
+                        },
+                        "needs_verification": {
+                            "description": "An array containing the list of required authentication.",
+                            "type": "array",
+                            "items": {
+                                "description": "This represents the current type of authentication required, possible values are identity and document.",
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "currency_config": {
+                    "description": "Provides cashier details for client currency.",
+                    "type": "object",
+                    "minProperties": 0,
+                    "patternProperties": {
+                        "^[a-zA-Z0-9]{2,20}$": {
+                            "description": "Client currency",
+                            "type": "object",
+                            "properties": {
+                                "is_deposit_suspended": {
+                                    "description": "Deposit is allowed for currency or not",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
+                                },
+                                "is_withdrawal_suspended": {
+                                    "description": "Withdrawal is allowed for currency or not",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "prompt_client_to_authenticate": {
+                    "description": "Indicates whether the client should be prompted to authenticate their account.",
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        0
+                    ]
+                },
+                "risk_classification": {
+                    "description": "Client risk classification: `low`, `standard`, `high`.",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "Account status. Possible status: \n- `age_verification`: client is age-verified. \n- `authenticated`: client is fully authenticated. \n- `cashier_locked`: cashier is locked. \n- `crs_tin_information`: client has updated tax related information. \n- `disabled`: account is disabled. \n- `document_expired`: client's submitted proof-of-identity documents have expired. \n- `document_expiring_soon`: client's submitted proof-of-identity documents are expiring within a month. \n- `financial_assessment_not_complete`: client has not completed financial assessment. \n- `professional`: this client has opted for a professional account. \n- `ukgc_funds_protection`: client has acknowledged UKGC funds protection notice. \n- `unwelcome`: client cannot deposit or buy contracts, but can withdraw or sell contracts. \n- `withdrawal_locked`: deposits allowed but withdrawals locked. \n- `no_trading`: trading is disabled. \n- `closed`: client has closed the account.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "get_account_status"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

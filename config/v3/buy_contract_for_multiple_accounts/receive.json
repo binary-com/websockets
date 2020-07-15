@@ -1,0 +1,125 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Buy Contract for Multiple Accounts (response)",
+    "description": "A message with transaction results is received",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "buy_contract_for_multiple_accounts": {
+            "title": "buy_contract_for_multiple_accounts",
+            "description": "Receipt confirmation for the purchase",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "result"
+            ],
+            "properties": {
+                "result": {
+                    "description": "List of results containing transactions and/or errors for the bought contracts.",
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "description": "Receipt for one contract",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                    "buy_price",
+                                    "contract_id",
+                                    "longcode",
+                                    "payout",
+                                    "purchase_time",
+                                    "shortcode",
+                                    "start_time",
+                                    "token",
+                                    "transaction_id"
+                                ],
+                                "properties": {
+                                    "buy_price": {
+                                        "description": "Actual effected purchase price",
+                                        "type": "number"
+                                    },
+                                    "contract_id": {
+                                        "description": "Internal contract identifier",
+                                        "type": "integer"
+                                    },
+                                    "longcode": {
+                                        "description": "The description of contract purchased",
+                                        "type": "string"
+                                    },
+                                    "payout": {
+                                        "description": "Proposed payout value",
+                                        "type": "number"
+                                    },
+                                    "purchase_time": {
+                                        "description": "Epoch value of the transaction purchase time",
+                                        "type": "integer"
+                                    },
+                                    "shortcode": {
+                                        "description": "Compact description of the contract purchased",
+                                        "type": "string"
+                                    },
+                                    "start_time": {
+                                        "description": "Epoch value showing the expected start time of the contract",
+                                        "type": "integer"
+                                    },
+                                    "token": {
+                                        "description": "The token designating the account",
+                                        "type": "string",
+                                        "sensitive": 1
+                                    },
+                                    "transaction_id": {
+                                        "description": "Internal transaction identifier",
+                                        "type": "integer"
+                                    }
+                                }
+                            },
+                            {
+                                "description": "Error message",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                    "code",
+                                    "message_to_client",
+                                    "token"
+                                ],
+                                "properties": {
+                                    "code": {
+                                        "description": "An error code",
+                                        "type": "string"
+                                    },
+                                    "message_to_client": {
+                                        "description": "An error message localized according to the websocket",
+                                        "type": "string"
+                                    },
+                                    "token": {
+                                        "description": "The token designating the account",
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "buy_contract_for_multiple_accounts"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

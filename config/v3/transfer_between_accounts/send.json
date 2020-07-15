@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Transfer Between Accounts (request)",
+    "description": "This call allows transfers between accounts held by a given user. Transfer funds between your fiat and cryptocurrency accounts (for a fee). Please note that account_from should be same as current authorized account.",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "payments"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "transfer_between_accounts"
+    ],
+    "properties": {
+        "transfer_between_accounts": {
+            "description": "If `account_from` or `account_to` is not provided, it just returns the available accounts.",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "account_from": {
+            "description": "[Optional] The loginid of the account to transfer funds from.",
+            "type": "string",
+            "pattern": "\\w+"
+        },
+        "account_to": {
+            "description": "[Optional] The loginid of the account to transfer funds to.",
+            "type": "string",
+            "pattern": "\\w+"
+        },
+        "accounts": {
+            "description": "[Optional] To control the list of accounts returned when `account_from` or `account_to` is not provided. `brief` will only include financial trading accounts with account_type equal to `binary` and can be faster. `all` will include accounts with both `mt5` and `binary` account_type",
+            "type": "string",
+            "default": "brief",
+            "enum": [
+                "all",
+                "brief"
+            ]
+        },
+        "amount": {
+            "description": "[Optional] The amount to transfer.",
+            "type": "number",
+            "minimum": 0
+        },
+        "currency": {
+            "description": "[Optional] Currency code.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{2,20}$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

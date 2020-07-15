@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+  
+  
+
+  <head>
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+        if (self === top) {
+            var antiClickjack = document.getElementById("antiClickjack");
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
+            top.location = self.location;
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+
+    <link href='https://style.binary.com/images/favicons/favicon-96x96.png' rel='icon' sizes='96x96' type='image/png'/>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' />
+
+    <link rel="stylesheet" href="https://style.binary.com/binary.css" />
+    <link rel="stylesheet" href="/docson/docson.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/select2.min.css">
+
+    <script src="/lib/rainbow.js"></script>
+
+    <script src="/lib/language/generic.js"></script>
+    <script src="/lib/language/javascript.js"></script>
+    <script src="/lib/language/coffeescript.js"></script>
+    <script src="/lib/language/csharp.js"></script>
+    <script src="/lib/language/go.js"></script>
+    <script src="/lib/language/java.js"></script>
+    <!-- <script src="/lib/language/perl.js"></script> -->
+    <script src="/lib/language/php.js"></script>
+    <script src="/lib/language/ruby.js"></script>
+    <script src="/lib/language/python.js"></script>
+    <!-- <script src="/lib/language/swift.js"></script> -->
+
+    <script src="https://liveapi.binary.com/binary-live-api.js"></script>
+    <script src="/lib/require.js"></script>
+
+    <title>Api</title>
+    <link rel="canonical" href="https://developers.binary.com/api/">
+</head>
+
+
+  <body>
+
+    <div id="topbar"></div>
+<header>
+    <div class="header-content">
+        <a href="/"><img id="logo" alt="Binary" src="https://www.binary.com/images/pages/binary-symbol-logo.svg"><h1>Binary.com Developers</h1></a>
+
+        <div class="spacer"></div>
+    </div>
+</header>
+
+
+    <div id="content">
+
+        <div id="playground-page">
+    <div id="playground" class="row">
+        <div>
+            <fieldset>
+    <select id="api-call-selector">
+        <option selected disabled hidden>Select API Call - Version 3</option>
+        <optgroup label="All Calls">
+            <option value="api_token">API Token</option>
+            <option value="get_limits">Account Limits</option>
+            <option value="get_account_status">Account Status</option>
+            <option value="active_symbols">Active Symbols</option>
+            <option value="app_delete">Application: Delete</option>
+            <option value="app_get">Application: Get Details</option>
+            <option value="app_list">Application: List</option>
+            <option value="app_markup_details">Application: Markup Details</option>
+            <option value="app_register">Application: Register</option>
+            <option value="app_update">Application: Update</option>
+            <option value="asset_index">Asset Index</option>
+            <option value="authorize">Authorize</option>
+            <option value="balance">Balance</option>
+            <option value="buy">Buy Contract</option>
+            <option value="buy_contract_for_multiple_accounts">Buy Contract for Multiple Accounts</option>
+            <option value="cancel">Cancel a Contract</option>
+            <option value="cashier">Cashier Information</option>
+            <option value="contracts_for">Contracts For Symbol</option>
+            <option value="copytrading_list">Copy Trading: List</option>
+            <option value="copy_start">Copy Trading: Start</option>
+            <option value="copytrading_statistics">Copy Trading: Statistics</option>
+            <option value="copy_stop">Copy Trading: Stop</option>
+            <option value="residence_list">Countries List</option>
+            <option value="document_upload">Document Upload</option>
+            <option value="exchange_rates">Exchange Rates</option>
+            <option value="forget">Forget</option>
+            <option value="forget_all">Forget All</option>
+            <option value="get_settings">Get Account Settings</option>
+            <option value="get_financial_assessment">Get Financial Assessment</option>
+            <option value="get_self_exclusion">Get Self-Exclusion</option>
+            <option value="landing_company">Landing Company</option>
+            <option value="landing_company_details">Landing Company Details</option>
+            <option value="logout">Log Out</option>
+            <option value="login_history">Login History</option>
+            <option value="mt5_login_list">MT5: Accounts List</option>
+            <option value="mt5_deposit">MT5: Deposit</option>
+            <option value="mt5_get_settings">MT5: Get Setting</option>
+            <option value="mt5_new_account">MT5: New Account</option>
+            <option value="mt5_password_change">MT5: Password Change</option>
+            <option value="mt5_password_check">MT5: Password Check</option>
+            <option value="mt5_password_reset">MT5: Password Reset</option>
+            <option value="mt5_withdrawal">MT5: Withdrawal</option>
+            <option value="new_account_maltainvest">New Real-Money Account: Binary Investment (Europe) Ltd.</option>
+            <option value="new_account_real">New Real-Money Account: Default Landing Company</option>
+            <option value="new_account_virtual">New Virtual-Money Account</option>
+            <option value="oauth_apps">OAuth Applications</option>
+            <option value="p2p_advert_create">P2P Advert Create</option>
+            <option value="p2p_advert_info">P2P Advert Information</option>
+            <option value="p2p_advert_list">P2P Advert List</option>
+            <option value="p2p_advert_update">P2P Advert Update</option>
+            <option value="p2p_advertiser_adverts">P2P Advertiser Adverts</option>
+            <option value="p2p_advertiser_create">P2P Advertiser Create</option>
+            <option value="p2p_advertiser_info">P2P Advertiser Information</option>
+            <option value="p2p_advertiser_update">P2P Advertiser Update</option>
+            <option value="p2p_chat_create">P2P Chat Create</option>
+            <option value="p2p_order_cancel">P2P Order Cancel</option>
+            <option value="p2p_order_confirm">P2P Order Confirm</option>
+            <option value="p2p_order_create">P2P Order Create</option>
+            <option value="p2p_order_info">P2P Order Information</option>
+            <option value="p2p_order_list">P2P Order List</option>
+            <option value="paymentagent_list">Payment Agent: List</option>
+            <option value="paymentagent_transfer">Payment Agent: Transfer</option>
+            <option value="paymentagent_withdraw">Payment Agent: Withdraw</option>
+            <option value="payout_currencies">Payout Currencies</option>
+            <option value="ping">Ping</option>
+            <option value="portfolio">Portfolio</option>
+            <option value="proposal">Price Proposal</option>
+            <option value="proposal_array">Price Proposal: Multiple Contracts</option>
+            <option value="proposal_open_contract">Price Proposal: Open Contracts</option>
+            <option value="profit_table">Profit Table</option>
+            <option value="reality_check">Reality Check</option>
+            <option value="revoke_oauth_app">Revoke Oauth Application</option>
+            <option value="sell">Sell Contract</option>
+            <option value="sell_contract_for_multiple_accounts">Sell Contracts: Multiple Accounts</option>
+            <option value="sell_expired">Sell Expired Contracts</option>
+            <option value="website_status">Server Status</option>
+            <option value="time">Server Time</option>
+            <option value="set_account_currency">Set Account Currency</option>
+            <option value="set_settings">Set Account Settings</option>
+            <option value="set_financial_assessment">Set Financial Assessment</option>
+            <option value="set_self_exclusion">Set Self-Exclusion</option>
+            <option value="statement">Statement</option>
+            <option value="states_list">States List</option>
+            <option value="tnc_approval">Terms and Conditions Approval</option>
+            <option value="ticks_history">Ticks History</option>
+            <option value="ticks">Ticks Stream</option>
+            <option value="topup_virtual">Top Up Virtual-Money Account</option>
+            <option value="trading_durations">Trading Durations</option>
+            <option value="trading_times">Trading Times</option>
+            <option value="transaction">Transactions Stream</option>
+            <option value="transfer_between_accounts">Transfer Between Accounts</option>
+            <option value="contract_update">Update Contract</option>
+            <option value="contract_update_history">Update Contract History</option>
+            <option value="verify_email">Verify Email</option>
+        </optgroup>
+        
+    </select>
+</fieldset>
+
+
+            <div id="playground-req-schema"></div>
+            <div id="playground-res-schema"></div>
+        </div>
+        <div>
+            <fieldset id="api-token-fieldset">
+    <div style="display: flex">
+        <input type="text" id="api-token" placeholder="API Token">
+        <button id="send-auth-manually-btn">Authenticate</button>
+    </div>
+    <a target=tokeninput href="https://www.binary.com/en/user/security/api_tokenws.html">Get your API token</a>
+</fieldset>
+
+            <fieldset>
+    <textarea id="playground-request" placeholder="Request JSON"></textarea>
+</fieldset>
+<p id="playground-reset-buttons">
+    <button id="playground-send-btn">Send Request</button>
+    <select id="api-language-selector">
+        <option value="DE">Deutsch</option>
+        <option value="EN" selected="selected">English</option>
+        <option value="ES">Español</option>
+        <option value="FR">Français</option>
+        <option value="ID">Indonesia</option>
+        <option value="PL">Polish</option>
+        <option value="PT">Português</option>
+        <option value="RU">Русский</option>
+        <option value="TH">Thai</option>
+        <option value="VI">Tiếng Việt</option>
+        <option value="ZH_CN">简体中文</option>
+        <option value="ZH_TW">繁體中文</option>
+    </select>
+    <a id="playground-reset-btn" href="javascript:;">Reset Connection</a>
+</p>
+<div id="unauthorized-error" >
+    <p class="notice-msg">You are not authenticated.</p>
+</div>
+<div id="console-tools">
+    <a id="scroll-to-bottom-btn" href="javascript:;">Scroll To Bottom</a>
+    <a id="toggle-theme" href="javascript:;" style="display: none;">Toggle Theme</a>
+</div>
+<div id="playground-console"></div>
+
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    <footer>
+    <div id="end-note" class="invisible content-inverse-color center-text"></div>
+</footer>
+
+<script src="/code.js"></script>
+
+
+  </body>
+
+</html>

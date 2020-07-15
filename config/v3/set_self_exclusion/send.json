@@ -1,0 +1,129 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Set Self-Exclusion (request)",
+    "description": "Set Self-Exclusion (this call should be used in conjunction with `get_self_exclusion`)",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "set_self_exclusion"
+    ],
+    "properties": {
+        "set_self_exclusion": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "exclude_until": {
+            "description": "[Optional] Exclude me from the website (for a minimum of 6 months, up to a maximum of 5 years). Note: uplifting this self-exclusion may require contacting the company.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "pattern": "^[0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$"
+        },
+        "max_30day_losses": {
+            "description": "[Optional] 30-day limit on losses.",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "max_30day_turnover": {
+            "description": "[Optional] 30-day turnover limit.",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "max_7day_losses": {
+            "description": "[Optional] 7-day limit on losses.",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "max_7day_turnover": {
+            "description": "[Optional] 7-day turnover limit.",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "max_balance": {
+            "description": "[Optional] Maximum account cash balance.",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "max_deposit": {
+            "description": "[Optional] Deposit limit.",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "max_deposit_end_date": {
+            "description": "[Optional] Exclude me from making deposits when the cumulative sum of deposits exceeds specified deposit limit.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "pattern": "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
+        },
+        "max_losses": {
+            "description": "[Optional] Daily limit on losses.",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "max_open_bets": {
+            "description": "[Optional] Maximum number of open positions.",
+            "type": [
+                "integer",
+                "null"
+            ],
+            "minimum": 0
+        },
+        "max_turnover": {
+            "description": "[Optional] Daily turnover limit.",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "session_duration_limit": {
+            "description": "[Optional] Session duration limit, in minutes.",
+            "type": [
+                "integer",
+                "null"
+            ],
+            "maximum": 99999,
+            "minimum": 0
+        },
+        "timeout_until": {
+            "description": "[Optional] Exclude me from the website (for up to 6 weeks). Requires time in epoch format. Note: unlike `exclude_until`, this self-exclusion will be lifted automatically at the expiry of the timeout period.",
+            "type": [
+                "integer",
+                "null"
+            ],
+            "maximum": 9999999999,
+            "minimum": 0
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

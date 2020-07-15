@@ -1,0 +1,117 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Copy Trading: Statistics (response)",
+    "description": "The statistics of the trader.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "copytrading_statistics": {
+            "title": "copytrading_statistics",
+            "description": "Statistics of the trader",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "active_since",
+                "avg_duration",
+                "avg_loss",
+                "avg_profit",
+                "copiers",
+                "last_12months_profitable_trades",
+                "monthly_profitable_trades",
+                "performance_probability",
+                "total_trades",
+                "trades_breakdown",
+                "trades_profitable"
+            ],
+            "properties": {
+                "active_since": {
+                    "description": "This is the epoch the investor started trading.",
+                    "type": "integer"
+                },
+                "avg_duration": {
+                    "description": "Average seconds of keeping positions open.",
+                    "type": "integer"
+                },
+                "avg_loss": {
+                    "description": "Average loss of trades in percentage.",
+                    "type": "number"
+                },
+                "avg_profit": {
+                    "description": "Average profitable trades in percentage.",
+                    "type": "number"
+                },
+                "copiers": {
+                    "description": "Number of copiers for this trader.",
+                    "type": "number"
+                },
+                "last_12months_profitable_trades": {
+                    "description": "Represents the net change in equity for a 12-month period.",
+                    "type": "number"
+                },
+                "monthly_profitable_trades": {
+                    "description": "Represents the net change in equity per month.",
+                    "type": "object",
+                    "minProperties": 0,
+                    "patternProperties": {
+                        "^[0-9]{4}\\-[0-9]{2}$": {
+                            "description": "Monthly profitable trades in percentage.",
+                            "type": "number"
+                        }
+                    }
+                },
+                "performance_probability": {
+                    "description": "Trader performance probability.",
+                    "type": "number"
+                },
+                "total_trades": {
+                    "description": "Total number of trades for all time.",
+                    "type": "integer"
+                },
+                "trades_breakdown": {
+                    "description": "Represents the portfolio distribution by markets.",
+                    "type": "object",
+                    "minProperties": 0,
+                    "patternProperties": {
+                        "^\\w+$": {
+                            "description": "Number of trades in percentage.",
+                            "type": "number"
+                        }
+                    }
+                },
+                "trades_profitable": {
+                    "description": "Number of profit trades in percentage.",
+                    "type": "number"
+                },
+                "yearly_profitable_trades": {
+                    "description": "Represents the net change in equity per year.",
+                    "type": "object",
+                    "minProperties": 0,
+                    "patternProperties": {
+                        "^[0-9]{4}$": {
+                            "description": "Yearly profitable trades in percentage.",
+                            "type": "number"
+                        }
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "copytrading_statistics"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

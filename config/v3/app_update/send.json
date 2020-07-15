@@ -1,0 +1,86 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Application: Update (request)",
+    "description": "Update a new OAuth application",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "app_update",
+        "name",
+        "redirect_uri",
+        "scopes"
+    ],
+    "properties": {
+        "app_update": {
+            "description": "Application app_id.",
+            "type": "integer"
+        },
+        "app_markup_percentage": {
+            "description": "[Optional] Markup to be added to contract prices (as a percentage of contract payout).",
+            "type": "number",
+            "maximum": 5,
+            "minimum": 0
+        },
+        "appstore": {
+            "description": "[Optional] Application's App Store URL (if applicable).",
+            "type": "string",
+            "pattern": "^https?://itunes\\.apple\\.com/\\S+$"
+        },
+        "github": {
+            "description": "[Optional] Application's GitHub page (for open-source projects).",
+            "type": "string",
+            "pattern": "^https?://(www\\.)?github\\.com/\\S+$"
+        },
+        "googleplay": {
+            "description": "[Optional] Application's Google Play URL (if applicable).",
+            "type": "string",
+            "pattern": "^https?://play\\.google\\.com/store/apps/details\\?id=[\\w \\.]+$"
+        },
+        "homepage": {
+            "description": "[Optional] Application's homepage URL.",
+            "type": "string",
+            "pattern": "^https?://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
+        },
+        "name": {
+            "description": "Application name.",
+            "type": "string",
+            "pattern": "^[\\w\\s-]{1,48}$"
+        },
+        "redirect_uri": {
+            "description": "The URL to redirect to after a successful login.",
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9.+\\-]*://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
+        },
+        "scopes": {
+            "description": "Change scopes will revoke all user's grants and log them out.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "read",
+                    "trade",
+                    "trading_information",
+                    "payments",
+                    "admin"
+                ]
+            }
+        },
+        "verification_uri": {
+            "description": "[Optional] Used when `verify_email` called. If available, a URL containing the verification token will send to the client's email, otherwise only the token will be sent.",
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9.+\\-]*://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

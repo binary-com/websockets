@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Payment Agent: List (request)",
+    "description": "Will return a list of Payment Agents for a given country for a given currency. Payment agents allow users to deposit and withdraw funds using local payment methods that might not be available via the main website's cashier system.",
+    "type": "object",
+    "auth_required": 0,
+    "additionalProperties": false,
+    "required": [
+        "paymentagent_list"
+    ],
+    "properties": {
+        "paymentagent_list": {
+            "title": "Payment Agent Target Country",
+            "description": "Client's 2-letter country code (obtained from `residence_list` call).",
+            "type": "string",
+            "pattern": "^\\w\\w$"
+        },
+        "currency": {
+            "description": "[Optional] If specified, only payment agents that supports that currency will be returned (obtained from `payout_currencies` call).",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{2,20}$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

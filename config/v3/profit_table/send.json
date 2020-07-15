@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Profit Table (request)",
+    "description": "Retrieve a summary of account Profit Table, according to given search criteria",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read",
+        "trading_information"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "profit_table"
+    ],
+    "properties": {
+        "profit_table": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "date_from": {
+            "description": "[Optional] Start date (epoch or YYYY-MM-DD)",
+            "type": "string",
+            "pattern": "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|[0-9]{1,10})$"
+        },
+        "date_to": {
+            "description": "[Optional] End date (epoch or YYYY-MM-DD)",
+            "type": "string",
+            "pattern": "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|[0-9]{1,10})$"
+        },
+        "description": {
+            "description": "[Optional] If set to 1, will return full contracts description.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "limit": {
+            "description": "[Optional] Apply upper limit to count of transactions received.",
+            "type": "number",
+            "default": 50,
+            "maximum": 999,
+            "minimum": 0
+        },
+        "offset": {
+            "description": "[Optional] Number of transactions to skip.",
+            "type": "number"
+        },
+        "sort": {
+            "description": "[Optional] Sort direction.",
+            "type": "string",
+            "default": "DESC",
+            "enum": [
+                "ASC",
+                "DESC"
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

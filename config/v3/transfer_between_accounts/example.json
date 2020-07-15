@@ -1,0 +1,7 @@
+{
+    "transfer_between_accounts": 1,
+    "account_from": "MLT100",
+    "account_to": "MF100",
+    "amount": 1000,
+    "currency": "EUR"
+}

@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Copy Trading: Stop (request)",
+    "description": "Stop copy trader bets",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "trade"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "copy_stop"
+    ],
+    "properties": {
+        "copy_stop": {
+            "description": "API tokens identifying the accounts which needs not to be copied",
+            "type": "string",
+            "pattern": "^[\\w\\s-]{15,32}$",
+            "sensitive": 1
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

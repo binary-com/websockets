@@ -1,0 +1,90 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Transfer Between Accounts (response)",
+    "description": "The result of transfer order.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "transfer_between_accounts": {
+            "title": "transfer_between_accounts",
+            "description": "If set to 1, transfer succeeded.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "accounts": {
+            "description": "The available accounts to transfer, or the accounts affected by a successful transfer.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "account_type": {
+                        "description": "Type of the account.",
+                        "type": "string",
+                        "enum": [
+                            "binary",
+                            "mt5"
+                        ]
+                    },
+                    "balance": {
+                        "description": "Account balance.",
+                        "type": "string"
+                    },
+                    "currency": {
+                        "description": "Default account currency.",
+                        "type": "string",
+                        "examples": [
+                            "USD"
+                        ]
+                    },
+                    "loginid": {
+                        "description": "Client loginid.",
+                        "type": "string",
+                        "examples": [
+                            "CR000000"
+                        ]
+                    },
+                    "mt5_group": {
+                        "description": "The group of mt5 account.",
+                        "type": "string",
+                        "examples": [
+                            "real\\vanuatu_financial"
+                        ]
+                    }
+                }
+            }
+        },
+        "client_to_full_name": {
+            "description": "The account to client full name",
+            "type": "string"
+        },
+        "client_to_loginid": {
+            "description": "The account to client loginid",
+            "type": "string"
+        },
+        "transaction_id": {
+            "description": "Reference ID of transfer performed",
+            "type": "integer"
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "transfer_between_accounts"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "MT5: Withdrawal (response)",
+    "description": "The result of MT5 withdrawal request made.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "mt5_withdrawal": {
+            "title": "mt5_withdrawal",
+            "description": "`1` on success",
+            "type": "integer"
+        },
+        "binary_transaction_id": {
+            "description": "Deposit reference ID of Binary account.",
+            "type": "integer"
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "mt5_withdrawal"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

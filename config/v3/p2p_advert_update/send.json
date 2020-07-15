@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Advert Update (request)",
+    "description": "Updates a P2P advert. Can only be used by the advertiser. **This API call is still in Beta.**",
+    "beta": 1,
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "payments"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "p2p_advert_update",
+        "id"
+    ],
+    "properties": {
+        "p2p_advert_update": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "delete": {
+            "description": "[Optional] If set to 1, permanently deletes the advert.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "id": {
+            "description": "The unique identifier for this advert.",
+            "type": "string"
+        },
+        "is_active": {
+            "description": "[Optional] Activate or deactivate the advert.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

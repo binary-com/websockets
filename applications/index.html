@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+  
+  
+
+  <head>
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+        if (self === top) {
+            var antiClickjack = document.getElementById("antiClickjack");
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
+            top.location = self.location;
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+
+    <link href='https://style.binary.com/images/favicons/favicon-96x96.png' rel='icon' sizes='96x96' type='image/png'/>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' />
+
+    <link rel="stylesheet" href="https://style.binary.com/binary.css" />
+    <link rel="stylesheet" href="/docson/docson.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/select2.min.css">
+
+    <script src="/lib/rainbow.js"></script>
+
+    <script src="/lib/language/generic.js"></script>
+    <script src="/lib/language/javascript.js"></script>
+    <script src="/lib/language/coffeescript.js"></script>
+    <script src="/lib/language/csharp.js"></script>
+    <script src="/lib/language/go.js"></script>
+    <script src="/lib/language/java.js"></script>
+    <!-- <script src="/lib/language/perl.js"></script> -->
+    <script src="/lib/language/php.js"></script>
+    <script src="/lib/language/ruby.js"></script>
+    <script src="/lib/language/python.js"></script>
+    <!-- <script src="/lib/language/swift.js"></script> -->
+
+    <script src="https://liveapi.binary.com/binary-live-api.js"></script>
+    <script src="/lib/require.js"></script>
+
+    <title>Applications</title>
+    <link rel="canonical" href="https://developers.binary.com/applications/">
+</head>
+
+
+  <body>
+
+    <div id="topbar"></div>
+<header>
+    <div class="header-content">
+        <a href="/"><img id="logo" alt="Binary" src="https://www.binary.com/images/pages/binary-symbol-logo.svg"><h1>Binary.com Developers</h1></a>
+
+        <div class="spacer"></div>
+    </div>
+</header>
+
+
+    <div id="content">
+
+        <div id="applications-page" class="row">
+    <div id="applications">
+        <h1>Applications</h1>
+        <p>Authenticate with your API token before managing your applications.</p>
+        <form id="frmNewApplication">
+              <fieldset>
+                  <legend>Register an application <span id="placeholder_app_id"></span><em class="required_asterisk">(* required)</em></legend>
+                  <div>
+                      <label for="application-name">Name:</label>
+                      <em class="required_asterisk">*</em>
+                  </div>
+                  <div>
+                      <input id="application-name" type="text" maxlength="48" />
+                  </div>
+                  <div>
+                      <label for="application-redirect_uri">Redirect URL:</label>
+                      <em class="required_asterisk">*</em>
+                  </div>
+                  <div>
+                      <input id="application-redirect_uri" type="text" maxlength="255" />
+                  </div>
+                  <div>
+                      <label for="application-verification_uri">Verification URL:</label>
+                  </div>
+                  <div>
+                      <input id="application-verification_uri" type="text" maxlength="255" />
+                  </div>
+                  <div>
+                      <label for="application-homepage">Homepage URL:</label>
+                  </div>
+                  <div>
+                      <input id="application-homepage" type="text" maxlength="255" />
+                  </div>
+                  <div>
+                      <label for="application-github">Github URL:</label>
+                  </div>
+                  <div>
+                      <input id="application-github" type="text" maxlength="255" />
+                  </div>
+                  <div>
+                      <label for="application-appstore">Appstore URL:</label>
+                  </div>
+                  <div>
+                      <input id="application-appstore" type="text" maxlength="255" />
+                  </div>
+                  <div>
+                      <label for="application-googleplay">Google Play URL:</label>
+                  </div>
+                  <div>
+                      <input id="application-googleplay" type="text" maxlength="255" />
+                  </div>
+                  <div>
+                      <label for="application-app_markup_percentage">
+                          <span data-balloon="Percentage to be added to pricing of contracts" data-balloon-length="medium">Markup percentage</span>: (minimum 0.00 and maximum 5.00)
+                      </label>
+                  </div>
+                  <div>
+                      <input id="application-app_markup_percentage" type="text" maxlength="4" />
+                  </div>
+                  <div>
+                      <label>Scopes:</label>
+                      <em class="required_asterisk">*</em>
+                  </div>
+                  <div class="scopes">
+                    <div>
+                        <input id="read-scope" type="checkbox" value="read" checked="checked" />
+                        <label for="read-scope">Read: View account activity</label>
+                    </div>
+                    <div>
+                        <input id="trade-scope" type="checkbox" value="trade" />
+                        <label for="trade-scope">Trade: Buy and sell contracts</label>
+                    </div>
+                    <div>
+                        <input id="trading_information-scope" type="checkbox" value="trading_information" />
+                        <label for="trading_information-scope">Trading Information: View trading and balance information</label>
+                    </div>
+                    <div>
+                        <input id="payments-scope" type="checkbox" value="payments" />
+                        <label for="payments-scope">Payments: Cashier (Deposit, Withdraw)</label>
+                    </div>
+                    <div>
+                        <input id="admin-scope" type="checkbox" value="admin" />
+                        <label for="admin-scope">Admin: API token management, application management</label>
+                    </div>
+                  </div>
+                  <div class="application_buttons">
+                    <button id="btnRegister">Register</button>
+                  </div>
+              </fieldset>
+        </form>
+    </div>
+    <div>
+      <fieldset id="api-token-fieldset">
+    <div style="display: flex">
+        <input type="text" id="api-token" placeholder="API Token">
+        <button id="send-auth-manually-btn">Authenticate</button>
+    </div>
+    <a target=tokeninput href="https://www.binary.com/en/user/security/api_tokenws.html">Get your API token</a>
+</fieldset>
+
+      <fieldset>
+    <textarea id="playground-request" placeholder="Request JSON"></textarea>
+</fieldset>
+<p id="playground-reset-buttons">
+    <button id="playground-send-btn">Send Request</button>
+    <select id="api-language-selector">
+        <option value="DE">Deutsch</option>
+        <option value="EN" selected="selected">English</option>
+        <option value="ES">Español</option>
+        <option value="FR">Français</option>
+        <option value="ID">Indonesia</option>
+        <option value="PL">Polish</option>
+        <option value="PT">Português</option>
+        <option value="RU">Русский</option>
+        <option value="TH">Thai</option>
+        <option value="VI">Tiếng Việt</option>
+        <option value="ZH_CN">简体中文</option>
+        <option value="ZH_TW">繁體中文</option>
+    </select>
+    <a id="playground-reset-btn" href="javascript:;">Reset Connection</a>
+</p>
+<div id="unauthorized-error" >
+    <p class="notice-msg">You are not authenticated.</p>
+</div>
+<div id="console-tools">
+    <a id="scroll-to-bottom-btn" href="javascript:;">Scroll To Bottom</a>
+    <a id="toggle-theme" href="javascript:;" style="display: none;">Toggle Theme</a>
+</div>
+<div id="playground-console"></div>
+
+    </div>
+</div>
+<div>
+  <table class="flex-table" id="applications-table" style="display:none">
+    <thead>
+      <tr class="flex-tr">
+        <th class="flex-tr-child">Name</th>
+        <th class="flex-tr-child">Application ID</th>
+        <th class="flex-tr-child">Scopes</th>
+        <th class="flex-tr-child">Redirect URL</th>
+        <th colspan="2" class="flex-tr-child">Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+    </div>
+
+    <footer>
+    <div id="end-note" class="invisible content-inverse-color center-text"></div>
+</footer>
+
+<script src="/code.js"></script>
+
+
+  </body>
+
+</html>

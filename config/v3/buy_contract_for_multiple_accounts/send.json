@@ -1,0 +1,172 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Buy Contract for Multiple Accounts (request)",
+    "description": "Buy a Contract for multiple Accounts specified by the `tokens` parameter. Note, although this is an authorized call, the contract is not bought for the authorized account.",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "trade"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "buy_contract_for_multiple_accounts",
+        "price",
+        "tokens"
+    ],
+    "properties": {
+        "buy_contract_for_multiple_accounts": {
+            "description": "Either the ID received from a Price Proposal (`proposal` call), or `1` if contract buy parameters are passed in the `parameters` field.",
+            "type": "string",
+            "pattern": "^(?:[\\w-]{32,128}|1)$"
+        },
+        "parameters": {
+            "description": "[Optional] Used to pass the parameters for contract buy.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "contract_type",
+                "currency",
+                "symbol"
+            ],
+            "properties": {
+                "amount": {
+                    "description": "[Optional] Proposed `payout` or `stake` value",
+                    "type": "number",
+                    "minimum": 0
+                },
+                "app_markup_percentage": {
+                    "description": "[Optional] Markup added to contract prices (as a percentage of contract payout)",
+                    "type": "number"
+                },
+                "barrier": {
+                    "description": "[Optional] Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Synthetic Indices as they support both relative and absolute barriers.",
+                    "type": "string",
+                    "pattern": "^(?=.{1,20}$)[+-]?\\d+\\.?\\d*$"
+                },
+                "barrier2": {
+                    "description": "[Optional] Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Synthetic Indices as they support both relative and absolute barriers.",
+                    "type": "string",
+                    "pattern": "^(?=.{1,20}$)[+-]?\\d+\\.?\\d*$"
+                },
+                "basis": {
+                    "description": "[Optional] Indicate whether amount is 'payout' or 'stake'.",
+                    "type": "string",
+                    "enum": [
+                        "payout",
+                        "stake"
+                    ]
+                },
+                "contract_type": {
+                    "description": "A valid contract-type",
+                    "type": "string",
+                    "enum": [
+                        "MULTUP",
+                        "MULTDOWN",
+                        "UPORDOWN",
+                        "EXPIRYRANGE",
+                        "ONETOUCH",
+                        "CALLE",
+                        "LBHIGHLOW",
+                        "ASIAND",
+                        "EXPIRYRANGEE",
+                        "DIGITDIFF",
+                        "DIGITMATCH",
+                        "DIGITOVER",
+                        "PUTE",
+                        "DIGITUNDER",
+                        "NOTOUCH",
+                        "CALL",
+                        "RANGE",
+                        "LBFLOATPUT",
+                        "DIGITODD",
+                        "PUT",
+                        "ASIANU",
+                        "LBFLOATCALL",
+                        "EXPIRYMISSE",
+                        "EXPIRYMISS",
+                        "DIGITEVEN",
+                        "TICKHIGH",
+                        "TICKLOW",
+                        "RESETCALL",
+                        "RESETPUT",
+                        "CALLSPREAD",
+                        "PUTSPREAD",
+                        "RUNHIGH",
+                        "RUNLOW"
+                    ]
+                },
+                "currency": {
+                    "description": "This can only be the account-holder's currency",
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9]{2,20}$"
+                },
+                "date_expiry": {
+                    "description": "[Optional] Epoch value of the expiry time of the contract. You must either specify `date_expiry` or `duration`.",
+                    "type": "integer",
+                    "maximum": 9999999999,
+                    "minimum": 0
+                },
+                "date_start": {
+                    "description": "[Optional] For forward-starting contracts, epoch value of the starting time of the contract.",
+                    "type": "integer",
+                    "maximum": 9999999999,
+                    "minimum": 0
+                },
+                "duration": {
+                    "description": "[Optional] Duration quantity",
+                    "type": "integer",
+                    "maximum": 3600,
+                    "minimum": 0
+                },
+                "duration_unit": {
+                    "description": "[Optional] Duration unit is `s`: seconds, `m`: minutes, `h`: hours, `d`: days, `t`: ticks",
+                    "type": "string",
+                    "enum": [
+                        "d",
+                        "m",
+                        "s",
+                        "h",
+                        "t"
+                    ]
+                },
+                "multiplier": {
+                    "description": "[Optional] The multiplier for non-binary options. E.g. lookbacks.",
+                    "type": "number",
+                    "minimum": 0
+                },
+                "selected_tick": {
+                    "description": "[Optional] The tick that is predicted to have the highest/lowest value - for tickhigh and ticklow contracts.",
+                    "type": "integer"
+                },
+                "symbol": {
+                    "description": "Symbol code",
+                    "type": "string",
+                    "pattern": "^\\w{2,30}$"
+                }
+            }
+        },
+        "price": {
+            "description": "Maximum price at which to purchase the contract.",
+            "type": "number",
+            "minimum": 0
+        },
+        "tokens": {
+            "description": "List of API tokens identifying the accounts for which the contract is bought. Note: If the same token appears multiple times or if multiple tokens designate the same account, the contract is bought multiple times for this account.",
+            "type": "array",
+            "items": {
+                "description": "API token identifying the accounts for which the contract is bought.",
+                "type": "string",
+                "pattern": "^[\\w\\s-]+$"
+            },
+            "sensitive": 1
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Update Contract (request)",
+    "description": "Update a contract condition.",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "trade"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "contract_update",
+        "contract_id",
+        "limit_order"
+    ],
+    "properties": {
+        "contract_update": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "contract_id": {
+            "description": "Internal unique contract identifier.",
+            "type": "integer"
+        },
+        "limit_order": {
+            "description": "Specify limit order to update.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "stop_loss": {
+                    "description": "New stop loss value for a contract. To cancel, pass `null`.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                },
+                "take_profit": {
+                    "description": "New take profit value for a contract. To cancel, pass `null`.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                }
+            }
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

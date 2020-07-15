@@ -1,0 +1,84 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Ticks History (request)",
+    "description": "Get historic tick data for a given symbol.",
+    "type": "object",
+    "auth_required": 0,
+    "additionalProperties": false,
+    "required": [
+        "ticks_history",
+        "end"
+    ],
+    "properties": {
+        "ticks_history": {
+            "description": "Short symbol name (obtained from the `active_symbols` call).",
+            "type": "string",
+            "pattern": "^\\w{2,30}$"
+        },
+        "adjust_start_time": {
+            "description": "[Optional] 1 - if the market is closed at the end time, or license limit is before end time, adjust interval backwards to compensate.",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "count": {
+            "description": "[Optional] An upper limit on ticks to receive.",
+            "type": "integer",
+            "default": "5000"
+        },
+        "end": {
+            "description": "Epoch value representing the latest boundary of the returned ticks. If `latest` is specified, this will be the latest available timestamp.",
+            "type": "string",
+            "pattern": "^(latest|[0-9]{1,10})$"
+        },
+        "granularity": {
+            "description": "[Optional] Only applicable for style: `candles`. Candle time-dimension width setting. (default: `60`).",
+            "type": "integer",
+            "enum": [
+                60,
+                120,
+                180,
+                300,
+                600,
+                900,
+                1800,
+                3600,
+                7200,
+                14400,
+                28800,
+                86400
+            ]
+        },
+        "start": {
+            "description": "[Optional] Epoch value representing the earliest boundary of the returned ticks. \n- For `\"style\": \"ticks\"`: this will default to 1 day ago.\n- For `\"style\": \"candles\"`: it will default to 1 day ago if count or granularity is undefined.",
+            "type": "integer",
+            "maximum": 9999999999,
+            "minimum": 0
+        },
+        "style": {
+            "description": "[Optional] The tick-output style.",
+            "type": "string",
+            "default": "ticks",
+            "enum": [
+                "candles",
+                "ticks"
+            ]
+        },
+        "subscribe": {
+            "description": "[Optional] 1 - to send updates whenever a new tick is received.",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

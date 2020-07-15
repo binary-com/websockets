@@ -1,0 +1,202 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Buy Contract (request)",
+    "description": "Buy a Contract",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "trade"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "buy",
+        "price"
+    ],
+    "properties": {
+        "buy": {
+            "description": "Either the ID received from a Price Proposal (`proposal` call), or `1` if contract buy parameters are passed in the `parameters` field.",
+            "type": "string",
+            "pattern": "^(?:[\\w-]{32,128}|1)$"
+        },
+        "parameters": {
+            "description": "[Optional] Used to pass the parameters for contract buy.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "contract_type",
+                "currency",
+                "symbol"
+            ],
+            "properties": {
+                "amount": {
+                    "description": "[Optional] Proposed payout or stake value",
+                    "type": "number",
+                    "minimum": 0
+                },
+                "app_markup_percentage": {
+                    "description": "[Optional] Markup added to contract prices (as a percentage of contract payout)",
+                    "type": "number"
+                },
+                "barrier": {
+                    "description": "[Optional] Barrier for the contract (or last digit prediction for digit contracts). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Synthetic Indices as they support both relative and absolute barriers.",
+                    "type": "string",
+                    "pattern": "^(?=.{1,20}$)[+-]?[0-9]+\\.?[0-9]*$"
+                },
+                "barrier2": {
+                    "description": "[Optional] Low barrier for the contract (for contracts with two barriers). Contracts less than 24 hours in duration would need a relative barrier (barriers which need +/-), where entry spot would be adjusted accordingly with that amount to define a barrier, except for Synthetic Indices as they support both relative and absolute barriers.",
+                    "type": "string",
+                    "pattern": "^(?=.{1,20}$)[+-]?[0-9]+\\.?[0-9]*$"
+                },
+                "basis": {
+                    "description": "[Optional] Indicates whether amount is 'payout' or 'stake' for binary options.",
+                    "type": "string",
+                    "enum": [
+                        "payout",
+                        "stake"
+                    ]
+                },
+                "cancellation": {
+                    "description": "Cancellation duration option (only for `MULTUP` and `MULTDOWN` contracts).",
+                    "type": "string"
+                },
+                "contract_type": {
+                    "description": "A valid contract-type",
+                    "type": "string",
+                    "enum": [
+                        "MULTUP",
+                        "MULTDOWN",
+                        "UPORDOWN",
+                        "EXPIRYRANGE",
+                        "ONETOUCH",
+                        "CALLE",
+                        "LBHIGHLOW",
+                        "ASIAND",
+                        "EXPIRYRANGEE",
+                        "DIGITDIFF",
+                        "DIGITMATCH",
+                        "DIGITOVER",
+                        "PUTE",
+                        "DIGITUNDER",
+                        "NOTOUCH",
+                        "CALL",
+                        "RANGE",
+                        "LBFLOATPUT",
+                        "DIGITODD",
+                        "PUT",
+                        "ASIANU",
+                        "LBFLOATCALL",
+                        "EXPIRYMISSE",
+                        "EXPIRYMISS",
+                        "DIGITEVEN",
+                        "TICKHIGH",
+                        "TICKLOW",
+                        "RESETCALL",
+                        "RESETPUT",
+                        "CALLSPREAD",
+                        "PUTSPREAD",
+                        "RUNHIGH",
+                        "RUNLOW"
+                    ]
+                },
+                "currency": {
+                    "description": "This can only be the account-holder's currency",
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9]{2,20}$"
+                },
+                "date_expiry": {
+                    "description": "[Optional] Epoch value of the expiry time of the contract. You must either specify date_expiry or duration.",
+                    "type": "integer",
+                    "maximum": 9999999999,
+                    "minimum": 1
+                },
+                "date_start": {
+                    "description": "[Optional] For forward-starting contracts, epoch value of the starting time of the contract.",
+                    "type": "integer",
+                    "maximum": 9999999999,
+                    "minimum": 0
+                },
+                "duration": {
+                    "description": "[Optional] Duration quantity",
+                    "type": "integer",
+                    "maximum": 99999999,
+                    "minimum": 0
+                },
+                "duration_unit": {
+                    "description": "[Optional] Duration unit is `s`: seconds, `m`: minutes, `h`: hours, `d`: days, `t`: ticks",
+                    "type": "string",
+                    "enum": [
+                        "d",
+                        "m",
+                        "s",
+                        "h",
+                        "t"
+                    ]
+                },
+                "limit_order": {
+                    "description": "Add an order to close the contract once the order condition is met (only for `MULTUP` and `MULTDOWN` contracts).",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "stop_loss": {
+                            "description": "Contract will be automatically closed when the value of the contract reaches a specific loss.",
+                            "type": "number"
+                        },
+                        "take_profit": {
+                            "description": "Contract will be automatically closed when the value of the contract reaches a specific profit.",
+                            "type": "number"
+                        }
+                    }
+                },
+                "multiplier": {
+                    "description": "[Optional] The multiplier for non-binary options. E.g. lookbacks.",
+                    "type": "number",
+                    "minimum": 0
+                },
+                "product_type": {
+                    "description": "[Optional] The product type.",
+                    "type": "string",
+                    "default": "basic",
+                    "enum": [
+                        "basic",
+                        "multi_barrier"
+                    ]
+                },
+                "selected_tick": {
+                    "description": "[Optional] The tick that is predicted to have the highest/lowest value - for tickhigh and ticklow contracts.",
+                    "type": "integer"
+                },
+                "symbol": {
+                    "description": "Symbol code",
+                    "type": "string",
+                    "pattern": "^\\w{2,30}$"
+                },
+                "trading_period_start": {
+                    "description": "[Optional] An epoch value of a predefined trading period start time",
+                    "type": "integer",
+                    "maximum": 9999999999,
+                    "minimum": 1
+                }
+            }
+        },
+        "price": {
+            "description": "Maximum price at which to purchase the contract.",
+            "type": "number",
+            "minimum": 0
+        },
+        "subscribe": {
+            "description": "[Optional] `1` to stream.",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

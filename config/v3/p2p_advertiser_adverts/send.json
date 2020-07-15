@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Advertiser Adverts (request)",
+    "description": "Returns all P2P adverts created by the authorized client. Can only be used by a registered P2P advertiser. **This API call is still in Beta.**",
+    "beta": 1,
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "payments"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "p2p_advertiser_adverts"
+    ],
+    "properties": {
+        "p2p_advertiser_adverts": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "limit": {
+            "description": "[Optional] Used for paging.",
+            "type": "integer",
+            "default": 50
+        },
+        "offset": {
+            "description": "[Optional] Used for paging.",
+            "type": "integer",
+            "default": 0
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

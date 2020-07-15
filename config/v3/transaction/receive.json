@@ -1,0 +1,169 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Transactions Stream (response)",
+    "description": "Return transaction updates",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "transaction": {
+            "title": "transaction",
+            "description": "Realtime stream of user transaction updates.",
+            "type": "object",
+            "properties": {
+                "action": {
+                    "description": "The transaction type.",
+                    "type": "string",
+                    "enum": [
+                        "buy",
+                        "sell",
+                        "deposit",
+                        "withdrawal",
+                        "escrow",
+                        "adjustment",
+                        "virtual_credit"
+                    ]
+                },
+                "amount": {
+                    "description": "It is the amount of transaction performed.",
+                    "type": "number",
+                    "examples": [
+                        -83.23
+                    ]
+                },
+                "balance": {
+                    "description": "Balance amount",
+                    "type": "number",
+                    "maximum": 9999999999999999999,
+                    "minimum": 0
+                },
+                "barrier": {
+                    "description": "Barrier of the contract. Only applicable to single barrier contracts. Could be undefined if a contract does not have a barrier.",
+                    "type": [
+                        "null",
+                        "number",
+                        "string"
+                    ]
+                },
+                "contract_id": {
+                    "description": "It is the contract ID.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "examples": [
+                        4867502908
+                    ]
+                },
+                "currency": {
+                    "description": "Transaction currency",
+                    "type": "string"
+                },
+                "date_expiry": {
+                    "description": "Epoch value of the expiry time of the contract. Please note that in case of buy transaction this is approximate value not exact one.",
+                    "type": "integer"
+                },
+                "display_name": {
+                    "description": "Display name of symbol",
+                    "type": "string"
+                },
+                "high_barrier": {
+                    "description": "The high barrier of a contract. Only applicable to double barrier contracts.",
+                    "type": [
+                        "number",
+                        "string"
+                    ]
+                },
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the `forget` API call to unsubscribe.",
+                    "type": "string",
+                    "examples": [
+                        "c84a793b-8a87-7999-ce10-9b22f7ceead3"
+                    ]
+                },
+                "longcode": {
+                    "description": "Description of contract purchased",
+                    "type": "string"
+                },
+                "low_barrier": {
+                    "description": "The low barrier of a contract. Only applicable to double barrier contracts.",
+                    "type": "string"
+                },
+                "purchase_time": {
+                    "description": "Time at which contract was purchased, present only for sell transaction",
+                    "type": "integer"
+                },
+                "stop_loss": {
+                    "description": "The pip-sized target spot price where the contract will be closed automatically at the loss specified by the user.",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "stop_out": {
+                    "description": "The pip-sized target spot price where the contract will be closed automatically when the value of the contract is close to zero. This is set by the us.",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "symbol": {
+                    "description": "Symbol code",
+                    "type": "string"
+                },
+                "take_profit": {
+                    "description": "The pip-sized target spot price where the contract will be closed automatically at the profit specified by the user.",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "transaction_id": {
+                    "description": "It is the transaction ID. Every contract (buy or sell) or payment has a unique ID.",
+                    "type": "integer",
+                    "examples": [
+                        10867502908
+                    ]
+                },
+                "transaction_time": {
+                    "description": "Time at which transaction was performed: for buy it is purchase time, for sell it is sell time.",
+                    "type": "integer"
+                }
+            }
+        },
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only.",
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the `forget` API call to unsubscribe.",
+                    "type": "string",
+                    "examples": [
+                        "c84a793b-8a87-7999-ce10-9b22f7ceead3"
+                    ]
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "transaction"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

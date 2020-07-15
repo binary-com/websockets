@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Payout Currencies (response)",
+    "description": "List of available payout currencies.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "payout_currencies": {
+            "title": "payout_currencies",
+            "description": "Available payout currencies. Note: if a user is logged in, only the currency available for the account will be returned.",
+            "type": "array",
+            "items": {
+                "description": "Available payout currency.",
+                "type": "string",
+                "examples": [
+                    "USD"
+                ]
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "payout_currencies"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

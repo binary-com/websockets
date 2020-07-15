@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Advertiser Update (request)",
+    "description": "Update the information of the P2P advertiser for the current account. Can only be used by an approved P2P advertiser. **This API call is still in Beta.**",
+    "beta": 1,
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "payments"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "p2p_advertiser_update"
+    ],
+    "properties": {
+        "p2p_advertiser_update": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "contact_info": {
+            "description": "[Optional] Advertiser's contact information, to be used as a default for new sell adverts.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{0,300}$"
+        },
+        "default_advert_description": {
+            "description": "[Optional] Default description that can be used every time an advert is created.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{0,300}$"
+        },
+        "is_listed": {
+            "description": "[Optional] Used to set if the advertiser's adverts could be listed. When `0`, adverts won't be listed regardless of they are active or not. This doesn't change the `is_active` of each individual advert.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "name": {
+            "description": "[Optional] The advertiser's displayed name.",
+            "type": "string",
+            "pattern": "\\w+"
+        },
+        "payment_info": {
+            "description": "[Optional] Advertiser's payment information, to be used as a default for new sell adverts.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{0,300}$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

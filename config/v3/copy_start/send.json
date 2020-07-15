@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Copy Trading: Start (request)",
+    "description": "Start copy trader bets",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "trade"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "copy_start"
+    ],
+    "properties": {
+        "copy_start": {
+            "description": "API tokens identifying the accounts of trader which will be used to copy trades",
+            "type": "string",
+            "pattern": "^[\\w\\s-]{15,32}$",
+            "sensitive": 1
+        },
+        "assets": {
+            "description": "[Optional] Used to set assets to be copied. E.x [\"frxUSDJPY\", \"R_50\"]",
+            "oneOf": [
+                {
+                    "type": "string",
+                    "pattern": "^\\w{4,128}$"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^\\w{4,128}$"
+                    }
+                }
+            ]
+        },
+        "max_trade_stake": {
+            "description": "[Optional] Used to set maximum trade stake to be copied.",
+            "type": "number"
+        },
+        "min_trade_stake": {
+            "description": "[Optional] Used to set minimal trade stake to be copied.",
+            "type": "number"
+        },
+        "trade_types": {
+            "description": "[Optional] Used to set trade types to be copied. E.x [\"CALL\", \"PUT\"]",
+            "oneOf": [
+                {
+                    "type": "string",
+                    "pattern": "^\\w{3,128}$"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^\\w{3,128}$"
+                    }
+                }
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}
