@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   k8s: circleci/kubernetes@0.7.0
-  s3: circleci/aws-s3@1.0.13
+  slack: circleci/slack@3.4.2
 commands:
   git_checkout_from_cache:
     description: "Git checkout and save cache"
@@ -48,7 +48,7 @@ commands:
           key: bundle-v1-{{ checksum "Gemfile" }}
           paths:
             - "modules"
-  release:
+  build:
     description: "Build Jekyll site"
     steps:
       - restore_cache:
@@ -64,38 +64,33 @@ commands:
           key: _site-v1-{{ .Revision }}
           paths:
             - _site
-  compress:
-    description: "Compress"
+  deploy:
+    description: "Deploy to static branches"
+    parameters:
+      target_branch:
+        type: string
     steps:
+      - checkout
+      - attach_workspace:
+          at: _site
       - run:
-          name: "Compress"
+          name: Tag build
+          command: echo "<< parameters.target_branch >> $(date -u +'%Y-%m-%dT%H:%M:%SZ')" > _site/version
+      - run:
+          name: Install and configure dependencies
           command: |
-            pushd _site/
-            tar -cvf artifact.tar *
-            mv artifact.tar ${OLDPWD}/
+            curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+            sudo apt install nodejs
+            sudo npm install gh-pages@2.0.1
+            git config user.email "ci-build@binary.com"
+            git config user.name "ci-build"
+      - add_ssh_keys:
+          fingerprints:
+            - "01:67:4a:6d:26:9c:70:c4:1a:60:91:88:d9:dd:f0:83"
       - run:
-          name: "Tag commit id as artifact identifer"
-          command: echo "${CIRCLE_SHA1}" > artifact-info.txt
-  upload_artifact:
-    description: "upload build artifact to s3 bucket"
-    steps:
-      - s3/copy:
-          from: artifact.tar
-          to: 's3://${CONTEXT_ARTIFACT_S3_BUCKET}/${CIRCLE_PROJECT_REPONAME}/'
-          aws-access-key-id: env_CONTEXT_ARTIFACT_S3_AWS_ACCESS_KEY_ID
-          aws-secret-access-key: env_CONTEXT_ARTIFACT_S3_AWS_SECRET_ACCESS_KEY
-          aws-region: env_CONTEXT_ARTIFACT_S3_AWS_REGION
-          arguments: '--metadata "{\"x-amz-artifact-id\": \"${CIRCLE_SHA1}\" }"'
-  upload_checksum:
-    description: "upload artifact checksum to s3"
-    steps:
-      - s3/copy:
-          from: artifact-info.txt
-          to: 's3://${CONTEXT_ARTIFACT_S3_BUCKET}/${CIRCLE_PROJECT_REPONAME}/'
-          aws-access-key-id: env_CONTEXT_ARTIFACT_S3_AWS_ACCESS_KEY_ID
-          aws-secret-access-key: env_CONTEXT_ARTIFACT_S3_AWS_SECRET_ACCESS_KEY
-          aws-region: env_CONTEXT_ARTIFACT_S3_AWS_REGION
-  docker_build:
+          name: Deploy docs to gh-pages branch
+          command: node ./node_modules/gh-pages/bin/gh-pages -d _site --branch << parameters.target_branch >> --message '[skip ci]'
+  docker_build_push:
     description: "Build Docker image"
     steps:
       - setup_remote_docker
@@ -103,9 +98,6 @@ commands:
           name: Building docker image
           command: |
             docker build -t ${DOCKHUB_ORGANISATION}/binary-static-developers:${CIRCLE_SHA1} -t ${DOCKHUB_ORGANISATION}/binary-static-developers:latest .
-  docker_push:
-    description: "Push image to docker hub"
-    steps:
       - run: 
           name: Pushing Image to docker hub
           command: |
@@ -134,27 +126,58 @@ commands:
                 kubectl --server=${KUBE_SERVER} --certificate-authority=ca.crt --token=$SERVICEACCOUNT_TOKEN set image deployment/developers-binary-com developers-binary-com=${DOCKHUB_ORGANISATION}/binary-static-developers:${CIRCLE_SHA1}
               fi
             done
-
+  notify_slack:
+    description: "Notify slack"
+    steps:
+      - slack/status:
+          include_project_field: false
+          failure_message: "Release failed for developers.binary.com with version *$(cat _site/version)*"
+          success_message: "Release succeeded for developers.binary.com with version *$(cat _site/version)*"
+          webhook: ${SLACK_WEBHOOK}
 jobs:
-  release:
+  build:
     docker:
       - image: circleci/ruby:2.6.5
     steps:
       - git_checkout_from_cache
       - bundle_install
-      - release
-      - compress
-      - upload_artifact  # uploading the built code to s3 to create a backup of key services separate from Kubernetes deployment
-      - upload_checksum  # uploading compressed artifact checksum to cross match artifact fingerprint
-      - docker_build
-      - docker_push
+      - build
+  release_production:
+    docker:
+      - image: circleci/ruby:2.6.5
+    steps:
+      - git_checkout_from_cache
+      - bundle_install
+      - build
+      - deploy:
+          target_branch: "production"
+      - notify_slack
+  release_aws_production:
+    docker:
+      - image: circleci/ruby:2.6.5
+    steps:
+      - git_checkout_from_cache
+      - bundle_install
+      - build
+      - docker_build_push
       - k8s_deploy
       
 workflows:
+  build:
+    jobs:
+      - build
   release:
     jobs:
-      - release:
+      - release_production:
           filters:
             branches:
-              only: /^gh-pages$/
-          context: binary-frontend-artifact-upload  # using context to retrieve shared secret from circle ci
+              ignore: /.*/
+            tags:
+              only: /^production.*/
+      - release_aws_production:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^production.*/
+          context: binary-frontend-artifact-upload
