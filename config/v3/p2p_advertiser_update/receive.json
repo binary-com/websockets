@@ -40,6 +40,22 @@
                     "description": "The epoch time that the client became an advertiser.",
                     "type": "integer"
                 },
+                "daily_buy": {
+                    "description": "Total value of P2P buy transactions in the past 24 hours.",
+                    "type": "string"
+                },
+                "daily_buy_limit": {
+                    "description": "Maximum allowed value of P2P buy transactions in a 24 hour period.",
+                    "type": "string"
+                },
+                "daily_sell": {
+                    "description": "Total value of P2P sell transactions in the past 24 hours.",
+                    "type": "string"
+                },
+                "daily_sell_limit": {
+                    "description": "Maximum allowed value of P2P sell transactions in a 24 hour period.",
+                    "type": "string"
+                },
                 "default_advert_description": {
                     "description": "Default description that can be used every time an advert is created.",
                     "type": "string"
