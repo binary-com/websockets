@@ -47,6 +47,8 @@ groups:
         title: 'Copy Trading: Statistics'
       - name: document_upload
         title: Document Upload
+      - name: economic_calendar
+        title: Economic Calendar
       - name: exchange_rates
         title: Exchange Rates
       - name: forget
