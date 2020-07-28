@@ -53,8 +53,43 @@
                 "mobile"
             ]
         },
+        "utm_ad_id": {
+            "description": "[Optional] Identifier of particular ad",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+        },
+        "utm_adgroup_id": {
+            "description": "[Optional] Identifier of ad group in the campaign",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+        },
+        "utm_adrollclk_id": {
+            "description": "[Optional] Unique identifier of click on AdRoll ads platform",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+        },
         "utm_campaign": {
             "description": "[Optional] Identifies a specific product promotion or strategic campaign such as a spring sale or other promotions.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+        },
+        "utm_campaign_id": {
+            "description": "[Optional] Identifier of paid ad campaign",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+        },
+        "utm_content": {
+            "description": "[Optional] Used to differentiate similar content, or links within the same ad",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+        },
+        "utm_fbcl_id": {
+            "description": "[Optional] Unique identifier of click on Facebook ads platform",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+        },
+        "utm_gl_client_id": {
+            "description": "[Optional] Unique visitor identifier on Google Ads platform.",
             "type": "string",
             "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
         },
@@ -63,8 +98,18 @@
             "type": "string",
             "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
         },
+        "utm_msclk_id": {
+            "description": "[Optional] Unique click identifier on Microsoft Bing ads platform.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+        },
         "utm_source": {
             "description": "[Optional] Identifies the source of traffic such as: search engine, newsletter, or other referral.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+        },
+        "utm_term": {
+            "description": "[Optional] Used to send information related to the campaign term like paid search keywords",
             "type": "string",
             "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
         },
