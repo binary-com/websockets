@@ -1,0 +1,94 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Economic Calendar (response)",
+    "description": "A list of economic events.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "economic_calendar": {
+            "title": "economic_calendar",
+            "description": "Economic calendar.",
+            "type": "object",
+            "properties": {
+                "events": {
+                    "description": "Array of economic events",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "actual": {
+                                "description": "Actual value.",
+                                "type": "object",
+                                "properties": {
+                                    "display_value": {
+                                        "description": "Actual value.",
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "currency": {
+                                "description": "Currency symbol.",
+                                "type": "string"
+                            },
+                            "event_name": {
+                                "description": "Event name.",
+                                "type": "string"
+                            },
+                            "forecast": {
+                                "description": "Forecasted value.",
+                                "type": "object",
+                                "properties": {
+                                    "display_value": {
+                                        "description": "Forecasted value.",
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "impact": {
+                                "description": "Impact.",
+                                "type": "integer",
+                                "maximum": 5,
+                                "minimum": 1
+                            },
+                            "previous": {
+                                "description": "Previous value.",
+                                "type": "object",
+                                "properties": {
+                                    "display_value": {
+                                        "description": "Previous value.",
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "release_date": {
+                                "description": "Release date.",
+                                "type": "integer",
+                                "examples": [
+                                    1441175849
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "economic_calendar"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

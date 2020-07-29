@@ -24,6 +24,13 @@
             "description": "Internal unique contract identifier.",
             "type": "integer"
         },
+        "limit": {
+            "description": "[Optional] Maximum number of historical updates to receive.",
+            "type": "number",
+            "default": 500,
+            "maximum": 999,
+            "minimum": 1
+        },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"

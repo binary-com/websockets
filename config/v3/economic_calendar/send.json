@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Economic Calendar (request)",
+    "description": "Specify a currency to receive a list of events related to that specific currency. For example, specifying USD will return a list of USD-related events. If the currency is omitted, you will receive a list for all currencies.",
+    "type": "object",
+    "auth_required": 0,
+    "additionalProperties": false,
+    "required": [
+        "economic_calendar"
+    ],
+    "properties": {
+        "economic_calendar": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "currency": {
+            "description": "[Optional] Currency symbol.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{2,20}$"
+        },
+        "end_date": {
+            "description": "[Optional] End date.",
+            "type": "integer",
+            "maximum": 9999999999,
+            "minimum": 1
+        },
+        "start_date": {
+            "description": "[Optional] Start date.",
+            "type": "integer",
+            "maximum": 9999999999,
+            "minimum": 1
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

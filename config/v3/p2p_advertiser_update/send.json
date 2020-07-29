@@ -38,11 +38,6 @@
                 1
             ]
         },
-        "name": {
-            "description": "[Optional] The advertiser's displayed name.",
-            "type": "string",
-            "pattern": "\\w+"
-        },
         "payment_info": {
             "description": "[Optional] Advertiser's payment information, to be used as a default for new sell adverts.",
             "type": "string",
