@@ -171,13 +171,9 @@ workflows:
       - release_production:
           filters:
             branches:
-              ignore: /.*/
-            tags:
-              only: /^production.*/
+              only: /^gh-pages$/
       - release_aws_production:
           filters:
             branches:
-              ignore: /.*/
-            tags:
-              only: /^production.*/
+              only: /^gh-pages$/
           context: binary-frontend-artifact-upload
