@@ -21,23 +21,23 @@
                     ]
                 },
                 "address_city": {
-                    "description": "City (note: not set for virtual-money accounts)",
+                    "description": "City (note: Only available for users who have at least one real account)",
                     "type": "string"
                 },
                 "address_line_1": {
-                    "description": "Address line 1 (note: not set for virtual-money accounts)",
+                    "description": "Address line 1 (note: Only available for users who have at least one real account)",
                     "type": "string"
                 },
                 "address_line_2": {
-                    "description": "Address line 2 (note: not set for virtual-money accounts)",
+                    "description": "Address line 2 (note: Only available for users who have at least one real account)",
                     "type": "string"
                 },
                 "address_postcode": {
-                    "description": "Post Code (note: not set for virtual-money accounts)",
+                    "description": "Post Code (note: Only available for users who have at least one real account)",
                     "type": "string"
                 },
                 "address_state": {
-                    "description": "State (note: not set for virtual-money accounts)",
+                    "description": "State (note: Only available for users who have at least one real account)",
                     "type": "string"
                 },
                 "allow_copiers": {
@@ -75,7 +75,7 @@
                     "pattern": "^[a-z]{0,2}$"
                 },
                 "date_of_birth": {
-                    "description": "Epoch of user's birthday (note: not set for virtual-money accounts)",
+                    "description": "Epoch of user's birthday (note: Only available for users who have at least one real account)",
                     "type": [
                         "integer",
                         "null"
@@ -94,7 +94,7 @@
                     ]
                 },
                 "first_name": {
-                    "description": "First name (note: not set for virtual-money accounts)",
+                    "description": "First name (note: Only available for users who have at least one real account)",
                     "type": "string"
                 },
                 "has_secret_answer": {
@@ -114,7 +114,7 @@
                     ]
                 },
                 "last_name": {
-                    "description": "Last name (note: not set for virtual-money accounts)",
+                    "description": "Last name (note: Only available for users who have at least one real account)",
                     "type": "string"
                 },
                 "non_pep_declaration": {
@@ -126,7 +126,7 @@
                     ]
                 },
                 "phone": {
-                    "description": "Telephone (note: not set for virtual-money accounts)",
+                    "description": "Telephone (note: Only available for users who have at least one real account)",
                     "type": "string"
                 },
                 "place_of_birth": {
@@ -152,7 +152,7 @@
                     ]
                 },
                 "salutation": {
-                    "description": "Salutation (note: not set for virtual-money accounts)",
+                    "description": "Salutation (note: Only available for users who have at least one real account)",
                     "type": "string"
                 },
                 "tax_identification_number": {
