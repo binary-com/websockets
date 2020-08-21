@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Advertiser Statistics (request)",
+    "description": "Retrieve historical trade statistics of a P2P advertiser. **This API call is still in Beta.**",
+    "beta": 1,
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "payments"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "p2p_advertiser_stats"
+    ],
+    "properties": {
+        "p2p_advertiser_stats": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "days": {
+            "description": "[Optional] The time period to create statistics for, in days. If not provided, 30 days will be used.",
+            "type": "integer",
+            "maximum": 100
+        },
+        "id": {
+            "description": "[Optional] The unique identifier for this advertiser. If not provided, returns advertiser statistics of the current account.",
+            "type": "string",
+            "pattern": "^[0-9]+$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}
