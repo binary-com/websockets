@@ -1,0 +1,76 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Advertiser Statistics (response)",
+    "description": "Returns historical trade statistics of a P2P advertiser.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "p2p_advertiser_stats": {
+            "title": "p2p_advertiser_stats",
+            "description": "P2P advertiser statistics.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "buy_orders_count",
+                "cancel_time_avg",
+                "completion_rate",
+                "release_time_avg",
+                "sell_orders_count",
+                "total_orders_count"
+            ],
+            "properties": {
+                "buy_orders_count": {
+                    "description": "The number of buy order orders completed within the requested time period.",
+                    "type": "integer"
+                },
+                "cancel_time_avg": {
+                    "description": "The average time taken to cancel orders as a buyer within the requested time period, in seconds.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "completion_rate": {
+                    "description": "The percentage of completed orders out of total orders as a buyer within the requested time period.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                },
+                "release_time_avg": {
+                    "description": "The average time taken to release funds as a seller within the requested time period, in seconds.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "sell_orders_count": {
+                    "description": "The number of bselluy order orders completed within the requested time period.",
+                    "type": "integer"
+                },
+                "total_orders_count": {
+                    "description": "The total number of orders created since advertiser registration.",
+                    "type": "integer"
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "p2p_advertiser_stats"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}
