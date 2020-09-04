@@ -25,9 +25,9 @@
             "pattern": "^[\\w-]{0,32}$"
         },
         "client_password": {
-            "description": "Password (length within 6-25 chars, accepts any printable ASCII character).",
+            "description": "Password (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).",
             "type": "string",
-            "pattern": "^[ -~]{6,25}$",
+            "pattern": "^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])[ -~]{8,25}$",
             "sensitive": 1
         },
         "date_first_contact": {
