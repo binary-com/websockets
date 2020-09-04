@@ -11,7 +11,89 @@
         "trading_times": {
             "title": "trading_times",
             "description": "The trading times structure is a hierarchy as follows: Market -> SubMarket -> Underlyings",
-            "type": "object"
+            "type": "object",
+            "required": [
+                "markets"
+            ],
+            "properties": {
+                "markets": {
+                    "description": "An array of markets",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "name"
+                        ],
+                        "properties": {
+                            "name": {
+                                "description": "Market name",
+                                "type": "string"
+                            },
+                            "submarkets": {
+                                "description": "An array of submarkets",
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "name"
+                                    ],
+                                    "properties": {
+                                        "name": {
+                                            "description": "Submarket name",
+                                            "type": "string"
+                                        },
+                                        "symbols": {
+                                            "description": "Symbols array",
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "required": [
+                                                    "name",
+                                                    "symbol"
+                                                ],
+                                                "properties": {
+                                                    "events": {
+                                                        "description": "Events",
+                                                        "type": "array"
+                                                    },
+                                                    "name": {
+                                                        "description": "Symbol name",
+                                                        "type": "string"
+                                                    },
+                                                    "symbol": {
+                                                        "description": "Symbol shortcode",
+                                                        "type": "string"
+                                                    },
+                                                    "times": {
+                                                        "description": "Open, close and settlement times",
+                                                        "type": "object"
+                                                    },
+                                                    "trading_days": {
+                                                        "description": "Trading days",
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string",
+                                                            "enum": [
+                                                                "Sun",
+                                                                "Mon",
+                                                                "Tue",
+                                                                "Wed",
+                                                                "Thu",
+                                                                "Fri",
+                                                                "Sat"
+                                                            ]
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "echo_req": {
             "description": "Echo of the request made.",
