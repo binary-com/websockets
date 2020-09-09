@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "New Real-Money Account: Binary Investment (Europe) Ltd. (response)",
+    "title": "New Real-Money Account: Deriv Investment (Europe) Ltd (response)",
     "description": "Create maltainvest account Receive",
     "type": "object",
     "required": [

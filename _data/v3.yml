@@ -90,7 +90,7 @@ groups:
       - name: mt5_withdrawal
         title: 'MT5: Withdrawal'
       - name: new_account_maltainvest
-        title: 'New Real-Money Account: Binary Investment (Europe) Ltd.'
+        title: 'New Real-Money Account: Deriv Investment (Europe) Ltd'
       - name: new_account_real
         title: 'New Real-Money Account: Default Landing Company'
       - name: new_account_virtual
