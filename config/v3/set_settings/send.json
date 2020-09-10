@@ -50,7 +50,7 @@
         "address_postcode": {
             "description": "[Optional] Note: not applicable for virtual account. Optional field for real money account.",
             "type": "string",
-            "pattern": "^[-A-Za-z0-9\\s]{0,20}$"
+            "pattern": "^([A-Za-z0-9][A-Za-z0-9\\s-]{0,20})?$"
         },
         "address_state": {
             "description": "[Optional] Note: not applicable for virtual account. Optional field for real money account.",
