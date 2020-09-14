@@ -35,7 +35,6 @@
             "description": "[Optional] If you specify this field, only symbols that can be traded through that product type will be returned.",
             "type": "string",
             "enum": [
-                "multi_barrier",
                 "basic"
             ]
         },
