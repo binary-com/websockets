@@ -157,8 +157,7 @@
                     "type": "string",
                     "default": "basic",
                     "enum": [
-                        "basic",
-                        "multi_barrier"
+                        "basic"
                     ]
                 },
                 "selected_tick": {

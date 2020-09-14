@@ -145,7 +145,6 @@
             "type": "string",
             "default": "basic",
             "enum": [
-                "multi_barrier",
                 "basic"
             ]
         },

@@ -42,7 +42,6 @@
                 "p2p_advertiser",
                 "p2p_order",
                 "proposal",
-                "proposal_array",
                 "proposal_open_contract",
                 "ticks",
                 "transaction",

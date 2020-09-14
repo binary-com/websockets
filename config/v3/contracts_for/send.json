@@ -39,8 +39,7 @@
             "description": "[Optional] If you specify this field, only contracts tradable through that contract type will be returned.",
             "type": "string",
             "enum": [
-                "basic",
-                "multi_barrier"
+                "basic"
             ]
         },
         "passthrough": {

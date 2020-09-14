@@ -143,8 +143,6 @@ groups:
         title: Profit Table
       - name: proposal
         title: Price Proposal
-      - name: proposal_array
-        title: 'Price Proposal: Multiple Contracts'
       - name: proposal_open_contract
         title: 'Price Proposal: Open Contracts'
       - name: reality_check
