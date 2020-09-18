@@ -14,15 +14,30 @@
             "type": "object",
             "additionalProperties": false,
             "required": [
-                "chat_token",
-                "chat_user_id",
+                "buy_orders_count",
+                "cancel_time_avg",
+                "completion_rate",
                 "created_time",
                 "id",
                 "is_approved",
                 "is_listed",
-                "name"
+                "name",
+                "release_time_avg",
+                "sell_orders_count",
+                "total_orders_count"
             ],
             "properties": {
+                "buy_orders_count": {
+                    "description": "The number of buy order completed within the past 30 days.",
+                    "type": "integer"
+                },
+                "cancel_time_avg": {
+                    "description": "The average time in seconds taken to cancel orders as a buyer within the past 30 days.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "chat_token": {
                     "description": "The token to be used for authenticating the client for chat.",
                     "type": "string",
@@ -31,6 +46,13 @@
                 "chat_user_id": {
                     "description": "The unique identifier for the chat user.",
                     "type": "string"
+                },
+                "completion_rate": {
+                    "description": "The percentage of completed orders out of total orders as a buyer within the past 30 days.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
                 },
                 "contact_info": {
                     "description": "Advertiser's contact information.",
@@ -73,7 +95,7 @@
                     ]
                 },
                 "is_listed": {
-                    "description": "Indicates if the advertiser's active adverts are listed. When `0`, adverts won't be listed regardless of they are active or not.",
+                    "description": "Indicates if the advertiser's active adverts are listed. When `0`, adverts won't be listed regardless if they are active or not.",
                     "type": "integer",
                     "enum": [
                         0,
@@ -87,6 +109,21 @@
                 "payment_info": {
                     "description": "Advertiser's payment information.",
                     "type": "string"
+                },
+                "release_time_avg": {
+                    "description": "The average time in seconds taken to release funds as a seller within the past 30 days.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "sell_orders_count": {
+                    "description": "The number of sell order orders completed within the past 30 days.",
+                    "type": "integer"
+                },
+                "total_orders_count": {
+                    "description": "The total number of orders completed since advertiser registration.",
+                    "type": "integer"
                 }
             }
         },
