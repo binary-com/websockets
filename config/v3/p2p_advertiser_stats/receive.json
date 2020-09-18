@@ -23,7 +23,7 @@
             ],
             "properties": {
                 "buy_orders_count": {
-                    "description": "The number of buy order orders completed within the requested time period.",
+                    "description": "The number of buy order completed within the requested time period.",
                     "type": "integer"
                 },
                 "cancel_time_avg": {
