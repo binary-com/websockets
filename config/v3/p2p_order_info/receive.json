@@ -23,6 +23,7 @@
                 "client_details",
                 "contact_info",
                 "created_time",
+                "dispute_details",
                 "expiry_time",
                 "id",
                 "is_incoming",
@@ -168,6 +169,32 @@
                     "description": "The epoch time of the order creation.",
                     "type": "integer"
                 },
+                "dispute_details": {
+                    "title": "Dispute Details",
+                    "description": "Details of the order dispute.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "dispute_reason",
+                        "disputer_loginid"
+                    ],
+                    "properties": {
+                        "dispute_reason": {
+                            "description": "The dispute reason",
+                            "type": [
+                                "null",
+                                "string"
+                            ]
+                        },
+                        "disputer_loginid": {
+                            "description": "The loginid of the client who's raising the dispute",
+                            "type": [
+                                "null",
+                                "string"
+                            ]
+                        }
+                    }
+                },
                 "expiry_time": {
                     "description": "The epoch time in which the order will be expired.",
                     "type": "integer"
@@ -222,7 +249,10 @@
                         "timed-out",
                         "blocked",
                         "refunded",
-                        "completed"
+                        "completed",
+                        "disputed",
+                        "dispute-refunded",
+                        "dispute-completed"
                     ]
                 },
                 "type": {
