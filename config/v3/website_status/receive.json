@@ -214,22 +214,29 @@
                                         },
                                         "limits": {
                                             "description": "Range of allowed amount for transfer between accounts.",
-                                            "type": "object",
-                                            "required": [
-                                                "min"
-                                            ],
-                                            "properties": {
-                                                "max": {
-                                                    "description": "Maximum allowed amount for transfer between accounts with different types of currencies.",
-                                                    "type": "number",
-                                                    "minimum": 0
+                                            "oneOf": [
+                                                {
+                                                    "type": "object",
+                                                    "required": [
+                                                        "min"
+                                                    ],
+                                                    "properties": {
+                                                        "max": {
+                                                            "description": "Maximum allowed amount for transfer between accounts with different types of currencies.",
+                                                            "type": "number",
+                                                            "minimum": 0
+                                                        },
+                                                        "min": {
+                                                            "description": "Minimum allowed amount for transfer between accounts with different types of currencies.",
+                                                            "type": "number",
+                                                            "minimum": 0
+                                                        }
+                                                    }
                                                 },
-                                                "min": {
-                                                    "description": "Minimum allowed amount for transfer between accounts with different types of currencies.",
-                                                    "type": "number",
-                                                    "minimum": 0
+                                                {
+                                                    "type": "null"
                                                 }
-                                            }
+                                            ]
                                         }
                                     }
                                 },
