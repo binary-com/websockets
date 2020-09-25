@@ -14,14 +14,33 @@
             "type": "object",
             "additionalProperties": false,
             "required": [
+                "basic_verification",
+                "buy_completion_rate",
                 "buy_orders_count",
                 "cancel_time_avg",
-                "completion_rate",
+                "full_verification",
                 "release_time_avg",
+                "sell_completion_rate",
                 "sell_orders_count",
+                "total_completion_rate",
                 "total_orders_count"
             ],
             "properties": {
+                "basic_verification": {
+                    "description": "Boolean value: 1 or 0, indicating whether the advertiser's identify has been verified.",
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        0
+                    ]
+                },
+                "buy_completion_rate": {
+                    "description": "The percentage of completed orders out of total orders as a buyer within the requested time period.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                },
                 "buy_orders_count": {
                     "description": "The number of buy order completed within the requested time period.",
                     "type": "integer"
@@ -33,11 +52,12 @@
                         "null"
                     ]
                 },
-                "completion_rate": {
-                    "description": "The percentage of completed orders out of total orders as a buyer within the requested time period.",
-                    "type": [
-                        "null",
-                        "number"
+                "full_verification": {
+                    "description": "Boolean value: 1 or 0, indicating whether the advertiser's address has been verified.",
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        0
                     ]
                 },
                 "release_time_avg": {
@@ -47,9 +67,23 @@
                         "null"
                     ]
                 },
+                "sell_completion_rate": {
+                    "description": "The percentage of completed orders out of total orders as a seller within the requested time period.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                },
                 "sell_orders_count": {
                     "description": "The number of bselluy order orders completed within the requested time period.",
                     "type": "integer"
+                },
+                "total_completion_rate": {
+                    "description": "The percentage of completed orders out of all orders within the past 30 days.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
                 },
                 "total_orders_count": {
                     "description": "The total number of orders created since advertiser registration.",
