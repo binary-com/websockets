@@ -14,19 +14,38 @@
             "type": "object",
             "additionalProperties": false,
             "required": [
+                "basic_verification",
+                "buy_completion_rate",
                 "buy_orders_count",
                 "cancel_time_avg",
-                "completion_rate",
                 "created_time",
+                "full_verification",
                 "id",
                 "is_approved",
                 "is_listed",
                 "name",
                 "release_time_avg",
+                "sell_completion_rate",
                 "sell_orders_count",
+                "total_completion_rate",
                 "total_orders_count"
             ],
             "properties": {
+                "basic_verification": {
+                    "description": "Boolean value: 1 or 0, indicating whether the advertiser's identify has been verified.",
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        0
+                    ]
+                },
+                "buy_completion_rate": {
+                    "description": "The percentage of completed orders out of total orders as a buyer within the past 30 days.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                },
                 "buy_orders_count": {
                     "description": "The number of buy order completed within the past 30 days.",
                     "type": "integer"
@@ -46,13 +65,6 @@
                 "chat_user_id": {
                     "description": "The unique identifier for the chat user.",
                     "type": "string"
-                },
-                "completion_rate": {
-                    "description": "The percentage of completed orders out of total orders as a buyer within the past 30 days.",
-                    "type": [
-                        "null",
-                        "number"
-                    ]
                 },
                 "contact_info": {
                     "description": "Advertiser's contact information.",
@@ -81,6 +93,14 @@
                 "default_advert_description": {
                     "description": "Default description that can be used every time an advert is created.",
                     "type": "string"
+                },
+                "full_verification": {
+                    "description": "Boolean value: 1 or 0, indicating whether the advertiser's address has been verified.",
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        0
+                    ]
                 },
                 "id": {
                     "description": "The advertiser's identification number.",
@@ -117,9 +137,23 @@
                         "null"
                     ]
                 },
+                "sell_completion_rate": {
+                    "description": "The percentage of completed orders out of total orders as a seller within the past 30 days.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                },
                 "sell_orders_count": {
                     "description": "The number of sell order orders completed within the past 30 days.",
                     "type": "integer"
+                },
+                "total_completion_rate": {
+                    "description": "The percentage of completed orders out of all orders within the past 30 days.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
                 },
                 "total_orders_count": {
                     "description": "The total number of orders completed since advertiser registration.",
