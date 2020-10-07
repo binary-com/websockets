@@ -39,6 +39,14 @@
                     "type": "string",
                     "pattern": "^MT[DR]?[0-9]+$"
                 },
+                "mt5_account_category": {
+                    "description": "With default value of conventional, unavailable for `financial_stp` sub account type.",
+                    "type": "string",
+                    "enum": [
+                        "conventional",
+                        "swap_free"
+                    ]
+                },
                 "mt5_account_type": {
                     "description": "Sub account type, present only when account type is either `demo` or `financial`.",
                     "type": "string",

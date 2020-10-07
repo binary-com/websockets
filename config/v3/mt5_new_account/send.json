@@ -84,6 +84,14 @@
             "pattern": "^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])[ -~]{8,25}$",
             "sensitive": 1
         },
+        "mt5_account_category": {
+            "description": "[Optional] To choose whether account is conventional or swap_free. Unavailable for financial_stp MT5_account_type",
+            "type": "string",
+            "enum": [
+                "conventional",
+                "swap_free"
+            ]
+        },
         "mt5_account_type": {
             "description": "[Optional] Financial: Variable spreads, High leverage. Financial STP: Variable spreads, Medium Leverage, more products.",
             "type": "string",
