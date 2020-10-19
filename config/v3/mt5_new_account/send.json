@@ -26,7 +26,7 @@
             "sensitive": 1
         },
         "account_type": {
-            "description": "Account type",
+            "description": "Account type. If set to 'financial', setting 'mt5_account_type' is also required.",
             "type": "string",
             "enum": [
                 "demo",
@@ -98,7 +98,7 @@
             ]
         },
         "mt5_account_type": {
-            "description": "[Optional] Financial: Variable spreads, High leverage. Financial STP: Variable spreads, Medium Leverage, more products.",
+            "description": "[Optional] Financial: Variable spreads, High leverage. Financial STP: Variable spreads, Medium Leverage, more products. If 'account_type' set to 'financial', setting 'mt5_account_type' is also required.",
             "type": "string",
             "enum": [
                 "financial",
