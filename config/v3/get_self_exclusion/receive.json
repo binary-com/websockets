@@ -17,12 +17,20 @@
                     "description": "Exclude me from the website (for a minimum of 6 months, up to a maximum of 5 years). Note: uplifting this self-exclusion may require contacting the company.",
                     "type": "string"
                 },
+                "max_30day_deposit": {
+                    "description": "30-day limit on deposits",
+                    "type": "number"
+                },
                 "max_30day_losses": {
                     "description": "30-day limit on losses",
                     "type": "number"
                 },
                 "max_30day_turnover": {
                     "description": "30-day turnover limit",
+                    "type": "number"
+                },
+                "max_7day_deposit": {
+                    "description": "7-day limit on deposits",
                     "type": "number"
                 },
                 "max_7day_losses": {
@@ -38,12 +46,8 @@
                     "type": "number"
                 },
                 "max_deposit": {
-                    "description": "Deposit limit.",
+                    "description": "Daily limit on deposits",
                     "type": "number"
-                },
-                "max_deposit_end_date": {
-                    "description": "Exclude me from making deposits when the cumulative sum of deposits exceeds specified deposit limit starting from the date the limit has been set.",
-                    "type": "string"
                 },
                 "max_losses": {
                     "description": "Daily limit on losses",

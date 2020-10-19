@@ -27,6 +27,13 @@
             ],
             "pattern": "^[0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$"
         },
+        "max_30day_deposit": {
+            "description": "[Optional] 7-day limit on deposits.",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
         "max_30day_losses": {
             "description": "[Optional] 30-day limit on losses.",
             "type": [
@@ -36,6 +43,13 @@
         },
         "max_30day_turnover": {
             "description": "[Optional] 30-day turnover limit.",
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "max_7day_deposit": {
+            "description": "[Optional] 7-day limit on deposits.",
             "type": [
                 "null",
                 "number"
@@ -63,19 +77,11 @@
             ]
         },
         "max_deposit": {
-            "description": "[Optional] Deposit limit.",
+            "description": "[Optional] Daily deposit limit.",
             "type": [
                 "null",
                 "number"
             ]
-        },
-        "max_deposit_end_date": {
-            "description": "[Optional] Exclude me from making deposits when the cumulative sum of deposits exceeds specified deposit limit.",
-            "type": [
-                "null",
-                "string"
-            ],
-            "pattern": "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
         },
         "max_losses": {
             "description": "[Optional] Daily limit on losses.",
