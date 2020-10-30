@@ -43,6 +43,14 @@
             "type": "string",
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{0,300}$"
         },
+        "show_name": {
+            "description": "[Optional] When `1`, the advertiser's real name will be displayed on to other users on adverts and orders.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"

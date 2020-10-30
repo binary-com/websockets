@@ -85,9 +85,7 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                        "first_name",
                         "id",
-                        "last_name",
                         "loginid",
                         "name"
                     ],
@@ -132,9 +130,7 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
-                        "first_name",
                         "id",
-                        "last_name",
                         "loginid",
                         "name"
                     ],

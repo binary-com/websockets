@@ -94,6 +94,10 @@
                     "description": "Default description that can be used every time an advert is created.",
                     "type": "string"
                 },
+                "first_name": {
+                    "description": "The advertiser's first name.",
+                    "type": "string"
+                },
                 "full_verification": {
                     "description": "Boolean value: 1 or 0, indicating whether the advertiser's address has been verified.",
                     "type": "integer",
@@ -122,6 +126,10 @@
                         1
                     ]
                 },
+                "last_name": {
+                    "description": "The advertiser's last name.",
+                    "type": "string"
+                },
                 "name": {
                     "description": "The advertiser's displayed name.",
                     "type": "string"
@@ -147,6 +155,14 @@
                 "sell_orders_count": {
                     "description": "The number of sell order orders completed within the past 30 days.",
                     "type": "integer"
+                },
+                "show_name": {
+                    "description": "When `1`, the advertiser's real name will be displayed on to other users on adverts and orders.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
                 },
                 "total_completion_rate": {
                     "description": "The percentage of completed orders out of all orders within the past 30 days.",

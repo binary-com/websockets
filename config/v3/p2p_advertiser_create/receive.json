@@ -150,6 +150,14 @@
                     "description": "The number of sell order orders completed within the past 30 days.",
                     "type": "integer"
                 },
+                "show_name": {
+                    "description": "When `1`, the advertiser's real name will be displayed to other users on adverts and orders.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
                 "total_completion_rate": {
                     "description": "The percentage of completed orders out of all orders within the past 30 days.",
                     "type": [
