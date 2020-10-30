@@ -53,8 +53,16 @@
                         "name"
                     ],
                     "properties": {
+                        "first_name": {
+                            "description": "The advertiser's first name.",
+                            "type": "string"
+                        },
                         "id": {
                             "description": "The advertiser's unique identifier.",
+                            "type": "string"
+                        },
+                        "last_name": {
+                            "description": "The advertiser's last name.",
                             "type": "string"
                         },
                         "name": {
