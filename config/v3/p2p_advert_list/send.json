@@ -51,6 +51,14 @@
             "type": "integer",
             "default": 0
         },
+        "use_client_limits": {
+            "description": "[Optional] If set to 1, ads that exceed this account's balance or turnover limits will not be shown.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
