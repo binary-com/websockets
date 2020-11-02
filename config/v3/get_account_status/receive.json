@@ -34,14 +34,6 @@
                                     "description": "This is the epoch of the document expiry date.",
                                     "type": "integer"
                                 },
-                                "further_resubmissions_allowed": {
-                                    "description": "This flag indicates whether client is allowed to resubmit documents",
-                                    "type": "integer",
-                                    "enum": [
-                                        1,
-                                        0
-                                    ]
-                                },
                                 "status": {
                                     "description": "This represents the current status of the proof of address document submitted for authentication.",
                                     "type": "string",
@@ -63,14 +55,6 @@
                                 "expiry_date": {
                                     "description": "This is the epoch of the document expiry date.",
                                     "type": "integer"
-                                },
-                                "further_resubmissions_allowed": {
-                                    "description": "This flag indicates whether client is allowed to resubmit documents",
-                                    "type": "integer",
-                                    "enum": [
-                                        1,
-                                        0
-                                    ]
                                 },
                                 "services": {
                                     "description": "This shows the information about the authentication services implemented",
