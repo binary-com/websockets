@@ -20,6 +20,49 @@
                 1
             ]
         },
+        "contract_type": {
+            "description": "Return only contracts of the specified types",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "ASIAND",
+                    "ASIANU",
+                    "CALL",
+                    "CALLE",
+                    "CALLSPREAD",
+                    "DIGITDIFF",
+                    "DIGITEVEN",
+                    "DIGITMATCH",
+                    "DIGITODD",
+                    "DIGITOVER",
+                    "DIGITUNDER",
+                    "EXPIRYMISSE",
+                    "EXPIRYMISS",
+                    "EXPIRYRANGE",
+                    "EXPIRYRANGEE",
+                    "LBFLOATCALL",
+                    "LBFLOATPUT",
+                    "LBHIGHLOW",
+                    "MULTDOWN",
+                    "MULTUP",
+                    "NOTOUCH",
+                    "ONETOUCH",
+                    "PUT",
+                    "PUTE",
+                    "PUTSPREAD",
+                    "RANGE",
+                    "RESETCALL",
+                    "RESETPUT",
+                    "RUNHIGH",
+                    "RUNLOW",
+                    "TICKHIGH",
+                    "TICKLOW",
+                    "UPORDOWN"
+                ],
+                "uniqueItems": true
+            }
+        },
         "date_from": {
             "description": "[Optional] Start date (epoch or YYYY-MM-DD)",
             "type": "string",
