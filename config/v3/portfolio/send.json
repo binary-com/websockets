@@ -20,6 +20,49 @@
                 1
             ]
         },
+        "contract_type": {
+            "description": "Return only contracts of the specified types",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "ASIAND",
+                    "ASIANU",
+                    "CALL",
+                    "CALLE",
+                    "CALLSPREAD",
+                    "DIGITDIFF",
+                    "DIGITEVEN",
+                    "DIGITMATCH",
+                    "DIGITODD",
+                    "DIGITOVER",
+                    "DIGITUNDER",
+                    "EXPIRYMISSE",
+                    "EXPIRYMISS",
+                    "EXPIRYRANGE",
+                    "EXPIRYRANGEE",
+                    "LBFLOATCALL",
+                    "LBFLOATPUT",
+                    "LBHIGHLOW",
+                    "MULTDOWN",
+                    "MULTUP",
+                    "NOTOUCH",
+                    "ONETOUCH",
+                    "PUT",
+                    "PUTE",
+                    "PUTSPREAD",
+                    "RANGE",
+                    "RESETCALL",
+                    "RESETPUT",
+                    "RUNHIGH",
+                    "RUNLOW",
+                    "TICKHIGH",
+                    "TICKLOW",
+                    "UPORDOWN"
+                ],
+                "uniqueItems": true
+            }
+        },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
