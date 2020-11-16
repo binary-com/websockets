@@ -16,14 +16,6 @@
                 "title": "Details of each MT5 loginid.",
                 "type": "object",
                 "properties": {
-                    "account_type": {
-                        "description": "Account type.",
-                        "type": "string",
-                        "enum": [
-                            "demo",
-                            "real"
-                        ]
-                    },
                     "balance": {
                         "description": "Balance of the MT5 account.",
                         "type": "number"
@@ -48,19 +40,6 @@
                         "description": "Group type of the MT5 account, e.g. `demo\\svg_financial`",
                         "type": "string"
                     },
-                    "landing_company_short": {
-                        "description": "Landing company shortcode of the MT5 account.",
-                        "type": "string",
-                        "enum": [
-                            "bvi",
-                            "labuan",
-                            "malta",
-                            "maltainvest",
-                            "samoa",
-                            "svg",
-                            "vanuatu"
-                        ]
-                    },
                     "leverage": {
                         "description": "Leverage of the MT5 account (1 to 1000).",
                         "type": "number"
@@ -70,26 +49,9 @@
                         "type": "string",
                         "pattern": "^MT[DR]?[0-9]+$"
                     },
-                    "market_type": {
-                        "description": "Market type",
-                        "type": "string",
-                        "enum": [
-                            "financial",
-                            "gaming"
-                        ]
-                    },
                     "name": {
                         "description": "Name of the owner of the MT5 account.",
                         "type": "string"
-                    },
-                    "sub_account_type": {
-                        "description": "Sub account type",
-                        "type": "string",
-                        "enum": [
-                            "financial",
-                            "financial_stp",
-                            "swap_free"
-                        ]
                     }
                 }
             }
