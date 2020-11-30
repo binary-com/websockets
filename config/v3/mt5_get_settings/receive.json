@@ -13,6 +13,14 @@
             "description": "MT5 user account details",
             "type": "object",
             "properties": {
+                "account_type": {
+                    "description": "Account type.",
+                    "type": "string",
+                    "enum": [
+                        "demo",
+                        "real"
+                    ]
+                },
                 "address": {
                     "description": "The address of the user. The maximum length of the address is 128 characters.",
                     "type": "string"
@@ -45,6 +53,19 @@
                     "description": "The group where account belongs to.",
                     "type": "string"
                 },
+                "landing_company_short": {
+                    "description": "Landing company shortcode of the MT5 account.",
+                    "type": "string",
+                    "enum": [
+                        "bvi",
+                        "labuan",
+                        "malta",
+                        "maltainvest",
+                        "samoa",
+                        "svg",
+                        "vanuatu"
+                    ]
+                },
                 "leverage": {
                     "description": "Client leverage (from 1 to 1000).",
                     "type": "number"
@@ -53,6 +74,14 @@
                     "description": "Login ID of the user's MT5 account.",
                     "type": "string",
                     "pattern": "^MT[DR]?[0-9]+$"
+                },
+                "market_type": {
+                    "description": "Market type",
+                    "type": "string",
+                    "enum": [
+                        "financial",
+                        "gaming"
+                    ]
                 },
                 "name": {
                     "description": "Client's name. The maximum length of a client's symbol name is 128 characters.",
@@ -69,6 +98,15 @@
                 "state": {
                     "description": "User's state (region) of residence.",
                     "type": "string"
+                },
+                "sub_account_type": {
+                    "description": "Sub account type",
+                    "type": "string",
+                    "enum": [
+                        "financial",
+                        "financial_stp",
+                        "swap_free"
+                    ]
                 },
                 "zipCode": {
                     "description": "User's zip code.",
