@@ -1,5 +1,7 @@
 ---
 ---
+@import "deriv.css";
+
 #content {
     padding: 2rem 0.5rem 2rem;
     margin: 0 auto;
@@ -19,14 +21,7 @@
     // width: 3rem;
     margin: 0.5rem 0;
 }
-header h1 {
-    font-size: 1.5rem;
-    line-height: 1.4;
-    display: inline-block;
-}
-h1 {
-    margin-top: 0;
-}
+
 h5 {
     margin-bottom: 1rem;
 }
@@ -101,9 +96,6 @@ pre p {
 }
 .spacer {
     flex: 1;
-}
-header {
-    background: #2a3052 !important;
 }
 .support-btn {
     margin: 0.35rem;
@@ -240,16 +232,6 @@ pre .number {
 body {
     color: #000;
 }
-header {
-    position: relative;
-    z-index: 50;
-    width: 100%;
-    border-bottom: 4px solid #e98024;
-    border-top: 2px solid #394171;
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-}
 #topbar {
     width: 100%;
     color: #fff;
@@ -257,12 +239,6 @@ header {
     padding: 3px 0;
     height: 20px;
     background: #15212d;
-}
-.header-content {
-    max-width: 1240px;
-    display: flex;
-    width: 100%;
-    margin: 0 0.5em;
 }
 body {
     flex-direction: column;
@@ -331,10 +307,6 @@ select {
     padding: 0 0.25rem;
     height: 2rem;
 }
-.header-content h1{
-    color: white;
-    margin: 1rem
-}
 @media (max-width: 760px) {
     #mobile-page-selector {
         display: block;
@@ -348,9 +320,6 @@ select {
     .page-content .btn-primary,
     .page-content .btn-secondary {
         width: 100%;
-    }
-    .header-content h1{
-        font-size: 1.3rem;
     }
 }
 @media (min-width: 761px) and (max-width: 830px) {
