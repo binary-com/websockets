@@ -18,6 +18,13 @@ a {
     text-decoration: none;
 }
 
+.nav {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+}
+
 .flex-container {
     display: flex;
     align-items: center;
@@ -43,9 +50,11 @@ a {
 header > a > h1 {
     display: inline;
     font-size: 18px;
+    font-weight: normal;
     line-height: 1.5;
     color: #ffffff;
     margin-left: 24px;
+    margin-bottom: 0px;
 }
 
 header {
@@ -61,10 +70,35 @@ nav {
 }
 
 nav > a {
+    position: relative;
     margin-right: 40px;
     font-size: 16px;
     line-height: 1.5;
     color: #ffffff;
+}
+
+nav > a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff444f;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+nav > .selected {
+    &::before {
+        width: 20px;
+        visibility: visible;
+    }
+}
+
+nav > a:hover:before {
+    visibility: visible;
+    width: 20px;
 }
 
 .vertical-separator {
@@ -75,10 +109,11 @@ nav > a {
 }
 
 .page-content {
+    width: 100%;
     padding-left: 40px;
 }
 
-.page-content > h1 {
+h1 {
     margin-bottom: 40px;
     font-size: 48px;
     font-weight: bold;
@@ -87,12 +122,35 @@ nav > a {
     color: #333333;
 }
 
-.page-content > h2 {
+h2 {
     margin-bottom: 16px;
     font-size: 24px;
     font-weight: bold;
     line-height: 1.5;
     color: #333333;
+}
+
+.subheader {
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 40px;
+}
+
+.cta {
+    width: auto;
+    padding: 24px 283px;
+    border-radius: 4px;
+    background-color: #f2f3f4;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    padding: 10px 16px;
+    border-radius: 4px;
+    border: solid 2px #999999;
 }
 
 .page-content > p > a {
@@ -119,6 +177,7 @@ nav > a {
 }
 
 .page-wrapper {
+    margin-top: 105px;
     display: flex;
     color: #333333;
 }
@@ -200,11 +259,27 @@ footer {
 
 .footer-language {
     width: 180px;
-    height: 37px;
-    margin: 32px 330px 137px 0;
+    height: fit-content;
     padding: 8px 10px 8px 12px;
     border-radius: 4px;
     border: solid 1px #d6dadb;
+    background-color: inherit;
+}
+
+.footer-copyright {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 54px;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.footer-copyright > p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ffffff;
+    margin-left: 120px;
 }
 
 .ssm-icon-wrapper {
@@ -248,16 +323,54 @@ footer {
     margin-bottom: 12px;
 }
 
+.license-text > a {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.31;
+    color: #333333;
+}
+
 .warning-block {
-    
+    background-color: #f3f5f8;
+    border-left: 4px solid rgb(248, 162, 168);
+    padding: 1.6rem;
 }
 
 /* Syntax Highlighting Related */
+code {
+    border-radius: 4px;
+    padding: 2px 4px;
+    color: #c7254e;
+    font-size: 90%;
+    border: 1px solid #eceff1;
+    font-weight: 400;
+}
+
+.card {
+    border-radius: 6px;
+    background-color: #1d1f20;
+}
+
+.card-header {
+    border-radius: 6px;
+    background-color: #0e0e0e;
+    border-bottom: 1px solid rgba(242, 243, 244, 0.2);
+    color: #d6d6d6;
+    line-height: 1.5;
+    padding: 8px 24px;
+}
+
+.card-header > select {
+    background-color: inherit;
+    border: #0e0e0e;
+    color: #d6d6d6;
+}
+
 pre {
     border-radius: 4px;
-    padding: 0.5rem 0.75rem;
+    padding: 24px;
     margin-bottom: 0.5rem;
-    background: #2a2f3a;
+    background: #1d1f20;
     font-size: inherit;
     overflow: auto;
     word-wrap: inherit;

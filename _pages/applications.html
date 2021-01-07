@@ -1,103 +1,107 @@
 ---
-layout: default
+layout: page
 permalink: applications/
 ---
-<div id="applications-page" class="row">
-    <div id="applications">
-        <h1>App registration</h1>
-        <p>Authenticate your API token before using it in your app.</p>
-        <form id="frmNewApplication">
-              <fieldset>
-                  <legend>Register your app <span id="placeholder_app_id"></span><em class="required_asterisk">(* required)</em></legend>
-                  <div>
-                      <label for="application-name">Name:</label>
-                      <em class="required_asterisk">*</em>
-                  </div>
-                  <div>
-                      <input id="application-name" type="text" maxlength="48" />
-                  </div>
-                  <div>
-                      <label for="application-redirect_uri">Redirect URL:</label>
-                      <em class="required_asterisk">*</em>
-                  </div>
-                  <div>
-                      <input id="application-redirect_uri" type="text" maxlength="255" />
-                  </div>
-                  <div>
-                      <label for="application-verification_uri">Verification URL:</label>
-                  </div>
-                  <div>
-                      <input id="application-verification_uri" type="text" maxlength="255" />
-                  </div>
-                  <div>
-                      <label for="application-homepage">Homepage URL:</label>
-                  </div>
-                  <div>
-                      <input id="application-homepage" type="text" maxlength="255" />
-                  </div>
-                  <div>
-                      <label for="application-github">Github URL:</label>
-                  </div>
-                  <div>
-                      <input id="application-github" type="text" maxlength="255" />
-                  </div>
-                  <div>
-                      <label for="application-appstore">Appstore URL:</label>
-                  </div>
-                  <div>
-                      <input id="application-appstore" type="text" maxlength="255" />
-                  </div>
-                  <div>
-                      <label for="application-googleplay">Google Play URL:</label>
-                  </div>
-                  <div>
-                      <input id="application-googleplay" type="text" maxlength="255" />
-                  </div>
-                  <div>
-                      <label for="application-app_markup_percentage">
-                          <span data-balloon="Percentage to be added to pricing of contracts" data-balloon-length="medium">Markup percentage</span>: (minimum 0.00 and maximum 5.00)
-                      </label>
-                  </div>
-                  <div>
-                      <input id="application-app_markup_percentage" type="text" maxlength="4" />
-                  </div>
-                  <div>
-                      <label>Scopes:</label>
-                      <em class="required_asterisk">*</em>
-                  </div>
-                  <div class="scopes">
-                    <div>
-                        <input id="read-scope" type="checkbox" value="read" checked="checked" />
-                        <label for="read-scope">Read: View account activity</label>
-                    </div>
-                    <div>
-                        <input id="trade-scope" type="checkbox" value="trade" />
-                        <label for="trade-scope">Trade: Buy and sell contracts</label>
-                    </div>
-                    <div>
-                        <input id="trading_information-scope" type="checkbox" value="trading_information" />
-                        <label for="trading_information-scope">Trading Information: View trading and balance information</label>
-                    </div>
-                    <div>
-                        <input id="payments-scope" type="checkbox" value="payments" />
-                        <label for="payments-scope">Payments: Cashier (Deposit, Withdraw)</label>
-                    </div>
-                    <div>
-                        <input id="admin-scope" type="checkbox" value="admin" />
-                        <label for="admin-scope">Admin: API token management, application management</label>
-                    </div>
-                  </div>
-                  <div class="application_buttons">
-                    <button id="btnRegister">Register</button>
-                  </div>
-              </fieldset>
-        </form>
+
+<h1>App registration</h1>
+<div class="subheader">Authenticate your API token before using it in your app.</div>
+
+<div class="cta">
+    <h2>Looking for your API token?</h2>
+    <a target="tokeninput" href="https://www.binary.com/en/user/security/api_tokenws.html">
+        <button class="cta-button">Get your API token</button>
+    </a>
+</div>
+
+<form id="frmNewApplication">
+    <legend>Register your app <span id="placeholder_app_id"></span><em class="required_asterisk">(* required)</em></legend>
+    <div>
+        <label for="application-name">Name:</label>
+        <em class="required_asterisk">*</em>
     </div>
     <div>
-      {% include token-input.html %}
-      {% include api-playground-field.html %}
+        <input id="application-name" type="text" maxlength="48" />
     </div>
+    <div>
+        <label for="application-redirect_uri">Redirect URL:</label>
+        <em class="required_asterisk">*</em>
+    </div>
+    <div>
+        <input id="application-redirect_uri" type="text" maxlength="255" />
+    </div>
+    <div>
+        <label for="application-verification_uri">Verification URL:</label>
+    </div>
+    <div>
+        <input id="application-verification_uri" type="text" maxlength="255" />
+    </div>
+    <div>
+        <label for="application-homepage">Homepage URL:</label>
+    </div>
+    <div>
+        <input id="application-homepage" type="text" maxlength="255" />
+    </div>
+    <div>
+        <label for="application-github">Github URL:</label>
+    </div>
+    <div>
+        <input id="application-github" type="text" maxlength="255" />
+    </div>
+    <div>
+        <label for="application-appstore">Appstore URL:</label>
+    </div>
+    <div>
+        <input id="application-appstore" type="text" maxlength="255" />
+    </div>
+    <div>
+        <label for="application-googleplay">Google Play URL:</label>
+    </div>
+    <div>
+        <input id="application-googleplay" type="text" maxlength="255" />
+    </div>
+    <div>
+        <label for="application-app_markup_percentage">
+            <span data-balloon="Percentage to be added to pricing of contracts" data-balloon-length="medium">Markup percentage</span>: (minimum 0.00 and maximum 5.00)
+        </label>
+    </div>
+    <div>
+        <input id="application-app_markup_percentage" type="text" maxlength="4" />
+    </div>
+    <div>
+        <label>Scopes:</label>
+        <em class="required_asterisk">*</em>
+    </div>
+    <div class="scopes">
+    <div>
+        <input id="read-scope" type="checkbox" value="read" checked="checked" />
+        <label for="read-scope">Read: View account activity</label>
+    </div>
+    <div>
+        <input id="trade-scope" type="checkbox" value="trade" />
+        <label for="trade-scope">Trade: Buy and sell contracts</label>
+    </div>
+    <div>
+        <input id="trading_information-scope" type="checkbox" value="trading_information" />
+        <label for="trading_information-scope">Trading Information: View trading and balance information</label>
+    </div>
+    <div>
+        <input id="payments-scope" type="checkbox" value="payments" />
+        <label for="payments-scope">Payments: Cashier (Deposit, Withdraw)</label>
+    </div>
+    <div>
+        <input id="admin-scope" type="checkbox" value="admin" />
+        <label for="admin-scope">Admin: API token management, application management</label>
+    </div>
+    </div>
+    <div class="application_buttons">
+    <button id="btnRegister">Register</button>
+    </div>
+</form>
+<div>
+    {% include token-input.html %}
+    {% include api-playground-field.html %}
 </div>
+
 <div>
   <table class="flex-table" id="applications-table" style="display:none">
     <thead>

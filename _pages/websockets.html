@@ -9,11 +9,15 @@ permalink: websockets/
 
 <p>Use this code to open a connection to our WebSocket service (in Javascript):</p>
 
-<pre data-language="javascript">var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=XXX');</pre>
+<div class="card">
+    <div class="card-header">JavaScript</div>
+    <pre data-language="javascript">var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=XXX');</pre>
+</div>
 
-<p>After opening a connection, you can send data through the WebSocket using the method calls from our <a href="/api">API playground</a>.</p>
-
-<p>Data transfer in both directions is handled by structured <a href="/schemas">JSON-encoded data</a>.</p>
+<p>
+    After opening a connection, you can send data through the WebSocket using the method calls from our <a href="/api">API playground</a>.
+    Data transfer in both directions is handled by structured <a href="/schemas">JSON-encoded data</a>.
+</p>
 
 <p>All field name identifiers and most field values are double-quoted in the encoded data.</p>
 
@@ -29,4 +33,7 @@ permalink: websockets/
 
 <p>To receive responses in other languages, add the language code to the connection URL:</p>
 
-<pre data-language="javascript">var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=XXX&l=RU');</pre>
+<div class="card">
+    <div class="card-header">JavaScript</div>
+    <pre data-language="javascript">var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=XXX&l=RU');</pre>
+</div>

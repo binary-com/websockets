@@ -5,42 +5,43 @@ permalink: demos/
 ---
 <h1 class="post-title">{{ page.title }}</h1>
 
-<fieldset>
-    <select id="demo-language">
-        <option value="javascript">JavaScript</option>
-        <option value="clojure">Clojure</option>
-        <option value="coffeescript">CoffeeScript</option>
-        <option value="csharp">C#</option>
-        <option value="elixir">Elixir</option>
-        <option value="go">Go</option>
-        <option value="perl">Perl</option>
-        <option value="java">Java</option>
-        <option value="php">PHP</option>
-        <option value="ruby">Ruby</options>
-        <option value="rust">Rust</options>
-        <option value="python">Python</option>
-        <option value="scala">Scala</option>
-        <option value="swift">Swift</option>
-    </select>
-</fieldset>
-
 <p>This code opens a WebSocket connection and requests a stream of updates for the symbol <code>R_100</code>.</p>
 
 <p>Every time an update is received, it outputs a message. To view the code in another language, use the dropdown menu above.</p>
 
-<div id="language-demos">
-    <pre data-language="javascript">{% include demos/javascript.js %}</pre>
-    <pre data-language="clojure">{% include demos/clojure.clj %}</pre>
-    <pre data-language="coffeescript">{% include demos/coffeescript.coffee %}</pre>
-    <pre data-language="csharp">{% include demos/csharp.cs %}</pre>
-    <pre data-language="elixir">{% include demos/elixir.exs %}</pre>
-    <pre data-language="go">{% include demos/go.go %}</pre>
-    <pre data-language="java">{% include demos/java.java %}</pre>
-    <pre data-language="perl">{% include demos/perl.pl %}</pre>
-    <pre data-language="php">{% include demos/php.php %}</pre>
-    <pre data-language="ruby">{% include demos/ruby.rb %}</pre>
-    <pre data-language="rust">{% include demos/rust.rs %}</pre>
-    <pre data-language="python">{% include demos/python.py %}</pre>
-    <pre data-language="scala">{% include demos/scala.scala %}</pre>
-    <pre data-language="swift">{% include demos/swift.swift %}</pre>
+<div class="card">
+    <div class="card-header">
+        <select id="demo-language">
+            <option value="javascript">JavaScript</option>
+            <option value="clojure">Clojure</option>
+            <option value="coffeescript">CoffeeScript</option>
+            <option value="csharp">C#</option>
+            <option value="elixir">Elixir</option>
+            <option value="go">Go</option>
+            <option value="perl">Perl</option>
+            <option value="java">Java</option>
+            <option value="php">PHP</option>
+            <option value="ruby">Ruby</options>
+            <option value="rust">Rust</options>
+            <option value="python">Python</option>
+            <option value="scala">Scala</option>
+            <option value="swift">Swift</option>
+        </select>
+    </div>
+    <div id="language-demos">
+        <pre data-language="javascript">{% include demos/javascript.js %}</pre>
+        <pre data-language="clojure">{% include demos/clojure.clj %}</pre>
+        <pre data-language="coffeescript">{% include demos/coffeescript.coffee %}</pre>
+        <pre data-language="csharp">{% include demos/csharp.cs %}</pre>
+        <pre data-language="elixir">{% include demos/elixir.exs %}</pre>
+        <pre data-language="go">{% include demos/go.go %}</pre>
+        <pre data-language="java">{% include demos/java.java %}</pre>
+        <pre data-language="perl">{% include demos/perl.pl %}</pre>
+        <pre data-language="php">{% include demos/php.php %}</pre>
+        <pre data-language="ruby">{% include demos/ruby.rb %}</pre>
+        <pre data-language="rust">{% include demos/rust.rs %}</pre>
+        <pre data-language="python">{% include demos/python.py %}</pre>
+        <pre data-language="scala">{% include demos/scala.scala %}</pre>
+        <pre data-language="swift">{% include demos/swift.swift %}</pre>
+    </div>
 </div>
