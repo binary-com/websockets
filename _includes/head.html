@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1'/>
 
-    <link href='https://style.binary.com/images/favicons/favicon-96x96.png' rel='icon' sizes='96x96' type='image/png'/>
+    <link href='/img/deriv.png' rel='icon' sizes='96x96' type='image/png'/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' />
@@ -36,6 +36,6 @@
     <script src="https://liveapi.binary.com/binary-live-api.js"></script>
     <script src="{{ branch }}/lib/require.js"></script>
 
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>Developers | {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 </head>
