@@ -1,3 +1,5 @@
+---
+---
 /**
  * Deriv Style
  *
@@ -6,11 +8,12 @@
  */
 * {
     font-family: 'IBM Plex Sans';
-    color: #333333;
+    font-size: 16px;
     padding: 0;
     margin: 0;
 }
 
+/* General Page Contents */
 a {
     text-decoration: none;
 }
@@ -92,6 +95,19 @@ nav > a {
     color: #333333;
 }
 
+.page-content > p > a {
+    font-weight: bold;
+    color: #ff444f;
+}
+
+.page-content > p {
+    margin-bottom: 16px;
+}
+
+.page-content > .text-block {
+    margin-bottom: 24px;
+}
+
 #mobile-page-selector {
     width: 100%;
     display: none;
@@ -104,6 +120,7 @@ nav > a {
 
 .page-wrapper {
     display: flex;
+    color: #333333;
 }
 
 .sidebar-left {
@@ -115,7 +132,6 @@ nav > a {
 .sidebar-left > a {
     opacity: 0.72;
     margin-bottom: 14px;
-    font-size: 16px;
     line-height: 1.88;
     color: #333333;
 }
@@ -135,6 +151,7 @@ footer {
     margin: 1px 0 0;
     padding: 40px 120px;
     background-color: #f2f3f4;
+    color: #333333;
 }
 
 .footer-row {
@@ -178,7 +195,6 @@ footer {
 
 .footer-text {
     width: 50%;
-    font-size: 16px;
     margin-bottom: 32px;
 }
 
@@ -215,7 +231,6 @@ footer {
 }
 
 .site-link > .header {
-    font-size: 16px;
     font-weight: 700;
     line-height: 1.5;
     letter-spacing: 2px;
@@ -225,14 +240,145 @@ footer {
 }
 
 .right > .site-link > a {
+    color: #333333;
     margin-bottom: 8px;
 }
 
 .license-text {
-    font-size: 16px;
     margin-bottom: 12px;
 }
 
 .warning-block {
     
 }
+
+/* Syntax Highlighting Related */
+pre {
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+    background: #2a2f3a;
+    font-size: inherit;
+    overflow: auto;
+    word-wrap: inherit;
+}
+pre.req {
+    background: #2a3a2c;
+}
+pre.error {
+    background: #2a0000;
+}
+code,
+pre,
+textarea {
+    font-family: 'IBM Plex Sans';
+}
+#playground #playground-req-schema,
+#playground #playground-res-schema,
+.docson .json-keyword,
+code,
+pre,
+textarea {
+    font-size: 16px;
+}
+code,
+pre p {
+    margin-bottom: 0;
+}
+
+#playground-console {
+    overflow: auto;
+    max-height: 60vh;
+    margin-top: 2px;
+
+    pre:last-child {
+        margin-bottom: 0;
+    }
+}
+
+#playground-reset-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 15px;
+    flex-wrap: wrap;
+}
+#playground {
+    .source {
+        margin-top: 10px;
+        padding-left: 10px;
+    }
+    &.light {
+        pre {
+            background: #f5f5f5;
+            color: green;
+
+            * {
+                font-family: 'IBM Plex Sans';
+            }
+        }
+        // schema source
+        .source {
+            margin-top: 10px;
+            padding-left: 10px;
+
+            pre .json-keyword {
+                color: darkblue !important;
+            }
+            pre .json-object-key {
+                color: blue !important;
+            }
+            pre .json-string {
+                color: #9c9128 !important;
+            }
+            pre .json-number {
+                color: #e61818;
+            }
+            pre .json-punctuation {
+                color: green;
+            }
+        }
+        // console
+        pre.req {
+            background: #e5e5e5;
+        }
+        pre.error {
+            background: #f9ebeb;
+        }
+        pre .key {
+            color: darkblue;
+        }
+        pre .string {
+            color: #9c9128;
+        }
+        pre .number {
+            color: #e61818;
+        }
+    }
+}
+.progress {
+    margin: 0 auto;
+}
+pre {
+    color: white;
+}
+pre .key {
+    color: #f92672;
+}
+pre .string {
+    color: #E6DB74;
+}
+pre .number {
+    color: #AE81FF;
+}
+#language-demos pre {
+    display: none;
+}
+pre {
+    max-width: 100%;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+@import "monokai.css";
