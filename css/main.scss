@@ -511,7 +511,46 @@ footer {
     padding: 1.6rem;
 }
 
-/* Syntax Highlighting Related */
+/* Accordion */
+.accordion { 
+    width: 100%;
+    max-height: 56px;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: -2px 6px 15px 0 rgba(195, 195, 195, 0.31);
+    background-color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #333333;
+    transition: 0.2s;
+}
+
+.accordion-panel {
+    width: 100%;
+    height: fit-content;
+    padding: 24px 40px;
+    background-color: #fbfbfb;
+    display: none;
+    margin-bottom: 24px;
+}
+
+.accordion-panel > a {
+    font-weight: bold;
+    color: #ff444f;
+}
+
+.accordion-panel > p > a {
+    font-weight: bold;
+    color: #ff444f;
+}
+
+.accordion-wrapper {
+    margin-bottom: 24px;
+}
+
+/* Code Syntax Highlighting Related */
 code {
     border-radius: 4px;
     padding: 2px 4px;
