@@ -1,8 +1,11 @@
 <fieldset>
     <textarea id="playground-request" placeholder="Request JSON"></textarea>
+    <button class="btn-submit" id="playground-send-btn">Send Request</button>
+    <a id="playground-reset-btn" href="javascript:;">
+        <button class="btn-reset">Reset Connection</button>
+    </a>
 </fieldset>
 <p id="playground-reset-buttons">
-    <button id="playground-send-btn">Send Request</button>
     <select id="api-language-selector">
         <option value="DE">Deutsch</option>
         <option value="EN" selected="selected">English</option>
@@ -17,7 +20,6 @@
         <option value="ZH_CN">简体中文</option>
         <option value="ZH_TW">繁體中文</option>
     </select>
-    <a id="playground-reset-btn" href="javascript:;">Reset Connection</a>
 </p>
 <div id="unauthorized-error" >
     <p class="notice-msg">You are not authenticated.</p>
