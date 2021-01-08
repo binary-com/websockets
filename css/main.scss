@@ -138,6 +138,36 @@ h3 {
     color: #333333;
 }
 
+ol {
+    margin-left: 20px;
+}
+
+ol > li {
+    margin-bottom: 16px;
+}
+
+ol > li > a {
+    font-weight: bold;
+    color: #ff444f;
+}
+
+ol > p {
+    margin-bottom: 16px;
+}
+
+ol > p > a {
+    font-weight: bold;
+    color: #ff444f;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+ul > li {
+    margin-bottom: 16px;
+}
+
 .subheader {
     font-size: 24px;
     line-height: 1.5;
@@ -265,7 +295,7 @@ form > fieldset > input[type="text"] {
     color: #ff444f;
 }
 
-.page-content > p {
+p {
     margin-bottom: 16px;
 }
 
@@ -485,10 +515,10 @@ footer {
 code {
     border-radius: 4px;
     padding: 2px 4px;
-    color: #c7254e;
+    color: #ff444f;
     font-size: 90%;
-    border: 1px solid #eceff1;
-    font-weight: 400;
+    border: 1px solid #eaeced;
+    font-weight: bold;
 }
 
 .card {
@@ -514,7 +544,7 @@ code {
 pre {
     border-radius: 4px;
     padding: 24px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 16px;
     background: #1d1f20;
     font-size: inherit;
     overflow: auto;
