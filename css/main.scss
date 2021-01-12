@@ -25,6 +25,132 @@ a {
     z-index: 100;
 }
 
+/* Main Page Goodies */
+.hero-image {
+    background-image: linear-gradient(
+    rgba(0,0,0,0.16), 
+    rgba(0,0,0, 0.16)), 
+    url("/img/header.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 105px;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: fit-content;
+}
+
+.hero-text > h1 {
+    font-size: 64px;
+    font-weight: bold;
+    line-height: 1.25;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.hero-text > p {
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 32px;
+}
+
+.hero-btn {
+    padding: 10px 16px;
+    border-radius: 4px;
+    background-color: #ff444f;
+    color: #ffffff;
+}
+
+.main-page-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0px;
+}
+
+.with-pattern {
+    background-image: url("/img/pattern.svg");
+    object-fit: contain;
+}
+
+.cta-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 308px;
+    padding: 80px 120px;
+    background-color: rgba(242, 243, 244, 0.3);
+}
+
+.cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-right: 24px;
+}
+
+.main-register-btn {
+    padding: 10px 16px;
+    border-radius: 4px;
+    background-color: #ff444f;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+
+.main-page-card {
+    width: 316px;
+    padding: 32px 24px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(14, 14, 14, 0.1);
+    background-color: #ffffff;
+    margin-right: 24px;
+}
+
+.main-page-card > .header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.main-page-card > .content {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333333;
+}
+
+.card-icon {
+    text-align: right;
+}
+
 .flex-container {
     display: flex;
     align-items: center;
@@ -185,10 +311,38 @@ ul > li {
     margin-bottom: 40px;
 }
 
+.cta-grid {
+    display: grid;
+    height: fit-content;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 40px;
+    width: 1fr;
+}
+
+.cta-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.cta-box > h2 {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.25;
+    text-align: center;
+}
+
 .cta-button {
+    width: fit-content;
     padding: 10px 16px;
     border-radius: 4px;
     border: solid 2px #999999;
+}
+
+a > .cta-button {
+    color: #333333;
 }
 
 .cta-button:hover {
@@ -290,7 +444,7 @@ form > fieldset > input[type="text"] {
     margin-bottom: 24px;
 }
 
-.page-content > p > a {
+p > a {
     font-weight: bold;
     color: #ff444f;
 }
@@ -310,7 +464,11 @@ p {
 }
 
 #content {
-    padding: 80px 120px;
+    padding: 80px 24px;
+}
+
+#content > h1 {
+    margin-top: 105px;
 }
 
 .page-wrapper {
@@ -322,7 +480,8 @@ p {
 .sidebar-left {
     display: flex;
     flex-direction: column;
-    min-width: 180px;
+    max-width: 197px;
+    min-width: 197px;
 }
 
 .sidebar-left > a {
@@ -513,7 +672,6 @@ footer {
 
 /* Accordion */
 .accordion { 
-    width: 100%;
     max-height: 56px;
     padding: 16px 40px;
     border: none;
@@ -528,7 +686,6 @@ footer {
 }
 
 .accordion-panel {
-    width: 100%;
     height: fit-content;
     padding: 24px 40px;
     background-color: #fbfbfb;
@@ -548,6 +705,10 @@ footer {
 
 .accordion-wrapper {
     margin-bottom: 24px;
+}
+
+.accordion-button {
+    float: right;
 }
 
 /* Code Syntax Highlighting Related */
@@ -699,6 +860,141 @@ pre {
     overflow: auto;
     white-space: pre-wrap;
     word-break: break-word;
+}
+
+.playground-page {
+    display: grid;
+    height: fit-content;
+    grid-template-columns: 0.6fr 0.4fr;
+    grid-template-rows: 1fr;
+    column-gap: 24px;
+    width: 100%;
+    padding: 0px 24px;
+}
+
+.playground-selector {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: fit-content;
+    width: 100%;
+}
+
+.playground-selector > fieldset {
+    margin: 0 24px 40px;
+}
+
+.playground-selector > fieldset > select {
+    border-radius: 3.5px;
+    border: solid 1px #323738;
+    background-color: #0e0e0e;
+}
+
+.playground-api {
+    display: flex;
+    flex-direction: column;
+}
+
+.playground-json {
+    display: flex;
+    flex-direction: column;
+}
+
+// Select Overrides
+.select2 {
+    width:100%!important;
+}
+
+.select2-container--default .select2-selection--single {
+    border: none;
+    border-radius: 3.5px !important;
+    border: solid 1px #323738 !important;
+    background-color: #0e0e0e !important;
+    color: #ffffff !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #ffffff !important;
+}
+
+.select2-container--default .select2-results__option[aria-selected=true] {
+    background-color: #333333;
+    color: black;
+}
+
+.select2-results {
+    color: #ffffff;
+    background-color: black;
+}
+
+.select2-search--dropdown {
+    background-color: black;
+}
+
+.select2-container--open .select2-dropdown--below {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border: none;
+}
+
+// Dark Mode
+.dark {
+    background-color: #0e0e0e;
+    color: #c2c2c2;
+}
+
+.dark > .sidebar-title, .dark > .selected {
+    color: #ffffff !important;
+}
+
+.dark > a {
+    color: #c2c2c2;
+}
+
+.dark > .vertical-separator {
+    background-color: #151717;
+}
+
+.dark > .cta {
+    padding: unset;
+    background-color: inherit;
+}
+
+.dark > .cta > h2 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 0.83;
+    color: #ffffff;
+    margin-bottom: 24px;
+}
+
+.dark > .cta > a > .cta-button {
+    background-color: inherit;
+    color: #ffffff;
+}
+
+.dark > #api-token-fieldset > input[type="text"] {
+    width: 50%;
+    background-color: #0e0e0e;
+    border: none;
+}
+
+.dark > fieldset > textarea {
+    width: 100%;
+    min-height: 200px;
+    margin: 0;
+    border-radius: 4px;
+    background-color: #0e0e0e;
+    border: none;
+    color: #c2c2c2;
+}
+
+.playground-box {
+    border-radius: 6px;
+    border: none;
+    background-color: #151717;
+    padding: 40px 33px;
+    margin-bottom: 40px;
 }
 
 @import "monokai.css";

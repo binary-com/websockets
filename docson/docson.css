@@ -17,10 +17,11 @@
 .docson .box {
     position: relative;
     float: left;
-    background-color:rgba(255, 255, 255, 0.2);
-    border: 1px solid lightgrey;
+    background-color: #1d1f20;
+    border: none;
     border-radius: 4px;
     padding-bottom: 10px;
+    margin-bottom: 40px;
 }
 
 .docson .expand-button {
@@ -55,24 +56,25 @@
 }
 
 .docson .box-header {
-    padding: 6px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    border-bottom: 1px solid lightgrey;
-    background: whitesmoke;
+    padding: 24px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border: none;
+    background: #151717;
    /* background: -webkit-linear-gradient(ghostwhite, whitesmoke, whitesmoke, gainsboro);
     background: -moz-linear-gradient(ghostwhite, whitesmoke, whitesmoke, gainsboro);*/
 }
 
 .docson .box-name {
-    color: darkblue;
-    padding: 5px 40px 2px 3px;
-    float: left;
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
 }
 
 .docson .title {
-    margin-top: -3px;
-    font-size: 120%;
+    font-size: 24px;
+    margin-bottom: 8px;
 }
 
 .docson .link {
@@ -80,9 +82,8 @@
 }
 
 .docson .box-description {
-    color: dimgray;
+    color: #c2c2c2;
     float: left;
-    width:100%;
 }
 
 .docson .end {
@@ -94,8 +95,7 @@
 }
 
 .docson .box-body {
-    padding-left: 10px;
-    padding-right: 28px;
+    padding: 40px 24px;
     clear: both;
 }
 
@@ -148,20 +148,20 @@
 }
 
 .docson .signature {
-    padding-top: 5px;
     clear: left;
+    margin-bottom: 24px;
 }
 
 .docson .signature-header {
-    padding-top: 3px;
     height: 20px;
     line-height: 24px;
 }
 
 .docson .property-name {
     float: left;
-    font-family: "Lucida Console", Monaco, monospace;
     min-width: 130px;
+    color: #ffffff;
+    font-size: 16px;
 }
 
 .docson .required {
@@ -179,13 +179,14 @@
 }
 
 .docson .type-enum {
-    color: purple;
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 90%;
-    border: 1px solid #dedede;
+    font-size: 14px;
+    line-height: 1.43;
+    color: #85acb0;
+    border: none;
     padding: 2px 5px;
     white-space: nowrap;
     border-radius: 4px;
+    background-color: rgb(133, 172, 176, 0.16);
 }
 
 .docson .type-default {
@@ -205,7 +206,7 @@
 }
 
 .docson .signature-type-string {
-    color: green;
+    color: #9ed178;
 }
 
 .docson .signature-type-number {
@@ -213,7 +214,7 @@
 }
 
 .docson .signature-type-integer {
-    color: blueviolet;
+    color: #85acb0;
 }
 
 .docson .signature-type-boolean {
@@ -253,7 +254,8 @@
     cursor: pointer;
     padding: 4px;
     border-radius: 4px;
-    border: 1px solid lightgrey;
+    border: solid 1px #9ed178;
+    background-color: #1d1f20;
     -moz-border-radius: 4px;
 }
 
@@ -271,8 +273,6 @@
 }
 
 .docson .signature-description {
-    padding-left: 6px;
-    padding-bottom: 3px;
     color: dimgray;
     float: left;
     max-width: 600px;
@@ -319,18 +319,23 @@
 }
 
 .docson .desc {
-    padding-left: 6px;
     line-height: 17px;
 }
 
 .docson .desc p {
     margin: 0;
     margin-top: 3px;
+    font-size: 14px;
 }
 
 .docson .desc code {
-    color: purple;
-    font-size: 90%;
+    background-color: rgb(255, 255, 255, 0.16);
+    border: none;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.14;
+    color: #ffffff;
+    margin-left: 8px;
 }
 
 
@@ -468,11 +473,14 @@
 }
 
 .docson .scopes {
-    float:left;
-    display: inline-block;
-    padding-left: 6px;
-    margin-top: 5px;
+    float: right;
+    margin-bottom: 0px;
+    font-size: 14px;
 }
 .docson .scopes .type-enum {
-    background: #fff;
+    background-color: rgb(133, 172, 176, 0.16);
+}
+
+.docson span {
+    font-size: 14px;
 }

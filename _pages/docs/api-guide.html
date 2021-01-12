@@ -1,0 +1,112 @@
+--- 
+layout: documentation
+permalink: docs/api-guide/ 
+---
+
+<h1>API guide</h1>
+
+<h2>App registration</h2>
+<div class="text-block">
+    <h3>Register your app before using our API. Here’s how:</h3>
+    <ol>
+        <li><a href="https://deriv.com">Open a Deriv account</a> (either a demo or real account).</li>
+        <li><a href="https://www.binary.com/en/user/security/api_tokenws.html">Create a new token</a> using the <strong>admin</strong> scope.</li>
+        <li><a href="/docs/app-registration/">Register</a> your app to obtain your <code>app_id</code>.</li>
+    </ol>
+</div>
+
+<h2>Client authentication</h2>
+<div class="text-block">
+    <p>Certain API calls require client authentication (e.g. <a href="/playground/#portfolio"><code>portfolio</code></a>) whilst other calls do not (e.g. <a href="/playground/#ticks"><code>ticks</code></a>).</p>
+    <h3>There are 2 ways to do client authentication:</h3>
+    <ol>
+        <li>Client authentication by app-specific API tokens</li>
+        <p>Clients can generate API tokens by logging to their Deriv account and going to <strong>Security & Limits</strong> > 
+            <a href="https://www.binary.com/en/user/security/api_tokenws.html">API token</a>.
+        </p>
+        <li>Client authentication by OAuth</li>
+        <p>Send clients to:</p>
+        <pre>https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..]</pre>
+        <p>Our system will authenticate the client and send them to the redirect URL you gave us during app registration. A valid token will be returned in the <code>token</code> parameter of the URL.</p>
+        <p>To display the authentication form in another language, add the language code to the OAuth URL as follows:</p>
+        <pre>https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..]&l=ZH_CN</pre>
+        <p>Complete the authentication by calling <a href="/playground/#authorize"><code>authorize</code></a> using clients’ API token.</p>
+    </ol>
+</div>
+
+<h2>Token scopes</h2>
+<div class="text-block">
+    <h3>Each token can have one or more of these scopes:</h3>
+    <ul class="bullet">
+        <li>read - for calls that only read client’s data</li>
+        <li>trade - for calls that can create trades</li>
+        <li>trading_information - for calls that can read information on client’s trades</li>
+        <li>payments - for calls that can access the cashier (for deposits and withdrawals)</li>
+        <li>admin - for calls that can change client’s settings</li>
+    </ul>
+    <p>Explore our <a href="/playground/">API playground</a> to learn about the required scope for all our API calls.</p>
+</div>
+
+<h2>Opening Deriv accounts</h2>
+<div class="text-block">
+    <p>To open accounts via our API, you’ll first need to verify the client's email address using 
+        <a href="/playground/#verify_email"><code>verify_email</code></a>.</p>
+    <p>To open a virtual account, use 
+        <a href="/playground/#new_account_virtual"><code>new_account_virtual</code></a> and then 
+        <a href="/playground/#topup_virtual"><code>topup_virtual</code></a> to top-up the new account with virtual money.</p>
+    <p>To open a real account, use 
+        <a href="/playground/#residence_list"><code>residence_list</code></a> and 
+        <a href="/playground/#states_list"><code>states_list</code></a> to get the information needed for the account opening form. Once you have all the necessary information, use 
+        <a href="/playground/#new_account_real"><code>new_account_real</code></a>.
+    </p>
+    <p>If you are a registered affiliate, remember to include the <code>affiliate_token</code> parameter. You’ll earn commission for every new account.</p>
+    <p>Based on the client’s country of residence, use 
+        <a href="/playground/#landing_company"><code>landing_company</code></a> to determine which landing company the account will be opened with. Use 
+        <a href="/playground/#landing_company_details"><code>landing_company_details</code></a> to get information about the landing company
+    </p>
+</div>
+
+<h2>Accounting functionalites</h2>
+<div class="text-block">
+    <p>You may get a client's 
+        <a href="/playground/#portfolio"><code>portfolio</code></a>, 
+        <a href="/playground/#statement"><code>statement</code></a>, 
+        <a href="/playground/#profit_table"><code>profit_table</code></a>, and their account 
+        <a href="/playground/#balance"><code>balance</code></a>. You may also sell an expired contract with 
+        <a href="/playground/#sell_expired"><code>sell_expired</code></a>, or generate a real time stream of 
+        <a href="/playground/#transaction"><code>transactions</code></a>
+    </p>
+</div>
+
+<h2>Option prices</h2>
+<div class="text-block">
+    <ul class="bullet">
+        <li>To price an option, call <a href="/playground/#proposal"><code>proposal</code></a>.</li>
+        <li>To price options that are open in a client's portfolio, use <a href="/playground/#proposal_open_contract"><code>proposal_open_contract</code></a>.</li>
+    </ul>
+</div>
+
+<h2>Payment agents</h2>
+<div class="text-block">
+    <ul class="bullet">
+        <li>Clients may withdraw via a payment agent using <a href="/playground/#paymentagent_withdraw"><code>paymentagent_withdraw</code></a>.</li>
+        <li>Payment agents may credit clients’ accounts using <a href="/playground/#paymentagent_transfer"><code>paymentagent_transfer</code></a>.</li>
+    </ul>
+</div>
+
+<h2>Utility calls</h2>
+<div class="text-block">
+    <ul class="bullet">
+        <li>To keep the connection alive, use <a href="/playground/#ping"><code>ping</code></a>.</li>
+        <li>Get the server time with <a href="/playground/#time"><code>time</code></a>.</li>
+        <li>Get the status of the website with <a href="/playground/#website_status"><code>website_status</code></a>.</li>
+    </ul>
+</div>
+
+<h2>Streams</h2>
+<div class="text-block">
+    <p>Some functions generate streams of data (e.g. 
+        <a href="/playground/#ticks"><code>ticks</code></a>) while others don’t. Use 
+        <a href="/playground/#forget"><code>forget</code></a> to cancel an outstanding stream.
+    </p>
+</div>

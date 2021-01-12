@@ -603,7 +603,7 @@ function toggleTheme() {
 function addEventListeners() {
     $('#api-call-selector').select2({
         matcher: customMatcher,
-    }).on('change', function() {
+    }).on('change', function(e) {
         var method_name = $('#api-call-selector').val();
         var json_paths  = getJsonPaths(method_name);
 
@@ -613,7 +613,7 @@ function addEventListeners() {
 
         window.location.hash = method_name;
     });
-
+    
     $('#playground-send-btn').on('click', function() {
         updatePlaygroundWithRequestAndResponse();
     });

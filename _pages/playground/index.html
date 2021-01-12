@@ -1,0 +1,22 @@
+---
+layout: playground
+permalink: playground/
+---
+
+<div class="playground-selector">
+    {% include api-selector.html %}
+    <div class="playground-page dark">
+        <div id="playground" class="playground-api">
+            <div id="playground-req-schema"></div>
+            <div id="playground-res-schema"></div>
+        </div>
+        <div class="playground-json">
+            <div class="playground-box dark">
+                {% include token-input.html %}
+            </div>
+            <div class="playground-box dark">
+                {% include api-playground-field.html %}
+            </div>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div id="content">
+  {% assign branch = site.baseurl %}
+  {% if site.baseurl == '/websockets' %}
+    {% assign branch = '' %}
+  {% endif %}
+
+  {% include mobile-page-selector.html %}
+  <div class="page-wrapper">
+      {% include sidebar.html %}
+      <div class="vertical-separator"></div>
+      <div class="page-content">
+          {{ content }}
+      </div>
+  </div>
+</div>

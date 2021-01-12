@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div id="content" class="dark">
+  {% assign branch = site.baseurl %}
+  {% if site.baseurl == '/websockets' %}
+    {% assign branch = '' %}
+  {% endif %}
+  
+  <h1 class="dark">API Playground</h1>
+  <div class="page-wrapper dark">
+      {% include playground-sidebar.html %}
+      <div class="vertical-separator"></div>      
+        {{ content }}
+  </div>
+</div>
+
