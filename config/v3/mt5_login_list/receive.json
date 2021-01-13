@@ -82,6 +82,10 @@
                         "description": "Name of the owner of the MT5 account.",
                         "type": "string"
                     },
+                    "server": {
+                        "description": "Trade server name of the MT5 account.",
+                        "type": "string"
+                    },
                     "sub_account_type": {
                         "description": "Sub account type",
                         "type": "string",

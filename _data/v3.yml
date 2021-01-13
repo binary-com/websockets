@@ -181,6 +181,8 @@ groups:
         title: Top Up Virtual-Money Account
       - name: trading_durations
         title: Trading Durations
+      - name: trading_servers
+        title: Server list
       - name: trading_times
         title: Trading Times
       - name: transaction

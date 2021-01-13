@@ -1,0 +1,96 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Server list (response)",
+    "description": "Get list of servers for the platform provided.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "trading_servers": {
+            "title": "trading_servers",
+            "description": "Array containing platform server objects.",
+            "type": "array",
+            "items": {
+                "title": "Details of each server.",
+                "type": "object",
+                "properties": {
+                    "disabled": {
+                        "description": "Flag to represent if this server is currently disabled or not",
+                        "type": "integer",
+                        "enum": [
+                            0,
+                            1
+                        ]
+                    },
+                    "environment": {
+                        "description": "Current environment (installation instance) where servers are deployed. Currently, there is only one environment instance.",
+                        "type": "string",
+                        "enum": [
+                            "env_01"
+                        ]
+                    },
+                    "geolocation": {
+                        "description": "Object containing geolocation information of the server.",
+                        "type": "object",
+                        "properties": {
+                            "location": {
+                                "description": "Geolocation country or place where server is located.",
+                                "type": "string"
+                            },
+                            "region": {
+                                "description": "Geolocation region where server is located.",
+                                "type": "string"
+                            },
+                            "sequence": {
+                                "description": "Sequence number of the server in that region.",
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "id": {
+                        "description": "Server unique id.",
+                        "type": "string",
+                        "enum": [
+                            "real01",
+                            "real02",
+                            "real03",
+                            "real04"
+                        ]
+                    },
+                    "recommended": {
+                        "description": "Flag to represent if this is server is recommended based on client's country of residence.",
+                        "type": "integer",
+                        "enum": [
+                            0,
+                            1
+                        ]
+                    },
+                    "supported_accounts": {
+                        "description": "Account type supported by the server.",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "trading_servers"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}
