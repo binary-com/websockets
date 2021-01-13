@@ -502,7 +502,7 @@ function setEndpoint(server_url, app_id, brand) {
 // ===== General Functions =====
 // -----------------------------
 function isProduction(url) {
-    return url && /(developers\.binary\.com|binary\.sx)/i.test(url);
+    return url && (/(developers\.binary\.com|binary\.sx)/i.test(url) || /(\.netlify\.app)/i.test(url));
 }
 
 function isLocal(url) {
