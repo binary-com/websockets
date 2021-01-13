@@ -9,7 +9,7 @@ markdown: kramdown
 
 defaults:
   - scope:
-      path: "img"
+      path: "/img/"
     values:
       image: true
 collections:
