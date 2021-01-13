@@ -7,11 +7,6 @@ github_username:  binary-com
 # Build settings
 markdown: kramdown
 
-defaults:
-  - scope:
-      path: "/img/"
-    values:
-      image: true
 collections:
   pages:
     output: true
