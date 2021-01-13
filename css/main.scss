@@ -13,9 +13,106 @@
     margin: 0;
 }
 
-/* General Page Contents */
 a {
+    color: #ff444f;
     text-decoration: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.top-nav > a {
+    margin-right: 40px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #c2c2c2;
+}
+
+/* Tpography Definitions */
+.hero-text > p {
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 32px;
+}
+
+.single-container > h1 {
+    margin-bottom: 12px;
+}
+
+.single-container > p {
+    margin-bottom: 32px;
+}
+
+.branding {
+    display: inline;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #ffffff;
+    margin-left: 24px;
+    margin-bottom: 0;
+}
+
+h1 {
+    margin-bottom: 40px;
+    font-size: 48px;
+    line-height: 1.5;
+    text-align: center;
+    color: #333333;
+}
+
+h2 {
+    margin-bottom: 16px;
+    font-size: 36px;
+    line-height: 1.5;
+    color: #333333;
+}
+
+h3 {
+    margin-bottom: 16px;
+    font-size: 24px;
+    line-height: 1.5;
+    color: #333333;
+}
+
+#content > h1 {
+    margin-top: 105px;
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+ol > p {
+    margin-bottom: 16px;
+}
+
+/* End of Typography */
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: fit-content;
+}
+
+.hero-header {
+    font-size: 64px;
+    font-weight: bold;
+    line-height: 1.25;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-text {
+    font-weight: normal;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 32px;
 }
 
 .nav {
@@ -25,7 +122,6 @@ a {
     z-index: 100;
 }
 
-/* Main Page Goodies */
 .hero-image {
     background-image: linear-gradient(
     rgba(0,0,0,0.16), 
@@ -39,31 +135,6 @@ a {
     justify-content: center;
     align-items: center;
     margin-top: 105px;
-}
-
-.hero-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    height: fit-content;
-}
-
-.hero-text > h1 {
-    font-size: 64px;
-    font-weight: bold;
-    line-height: 1.25;
-    text-align: center;
-    color: #ffffff;
-    margin-bottom: 16px;
-}
-
-.hero-text > p {
-    font-size: 24px;
-    line-height: 1.5;
-    text-align: center;
-    color: #ffffff;
-    margin-bottom: 32px;
 }
 
 .hero-btn {
@@ -98,14 +169,6 @@ a {
     margin-bottom: 24px;
 }
 
-.single-container > h1 {
-    margin-bottom: 12px;
-}
-
-.single-container > p {
-    margin-bottom: 32px;
-}
-
 .container {
     display: flex;
     flex-direction: row;
@@ -114,6 +177,10 @@ a {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.text-block {
+    margin-bottom: 40px;
 }
 
 .single-container > h2 {
@@ -214,23 +281,6 @@ a {
     padding: 7px 0px 7px 120px;
 }
 
-.top-nav > a {
-    margin-right: 40px;
-    font-size: 12px;
-    line-height: 1.5;
-    color: #c2c2c2;
-}
-
-header > a > h1 {
-    display: inline;
-    font-size: 18px;
-    font-weight: normal;
-    line-height: 1.5;
-    color: #ffffff;
-    margin-left: 24px;
-    margin-bottom: 0;
-}
-
 header {
     display: flex;
     align-items: center;
@@ -287,51 +337,12 @@ nav > a:hover:before {
     padding-left: 40px;
 }
 
-h1 {
-    margin-bottom: 40px;
-    font-size: 48px;
-    font-weight: bold;
-    line-height: 1.25;
-    text-align: center;
-    color: #333333;
-}
-
-h2 {
-    margin-bottom: 16px;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 1.5;
-    color: #333333;
-}
-
-h3 {
-    margin-bottom: 16px;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 1.5;
-    color: #333333;
-}
-
 ol {
     margin-left: 20px;
 }
 
 ol > li {
     margin-bottom: 16px;
-}
-
-ol > li > a {
-    font-weight: bold;
-    color: #ff444f;
-}
-
-ol > p {
-    margin-bottom: 16px;
-}
-
-ol > p > a {
-    font-weight: bold;
-    color: #ff444f;
 }
 
 ul {
@@ -428,10 +439,6 @@ fieldset > textarea {
     margin: 0 20%;
 }
 
-.scopes {
-    margin-bottom: 16px;
-}
-
 .scopes > input[type="checkbox"] {
     width: 16px;
     height: 16px;
@@ -442,7 +449,6 @@ fieldset > textarea {
     width: fit-content;
     height: 40px;
     padding: 10px 11px;
-    opacity: 0.32;
     border: none;
     border-radius: 4px;
     background-color: #ff444f;
@@ -492,19 +498,6 @@ form > fieldset > input[type="text"] {
     margin-bottom: 24px;
 }
 
-p > a {
-    font-weight: bold;
-    color: #ff444f;
-}
-
-p {
-    margin-bottom: 16px;
-}
-
-.page-content > .text-block {
-    margin-bottom: 24px;
-}
-
 #mobile-page-selector {
     width: 100%;
     display: none;
@@ -513,10 +506,6 @@ p {
 
 #content {
     padding: 80px 24px;
-}
-
-#content > h1 {
-    margin-top: 105px;
 }
 
 .page-wrapper {
@@ -577,145 +566,11 @@ p {
     color: #333333;
 }
 
-footer {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 889px;
-    margin: 1px 0 0;
-    padding: 40px 120px;
-    background-color: #f2f3f4;
-    color: #333333;
-}
-
-.footer-row {
-    display: flex;
-    width: 100%;
-    height: auto;
-    min-height: 461px;
-}
-
-.left {
-    display: flex;
-    flex-direction: column;
-    max-width: 564px;
-}
-
-.right {
-    display: grid;
-    height: fit-content;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    column-gap: 24px;
-    row-gap: 24px;
-    width: 1038px;
-}
-
-.bottom {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.horizontal-separator {
-    width: 100%;
-    height: 1px;
-    background-color: rgba(255, 68, 79, 0.56);
-    margin-bottom: 16px;
-}
-
 .horizontal-separator-grey {
     width: 100%;
     height: 1px;
     background-color: #eaeced;  
     margin-bottom: 40px;
-}
-
-.footer-logo {
-    margin-bottom: 22px;
-}
-
-.footer-text {
-    width: 50%;
-    margin-bottom: 32px;
-}
-
-.footer-language {
-    width: 180px;
-    height: fit-content;
-    padding: 8px 10px 8px 12px;
-    border-radius: 4px;
-    border: solid 1px #d6dadb;
-    background-color: inherit;
-}
-
-.footer-copyright {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 54px;
-    color: #ffffff;
-    background-color: #000000;
-}
-
-.footer-copyright > p {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #ffffff;
-    margin-left: 120px;
-}
-
-.ssm-icon-wrapper {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 36px;
-}
-
-.ssm-icons {
-    margin-right: 12px;
-}
-
-.ssm > p {
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-}
-
-.site-link {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    margin-right: 24px;
-}
-
-.site-link > .header {
-    font-weight: 700;
-    line-height: 1.5;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    color: #000000;
-}
-
-.right > .site-link > a {
-    color: #333333;
-    margin-bottom: 8px;
-}
-
-.license-text {
-    margin-bottom: 12px;
-}
-
-.license-text > a {
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 1.31;
-    color: #333333;
-}
-
-.warning-block {
-    background-color: #f3f5f8;
-    border-left: 4px solid rgb(248, 162, 168);
-    padding: 1.6rem;
 }
 
 /* Accordion */
@@ -739,16 +594,6 @@ footer {
     background-color: #fbfbfb;
     display: none;
     margin-bottom: 24px;
-}
-
-.accordion-panel > a {
-    font-weight: bold;
-    color: #ff444f;
-}
-
-.accordion-panel > p > a {
-    font-weight: bold;
-    color: #ff444f;
 }
 
 .accordion-wrapper {
@@ -988,7 +833,6 @@ pre {
 // Dark Mode
 .dark {
     background-color: #0e0e0e;
-    color: #c2c2c2;
 }
 
 .dark > .sidebar-title, .dark > .selected {
@@ -996,6 +840,10 @@ pre {
 }
 
 .dark > a {
+    color: #c2c2c2;
+}
+
+.dark > p {
     color: #c2c2c2;
 }
 

@@ -257,6 +257,7 @@
     border: solid 1px #9ed178;
     background-color: #1d1f20;
     -moz-border-radius: 4px;
+    color: #c2c2c2;
 }
 
 .docson .signature-type-ref {
@@ -273,7 +274,7 @@
 }
 
 .docson .signature-description {
-    color: dimgray;
+    color: #c2c2c2;
     float: left;
     max-width: 600px;
     width: 100%;
@@ -477,6 +478,7 @@
     float: right;
     margin-bottom: 0px;
     font-size: 14px;
+    color: #c2c2c2;
 }
 .docson .scopes .type-enum {
     background-color: rgb(133, 172, 176, 0.16);

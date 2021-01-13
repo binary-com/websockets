@@ -5,35 +5,37 @@ permalink: docs/
 
 <h1>Quickstart to Deriv API</h1>
 
-<h2>Opening a connection</h2>
-
-<p>Use this code to open a connection to our WebSocket service (in Javascript):</p>
-
-<div class="card">
-    <div class="card-header">JavaScript</div>
-    <pre data-language="javascript">var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=XXX');</pre>
+<div class="text-block">
+    <h3>Opening a connection</h3>
+    <p>Use this code to open a connection to our WebSocket service (in Javascript):</p>
+    <div class="card">
+        <div class="card-header">JavaScript</div>
+        <pre data-language="javascript">var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=XXX');</pre>
+    </div>    
+    <p>
+        After opening a connection, you can send data through the WebSocket using the method calls from our 
+        <a class="bold" href="{{ branch }}/playground/#api_token">API playground</a>.
+        Data transfer in both directions is handled by structured <a class="bold" href="json-schemas/">JSON-encoded data</a>.
+    </p>
+    <p>All field name identifiers and most field values are double-quoted in the encoded data.</p>
 </div>
 
-<p>
-    After opening a connection, you can send data through the WebSocket using the method calls from our <a href="{{ branch }}/playground/#api_token">API playground</a>.
-    Data transfer in both directions is handled by structured <a href="json-schemas/">JSON-encoded data</a>.
-</p>
-
-<p>All field name identifiers and most field values are double-quoted in the encoded data.</p>
-
-<h2>App ID</h2>
-
-<p>You’ll get your app ID when you register your app with us.</p>
-
-<h2>Code samples</h2>
-
-<p>See our <a href="/demos">code samples</a> in languages other than JavaScript.</p>
-
-<h2>Multi-language support</h2>
-
-<p>To receive responses in other languages, add the language code to the connection URL:</p>
-
-<div class="card">
-    <div class="card-header">JavaScript</div>
-    <pre data-language="javascript">var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=XXX&l=RU');</pre>
+<div class="text-block">
+    <h3>App ID</h3>
+    <p>You’ll get your app ID when you register your app with us.</p>
 </div>
+
+<div class="text-block">
+    <h3>Code samples</h3>
+    <p>See our <a class="bold" href="/demos">code samples</a> in languages other than JavaScript.</p>    
+</div>
+
+<div class="text-block">
+    <h3>Multi-language support</h3>
+    <p>To receive responses in other languages, add the language code to the connection URL:</p>
+    <div class="card">
+        <div class="card-header">JavaScript</div>
+        <pre data-language="javascript">var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=XXX&l=RU');</pre>
+    </div>
+</div>
+

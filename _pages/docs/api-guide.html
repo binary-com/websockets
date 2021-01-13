@@ -5,24 +5,24 @@ permalink: docs/api-guide/
 
 <h1>API guide</h1>
 
-<h2>App registration</h2>
 <div class="text-block">
-    <h3>Register your app before using our API. Here’s how:</h3>
+    <h3>App registration</h3>
+    <p class="bold">Register your app before using our API. Here’s how:</p>
     <ol>
-        <li><a href="https://deriv.com">Open a Deriv account</a> (either a demo or real account).</li>
-        <li><a href="https://www.binary.com/en/user/security/api_tokenws.html">Create a new token</a> using the <strong>admin</strong> scope.</li>
-        <li><a href="/docs/app-registration/">Register</a> your app to obtain your <code>app_id</code>.</li>
-    </ol>
+        <li><a class="bold" href="https://deriv.com">Open a Deriv account</a> (either a demo or real account).</li>
+        <li><a class="bold" href="https://www.binary.com/en/user/security/api_tokenws.html">Create a new token</a> using the <strong>admin</strong> scope.</li>
+        <li><a class="bold" href="/docs/app-registration/">Register</a> your app to obtain your <code>app_id</code>.</li>
+    </ol> 
 </div>
 
-<h2>Client authentication</h2>
 <div class="text-block">
+    <h3>Client authentication</h3>
     <p>Certain API calls require client authentication (e.g. <a href="/playground/#portfolio"><code>portfolio</code></a>) whilst other calls do not (e.g. <a href="/playground/#ticks"><code>ticks</code></a>).</p>
-    <h3>There are 2 ways to do client authentication:</h3>
+    <p class="bold">There are 2 ways to do client authentication:</p>
     <ol>
         <li>Client authentication by app-specific API tokens</li>
         <p>Clients can generate API tokens by logging to their Deriv account and going to <strong>Security & Limits</strong> > 
-            <a href="https://www.binary.com/en/user/security/api_tokenws.html">API token</a>.
+            <a class="bold" href="https://www.binary.com/en/user/security/api_tokenws.html">API token</a>.
         </p>
         <li>Client authentication by OAuth</li>
         <p>Send clients to:</p>
@@ -34,9 +34,9 @@ permalink: docs/api-guide/
     </ol>
 </div>
 
-<h2>Token scopes</h2>
 <div class="text-block">
-    <h3>Each token can have one or more of these scopes:</h3>
+    <h3>Token scopes</h3>
+    <p class="bold">Each token can have one or more of these scopes:</p>
     <ul class="bullet">
         <li>read - for calls that only read client’s data</li>
         <li>trade - for calls that can create trades</li>
@@ -44,11 +44,11 @@ permalink: docs/api-guide/
         <li>payments - for calls that can access the cashier (for deposits and withdrawals)</li>
         <li>admin - for calls that can change client’s settings</li>
     </ul>
-    <p>Explore our <a href="/playground/">API playground</a> to learn about the required scope for all our API calls.</p>
+    <p>Explore our <a class="bold" href="/playground/">API playground</a> to learn about the required scope for all our API calls.</p> 
 </div>
 
-<h2>Opening Deriv accounts</h2>
 <div class="text-block">
+    <h3>Opening Deriv accounts</h3>
     <p>To open accounts via our API, you’ll first need to verify the client's email address using 
         <a href="/playground/#verify_email"><code>verify_email</code></a>.</p>
     <p>To open a virtual account, use 
@@ -66,8 +66,8 @@ permalink: docs/api-guide/
     </p>
 </div>
 
-<h2>Accounting functionalites</h2>
 <div class="text-block">
+    <h3>Accounting functionalites</h3>
     <p>You may get a client's 
         <a href="/playground/#portfolio"><code>portfolio</code></a>, 
         <a href="/playground/#statement"><code>statement</code></a>, 
@@ -78,24 +78,24 @@ permalink: docs/api-guide/
     </p>
 </div>
 
-<h2>Option prices</h2>
 <div class="text-block">
+    <h3>Option prices</h3>
     <ul class="bullet">
         <li>To price an option, call <a href="/playground/#proposal"><code>proposal</code></a>.</li>
         <li>To price options that are open in a client's portfolio, use <a href="/playground/#proposal_open_contract"><code>proposal_open_contract</code></a>.</li>
     </ul>
 </div>
 
-<h2>Payment agents</h2>
 <div class="text-block">
+    <h3>Payment agents</h3>
     <ul class="bullet">
         <li>Clients may withdraw via a payment agent using <a href="/playground/#paymentagent_withdraw"><code>paymentagent_withdraw</code></a>.</li>
         <li>Payment agents may credit clients’ accounts using <a href="/playground/#paymentagent_transfer"><code>paymentagent_transfer</code></a>.</li>
     </ul>
 </div>
 
-<h2>Utility calls</h2>
 <div class="text-block">
+    <h3>Utility calls</h3>
     <ul class="bullet">
         <li>To keep the connection alive, use <a href="/playground/#ping"><code>ping</code></a>.</li>
         <li>Get the server time with <a href="/playground/#time"><code>time</code></a>.</li>
@@ -103,8 +103,8 @@ permalink: docs/api-guide/
     </ul>
 </div>
 
-<h2>Streams</h2>
 <div class="text-block">
+    <h3>Streams</h3>
     <p>Some functions generate streams of data (e.g. 
         <a href="/playground/#ticks"><code>ticks</code></a>) while others don’t. Use 
         <a href="/playground/#forget"><code>forget</code></a> to cancel an outstanding stream.
