@@ -21,7 +21,7 @@ a {
 .nav {
     width: 100%;
     position: fixed;
-    top: 0px;
+    top: 0;
     z-index: 100;
 }
 
@@ -84,6 +84,44 @@ a {
     padding: 80px 0px;
 }
 
+.single-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: fit-content;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-container > img {
+    margin-bottom: 24px;
+}
+
+.single-container > h1 {
+    margin-bottom: 12px;
+}
+
+.single-container > p {
+    margin-bottom: 32px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 208px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-container > h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
 .with-pattern {
     background-image: url("/img/pattern.svg");
     object-fit: contain;
@@ -92,10 +130,12 @@ a {
 .cta-row {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     flex-wrap: nowrap;
     height: 308px;
-    padding: 80px 120px;
     background-color: rgba(242, 243, 244, 0.3);
+    padding: 0 120px;
 }
 
 .cta-container {
@@ -105,6 +145,7 @@ a {
     justify-content: center;
     width: fit-content;
     margin-right: 24px;
+    width: 40%;
 }
 
 .main-register-btn {
@@ -131,14 +172,21 @@ a {
 }
 
 .main-page-card > .header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    display: inline-block;
+    width: 100%;
+}
+
+.main-page-card > .header > h3 {
     font-size: 24px;
     font-weight: bold;
     line-height: 1.5;
     color: #333333;
     margin-bottom: 8px;
+    float: left;
+}
+
+.main-page-card > .header > img {
+    float: right;
 }
 
 .main-page-card > .content {
@@ -180,7 +228,7 @@ header > a > h1 {
     line-height: 1.5;
     color: #ffffff;
     margin-left: 24px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 header {
@@ -363,7 +411,7 @@ fieldset > input[type="text"] {
     width: 100%;
     max-width: 690px;
     height: 40px;
-    padding: 0px 12px;
+    padding: 0 12px;
     border-radius: 4px 0 0 4px;
     border: solid 1px #d6dadb;
     font-size: 14px;
@@ -869,7 +917,7 @@ pre {
     grid-template-rows: 1fr;
     column-gap: 24px;
     width: 100%;
-    padding: 0px 24px;
+    padding: 0 24px;
 }
 
 .playground-selector {

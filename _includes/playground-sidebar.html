@@ -3,7 +3,7 @@
     <p class="sidebar-title">{{ group.label }}</p>
         {%- assign sorted_methods = group.methods | sort: "title") -%}
         {%- for method in sorted_methods %}
-        <a id="{{ method.name }}" href="/playground/#{{ method.name }}">{{ method.title }}</a>
+        <a value="{{ method.name }}">{{ method.title }}</a>
         {%- endfor %}
     </optgroup>
     {% endfor %}

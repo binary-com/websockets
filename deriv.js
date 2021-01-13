@@ -3,6 +3,7 @@ window.onload = function() {
     setSideBarPlaygroundActive();
     setNavbarActive();
     setAccordionActive();
+    addPlaygroundLinkEventHandler();
 }
 
 // Set or Unsets Accordion Active Links
@@ -34,7 +35,7 @@ const setNavbarActive = () => {
     let navbarLinks = document.getElementById('navbar');
     if (!navbarLinks) return;
 
-    let currentPage = window.location.pathname.replaceAll('/','');
+    let currentPage = window.location.pathname.split('/')[1].replaceAll('/','');
     for (let i = 0; i < navbarLinks.children.length; i++) {
         if (currentPage === "") {
             navbarLinks.children[0].classList.add('selected');
@@ -79,7 +80,7 @@ const setSideBarPlaygroundActive = () => {
 
     let currentHash = window.location.hash.substr(1);
     for (let i = 0; i < sidebarLinks.children.length; i++) {
-        if (sidebarLinks.children[i].id === currentHash) {
+        if (sidebarLinks.children[i].getAttribute('value') === currentHash) {
             let child = sidebarLinks.children[i];
             child.classList.add('selected');
             break;
@@ -87,7 +88,24 @@ const setSideBarPlaygroundActive = () => {
     }
 }
 
+const addPlaygroundLinkEventHandler = () => {
+    let links = document.getElementById('playground-sidebar');
+    if (!links) return;
+
+    for (let i = 1; i < links.children.length; i++) {
+        let child = links.children[i];
+        child.removeEventListener("click", (e) => updateSelect(e));
+        child.addEventListener("click", (e) => updateSelect(e));
+    }
+}
+
+const updateSelect = (e) => {
+    $("#api-call-selector").val(e.srcElement.getAttribute('value'));
+    $("#api-call-selector").trigger('change');
+    setSideBarPlaygroundActive();
+}
+
+
 window.onhashchange = (e) => {
-    e.preventDefault();
     setSideBarPlaygroundActive();
 }
