@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Server list (request)",
+    "description": "Get the list of servers for platform. Currently, only mt5 is supported",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "trading_servers"
+    ],
+    "properties": {
+        "trading_servers": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "environment": {
+            "description": "[Optional] Pass the environment (installation) instance short code. Currently, there is only one environment instance. Defaults to 'env_01'.",
+            "type": "string",
+            "default": "env_01",
+            "enum": [
+                "env_01"
+            ]
+        },
+        "platform": {
+            "description": "[Optional] Pass the trading platform name, default to mt5",
+            "type": "string",
+            "default": "mt5",
+            "enum": [
+                "mt5"
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

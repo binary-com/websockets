@@ -121,6 +121,19 @@
             "maxLength": 50,
             "sensitive": 1
         },
+        "server": {
+            "description": "[Optional] Trade server.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "enum": [
+                "real01",
+                "real02",
+                "real03",
+                "real04"
+            ]
+        },
         "state": {
             "description": "[Optional] User's state (region) of residence.",
             "type": "string",
