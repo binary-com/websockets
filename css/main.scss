@@ -408,19 +408,22 @@ a > .cta-button {
     background-color: #999999;
 }
 
+#api-token-fieldset {
+    margin-bottom: 42px;
+}
+
 fieldset {
     width: 100%;
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 40px;
+    margin-bottom: 16px;
     flex-wrap: wrap;
 }
 
 fieldset > input[type="text"] {
     width: 100%;
-    max-width: 690px;
     height: 40px;
     padding: 0 12px;
     border-radius: 4px 0 0 4px;
@@ -430,7 +433,7 @@ fieldset > input[type="text"] {
     color: #333333;
 }
 
-fieldset > textarea {
+textarea {
     width: 100%;
     min-height: 119px;
     padding: 10px;
@@ -439,7 +442,28 @@ fieldset > textarea {
     margin: 0 20%;
 }
 
-.scopes > input[type="checkbox"] {
+.scopes {
+    width: 100%;
+}
+
+.scopes-field {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+    align-self: flex-start;
+    justify-self: center;
+}
+
+.json-btn-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+    align-self: center;
+    justify-self: center;
+}
+
+.scopes-field > input[type="checkbox"] {
     width: 16px;
     height: 16px;
     margin-right: 16px;
@@ -454,7 +478,7 @@ fieldset > textarea {
     background-color: #ff444f;
     line-height: 1.43;
     color: #ffffff;
-    margin: 24px 8px 0 0;
+    margin: 24px 8px 40px 0;
     position: relative;
 }
 
@@ -463,7 +487,7 @@ fieldset > textarea {
     height: 40px;
     padding: 10px 16px;
     border-radius: 4px;
-    margin: 24px 8px 0 0;
+    margin: 24px 8px 40px 0;
     border: solid 2px #999999;
 }
 
@@ -480,20 +504,29 @@ fieldset > textarea {
     color: #ffffff;
 }
 
-form {
+#frmNewApplication {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    margin-left: 19%;
+    width: 100%;
 }
 
-form > fieldset {
+.form-content {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
 }
 
-form > fieldset > input[type="text"] {
+.form-content > fieldset {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-content > fieldset > input[type="text"] {
     border-radius: 4px;
     margin-bottom: 24px;
 }
