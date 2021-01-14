@@ -1,6 +1,6 @@
 <div id="playground-sidebar" class="sidebar-left dark">
     {%- for group in site.data.v3.groups %}
-    <p class="sidebar-title">{{ group.label }}</p>
+    <p class="sidebar-title bold">{{ group.label }}</p>
         {%- assign sorted_methods = group.methods | sort: "title") -%}
         {%- for method in sorted_methods %}
         <a value="{{ method.name }}">{{ method.title }}</a>

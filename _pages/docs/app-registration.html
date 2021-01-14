@@ -12,39 +12,43 @@ permalink: docs/app-registration/
 <div class="horizontal-separator-grey"></div>
 
 <form id="frmNewApplication">
-    <h2>Register your app</h2>
+  <div class="form-content">
     <fieldset>
-        <input id="application-name" type="text" maxlength="48" placeholder="Name (Required)" />
-        <input id="application-redirect_uri" type="text" maxlength="255" placeholder="Redirect URL (Required)" />
-        <input id="application-verification_uri" type="text" maxlength="255" placeholder="Verification URL" />
-        <input id="application-homepage" type="text" maxlength="255" placeholder="Homepage URL" />
-        <input id="application-github" type="text" maxlength="255" placeholder="Github URL" />
-        <input id="application-appstore" type="text" maxlength="255" placeholder="Appstore URL" />
-        <input id="application-googleplay" type="text" maxlength="255" placeholder="Google Play URL" />
-        <input id="application-app_markup_percentage" type="text" maxlength="4" placeholder="Markup percentage (minimum 0.00 and maximum 5.00)" />
-        <h3>Scopes</h3>
-        <div class="scopes">
-            <input id="read-scope" type="checkbox" value="read" checked="checked" />
-            <label for="read-scope">Read: View account activity</label>
-        </div>
-        <div class="scopes">
-            <input id="trade-scope" type="checkbox" value="trade" />
-            <label for="trade-scope">Trade: Buy and sell contracts</label>
-        </div>
-        <div class="scopes">
-            <input id="trading_information-scope" type="checkbox" value="trading_information" />
-            <label for="trading_information-scope">Trading Information: View trading and balance information</label>
-        </div>
-        <div class="scopes">
-            <input id="payments-scope" type="checkbox" value="payments" />
-            <label for="payments-scope">Payments: Cashier (Deposit, Withdraw)</label>
-        </div>
-        <div class="scopes">
-            <input id="admin-scope" type="checkbox" value="admin" />
-            <label for="admin-scope">Admin: API token management, application management</label>
-        </div>
-        <button class="btn-submit" id="btnRegister">Register</button>
+      <h2>Register your app</h2>
+      <input id="application-name" type="text" maxlength="48" placeholder="Name (Required)" />
+      <input id="application-redirect_uri" type="text" maxlength="255" placeholder="Redirect URL (Required)" />
+      <input id="application-verification_uri" type="text" maxlength="255" placeholder="Verification URL" />
+      <input id="application-homepage" type="text" maxlength="255" placeholder="Homepage URL" />
+      <input id="application-github" type="text" maxlength="255" placeholder="Github URL" />
+      <input id="application-appstore" type="text" maxlength="255" placeholder="Appstore URL" />
+      <input id="application-googleplay" type="text" maxlength="255" placeholder="Google Play URL" />
+      <input id="application-app_markup_percentage" type="text" maxlength="4" placeholder="Markup percentage (minimum 0.00 and maximum 5.00)" />
     </fieldset>
+    <div class="scopes">
+      <h3 class="scopes-field">Scopes</h3>
+      <div class="scopes-field">
+        <input id="read-scope" type="checkbox" value="read" checked="checked" />
+        <label for="read-scope">Read: View account activity</label>
+      </div>
+      <div class="scopes-field">
+        <input id="trade-scope" type="checkbox" value="trade" />
+        <label for="trade-scope">Trade: Buy and sell contracts</label>
+      </div>
+      <div class="scopes-field">
+        <input id="trading_information-scope" type="checkbox" value="trading_information" />
+        <label for="trading_information-scope">Trading Information: View trading and balance information</label>
+      </div>
+      <div class="scopes-field">
+        <input id="payments-scope" type="checkbox" value="payments" />
+        <label for="payments-scope">Payments: Cashier (Deposit, Withdraw)</label>
+      </div>
+      <div class="scopes-field">
+        <input id="admin-scope" type="checkbox" value="admin" />
+        <label for="admin-scope">Admin: API token management, application management</label>
+      </div>  
+    </div>
+    <button class="btn-submit" id="btnRegister">Register</button>
+  </div>
 </form>
 
 <div class="horizontal-separator-grey"></div>
