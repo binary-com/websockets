@@ -6,10 +6,16 @@
     padding: 0;
     margin: 0;
 }
-
+#hamburger {
+    display: none;
+}
 @media (max-width: 769px) {
     .nav > .top-nav {
         display: none;
+    }
+    #hamburger {
+        display: block;
+        margin-right: 12px;
     }
     .nav > header {
         height: 56px;
@@ -487,6 +493,11 @@ textarea {
     width: 16px;
     height: 16px;
     margin-right: 16px;
+}
+.btn {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 4px;
 }
 .btn-submit {
     width: fit-content;
