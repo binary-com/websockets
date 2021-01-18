@@ -39,7 +39,7 @@
     .page-wrapper > .playground-selector > fieldset {
         margin: unset;
     }
-    .docson .title {
+    .cta-container > h2, .docson .title {
         font-size: 18px;
     }
     .docson .box-header {
@@ -93,8 +93,17 @@
         width: 100%;
         padding-left: unset;
     }
-    .page-content > h1 {
+    .hero-container > .hero-header, .page-content > h1 {
         font-size: 32px;
+    }
+    .main-page-row > h1,
+    .main-page-row > .single-container > h1,
+    .container > .single-container > h2 {
+        font-size: 24px;
+    }
+    .hero-container > .hero-text,
+    .main-page-row > .single-container > .subheader { 
+        font-size: 16px;
     }
     .page-content > fieldset > input[type="text"] {
         width: 50%;
@@ -110,6 +119,41 @@
     }
     .cta > .cta-grid > .cta-box {
         padding: 16px;
+    }
+    #content > #mobile-page-selector {
+        display: block;
+    }
+    body > .main-page-row {
+        flex-direction: unset;
+        width: unset;
+        padding: 40px 16px;
+    }
+    .main-page-row > .card-container {
+        flex-direction: column;
+    }
+    .main-page-row > .card-container > .main-page-card {
+        margin: 0 16px 24px;
+    }
+    body > .cta-row {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 16px;
+    }
+    .main-page-row > .single-container, 
+    .hero-image > .hero-container, 
+    body > .cta-row > .cta-container {
+        width: unset;
+        margin-right: unset;
+    }
+    body > .container {
+        flex-direction: column;
+    }
+    body > .container > .single-container {
+        width: unset;
+        padding: 40px 16px;
+    }
+    body > .hero-image {
+        min-height: 584px;
     }
 }
 @media (max-width: 1078px) {
@@ -144,6 +188,7 @@ a {
 }
 .single-container > h1 {
     margin-bottom: 12px;
+    line-height: 1.25;
 }
 .single-container > p {
     margin-bottom: 32px;
@@ -219,11 +264,11 @@ ol > p {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100%;
     min-height: 900px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 105px;
 }
 .hero-btn {
     padding: 10px 16px;
@@ -299,6 +344,11 @@ ol > p {
     background-color: #ff444f;
     text-decoration: none;
     color: #ffffff;
+}
+.community-btn {
+    padding: 6px 16px;
+    border-radius: 4px;
+    border: solid 1px #6e6e6e
 }
 .card-container {
     display: flex;
@@ -569,6 +619,7 @@ textarea {
 #mobile-page-selector {
     width: 100%;
     margin-bottom: 1rem;
+    display: none;
 }
 #content {
     padding: 80px 24px;
