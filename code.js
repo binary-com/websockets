@@ -635,7 +635,7 @@ function addEventListeners() {
     });
 
     $('#mobile-page-selector')
-        .val(window.location.pathname + window.location.hash)
+        .val(document.location.pathname)
         .on('change', function(event) {
             if (!event.originalEvent) return;
             window.location.href = $(this).val();

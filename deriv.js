@@ -6,16 +6,15 @@ window.onload = function() {
     addPlaygroundLinkEventHandler();
 }
 
-// Set or Unsets Accordion Active Links
 const setAccordionActive = () => {
-    let acc = document.getElementsByClassName("accordion");
+    let acc = document.getElementsByClassName("accordion-header");
     if (!acc) return;
 
     for (let i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function() {
             this.classList.toggle("active");
 
-            let img = this.children[0];
+            let img = this.children[1];
             if (!this.classList.contains("active")) {
                 img.src = "/img/plus.svg";
                 img.style.transform = `rotate(0deg)`;
@@ -30,7 +29,6 @@ const setAccordionActive = () => {
     }
 }
 
-// Main Navigation Active Links
 const setNavbarActive = () => {
     let navbarLinks = document.getElementById('navbar');
     if (!navbarLinks) return;
@@ -49,7 +47,6 @@ const setNavbarActive = () => {
     }
 }
 
-// Side-bar Active Links
 const setSideBarActive = () => {
     let sidebarLinks = document.getElementById('sidebar');
     if (!sidebarLinks) return;
@@ -104,7 +101,6 @@ const updateSelect = (e) => {
     $("#api-call-selector").trigger('change');
     setSideBarPlaygroundActive();
 }
-
 
 window.onhashchange = (e) => {
     setSideBarPlaygroundActive();

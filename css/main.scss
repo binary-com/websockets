@@ -10,7 +10,7 @@
     display: none;
 }
 @media (max-width: 769px) {
-    .nav > .top-nav {
+    .nav > .top-nav, .nav > header > .navbar, #playground-sidebar, #sidebar, .vertical-separator  {
         display: none;
     }
     #hamburger {
@@ -20,9 +20,6 @@
     .nav > header {
         height: 56px;
         padding-left: 16px;
-    }
-    .nav > header > .navbar {
-        display: none;
     }
     .nav > header > a > .branding {
         font-size: 16px;
@@ -37,16 +34,10 @@
         margin-top: 43px;
     }
     #content > .page-wrapper {
-        margin-top: 0;
-    }
-    #playground-sidebar {
-        display: none;
-    }
-    .vertical-separator {
-        display: none;
+        margin-top: unset;
     }
     .page-wrapper > .playground-selector > fieldset {
-        margin: 0;
+        margin: unset;
     }
     .docson .title {
         font-size: 18px;
@@ -98,11 +89,33 @@
         font-size: 14px;
         width: 100%;
     }
+    .page-wrapper > .page-content, #frmNewApplication > .form-content {
+        width: 100%;
+        padding-left: unset;
+    }
+    .page-content > h1 {
+        font-size: 32px;
+    }
+    .page-content > fieldset > input[type="text"] {
+        width: 50%;
+    }
+    #frmNewApplication > .form-content > fieldset {
+        flex-direction: row;
+    }
+    .accordion-wrapper > .accordion-header {
+        padding: 16px 28px;
+    }
+    .cta > .cta-grid {
+        display: unset;
+    }
+    .cta > .cta-grid > .cta-box {
+        padding: 16px;
+    }
 }
 @media (max-width: 1078px) {
     .playground-selector > .playground-page {
         margin-top: 32px;
-        padding: 0;
+        padding: unset;
         display: unset;
     }
     .dark > .vertical-separator {
@@ -555,7 +568,6 @@ textarea {
 }
 #mobile-page-selector {
     width: 100%;
-    display: none;
     margin-bottom: 1rem;
 }
 #content {
@@ -617,17 +629,24 @@ textarea {
     background-color: #eaeced;  
     margin-bottom: 40px;
 }
-.accordion { 
-    max-height: 56px;
+.accordion-header {
+    display: inline-flex;
+    align-items: center;
+    max-height: fit-content;
     padding: 16px 40px;
     border: none;
     border-radius: 6px;
     box-shadow: -2px 6px 15px 0 rgba(195, 195, 195, 0.31);
     background-color: #ffffff;
-    font-size: 16px;
-    color: #333333;
     transition: 0.2s;
 }
+
+.accordion-text {
+    font-size: 16px;
+    margin-right: 16px;
+    color: #333333;
+}
+
 .accordion-panel {
     height: fit-content;
     padding: 24px 40px;
@@ -636,10 +655,13 @@ textarea {
     margin-bottom: 24px;
 }
 .accordion-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     margin-bottom: 24px;
 }
 .accordion-button {
-    float: right;
+    margin-left: auto;
 }
 code {
     border-radius: 4px;
