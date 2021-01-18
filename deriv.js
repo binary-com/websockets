@@ -4,6 +4,7 @@ window.onload = function() {
     setNavbarActive();
     setAccordionActive();
     addPlaygroundLinkEventHandler();
+    handleMobileNav();
 }
 
 const setAccordionActive = () => {
@@ -102,6 +103,20 @@ const updateSelect = (e) => {
     setSideBarPlaygroundActive();
 }
 
-window.onhashchange = (e) => {
-    setSideBarPlaygroundActive();
+const handleMobileNav = () => {
+    const hamburger = document.getElementById('hamburger');
+    if (!hamburger) return;
+    hamburger.removeEventListener('click', handleHamburgerClick);
+    hamburger.addEventListener('click', handleHamburgerClick);
 }
+
+function handleHamburgerClick () {
+    let canvas = document.getElementById('canvas-menu');
+    if (!canvas) return;
+    canvas.classList.toggle("show-canvas");
+    this.src = canvas.classList.contains("show-canvas")
+                ? "/img/close.svg"
+                : "/img/hamburger_menu.svg";
+} 
+
+window.onhashchange = (e) => setSideBarPlaygroundActive();
