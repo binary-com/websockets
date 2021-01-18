@@ -1,19 +1,26 @@
-<section class="off-canvas-menu">
+<section id="canvas-menu" class="off-canvas-menu">
     <div class="menu-container">
         <div class="menu-wrapper">
-            Home
+            <a href="{{ branch }}">Home</a>
         </div>
         <div class="menu-wrapper">
             <div class="menu-header">
-                Documentation
+                <a href="{{ branch }}/docs/">Documentation</a>
                 <img class="menu-button" src="/img/arrow_down.svg" width="16" height="16" alt="expand" />
             </div>
             <div class="menu-panel">
-                
+                <a href="{{ branch }}/docs/">Quickstart</a>
+                <a href="{{ branch }}/docs/code-samples/">Code Samples</a>
+                <a href="{{ branch }}/docs/app-registration/">App Registration</a>
+                <a href="{{ branch }}/playground/">API Playground</a>
+                <a href="{{ branch }}/docs/api-guide/">API Guide</a>
+                <a href="{{ branch }}/docs/faq/">FAQ</a>
+                <a href="{{ branch }}/docs/json-schemas/">JSON Schemas</a>
+                <a href="{{ branch }}/docs/bug-bounty/">Bug Bounty</a>
             </div>
         </div>
         <div class="menu-wrapper">
-            API Playground
+            <a href="{{ branch }}/playground/">API Playground</a>
         </div>
     </div>
 </section>

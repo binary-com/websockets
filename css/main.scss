@@ -155,6 +155,57 @@
     body > .hero-image {
         min-height: 584px;
     }
+    .off-canvas-menu {
+        position: fixed;
+        background-color: white;
+        top: 56px;
+        height: 100vh;
+        width: 253px;
+        opacity: 1;
+        overflow: scroll;
+        transition: left 0.4s ease 0s;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 16px 20px 0px;
+        left: -254px;
+    }
+    .show-canvas {
+        left: 0px;
+    }
+    .off-canvas-menu > .menu-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 0px 1.6rem 21rem;
+    }
+    .off-canvas-menu > .menu-container > .menu-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 70px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .menu-container > .menu-wrapper > .menu-panel {
+        display: flex;
+        flex-direction: column;
+    }
+    .menu-panel > a {
+        padding-left: 2px;
+        margin-bottom: 6px;
+    }
+    .menu-header {
+        display: inline-flex;
+        margin-bottom: 8px;
+    }
+    .menu-button {
+        margin-left: auto;
+    }
+    .menu-wrapper > a, 
+    .menu-wrapper > .menu-header > a {
+        color: #000000;
+    }
+    .menu-wrapper > .menu-panel > a {
+        color: #636363;
+    }
 }
 @media (max-width: 1078px) {
     .playground-selector > .playground-page {
