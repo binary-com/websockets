@@ -64,6 +64,11 @@
                                             "description": "This shows the information related to Onfido supported services",
                                             "type": "object",
                                             "properties": {
+                                                "country_code": {
+                                                    "description": "3 letter country code for Onfide SDK",
+                                                    "type": "string",
+                                                    "pattern": "^[A-Z]{3}$"
+                                                },
                                                 "documents": {
                                                     "description": "This shows the list of documents types supported by Onfido",
                                                     "type": "array",
