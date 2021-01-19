@@ -210,7 +210,7 @@
 }
 
 .docson .signature-type-number {
-    color: blue;
+    color: rgb(129, 129, 204);
 }
 
 .docson .signature-type-integer {
@@ -218,24 +218,24 @@
 }
 
 .docson .signature-type-boolean {
-    color: orangered;
+    color: rgb(194, 142, 123);
 }
 
 .docson .signature-type-null {
     font-family: "Lucida Console", Monaco, monospace;
-    color: red;
+    color: rgb(211, 99, 99);
 }
 
 .docson .signature-type-date-time {
-    color: #224466;
+    color: #596b7e;
 }
 
 .docson .signature-type-email {
-    color: cornflowerblue;
+    color: rgb(126, 150, 196);
 }
 
 .docson .signature-type-hostname {
-    color: darkolivegreen;
+    color: rgb(178, 192, 154);
 }
 
 .docson .signature-type-ipv6 {
