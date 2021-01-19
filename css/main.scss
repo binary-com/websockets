@@ -166,6 +166,7 @@
         transition: left 0.4s ease 0s;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 16px 20px 0px;
         left: -254px;
+        z-index: 1;
     }
     .show-canvas {
         left: 0px;
