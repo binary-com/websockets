@@ -207,6 +207,9 @@
     .menu-wrapper > .menu-panel > a {
         color: #636363;
     }
+    body > .doc-content {
+        flex-direction: column;
+    }
 }
 @media (max-width: 1078px) {
     .playground-selector > .playground-page {
