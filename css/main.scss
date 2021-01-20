@@ -272,9 +272,6 @@ h3 {
     line-height: 1.5;
     color: #333333;
 }
-#content > h1 {
-    margin-top: 105px;
-}
 p {
     line-height: 1.5;
     margin-bottom: 16px;
@@ -673,8 +670,18 @@ textarea {
     margin-bottom: 1rem;
     display: none;
 }
-#content {
-    padding: 80px 24px;
+.doc-content {
+    padding: 105px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.playground-content {
+    padding: 105px 24px;
+}
+#content > .documentation {
+    width: 90%;
+    margin-top: 20px;
 }
 .page-wrapper {
     margin-top: 105px;
