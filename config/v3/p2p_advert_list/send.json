@@ -54,6 +54,7 @@
         "use_client_limits": {
             "description": "[Optional] If set to 1, ads that exceed this account's balance or turnover limits will not be shown.",
             "type": "integer",
+            "default": 0,
             "enum": [
                 0,
                 1
