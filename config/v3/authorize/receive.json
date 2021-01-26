@@ -115,14 +115,6 @@
                     "description": "The account ID that the token was issued for.",
                     "type": "string"
                 },
-                "preferred_language": {
-                    "description": "User's preferred language, 2-letter ISO standard code of language",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "pattern": "^[A-Z]{0,2}$"
-                },
                 "scopes": {
                     "description": "Scopes available to the token.",
                     "type": "array",
