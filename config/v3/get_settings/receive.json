@@ -143,14 +143,6 @@
                         "string"
                     ]
                 },
-                "preferred_language": {
-                    "description": "User's preferred language, 2-letter ISO standard code of language",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "pattern": "^[A-Z]{0,2}$"
-                },
                 "request_professional_status": {
                     "description": "Boolean value 1 or 0, indicating if client has requested professional status.",
                     "type": "integer",
