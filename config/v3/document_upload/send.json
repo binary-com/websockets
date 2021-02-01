@@ -68,7 +68,7 @@
             "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
         },
         "file_size": {
-            "description": "Document size (should be less than 3MB)",
+            "description": "Document size (should be less than 10MB)",
             "type": "integer"
         },
         "page_type": {
