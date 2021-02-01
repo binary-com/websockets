@@ -21,7 +21,11 @@
             ]
         },
         "advertiser_id": {
-            "description": "[Optional] Which advertiser to list adverts for.",
+            "description": "[Optional] ID of the advertiser to list adverts for.",
+            "type": "string"
+        },
+        "advertiser_name": {
+            "description": "[Optional] Search for advertiser by name. Partial matches will be returned.",
             "type": "string"
         },
         "amount": {
@@ -50,6 +54,15 @@
             "description": "[Optional] Used for paging.",
             "type": "integer",
             "default": 0
+        },
+        "sort_by": {
+            "description": "[Optional] How the results are sorted: best rate, or advertiser completion rate.",
+            "type": "string",
+            "default": "rate",
+            "enum": [
+                "completion",
+                "rate"
+            ]
         },
         "use_client_limits": {
             "description": "[Optional] If set to 1, ads that exceed this account's balance or turnover limits will not be shown.",
