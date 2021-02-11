@@ -149,16 +149,6 @@
     font-size: 80%;
     color: darkolivegreen;
 }
-.docson .type-enum {
-    font-size: 14px;
-    line-height: 1.43;
-    color: #85acb0;
-    border: none;
-    padding: 2px 5px;
-    white-space: nowrap;
-    border-radius: 4px;
-    background-color: rgb(133, 172, 176, 0.16);
-}
 .docson .type-default {
     color: darkslategrey;
     font-family: "Lucida Console", Monaco, monospace;
@@ -275,15 +265,6 @@
     font-size: 14px;
     line-height: 2;
 }
-.docson .desc code {
-    background-color: rgb(255, 255, 255, 0.16);
-    border: none;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.14;
-    color: #ffffff;
-    margin: 0 6px;
-}
 .docson .desc table {
     margin-top: 4px;
     margin-bottom: 4px;
@@ -391,15 +372,6 @@
 .docson .json-schema-map > .json-object-key {
     color: #080;
     font-style: italic;
-}
-.docson .scopes {
-    float: right;
-    margin-bottom: 0px;
-    font-size: 14px;
-    color: #c2c2c2;
-}
-.docson .scopes .type-enum {
-    background-color: rgb(133, 172, 176, 0.16);
 }
 .docson span {
     font-size: 14px;

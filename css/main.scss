@@ -1009,7 +1009,7 @@ pre {
 .dark > .cta > h2 {
     font-size: 24px;
     font-weight: bold;
-    line-height: 0.83;
+    line-height: 1.5;
     color: #ffffff;
     margin-bottom: 24px;
 }
@@ -1042,6 +1042,33 @@ pre {
     border: none;
     background-color: #0e0e0e;
     color: white;
+}
+.docson .desc code {
+    background-color: rgba(255, 255, 255, 0.16);
+    border: none;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.14;
+    color: #ffffff;
+    margin: 0 6px;
+    padding: 6px 8px;
+}
+.docson .scopes {
+    float: right;
+    margin-bottom: 0px;
+    font-size: 14px;
+    color: #c2c2c2;
+}
+.docson .type-enum {
+    font-size: 14px;
+    line-height: 1.43;
+    color: #85acb0;
+    border: none;
+    margin: 8px;
+    padding: 6px 8px;
+    white-space: nowrap;
+    border-radius: 4px;
+    background-color: rgba(133, 172, 176, 0.16);
 }
 
 @import "monokai.css";
