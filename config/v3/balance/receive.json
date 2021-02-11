@@ -37,6 +37,7 @@
                                 "converted_amount",
                                 "currency",
                                 "demo_account",
+                                "status",
                                 "type"
                             ],
                             "properties": {
@@ -62,6 +63,14 @@
                                     "enum": [
                                         0,
                                         1
+                                    ]
+                                },
+                                "status": {
+                                    "description": "Boolean value of 1 or 0. Indicates the status of account. 1 indicates account is good and accessible.",
+                                    "type": "integer",
+                                    "enum": [
+                                        1,
+                                        0
                                     ]
                                 },
                                 "type": {

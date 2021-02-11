@@ -261,7 +261,8 @@
                     "type": "string",
                     "enum": [
                         "up",
-                        "down"
+                        "down",
+                        "updating"
                     ]
                 },
                 "supported_languages": {
