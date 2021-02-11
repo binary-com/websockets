@@ -35,6 +35,14 @@
             "type": "string",
             "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
         },
+        "email_consent": {
+            "description": "[Optional] Boolean value: 1 or 0, indicating whether the client has given consent for marketing emails.",
+            "type": "integer",
+            "enum": [
+                1,
+                0
+            ]
+        },
         "gclid_url": {
             "description": "[Optional] Google Click Identifier to track source.",
             "type": "string",

@@ -64,14 +64,14 @@
             ]
         },
         "address_city": {
-            "description": "Within 35 characters",
+            "description": "Within 100 characters",
             "type": "string",
-            "pattern": "^[\\p{L}\\s'.-]{1,35}$"
+            "pattern": "^\\p{L}[\\p{L}\\s'.-]{0,99}$"
         },
         "address_line_1": {
-            "description": "Within 70 characters.",
+            "description": "Within 70 characters, with no leading whitespaces and may contain letters/numbers and/or any of following characters '.,:;()@#/-",
             "type": "string",
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{1,70}$"
+            "pattern": "^[\\p{L}\\p{Nd}'.,:;()@#/-][\\p{L}\\p{Nd}\\s'.,:;()@#/-]{0,69}$"
         },
         "address_line_2": {
             "description": "[Optional] Within 70 characters.",
@@ -204,7 +204,7 @@
         "first_name": {
             "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
             "type": "string",
-            "pattern": "^[\\p{L}\\s'.-]{2,50}$"
+            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$"
         },
         "forex_trading_experience": {
             "description": "[Optional] Forex trading experience.",
@@ -240,7 +240,7 @@
         "last_name": {
             "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
             "type": "string",
-            "pattern": "^[\\p{L}\\s'.-]{2,50}$"
+            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$"
         },
         "net_income": {
             "description": "Net Annual Income.",
@@ -361,7 +361,7 @@
         "tax_identification_number": {
             "description": "Tax identification number. Only applicable for real money account. Required for `maltainvest` landing company.",
             "type": "string",
-            "pattern": "^[A-Za-z0-9.\\/\\s-]{0,25}$"
+            "pattern": "^(?!^$|\\s+)[A-Za-z0-9.\\/\\s-]{0,25}$"
         },
         "tax_residence": {
             "description": "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for `maltainvest` landing company.",
