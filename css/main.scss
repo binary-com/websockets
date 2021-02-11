@@ -1064,11 +1064,82 @@ pre {
     line-height: 1.43;
     color: #85acb0;
     border: none;
-    margin: 8px;
+    margin: 8px 8px 0 0;
     padding: 6px 8px;
     white-space: nowrap;
     border-radius: 4px;
     background-color: rgba(133, 172, 176, 0.16);
+}
+.docson .signature {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+.docson .signature-header {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+}
+.docson .property-name {
+    display: flex;
+    width: 40%;
+    color: #ffffff;
+    font-size: 16px;
+    margin: 8px 8px 0 0;
+}
+.docson .signature-type {
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 6px;
+}
+.docson .signature-description {
+    color: #c2c2c2;
+    float: left;
+    max-width: 600px;
+    width: 100%;
+}
+.docson .signature-button {
+    cursor: pointer;
+    margin: 8px 8px 0 0;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #0e0e0e;
+    -moz-border-radius: 4px;
+    color: white;
+}
+.docson .signature-type-string {
+    color: #9ed178;
+}
+.docson span {
+    font-size: 14px;
+    margin: 8px 8px 0 0;
+}
+.docson .box {
+    position: relative;
+    background-color: #1d1f20;
+    border: none;
+    border-radius: 4px;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
+.docson .box-body {
+    padding: 42px 24px;
+}
+.docson .box-1 {
+    background: #151717;
+    padding: 8px 16px;
+}
+.docson .box-container {
+    padding-top: 8px;
+    display: none;
+}
+.docson .signature-box-container {
+    clear: both;
+}
+.docson .sub-box-container {
+    background-color: #151717;
 }
 
 @import "monokai.css";

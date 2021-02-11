@@ -13,16 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-.docson .box {
-    position: relative;
-    float: left;
-    background-color: #1d1f20;
-    border: none;
-    border-radius: 4px;
-    padding-bottom: 10px;
-    margin-bottom: 40px;
-}
 .docson .expand-button {
     position: absolute;
     margin-top: 15px;
@@ -82,13 +72,6 @@
 .docson .error {
     color: red;
 }
-.docson .box-body {
-    padding: 40px 24px;
-    clear: both;
-}
-.docson .box-1 {
-    background: whitesmoke;
-}
 .docson .box-2 {
     background: beige;
     background: -webkit-linear-gradient(white, beige, beige, gainsboro);
@@ -124,20 +107,6 @@
     background: -webkit-linear-gradient(white, aliceblue, aliceblue, gainsboro);
     background: -moz-linear-gradient(white, aliceblue, aliceblue, gainsboro);
 }
-.docson .signature {
-    clear: left;
-    margin-bottom: 24px;
-}
-.docson .signature-header {
-    height: 20px;
-    line-height: 24px;
-}
-.docson .property-name {
-    float: left;
-    min-width: 130px;
-    color: #ffffff;
-    font-size: 16px;
-}
 .docson .required {
     font-weight: bold;
 }
@@ -152,12 +121,6 @@
 .docson .type-default {
     color: darkslategrey;
     font-family: "Lucida Console", Monaco, monospace;
-}
-.docson .signature-type {
-    padding-left: 6px;
-    float: left;
-    min-width: 160px;
-    max-width: 320px;
 }
 .docson .signature-type-any {
     font-style: italic;
@@ -196,15 +159,6 @@
 .docson .signature-type-uri {
     color: saddlebrown;
 }
-.docson .signature-button {
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 4px;
-    border: solid 1px #9ed178;
-    background-color: #1d1f20;
-    -moz-border-radius: 4px;
-    color: #c2c2c2;
-}
 .docson .signature-type-ref {
     color: darkblue;
 }
@@ -215,21 +169,6 @@
     -moz-box-shadow:    inset 1px 1px 1px darkgray;
     -webkit-box-shadow: inset 1px 1px 1px darkgray;
     box-shadow:         inset 1px 1px 1px darkgray;
-}
-.docson .signature-description {
-    color: #c2c2c2;
-    float: left;
-    max-width: 600px;
-    width: 100%;
-}
-.docson .signature-box-container {
-    clear: both;
-}
-.docson .box-container {
-    float: left;
-    padding-top: 4px;
-    padding-left: 8px;
-    display: none;
 }
 .docson .button {
     -webkit-touch-callout: none;
@@ -372,7 +311,4 @@
 .docson .json-schema-map > .json-object-key {
     color: #080;
     font-style: italic;
-}
-.docson span {
-    font-size: 14px;
 }
