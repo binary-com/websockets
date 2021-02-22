@@ -827,19 +827,42 @@ code {
 .card {
     border-radius: 6px;
     background-color: #1d1f20;
-}
-.card-header {
-    border-radius: 6px;
-    background-color: #0e0e0e;
-    border-bottom: 1px solid rgba(242, 243, 244, 0.2);
-    color: #d6d6d6;
-    line-height: 1.5;
-    padding: 8px 24px;
-}
-.card-header > select {
-    background-color: inherit;
-    border: #0e0e0e;
-    color: #d6d6d6;
+
+    &-header {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        border-radius: 6px;
+        background-color: #0e0e0e;
+        border-bottom: 1px solid rgba(242, 243, 244, 0.2);
+        color: #d6d6d6;
+        line-height: 1.5;
+
+        &-title {
+            width: 100%;
+            margin-bottom: unset;
+            padding-left: 24px;
+        }
+
+        .copy-button {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            color: #c2c2c2;
+            border-left: rgba(229, 229, 229, 0.4) 1px solid;
+            padding: 8px 16px;
+
+            &-image {
+                margin: 0 9px 0 3px;
+            }
+        }
+
+        select {
+            background-color: inherit;
+            border: #0e0e0e;
+            color: #d6d6d6;
+        }
+    }
 }
 pre {
     border-radius: 4px;
