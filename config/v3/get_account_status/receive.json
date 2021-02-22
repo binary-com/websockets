@@ -95,6 +95,10 @@
                                                     "items": {
                                                         "type": "string"
                                                     }
+                                                },
+                                                "submissions_left": {
+                                                    "description": "This shows the number of Onfido submissions left for the client",
+                                                    "type": "integer"
                                                 }
                                             }
                                         }
