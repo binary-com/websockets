@@ -9,7 +9,7 @@
 #hamburger {
     display: none;
 }
-@media (max-width: 769px) {
+@media (max-width: 992px) {
     .nav > .top-nav, .nav > header > .navbar, #playground-sidebar, #sidebar, .vertical-separator  {
         display: none;
     }
@@ -128,10 +128,6 @@
     #content > #mobile-page-selector {
         display: block;
     }
-    .main-content > .main-page-row {
-        flex-direction: unset;
-        width: unset;
-    }
     .main-page-row > .card-container {
         flex-direction: column;
         padding: 40px 16px;
@@ -242,6 +238,9 @@
     }
     .dark > .vertical-separator {
         margin: 0 20px 0 40px;
+    }
+    header > nav {
+        margin-left: 56px;
     }
 }
 a {
