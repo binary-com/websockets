@@ -26,10 +26,26 @@ permalink: docs/api-guide/
         </p>
         <li>Client authentication by OAuth</li>
         <p>Send clients to:</p>
-        <pre>https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..]</pre>
+        <div class="card-light">
+            <text class="card-light-content">
+                https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..]
+            </text>
+            <div class="copy-button">
+                <img class="copy-button-image" src="{{ branch }}/img/copy.svg" width="16" height="16" alt="copy code icon"> 
+                <text>Copy</text>
+            </div>
+        </div>
         <p>Our system will authenticate the client and send them to the redirect URL you gave us during app registration. A valid token will be returned in the <code>token</code> parameter of the URL.</p>
         <p>To display the authentication form in another language, add the language code to the OAuth URL as follows:</p>
-        <pre>https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..]&l=ZH_CN</pre>
+        <div class="card-light">
+            <text class="card-light-content">
+                https://oauth.binary.com/oauth2/authorize?app_id=[..insert app_id..]&l=ZH_CN
+            </text>
+            <div class="copy-button">
+                <img class="copy-button-image" src="{{ branch }}/img/copy.svg" width="16" height="16" alt="copy code icon"> 
+                <text>Copy</text>
+            </div>
+        </div>
         <p>Complete the authentication by calling <a href="/playground/#authorize"><code>authorize</code></a> using clients’ API token.</p>
     </ol>
 </div>
