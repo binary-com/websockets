@@ -110,6 +110,10 @@
                                 "examples": [
                                     1441175849
                                 ]
+                            },
+                            "withdrawal_details": {
+                                "description": "Additional withdrawal details such as typical processing times, if description is set to `1`.",
+                                "type": "string"
                             }
                         }
                     }

@@ -58,7 +58,7 @@
             </div>
             <div class="signature-box-container">
                 {{#boxes}}
-                <div class="box-container" boxid="{{__boxId}}">
+                <div class="sub-box-container" boxid="{{__boxId}}">
                     {{schema this}}
                 </div>
                 {{/boxes}}
@@ -93,11 +93,11 @@
                             {{signature this "not" not}}
                         {{/if}}
                     </div>
-                    <div class="signature-description desc">{{desc this}}</div>
                 </div>
+                <div class="signature-description desc">{{desc this}}</div>
                 <div class="signature-box-container">
                 {{#boxes}}
-                    <div class="box-container" boxid="{{__boxId}}">
+                    <div class="sub-box-container" boxid="{{__boxId}}">
                         {{schema this}}
                     </div>
                 {{/boxes}}
@@ -131,11 +131,11 @@
                         {{signature this "not" not}}
                         {{/if}}
                     </div>
-                    <div class="signature-description desc">{{desc this}}</div>
                 </div>
+                <div class="signature-description desc">{{desc this}}</div>
                 <div class="signature-box-container">
                     {{#boxes}}
-                    <div class="box-container" boxid="{{__boxId}}">
+                    <div class="sub-box-container" boxid="{{__boxId}}">
                         {{schema this}}
                     </div>
                     {{/boxes}}
