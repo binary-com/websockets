@@ -172,6 +172,7 @@
         overflow: scroll;
         transition: left 0.4s ease 0s;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 16px 20px 0;
+        will-change: left;
         left: -254px;
         z-index: 1;
     }
@@ -183,36 +184,49 @@
         flex-direction: column;
         height: 100%;
         padding: 0 1.6rem 21rem;
-    }
-    .off-canvas-menu > .menu-container > .menu-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-height: 70px;
-        font-size: 16px;
-        font-weight: bold;
-    }
-    .menu-container > .menu-wrapper > .menu-panel {
-        display: flex;
-        flex-direction: column;
-    }
-    .menu-panel > a {
-        padding-left: 2px;
-        margin-bottom: 6px;
-    }
-    .menu-header {
-        display: inline-flex;
-        margin-bottom: 8px;
-    }
-    .menu-button {
-        margin-left: auto;
-    }
-    .menu-wrapper > a, 
-    .menu-wrapper > .menu-header > a {
-        color: #000000;
-    }
-    .menu-wrapper > .menu-panel > a {
-        color: #636363;
+
+        .menu-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px;
+            font-size: 16px;
+            font-weight: bold;
+
+            a {
+                color: #000000;
+            }
+
+            .menu-header {
+                display: inline-flex;
+                margin-bottom: 8px;
+
+                a {
+                    color: #000000;
+                }
+
+                .menu-button {
+                    margin-left: auto;
+                }
+            }
+
+            .menu-panel {
+                display: none;
+                height: 0;
+                transition: all .5s ease;
+                a {
+                    color: #636363;
+                    padding-left: 2px;
+                    margin-bottom: 6px;
+                }
+            }
+
+            .show-dropdown {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+            }
+        }
     }
     .main-content > .doc-content {
         flex-direction: column;
