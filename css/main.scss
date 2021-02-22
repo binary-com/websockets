@@ -873,6 +873,36 @@ code {
         }
     }
 }
+.card-light {
+    border-radius: 4px;
+    border: solid 1px #e5e5e5;
+    background-color: rgba(87, 122, 146, 0.04);
+    color: #333333;
+    font-weight: bold;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 8px;
+
+    &-content {
+        width: 100%;
+        padding: 16px 24px;
+    }
+
+    .copy-button {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: fit-content;
+        font-weight: normal;
+        border-left: rgba(229, 229, 229, 0.4) 1px solid;
+        padding: 8px 16px;
+
+        &-image {
+            margin: 0 9px 0 3px;
+        }
+    }
+}
 pre {
     border-radius: 4px;
     padding: 24px;
