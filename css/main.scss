@@ -486,34 +486,37 @@ header {
 }
 nav {
     margin-left: 113px;
-}
-nav > a {
-    position: relative;
-    margin-right: 40px;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #ffffff;
-}
-nav > a:before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #ff444f;
-    visibility: hidden;
-    transition: all 0.2s ease-in-out;
-}
-nav > .selected {
-    &::before {
-        width: 20px;
-        visibility: visible;
+
+    a {
+        position: relative;
+        margin-right: 40px;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #ffffff;
+
+        &::before{
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #ff444f;
+            visibility: hidden;
+            transition: all 0.2s ease-in-out;
+        }
+        &:hover:before{
+            visibility: visible;
+            width: 20px;
+        }
     }
-}
-nav > a:hover:before {
-    visibility: visible;
-    width: 20px;
+
+    .selected {
+        &::before {
+            width: 20px;
+            visibility: visible;
+        }
+    }
 }
 .vertical-separator {
     width: 2px;
@@ -527,15 +530,17 @@ nav > a:hover:before {
 }
 ol {
     margin-left: 20px;
-}
-ol > li {
-    margin-bottom: 16px;
+
+    li {
+        margin-bottom: 16px;
+    }
 }
 ul {
     margin-left: 20px;
-}
-ul > li {
-    margin-bottom: 16px;
+
+    li {
+        margin-bottom: 16px;
+    }
 }
 .subheader {
     font-size: 24px;    
@@ -550,38 +555,42 @@ ul > li {
     background-color: #f2f3f4;
     text-align: center;
     margin-bottom: 40px;
-}
-.cta-grid {
-    display: grid;
-    height: fit-content;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    column-gap: 40px;
-    width: 1fr;
-}
-.cta-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px;
-}
-.cta-box > h2 {
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 1.25;
-    text-align: center;
-}
-.cta-button {
-    width: fit-content;
-    padding: 10px 16px;
-    border-radius: 4px;
-    border: solid 2px #999999;
-}
-a > .cta-button {
-    color: #333333;
-}
-.cta-button:hover {
-    background-color: #999999;
+
+    &-grid {
+        display: grid;
+        height: fit-content;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        column-gap: 40px;
+        width: 1fr;
+
+        &-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+
+             h2 {
+                font-size: 32px;
+                font-weight: bold;
+                line-height: 1.25;
+                text-align: center;
+            }
+            a {
+                .cta-button {
+                    width: fit-content;
+                    color: #333333;
+                    padding: 10px 16px;
+                    border-radius: 4px;
+                    border: solid 2px #999999;
+
+                    &:hover {
+                        background-color: #999999;
+                    }
+                }
+            }
+        }
+    }
 }
 #api-token-fieldset {
     margin-bottom: 42px;
