@@ -25,6 +25,9 @@
         font-size: 16px;
         margin-left: 8px;
     }
+    .single-container > p {
+        text-align: center;
+    }
     .logo {
         width: 84px;
         height: auto;
@@ -146,7 +149,7 @@
     .main-page-row > .single-container, 
     .hero-image > .hero-container, 
     .main-content > .cta-row > .cta-container {
-        width: unset;
+        width: 95%;
         margin-right: unset;
     }
     .main-content > .container {
@@ -418,7 +421,7 @@ ol > p {
     margin-bottom: 40px;
 }
 .main-page-card {
-    width: 316px;
+    width: 31%;
     padding: 32px 24px;
     border-radius: 4px;
     box-shadow: 0 4px 8px 0 rgba(14, 14, 14, 0.1);
@@ -998,13 +1001,9 @@ pre {
 }
 .dark {
     background-color: #0e0e0e;
-    color: #ffffff;
 }
-.dark > .sidebar-title, .dark > .selected {
+.dark, .dark > .sidebar-title, .dark > .selected, .dark > a {
     color: #ffffff !important;
-}
-.dark > a {
-    color: #c2c2c2;
 }
 .dark > p {
     color: #c2c2c2;
