@@ -17,13 +17,15 @@
         display: block;
         margin-right: 12px;
     }
-    .nav > header {
-        height: 56px;
-        padding-left: 16px;
-    }
-    .nav > header > a > .branding {
-        font-size: 16px;
-        margin-left: 8px;
+    .nav {
+        header {
+            height: 56px;
+            padding-left: 16px;
+            a > .branding {
+                font-size: 16px;
+                margin-left: 8px;
+            }
+        }
     }
     .single-container > p {
         text-align: center;
@@ -66,11 +68,13 @@
     .dark > .cta > a > .cta-button {
         font-size: 14px;
     }
-    .playground-json > .playground-box {
-        padding: 16px 30px;
-    }
-    .playground-box > fieldset {
-        flex-wrap: nowrap;
+    .playground-json {
+        .playground-box {
+            padding: 16px 30px;
+        }
+        fieldset {
+            flex-wrap: nowrap;
+        }
     }
     fieldset > .form-content {
         width: 100%;
@@ -80,19 +84,22 @@
     }
     .json-btn-wrapper {
         width: 100%;
-    }
-    .json-btn-wrapper > .btn-submit {
-        font-size: 14px;
-        margin: 24px 12px 0 0;
-        width: 50%;
-    }
-    .json-btn-wrapper > #playground-reset-btn {
-        width: 50%;
-    }
-    .json-btn-wrapper > #playground-reset-btn > .btn-reset {
-        margin-right: 0;
-        font-size: 14px;
-        width: 100%;
+
+        .btn-submit {
+            font-size: 14px;
+            margin: 24px 12px 0 0;
+            width: 50%;
+        }
+
+        #playground-reset-btn {
+            width: 50%;
+
+            .btn-reset {
+                margin-right: 0;
+                font-size: 14px;
+                width: 100%;
+            }
+        }
     }
     .page-wrapper > .page-content, #frmNewApplication > .form-content {
         width: 100%;
@@ -128,14 +135,18 @@
     #content > #mobile-page-selector {
         display: block;
     }
-    .main-page-row > .card-container {
-        flex-direction: column;
-        padding: 40px 16px;
-        margin-bottom: 0;
-    }
-    .main-page-row > .card-container > .main-page-card {
-        width: unset;
-        margin: 0 0 24px;
+    .main-page-row {
+        .card-container {
+            flex-direction: column;
+            padding: 40px 16px;
+            margin-bottom: 0;
+
+            .main-page-card {
+                width: unset;
+                margin: 0 0 24px;
+            }
+        }
+
     }
     .main-content > .cta-row {
         flex-direction: column;
@@ -606,16 +617,17 @@ fieldset {
     justify-content: center;
     margin-bottom: 16px;
     flex-wrap: wrap;
-}
-fieldset > input[type="text"] {
-    width: 100%;
-    height: 40px;
-    padding: 0 12px;
-    border-radius: 4px 0 0 4px;
-    border: solid 1px #d6dadb;
-    font-size: 14px;
-    line-height: 1.43;
-    color: #333333;
+
+    input[type="text"] {
+        width: 100%;
+        height: 40px;
+        padding: 0 12px;
+        border-radius: 4px 0 0 4px;
+        border: solid 1px #d6dadb;
+        font-size: 14px;
+        line-height: 1.43;
+        color: #333333;
+    }
 }
 textarea {
     width: 98%;
@@ -725,7 +737,6 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
 }
 .playground-content {
     padding: 105px 24px;
