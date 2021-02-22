@@ -11,22 +11,27 @@ permalink: docs/code-samples/
 
 <div class="card">
     <div class="card-header">
-        <select id="demo-language">
-            <option value="javascript">JavaScript</option>
-            <option value="clojure">Clojure</option>
-            <option value="coffeescript">CoffeeScript</option>
-            <option value="csharp">C#</option>
-            <option value="elixir">Elixir</option>
-            <option value="go">Go</option>
-            <option value="perl">Perl</option>
-            <option value="java">Java</option>
-            <option value="php">PHP</option>
-            <option value="ruby">Ruby</options>
-            <option value="rust">Rust</options>
-            <option value="python">Python</option>
-            <option value="scala">Scala</option>
-            <option value="swift">Swift</option>
-        </select>
+        <p class="card-header-title">
+            <select id="demo-language" >
+                <option value="javascript">JavaScript</option>
+                <option value="clojure">Clojure</option>
+                <option value="coffeescript">CoffeeScript</option>
+                <option value="csharp">C#</option>
+                <option value="elixir">Elixir</option>
+                <option value="go">Go</option>
+                <option value="perl">Perl</option>
+                <option value="java">Java</option>
+                <option value="php">PHP</option>
+                <option value="ruby">Ruby</options>
+                <option value="rust">Rust</options>
+                <option value="python">Python</option>
+                <option value="scala">Scala</option>
+                <option value="swift">Swift</option>
+            </select>
+        </p>
+        <div class="copy-button">
+            <img class="copy-button-image" src="{{ branch }}/img/copy.svg" width="16" height="16" alt="copy code icon" /> Copy
+        </div>
     </div>
     <div id="language-demos">
         <pre data-language="javascript">{% include demos/javascript.js %}</pre>
