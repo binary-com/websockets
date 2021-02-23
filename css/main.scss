@@ -131,11 +131,14 @@
     .accordion-wrapper > .accordion-header {
         padding: 16px 28px;
     }
-    .cta > .cta-grid {
-        display: unset;
-    }
-    .cta > .cta-grid > .cta-box {
-        padding: 16px;
+    .cta {
+        .cta-grid {
+            display: unset;
+
+            .cta-box {
+                padding: 16px;
+            }
+        }
     }
     #content > #mobile-page-selector {
         display: block;
@@ -576,8 +579,25 @@ ul {
     padding: 24px 0;
     border-radius: 4px;
     background-color: #f2f3f4;
-    text-align: center;
     margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        .cta-button {
+            width: fit-content;
+            color: #333333;
+            padding: 10px 16px;
+            border-radius: 4px;
+            border: solid 2px #999999;
+
+            &:hover {
+                background-color: #999999;
+            }
+        }
+    }
 
     &-grid {
         display: grid;
@@ -1160,11 +1180,6 @@ pre {
             line-height: 1.5;
             color: #ffffff;
             margin-bottom: 24px;
-        }
-
-        a > .cta-button {
-            background-color: inherit;
-            color: #ffffff;
         }
     }
 }
