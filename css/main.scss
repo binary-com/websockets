@@ -1142,6 +1142,7 @@ pre {
                 flex-wrap: nowrap;
                 align-items: center;
                 margin-right: 24px;
+                margin: 0 24px 0 0;
                 justify-content: flex-start;
 
                 input[type="text"] {
@@ -1157,7 +1158,7 @@ pre {
                 flex-direction: column;
                 flex-wrap: nowrap;
                 font-size: 14px;
-                width: 50%;
+                width: 60%;
                 margin-bottom: unset;
 
                 .title {
