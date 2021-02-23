@@ -266,10 +266,14 @@
 }
 @media (max-width: 1078px) {
     .playground {
-        &-page {
-            margin-top: 32px;
-            padding: unset;
-            display: unset;
+        &-page-wrapper {
+            flex-direction: column;
+        }
+        &-api-json {
+            width: 100% !important;
+        }
+        &-api-docs {
+            width: 100% !important;
         }
     }
     .dark > .vertical-separator {
