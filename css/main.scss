@@ -91,7 +91,6 @@
 
         .btn-submit {
             font-size: 14px;
-            margin: 24px 12px 0 0;
             width: 50%;
         }
 
@@ -1158,7 +1157,7 @@ pre {
                 flex-direction: column;
                 flex-wrap: nowrap;
                 font-size: 14px;
-                width: 60%;
+                width: 70%;
                 margin-bottom: unset;
 
                 .title {
@@ -1363,7 +1362,9 @@ pre {
     clear: both;
 }
 .docson .sub-box-container {
-    background-color: #151717;
+    .box {
+        margin-bottom: unset;
+    }
 }
 
 @import "monokai.css";
