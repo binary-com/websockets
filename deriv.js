@@ -6,6 +6,7 @@ window.onload = function () {
   addPlaygroundLinkEventHandler();
   handleMobileNav();
   handleMobileNavDropdown();
+  setCopyButton();
 };
 
 const setAccordionActive = () => {
@@ -69,6 +70,8 @@ const setSideBarActive = () => {
     }
   }
 };
+
+window.onhashchange = (e) => setSideBarPlaygroundActive();
 
 const setSideBarPlaygroundActive = () => {
   let sidebarLinks = document.getElementById("playground-sidebar");
@@ -136,4 +139,22 @@ function handleDropdownClick(e) {
   dropdown.classList.toggle("show-dropdown");
 }
 
-window.onhashchange = (e) => setSideBarPlaygroundActive();
+function setCopyButton() {
+  const code_headers = document.getElementsByClassName("card-header");
+  if (!code_headers) return;
+  for (let i = 0; i < code_headers.length; i++) {
+    code_headers[i].removeEventListener("click", handleDropdownClick);
+    code_headers[i].addEventListener("click", handleCodeCopyClick);
+  }
+}
+
+function handleCodeCopyClick(e) {
+  const code_box = e.target.parentNode.nextElementSibling;
+  if (!code_box) return;
+  let dummy = document.createElement("textarea");
+  document.body.appendChild(dummy);
+  dummy.value = code_box.textContent;
+  dummy.select();
+  document.execCommand("copy");
+  document.body.removeChild(dummy);
+}
