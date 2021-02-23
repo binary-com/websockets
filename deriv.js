@@ -1,9 +1,7 @@
 window.onload = function () {
   setSideBarActive();
-  setSideBarPlaygroundActive();
   setNavbarActive();
   setAccordionActive();
-  addPlaygroundLinkEventHandler();
   handleMobileNav();
   handleMobileNavDropdown();
   setCopyButton();

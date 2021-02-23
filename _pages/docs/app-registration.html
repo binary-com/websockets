@@ -6,7 +6,16 @@ permalink: docs/app-registration/
 <h1 class="app-header">App registration</h1>
 <div class="subheader">Authenticate your API token before using it in your app.</div>
 
-{% include token-input.html %}
+<div class="cta">
+    <h3>Looking for your API token?</h3>
+    <a target="tokeninput" href="https://www.binary.com/en/user/security/api_tokenws.html">
+        <div class="cta-button">Get your API token</div>
+    </a>
+</div>
+<fieldset id="api-token-fieldset">
+    <input type="text" id="api-token" placeholder="API Token">
+    <button id="send-auth-manually-btn" class="btn-authenticate bold">Authenticate</button>
+</fieldset>
 
 <div class="horizontal-separator-grey"></div>
 

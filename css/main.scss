@@ -38,10 +38,7 @@
         font-size: 24px;
         margin-top: 43px;
     }
-    #content > .page-wrapper {
-        margin-top: unset;
-    }
-    .page-wrapper > .playground-selector > fieldset {
+    .page-wrapper > .playground > fieldset {
         margin: unset;
     }
     .cta-container > h2, .docson .title {
@@ -73,12 +70,14 @@
             }
         }
     }
-    .playground-json {
-        .playground-box {
-            padding: 16px 30px;
-        }
-        fieldset {
-            flex-wrap: nowrap;
+    .playground {
+        &-api-json {
+            .playground-box {
+                padding: 16px 30px;
+            }
+            fieldset {
+                flex-wrap: nowrap;
+            }
         }
     }
     fieldset > .form-content {
@@ -168,7 +167,6 @@
                 margin: 0 0 24px;
             }
         }
-
     }
     .main-content {
         .container {
@@ -267,10 +265,12 @@
     }
 }
 @media (max-width: 1078px) {
-    .playground-selector > .playground-page {
-        margin-top: 32px;
-        padding: unset;
-        display: unset;
+    .playground {
+        &-page {
+            margin-top: 32px;
+            padding: unset;
+            display: unset;
+        }
     }
     .dark > .vertical-separator {
         margin: 0 20px 0 40px;
@@ -567,6 +567,13 @@ nav {
 .page-content {
     width: 75%;
     padding-left: 40px;
+
+    #api-token-fieldset {
+        margin-bottom: 42px;
+    }
+    #api-token-fieldset > input[type="text"] {
+        max-width: 512px;
+    }
 }
 ol {
     margin-left: 20px;
@@ -649,12 +656,6 @@ ul {
         }
     }
 }
-#api-token-fieldset {
-    margin-bottom: 42px;
-}
-#api-token-fieldset > input[type="text"] {
-    max-width: 512px;
-}
 fieldset {
     width: 100%;
     border: none;
@@ -681,7 +682,6 @@ textarea {
     padding: 10px;
     border-radius: 4px;
     border: solid 1px #d6dadb;
-    margin: 0 20%;
 }
 .scopes {
     width: 100%;
@@ -696,13 +696,6 @@ textarea {
 }
 .app-registration-subheader {
     align-self: flex-start;
-}
-.json-btn-wrapper {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 16px;
-    align-self: center;
-    justify-self: center;
 }
 .scopes-field > input[type="checkbox"] {
     width: 16px;
@@ -793,9 +786,7 @@ textarea {
     width: 90%;
     margin-top: 20px;
 }
-
 .page-wrapper {
-    margin-top: 105px;
     display: flex;
     color: #333333;
 }
@@ -987,12 +978,6 @@ pre {
     overflow: auto;
     word-wrap: inherit;
 }
-pre.req {
-    background: #2a3a2c;
-}
-pre.error {
-    background: #2a0000;
-}
 #playground #playground-req-schema,
 #playground #playground-res-schema,
 .docson .json-keyword,
@@ -1008,9 +993,16 @@ pre p {
 }
 
 #playground-console {
-    overflow: auto;
-    max-height: 60vh;
     margin-top: 2px;
+
+    pre {
+        padding: 16px;
+        border: none;
+        border-radius: 4px;
+        background-color: #0e0e0e;
+        color: #c2c2c2;
+        line-height: 24px;
+    }
 
     pre:last-child {
         margin-bottom: 0;
@@ -1089,39 +1081,113 @@ pre {
     white-space: pre-wrap;
     word-break: break-word;
 }
-.playground-page {
-    display: grid;
-    height: fit-content;
-    grid-template-columns: 0.6fr 0.4fr;
-    grid-template-rows: 1fr;
-    column-gap: 24px;
-    width: 100%;
-    padding: 0 24px;
-}
-.playground-selector {
+.playground {
     display: flex;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     height: fit-content;
     width: 100%;
 
-    fieldset {
-        margin: 0 24px 40px;
+    &-page-wrapper {
+        display: flex;
+        width: 95%;
+    }
 
+    &-api-json {
+        display: flex;
+        flex-direction: column;
+        margin-right: 24px;
+        width: 50%;
+
+        .playground-box {
+            border-radius: 6px;
+            border: none;
+            background-color: #151717;
+            padding: 24px 24px 82px 24px;
+            margin-bottom: 40px;
+
+            .json-btn-wrapper {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 16px;
+            }
+
+            textarea {
+                min-height: 200px;
+                padding: 10px 12px;
+                border: none;
+                border-radius: 4px;
+                background-color: #0e0e0e;
+                color: #c2c2c2;
+            }
+        }
+
+        .api-token {
+            display: flex;
+            flex-wrap: nowrap;
+            border-radius: 4px;
+            background-color: #151717;
+            padding: 24px;
+            margin-bottom: 24px;
+
+            fieldset {
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                margin-right: 24px;
+                justify-content: flex-start;
+
+                input[type="text"] {
+                    border: none;
+                    border-radius: 4px;
+                    color: #c2c2c2;
+                    background-color: #0e0e0e
+                }
+            }
+
+            .cta {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                font-size: 14px;
+                width: 50%;
+                margin-bottom: unset;
+
+                .title {
+                    font-weight: bold;
+                    line-height: 1.43;
+                    text-align: center;
+                    color: #c2c2c2;
+                }
+
+                a {
+                    .cta-button {
+                        padding: 10px 16px;
+                        border-radius: 4px;
+                        border: solid 2px #6e6e6e;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    &-api-docs {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+
+    fieldset {
         select {
             border-radius: 3.5px;
             border: solid 1px #323738;
             background-color: #0e0e0e;
         }
     }
-}
-.playground-api {
-    display: flex;
-    flex-direction: column;
-}
-.playground-json {
-    display: flex;
-    flex-direction: column;
 }
 .select2 {
     width:100%!important;
@@ -1160,12 +1226,6 @@ pre {
         color: #ffffff !important;
     }
 
-    #api-token-fieldset > input[type="text"] {
-        width: 50%;
-        background-color: #0e0e0e;
-        border: none;
-    }
-
     fieldset > textarea {
         width: 100%;
         min-height: 200px;
@@ -1196,13 +1256,6 @@ pre {
             margin-bottom: 24px;
         }
     }
-}
-.playground-box {
-    border-radius: 6px;
-    border: none;
-    background-color: #151717;
-    padding: 40px 33px;
-    margin-bottom: 40px;
 }
 .docson .signature-type-object {
     border: none;

@@ -3,20 +3,37 @@ layout: playground
 permalink: playground/
 ---
 
-<div class="playground-selector">
-    {% include api-selector.html %}
-    <div class="playground-page dark">
-        <div id="playground" class="playground-api">
+<div class="playground">
+    <div class="playground-page-wrapper dark">
+        <div class="playground-api-json dark">
+            {% include api-selector.html %}
+            <div class="api-token dark">
+                <fieldset id="api-token-fieldset">
+                    <input type="text" id="api-token" placeholder="API Token">
+                    <button id="send-auth-manually-btn" class="btn-authenticate bold">Authenticate</button>
+                </fieldset>
+                <div class="cta">
+                    <p class="title">Looking for your API token?</p>
+                    <a target="tokeninput" href="https://www.binary.com/en/user/security/api_tokenws.html">
+                        <div class="cta-button">Get your API token</div>
+                    </a>
+                </div>
+            </div>
+            <div class="playground-box">
+                <h3 class="app-registration-subheader">Request JSON</h3>
+                <textarea id="playground-request" placeholder="Request JSON"></textarea>
+                <div class="json-btn-wrapper">
+                    <button class="btn-submit" id="playground-send-btn">Send Request</button>
+                    <a id="playground-reset-btn" href="javascript:;">
+                        <button class="btn-reset">Reset Connection</button>
+                    </a>
+                </div>
+                <div id="playground-console"></div>
+            </div>
+        </div>
+        <div id="playground" class="playground-api-docs">
             <div id="playground-req-schema"></div>
             <div id="playground-res-schema"></div>
-        </div>
-        <div class="playground-json">
-            <div class="playground-box dark">
-                {% include token-input.html %}
-            </div>
-            <div class="playground-box dark">
-                {% include api-playground-field.html %}
-            </div>
         </div>
     </div>
 </div> 
