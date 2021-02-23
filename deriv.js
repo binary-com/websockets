@@ -147,11 +147,27 @@ function setCopyButton() {
 }
 
 function handleCodeCopyClick(e) {
-  const code_box = e.target.parentNode.nextElementSibling;
+  let code_box = e.srcElement.parentNode.nextElementSibling;
+  console.log(code_box);
   if (!code_box) return;
+
+  let code_text;
+  if (code_box.children.length === 14) {
+    code_box = code_box.children;
+
+    let select_value = document.getElementById("demo-language").value;
+    for(let i = 0; i < code_box.length; i++) {
+      if (code_box[i].attributes[0].value === select_value) {
+        code_text = code_box[i].textContent;
+      }
+    }
+  } else {
+   code_text = code_box.textContent; 
+  }
+
   let dummy = document.createElement("textarea");
   document.body.appendChild(dummy);
-  dummy.value = code_box.textContent;
+  dummy.value = code_text;
   dummy.select();
   document.execCommand("copy");
   document.body.removeChild(dummy);
