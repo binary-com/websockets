@@ -14,8 +14,10 @@
 
     <link href="{{ branch }}/img/deriv.png" rel='icon' sizes='96x96' type='image/png'/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro"></noscript>
     <link rel="stylesheet" href="{{ branch }}/docson/docson.css">
     <link rel="stylesheet" href="{{ branch }}/css/main.css">
     <link rel="stylesheet" href="{{ branch }}/css/select2.min.css">

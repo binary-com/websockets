@@ -1,7 +1,7 @@
 ---
 ---
 * {
-    font-family: 'IBM Plex Sans';
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 16px;
     padding: 0;
     margin: 0;
@@ -113,13 +113,27 @@
     .hero-container > .hero-header, .page-content > h1 {
         font-size: 32px;
     }
-    .main-page-row > h1,
-    .main-page-row > .single-container > h1,
-    .container > .single-container > h2 {
-        font-size: 24px;
+    .main-page-row {
+        h1 {
+            width: 90%;
+            font-size: 24px;
+        }
+
+        .single-container {
+            h1 {
+                font-size: 24px;
+            }
+            .subheader { 
+                font-size: 16px;
+            }
+        }
     }
-    .hero-container > .hero-text,
-    .main-page-row > .single-container > .subheader { 
+    .container {
+        .single-container > h2 {
+            font-size: 24px;
+        }
+    }
+    .hero-container > .hero-text { 
         font-size: 16px;
     }
     .page-content > fieldset > input[type="text"] {
