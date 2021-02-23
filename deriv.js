@@ -138,7 +138,7 @@ function handleDropdownClick(e) {
 }
 
 function setCopyButton() {
-  const code_headers = document.getElementsByClassName("card-header");
+  const code_headers = document.getElementsByClassName("copy-button");
   if (!code_headers) return;
   for (let i = 0; i < code_headers.length; i++) {
     code_headers[i].removeEventListener("click", handleDropdownClick);
@@ -146,23 +146,26 @@ function setCopyButton() {
   }
 }
 
-function handleCodeCopyClick(e) {
-  let code_box = e.srcElement.parentNode.nextElementSibling;
-  console.log(code_box);
+function handleCodeCopyClick() {
+  let code_box = this.parentNode;
   if (!code_box) return;
 
   let code_text;
-  if (code_box.children.length === 14) {
-    code_box = code_box.children;
-
-    let select_value = document.getElementById("demo-language").value;
-    for(let i = 0; i < code_box.length; i++) {
-      if (code_box[i].attributes[0].value === select_value) {
-        code_text = code_box[i].textContent;
-      }
-    }
+  if(code_box.className === "card-light") {
+    code_text = code_box.children[0].textContent.trim();
   } else {
-   code_text = code_box.textContent; 
+    code_box = code_box.nextElementSibling;
+    if (code_box.children.length === 14) {
+      code_box = code_box.children;
+      let select_value = document.getElementById("demo-language").value;
+      for(let i = 0; i < code_box.length; i++) {
+        if (code_box[i].attributes[0].value === select_value) {
+          code_text = code_box[i].textContent;
+        }
+      }
+    } else {
+     code_text = code_box.textContent; 
+    }
   }
 
   let dummy = document.createElement("textarea");
