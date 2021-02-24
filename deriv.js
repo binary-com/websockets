@@ -151,20 +151,20 @@ function handleCodeCopyClick() {
   if (!code_box) return;
 
   let code_text;
-  if(code_box.className === "card-light") {
+  if (code_box.className === "card-light") {
     code_text = code_box.children[0].textContent.trim();
   } else {
     code_box = code_box.nextElementSibling;
     if (code_box.children.length === 14) {
       code_box = code_box.children;
       let select_value = document.getElementById("demo-language").value;
-      for(let i = 0; i < code_box.length; i++) {
+      for (let i = 0; i < code_box.length; i++) {
         if (code_box[i].attributes[0].value === select_value) {
           code_text = code_box[i].textContent;
         }
       }
     } else {
-     code_text = code_box.textContent; 
+      code_text = code_box.textContent;
     }
   }
 
