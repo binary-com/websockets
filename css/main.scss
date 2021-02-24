@@ -758,6 +758,14 @@ textarea {
 .btn-submit {
     width: fit-content;
     height: fit-content;
+    padding: 10px 16px;
+    border-radius: 4px;
+    margin: 24px 8px 40px 0;
+    border: solid 2px #999999;
+}
+.btn-reset {
+    width: fit-content;
+    height: fit-content;
     padding: 10px 11px;
     border: none;
     border-radius: 4px;
@@ -766,14 +774,6 @@ textarea {
     color: #ffffff;
     margin: 24px 8px 40px 0;
     position: relative;
-}
-.btn-reset {
-    width: fit-content;
-    height: fit-content;
-    padding: 10px 16px;
-    border-radius: 4px;
-    margin: 24px 8px 40px 0;
-    border: solid 2px #999999;
 }
 .btn-authenticate {
     width: 118px;
@@ -1182,6 +1182,26 @@ pre {
                 align-items: center;
                 justify-content: center;
                 margin-bottom: 16px;
+
+                .btn-submit {
+                    background-color: #ff444f;
+                    border: #ff444f 2px solid;
+                    color: white;
+                    padding: 10px 16px;
+                }
+
+                #playground-reset-btn {
+                    .btn-reset {
+                        border: solid 2px #6e6e6e;
+                        color: white;
+                        background-color: inherit;
+                        padding: 10px 16px;
+
+                        &:hover {
+                            background-color: #999999;
+                        }
+                    }
+                }
             }
 
             textarea {
