@@ -99,11 +99,10 @@ html {
                                 }
                                 .cta {
                                     width: 100%;
-                                    flex-direction: row;
                                     margin-top: 20px;
 
                                     .title {
-                                        margin: 0;
+                                        margin: 0 0 16px 0;
                                     }
                                     a {
                                         margin-left: 20px;
@@ -185,10 +184,49 @@ html {
     #frmNewApplication > .form-content > fieldset {
         flex-direction: row;
     }
-    .accordion-wrapper > .accordion-header {
-        padding: 16px 28px;
+    .doc-content {
+        .page-wrapper {
+            width: 95% !important;
+
+            .page-content {
+                .app-header {
+                    font-size: 32px;
+                }
+                .subheader {
+                    font-size: 16px;
+                    text-align: left;
+                }
+                #api-token-fieldset {
+                    input[type="text"] {
+                        max-width: calc(100% - 150px);
+                    }
+                }
+            }
+    
+            .with-bg {
+                padding: 0;
+        
+                .accordion {
+                    padding-left: unset;
+            
+                    .accordion-wrapper {
+                        .accordion-header {
+                            padding: 16px 28px;
+                        }
+                    }
+                }
+            }
+        }
     }
     .cta {
+        h3 {
+            font-size: 16px;
+        }
+        a {
+            .cta-button {
+                font-size: 14px;
+            }
+        }
         .cta-grid {
             display: unset;
 
@@ -788,8 +826,6 @@ textarea {
     align-self: flex-start;
 }
 .scopes-field > input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
     margin-right: 16px;
 }
 .btn {
@@ -862,6 +898,7 @@ textarea {
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-height: calc(100vh - 54px);
 }
 .doc-content {
     padding: 105px 24px;
@@ -871,6 +908,7 @@ textarea {
 }
 .playground-content {
     padding: 105px 24px;
+    height: calc(83vh - 54px);
 }
 #content > .documentation {
     width: 90%;
