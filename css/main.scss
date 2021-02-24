@@ -1357,9 +1357,9 @@ pre {
     border: none;
     font-size: 14px;
     font-weight: normal;
-    line-height: 1.14;
+    line-height: 2.5;
     color: #ffffff;
-    margin: 0 6px;
+    margin: 0 6px 0 0;
     padding: 6px 8px;
 }
 .docson .scopes {
@@ -1408,6 +1408,12 @@ pre {
     float: left;
     max-width: 600px;
     width: 100%;
+
+    ul {
+        li {
+            list-style-type: none;
+        }
+    }
 }
 .docson .signature-button {
     cursor: pointer;
