@@ -2,185 +2,188 @@
 layout: documentation
 permalink: docs/faq/
 ---
-
-<h1>FAQ</h1>
-
-<div class="accordion-wrapper">
-    <div class="accordion-header">
-        <div class="accordion-text bold">
-            What is the easiest way to get started with Deriv API?
+<div class="page-content with-bg">
+    <h1>FAQ</h1>
+    <div class="accordion">
+        <div class="accordion-wrapper">
+            <div class="accordion-header">
+                <div class="accordion-text bold">
+                    What is the easiest way to get started with Deriv API?
+                </div>
+                <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
+            </div>
+            <div class="accordion-panel">
+                <p>
+                    View our <a href="/docs/code-samples">code samples</a>. You can use these code snippets in your app to open a connection to our WebSocket API service. Explore our 
+                    <a href="/playground">API playground</a> for the method calls you need for your app.
+                </p>
+            </div>
         </div>
-        <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
-    </div>
-    <div class="accordion-panel">
-        View our <a href="/docs/code-samples">code samples</a>. You can use these code snippets in your app to open a connection to our WebSocket API service. Explore our 
-        <a href="/playground">API playground</a> for the method calls you need for your app.
+
+        <div class="accordion-wrapper">
+            <div class="accordion-header">
+                <div class="accordion-text bold">
+                    How do I build my own front-end app?
+                </div>
+                <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
+            </div>
+            <div class="accordion-panel">
+                <p>
+                    Simply copy our open-source code and adapt it for your needs. Follow these steps to get started:
+                </p>
+                <ol>
+                    <li>Open a <a target="_blank" href="http://www.github.com">GitHub</a> account.</li>
+                    <li>Download the <a target="_blank" href="https://desktop.github.com">GitHub Desktop application</a>.</li>
+                    <li>Fork any of our <a target="_blank" href="https://git.deriv.cloud/deriv/">open-source front-end repositories</a>.</li>
+                    <li>Make the code changes in your fork.</li>
+                    <li>Publish your fork using the <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> facility.</li>
+                    <li>For SSL and website acceleration for your app, open a free account on 
+                        <a target="_blank" href="https://www.cloudflare.com/">Cloudflare</a>.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="accordion-wrapper">
+            <div class="accordion-header">
+                <div class="accordion-text bold">
+                    Can someone build an app for me?
+                </div>
+                <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
+            </div>
+            <div class="accordion-panel">
+                <p>
+                    Sure! You may hire developers who are familiar with JavaScript and WebSocket technology to build your app for you.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordion-wrapper">
+            <div class="accordion-header">
+                <div class="accordion-text bold">
+                    Will I earn commissions if a client signed up with Deriv using my app?
+                </div>
+                <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
+            </div>
+            <div class="accordion-panel">
+                <p>Yes! Follow these steps:</p>
+                <ol>
+                    <li>Sign up as an <a href="https://www.binary.com/en/affiliate/signup.html">affiliate</a>.</li>
+                    <li>Insert your affiliate token into the <a href="/playground/#new_account_virtual"><code>new_account_virtual</code></a> call in your app.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="accordion-wrapper">
+            <div class="accordion-header">
+                <div class="accordion-text bold">
+                    How else can I earn?
+                </div>
+                <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
+            </div>
+            <div class="accordion-panel">
+                <p>Here are some ways:</p>
+                <ol>
+                    <li>Sign up as a <a href="https://www.binary.com/en/payment-agent.html">payment agent</a> to process local payments for our clients in your country. 
+                        You may automate your payment agent facility using the 
+                        <a href="/playground/#paymentagent_transfer"><code>paymentagent_transfer</code></a> API call.</li>
+                    <li>
+                        If you are prepared to offer higher contract prices than ours, you may add a <strong>markup percentage</strong> when you 
+                        <a href="/docs/app-registration">register</a> your app. 
+                        This is a percentage of contract payouts, and it’s added to all contract prices in your app. 
+                        At every month-end, the aggregate markup is paid to you. 
+                        Sign up as our affiliate and contact your Affiliate Manager to learn more.
+                    </li>
+                </ol>
+            </div>    
+        </div>
+
+        <div class="accordion-wrapper">
+            <div class="accordion-header">
+                <div class="accordion-text bold">
+                    What does it mean if a schema property has the ‘sensitive’ attribute?
+                </div>
+                <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
+            </div>    
+            <div class="accordion-panel">
+                This means we will treat the value of this property as confidential, and will never return it in any API response.
+                It is used for passwords and tokens.
+            </div>
+        </div>
+
+        <div class="accordion-wrapper">
+            <div class="accordion-header">
+                <div class="accordion-text bold">
+                    What is copy trading?
+                </div>
+                <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
+            </div>
+            <div class="accordion-panel">
+                <p>Copy trading allows a client (the Copier) to automatically copy the trades of another client (the Trader).</p>
+                <p>To allow others to copy your trades, set the ‘allow_copiers’ setting via the <a href="/playground/#set_settings">set settings</a> call.</p>
+                <p>The Trader may create a read-only API token and provide it to the Copier.</p>
+                <p>Enabling ‘allow_copiers’ will also make the copytrading statistics call available. 
+                    The statistics call provides the information about an account. 
+                    This is so that potential copiers have an idea about the trader’s past performance.</p>
+                <p>To start copying, use the <a href="/playground/#copy_start">copy start</a> call. To stop copying, use <a href="/playground/#copy_stop">copy stop</a>.</p>
+            </div>
+        </div>
+
+        <div class="accordion-wrapper">
+            <div class="accordion-header">
+                <div class="accordion-text bold">
+                    How do I check for server status updates?
+                </div>
+                <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
+            </div>
+            <div class="accordion-panel">
+                <p>Use the <a href="/playground/#website_status">website status</a> call to check whether the website is online or not.</p>
+            </div>
+        </div>
+
+        <div class="accordion-wrapper">
+            <div class="accordion-header">
+                <div class="accordion-text bold">
+                    How do I subscribe to server status notifications?
+                </div>
+                <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
+            </div>
+            <div class="accordion-panel">
+                <p>This JavaScript code opens a WebSocket and makes a subscription for server status notifications. 
+                    When a message is received, it sends the website status message, if available:
+                    <pre data-language="javascript">
+                const WebSocket = require('ws');
+                const ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?l=EN&app_id=1089');
+                
+                ws.on('open', function open() {
+                    ws.send(JSON.stringify({
+                        website_status: 1,
+                        subscribe: 1
+                    }));
+                });
+                
+                ws.on('message', function incoming(data) {
+                    data = JSON.parse(data);
+                    console.log('website status: %s', data.website_status.site_status);
+                    if (data.website_status.message) {
+                        console.log('status message: %s', data.website_status.message);
+                    }
+                });        
+                    </pre>
+                </p>
+            </div>
+        </div>
+
+        <div class="accordion-wrapper">
+            <div class="accordion-header">
+                <div class="accordion-text bold">
+                    How do I get help?
+                </div>
+                <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
+            </div>
+            <div class="accordion-panel">
+                Visit our <a target="_blank" class="bold" href="https://binary.vanillacommunity.com/">dev forum</a> or email 
+                <a href="mailto:api-support@deriv.com?subject=API+Question:+">api-support@deriv.com</a>.
+            </div>
+        </div>
     </div>
 </div>
-
-<div class="accordion-wrapper">
-    <div class="accordion-header">
-        <div class="accordion-text bold">
-            How do I build my own front-end app?
-        </div>
-        <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
-    </div>
-    <div class="accordion-panel">
-        <p>
-            Simply copy our open-source code and adapt it for your needs. Follow these steps to get started:
-        </p>
-        <ol>
-            <li>Open a <a target="_blank" class="bold" href="http://www.github.com">GitHub</a> account.</li>
-            <li>Download the <a target="_blank" class="bold" href="https://desktop.github.com">GitHub Desktop application</a>.</li>
-            <li>Fork any of our <a target="_blank" class="bold" href="https://git.deriv.cloud/deriv/">open-source front-end repositories</a>.</li>
-            <li>Make the code changes in your fork.</li>
-            <li>Publish your fork using the <a target="_blank" class="bold" href="https://pages.github.com/">GitHub Pages</a> facility.</li>
-            <li>For SSL and website acceleration for your app, open a free account on 
-                <a target="_blank" class="bold" href="https://www.cloudflare.com/">Cloudflare</a>.</li>
-        </ol>
-    </div>
-</div>
-
-<div class="accordion-wrapper">
-    <div class="accordion-header">
-        <div class="accordion-text bold">
-            Can someone build an app for me?
-        </div>
-        <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
-    </div>
-    <div class="accordion-panel">
-        Sure! You may hire developers who are familiar with JavaScript and WebSocket technology to build your app for you.
-    </div>
-</div>
-
-<div class="accordion-wrapper">
-    <div class="accordion-header">
-        <div class="accordion-text bold">
-            Will I earn commissions if a client signed up with Deriv using my app?
-        </div>
-        <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
-    </div>
-    <div class="accordion-panel">
-        <p>Yes! Follow these steps:</p>
-        <ol>
-            <li>Sign up as an <a href="https://www.binary.com/en/affiliate/signup.html">affiliate</a>.</li>
-            <li>Insert your affiliate token into the <a href="/playground/#new_account_virtual"><code>new_account_virtual</code></a> call in your app.</li>
-        </ol>
-    </div>
-</div>
-
-<div class="accordion-wrapper">
-    <div class="accordion-header">
-        <div class="accordion-text bold">
-            How else can I earn?
-        </div>
-        <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
-    </div>
-    <div class="accordion-panel">
-        Here are some ways:
-        <ol>
-            <li>Sign up as a <a href="https://www.binary.com/en/payment-agent.html">payment agent</a> to process local payments for our clients in your country. 
-                You may automate your payment agent facility using the 
-                <a href="/playground/#paymentagent_transfer"><code>paymentagent_transfer</code></a> API call.</li>
-            <li>
-                If you are prepared to offer higher contract prices than ours, you may add a <strong>markup percentage</strong> when you 
-                <a href="/docs/app-registration">register</a> your app. 
-                This is a percentage of contract payouts, and it’s added to all contract prices in your app. 
-                At every month-end, the aggregate markup is paid to you. 
-                Sign up as our affiliate and contact your Affiliate Manager to learn more.
-            </li>
-        </ol>
-    </div>    
-</div>
-
-<div class="accordion-wrapper">
-    <div class="accordion-header">
-        <div class="accordion-text bold">
-            What does it mean if a schema property has the ‘sensitive’ attribute?
-        </div>
-        <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
-    </div>    
-    <div class="accordion-panel">
-        This means we will treat the value of this property as confidential, and will never return it in any API response.
-        It is used for passwords and tokens.
-    </div>
-</div>
-
-<div class="accordion-wrapper">
-    <div class="accordion-header">
-        <div class="accordion-text bold">
-            What is copy trading?
-        </div>
-        <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
-    </div>
-    <div class="accordion-panel">
-        <p>Copy trading allows a client (the Copier) to automatically copy the trades of another client (the Trader).</p>
-        <p>To allow others to copy your trades, set the ‘allow_copiers’ setting via the <a href="/playground/#set_settings">set settings</a> call.</p>
-        <p>The Trader may create a read-only API token and provide it to the Copier.</p>
-        <p>Enabling ‘allow_copiers’ will also make the copytrading statistics call available. 
-            The statistics call provides the information about an account. 
-            This is so that potential copiers have an idea about the trader’s past performance.</p>
-        <p>To start copying, use the <a href="/playground/#copy_start">copy start</a> call. To stop copying, use <a href="/playground/#copy_stop">copy stop</a>.</p>
-    </div>
-</div>
-
-<div class="accordion-wrapper">
-    <div class="accordion-header">
-        <div class="accordion-text bold">
-            How do I check for server status updates?
-        </div>
-        <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
-    </div>
-    <div class="accordion-panel">
-        <p>Use the <a href="/playground/#website_status">website status</a> call to check whether the website is online or not.</p>
-    </div>
-</div>
-
-<div class="accordion-wrapper">
-    <div class="accordion-header">
-        <div class="accordion-text bold">
-            How do I subscribe to server status notifications?
-        </div>
-        <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
-    </div>
-    <div class="accordion-panel">
-        <p>This JavaScript code opens a WebSocket and makes a subscription for server status notifications. 
-            When a message is received, it sends the website status message, if available:
-            <pre data-language="javascript">
-        const WebSocket = require('ws');
-        const ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?l=EN&app_id=1089');
-        
-        ws.on('open', function open() {
-            ws.send(JSON.stringify({
-                website_status: 1,
-                subscribe: 1
-            }));
-        });
-        
-        ws.on('message', function incoming(data) {
-            data = JSON.parse(data);
-            console.log('website status: %s', data.website_status.site_status);
-            if (data.website_status.message) {
-                console.log('status message: %s', data.website_status.message);
-            }
-        });        
-            </pre>
-        </p>
-    </div>
-</div>
-
-<div class="accordion-wrapper">
-    <div class="accordion-header">
-        <div class="accordion-text bold">
-            How do I get help?
-        </div>
-        <img class="accordion-button" src="/img/plus.svg" width="16" height="16" alt="expand" />
-    </div>
-    <div class="accordion-panel">
-        Visit our <a target="_blank" class="bold" href="https://binary.vanillacommunity.com/">dev forum</a> or email 
-        <a href="mailto:api-support@deriv.com?subject=API+Question:+">api-support@deriv.com</a>.
-    </div>
-</div>
-
-
-
