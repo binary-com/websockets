@@ -344,6 +344,7 @@ html {
         flex-direction: column;
         padding: 75px 16px;
         width: unset;
+        min-height: calc(88vh - 54px);
     }
 }
 @media (max-width: 1078px) {
@@ -903,10 +904,10 @@ textarea {
     padding: 105px 24px;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 .playground-content {
     padding: 105px 24px;
+    min-height: 100vh;
 }
 #content > .documentation {
     width: 90%;
