@@ -1175,6 +1175,15 @@ pre {
             background-color: #151717;
             padding: 24px 24px 82px 24px;
             margin-bottom: 40px;
+            position: relative;
+
+            .inline-label {
+                position: absolute;
+                top: 17px;
+                left: 30px;
+                font-size: 10px;
+                background-color: #0e0e0e;
+            }            
 
             .json-btn-wrapper {
                 display: flex;
