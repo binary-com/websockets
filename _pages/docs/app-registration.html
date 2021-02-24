@@ -3,77 +3,79 @@ layout: documentation
 permalink: docs/app-registration/
 ---
 
-<h1 class="app-header">App registration</h1>
-<div class="subheader">Authenticate your API token before using it in your app.</div>
+<div class="page-content">
+  <h1 class="app-header">App registration</h1>
+  <div class="subheader">Authenticate your API token before using it in your app.</div>
 
-<div class="cta">
-    <h3>Looking for your API token?</h3>
-    <a target="tokeninput" href="https://www.binary.com/en/user/security/api_tokenws.html">
-        <div class="cta-button">Get your API token</div>
-    </a>
-</div>
-<fieldset id="api-token-fieldset">
-    <input type="text" id="api-token" placeholder="API Token">
-    <button id="send-auth-manually-btn" class="btn-authenticate bold">Authenticate</button>
-</fieldset>
-
-<div class="horizontal-separator-grey"></div>
-
-<form id="frmNewApplication">
-  <div class="form-content">
-    <fieldset>
-      <h2>Register your app</h2>
-      <input id="application-name" type="text" maxlength="48" placeholder="Name (Required)" />
-      <input id="application-redirect_uri" type="text" maxlength="255" placeholder="Redirect URL (Required)" />
-      <input id="application-verification_uri" type="text" maxlength="255" placeholder="Verification URL" />
-      <input id="application-homepage" type="text" maxlength="255" placeholder="Homepage URL" />
-      <input id="application-github" type="text" maxlength="255" placeholder="Github URL" />
-      <input id="application-appstore" type="text" maxlength="255" placeholder="Appstore URL" />
-      <input id="application-googleplay" type="text" maxlength="255" placeholder="Google Play URL" />
-      <input id="application-app_markup_percentage" type="text" maxlength="4" placeholder="Markup percentage (minimum 0.00 and maximum 5.00)" />
-    </fieldset>
-    <div class="scopes">
-      <p class="bold scopes-field">Scopes:</p>
-      <div class="scopes-field">
-        <input id="read-scope" type="checkbox" value="read" checked="checked" />
-        <label for="read-scope">Read: View account activity</label>
-      </div>
-      <div class="scopes-field">
-        <input id="trade-scope" type="checkbox" value="trade" />
-        <label for="trade-scope">Trade: Buy and sell contracts</label>
-      </div>
-      <div class="scopes-field">
-        <input id="trading_information-scope" type="checkbox" value="trading_information" />
-        <label for="trading_information-scope">Trading Information: View trading and balance information</label>
-      </div>
-      <div class="scopes-field">
-        <input id="payments-scope" type="checkbox" value="payments" />
-        <label for="payments-scope">Payments: Cashier (Deposit, Withdraw)</label>
-      </div>
-      <div class="scopes-field">
-        <input id="admin-scope" type="checkbox" value="admin" />
-        <label for="admin-scope">Admin: API token management, application management</label>
-      </div>  
-    </div>
-    <button class="btn-submit" id="btnRegister">Register</button>
+  <div class="cta">
+      <h3>Looking for your API token?</h3>
+      <a target="tokeninput" href="https://www.binary.com/en/user/security/api_tokenws.html">
+          <div class="cta-button">Get your API token</div>
+      </a>
   </div>
-</form>
+  <fieldset id="api-token-fieldset">
+      <input type="text" id="api-token" placeholder="API Token">
+      <button id="send-auth-manually-btn" class="btn-authenticate bold">Authenticate</button>
+  </fieldset>
 
-<div class="horizontal-separator-grey"></div>
+  <div class="horizontal-separator-grey"></div>
 
-{% include api-playground-field.html %}
+  <form id="frmNewApplication">
+    <div class="form-content">
+      <fieldset>
+        <h2>Register your app</h2>
+        <input id="application-name" type="text" maxlength="48" placeholder="Name (Required)" />
+        <input id="application-redirect_uri" type="text" maxlength="255" placeholder="Redirect URL (Required)" />
+        <input id="application-verification_uri" type="text" maxlength="255" placeholder="Verification URL" />
+        <input id="application-homepage" type="text" maxlength="255" placeholder="Homepage URL" />
+        <input id="application-github" type="text" maxlength="255" placeholder="Github URL" />
+        <input id="application-appstore" type="text" maxlength="255" placeholder="Appstore URL" />
+        <input id="application-googleplay" type="text" maxlength="255" placeholder="Google Play URL" />
+        <input id="application-app_markup_percentage" type="text" maxlength="4" placeholder="Markup percentage (minimum 0.00 and maximum 5.00)" />
+      </fieldset>
+      <div class="scopes">
+        <p class="bold scopes-field">Scopes:</p>
+        <div class="scopes-field">
+          <input id="read-scope" type="checkbox" value="read" checked="checked" />
+          <label for="read-scope">Read: View account activity</label>
+        </div>
+        <div class="scopes-field">
+          <input id="trade-scope" type="checkbox" value="trade" />
+          <label for="trade-scope">Trade: Buy and sell contracts</label>
+        </div>
+        <div class="scopes-field">
+          <input id="trading_information-scope" type="checkbox" value="trading_information" />
+          <label for="trading_information-scope">Trading Information: View trading and balance information</label>
+        </div>
+        <div class="scopes-field">
+          <input id="payments-scope" type="checkbox" value="payments" />
+          <label for="payments-scope">Payments: Cashier (Deposit, Withdraw)</label>
+        </div>
+        <div class="scopes-field">
+          <input id="admin-scope" type="checkbox" value="admin" />
+          <label for="admin-scope">Admin: API token management, application management</label>
+        </div>  
+      </div>
+      <button class="btn-submit" id="btnRegister">Register</button>
+    </div>
+  </form>
 
-<div>
-  <table class="flex-table" id="applications-table" style="display:none">
-    <thead>
-      <tr class="flex-tr">
-        <th class="flex-tr-child">Name</th>
-        <th class="flex-tr-child">Application ID</th>
-        <th class="flex-tr-child">Scopes</th>
-        <th class="flex-tr-child">Redirect URL</th>
-        <th colspan="2" class="flex-tr-child">Actions</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+  <div class="horizontal-separator-grey"></div>
+
+  {% include api-playground-field.html %}
+
+  <div>
+    <table class="flex-table" id="applications-table" style="display:none">
+      <thead>
+        <tr class="flex-tr">
+          <th class="flex-tr-child">Name</th>
+          <th class="flex-tr-child">Application ID</th>
+          <th class="flex-tr-child">Scopes</th>
+          <th class="flex-tr-child">Redirect URL</th>
+          <th colspan="2" class="flex-tr-child">Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
 </div>
