@@ -73,40 +73,82 @@ html {
             }
         }
     }
-    .playground {
-        &-api-json {
-            .playground-box {
-                padding: 16px 30px;
-            }
-            fieldset {
-                flex-wrap: nowrap;
-            }
-        }
-    }
     fieldset > .form-content {
         width: 100%;
     }
     .form-content > textarea {
         width: 100%;
     }
-    .json-btn-wrapper {
-        width: 100%;
 
-        .btn-submit {
-            font-size: 14px;
-            width: 50%;
-        }
+    .main-content{
 
-        #playground-reset-btn {
-            width: 50%;
+        .playground-content{
+            padding: 105px 16px;
 
-            .btn-reset {
-                margin-right: 0;
-                font-size: 14px;
-                width: 100%;
+            .page-wrapper {
+
+                .playground {
+                    
+                    .playground-page-wrapper {
+    
+                        .playground-api-json {
+
+                            @media (max-width: 640px) {
+                                .api-token {
+                                    flex-direction: column;
+                                }
+                                .cta {
+                                    width: 100%;
+                                    flex-direction: row;
+                                    margin-top: 20px;
+
+                                    .title {
+                                        margin: 0;
+                                    }
+                                    a {
+                                        margin-left: 20px;
+                                    }
+                                }
+                            }
+        
+                            .playground-box {
+                                padding: 16px 18px;
+
+                                textarea {
+                                    width: calc(100% - 24px);
+                                }
+                                
+                                .json-btn-wrapper {
+                                    width: 100%;
+                                    flex-direction: column;
+                            
+                                    .btn-submit {
+                                        font-size: 14px;
+                                        width: 100%;
+                                        margin: 24px 0 0 0;
+                                    }
+                            
+                                    #playground-reset-btn {
+                                        width: 100%;
+                            
+                                        .btn-reset {
+                                            margin: 24px 0 0 0;
+                                            font-size: 14px;
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                            fieldset {
+                                flex-wrap: nowrap;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
+
     .page-wrapper > .page-content, #frmNewApplication > .form-content {
         width: 100%;
         padding-left: unset;
@@ -725,7 +767,7 @@ fieldset {
     }
 }
 textarea {
-    width: 98%;
+    width: calc(100% - 16px);
     min-height: 119px;
     padding: 10px;
     border-radius: 4px;
@@ -1183,7 +1225,7 @@ pre {
                 left: 30px;
                 font-size: 10px;
                 background-color: #0e0e0e;
-            }            
+            }
 
             .json-btn-wrapper {
                 display: flex;
@@ -1399,6 +1441,7 @@ pre {
 .docson .signature-header {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     height: fit-content;
 }
 .docson .property-name {
