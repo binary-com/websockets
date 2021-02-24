@@ -596,7 +596,7 @@ nav {
             width: 20px;
             visibility: visible;
         }
-    }
+    }   
 }
 .vertical-separator {
     width: 2px;
@@ -1079,8 +1079,9 @@ pre p {
 }
 #playground {
     .source {
-        margin-top: 10px;
-        padding-left: 10px;
+        pre {
+            background-color: #0e0e0e;
+        }
     }
     &.light {
         pre {
@@ -1397,23 +1398,16 @@ pre {
     -moz-border-radius: 4px;
     color: white;
 }
-.docson .signature-type-string {
-    color: #9ed178;
-}
 .docson span {
     font-size: 14px;
     margin: 8px 8px 0 0;
 }
 .docson .box {
     position: relative;
-    background-color: #1d1f20;
     border: none;
     border-radius: 4px;
     padding-bottom: 10px;
     margin-bottom: 40px;
-}
-.docson .box-body {
-    padding: 42px 24px;
 }
 .docson .box-1 {
     background: #151717;
@@ -1425,13 +1419,88 @@ pre {
 }
 .docson .signature-box-container {
     clear: both;
-}
-.docson .sub-box-container {
-    .box {
-        margin-bottom: unset;
+    margin-top: 8px;
+
+    .sub-box-container {
+        .box {
+            margin-bottom: unset;
+
+            .box-header {
+                background-color: rgba(37, 37, 37, 0.72);
+            }
+            .box-body {
+                padding: 16px;
+                background-color: rgba(37, 37, 37, 0.4);
+
+                .signature {
+                    margin-bottom: 0;
+                }
+            }
+            .box-body:empty {
+                padding: 0;
+            }
+            .source {
+                margin: 0;
+                padding: 0;
+
+                pre {
+                    color: #ffcd44;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        }
     }
 }
 
+.docson .box {
+    .box-header {
+        background-color: rgba(37, 37, 37, 0.72);
+
+        .box-description {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+
+            .box-text {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+            }
+            .scopes {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                .type-enum {
+                    margin: 0 0 0 8px;
+                    padding: 6px 8px;
+                }
+            }
+        }
+    }
+    .box-body {
+        background-color: #151717;
+        padding: 28px 24px;
+    }
+}
+
+.docson .signature-type-expanded {
+    color: #9ed178;
+    background-color: #0e0e0e !important;
+}
+.docson .signature-type-expandable {
+    background-color: #323738;
+}
+.docson .signature-type-string {
+    color: #9ed178;
+}
+.docson .type-keyword {
+    color: #c2c2c2;
+}
 footer {
     background-color: rgba(240, 241, 243, 0.64);
     color: #333333;

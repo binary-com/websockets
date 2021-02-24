@@ -18,14 +18,18 @@
     <div class="box-header box-{{__boxId}}">
         <div class="box-title" ref="{{__ref}}">
             {{#name this}}<div class="box-name {{#if root}}title{{/if}}">{{__name}}</div>{{/name}}
-            <div class="box-description desc">{{desc this}}</div>
-            {{#if auth_required }}
-            <div class="scopes">Auth Required:
-                {{#each auth_scopes }}
-                <span class="type-enum">{{this}}</span>
-                {{/each}}
+            <div class="box-description desc">
+                <div class="box-text">
+                {{desc this}}
+                </div>
+                {{#if auth_required }}
+                <div class="scopes">Auth Required:
+                    {{#each auth_scopes }}
+                    <span class="type-enum">{{this}}</span>
+                    {{/each}}
+                </div>
+                {{/if}}
             </div>
-            {{/if}}
             <div class="end"></div>
         </div>
     </div>
@@ -156,8 +160,7 @@
         {{/if}}
     </div>
     <div class="source">
-        <pre class="json-schema">
-{{source this}}</pre>
+        <pre class="json-schema">{{source this}}</pre>
     </div>
 </div>
 <div class="end"></div>
