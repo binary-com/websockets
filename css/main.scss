@@ -1238,6 +1238,12 @@ pre {
                 }
             }
 
+            .vertical-separator {
+                background-color: rgba(37, 37, 37, 0.72);
+                margin: 0 24px 0 0;
+                width: 2px;
+            }
+
             .cta {
                 display: flex;
                 flex-direction: column;
@@ -1259,6 +1265,7 @@ pre {
                         border-radius: 4px;
                         border: solid 2px #6e6e6e;
                         color: white;
+                        text-align: center;
                     }
                 }
             }
@@ -1328,10 +1335,6 @@ pre {
 
     p {
         color: #c2c2c2;
-    }
-
-    .vertical-separator {
-        background-color: #151717;
     }
 
     .cta {
