@@ -110,10 +110,6 @@
 .docson .required {
     font-weight: bold;
 }
-.docson .type-keyword {
-    font-size: 80%;
-    color: dimgray;
-}
 .docson .type-pattern {
     font-size: 80%;
     color: darkolivegreen;
@@ -124,9 +120,6 @@
 }
 .docson .signature-type-any {
     font-style: italic;
-}
-.docson .signature-type-string {
-    color: #9ed178;
 }
 .docson .signature-type-number {
     color: rgb(129, 129, 204);
@@ -162,14 +155,6 @@
 .docson .signature-type-ref {
     color: darkblue;
 }
-.docson .signature-type-expanded {
-    padding: 5px 3px 3px 5px;
-    vertical-align: -1px;
-    opacity: 0.6;
-    -moz-box-shadow:    inset 1px 1px 1px darkgray;
-    -webkit-box-shadow: inset 1px 1px 1px darkgray;
-    box-shadow:         inset 1px 1px 1px darkgray;
-}
 .docson .button {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -177,9 +162,6 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
-.docson .button:hover {
-    color: darkred;
 }
 @media all and (min-width: 20px) and (max-width: 500px) {
     .docson .property-name {
@@ -278,9 +260,6 @@
     display: none;
     padding-left: 16px;
     padding-right: 30px;
-}
-.docson .json, .json-schema {
-    font-family: "Lucida Console", Monaco, monospace;
 }
 .docson .json-punctuation {
     font-weight: bold;

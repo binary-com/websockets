@@ -367,11 +367,6 @@ define(["/lib/jquery.js", "/lib/handlebars.js", "/lib/highlight.js", "/lib/jsonp
                 element.get(0).resized = resized;
                 resized();
 
-                if(highlight) {
-                    element.find(".json-schema").each(function(k, schemaElement) {
-                        highlight.highlightSchema(schemaElement);
-                    });
-                }
                 element.find(".box-title").each(function() {
                    var ref = $(this).attr("ref");
                    if(ref) {
