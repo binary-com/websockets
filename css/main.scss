@@ -246,6 +246,9 @@ html {
     }
     #content > #mobile-page-selector {
         display: block;
+        padding: 8px 5px;
+        border-radius: 4px;
+        background-color: white;
     }
     .main-content {
         .hero-image {
@@ -512,13 +515,6 @@ a {
     color: #ffffff;
     margin-bottom: 32px;
 }
-.single-container > h1 {
-    margin-bottom: 12px;
-    line-height: 1.25;
-}
-.single-container > p {
-    margin-bottom: 32px;
-}
 .branding {
     display: inline;
     font-size: 24px;
@@ -632,9 +628,21 @@ ol > p {
     align-items: center;
     justify-content: center;
     width: 80%;
-}
-.single-container > img {
-    margin-bottom: 24px;
+
+    p {
+        margin-bottom: 32px;
+
+        a {
+            color: #ff444f;
+        }
+    }
+    h1 {
+        margin-bottom: 12px;
+        line-height: 1.25;
+    }
+    img {
+        margin-bottom: 24px;
+    }
 }
 .container {
     display: flex;
@@ -733,7 +741,7 @@ ol > p {
     justify-content: center;
 }
 .main-page-card {
-    width: 31%;
+    width: 100%;
     padding: 32px 24px;
     border-radius: 4px;
     box-shadow: 0 4px 8px 0 rgba(14, 14, 14, 0.1);
@@ -1038,10 +1046,6 @@ textarea {
     width: 80%;
 
     fieldset {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
         input[type="text"] {
             border-radius: 4px;
             margin-bottom: 24px;
@@ -1570,7 +1574,7 @@ pre {
     background-color: #0e0e0e;
 
     .sidebar-title, .selected, a {
-        color: #ffffff !important;
+        color: #ffffff;
     }
 
     fieldset > textarea {
@@ -1640,7 +1644,6 @@ pre {
 .docson .signature-header {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     height: fit-content;
 }
 .docson .property-name {
@@ -1653,7 +1656,6 @@ pre {
 .docson .signature-type {
     display: flex;
     width: 60%;
-    flex-wrap: wrap;
     align-items: center;
     padding-left: 6px;
 
