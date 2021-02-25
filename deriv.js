@@ -1,6 +1,7 @@
 window.onload = function () {
   setSideBarActive();
   setNavbarActive();
+  setMobileNavbarActive();
   setAccordionActive();
   handleMobileNav();
   handleMobileNavDropdown();
@@ -51,6 +52,36 @@ const setNavbarActive = () => {
     }
   }
 };
+
+
+const setMobileNavbarActive = () => {
+  const canvas_menu = document.getElementById('canvas-menu');
+  if (!canvas_menu) return;
+
+  let current_element;
+  let current_page = window.location.pathname.split("/")[1].replaceAll("/", "");
+  if (current_page === 'docs') {
+    openMobileDropdown();
+    let sub_page = window.location.pathname.split("/")[2].replaceAll("/", "");
+    if (sub_page) {
+      current_element = sub_page;
+    } else {
+      current_element = "quickstart";
+    }
+  } else if (current_page === 'playground') {
+    current_element = sub_page;
+  } else {
+    current_element = "home";
+  }
+  const target_element = document.getElementById(current_element);
+  target_element.classList.add("selected");
+}
+
+function openMobileDropdown() {
+  const dropdown = document.getElementById("doc-menu-header")
+  .nextElementSibling;
+  dropdown.classList.add("show-dropdown");
+}
 
 const setSideBarActive = () => {
   let sidebarLinks = document.getElementById("sidebar");
@@ -150,7 +181,6 @@ const handleMobileNavDropdown = () => {
 function handleDropdownClick(e) {
   const dropdown = document.getElementById("doc-menu-header")
     .nextElementSibling;
-  console.log(dropdown);
   dropdown.classList.toggle("show-dropdown");
 }
 
