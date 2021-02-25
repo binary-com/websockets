@@ -314,7 +314,7 @@ html {
 
             .row-container {
                 width: 100%;
-                
+
                 .single-container {
                     width: unset;
                     padding: 40px 16px 0;
@@ -340,10 +340,10 @@ html {
         position: fixed;
         background-color: white;
         top: 56px;
-        height: 100vh;
+        height: calc(100vh - 54px);
         width: 253px;
         opacity: 1;
-        overflow: scroll;
+        overflow: hidden;
         transition: left 0.4s ease 0s;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 16px 20px 0;
         will-change: left;
@@ -530,7 +530,6 @@ a {
 h1 {
     margin-bottom: 40px;
     font-size: 48px;
-    line-height: 1.5;
     text-align: center;
     color: #333333;
 }
@@ -544,9 +543,16 @@ h2 {
 .app-header {
     margin-bottom: 12px;
 }
+.doc-sub-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+    text-align: left;
+    width: 100%;
+}
 h3 {
     margin-bottom: 16px;
     font-size: 24px;
+    text-align: left;
     line-height: 1.5;
     color: #333333;
 }
@@ -840,7 +846,6 @@ nav {
     background-size: 46%, 50%;
     background-repeat: no-repeat, no-repeat;
     background-position: top 20px left 8px, bottom 0 right -8px;
-    padding: 0 80px 80px 0;
     z-index: 0;
 }
 .page-content {
@@ -911,9 +916,12 @@ ul {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px;
+            padding: 40px 0;
 
-             h2 {
+            p {
+                text-align: center;
+            }
+            h2 {
                 font-size: 32px;
                 font-weight: bold;
                 line-height: 1.25;
@@ -1050,7 +1058,7 @@ textarea {
     flex-direction: column;
 }
 .doc-content {
-    padding: 105px 24px;
+    padding: 105px 0;
     display: flex;
     justify-content: center;
     min-height: 95vh;
@@ -1060,7 +1068,7 @@ textarea {
     min-height: 95vh;
 }
 #content > .documentation {
-    width: 90%;
+    width: 80%;
     margin-top: 20px;
 }
 .page-wrapper {
