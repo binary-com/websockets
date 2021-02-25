@@ -7,6 +7,10 @@ window.onload = function () {
   setCopyButton();
 };
 
+window.onhashchange = (e) => {
+  setSideBarPlaygroundActive();
+};
+
 const setAccordionActive = () => {
   let acc = document.getElementsByClassName("accordion-header");
   if (!acc) return;
@@ -68,8 +72,6 @@ const setSideBarActive = () => {
     }
   }
 };
-
-window.onhashchange = (e) => setSideBarPlaygroundActive();
 
 const setSideBarPlaygroundActive = () => {
   let sidebarLinks = document.getElementById("playground-sidebar");
