@@ -117,12 +117,27 @@ const handleMobileNav = () => {
 };
 
 function handleHamburgerClick() {
-  let canvas = document.getElementById("canvas-menu");
+  const canvas = document.getElementById("canvas-menu");
   if (!canvas) return;
   canvas.classList.toggle("show-canvas");
-  this.src = canvas.classList.contains("show-canvas")
-    ? "/img/close.svg"
-    : "/img/hamburger_menu.svg";
+
+  if (canvas.classList.contains("show-canvas")) {
+    document.addEventListener("click", handleOutsideCanvasClick);
+    this.src = "/img/close.svg";
+  } else {
+    document.removeEventListener("click", handleOutsideCanvasClick);
+    this.src = "/img/hamburger_menu.svg";
+  }
+}
+
+function handleOutsideCanvasClick(e) {
+  const canvas = document.getElementById("canvas-menu");
+  const navigation = document.getElementById("main-nav");
+  if (!canvas.contains(e.target) && !navigation.contains(e.target)) {
+    canvas.classList.remove("show-canvas");
+    document.getElementById("hamburger").src = "/img/hamburger_menu.svg";
+    document.removeEventListener("click", handleOutsideCanvasClick);
+  }
 }
 
 const handleMobileNavDropdown = () => {
