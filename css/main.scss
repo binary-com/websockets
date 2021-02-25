@@ -32,6 +32,7 @@ html {
     }
     .single-container > p {
         text-align: center;
+        margin-bottom: 16px;
     }
     .logo {
         width: 84px;
@@ -80,9 +81,9 @@ html {
         width: 100%;
     }
 
-    .main-content{
+    .main-content {
 
-        .playground-content{
+        .playground-content {
             padding: 105px 16px;
 
             .page-wrapper {
@@ -222,7 +223,7 @@ html {
     .main-page-row {
         .card-container {
             flex-direction: column;
-            padding: 40px 16px;
+            padding: 40px 16px 0;
             margin-bottom: 0;
 
             .main-page-card {
@@ -269,13 +270,13 @@ html {
 
             .single-container {
                 width: unset;
-                padding: 40px 16px;
+                padding: 40px 16px 0;
             }
         }
         .cta-row {
             flex-direction: column;
             height: auto;
-            padding: 40px 16px;
+            padding: 40px 16px 0;
         }
         .hero-image {
             min-height: 584px;
@@ -284,7 +285,7 @@ html {
     .main-page-row > .single-container,
     .main-content > .cta-row > .cta-container {
         width: 95%;
-        margin-right: unset;
+        margin: 0 0 40px 0;
     }
     .off-canvas-menu {
         position: fixed;
@@ -970,7 +971,6 @@ textarea {
 .main-content {
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 .doc-content {
     padding: 105px 24px;
