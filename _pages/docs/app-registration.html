@@ -6,7 +6,6 @@ permalink: docs/app-registration/
 <div class="page-content">
   <h1 class="doc-main-title">App registration</h1>
   <div class="subheader">Authenticate your API token before using it in your app.</div>
-
   <div class="cta">
       <h3>Looking for your API token?</h3>
       <a target="tokeninput" href="https://www.binary.com/en/user/security/api_tokenws.html">
@@ -17,9 +16,7 @@ permalink: docs/app-registration/
       <input type="text" id="api-token" placeholder="API Token">
       <button id="send-auth-manually-btn" class="btn-authenticate bold">Authenticate</button>
   </fieldset>
-
   <div class="horizontal-separator-grey"></div>
-
   <form id="frmNewApplication">
     <div class="form-content">
       <fieldset>
@@ -59,11 +56,8 @@ permalink: docs/app-registration/
       <button class="btn-submit" id="btnRegister">Register</button>
     </div>
   </form>
-
   <div class="horizontal-separator-grey"></div>
-
-  {% include api-playground-field.html %}
-
+    {% include api-playground-field.html %}
   <div>
     <table class="flex-table" id="applications-table" style="display:none">
       <thead>
