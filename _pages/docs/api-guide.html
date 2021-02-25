@@ -3,7 +3,7 @@ layout: documentation
 permalink: docs/api-guide/ 
 ---
 <div class="page-content">
-    <h1>API guide</h1>
+    <h1 class="doc-main-title">API guide</h1>
     <div class="text-block">
         <h3>App registration</h3>
         <p class="bold">Register your app before using our API. Here’s how:</p>
@@ -15,9 +15,9 @@ permalink: docs/api-guide/
     </div>
 
     <div class="text-block">
-        <h2 class="sub-title">Client authentication</h2>
+        <h2 class="doc-sub-title">Client authentication</h2>
         <p>Certain API calls require client authentication (e.g. <a href="/playground/#portfolio"><code>portfolio</code></a>) whilst other calls do not (e.g. <a href="/playground/#ticks"><code>ticks</code></a>).</p>
-        <h3 class="bold">There are 2 ways to do client authentication:</h3>
+        <h3 class="api-sub-title" class="bold">There are 2 ways to do client authentication:</h3>
         <ol>
             <li><b>Client authentication by app-specific API tokens</b></li>
             <p>Clients can generate API tokens by logging to their Deriv account and going to <strong>Security & Limits</strong> > 
@@ -50,7 +50,7 @@ permalink: docs/api-guide/
     </div>
 
     <div class="text-block">
-        <h2 class="sub-title">Token scopes</h2>
+        <h2 class="doc-sub-title">Token scopes</h2>
         <h3 class="bold">Each token can have one or more of these scopes:</h3>
         <ul class="bullet">
             <li>read - for calls that only read client’s data</li>
@@ -63,7 +63,7 @@ permalink: docs/api-guide/
     </div>
 
     <div class="text-block">
-        <h2 class="sub-title">Opening Deriv accounts</h2>
+        <h2 class="doc-sub-title">Opening Deriv accounts</h2>
         <p>To open accounts via our API, you’ll first need to verify the client's email address using 
             <a href="/playground/#verify_email"><code>verify_email</code></a>.</p>
         <p>To open a virtual account, use 
@@ -82,7 +82,7 @@ permalink: docs/api-guide/
     </div>
 
     <div class="text-block">
-        <h2 class="sub-title">Accounting functionalites</h2>
+        <h2 class="doc-sub-title">Accounting functionalites</h2>
         <p>You may get a client's 
             <a href="/playground/#portfolio"><code>portfolio</code></a>, 
             <a href="/playground/#statement"><code>statement</code></a>, 
@@ -94,7 +94,7 @@ permalink: docs/api-guide/
     </div>
 
     <div class="text-block">
-        <h2 class="sub-title">Option prices</h2>
+        <h2 class="doc-sub-title">Option prices</h2>
         <ul class="bullet">
             <li>To price an option, call <a href="/playground/#proposal"><code>proposal</code></a>.</li>
             <li>To price options that are open in a client's portfolio, use <a href="/playground/#proposal_open_contract"><code>proposal_open_contract</code></a>.</li>
@@ -102,7 +102,7 @@ permalink: docs/api-guide/
     </div>
 
     <div class="text-block">
-        <h2 class="sub-title">Payment agents</h2>
+        <h2 class="doc-sub-title">Payment agents</h2>
         <ul class="bullet">
             <li>Clients may withdraw via a payment agent using <a href="/playground/#paymentagent_withdraw"><code>paymentagent_withdraw</code></a>.</li>
             <li>Payment agents may credit clients’ accounts using <a href="/playground/#paymentagent_transfer"><code>paymentagent_transfer</code></a>.</li>
@@ -110,7 +110,7 @@ permalink: docs/api-guide/
     </div>
 
     <div class="text-block">
-        <h2 class="sub-title">Utility calls</h2>
+        <h2 class="doc-sub-title">Utility calls</h2>
         <ul class="bullet">
             <li>To keep the connection alive, use <a href="/playground/#ping"><code>ping</code></a>.</li>
             <li>Get the server time with <a href="/playground/#time"><code>time</code></a>.</li>
@@ -119,7 +119,7 @@ permalink: docs/api-guide/
     </div>
 
     <div class="text-block">
-        <h2 class="sub-title">Streams</h2>
+        <h2 class="doc-sub-title">Streams</h2>
         <p>Some functions generate streams of data (e.g. 
             <a href="/playground/#ticks"><code>ticks</code></a>) while others don’t. Use 
             <a href="/playground/#forget"><code>forget</code></a> to cancel an outstanding stream.
