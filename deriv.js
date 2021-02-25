@@ -52,7 +52,6 @@ const setNavbarActive = () => {
   }
 };
 
-
 const setMobileNavbarActive = () => {
   const canvas_menu = document.getElementById('canvas-menu');
   if (!canvas_menu) return;
@@ -67,8 +66,8 @@ const setMobileNavbarActive = () => {
     } else {
       current_element = "quickstart";
     }
-  } else if (current_page === 'playground') {
-    current_element = current_page;
+  } else if (current_page === "playground") {
+    current_element = "playground_link";
   } else {
     current_element = "home";
   }
