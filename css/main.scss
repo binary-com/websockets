@@ -16,6 +16,9 @@ html {
     .nav > .top-nav, .nav > header > .navbar, #playground-sidebar, #sidebar, .vertical-separator  {
         display: none;
     }
+    h1 {
+        font-size: 32px !important;
+    }
     #hamburger {
         display: block;
         margin-right: 12px;
@@ -152,9 +155,6 @@ html {
     .page-wrapper > .page-content, #frmNewApplication > .form-content {
         width: 100%;
         padding-left: unset;
-    }
-    h1 {
-        font-size: 32px;
     }
     .container {
         .single-container > h2 {
