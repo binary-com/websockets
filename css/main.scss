@@ -19,6 +19,9 @@
     .row-container {
         flex-direction: column;
     }
+    .dark h1 {
+        font-size: 32px;
+    }
     h1 {
         font-size: 32px;
     }
@@ -92,6 +95,27 @@
         width: 95%;
     }
 
+    .signature {
+        .signature-header {
+            flex-wrap: wrap;
+
+                .property-name {
+                    width: 100%;
+                    flex-wrap: wrap;
+                    margin-bottom: 8px;
+                }
+                .signature-type {
+                    width: 100%;
+                    padding-left: 0;
+                    margin-bottom: 24px;
+                }
+        }
+        .signature-description {
+            p {
+                margin-top: 0;
+            }
+        }
+    }
     .main-content {
 
         .playground-content {
