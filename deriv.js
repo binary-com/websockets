@@ -45,7 +45,6 @@ const setNavbarActive = () => {
       navbarLinks.children[0].classList.add("selected");
       break;
     }
-
     if (navbarLinks.children[i].id === currentPage) {
       navbarLinks.children[i].classList.add("selected");
       break;
@@ -69,7 +68,7 @@ const setMobileNavbarActive = () => {
       current_element = "quickstart";
     }
   } else if (current_page === 'playground') {
-    current_element = sub_page;
+    current_element = current_page;
   } else {
     current_element = "home";
   }
@@ -95,7 +94,6 @@ const setSideBarActive = () => {
       sidebarLinks.children[1].classList.add("selected");
       break;
     }
-
     if (sidebarLinks.children[i].id === currentPage) {
       let child = sidebarLinks.children[i];
       child.classList.add("selected");
