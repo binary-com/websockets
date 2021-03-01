@@ -1,0 +1,221 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Payment Methods (response)",
+    "description": "List of available payment methods for a given country.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "payment_methods": {
+            "title": "payment_methods",
+            "description": "Available payment methods for a given country. Note: if a user is logged in, the residence country will be considered.",
+            "type": "array",
+            "items": {
+                "title": "The payment_method schema",
+                "description": "A payment method suported for the given country",
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "deposit_limits",
+                    "deposit_time",
+                    "description",
+                    "display_name",
+                    "id",
+                    "payment_processor",
+                    "predefined_amounts",
+                    "signup_link",
+                    "supported_currencies",
+                    "type",
+                    "type_display_name",
+                    "withdraw_limits",
+                    "withdrawal_time"
+                ],
+                "properties": {
+                    "deposit_limits": {
+                        "title": "deposit_limits",
+                        "description": "The min and max values for deposits.",
+                        "type": "object",
+                        "patternProperties": {
+                            "^[A-Z]{3}$": {
+                                "title": "Currency limits",
+                                "description": "Deposit limits for this method.",
+                                "type": "object",
+                                "required": [
+                                    "max",
+                                    "min"
+                                ],
+                                "properties": {
+                                    "max": {
+                                        "title": "max",
+                                        "description": "Maximum amount for deposits for this currency.",
+                                        "type": "integer",
+                                        "examples": [
+                                            100
+                                        ]
+                                    },
+                                    "min": {
+                                        "title": "min",
+                                        "description": "Minimum amount for deposit for this currency.",
+                                        "type": "integer",
+                                        "examples": [
+                                            5
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "deposit_time": {
+                        "title": "deposit_time",
+                        "description": "How much time it takes for a deposit to be processed.",
+                        "type": "string",
+                        "examples": [
+                            "instant"
+                        ]
+                    },
+                    "description": {
+                        "title": "description",
+                        "description": "Short description explaining the payment method.",
+                        "type": "string",
+                        "examples": [
+                            "Use your bank account to deposit and withdraw. Bank charges apply."
+                        ]
+                    },
+                    "display_name": {
+                        "title": "display_name",
+                        "description": "Common name for the payment method.",
+                        "type": "string",
+                        "examples": [
+                            "Bank Transfer"
+                        ]
+                    },
+                    "id": {
+                        "title": "id",
+                        "description": "Unique identifier for the payment method.",
+                        "type": "string",
+                        "examples": [
+                            "bank_transfer"
+                        ]
+                    },
+                    "payment_processor": {
+                        "title": "type",
+                        "description": "Payment processor for this payment method.",
+                        "type": "string",
+                        "examples": [
+                            "Skrill"
+                        ]
+                    },
+                    "predefined_amounts": {
+                        "title": "The predefined_amounts schema",
+                        "description": "A list of predefined amounts for withdraw or deposit.",
+                        "type": "array",
+                        "items": {
+                            "description": "Predefined amount to withdraw or deposit.",
+                            "type": "integer",
+                            "examples": [
+                                5,
+                                10
+                            ]
+                        }
+                    },
+                    "signup_link": {
+                        "title": "signup_link",
+                        "description": "Sign up link for this payment method.",
+                        "type": "string",
+                        "examples": [
+                            "https://account.skrill.com/wallet/account/sign-up"
+                        ]
+                    },
+                    "supported_currencies": {
+                        "title": "supported_currencies",
+                        "description": "Currencies supported for this payment method.",
+                        "type": "array",
+                        "items": {
+                            "description": "Supported currency, using 3-letter code (ISO standard).",
+                            "type": "string",
+                            "examples": [
+                                "EUR",
+                                "USD"
+                            ]
+                        }
+                    },
+                    "type": {
+                        "title": "type",
+                        "description": "Type of Payment Method.",
+                        "type": "string",
+                        "examples": [
+                            "bank_wire"
+                        ]
+                    },
+                    "type_display_name": {
+                        "title": "type_display_name",
+                        "description": "A printable description for type of payment method.",
+                        "type": "string",
+                        "examples": [
+                            "Bank Wire"
+                        ]
+                    },
+                    "withdraw_limits": {
+                        "title": "withdraw_limits",
+                        "description": "Withdrawal limits per currency.",
+                        "type": "object",
+                        "patternProperties": {
+                            "^[A-Z]{3}$": {
+                                "title": "Currency limits",
+                                "description": "Withdrawal limits for this currency.",
+                                "type": "object",
+                                "required": [
+                                    "max",
+                                    "min"
+                                ],
+                                "properties": {
+                                    "max": {
+                                        "title": "max",
+                                        "description": "Maximum amount for wihdrawals in this currency.",
+                                        "type": "integer",
+                                        "examples": [
+                                            10
+                                        ]
+                                    },
+                                    "min": {
+                                        "title": "min",
+                                        "description": "Minimum amount for withdrawals in this currency.",
+                                        "type": "integer",
+                                        "examples": [
+                                            5
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "withdrawal_time": {
+                        "title": "withdrawal_time",
+                        "description": "How much time takes a withdrawal to be processed.",
+                        "type": "string",
+                        "examples": [
+                            "1 working day"
+                        ]
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "payment_methods"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}
