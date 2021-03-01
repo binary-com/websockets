@@ -13,8 +13,11 @@ permalink: docs/app-registration/
       </a>
   </div>
   <fieldset id="api-token-fieldset">
+    <div class="api-token-wrapper">
+      <p class="helper-label">API Token</p>
       <input type="text" id="api-token" placeholder="API Token">
       <button id="send-auth-manually-btn" class="btn-authenticate bold">Authenticate</button>
+    </div>
   </fieldset>
   <div class="horizontal-separator-grey"></div>
   <form id="frmNewApplication">
@@ -28,7 +31,8 @@ permalink: docs/app-registration/
         <input id="application-github" type="text" maxlength="255" placeholder="Github URL" />
         <input id="application-appstore" type="text" maxlength="255" placeholder="Appstore URL" />
         <input id="application-googleplay" type="text" maxlength="255" placeholder="Google Play URL" />
-        <input id="application-app_markup_percentage" type="text" maxlength="4" placeholder="Markup percentage (minimum 0.00 and maximum 5.00)" />
+        <input id="application-app_markup_percentage" type="text" maxlength="4" placeholder="Markup percentage" class="last" />
+        <p class="helper-text">minimum 0.00 and maximum 5.00</p>
       </fieldset>
       <div class="scopes">
         <p class="bold scopes-field">Scopes:</p>
