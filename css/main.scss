@@ -230,8 +230,14 @@
                     text-align: left;
                 }
                 #api-token-fieldset {
-                    input[type="text"] {
-                        max-width: calc(100% - 150px);
+                    .api-token-wrapper {
+                        .helper-label {
+                            left: 1vw;
+                        }
+
+                        input[type="text"] {
+                            max-width: calc(100% - 150px);
+                        }
                     }
                 }
             }
@@ -890,9 +896,29 @@ nav {
 
     #api-token-fieldset {
         margin-bottom: 42px;
-    }
-    #api-token-fieldset > input[type="text"] {
-        max-width: calc(80% - 150px);
+
+        .api-token-wrapper {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            .helper-label {
+                position: absolute;
+                left: 6.6vw;
+                top: -10px;
+                font-size: 10px;
+                line-height: 1.4;
+                color: #333333;
+                background-color: white;
+                margin-bottom: 0;
+                padding: 4px;
+            }
+            input[type="text"] {
+                max-width: calc(80% - 150px);
+            }
+        }
     }
 }
 ol {
@@ -1077,6 +1103,22 @@ textarea {
         input[type="text"] {
             border-radius: 4px;
             margin-bottom: 24px;
+
+            &::placeholder {
+                color: #999999;
+            }
+        }
+
+        .last {
+            margin-bottom: 0px !important;
+        }
+
+        .helper-text {
+            width: 100%;
+            padding-left: 12px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #999999;
         }
     }
 }
