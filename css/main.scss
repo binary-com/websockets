@@ -275,19 +275,21 @@
     }
     .main-content {
         .hero-image {
-            min-height: 456px;
+            min-height: 500px;
 
             .hero-container {
-                width: 93%;
+                width: 95%;
                 margin-right: unset;
     
                 .hero-header {
+                    width: 100%;
                     font-size: 32px;
                     line-height: 40px;
                     text-align: left;
                 }
                 .hero-text { 
                     font-size: 16px;
+                    line-height: 24px;
                     text-align: left;
                 }
                 .hero-btn {
@@ -531,13 +533,6 @@ a {
 .bold {
     font-weight: bold;
 }
-.hero-text > p {
-    font-size: 24px;
-    line-height: 1.5;
-    text-align: center;
-    color: #ffffff;
-    margin-bottom: 32px;
-}
 .branding {
     display: inline;
     font-size: 24px;
@@ -586,10 +581,11 @@ ol > p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 90%;
     height: fit-content;
 }
 .hero-header {
+    width: 60%;
     font-size: 64px;
     font-weight: bold;
     line-height: 1.25;
@@ -598,10 +594,11 @@ ol > p {
 }
 .hero-text {
     font-size: 24px;
+    line-height: 36px;
     font-weight: normal;
     text-align: center;
     color: #ffffff;
-    margin-bottom: 32px;
+    margin: unset;
 }
 .nav {
     width: 100%;
@@ -632,6 +629,7 @@ ol > p {
     background-color: #ff444f;
     color: #ffffff;
     font-weight: bold;
+    margin-top: 32px;
 }
 .main-page-row {
     display: flex;
@@ -654,12 +652,14 @@ ol > p {
 
     p {
         margin-bottom: 32px;
+        text-align: center;
 
         a {
             color: #ff444f;
         }
     }
     h1 {
+        width: 80%;
         margin-bottom: 12px;
         line-height: 1.25;
     }
@@ -765,6 +765,7 @@ ol > p {
 }
 .main-page-card {
     width: 100%;
+    max-width: 316px;
     padding: 32px 24px;
     border-radius: 4px;
     box-shadow: 0 4px 8px 0 rgba(14, 14, 14, 0.1);
