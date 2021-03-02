@@ -299,9 +299,11 @@
             ]
         },
         "phone": {
-            "description": "[Optional] Starting with `+` followed by 8-35 digits, allowing hyphens or space.",
-            "type": "string",
-            "pattern": "^\\+((-|\\s)*[0-9]){8,35}$"
+            "description": "[Optional] Starting with `+` followed by 9-35 digits, hyphens or space.",
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "place_of_birth": {
             "description": "[Optional] Place of birth, 2-letter country code.",
