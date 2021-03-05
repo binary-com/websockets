@@ -30,8 +30,7 @@
                 "withdrawal",
                 "escrow",
                 "adjustment",
-                "virtual_credit",
-                "transfer"
+                "virtual_credit"
             ]
         },
         "date_from": {

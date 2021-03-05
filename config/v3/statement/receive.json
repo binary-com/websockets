@@ -12,7 +12,6 @@
             "title": "statement",
             "description": "Account statement.",
             "type": "object",
-            "additionalProperties": false,
             "properties": {
                 "count": {
                     "description": "Number of transactions returned in this call",
@@ -23,7 +22,6 @@
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "additionalProperties": false,
                         "properties": {
                             "action_type": {
                                 "description": "It is the type of action.",
@@ -36,8 +34,7 @@
                                     "hold",
                                     "release",
                                     "adjustment",
-                                    "virtual_credit",
-                                    "transfer"
+                                    "virtual_credit"
                                 ]
                             },
                             "amount": {
@@ -117,48 +114,6 @@
                             "withdrawal_details": {
                                 "description": "Additional withdrawal details such as typical processing times, if description is set to `1`.",
                                 "type": "string"
-                            },
-                            "fees": {
-                                "type": "object",
-                                "description": "Contains details about fees used for transfer. It is present only when action type is transfer.",
-                                "properties": {
-                                    "amount" : {
-                                        "type": "number",
-                                        "description": "Fees amount"
-                                    },
-                                    "currency": {
-                                        "type": "string",
-                                        "description": "Fees currency"
-                                    },
-                                    "minimum": {
-                                        "type": "number",
-                                        "description": "Minimum amount of fees"
-                                    },
-                                    "percentage": {
-                                        "type": "number",
-                                        "description": "Fees percentage"
-                                    }
-                                }
-                            },
-                            "from": {
-                                "type": "object",
-                                "description": "Contains details of account from which amount was transferred. It is present only when action type is transfer.",
-                                "properties": {
-                                    "loginid": {
-                                        "type": "string",
-                                        "description": "Login id of the account from which money was transferred."
-                                    }
-                                }
-                            },
-                            "to": {
-                                "type": "object",
-                                "description": "Contains details of account to which amount was transferred. It is present only when action type is transfer.",
-                                "properties": {
-                                    "loginid": {
-                                        "type": "string",
-                                        "description": "Login id of the account to which money was transferred."
-                                    }
-                                }
                             }
                         }
                     }
