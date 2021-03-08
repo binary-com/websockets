@@ -2,47 +2,80 @@
 layout: documentation
 permalink: docs/
 ---
+
 <div class="page-content">
-    <h1 class="doc-main-title">Quickstart to Deriv API</h1>
-    <div class="text-block">
-        <h2 class="doc-sub-title">Opening a connection</h2>
-        <p>Use this code to open a connection to our WebSocket service (in Javascript):</p>
-        <div class="card">
-            <div class="card-header">
-                <p class="card-header-title">JavaScript</p>
-                <div class="copy-button">
-                    <img class="copy-button-image" src="{{ branch }}/img/copy.svg" width="16" height="16" alt="copy code icon" /> Copy
-                </div>
-            </div>
-            <pre data-language="javascript">var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=XXX');</pre>
-        </div>    
-        <p>
-            After opening a connection, you can send data through the WebSocket using the method calls from our 
-            <a href="{{ branch }}/playground/#api_token">API playground</a>.
-            <br/>Data transfer in both directions is handled by structured <b>JSON-encoded data</b>.
-            All field name identifiers and most field values are double-quoted in the encoded data.
-            Each message is a serialized JSON-encoded string.
-        </p>
-    </div>
-    <div class="text-block">
-        <h2 class="doc-sub-title">App ID</h2>
-        <p>You’ll get your app ID when you register your app with us.</p>
-    </div>
-    <div class="text-block">
-        <h2 class="doc-sub-title">Code samples</h2>
-        <p>See our <a href="{{ branch }}/docs/code-samples">code samples</a> in languages other than JavaScript.</p>    
-    </div>
-    <div class="text-block">
-        <h2 class="doc-sub-title">Multi-language support</h2>
-        <p>To receive responses in other languages, add the language code to the connection URL:</p>
-        <div class="card">
-            <div class="card-header">
-                <p class="card-header-title">JavaScript</p>
-                <div class="copy-button">
-                    <img class="copy-button-image" src="{{ branch }}/img/copy.svg" width="16" height="16" alt="copy code icon" /> Copy
-                </div>
-            </div>
-            <pre data-language="javascript">var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=XXX&l=RU');</pre>
+  <h1 class="doc-main-title">Quickstart to Deriv API</h1>
+  <div class="text-block">
+    <h2 class="doc-sub-title">Opening a connection</h2>
+    <p>
+      Use this code to open a connection to our WebSocket service (in
+      Javascript):
+    </p>
+    <div class="card">
+      <div class="card-header main-docs">
+        <div class="card-header-docs-flex">
+          <p class="card-header-title">JavaScript</p>
+          <img src="{{ branch }}/img/dropdown-bottom-slim.svg" />
         </div>
+        <div class="copy-button">
+          <img
+            class="copy-button-image"
+            src="{{ branch }}/img/copy.svg"
+            width="16"
+            height="16"
+            alt="copy code icon"
+          />
+          Copy
+        </div>
+      </div>
+      <pre data-language="javascript">
+var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=XXX');</pre
+      >
     </div>
+    <p>
+      After opening a connection, you can send data through the WebSocket using
+      the method calls from our
+      <a href="{{ branch }}/playground/#api_token">API playground</a>.
+      <br />Data transfer in both directions is handled by structured
+      <b>JSON-encoded data</b>. All field name identifiers and most field values
+      are double-quoted in the encoded data. Each message is a serialized
+      JSON-encoded string.
+    </p>
+  </div>
+  <div class="text-block">
+    <h2 class="doc-sub-title">App ID</h2>
+    <p>You’ll get your app ID when you register your app with us.</p>
+  </div>
+  <div class="text-block">
+    <h2 class="doc-sub-title">Code samples</h2>
+    <p>
+      See our <a href="{{ branch }}/docs/code-samples">code samples</a> in
+      languages other than JavaScript.
+    </p>
+  </div>
+  <div class="text-block">
+    <h2 class="doc-sub-title">Multi-language support</h2>
+    <p>
+      To receive responses in other languages, add the language code to the
+      connection URL:
+    </p>
+    <div class="card">
+      <div class="card-header">
+        <p class="card-header-title">JavaScript</p>
+        <div class="copy-button">
+          <img
+            class="copy-button-image"
+            src="{{ branch }}/img/copy.svg"
+            width="16"
+            height="16"
+            alt="copy code icon"
+          />
+          Copy
+        </div>
+      </div>
+      <pre data-language="javascript">
+var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=XXX&l=RU');</pre
+      >
+    </div>
+  </div>
 </div>
