@@ -111,8 +111,6 @@ groups:
         title: P2P Advertiser Create
       - name: p2p_advertiser_info
         title: P2P Advertiser Information
-      - name: p2p_advertiser_stats
-        title: P2P Advertiser Statistics
       - name: p2p_advertiser_update
         title: P2P Advertiser Update
       - name: p2p_chat_create
