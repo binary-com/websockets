@@ -1,16 +1,13 @@
 ---
 layout: default
 ---
-<div id="content" class="doc-content">
-  {% assign branch = site.baseurl %}
-  {% if site.baseurl == '/websockets' %}
-    {% assign branch = '' %}
-  {% endif %}
 
-  {% include mobile-page-selector.html %}
+<div id="content" class="doc-content">
+  {% assign branch = site.baseurl %} {% if site.baseurl == '/websockets' %} {%
+  assign branch = '' %} {% endif %} {% include mobile-page-selector.html %}
   <div class="page-wrapper documentation">
-      {% include sidebar.html %}
-      <div class="vertical-separator"></div>
-      {{ content }}
+    {% include sidebar.html %}
+    <div class="vertical-separator"></div>
+    {{ content }}
   </div>
 </div>
