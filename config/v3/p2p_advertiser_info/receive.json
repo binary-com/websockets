@@ -43,6 +43,10 @@
                         0
                     ]
                 },
+                "blocked_until": {
+                    "description": "If a temporary bar was placed, this is the epoch time at which it will end.",
+                    "type": "integer"
+                },
                 "buy_completion_rate": {
                     "description": "The percentage of completed orders out of total orders as a buyer within the past 30 days.",
                     "type": [
