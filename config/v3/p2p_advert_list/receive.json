@@ -58,18 +58,11 @@
                                 "type": "object",
                                 "additionalProperties": false,
                                 "required": [
-                                    "completion_rate",
                                     "id",
-                                    "name"
+                                    "name",
+                                    "total_completion_rate"
                                 ],
                                 "properties": {
-                                    "completion_rate": {
-                                        "description": "The percentage of successfully completed orders made by or placed against the advertiser within the past 30 days.",
-                                        "type": [
-                                            "null",
-                                            "number"
-                                        ]
-                                    },
                                     "first_name": {
                                         "description": "The advertiser's first name.",
                                         "type": "string"
@@ -85,6 +78,13 @@
                                     "name": {
                                         "description": "The advertiser's displayed name.",
                                         "type": "string"
+                                    },
+                                    "total_completion_rate": {
+                                        "description": "The percentage of successfully completed orders made by or placed against the advertiser within the past 30 days.",
+                                        "type": [
+                                            "null",
+                                            "number"
+                                        ]
                                     }
                                 }
                             },
