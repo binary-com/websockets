@@ -128,10 +128,11 @@
                 "string"
             ],
             "enum": [
-                "real01",
-                "real02",
-                "real03",
-                "real04"
+                "p01_ts01",
+                "p01_ts02",
+                "p01_ts03",
+                "p01_ts04",
+                "p02_ts02"
             ]
         },
         "state": {

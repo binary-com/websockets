@@ -19,12 +19,33 @@
                 1
             ]
         },
-        "environment": {
-            "description": "[Optional] Pass the environment (installation) instance short code. Currently, there is only one environment instance. Defaults to 'env_01'.",
+        "account_type": {
+            "description": "[Optional] Trading account type.",
             "type": "string",
-            "default": "env_01",
+            "default": "real",
             "enum": [
-                "env_01"
+                "demo",
+                "real"
+            ]
+        },
+        "environment": {
+            "description": "[Optional] Pass the environment (installation) instance. Currently, there are one demo and two real environments. Defaults to 'all'.",
+            "type": "string",
+            "default": "all",
+            "enum": [
+                "all",
+                "Deriv-Demo",
+                "Deriv-Server",
+                "Deriv-Server-02"
+            ]
+        },
+        "market_type": {
+            "description": "[Optional] Market type.",
+            "type": "string",
+            "default": "synthetic",
+            "enum": [
+                "financial",
+                "synthetic"
             ]
         },
         "platform": {
