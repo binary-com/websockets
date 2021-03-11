@@ -134,7 +134,10 @@
                 },
                 "phone": {
                     "description": "Telephone (note: Only available for users who have at least one real account)",
-                    "type": "string"
+                    "type": [
+                        "null",
+                        "string"
+                    ]
                 },
                 "place_of_birth": {
                     "description": "Place of birth, 2-letter country code.",
