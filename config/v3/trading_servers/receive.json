@@ -25,10 +25,12 @@
                         ]
                     },
                     "environment": {
-                        "description": "Current environment (installation instance) where servers are deployed. Currently, there is only one environment instance.",
+                        "description": "Current environment (installation instance) where servers are deployed. Currently, there are one demo and two real environments.",
                         "type": "string",
                         "enum": [
-                            "env_01"
+                            "Deriv-Demo",
+                            "Deriv-Server",
+                            "Deriv-Server-02"
                         ]
                     },
                     "geolocation": {
@@ -53,11 +55,16 @@
                         "description": "Server unique id.",
                         "type": "string",
                         "enum": [
-                            "real01",
-                            "real02",
-                            "real03",
-                            "real04"
+                            "p01_ts01",
+                            "p01_ts02",
+                            "p01_ts03",
+                            "p01_ts04",
+                            "p02_ts02"
                         ]
+                    },
+                    "message_to_client": {
+                        "description": "Error message to client when server is disabled",
+                        "type": "string"
                     },
                     "recommended": {
                         "description": "Flag to represent if this is server is recommended based on client's country of residence.",

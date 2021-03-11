@@ -86,6 +86,43 @@
                         "description": "Trade server name of the MT5 account.",
                         "type": "string"
                     },
+                    "server_info": {
+                        "description": "Trade server information.",
+                        "type": "object",
+                        "properties": {
+                            "environment": {
+                                "description": "The environment. E.g. Deriv-Server.",
+                                "type": "string",
+                                "enum": [
+                                    "Deriv-Demo",
+                                    "Deriv-Server",
+                                    "Deriv-Server-02"
+                                ]
+                            },
+                            "geolocation": {
+                                "description": "Geographical location of the server.",
+                                "type": "object",
+                                "properties": {
+                                    "location": {
+                                        "description": "Sever location.",
+                                        "type": "string"
+                                    },
+                                    "region": {
+                                        "description": "Sever region.",
+                                        "type": "string"
+                                    },
+                                    "sequence": {
+                                        "description": "Sever sequence.",
+                                        "type": "integer"
+                                    }
+                                }
+                            },
+                            "id": {
+                                "description": "Server id.",
+                                "type": "string"
+                            }
+                        }
+                    },
                     "sub_account_type": {
                         "description": "Sub account type",
                         "type": "string",
