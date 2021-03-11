@@ -76,6 +76,10 @@
     width: 100%;
     margin-bottom: 24px;
     line-height: 17px;
+
+    .type-enum {
+      margin: 0 0 0 8px !important;
+    }
   }
   .docson .box-body {
     padding: 16px 16px 24px;
@@ -102,21 +106,37 @@
   .signature {
     .signature-header {
       flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
 
       .property-name {
-        width: 100%;
-        flex-wrap: wrap;
-        margin-bottom: 8px;
+        width: auto;
+        justify-content: start;
+        margin: 8px 0 0;
       }
       .signature-type {
-        width: 100%;
+        width: auto;
         padding-left: 0;
-        margin-bottom: 24px;
+        justify-content: start;
+        span {
+          margin: 8px 8px 0 0;
+        }
+        .box-1 {
+          padding: 6px 8px;
+          line-height: 1.43;
+          margin: 8px 8px 0 0;
+        }
+      }
+      .signature-type-string {
+        margin: 8px 0 0 !important;
+      }
+      .signature-button {
+        margin: 8px 8px 0 0 !important;
       }
     }
     .signature-description {
       p {
-        margin-top: 0;
+        margin-top: 8px;
       }
     }
   }
@@ -159,29 +179,33 @@
               .playground-box {
                 padding: 16px;
 
+                @media (max-width: 480px) {
+                  padding: 24px 16px;
+                }
+
                 textarea {
                   width: calc(100% - 24px);
                 }
 
-                .json-btn-wrapper {
-                  width: 100%;
-                  margin: 26px 0 40px;
-                  .btn-submit {
-                    font-size: 14px;
-                    width: 50%;
-                    margin: 0;
-                  }
+                // .json-btn-wrapper {
+                //   width: 100%;
+                //   margin: 26px 0 40px;
+                //   .btn-submit {
+                //     font-size: 14px;
+                //     width: 50%;
+                //     margin: 0;
+                //   }
 
-                  #playground-reset-btn {
-                    width: 50%;
-                    margin: 0 8px 0 0;
-                    .btn-reset {
-                      font-size: 14px;
-                      width: 100%;
-                      padding: 10px 0;
-                    }
-                  }
-                }
+                //   #playground-reset-btn {
+                //     width: 50%;
+                //     margin: 0 8px 0 0;
+                //     .btn-reset {
+                //       font-size: 14px;
+                //       width: 100%;
+                //       padding: 10px 0;
+                //     }
+                //   }
+                // }
               }
               fieldset {
                 flex-wrap: nowrap;
@@ -208,6 +232,7 @@
   #frmNewApplication > .form-content > fieldset {
     flex-direction: row;
   }
+
   .doc-content {
     .page-wrapper {
       width: 100% !important;
@@ -221,11 +246,17 @@
           text-align: left;
           width: 100%;
         }
+
         .api-sub-title {
           font-size: 20px;
           line-height: 25px;
           text-align: left;
           width: 100%;
+
+          @media (max-width: 480px) {
+            font-size: 16px;
+            line-height: 24px;
+          }
         }
         .subheader {
           font-size: 16px;
@@ -374,6 +405,15 @@
       }
     }
   }
+  .box-header {
+    .box-description {
+      flex-direction: column;
+
+      .scopes {
+        margin-top: 8px;
+      }
+    }
+  }
   .off-canvas-menu {
     position: fixed;
     background-color: white;
@@ -502,10 +542,19 @@
   }
   .main-content > .doc-content {
     flex-direction: column;
-    padding: 75px 16px;
+    padding: 75px 16px 40px;
     width: unset;
     min-height: calc(88vh - 54px);
     justify-content: unset;
+  }
+
+  .docson .type-enum {
+    margin: 8px 6px 0 0 !important;
+  }
+
+  .bb-m-sub-title {
+    line-height: 30px !important;
+    font-size: 24px !important;
   }
 }
 @media (max-width: 1078px) {
@@ -807,11 +856,15 @@ ol > p {
   border-radius: 4px;
   background-color: #ff444f;
   text-decoration: none;
+  font-weight: bold;
   color: #ffffff;
 }
 .community-btn {
   padding: 6px 16px;
   border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
   border: solid 1px #6e6e6e;
 }
 .card-container {
@@ -882,6 +935,16 @@ ol > p {
 
   @media (max-width: 480px) {
     padding: 28px 16px 24px;
+  }
+}
+.app-registration-header {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.25;
+  color: #333333;
+  margin-bottom: 8px;
+  @media (max-width: 480px) {
+    font-size: 24px;
   }
 }
 .card-icon {
@@ -1020,6 +1083,14 @@ ul {
   color: #333333;
   margin-bottom: 40px;
 }
+.px-py-40 {
+  padding: 40px !important;
+
+  @media (max-width: 992px) {
+    padding: 0 16px !important;
+    margin: 0 -16px !important;
+  }
+}
 .cta {
   width: auto;
   padding: 24px 0;
@@ -1063,10 +1134,14 @@ ul {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 0;
+      //   padding: 40px 0;
+      .h2-margin {
+        margin-bottom: 24px;
+      }
 
       p {
         text-align: center;
+        max-width: 245px;
       }
       h2 {
         font-size: 32px;
@@ -1085,6 +1160,26 @@ ul {
           &:hover {
             background-color: #999999;
           }
+        }
+      }
+    }
+
+    @media (max-width: 992px) {
+      padding: 20px 0;
+
+      &-box {
+        padding: 20px 0;
+
+        .h2-margin {
+          margin-bottom: 16px;
+        }
+        p {
+          margin-bottom: 0px;
+          font-size: 16px;
+          line-height: 24px;
+        }
+        h2 {
+          font-size: 24px;
         }
       }
     }
@@ -1119,7 +1214,7 @@ textarea {
 }
 
 .json-btn-wrapper {
-  margin: 34px auto 0;
+  margin: 34px auto 40px;
 }
 .scopes {
   width: 100%;
@@ -1159,6 +1254,7 @@ button {
   border: none;
   background-color: #ff444f;
   margin: 40px auto;
+  font-weight: bold;
 }
 .gray-btn-submit {
   padding: 8px 16px;
@@ -1178,7 +1274,9 @@ button {
   height: fit-content;
   padding: 10px 16px;
   border-radius: 4px;
-  margin: 24px 8px 40px 0;
+  font-size: 14px;
+  font-weight: bold;
+  //   margin: 24px 8px 40px 0;
   border: solid 2px #999999;
 }
 .btn-reset {
@@ -1660,7 +1758,7 @@ pre {
         background-color: #0e0e0e;
 
         @media (max-width: 480px) {
-          top: 8px;
+          top: 16px;
           left: 23px;
         }
       }
@@ -1670,24 +1768,30 @@ pre {
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        margin-bottom: 16px;
+        margin: 26px 0 40px;
 
         .btn-submit {
-          background-color: #ff444f;
-          border: #ff444f 2px solid;
+          background-color: #151717;
+          border: #6e6e6e 2px solid;
           color: white;
-          padding: 10px 16px;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 1.43;
+          padding: 8px 16px;
+          margin: 0 8px 0 0;
         }
 
         #playground-reset-btn {
           .btn-reset {
-            border: solid 2px #6e6e6e;
             color: white;
-            background-color: inherit;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 1.43;
+            background-color: #ff444f;
             padding: 10px 16px;
 
             &:hover {
-              background-color: #999999;
+              background-color: rgba(255, 68, 79, 0.68);
             }
           }
         }
@@ -1917,6 +2021,7 @@ pre {
   color: #ffffff;
   font-size: 16px;
   margin: 8px 8px 0 0;
+  font-weight: bold;
 }
 .docson .signature-type {
   display: flex;
@@ -2036,6 +2141,10 @@ pre {
   .box-body {
     background-color: #151717;
     padding: 28px 24px;
+
+    @media (max-width: 480px) {
+      padding: 26px 16px;
+    }
   }
 }
 
@@ -2070,9 +2179,15 @@ footer {
   }
 }
 
+.api-sub-title {
+  margin-bottom: 8px;
+}
 // custom
 .mb-0 {
   margin-bottom: 0 !important;
+}
+.mb-8p {
+  margin-bottom: 8px !important;
 }
 .mb-16p {
   margin-bottom: 16px;
