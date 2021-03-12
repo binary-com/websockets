@@ -66,8 +66,23 @@
   .docson .title {
     font-size: 18px;
   }
-  .docson .box-header {
-    padding: 16px 16px 0;
+  .playground-api-docs {
+    .docson {
+      .box {
+        .box-header {
+          padding: 24px 16px;
+
+          .box-title {
+            .box-description {
+              margin-bottom: 0;
+            }
+          }
+        }
+        .box-body {
+          padding: 16px 16px 24px;
+        }
+      }
+    }
   }
   .docson .box-description {
     margin-bottom: 16px;
@@ -81,8 +96,20 @@
       margin: 0 0 0 8px !important;
     }
   }
-  .docson .box-body {
-    padding: 16px 16px 24px;
+  .signature-box-container {
+    .sub-box-container {
+      .box {
+        .box-header {
+          padding: 8px 16px;
+
+          .box-title {
+            .box-description {
+              margin-bottom: unset;
+            }
+          }
+        }
+      }
+    }
   }
   .dark {
     .cta {
