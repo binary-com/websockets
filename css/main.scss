@@ -49,7 +49,7 @@
   }
   .single-container > p {
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 24px !important;
   }
   .logo {
     width: 84px;
@@ -252,6 +252,10 @@
     .single-container > h2 {
       font-size: 24px;
     }
+    .single-container > .max-js-div {
+      max-width: 290px;
+      margin-bottom: 8px;
+    }
   }
   .page-content > fieldset > input[type="text"] {
     width: 50%;
@@ -378,11 +382,14 @@
 
       .column-container {
         width: 100%;
+        h1 {
+          margin-bottom: 0 !important;
+        }
       }
 
       .card-container {
         flex-direction: column;
-        padding: 40px 16px 0;
+        padding: 24px 16px 0;
         margin-bottom: 0;
 
         .main-page-card {
@@ -1259,6 +1266,13 @@ textarea {
 }
 .scopes-field > input[type="checkbox"] {
   margin-right: 16px;
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.23); /* IE */
+  -moz-transform: scale(1.23); /* FF */
+  -webkit-transform: scale(1.23); /* Safari and Chrome */
+  -o-transform: scale(1.23); /* Opera */
+  transform: scale(1.23);
+  padding: 9px;
 }
 button {
   cursor: pointer;
