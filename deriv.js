@@ -53,12 +53,12 @@ const setNavbarActive = () => {
 };
 
 const setMobileNavbarActive = () => {
-  const canvas_menu = document.getElementById('canvas-menu');
+  const canvas_menu = document.getElementById("canvas-menu");
   if (!canvas_menu) return;
 
   let current_element;
   let current_page = window.location.pathname.split("/")[1].replaceAll("/", "");
-  if (current_page === 'docs') {
+  if (current_page === "docs") {
     openMobileDropdown();
     let sub_page = window.location.pathname.split("/")[2].replaceAll("/", "");
     if (sub_page) {
@@ -73,11 +73,11 @@ const setMobileNavbarActive = () => {
   }
   const target_element = document.getElementById(current_element);
   target_element.classList.add("selected");
-}
+};
 
 function openMobileDropdown() {
   const dropdown = document.getElementById("doc-menu-header")
-  .nextElementSibling;
+    .nextElementSibling;
   dropdown.classList.add("show-dropdown");
 }
 
