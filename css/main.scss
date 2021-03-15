@@ -10,6 +10,11 @@
 #hamburger {
   display: none;
 }
+@media (max-width: 480px) {
+  .ul-paragraph {
+    margin-bottom: 24px;
+  }
+}
 @media (max-width: 992px) {
   .nav > .top-nav,
   .nav > .top-nav > .top-nav-container,
@@ -274,6 +279,13 @@
         }
         .doc-sub-title {
           font-size: 24px;
+          text-align: left;
+          width: 100%;
+        }
+
+        .api-sub-title2 {
+          font-size: 20px;
+          line-height: 25px;
           text-align: left;
           width: 100%;
         }
@@ -667,6 +679,10 @@ h3 {
   text-align: left;
   line-height: 1.5;
   color: #333333;
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
 }
 p {
   line-height: 28px;
@@ -674,6 +690,10 @@ p {
 }
 ol > p {
   margin-bottom: 16px;
+
+  @media (max-width: 480px) {
+    margin-bottom: 8px;
+  }
 }
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16)),
@@ -1100,8 +1120,17 @@ nav {
 ol {
   margin-left: 20px;
 
+  @media (max-width: 480px) {
+    margin-left: 0px;
+    list-style-position: inside;
+  }
+
   li {
     margin-bottom: 16px;
+
+    @media (max-width: 480px) {
+      margin-bottom: 8px;
+    }
   }
 }
 ul {
@@ -1618,6 +1647,9 @@ code {
     padding: 16px 24px;
 
     @media (max-width: 480px) {
+      padding: 16px;
+      font-size: 15px;
+      line-height: 21px;
       word-break: break-word;
     }
   }
@@ -1632,8 +1664,17 @@ code {
     border-left: rgba(229, 229, 229, 0.4) 1px solid;
     padding: 16px 24px;
 
+    @media (max-width: 480px) {
+      flex-direction: column-reverse;
+      padding: 8px;
+    }
+
     &-image {
       margin: 0 9px 0 3px;
+
+      @media (max-width: 480px) {
+        margin: 4px 0 0 0;
+      }
     }
 
     &:hover {
