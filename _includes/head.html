@@ -1,44 +1,80 @@
 <head>
-    <style id="antiClickjack">body{display:none !important;}</style>
-    <script type="text/javascript">
-        if (self === top) {
-            var antiClickjack = document.getElementById("antiClickjack");
-            antiClickjack.parentNode.removeChild(antiClickjack);
-        } else {
-            top.location = self.location;
-        }
-    </script>
-    <meta charset="utf-8">
-    <meta name='viewport' content='width=device-width, initial-scale=1'/>
-    <meta name='description' content='Build your own trading platform, powered by the Deriv API. We use WebSockets for fast, two-way messaging between your apps and our trading services.' />
+  <style id="antiClickjack">
+    body {
+      display: none !important;
+    }
+  </style>
+  <script type="text/javascript">
+    if (self === top) {
+      var antiClickjack = document.getElementById("antiClickjack");
+      antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+      top.location = self.location;
+    }
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Build your own trading platform, powered by the Deriv API. We use WebSockets for fast, two-way messaging between your apps and our trading services."
+  />
 
-    <link href="{{ branch }}/img/deriv.png" rel='icon' sizes='96x96' type='image/png'/>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap"></noscript>
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap"></noscript>
-    <link rel="stylesheet" href="{{ branch }}/docson/docson.css">
-    <link rel="stylesheet" href="{{ branch }}/css/main.css">
-    <link rel="stylesheet" href="{{ branch }}/css/select2.min.css">
+  <link
+    href="{{ branch }}/img/deriv.png"
+    rel="icon"
+    sizes="96x96"
+    type="image/png"
+  />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    rel="preload"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap"
+  /></noscript>
+  <link
+    rel="preload"
+    href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap"
+  /></noscript>
+  <link rel="stylesheet" href="{{ branch }}/docson/docson.css" />
+  <link rel="stylesheet" href="{{ branch }}/css/main.css" />
+  <link rel="stylesheet" href="{{ branch }}/css/select2.min.css" />
 
-    <script src="{{ branch }}/lib/rainbow.js"></script>
+  <script src="{{ branch }}/lib/rainbow.js"></script>
 
-    <script src="{{ branch }}/lib/language/generic.js"></script>
-    <script src="{{ branch }}/lib/language/javascript.js"></script>
-    <script src="{{ branch }}/lib/language/coffeescript.js"></script>
-    <script src="{{ branch }}/lib/language/csharp.js"></script>
-    <script src="{{ branch }}/lib/language/go.js"></script>
-    <script src="{{ branch }}/lib/language/java.js"></script>
-    <!-- <script src="{{ branch }}/lib/language/perl.js"></script> -->
-    <script src="{{ branch }}/lib/language/php.js"></script>
-    <script src="{{ branch }}/lib/language/ruby.js"></script>
-    <script src="{{ branch }}/lib/language/python.js"></script>
-    <!-- <script src="{{ branch }}/lib/language/swift.js"></script> -->
+  <script src="{{ branch }}/lib/language/generic.js"></script>
+  <script src="{{ branch }}/lib/language/javascript.js"></script>
+  <script src="{{ branch }}/lib/language/coffeescript.js"></script>
+  <script src="{{ branch }}/lib/language/csharp.js"></script>
+  <script src="{{ branch }}/lib/language/go.js"></script>
+  <script src="{{ branch }}/lib/language/java.js"></script>
+  <!-- <script src="{{ branch }}/lib/language/perl.js"></script> -->
+  <script src="{{ branch }}/lib/language/php.js"></script>
+  <script src="{{ branch }}/lib/language/ruby.js"></script>
+  <script src="{{ branch }}/lib/language/python.js"></script>
+  <!-- <script src="{{ branch }}/lib/language/swift.js"></script> -->
 
-    <script src="https://liveapi.binary.com/binary-live-api.js"></script>
-    <script src="{{ branch }}/lib/require.js"></script>
+  <script src="https://liveapi.binary.com/binary-live-api.js"></script>
+  <script src="{{ branch }}/lib/require.js"></script>
 
-    <title>Developers | {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <title>
+    Developers | {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{%
+    endif %}
+  </title>
+  <link
+    rel="canonical"
+    href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
+  />
 </head>
