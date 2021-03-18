@@ -133,6 +133,7 @@
   }
   .form-content > textarea {
     width: 95%;
+    resize: none;
   }
 
   .signature {
@@ -217,6 +218,7 @@
 
                 textarea {
                   width: calc(100% - 24px);
+                  resize: none;
                 }
 
                 // .json-btn-wrapper {
@@ -1613,6 +1615,7 @@ code {
       color: #c2c2c2;
       border-left: rgba(229, 229, 229, 0.4) 1px solid;
       padding: 8px 16px;
+      cursor: copy;
 
       &-image {
         margin: 0 9px 0 3px;
@@ -1663,6 +1666,7 @@ code {
     font-weight: normal;
     border-left: rgba(229, 229, 229, 0.4) 1px solid;
     padding: 16px 24px;
+    cursor: copy;
 
     @media (max-width: 480px) {
       flex-direction: column-reverse;
@@ -1700,6 +1704,7 @@ code,
 pre,
 textarea {
   font-size: 16px;
+  resize: none;
 }
 code,
 pre p {
@@ -1886,6 +1891,7 @@ pre {
         border-radius: 4px;
         background-color: #0e0e0e;
         color: #c2c2c2;
+        resize: none;
 
         @media (max-width: 480px) {
           font-size: 14px;
@@ -2007,7 +2013,7 @@ pre {
   border: none;
 }
 #demo-language {
-  width: 106px;
+  width: 120px;
   padding: 5px;
   font-size: 16px;
   line-height: 1;
@@ -2016,7 +2022,7 @@ pre {
   height: 34px;
   background: url("/img/dropdown-bottom-slim.svg") no-repeat right;
   -webkit-appearance: none;
-  background-position-x: 90px;
+  background-position-x: 102px;
 }
 .dark {
   color: #ffffff;
@@ -2069,6 +2075,13 @@ pre {
   color: #ffffff;
   margin: 0 6px 0 0;
   padding: 6px 8px;
+}
+.docson .desc p a {
+  font-size: 14px;
+
+  &:hover {
+    color: #ff444f;
+  }
 }
 .docson .scopes {
   float: right;
@@ -2166,6 +2179,7 @@ pre {
 
       .box-header {
         background-color: rgba(37, 37, 37, 0.72);
+        background: rgba(37, 37, 37, 0.72);
       }
       .box-body {
         padding: 16px;
@@ -2230,6 +2244,7 @@ pre {
 }
 .docson .signature-type-expandable {
   background-color: #323738;
+  background: #323738;
 }
 .docson .signature-type-string {
   color: #9ed178;
