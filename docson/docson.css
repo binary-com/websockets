@@ -269,8 +269,7 @@
 }
 .docson .source {
   display: none;
-  padding-left: 16px;
-  padding-right: 30px;
+  background-color: #151717;
 }
 .docson .json-punctuation {
   font-weight: bold;
