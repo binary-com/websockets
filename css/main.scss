@@ -2181,12 +2181,6 @@ pre {
       .source {
         margin: 0;
         padding: 0;
-
-        pre {
-          color: #ffcd44;
-          font-size: 14px;
-          line-height: 20px;
-        }
       }
     }
   }
@@ -2243,6 +2237,13 @@ pre {
 .docson .type-keyword {
   color: #c2c2c2;
 }
+
+.json-schema {
+  color: #ffcd44;
+  font-size: 14px;
+  line-height: 20px;
+}
+
 footer {
   background-color: rgba(240, 241, 243, 0.64);
   color: #333333;
