@@ -23,7 +23,8 @@
                 "reset_password",
                 "paymentagent_withdraw",
                 "payment_withdraw",
-                "mt5_password_reset"
+                "mt5_password_reset",
+                "trading_platform_password_reset"
             ]
         },
         "url_parameters": {
