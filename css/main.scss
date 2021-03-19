@@ -1089,8 +1089,8 @@ nav {
   z-index: 0;
 }
 .page-content {
-  width: 75%;
-  padding-left: 40px;
+  width: calc(100% - 262px);
+  padding-left: 42px;
 
   #api-token-fieldset {
     margin-bottom: 42px;
@@ -1473,8 +1473,8 @@ button {
 .sidebar-left {
   display: flex;
   flex-direction: column;
-  max-width: 197px;
-  width: 197px;
+  max-width: 220px;
+  width: 220px;
 
   a {
     position: relative;
