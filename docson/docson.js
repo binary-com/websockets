@@ -20,11 +20,11 @@ docson.templateBaseUrl = "templates";
 
 define([
   "/lib/jquery.js",
-  "/lib/handlebars.min.js",
-  "/lib/highlight.min.js",
-  "/lib/jsonpointer.min.js",
-  "/lib/marked.min.js",
-  "/lib/traverse.min.js",
+  "/lib/handlebars.js",
+  "/lib/highlight.js",
+  "/lib/jsonpointer.js",
+  "/lib/marked.js",
+  "/lib/traverse.js",
 ], function (jquery, handlebars, highlight, jsonpointer, marked) {
   var ready = $.Deferred();
   var boxTemplate;
@@ -467,63 +467,11 @@ define([
         element.find(".signature-type-expandable").click(function () {
           var boxId = $(this).attr("boxid");
           $(this).toggleClass("signature-type-expanded");
-          $(this)
-            .parent()
-            .parent()
-            .parent()
-            .children(".signature-box-container")
-            .children("[boxid='" + boxId + "']")
-            .toggle(resizeHandler ? 0 : 300);
+          $(this).parent().parent().parent().children(".signature-box-container").children("[boxid='" + boxId + "']").toggle(resizeHandler ? 0 : 300);
           resized();
         });
         element.find(".expand-button").click(function () {
-          if ($(this).attr("expanded")) {
-            $(this)
-              .parent()
-              .parent()
-              .find(".expand-button")
-              .html(" + ")
-              .attr("title", "Expand all");
-            $(this)
-              .parent()
-              .parent()
-              .find(".signature-type-expandable")
-              .removeClass("signature-type-expanded");
-            $(this)
-              .parent()
-              .parent()
-              .find(".box-container")
-              .hide(resizeHandler ? 0 : 300);
-            $(this)
-              .parent()
-              .parent()
-              .find(".expand-button")
-              .removeAttr("expanded");
-            resized();
-          } else {
-            $(this)
-              .parent()
-              .parent()
-              .find(".expand-button")
-              .html(" - ")
-              .attr("title", "Collapse all");
-            $(this)
-              .parent()
-              .parent()
-              .find(".signature-type-expandable")
-              .addClass("signature-type-expanded");
-            $(this)
-              .parent()
-              .parent()
-              .find(".box-container")
-              .show(resizeHandler ? 0 : 300);
-            $(this)
-              .parent()
-              .parent()
-              .find(".expand-button")
-              .attr("expanded", true);
-            resized();
-          }
+          $(this).parent().parent().find(".signature-type-expandable").click()
         });
         element.find(".source-button").click(function () {
           $(this).parent().children(".box-body").toggle();

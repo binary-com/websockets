@@ -2276,7 +2276,9 @@ footer {
     align-items: center;
   }
 }
-
+.hidden {
+  display: none;
+}
 .api-sub-title {
   margin-bottom: 8px;
 }

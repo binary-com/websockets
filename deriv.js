@@ -120,23 +120,6 @@ const setSideBarPlaygroundActive = () => {
   }
 };
 
-const addPlaygroundLinkEventHandler = () => {
-  let links = document.getElementById("playground-sidebar");
-  if (!links) return;
-
-  for (let i = 1; i < links.children.length; i++) {
-    let child = links.children[i];
-    child.removeEventListener("click", (e) => updateSelect(e));
-    child.addEventListener("click", (e) => updateSelect(e));
-  }
-};
-
-const updateSelect = (e) => {
-  $("#api-call-selector").val(e.srcElement.getAttribute("value"));
-  $("#api-call-selector").trigger("change");
-  setSideBarPlaygroundActive();
-};
-
 const handleMobileNav = () => {
   const hamburger = document.getElementById("hamburger");
   if (!hamburger) return;

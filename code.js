@@ -11,7 +11,7 @@ var $console;
 require.config({
   baseUrl: getBaseUrl(),
   path: {
-    "/docson/docson": "/docson/docson.min.js",
+    "/docson/docson": "/docson/docson.js",
     "/lib/binary-live-api": "/lib/binary-live-api.js",
     "/lib/handlebars": "/lib/handlebars.min.js",
     "/lib/highlight": "/lib/highlight.min.js",
@@ -25,7 +25,7 @@ require.config({
 });
 
 require(["/lib/jquery.js"], function () {
-  require(["/docson/docson.min.js", "/lib/select2.min.js"], init);
+  require(["/docson/docson.js", "/lib/select2.min.js"], init);
 });
 
 function init(docson) {
