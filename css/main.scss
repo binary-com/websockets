@@ -71,6 +71,9 @@
   .docson .title {
     font-size: 18px;
   }
+  .docson .box {
+    padding-bottom: 0 !important;
+  }
   .playground-api-docs {
     .docson {
       .box {
@@ -175,7 +178,7 @@
   }
   .main-content {
     .playground-content {
-      padding: 105px 16px;
+      padding: 105px 16px 0;
 
       .page-wrapper {
         .playground {
@@ -2104,6 +2107,12 @@ pre {
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;
+
+  @media (max-width: 992px) {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 .docson .signature-header {
   display: flex;
