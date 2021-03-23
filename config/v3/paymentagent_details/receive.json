@@ -1,0 +1,122 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Payment agent details (response)",
+    "description": "Gets client's payment agent details.",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "paymentagent_details": {
+            "description": "The payment agent details.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "affiliate_id": {
+                    "description": "Client's My Affiliate id, if exists.",
+                    "type": "string"
+                },
+                "code_of_conduct_approval": {
+                    "description": "Indicates client's agreement with the Code of Conduct document.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "commission_deposit": {
+                    "description": "Commission (%) the agent want to take on deposits",
+                    "type": "number"
+                },
+                "commission_withdrawal": {
+                    "description": "Commission (%) the agent want to take on withdrawals",
+                    "type": "number"
+                },
+                "currency_code": {
+                    "description": "Currency supported by the payment agent. It's usually the same as agent's Deriv account currency.",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "Payment agent's email address.",
+                    "type": "string"
+                },
+                "information": {
+                    "description": "Information about payment agent and their proposed service.",
+                    "type": "string"
+                },
+                "is_authenticated": {
+                    "description": "Indicates if client is authenticated by Deriv.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "is_listed": {
+                    "description": "Wether or not the client should be listed among available agents in the FE.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "max_withdrawal": {
+                    "description": "Maximum amount allowed for withdrawals",
+                    "type": "number"
+                },
+                "min_withdrawal": {
+                    "description": "Minimum amount allowed for withdrawals",
+                    "type": "number"
+                },
+                "payment_agent_name": {
+                    "description": "The name with which the payment agent is going to be identified.",
+                    "type": "string"
+                },
+                "phone": {
+                    "description": "Payment agent's phone number with country code.",
+                    "type": "string"
+                },
+                "supported_payment_methods": {
+                    "description": "A list of supported payment methods.",
+                    "type": "array",
+                    "items": {
+                        "description": "A payment method's name",
+                        "type": "string"
+                    }
+                },
+                "target_country": {
+                    "description": "Client's target country.",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "The URL of payment agent's website.",
+                    "type": "string"
+                }
+            }
+        },
+        "passthrough": {
+            "description": "Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "paymentagent_details"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}
