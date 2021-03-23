@@ -1,0 +1,16 @@
+{
+    "paymentagent_create": 1,
+    "affiliate_id": "1231234",
+    "code_of_conduct_approval": 1,
+    "commission_deposit": 2,
+    "commission_withdrawal": 3,
+    "email": "joe@joy.com",
+    "information": "The best person you can find",
+    "payment_agent_name": "Joe Joy",
+    "phone": "+923-22-23-13",
+    "supported_payment_methods": [
+        "MasterCard",
+        "Visa"
+    ],
+    "url": "https://abc.com"
+}

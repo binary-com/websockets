@@ -1,0 +1,99 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Payment agent create (request)",
+    "description": "Saves client's payment agent details.",
+    "beta": 1,
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "paymentagent_create",
+        "code_of_conduct_approval",
+        "commission_deposit",
+        "commission_withdrawal",
+        "email",
+        "information",
+        "payment_agent_name",
+        "supported_payment_methods",
+        "url"
+    ],
+    "properties": {
+        "paymentagent_create": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "affiliate_id": {
+            "description": "[Optional] Client's My Affiliate id, if exists.",
+            "type": "string",
+            "pattern": "^[\\w]{0,32}$"
+        },
+        "code_of_conduct_approval": {
+            "description": "Indicates client's agreement with the Code of Conduct.",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "commission_deposit": {
+            "description": "Commission  (%) the agent wants to take on deposits",
+            "type": "number",
+            "maximum": 9,
+            "minimum": 0
+        },
+        "commission_withdrawal": {
+            "description": "Commission  (%) the agent wants to take on withdrawals",
+            "type": "number",
+            "maximum": 9,
+            "minimum": 0
+        },
+        "email": {
+            "description": "Payment agent's email address.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{1,255}$"
+        },
+        "information": {
+            "description": "[Optional] Information about payment agent and their proposed service.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,500}$"
+        },
+        "payment_agent_name": {
+            "description": "The name with which the payment agent is going to be identified.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,100}$"
+        },
+        "phone": {
+            "description": "Payment agent's phone number with coutry code.",
+            "type": "string",
+            "pattern": "^\\+[\\-\\ 0-9]{8,40}$"
+        },
+        "supported_payment_methods": {
+            "description": "A list of supported payment methods.",
+            "type": "array",
+            "items": {
+                "description": "A payment method's name",
+                "type": "string",
+                "pattern": "^[\\w \\-]{2,30}$"
+            }
+        },
+        "url": {
+            "description": "The URL of payment agent's website.",
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9.+\\-]*://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$",
+            "maxLength": 100
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

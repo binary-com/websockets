@@ -127,6 +127,10 @@ groups:
         title: P2P Order List
       - name: payment_methods
         title: Payment Methods
+      - name: paymentagent_create
+        title: Payment agent create
+      - name: paymentagent_details
+        title: Payment agent details
       - name: paymentagent_list
         title: 'Payment Agent: List'
       - name: paymentagent_transfer
