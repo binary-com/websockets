@@ -1761,6 +1761,7 @@ pre p {
 }
 
 #playground-console {
+  width: 80%;
   margin-top: 2px;
 
   pre {
@@ -2357,6 +2358,7 @@ footer {
 }
 .request-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
