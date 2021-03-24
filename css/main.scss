@@ -2351,5 +2351,16 @@ footer {
 .text-center {
   text-align: center;
 }
+.request-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  fieldset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 @import "monokai.css";
