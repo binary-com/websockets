@@ -313,7 +313,7 @@
         #api-token-fieldset {
           .api-token-wrapper {
             .helper-label {
-              left: 1.5vw;
+              left: 1vw;
             }
 
             input[type="text"] {
@@ -1108,13 +1108,17 @@ nav {
       .helper-label {
         position: absolute;
         left: 7vw;
-        top: -10px;
-        font-size: 10px;
+        top: -12px;
+        font-size: 12px;
         line-height: 1.4;
         color: #333333;
         background-color: white;
         margin-bottom: 0;
         padding: 4px;
+
+        @media (max-width: 1500px) {
+          left: 6.8vw;
+        }
       }
       input[type="text"] {
         max-width: calc(80% - 150px);
@@ -1290,8 +1294,8 @@ fieldset {
     .helper-label {
       position: absolute;
       left: 0.5vw;
-      top: -10px;
-      font-size: 10px;
+      top: -12px;
+      font-size: 12px;
       line-height: 1.4;
       color: #333333;
       background-color: white;
