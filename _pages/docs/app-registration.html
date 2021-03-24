@@ -28,56 +28,80 @@ permalink: docs/app-registration/
     <div class="form-content">
       <fieldset>
         <h2 class="doc-sub-title">Register your app</h2>
-        <input
-          id="application-name"
-          type="text"
-          maxlength="48"
-          placeholder="Name (Required)"
-        />
-        <input
-          id="application-redirect_uri"
-          type="text"
-          maxlength="255"
-          placeholder="Redirect URL (Required)"
-        />
-        <input
-          id="application-verification_uri"
-          type="text"
-          maxlength="255"
-          placeholder="Verification URL"
-        />
-        <input
-          id="application-homepage"
-          type="text"
-          maxlength="255"
-          placeholder="Homepage URL"
-        />
-        <input
-          id="application-github"
-          type="text"
-          maxlength="255"
-          placeholder="Github URL"
-        />
-        <input
-          id="application-appstore"
-          type="text"
-          maxlength="255"
-          placeholder="Appstore URL"
-        />
-        <input
-          id="application-googleplay"
-          type="text"
-          maxlength="255"
-          placeholder="Google Play URL"
-        />
-        <input
-          id="application-app_markup_percentage"
-          type="text"
-          maxlength="5"
-          placeholder="Markup percentage"
-          class="last"
-        />
-        <p class="helper-text">minimum 0.00 and maximum 5.00</p>
+        <div class="input-wrapper first">
+          <p class="helper-label">Name (Required)</p>
+          <input
+            id="application-name"
+            type="text"
+            maxlength="48"
+            placeholder="Name (Required)"
+          />
+        </div>
+        <div class="input-wrapper">
+          <p class="helper-label">Redirect URL (Required)</p>
+          <input
+            id="application-redirect_uri"
+            type="text"
+            maxlength="255"
+            placeholder="Redirect URL (Required)"
+          />
+        </div>
+        <div class="input-wrapper">
+          <p class="helper-label">Verification URL</p>
+          <input
+            id="application-verification_uri"
+            type="text"
+            maxlength="255"
+            placeholder="Verification URL"
+          />
+        </div>
+        <div class="input-wrapper">
+          <p class="helper-label">Homepage URL</p>
+          <input
+            id="application-homepage"
+            type="text"
+            maxlength="255"
+            placeholder="Homepage URL"
+          />
+        </div>
+        <div class="input-wrapper">
+          <p class="helper-label">Github URL</p>
+          <input
+            id="application-github"
+            type="text"
+            maxlength="255"
+            placeholder="Github URL"
+          />
+        </div>
+        <div class="input-wrapper">
+          <p class="helper-label">Appstore URL</p>
+          <input
+            id="application-appstore"
+            type="text"
+            maxlength="255"
+            placeholder="Appstore URL"
+          />
+        </div>
+        <div class="input-wrapper">
+          <p class="helper-label">Google Play URL</p>
+          <input
+            id="application-googleplay"
+            type="text"
+            maxlength="255"
+            placeholder="Google Play URL"
+          />
+        </div>
+        <div class="input-wrapper">
+          <p class="helper-label">Markup Percentage</p>
+          <input
+            id="application-app_markup_percentage"
+            type="text"
+            maxlength="5"
+            placeholder="Markup percentage"
+            class="last"
+          />
+          <p class="helper-text">minimum 0.00 and maximum 5.00</p>
+        </div>
       </fieldset>
       <div class="scopes">
         <p class="bold scopes-field">Scopes:</p>
