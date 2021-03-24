@@ -1081,7 +1081,7 @@ nav {
 .vertical-separator {
   width: 2px;
   height: inherit;
-  margin: 0 0 -8% 0;
+  margin-left: 220px;
   background-color: rgba(240, 241, 243, 0.64);
 }
 .with-bg {
@@ -1505,6 +1505,9 @@ button {
   flex-direction: column;
   max-width: 220px;
   width: 220px;
+  position: fixed;
+  height: 100vh;
+  z-index: 10;
 
   a {
     position: relative;
@@ -2298,13 +2301,14 @@ pre {
 }
 
 footer {
-  background-color: rgba(240, 241, 243, 0.64);
+  background-color: rgba(240, 241, 243, 1);
   color: #333333;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   height: 54px;
+  z-index: 300;
 
   .footer-container {
     width: 80%;
