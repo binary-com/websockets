@@ -1767,13 +1767,11 @@ pre p {
   margin-bottom: 0;
   color: #c2c2c2;
 }
-
 #playground-console {
   width: 80%;
   margin-top: 2px;
   max-height: 60vh;
   overflow-y: auto;
-
   pre {
     padding: 16px;
     border: none;
@@ -1782,7 +1780,6 @@ pre p {
     color: #c2c2c2;
     line-height: 24px;
   }
-
   pre:last-child {
     margin-bottom: 0;
   }

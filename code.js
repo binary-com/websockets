@@ -403,8 +403,13 @@ function applicationsTableRow(application) {
     function (e) {
       e.preventDefault();
       e.stopPropagation();
-      var $legend = $("#frmNewApplication").find("legend");
-      $legend.html($legend.html().replace("Register an", "Update"));
+      let form_title = document.getElementById("form-title");
+      if (form_title) {
+        form_title.innerText = form_title.innerText.replace(
+          "Register",
+          "Update"
+        );
+      }
       $("#placeholder_app_id")
         .text(" " + e.target.id + " ")
         .attr("style", "background:#ffffe0");
