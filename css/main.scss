@@ -732,6 +732,9 @@ ol > p {
   @media (max-width: 480px) {
     margin-top: 24px;
   }
+  &:hover {
+    background-color: #d43e47;
+  }
 }
 .nav {
   width: 100%;
@@ -865,6 +868,9 @@ ol > p {
   text-decoration: none;
   font-weight: bold;
   color: #ffffff;
+  &:hover {
+    background-color: #d43e47;
+  }
 }
 .community-btn {
   padding: 6px 16px;
@@ -1319,6 +1325,10 @@ button {
   background-color: #ff444f;
   margin: 40px auto;
   font-weight: bold;
+
+  &:hover {
+    background-color: #d43e47;
+  }
 }
 .gray-btn-submit {
   padding: 8px 16px;
@@ -1354,10 +1364,14 @@ button {
   letter-spacing: normal;
   text-align: center;
   color: #ffffff;
+
+  &:hover {
+    background-color: #d43e47;
+  }
 }
 .primary-btn-submit:hover,
 .btn-reset:hover {
-  background-color: rgba(255, 68, 79, 0.32);
+  background-color: #d43e47;
 }
 .btn-authenticate {
   width: 118px;
@@ -1369,6 +1383,9 @@ button {
   font-size: 14px;
   line-height: 1.43;
   color: #ffffff;
+  &:hover {
+    background-color: #d43e47;
+  }
 }
 #frmNewApplication {
   display: flex;
