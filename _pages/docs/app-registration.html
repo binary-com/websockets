@@ -140,19 +140,21 @@ permalink: docs/app-registration/
     </div>
   </form>
   <div class="horizontal-separator-grey"></div>
-  <div class="request-container">{% include api-playground-field.html %}</div>
-  <div>
-    <table class="flex-table" id="applications-table" style="display: none">
-      <thead>
-        <tr class="flex-tr">
-          <th class="flex-tr-child">Name</th>
-          <th class="flex-tr-child">Application ID</th>
-          <th class="flex-tr-child">Scopes</th>
-          <th class="flex-tr-child">Redirect URL</th>
-          <th colspan="2" class="flex-tr-child">Actions</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+  <div class="request-container">
+    <div class="table-wrapper">
+      <table class="flex-table" id="applications-table" style="display: none">
+        <thead>
+          <tr class="flex-tr">
+            <th class="flex-tr-child name">Name</th>
+            <th class="flex-tr-child app_id">Application ID</th>
+            <th class="flex-tr-child scopes">Scopes</th>
+            <th class="flex-tr-child redirect_url">Redirect URL</th>
+            <th colspan="2" class="flex-tr-child actions">Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    {% include api-playground-field.html %}
   </div>
 </div>

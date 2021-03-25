@@ -1510,6 +1510,14 @@ button {
 #content > .documentation {
   width: 80%;
   margin-top: 20px;
+
+  @media (max-width: 1300px) {
+    width: 90%;
+  }
+
+  @media (max-width: 1164px) {
+    width: 95%;
+  }
 }
 .page-wrapper {
   display: flex;
@@ -2366,6 +2374,69 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+.table-wrapper {
+  width: auto;
+  max-width: 100%;
+  display: flex;
+  margin-bottom: 40px;
+  overflow-x: auto;
+
+  .flex-table {
+    border: solid 1px #d6dadb;
+    border-radius: 6px;
+    thead {
+      background-color: #d6dadb;
+
+      .flex-tr {
+        border-bottom: solid 1px #d6dadb;
+        .flex-tr-child {
+          text-align: left;
+          padding: 6px 16px 6px;
+        }
+        .name {
+          width: 18%;
+        }
+        .app_id {
+          width: 15%;
+        }
+        .scopes {
+          width: 20%;
+        }
+        .redirect_url {
+          width: auto;
+        }
+        .actions {
+          width: 15%;
+        }
+      }
+    }
+    tbody {
+      .flex-tr {
+        .flex-tr-child {
+          padding: 6px 16px 6px;
+        }
+        .scopes {
+          width: unset;
+        }
+        .action {
+          text-align: center;
+          padding: unset;
+
+          .delete {
+            border: none;
+            border-radius: 6px;
+            padding: 8px 10px;
+          }
+          .update {
+            border: none;
+            border-radius: 6px;
+            padding: 8px 10px;
+          }
+        }
+      }
+    }
   }
 }
 
