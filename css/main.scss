@@ -138,7 +138,6 @@
     width: 95%;
     resize: none;
   }
-
   .signature {
     .signature-header {
       flex-wrap: wrap;
@@ -211,7 +210,6 @@
                   }
                 }
               }
-
               .playground-box {
                 padding: 16px;
 
@@ -223,26 +221,6 @@
                   width: calc(100% - 24px);
                   resize: none;
                 }
-
-                // .json-btn-wrapper {
-                //   width: 100%;
-                //   margin: 26px 0 40px;
-                //   .btn-submit {
-                //     font-size: 14px;
-                //     width: 50%;
-                //     margin: 0;
-                //   }
-
-                //   #playground-reset-btn {
-                //     width: 50%;
-                //     margin: 0 8px 0 0;
-                //     .btn-reset {
-                //       font-size: 14px;
-                //       width: 100%;
-                //       padding: 10px 0;
-                //     }
-                //   }
-                // }
               }
               fieldset {
                 flex-wrap: nowrap;
@@ -273,7 +251,6 @@
   #frmNewApplication > .form-content > fieldset {
     flex-direction: row;
   }
-
   .doc-content {
     .page-wrapper {
       width: 100% !important;
@@ -361,31 +338,6 @@
     background-color: white;
   }
   .main-content {
-    // .hero-image {
-    //   min-height: 500px;
-
-    //   .hero-container {
-    //     width: 95%;
-    //     margin-right: unset;
-
-    //     .hero-header {
-    //     //   width: 100%;
-    //     //   font-size: 32px;
-    //     //   line-height: 40px;
-    //     // //   text-align: left;
-    //     //   margin-bottom: 16px;
-    //     }
-    //     .hero-text {
-    //       font-size: 16px;
-    //       line-height: 24px;
-    //       text-align: left;
-    //     }
-    //     .hero-btn {
-    //       font-size: 14px;
-    //     }
-    //   }
-    // }
-
     .main-page-row {
       padding: 40px 0;
 
@@ -707,7 +659,6 @@ ol > p {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  //   min-height: 745px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -722,7 +673,6 @@ ol > p {
       url("/img/header-mobile.png");
   }
 }
-
 .hero-container {
   display: flex;
   flex-direction: column;
@@ -771,7 +721,6 @@ ol > p {
     margin-bottom: 12px;
   }
 }
-
 .hero-btn {
   padding: 10px 16px;
   border-radius: 4px;
@@ -793,7 +742,6 @@ ol > p {
   flex-direction: column;
   background-color: #0e0e0e;
 }
-
 .main-page-row {
   display: flex;
   flex-direction: column;
@@ -1342,11 +1290,10 @@ textarea {
 }
 .scopes-field > input[type="checkbox"] {
   margin-right: 16px;
-  /* Double-sized Checkboxes */
-  -ms-transform: scale(1.23); /* IE */
-  -moz-transform: scale(1.23); /* FF */
-  -webkit-transform: scale(1.23); /* Safari and Chrome */
-  -o-transform: scale(1.23); /* Opera */
+  -ms-transform: scale(1.23);
+  -moz-transform: scale(1.23);
+  -webkit-transform: scale(1.23);
+  -o-transform: scale(1.23);
   transform: scale(1.23);
   padding: 9px;
 }
@@ -1385,7 +1332,6 @@ button {
   text-align: center;
   color: #333333;
 }
-
 .btn-submit {
   width: fit-content;
   height: fit-content;
@@ -1393,7 +1339,6 @@ button {
   border-radius: 4px;
   font-size: 14px;
   font-weight: bold;
-  //   margin: 24px 8px 40px 0;
   border: solid 2px #999999;
 }
 .btn-reset {
@@ -1410,12 +1355,10 @@ button {
   text-align: center;
   color: #ffffff;
 }
-
 .primary-btn-submit:hover,
 .btn-reset:hover {
   background-color: rgba(255, 68, 79, 0.32);
 }
-
 .btn-authenticate {
   width: 118px;
   height: 42px;
@@ -1457,7 +1400,6 @@ button {
     }
   }
 }
-
 .form-content {
   display: flex;
   flex-direction: column;
@@ -1712,7 +1654,6 @@ code {
       word-break: break-word;
     }
   }
-
   .copy-button {
     display: flex;
     align-items: center;
@@ -1815,7 +1756,6 @@ pre p {
         color: green;
       }
     }
-    // console
     pre.req {
       background: #e5e5e5;
     }
@@ -2347,7 +2287,6 @@ footer {
 .api-sub-title {
   margin-bottom: 8px;
 }
-// custom
 .mb-0 {
   margin-bottom: 0 !important;
 }
