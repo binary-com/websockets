@@ -15,93 +15,103 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "market": {
-                        "description": "The market in which the underlyings listed in `symbol` located.",
-                        "type": "object",
-                        "properties": {
-                            "display_name": {
-                                "description": "Translated market name.",
-                                "type": "string"
-                            },
-                            "name": {
-                                "description": "Market name.",
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "submarket": {
-                        "description": "The submarket in which the underlyings listed in `symbol` located.",
-                        "type": "object",
-                        "properties": {
-                            "display_name": {
-                                "description": "Translated submarket name.",
-                                "type": "string"
-                            },
-                            "name": {
-                                "description": "Submarket name.",
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "symbol": {
-                        "description": "List of underlying symbols.",
+                    "data": {
+                        "title": "data",
+                        "description": "Available contract types and trading duration boundaries",
                         "type": "array",
                         "items": {
                             "type": "object",
                             "properties": {
-                                "display_name": {
-                                    "description": "Translated symbol name.",
-                                    "type": "string"
+                                "market": {
+                                    "description": "The market in which the underlyings listed in `symbol` located.",
+                                    "type": "object",
+                                    "properties": {
+                                        "display_name": {
+                                            "description": "Translated market name.",
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "description": "Market name.",
+                                            "type": "string"
+                                        }
+                                    }
                                 },
-                                "name": {
-                                    "description": "Symbol name.",
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    },
-                    "trade_durations": {
-                        "description": "List of trade durations available for symbols and contract combinations.",
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "durations": {
-                                    "description": "List of trade durations available for the symbols.",
+                                "submarket": {
+                                    "description": "The submarket in which the underlyings listed in `symbol` located.",
+                                    "type": "object",
+                                    "properties": {
+                                        "display_name": {
+                                            "description": "Translated submarket name.",
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "description": "Submarket name.",
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "symbol": {
+                                    "description": "List of underlying symbols.",
                                     "type": "array",
                                     "items": {
                                         "type": "object",
                                         "properties": {
                                             "display_name": {
-                                                "description": "Translated duration type name.",
+                                                "description": "Translated symbol name.",
                                                 "type": "string"
                                             },
-                                            "max": {
-                                                "description": "Maximum allowed duration for this type.",
-                                                "type": "integer"
-                                            },
-                                            "min": {
-                                                "description": "Minimum allowed duration for this type.",
-                                                "type": "integer"
-                                            },
                                             "name": {
-                                                "description": "Duration type name.",
+                                                "description": "Symbol name.",
                                                 "type": "string"
                                             }
                                         }
                                     }
                                 },
-                                "trade_type": {
-                                    "description": "List of trade types available for the symbols.",
-                                    "type": "object",
-                                    "properties": {
-                                        "display_name": {
-                                            "description": "Translated trade type name.",
-                                            "type": "string"
-                                        },
-                                        "name": {
-                                            "description": "Trade type name.",
-                                            "type": "string"
+                                "trade_durations": {
+                                    "description": "List of trade durations available for symbols and contract combinations.",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "durations": {
+                                                "description": "List of trade durations available for the symbols.",
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "display_name": {
+                                                            "description": "Translated duration type name.",
+                                                            "type": "string"
+                                                        },
+                                                        "max": {
+                                                            "description": "Maximum allowed duration for this type.",
+                                                            "type": "integer"
+                                                        },
+                                                        "min": {
+                                                            "description": "Minimum allowed duration for this type.",
+                                                            "type": "integer"
+                                                        },
+                                                        "name": {
+                                                            "description": "Duration type name.",
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "trade_type": {
+                                                "description": "List of trade types available for the symbols.",
+                                                "type": "object",
+                                                "properties": {
+                                                    "display_name": {
+                                                        "description": "Translated trade type name.",
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "description": "Trade type name.",
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
