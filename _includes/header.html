@@ -1,8 +1,35 @@
-<div id="topbar"></div>
-<header>
-    <div class="header-content">
-        <a href="{{ branch }}/"><img id="logo" alt="Binary" src="https://www.binary.com/images/pages/binary-symbol-logo.svg"><h1>Binary.com Developers</h1></a>
-
-        <div class="spacer"></div>
+<div id="main-nav" class="nav">
+  <div class="top-nav flex-container">
+    <div class="top-nav-container">
+      <a href="https://deriv.com">Deriv website</a>
+      <a href="https://deriv.com/about">About us</a>
+      <a href="https://deriv.com/contact-us">Contact us</a>
     </div>
-</header>
+  </div>
+  <header>
+    <div class="header-container">
+      <img
+        id="hamburger"
+        alt="Hamburger menu"
+        src="{{ branch }}/img/hamburger_menu.svg"
+        width="16"
+        height="16"
+      />
+      <a class="flex-container" href="{{ branch }}/">
+        <img
+          class="logo"
+          alt="Deriv Logo"
+          src="{{ branch }}/img/deriv.svg"
+          width="180"
+          height="73"
+        />
+        <h1 class="branding">Developers</h1>
+      </a>
+      <nav id="navbar" class="flex-container navbar">
+        <a id="" href="{{ branch }}/">Home</a>
+        <a id="docs" href="{{ branch }}/docs/">Documentation</a>
+        <a id="playground" href="{{ branch }}/playground/">API Playground</a>
+      </nav>
+    </div>
+  </header>
+</div>

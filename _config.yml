@@ -1,12 +1,17 @@
 # Site settings
-title: Binary.com Developers
+title: Deriv.com Developers
 url: "https://developers.binary.com"
-twitter_username: binarydotcom
-github_username:  binary-com
+twitter_username: Derivdotcom
+github_username: binary-com
 
 # Build settings
 markdown: kramdown
 
+defaults:
+  - scope:
+      path: "/img/"
+    values:
+      image: true
 collections:
   pages:
     output: true
