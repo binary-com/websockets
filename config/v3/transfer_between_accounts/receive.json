@@ -28,7 +28,8 @@
                         "type": "string",
                         "enum": [
                             "binary",
-                            "mt5"
+                            "mt5",
+                            "dxtrade"
                         ]
                     },
                     "balance": {
@@ -43,10 +44,18 @@
                         ]
                     },
                     "loginid": {
-                        "description": "Client loginid.",
+                        "description": "Account identifier used for system transfers.",
                         "type": "string",
                         "examples": [
                             "CR000000"
+                        ]
+                    },
+                    "market_type": {
+                        "description": "Market type of account.",
+                        "type": "string",
+                        "enum": [
+                            "financial",
+                            "synthetic"
                         ]
                     },
                     "mt5_group": {

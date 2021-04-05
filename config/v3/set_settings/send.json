@@ -143,9 +143,7 @@
             "type": "string",
             "enum": [
                 "Mr",
-                "Mrs",
-                "Ms",
-                "Miss"
+                "Ms"
             ]
         },
         "secret_answer": {
