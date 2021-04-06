@@ -5,7 +5,7 @@
     "type": "object",
     "auth_required": 1,
     "auth_scopes": [
-        "admin"
+        "payments"
     ],
     "additionalProperties": false,
     "required": [
