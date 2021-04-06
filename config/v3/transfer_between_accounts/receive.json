@@ -27,8 +27,9 @@
                         "description": "Type of the account.",
                         "type": "string",
                         "enum": [
-                            "binary",
+                            "trading",
                             "mt5",
+                            "wallet",
                             "dxtrade"
                         ]
                     },
@@ -41,6 +42,14 @@
                         "type": "string",
                         "examples": [
                             "USD"
+                        ]
+                    },
+                    "demo_account": {
+                        "description": "0 for real accounts; 1 for virtual/demo accounts.",
+                        "type": "integer",
+                        "enum": [
+                            0,
+                            1
                         ]
                     },
                     "loginid": {
