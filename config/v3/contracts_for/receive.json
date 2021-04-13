@@ -78,20 +78,20 @@
                                     "Up/Down"
                                 ]
                             },
+                            "contract_display": {
+                                "description": "Display name for the type of contract.",
+                                "type": "string",
+                                "examples": [
+                                    "Asian Up",
+                                    "Higher"
+                                ]
+                            },
                             "contract_type": {
                                 "description": "Type of contract.",
                                 "type": "string",
                                 "examples": [
                                     "ASIANU",
                                     "CALL"
-                                ]
-                            },
-                            "contracts_display": {
-                                "description": "Type of contract.",
-                                "type": "string",
-                                "examples": [
-                                    "Asian Up",
-                                    "Higher"
                                 ]
                             },
                             "exchange_name": {
