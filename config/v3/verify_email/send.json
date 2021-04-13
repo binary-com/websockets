@@ -47,6 +47,25 @@
                     "type": "string",
                     "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
                 },
+                "pa_amount": {
+                    "description": "[Optional] The amount to withdraw to the payment agent. Only allowed for payment agent withdraw.",
+                    "type": "number"
+                },
+                "pa_currency": {
+                    "description": "[Optional] The currency code. Only allowed for payment agent withdraw.",
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9]{2,20}$"
+                },
+                "pa_loginid": {
+                    "description": "[Optional] The payment agent loginid received from the `paymentagent_list` call. Only allowed for payment agent withdraw.",
+                    "type": "string",
+                    "pattern": "^[A-Za-z]+[0-9]+$"
+                },
+                "pa_remarks": {
+                    "description": "[Optional] Remarks about the withdraw. Only letters, numbers, space, period, comma, - ' are allowed. Only allowed for payment agent withdraw.",
+                    "type": "string",
+                    "pattern": "^[0-9A-Za-z .,'-]{0,100}$"
+                },
                 "signup_device": {
                     "description": "[Optional] Show whether user has used mobile or desktop.",
                     "type": "string",

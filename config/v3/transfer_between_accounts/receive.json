@@ -24,13 +24,14 @@
                 "type": "object",
                 "properties": {
                     "account_type": {
-                        "description": "Type of the account.",
+                        "description": "Type of the account. Please note that `binary` is deprecated and replaced by `trading`",
                         "type": "string",
                         "enum": [
                             "trading",
                             "mt5",
                             "wallet",
-                            "dxtrade"
+                            "dxtrade",
+                            "binary"
                         ]
                     },
                     "balance": {
