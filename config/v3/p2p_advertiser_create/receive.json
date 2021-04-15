@@ -17,6 +17,7 @@
                 "buy_completion_rate",
                 "buy_orders_count",
                 "cancel_time_avg",
+                "cancels_remaining",
                 "chat_token",
                 "chat_user_id",
                 "contact_info",
@@ -62,6 +63,10 @@
                         "integer",
                         "null"
                     ]
+                },
+                "cancels_remaining": {
+                    "description": "The number of times the user may cancel orders before being temporarily blocked.",
+                    "type": "integer"
                 },
                 "chat_token": {
                     "description": "The token to be used for authenticating the client for chat.",
