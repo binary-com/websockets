@@ -37,7 +37,7 @@
         "address_line_1": {
             "description": "[Optional] Note: not applicable for virtual account. Required field for real money account.",
             "type": "string",
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{1,70}$"
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()\\x{b0}@#/-]{1,70}$"
         },
         "address_line_2": {
             "description": "[Optional] Note: not applicable for virtual account. Optional field for real money account.",
@@ -45,7 +45,7 @@
                 "null",
                 "string"
             ],
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/-]{0,70}$"
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()\\x{b0}@#/-]{0,70}$"
         },
         "address_postcode": {
             "description": "[Optional] Note: not applicable for virtual account. Optional field for real money account.",
