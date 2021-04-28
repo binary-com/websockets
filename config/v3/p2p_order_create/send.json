@@ -37,9 +37,17 @@
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
         },
         "payment_info": {
-            "description": "[Optional] Payment instructions. Only applicable for 'sell orders'.",
+            "description": "[Optional] Payment instructions, only applicable for sell orders.",
             "type": "string",
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
+        },
+        "payment_method_ids": {
+            "description": "IDs of payment methods, only applicable for sell orders.",
+            "type": "array",
+            "items": {
+                "type": "integer"
+            },
+            "maxItems": 3
         },
         "subscribe": {
             "description": "[Optional] If set to 1, will send updates whenever there is an update to the order.",

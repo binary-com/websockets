@@ -41,6 +41,19 @@
                 1
             ]
         },
+        "payment_method": {
+            "description": "[Optional] Supported payment methods. Separate multiple values with a comma, maximum 3.",
+            "type": "string",
+            "pattern": "^([a-z0-9_]+)(,[a-z0-9_]+)?(,[a-z0-9_]+)?$"
+        },
+        "payment_method_ids": {
+            "description": "[Optional] IDs of payment methods, only applicable for sell ads. Will replace exisiting methods.",
+            "type": "array",
+            "items": {
+                "type": "integer"
+            },
+            "maxItems": 3
+        },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"

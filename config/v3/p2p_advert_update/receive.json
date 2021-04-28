@@ -157,11 +157,21 @@
                     "type": "string"
                 },
                 "payment_method": {
-                    "description": "The payment method.",
-                    "type": "string",
-                    "enum": [
-                        "bank_transfer"
+                    "description": "Supported payment methods. Comma separated list.",
+                    "type": [
+                        "null",
+                        "string"
                     ]
+                },
+                "payment_method_ids": {
+                    "description": "IDs of payment methods.",
+                    "type": [
+                        "array",
+                        "null"
+                    ],
+                    "items": {
+                        "type": "integer"
+                    }
                 },
                 "price": {
                     "description": "Cost of the advert in local currency.",

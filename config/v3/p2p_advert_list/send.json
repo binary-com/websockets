@@ -55,6 +55,15 @@
             "type": "integer",
             "default": 0
         },
+        "payment_method": {
+            "description": "[Optional] Search by supported payment methods.",
+            "type": "array",
+            "items": {
+                "description": "Payment method identifer.",
+                "type": "string",
+                "pattern": "^[a-z0-9_]{1,30}$"
+            }
+        },
         "sort_by": {
             "description": "[Optional] How the results are sorted: best rate, or advertiser completion rate.",
             "type": "string",
