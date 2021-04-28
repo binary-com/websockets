@@ -67,7 +67,10 @@
                         },
                         "payment_method": {
                             "description": "The payment method.",
-                            "type": "string"
+                            "type": [
+                                "null",
+                                "string"
+                            ]
                         },
                         "type": {
                             "description": "Type of the advert.",
@@ -218,6 +221,40 @@
                 "payment_info": {
                     "description": "Payment instructions.",
                     "type": "string"
+                },
+                "payment_method": {
+                    "description": "Supported payment methods. Comma separated list.",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "payment_method_details": {
+                    "description": "Details of available payment methods.",
+                    "type": [
+                        "array",
+                        "null"
+                    ],
+                    "items": {
+                        "description": "Payment method details.",
+                        "type": "object",
+                        "properties": {
+                            "method": {
+                                "description": "Payment method identifier.",
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "payment_method_ids": {
+                    "description": "IDs of payment methods.",
+                    "type": [
+                        "array",
+                        "null"
+                    ],
+                    "items": {
+                        "type": "integer"
+                    }
                 },
                 "price": {
                     "description": "Cost in local currency.",

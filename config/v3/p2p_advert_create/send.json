@@ -14,7 +14,6 @@
         "amount",
         "max_order_amount",
         "min_order_amount",
-        "payment_method",
         "rate",
         "type"
     ],
@@ -62,11 +61,17 @@
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
         },
         "payment_method": {
-            "description": "The payment method.",
+            "description": "Supported payment methods. Separate multiple values with a comma, maximum 3.",
             "type": "string",
-            "enum": [
-                "bank_transfer"
-            ]
+            "pattern": "^([a-z0-9_]+)(,[a-z0-9_]+)?(,[a-z0-9_]+)?$"
+        },
+        "payment_method_ids": {
+            "description": "IDs of payment methods, only applicable for sell ads.",
+            "type": "array",
+            "items": {
+                "type": "integer"
+            },
+            "maxItems": 3
         },
         "rate": {
             "description": "Conversion rate from advertiser's account currency to `local_currency`.",
