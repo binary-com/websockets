@@ -15,7 +15,8 @@
             "required": [
                 "api_call_limits",
                 "crypto_config",
-                "currencies_config"
+                "currencies_config",
+                "p2p_config"
             ],
             "properties": {
                 "api_call_limits": {
@@ -255,6 +256,63 @@
                 "message": {
                     "description": "Text for site status banner, contains problem description. shown only if set by the system.",
                     "type": "string"
+                },
+                "p2p_config": {
+                    "description": "Peer-to-peer payment system settings.",
+                    "type": "object",
+                    "required": [
+                        "adverts_active_limit",
+                        "cancellation_block_duration",
+                        "cancellation_count_period",
+                        "cancellation_grace_period",
+                        "cancellation_limit",
+                        "maximum_advert_amount",
+                        "maximum_order_amount",
+                        "order_daily_limit",
+                        "order_payment_period"
+                    ],
+                    "properties": {
+                        "adverts_active_limit": {
+                            "description": "Maximum number of active ads allowed by an advertiser per currency pair and advert type (buy or sell).",
+                            "type": "number"
+                        },
+                        "adverts_archive_period": {
+                            "description": "Adverts will be deactivated if no activity occurs within this period, in days.",
+                            "type": "number"
+                        },
+                        "cancellation_block_duration": {
+                            "description": "A buyer will be blocked for this duration after exceeding the cancellation limit, in hours.",
+                            "type": "number"
+                        },
+                        "cancellation_count_period": {
+                            "description": "The period within which to count buyer cancellations, in hours.",
+                            "type": "number"
+                        },
+                        "cancellation_grace_period": {
+                            "description": "A buyer may cancel an order within this period without negative consequences, in minutes after order creation.",
+                            "type": "number"
+                        },
+                        "cancellation_limit": {
+                            "description": "A buyer will be temporarily barred after marking this number of cancellations within cancellation_period.",
+                            "type": "number"
+                        },
+                        "maximum_advert_amount": {
+                            "description": "Maximum amount of an advert, in USD.",
+                            "type": "number"
+                        },
+                        "maximum_order_amount": {
+                            "description": "Maximum amount of an order, in USD.",
+                            "type": "number"
+                        },
+                        "order_daily_limit": {
+                            "description": "Maximum number of orders a user may create per day.",
+                            "type": "number"
+                        },
+                        "order_payment_period": {
+                            "description": "Time allowed for order payment, in minutes after order creation.",
+                            "type": "number"
+                        }
+                    }
                 },
                 "site_status": {
                     "description": "The current status of the website.",
