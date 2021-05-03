@@ -117,6 +117,10 @@
                                 "description": "The advert creation time in epoch.",
                                 "type": "integer"
                             },
+                            "days_until_archive": {
+                                "description": "Days until automatic inactivation of this ad, if no activity occurs.",
+                                "type": "integer"
+                            },
                             "description": {
                                 "description": "General information about the advert.",
                                 "type": "string"
