@@ -34,7 +34,8 @@
                                     "hold",
                                     "release",
                                     "adjustment",
-                                    "virtual_credit"
+                                    "virtual_credit",
+                                    "transfer"
                                 ]
                             },
                             "amount": {
@@ -68,6 +69,38 @@
                                     4867502908
                                 ]
                             },
+                            "fees": {
+                                "description": "Contains details about fees used for transfer. It is present only when action type is transfer.",
+                                "type": "object",
+                                "properties": {
+                                    "amount": {
+                                        "description": "Fees amount",
+                                        "type": "number"
+                                    },
+                                    "currency": {
+                                        "description": "Fees currency",
+                                        "type": "string"
+                                    },
+                                    "minimum": {
+                                        "description": "Minimum amount of fees",
+                                        "type": "number"
+                                    },
+                                    "percentage": {
+                                        "description": "Fees percentage",
+                                        "type": "number"
+                                    }
+                                }
+                            },
+                            "from": {
+                                "description": "Contains details of account from which amount was transferred. It is present only when action type is transfer.",
+                                "type": "object",
+                                "properties": {
+                                    "loginid": {
+                                        "description": "Login id of the account from which money was transferred.",
+                                        "type": "string"
+                                    }
+                                }
+                            },
                             "longcode": {
                                 "description": "The description of contract purchased if description is set to `1`.",
                                 "type": "string"
@@ -96,6 +129,16 @@
                                     "null",
                                     "string"
                                 ]
+                            },
+                            "to": {
+                                "description": "Contains details of account to which amount was transferred. It is present only when action type is transfer.",
+                                "type": "object",
+                                "properties": {
+                                    "loginid": {
+                                        "description": "Login id of the account to which money was transferred.",
+                                        "type": "string"
+                                    }
+                                }
                             },
                             "transaction_id": {
                                 "description": "It is the transaction ID. In statement every contract (buy or sell) and every payment has a unique ID.",

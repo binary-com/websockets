@@ -23,7 +23,8 @@
                         "withdrawal",
                         "escrow",
                         "adjustment",
-                        "virtual_credit"
+                        "virtual_credit",
+                        "transfer"
                     ]
                 },
                 "amount": {
