@@ -33,7 +33,7 @@
             "properties": {
                 "balance_available": {
                     "description": "Amount of funds available to sell on P2P. May be less than account balance according to deposit methods used.",
-                    "type": "string"
+                    "type": "number"
                 },
                 "basic_verification": {
                     "description": "Boolean value: 1 or 0, indicating whether the advertiser's identify has been verified.",
