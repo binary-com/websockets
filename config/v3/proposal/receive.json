@@ -51,6 +51,13 @@
                         "number"
                     ]
                 },
+                "date_expiry": {
+                    "description": "The end date of the contract.",
+                    "type": "integer",
+                    "examples": [
+                        1439999053
+                    ]
+                },
                 "date_start": {
                     "description": "The start date of the contract.",
                     "type": "integer",
