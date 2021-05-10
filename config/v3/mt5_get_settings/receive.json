@@ -80,7 +80,7 @@
                     "type": "string",
                     "enum": [
                         "financial",
-                        "gaming"
+                        "synthetic"
                     ]
                 },
                 "name": {
