@@ -96,6 +96,10 @@
                                                         "type": "string"
                                                     }
                                                 },
+                                                "reported_properties": {
+                                                    "description": "Shows the latest document properties detected and reported by Onfido",
+                                                    "type": "object"
+                                                },
                                                 "submissions_left": {
                                                     "description": "This shows the number of Onfido submissions left for the client",
                                                     "type": "integer"

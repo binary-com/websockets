@@ -71,6 +71,14 @@
             "description": "Document size (should be less than 10MB)",
             "type": "integer"
         },
+        "lifetime_valid": {
+            "description": "[Optional] Boolean value that indicates whether this document is lifetime valid (only applies to POI document types, cancels out the expiration_date given if any)",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
         "page_type": {
             "description": "[Optional] To determine document side",
             "type": "string",
