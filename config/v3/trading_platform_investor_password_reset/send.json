@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Trading Platform: Password Reset (request)",
-    "description": "Reset the password of a Trading Platform Account",
+    "title": "Trading Platform: Investor Password Reset (request)",
+    "description": "Reset the investor password of a Trading Platform Account",
     "type": "object",
     "auth_required": 1,
     "auth_scopes": [
@@ -9,23 +9,36 @@
     ],
     "additionalProperties": false,
     "required": [
-        "trading_platform_password_reset",
+        "trading_platform_investor_password_reset",
+        "account_id",
         "new_password",
+        "platform",
         "verification_code"
     ],
     "properties": {
-        "trading_platform_password_reset": {
+        "trading_platform_investor_password_reset": {
             "description": "Must be `1`",
             "type": "integer",
             "enum": [
                 1
             ]
         },
+        "account_id": {
+            "description": "Trading account ID.",
+            "type": "string"
+        },
         "new_password": {
             "description": "New password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).",
             "type": "string",
             "pattern": "^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])[ -~]{8,25}$",
             "sensitive": 1
+        },
+        "platform": {
+            "description": "Name of trading platform.",
+            "type": "string",
+            "enum": [
+                "mt5"
+            ]
         },
         "verification_code": {
             "description": "Email verification code (received from a `verify_email` call, which must be done first)",
