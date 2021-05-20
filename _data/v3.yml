@@ -185,6 +185,8 @@ groups:
         title: Top Up Virtual-Money Account
       - name: trading_durations
         title: Trading Durations
+      - name: trading_platform_investor_password_reset
+        title: 'Trading Platform: Investor Password Reset'
       - name: trading_platform_password_reset
         title: 'Trading Platform: Password Reset'
       - name: trading_servers
