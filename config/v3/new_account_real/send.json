@@ -9,8 +9,7 @@
     ],
     "additionalProperties": false,
     "required": [
-        "new_account_real",
-        "residence"
+        "new_account_real"
     ],
     "properties": {
         "new_account_real": {

@@ -15,6 +15,86 @@
             "items": {
                 "type": "object",
                 "properties": {
+                    "identitiy": {
+                        "description": "Information about identitiy options available",
+                        "type": "object",
+                        "properties": {
+                            "services": {
+                                "description": "Identity services configuration",
+                                "type": "object",
+                                "properties": {
+                                    "idv": {
+                                        "description": "IDV configuration",
+                                        "type": "object",
+                                        "properties": {
+                                            "documents_supported": {
+                                                "description": "Documents supported by the IDV service in this country",
+                                                "type": "object",
+                                                "patternProperties": {
+                                                    "^\\w+$": {
+                                                        "description": "Document type",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "display_name": {
+                                                                "description": "The localized display name",
+                                                                "type": "string"
+                                                            },
+                                                            "format": {
+                                                                "description": "[Optional] Regex pattern to validate documents",
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "is_country_supported": {
+                                                "description": "Flag which indicates whether IDV is available in this country",
+                                                "type": "integer",
+                                                "enum": [
+                                                    0,
+                                                    1
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "onfido": {
+                                        "description": "Onfido configuration",
+                                        "type": "object",
+                                        "properties": {
+                                            "documents_supported": {
+                                                "description": "Documents supported by the IDV service in this country",
+                                                "type": "object",
+                                                "patternProperties": {
+                                                    "^\\w+$": {
+                                                        "description": "Document type",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "display_name": {
+                                                                "description": "The localized display name",
+                                                                "type": "string"
+                                                            },
+                                                            "format": {
+                                                                "description": "[Optional] Regex pattern to validate documents",
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "is_country_supported": {
+                                                "description": "Flag which indicates whether Onfido is available in this country",
+                                                "type": "integer",
+                                                "enum": [
+                                                    0,
+                                                    1
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "phone_idd": {
                         "description": "IDD code of country",
                         "type": [
