@@ -60,6 +60,27 @@
                                     "description": "This shows the information about the authentication services implemented",
                                     "type": "object",
                                     "properties": {
+                                        "idv": {
+                                            "description": "This shows the information related to IDV supported services",
+                                            "type": "object",
+                                            "properties": {
+                                                "last_rejected": {
+                                                    "description": "Show the last IDV reported reasons for the rejected cases",
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "reported_properties": {
+                                                    "description": "Shows the latest document properties detected and reported by IDVS",
+                                                    "type": "object"
+                                                },
+                                                "submissions_left": {
+                                                    "description": "This shows the number of IDV submissions left for the client",
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        },
                                         "onfido": {
                                             "description": "This shows the information related to Onfido supported services",
                                             "type": "object",
