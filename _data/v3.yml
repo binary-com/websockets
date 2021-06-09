@@ -65,6 +65,8 @@ groups:
         title: Get Self-Exclusion
       - name: get_settings
         title: Get Account Settings
+      - name: identity_verification_document_add
+        title: Identity Verification Add Document
       - name: landing_company
         title: Landing Company
       - name: landing_company_details
