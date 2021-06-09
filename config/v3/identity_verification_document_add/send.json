@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Identity Verification Add Document (request)",
+    "description": "Add document information such as issuing country, type and id for IDV processing.",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "identity_verification_document_add",
+        "document_number",
+        "document_type",
+        "issuing_country"
+    ],
+    "properties": {
+        "identity_verification_document_add": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "document_number": {
+            "description": "The unique identification number on the provided document.",
+            "type": "string"
+        },
+        "document_type": {
+            "description": "Type of the document provided by the user, e.g. national_id, passport, etc (obtained from `residence_list` call).",
+            "type": "string"
+        },
+        "issuing_country": {
+            "description": "2-letter country code (obtained from `residence_list` call).",
+            "type": "string",
+            "pattern": "^[a-z]{2}$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}
