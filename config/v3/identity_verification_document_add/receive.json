@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Add Document Info (response)",
+    "title": "Identity Verification Add Document (response)",
     "description": "Add user information with document type, document id, and country that has issued the document.",
     "type": "object",
     "required": [
