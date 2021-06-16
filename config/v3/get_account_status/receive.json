@@ -153,6 +153,13 @@
                         }
                     }
                 },
+                "cashier_missing_fields": {
+                    "description": "Contains missing profile fields required for cashier access.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "cashier_validation": {
                     "description": "If the cashier is unavailble, this array contains one or more error codes for each reason.",
                     "type": "array",
