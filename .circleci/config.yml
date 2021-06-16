@@ -106,26 +106,21 @@ commands:
             docker push ${DOCKHUB_ORGANISATION}/binary-static-developers:latest
   k8s_deploy:
     description: "Deploy to k8s cluster"
+    parameters:
+      k8s_namespace:
+        type: string
+        default: "developers-binary-com-production"
     steps:
       - k8s/install-kubectl
       - run: 
           name: Deploying to k8s cluster for service binary-developers
           command: |
-            for SERVER_ID in {1..5}
-            do
-              KUBE_SERVER_REF="KUBE_SERVER_$SERVER_ID"
-              SERVICEACCOUNT_TOKEN_REF="SERVICEACCOUNT_TOKEN_$SERVER_ID"
-              CA_CRT_REF="CA_CRT_$SERVER_ID"
-              if [ ! -z "${!KUBE_SERVER_REF}" ]
-              then
-                echo "Deploying to cluster $SERVER_ID"
-                CA_CRT="${!CA_CRT_REF}"
-                KUBE_SERVER="${!KUBE_SERVER_REF}"
-                SERVICEACCOUNT_TOKEN="${!SERVICEACCOUNT_TOKEN_REF}"
-                echo $CA_CRT | base64 --decode > ca.crt
-                kubectl --server=${KUBE_SERVER} --certificate-authority=ca.crt --token=$SERVICEACCOUNT_TOKEN set image deployment/developers-binary-com developers-binary-com=${DOCKHUB_ORGANISATION}/binary-static-developers:${CIRCLE_SHA1}
-              fi
-            done
+            export NAMESPACE=<< parameters.k8s_namespace >>
+            git clone https://github.com/binary-com/devops-ci-scripts
+            cd devops-ci-scripts/k8s-build_tools
+            echo $CA_CRT | base64 --decode > ca.crt
+            ./release.sh binary-static-developers ${CIRCLE_SHA1}
+
   notify_slack:
     description: "Notify slack"
     steps:
