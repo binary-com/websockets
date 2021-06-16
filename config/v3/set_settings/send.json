@@ -86,6 +86,21 @@
                 1
             ]
         },
+        "feature_flag": {
+            "description": "[Optional] Enable or disable one or multiple features.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "wallet": {
+                    "description": "[Optional] Boolean value 1 or 0 indicating whether to enable/disable this feature",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                }
+            }
+        },
         "first_name": {
             "description": "[Optional] Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).",
             "type": "string",

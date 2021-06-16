@@ -93,6 +93,21 @@
                         1
                     ]
                 },
+                "feature_flag": {
+                    "description": "Contains features that are enabled or disabled for this user",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "wallet": {
+                            "description": "Boolean value 1 or 0 indicating whether his feature this enabled or not",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        }
+                    }
+                },
                 "first_name": {
                     "description": "First name (note: Only available for users who have at least one real account)",
                     "type": "string"
