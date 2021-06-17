@@ -6,10 +6,7 @@
     "auth_required": 0,
     "additionalProperties": false,
     "required": [
-        "new_account_virtual",
-        "client_password",
-        "residence",
-        "verification_code"
+        "new_account_virtual"
     ],
     "properties": {
         "new_account_virtual": {
@@ -59,6 +56,15 @@
             "enum": [
                 "desktop",
                 "mobile"
+            ]
+        },
+        "type": {
+            "description": "Account type",
+            "type": "string",
+            "default": "trading",
+            "enum": [
+                "trading",
+                "wallet"
             ]
         },
         "utm_ad_id": {

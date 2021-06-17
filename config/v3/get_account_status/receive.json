@@ -75,9 +75,39 @@
                                                     "description": "Shows the latest document properties detected and reported by IDVS",
                                                     "type": "object"
                                                 },
+                                                "status": {
+                                                    "description": "This represents the status of the latest IDV check.",
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "none",
+                                                        "pending",
+                                                        "rejected",
+                                                        "verified",
+                                                        "expired",
+                                                        "suspected"
+                                                    ]
+                                                },
                                                 "submissions_left": {
                                                     "description": "This shows the number of IDV submissions left for the client",
                                                     "type": "integer"
+                                                }
+                                            }
+                                        },
+                                        "manual": {
+                                            "description": "This shows the information related to the manual POI checks",
+                                            "type": "object",
+                                            "properties": {
+                                                "status": {
+                                                    "description": "This represents the status of the current manual POI check.",
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "none",
+                                                        "pending",
+                                                        "rejected",
+                                                        "verified",
+                                                        "expired",
+                                                        "suspected"
+                                                    ]
                                                 }
                                             }
                                         },
@@ -120,6 +150,18 @@
                                                 "reported_properties": {
                                                     "description": "Shows the latest document properties detected and reported by Onfido",
                                                     "type": "object"
+                                                },
+                                                "status": {
+                                                    "description": "This represents the status of the latest Onfido check.",
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "none",
+                                                        "pending",
+                                                        "rejected",
+                                                        "verified",
+                                                        "expired",
+                                                        "suspected"
+                                                    ]
                                                 },
                                                 "submissions_left": {
                                                     "description": "This shows the number of Onfido submissions left for the client",
