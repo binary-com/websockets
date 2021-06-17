@@ -47,6 +47,14 @@
                                                     }
                                                 }
                                             },
+                                            "has_visual_sample": {
+                                                "description": "Flag which indicates whether this country has IDV visual samples",
+                                                "type": "integer",
+                                                "enum": [
+                                                    0,
+                                                    1
+                                                ]
+                                            },
                                             "is_country_supported": {
                                                 "description": "Flag which indicates whether IDV is available in this country",
                                                 "type": "integer",
