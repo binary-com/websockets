@@ -274,27 +274,27 @@
                     "properties": {
                         "adverts_active_limit": {
                             "description": "Maximum number of active ads allowed by an advertiser per currency pair and advert type (buy or sell).",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "adverts_archive_period": {
                             "description": "Adverts will be deactivated if no activity occurs within this period, in days.",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "cancellation_block_duration": {
                             "description": "A buyer will be blocked for this duration after exceeding the cancellation limit, in hours.",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "cancellation_count_period": {
                             "description": "The period within which to count buyer cancellations, in hours.",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "cancellation_grace_period": {
                             "description": "A buyer may cancel an order within this period without negative consequences, in minutes after order creation.",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "cancellation_limit": {
                             "description": "A buyer will be temporarily barred after marking this number of cancellations within cancellation_period.",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "maximum_advert_amount": {
                             "description": "Maximum amount of an advert, in USD.",
@@ -306,11 +306,11 @@
                         },
                         "order_daily_limit": {
                             "description": "Maximum number of orders a user may create per day.",
-                            "type": "number"
+                            "type": "integer"
                         },
                         "order_payment_period": {
                             "description": "Time allowed for order payment, in minutes after order creation.",
-                            "type": "number"
+                            "type": "integer"
                         }
                     }
                 },
