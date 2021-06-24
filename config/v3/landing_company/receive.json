@@ -13,6 +13,132 @@
             "description": "Landing Company",
             "type": "object",
             "properties": {
+                "dxtrade_financial_company": {
+                    "description": "Available Deriv X financial account types (all except Synthetic Indices).",
+                    "type": "object",
+                    "properties": {
+                        "standard": {
+                            "description": "Landing Company details.",
+                            "type": "object",
+                            "properties": {
+                                "address": {
+                                    "description": "Landing Company address",
+                                    "type": [
+                                        "array",
+                                        "null"
+                                    ],
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "country": {
+                                    "description": "Landing Company country of incorporation",
+                                    "type": "string"
+                                },
+                                "legal_allowed_contract_categories": {
+                                    "description": "Allowed contract types",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "legal_allowed_currencies": {
+                                    "description": "Allowable currencies",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "legal_allowed_markets": {
+                                    "description": "Allowable markets",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "legal_default_currency": {
+                                    "description": "Default account currency",
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "description": "Landing Company legal name",
+                                    "type": "string"
+                                },
+                                "requirements": {
+                                    "description": "Legal requirements for the Landing Company",
+                                    "type": "object"
+                                },
+                                "shortcode": {
+                                    "description": "Landing Company short code",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "dxtrade_gaming_company": {
+                    "description": "Available Deriv X gaming account types (Synthetic Indices).",
+                    "type": "object",
+                    "properties": {
+                        "standard": {
+                            "description": "Landing Company details.",
+                            "type": "object",
+                            "properties": {
+                                "address": {
+                                    "description": "Landing Company address",
+                                    "type": [
+                                        "array",
+                                        "null"
+                                    ],
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "country": {
+                                    "description": "Landing Company country of incorporation",
+                                    "type": "string"
+                                },
+                                "legal_allowed_contract_categories": {
+                                    "description": "Allowed contract types",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "legal_allowed_currencies": {
+                                    "description": "Allowable currencies",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "legal_allowed_markets": {
+                                    "description": "Allowable markets",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "legal_default_currency": {
+                                    "description": "Default account currency",
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "description": "Landing Company legal name",
+                                    "type": "string"
+                                },
+                                "requirements": {
+                                    "description": "Legal requirements for the Landing Company",
+                                    "type": "object"
+                                },
+                                "shortcode": {
+                                    "description": "Landing Company short code",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
                 "financial_company": {
                     "description": "Landing Company for financial contracts (all except Synthetic Indices)",
                     "type": [
