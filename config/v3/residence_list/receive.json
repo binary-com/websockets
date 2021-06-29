@@ -15,8 +15,8 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "identitiy": {
-                        "description": "Information about identitiy options available",
+                    "identity": {
+                        "description": "Information about identity options available",
                         "type": "object",
                         "properties": {
                             "services": {

@@ -68,64 +68,148 @@
             ]
         },
         "utm_ad_id": {
-            "description": "[Optional] Identifier of particular ad",
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+            "description": "[Optional] Identifier of particular ad. Value must match Regex pattern to be recorded",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "utm_adgroup_id": {
-            "description": "[Optional] Identifier of ad group in the campaign",
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+            "description": "[Optional] Identifier of ad group in the campaign. Value must match Regex pattern to be recorded",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "utm_adrollclk_id": {
-            "description": "[Optional] Unique identifier of click on AdRoll ads platform",
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+            "description": "[Optional] Unique identifier of click on AdRoll ads platform. Value must match Regex pattern to be recorded",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "utm_campaign": {
-            "description": "[Optional] Identifies a specific product promotion or strategic campaign such as a spring sale or other promotions.",
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+            "description": "[Optional] Identifies a specific product promotion or strategic campaign such as a spring sale or other promotions. Value must match Regex pattern to be recorded",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "utm_campaign_id": {
-            "description": "[Optional] Identifier of paid ad campaign",
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+            "description": "[Optional] Identifier of paid ad campaign. Value must match Regex pattern to be recorded",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "utm_content": {
-            "description": "[Optional] Used to differentiate similar content, or links within the same ad",
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+            "description": "[Optional] Used to differentiate similar content, or links within the same ad. Value must match Regex pattern to be recorded",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "utm_fbcl_id": {
-            "description": "[Optional] Unique identifier of click on Facebook ads platform",
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+            "description": "[Optional] Unique identifier of click on Facebook ads platform. Value must match Regex pattern to be recorded",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "utm_gl_client_id": {
-            "description": "[Optional] Unique visitor identifier on Google Ads platform.",
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+            "description": "[Optional] Unique visitor identifier on Google Ads platform. Value must match Regex pattern to be recorded",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "utm_medium": {
-            "description": "[Optional] Identifies the medium the link was used upon such as: email, CPC, or other methods of sharing.",
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+            "description": "[Optional] Identifies the medium the link was used upon such as: email, CPC, or other methods of sharing. Value must match Regex pattern to be recorded",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "utm_msclk_id": {
-            "description": "[Optional] Unique click identifier on Microsoft Bing ads platform.",
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+            "description": "[Optional] Unique click identifier on Microsoft Bing ads platform. Value must match Regex pattern to be recorded",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "utm_source": {
-            "description": "[Optional] Identifies the source of traffic such as: search engine, newsletter, or other referral.",
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+            "description": "[Optional] Identifies the source of traffic such as: search engine, newsletter, or other referral. Value must match Regex pattern to be recorded",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "utm_term": {
-            "description": "[Optional] Used to send information related to the campaign term like paid search keywords",
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+            "description": "[Optional] Used to send information related to the campaign term like paid search keywords. Value must match Regex pattern to be recorded",
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9\\s\\-\\.\\_]{0,100}$"
+                },
+                {
+                    "type": "string"
+                }
+            ]
         },
         "verification_code": {
             "description": "Email verification code (received from a `verify_email` call, which must be done first).",
