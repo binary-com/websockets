@@ -62,6 +62,20 @@
                             "description": "The advertiser's unique identifier.",
                             "type": "string"
                         },
+                        "is_blocked": {
+                            "description": "Indicates that the advertiser is blocked by the current user.",
+                            "type": "integer",
+                            "enum": [
+                                1
+                            ]
+                        },
+                        "is_favourite": {
+                            "description": "Indicates that the advertiser is a favourite of the current user.",
+                            "type": "integer",
+                            "enum": [
+                                1
+                            ]
+                        },
                         "last_name": {
                             "description": "The advertiser's last name.",
                             "type": "string"

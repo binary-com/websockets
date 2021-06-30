@@ -19,6 +19,7 @@
                 "buy_orders_count",
                 "cancel_time_avg",
                 "created_time",
+                "favourited",
                 "full_verification",
                 "id",
                 "is_approved",
@@ -105,6 +106,10 @@
                 "default_advert_description": {
                     "description": "Default description that can be used every time an advert is created.",
                     "type": "string"
+                },
+                "favourited": {
+                    "description": "Number of other users who have favourited this advertiser.",
+                    "type": "integer"
                 },
                 "first_name": {
                     "description": "The advertiser's first name.",

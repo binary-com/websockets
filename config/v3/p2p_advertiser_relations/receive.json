@@ -1,0 +1,83 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Advertiser Relations (response)",
+    "description": "Returns information about favourite and blocked advertisers.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "p2p_advertiser_relations": {
+            "title": "p2p_advertiser_relations",
+            "description": "P2P advertiser relations information.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "blocked_advertisers",
+                "favourite_advertisers"
+            ],
+            "properties": {
+                "blocked_advertisers": {
+                    "description": "List of advertisers blocked by the current user.",
+                    "type": "array",
+                    "items": {
+                        "description": "Advertiser details.",
+                        "type": "object",
+                        "properties": {
+                            "created_time": {
+                                "description": "The epoch time that the advertiser was blocked.",
+                                "type": "integer"
+                            },
+                            "id": {
+                                "description": "Advertiser unique identifer.",
+                                "type": "string"
+                            },
+                            "name": {
+                                "description": "Advertiser displayed name.",
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "favourite_advertisers": {
+                    "description": "Favourite advertisers of the current user.",
+                    "type": "array",
+                    "items": {
+                        "description": "Advertiser details.",
+                        "type": "object",
+                        "properties": {
+                            "created_time": {
+                                "description": "The epoch time that the advertiser was set as favourite.",
+                                "type": "integer"
+                            },
+                            "id": {
+                                "description": "Advertiser unique identifer.",
+                                "type": "string"
+                            },
+                            "name": {
+                                "description": "Advertiser displayed name.",
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "p2p_advertiser_relations"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

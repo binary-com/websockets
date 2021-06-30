@@ -40,6 +40,14 @@
                 "sell"
             ]
         },
+        "favourites_only": {
+            "description": "[Optional] Only show adverts from favourite advertisers. Default is 0.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
         "limit": {
             "description": "[Optional] Used for paging.",
             "type": "integer",
