@@ -1,0 +1,68 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Advertiser Relations (request)",
+    "description": "Updates and returns favourite and blocked advertisers of the current user.",
+    "beta": 1,
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "payments"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "p2p_advertiser_relations"
+    ],
+    "properties": {
+        "p2p_advertiser_relations": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "add_blocked": {
+            "description": "IDs of advertisers to block.",
+            "type": "array",
+            "items": {
+                "description": "Advertiser unique identifier.",
+                "type": "number"
+            },
+            "maxItems": 100
+        },
+        "add_favourites": {
+            "description": "IDs of advertisers to add as favourites.",
+            "type": "array",
+            "items": {
+                "description": "Advertiser unique identifier.",
+                "type": "number"
+            },
+            "maxItems": 100
+        },
+        "remove_blocked": {
+            "description": "IDs of advertisers to remove from blocked.",
+            "type": "array",
+            "items": {
+                "description": "Advertiser unique identifier.",
+                "type": "number"
+            },
+            "maxItems": 100
+        },
+        "remove_favourites": {
+            "description": "IDs of advertisers to remove from favourites.",
+            "type": "array",
+            "items": {
+                "description": "Advertiser unique identifier.",
+                "type": "number"
+            },
+            "maxItems": 100
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

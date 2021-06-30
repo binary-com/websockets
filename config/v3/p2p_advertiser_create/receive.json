@@ -22,6 +22,7 @@
                 "chat_user_id",
                 "contact_info",
                 "created_time",
+                "favourited",
                 "id",
                 "is_approved",
                 "is_listed",
@@ -104,6 +105,10 @@
                 "default_advert_description": {
                     "description": "Default description that can be used every time an advert is created.",
                     "type": "string"
+                },
+                "favourited": {
+                    "description": "Number of other users who have favourited this advertiser.",
+                    "type": "integer"
                 },
                 "full_verification": {
                     "description": "Boolean value: 1 or 0, indicating whether the advertiser's address has been verified.",
