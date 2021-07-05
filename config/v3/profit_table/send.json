@@ -85,7 +85,7 @@
             "description": "[Optional] Apply upper limit to count of transactions received.",
             "type": "number",
             "default": 50,
-            "maximum": 999,
+            "maximum": 500,
             "minimum": 0
         },
         "offset": {
