@@ -21,6 +21,15 @@
                 "withdraw"
             ]
         },
+        "address": {
+            "description": "[Optional] Address for crypto withdrawal. Only applicable for `api` type.",
+            "type": "string"
+        },
+        "amount": {
+            "description": "[Optional] Amount for crypto withdrawal. Only applicable for `api` type.",
+            "type": "number",
+            "minimum": 0
+        },
         "provider": {
             "description": "[Optional] Cashier provider. `crypto` will be default option for crypto currency accounts.",
             "type": "string",
@@ -31,7 +40,7 @@
             ]
         },
         "type": {
-            "description": "[Optional] Data need to be returned from cashier. `api` is supported only for `crypto` provider with `deposit` operation.",
+            "description": "[Optional] Data need to be returned from cashier. `api` is supported only for `crypto` provider.",
             "type": "string",
             "default": "url",
             "enum": [

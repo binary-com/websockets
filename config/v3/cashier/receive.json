@@ -24,7 +24,8 @@
                             "description": "Type of operation, which is requested.",
                             "type": "string",
                             "enum": [
-                                "deposit"
+                                "deposit",
+                                "withdraw"
                             ]
                         },
                         "deposit": {
@@ -33,6 +34,27 @@
                             "properties": {
                                 "address": {
                                     "description": "Address for crypto deposit.",
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "withdraw": {
+                            "description": "[Optional] Result for withdraw operation.",
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "description": "The unique identifier for the transaction.",
+                                    "type": "string"
+                                },
+                                "status_code": {
+                                    "description": "The status code of the withdrawal.",
+                                    "type": "string",
+                                    "enum": [
+                                        "LOCKED"
+                                    ]
+                                },
+                                "status_message": {
+                                    "description": "The status message of the withdrawal.",
                                     "type": "string"
                                 }
                             }
