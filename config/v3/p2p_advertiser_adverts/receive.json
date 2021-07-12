@@ -172,20 +172,17 @@
                                 "type": "string"
                             },
                             "payment_method": {
-                                "description": "Supported payment methods. Comma separated list.",
+                                "description": "Supported payment methods. Comma separated list of identifiers.",
                                 "type": [
                                     "null",
                                     "string"
                                 ]
                             },
-                            "payment_method_ids": {
-                                "description": "IDs of payment methods.",
-                                "type": [
-                                    "array",
-                                    "null"
-                                ],
+                            "payment_method_names": {
+                                "description": "Names of supported payment methods.",
+                                "type": "array",
                                 "items": {
-                                    "type": "integer"
+                                    "type": "string"
                                 }
                             },
                             "price": {

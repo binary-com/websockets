@@ -230,30 +230,78 @@
                     ]
                 },
                 "payment_method_details": {
-                    "description": "Details of available payment methods, only for unpaid orders.",
-                    "type": [
-                        "array",
-                        "null"
-                    ],
-                    "items": {
-                        "description": "Payment method details.",
-                        "type": "object",
-                        "properties": {
-                            "method": {
-                                "description": "Payment method identifier.",
-                                "type": "string"
+                    "description": "Details of available payment methods.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "patternProperties": {
+                        "^[0-9]{1,8}$": {
+                            "description": "Unique identifier.",
+                            "type": "object",
+                            "required": [
+                                "fields",
+                                "is_enabled",
+                                "method"
+                            ],
+                            "properties": {
+                                "display_name": {
+                                    "description": "Display name of payment method.",
+                                    "type": "string"
+                                },
+                                "fields": {
+                                    "description": "Payment method fields.",
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "minProperties": 1,
+                                    "patternProperties": {
+                                        "^[a-z0-9_]{1,30}$": {
+                                            "description": "Field identifier.",
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "required": [
+                                                "display_name",
+                                                "required",
+                                                "type",
+                                                "value"
+                                            ],
+                                            "properties": {
+                                                "display_name": {
+                                                    "description": "Display name of payment method field.",
+                                                    "type": "string"
+                                                },
+                                                "required": {
+                                                    "description": "Is field required or optional.",
+                                                    "type": "integer"
+                                                },
+                                                "type": {
+                                                    "description": "Field type.",
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "text",
+                                                        "memo"
+                                                    ]
+                                                },
+                                                "value": {
+                                                    "description": "Current value of payment method field.",
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "is_enabled": {
+                                    "description": "Indicates whether method is enabled.",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
+                                },
+                                "method": {
+                                    "description": "Payment method identifier.",
+                                    "type": "string"
+                                }
                             }
                         }
-                    }
-                },
-                "payment_method_ids": {
-                    "description": "IDs of payment methods.",
-                    "type": [
-                        "array",
-                        "null"
-                    ],
-                    "items": {
-                        "type": "integer"
                     }
                 },
                 "price": {
