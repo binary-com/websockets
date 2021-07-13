@@ -26,6 +26,57 @@
                         "needs_verification"
                     ],
                     "properties": {
+                        "attempts": {
+                            "description": "POI attempts made by the client",
+                            "type": "object",
+                            "properties": {
+                                "count": {
+                                    "description": "A number of POI attempts made by the client",
+                                    "type": "integer"
+                                },
+                                "history": {
+                                    "description": "A list of POI attempts made by the client in chronological descending order",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "country_code": {
+                                                "description": "2-letter country code used to request the attempt.",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "The id of the attempt.",
+                                                "type": "string"
+                                            },
+                                            "service": {
+                                                "description": "The service used to make the verification.",
+                                                "type": "string"
+                                            },
+                                            "status": {
+                                                "description": "Status of the attempt.",
+                                                "type": "string",
+                                                "enum": [
+                                                    "verified",
+                                                    "rejected",
+                                                    "pending"
+                                                ]
+                                            },
+                                            "timestamp": {
+                                                "description": "The epoch of the attempt.",
+                                                "type": "integer"
+                                            }
+                                        }
+                                    }
+                                },
+                                "latest": {
+                                    "description": "The latest POI attempt made by the client",
+                                    "type": [
+                                        "null",
+                                        "object"
+                                    ]
+                                }
+                            }
+                        },
                         "document": {
                             "description": "The authentication status for document.",
                             "type": "object",
