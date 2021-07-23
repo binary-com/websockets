@@ -24,6 +24,8 @@
                 "paymentagent_withdraw",
                 "payment_withdraw",
                 "trading_platform_password_reset",
+                "trading_platform_dxtrade_password_reset",
+                "trading_platform_mt5_password_reset",
                 "trading_platform_investor_password_reset"
             ]
         },
@@ -65,6 +67,10 @@
                     "description": "[Optional] Remarks about the withdraw. Only letters, numbers, space, period, comma, - ' are allowed. Only allowed for payment agent withdraw.",
                     "type": "string",
                     "pattern": "^[0-9A-Za-z .,'-]{0,100}$"
+                },
+                "redirect_to": {
+                    "description": "[Optional] The page ID to redirect to",
+                    "type": "integer"
                 },
                 "signup_device": {
                     "description": "[Optional] Show whether user has used mobile or desktop.",
