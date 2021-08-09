@@ -54,7 +54,19 @@
                 "proofid",
                 "driverslicense",
                 "proofaddress",
-                "other"
+                "other",
+                "voter_card",
+                "student_card",
+                "nimc_slip",
+                "birth_certificate",
+                "pan_card",
+                "tax_photo_id",
+                "selfie_with_id",
+                "poi_others",
+                "insurance_bill",
+                "tax_receipt",
+                "phone_bill",
+                "poa_others"
             ]
         },
         "expected_checksum": {
