@@ -13,27 +13,6 @@
             "description": "P2P advert information.",
             "type": "object",
             "additionalProperties": false,
-            "required": [
-                "account_currency",
-                "advertiser_details",
-                "counterparty_type",
-                "country",
-                "created_time",
-                "description",
-                "id",
-                "is_active",
-                "local_currency",
-                "max_order_amount_limit",
-                "max_order_amount_limit_display",
-                "min_order_amount_limit",
-                "min_order_amount_limit_display",
-                "payment_method",
-                "price",
-                "price_display",
-                "rate",
-                "rate_display",
-                "type"
-            ],
             "properties": {
                 "account_currency": {
                     "description": "Currency for this advert. This is the system currency to be transferred between advertiser and client.",
@@ -94,11 +73,11 @@
                     }
                 },
                 "amount": {
-                    "description": "The total amount specified in advert, in `account_currency`. It is only visible for advertisers.",
+                    "description": "The total amount specified in advert, in `account_currency`. It is only visible to the advert owner.",
                     "type": "number"
                 },
                 "amount_display": {
-                    "description": "The total amount specified in advert, in `account_currency`, formatted to appropriate decimal places. It is only visible for advertisers.",
+                    "description": "The total amount specified in advert, in `account_currency`, formatted to appropriate decimal places. It is only visible to the advert owner.",
                     "type": "string"
                 },
                 "contact_info": {
@@ -126,6 +105,13 @@
                     "description": "Days until automatic inactivation of this ad, if no activity occurs.",
                     "type": "integer"
                 },
+                "deleted": {
+                    "description": "Indicates that the advert has been deleted.",
+                    "type": "integer",
+                    "enum": [
+                        1
+                    ]
+                },
                 "description": {
                     "description": "General information about the advert.",
                     "type": "string"
@@ -137,6 +123,15 @@
                 "is_active": {
                     "description": "The activation status of the advert.",
                     "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "is_visible": {
+                    "description": "Indicates that this advert will appear on the main advert list. It is only visible to the advert owner.",
+                    "type": "integer",
+                    "default": 0,
                     "enum": [
                         0,
                         1
@@ -155,7 +150,7 @@
                     "type": "number"
                 },
                 "max_order_amount_display": {
-                    "description": "Maximum order amount specified in advert, in `account_currency`, formatted to appropriate decimal places. It is only visible for advertisers.",
+                    "description": "Maximum order amount specified in advert, in `account_currency`, formatted to appropriate decimal places. It is only visible to the advert owner.",
                     "type": "string"
                 },
                 "max_order_amount_limit": {
@@ -171,7 +166,7 @@
                     "type": "number"
                 },
                 "min_order_amount_display": {
-                    "description": "Minimum order amount specified in advert, in `account_currency`, formatted to appropriate decimal places. It is only visible for advertisers.",
+                    "description": "Minimum order amount specified in advert, in `account_currency`, formatted to appropriate decimal places. It is only visible to the advert owner.",
                     "type": "string"
                 },
                 "min_order_amount_limit": {
@@ -296,7 +291,7 @@
                     "type": "number"
                 },
                 "remaining_amount_display": {
-                    "description": "Amount currently available for orders, in `account_currency`, formatted to appropriate decimal places. It is only visible for advertisers.",
+                    "description": "Amount currently available for orders, in `account_currency`, formatted to appropriate decimal places. It is only visible to the advert owner.",
                     "type": "string"
                 },
                 "type": {
@@ -305,6 +300,23 @@
                     "enum": [
                         "buy",
                         "sell"
+                    ]
+                }
+            }
+        },
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only.",
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the `forget` API call to unsubscribe.",
+                    "type": "string",
+                    "examples": [
+                        "c84a793b-8a87-7999-ce10-9b22f7ceead3"
                     ]
                 }
             }

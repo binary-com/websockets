@@ -21,12 +21,12 @@
             ]
         },
         "limit": {
-            "description": "[Optional] Used for paging.",
+            "description": "[Optional] Used for paging. This value will also apply to subsription responses.",
             "type": "integer",
             "default": 50
         },
         "offset": {
-            "description": "[Optional] Used for paging.",
+            "description": "[Optional] Used for paging. This value will also apply to subsription responses.",
             "type": "integer",
             "default": 0
         },
