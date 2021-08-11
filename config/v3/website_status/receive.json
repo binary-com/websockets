@@ -266,6 +266,7 @@
                         "cancellation_count_period",
                         "cancellation_grace_period",
                         "cancellation_limit",
+                        "disabled",
                         "maximum_advert_amount",
                         "maximum_order_amount",
                         "order_daily_limit",
@@ -295,6 +296,14 @@
                         "cancellation_limit": {
                             "description": "A buyer will be temporarily barred after marking this number of cancellations within cancellation_period.",
                             "type": "integer"
+                        },
+                        "disabled": {
+                            "description": "When 1, the P2P service is unavailable.",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
                         },
                         "maximum_advert_amount": {
                             "description": "Maximum amount of an advert, in USD.",
