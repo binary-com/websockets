@@ -10,8 +10,7 @@
     ],
     "additionalProperties": false,
     "required": [
-        "p2p_advert_info",
-        "id"
+        "p2p_advert_info"
     ],
     "properties": {
         "p2p_advert_info": {
@@ -22,9 +21,16 @@
             ]
         },
         "id": {
-            "description": "The unique identifier for this advert.",
+            "description": "[Optional] The unique identifier for this advert. Optional when subscribe is 1. If not provided, all advertiser adverts will be subscribed.",
             "type": "string",
             "pattern": "^[0-9]+$"
+        },
+        "subscribe": {
+            "description": "[Optional] If set to 1, will send updates when changes occur. Optional when id is provided.",
+            "type": "integer",
+            "enum": [
+                1
+            ]
         },
         "use_client_limits": {
             "description": "[Optional] If set to 1, the maximum order amount will be adjusted to the current balance and turnover limits of the account.",
