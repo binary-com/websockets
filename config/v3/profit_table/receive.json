@@ -44,6 +44,13 @@
                                     4867502908
                                 ]
                             },
+                            "duration_type": {
+                                "description": "The duration type of the contract.",
+                                "type": [
+                                    "null",
+                                    "string"
+                                ]
+                            },
                             "longcode": {
                                 "description": "The description of contract purchased if description is set to 1",
                                 "type": "string"
