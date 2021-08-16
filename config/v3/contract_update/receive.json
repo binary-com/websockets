@@ -12,10 +12,12 @@
             "title": "contract_update",
             "description": "Contains the update status of the request",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "stop_loss": {
                     "description": "The target spot price where the contract will be closed automatically at the loss specified by the user.",
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "display_name": {
                             "description": "Localized display name",
@@ -44,6 +46,7 @@
                 "take_profit": {
                     "description": "The target spot price where the contract will be closed automatically at the profit specified by the user.",
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "display_name": {
                             "description": "Localized display name",

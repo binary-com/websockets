@@ -12,6 +12,7 @@
             "title": "balance",
             "description": "Current balance of one or more accounts.",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "balance",
                 "currency",
@@ -111,10 +112,12 @@
                 "total": {
                     "description": "Summary totals of accounts by type.",
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "deriv": {
                             "description": "Total balance of all real money Deriv accounts.",
                             "type": "object",
+                            "additionalProperties": false,
                             "required": [
                                 "amount",
                                 "currency"
@@ -138,6 +141,7 @@
                         "deriv_demo": {
                             "description": "Total balance of all demo Deriv accounts.",
                             "type": "object",
+                            "additionalProperties": false,
                             "required": [
                                 "amount",
                                 "currency"
@@ -161,6 +165,7 @@
                         "mt5": {
                             "description": "Total balance of all MT5 real money accounts.",
                             "type": "object",
+                            "additionalProperties": false,
                             "required": [
                                 "amount",
                                 "currency"
@@ -183,6 +188,7 @@
                         "mt5_demo": {
                             "description": "Total balance of all MT5 demo accounts.",
                             "type": "object",
+                            "additionalProperties": false,
                             "required": [
                                 "amount",
                                 "currency"
@@ -210,6 +216,7 @@
             "title": "Subscription information",
             "description": "For subscription requests only.",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "id"
             ],

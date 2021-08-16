@@ -24,6 +24,7 @@
                     "items": {
                         "description": "Advertiser details.",
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "created_time": {
                                 "description": "The epoch time that the advertiser was blocked.",
@@ -46,6 +47,7 @@
                     "items": {
                         "description": "Advertiser details.",
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "created_time": {
                                 "description": "The epoch time that the advertiser was set as favourite.",

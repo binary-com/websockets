@@ -12,6 +12,7 @@
             "title": "copytrading_list",
             "description": "The trading information of copiers or traders.",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "copiers",
                 "traders"
@@ -22,6 +23,7 @@
                     "type": "array",
                     "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "required": [
                             "loginid"
                         ],
@@ -38,6 +40,7 @@
                     "type": "array",
                     "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "assets": {
                                 "description": "The list of assets to copy the trades of.",

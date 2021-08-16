@@ -12,6 +12,7 @@
             "title": "new_account_maltainvest",
             "description": "New `maltainvest` account details",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "client_id",
                 "landing_company",
@@ -27,6 +28,10 @@
                     "type": "string"
                 },
                 "landing_company_short": {
+                    "description": "Landing company shortcode",
+                    "type": "string"
+                },
+                "landing_company_shortcode": {
                     "description": "Landing company shortcode",
                     "type": "string"
                 },

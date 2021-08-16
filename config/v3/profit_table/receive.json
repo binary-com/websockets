@@ -12,6 +12,7 @@
             "title": "profit_table",
             "description": "Account Profit Table.",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "count": {
                     "description": "Number of transactions returned in this call",
@@ -22,6 +23,7 @@
                     "type": "array",
                     "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "app_id": {
                                 "description": "ID of the application where this contract was purchased.",

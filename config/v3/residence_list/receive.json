@@ -14,18 +14,26 @@
             "type": "array",
             "items": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
+                    "disabled": {
+                        "description": "Disabled.",
+                        "type": "string"
+                    },
                     "identity": {
                         "description": "Information about identity options available",
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "services": {
                                 "description": "Identity services configuration",
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "idv": {
                                         "description": "IDV configuration",
                                         "type": "object",
+                                        "additionalProperties": false,
                                         "properties": {
                                             "documents_supported": {
                                                 "description": "Documents supported by the IDV service in this country",
@@ -34,6 +42,7 @@
                                                     "^\\w+$": {
                                                         "description": "Document type",
                                                         "type": "object",
+                                                        "additionalProperties": false,
                                                         "properties": {
                                                             "display_name": {
                                                                 "description": "The localized display name",
@@ -68,6 +77,7 @@
                                     "onfido": {
                                         "description": "Onfido configuration",
                                         "type": "object",
+                                        "additionalProperties": false,
                                         "properties": {
                                             "documents_supported": {
                                                 "description": "Documents supported by the IDV service in this country",
@@ -76,6 +86,7 @@
                                                     "^\\w+$": {
                                                         "description": "Document type",
                                                         "type": "object",
+                                                        "additionalProperties": false,
                                                         "properties": {
                                                             "display_name": {
                                                                 "description": "The localized display name",
@@ -109,6 +120,10 @@
                             "null",
                             "string"
                         ]
+                    },
+                    "selected": {
+                        "description": "Selected.",
+                        "type": "string"
                     },
                     "text": {
                         "description": "Country full name",

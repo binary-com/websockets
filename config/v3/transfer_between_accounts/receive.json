@@ -22,6 +22,7 @@
             "type": "array",
             "items": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "account_type": {
                         "description": "Type of the account. Please note that `binary` is deprecated and replaced by `trading`",

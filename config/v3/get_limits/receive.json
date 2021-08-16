@@ -12,10 +12,15 @@
             "title": "get_limits",
             "description": "Trading limits of real account user",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "account_balance": {
                     "description": "Maximum account cash balance",
                     "type": "number"
+                },
+                "daily_transfers": {
+                    "description": "Daily transfers",
+                    "type": "object"
                 },
                 "daily_turnover": {
                     "description": "Maximum daily turnover",
@@ -34,6 +39,7 @@
                             "type": "array",
                             "items": {
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "name": {
                                         "description": "The submarket display name.",
@@ -78,6 +84,7 @@
                         "null",
                         "object"
                     ],
+                    "additionalProperties": false,
                     "properties": {
                         "atm": {
                             "description": "Maximum aggregate payouts on open positions per symbol for contracts where barrier is same as entry spot.",
@@ -89,6 +96,7 @@
                         "non_atm": {
                             "description": "Maximum aggregate payouts on open positions per symbol for contract where barrier is different from entry spot.",
                             "type": "object",
+                            "additionalProperties": false,
                             "properties": {
                                 "less_than_seven_days": {
                                     "description": "Maximum aggregate payouts on open positions per symbol for contract where barrier is different from entry spot and duration is less than and equal to seven days",

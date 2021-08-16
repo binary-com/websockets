@@ -11,7 +11,12 @@
             "title": "proposal_open_contract",
             "description": "Latest price and other details for an open contract",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
+                "account_id": {
+                    "description": "Account Id",
+                    "type": "number"
+                },
                 "audit_details": {
                     "title": "Audit details for expired contract.",
                     "description": "Tick details around contract start and end time.",
@@ -19,12 +24,14 @@
                         "null",
                         "object"
                     ],
+                    "additionalProperties": false,
                     "properties": {
                         "all_ticks": {
                             "description": "Ticks for tick expiry contract from start time till expiry.",
                             "type": "array",
                             "items": {
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "epoch": {
                                         "description": "Epoch time of a tick or the contract start or end time.",
@@ -66,6 +73,7 @@
                             "type": "array",
                             "items": {
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "epoch": {
                                         "description": "Epoch time of a tick or the contract start or end time.",
@@ -107,6 +115,7 @@
                             "type": "array",
                             "items": {
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "epoch": {
                                         "description": "Epoch time of a tick or the contract start or end time.",
@@ -178,6 +187,7 @@
                 "cancellation": {
                     "description": "Contains information about contract cancellation option.",
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "ask_price": {
                             "description": "Ask price of contract cancellation option.",
@@ -190,6 +200,13 @@
                     }
                 },
                 "commision": {
+                    "description": "Commission in payout currency amount.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                },
+                "commission": {
                     "description": "Commission in payout currency amount.",
                     "type": [
                         "null",
@@ -321,6 +338,13 @@
                         1446629000
                     ]
                 },
+                "expiry_time": {
+                    "description": "This is the expiry time.",
+                    "type": "integer",
+                    "examples": [
+                        1446629000
+                    ]
+                },
                 "high_barrier": {
                     "description": "High barrier of the contract (if any).",
                     "type": "string",
@@ -403,10 +427,12 @@
                 "limit_order": {
                     "description": "Orders are applicable to `MULTUP` and `MULTDOWN` contracts only.",
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "stop_loss": {
                             "description": "Contains information where the contract will be closed automatically at the loss specified by the user.",
                             "type": "object",
+                            "additionalProperties": false,
                             "properties": {
                                 "display_name": {
                                     "description": "Localized display name",
@@ -435,6 +461,7 @@
                         "stop_out": {
                             "description": "Contains information where the contract will be closed automatically when the value of the contract is close to zero. This is set by the us.",
                             "type": "object",
+                            "additionalProperties": false,
                             "properties": {
                                 "display_name": {
                                     "description": "Localized display name",
@@ -457,6 +484,7 @@
                         "take_profit": {
                             "description": "Contain information where the contract will be closed automatically at the profit specified by the user.",
                             "type": "object",
+                            "additionalProperties": false,
                             "properties": {
                                 "display_name": {
                                     "description": "Localized display name",
@@ -590,6 +618,7 @@
                     "type": "array",
                     "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "epoch": {
                                 "description": "Epoch time of a tick or the contract start or end time.",
@@ -616,6 +645,7 @@
                     "title": "Transaction ids for contract",
                     "description": "Every contract has buy and sell transaction ids, i.e. when you purchase a contract we associate it with buy transaction id, and if contract is already sold we associate that with sell transaction id.",
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "buy": {
                             "description": "Buy transaction ID for that contract",
@@ -644,6 +674,7 @@
             "title": "Subscription information",
             "description": "For subscription requests only.",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "id"
             ],

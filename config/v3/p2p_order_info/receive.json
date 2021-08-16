@@ -237,6 +237,7 @@
                         "^[0-9]{1,8}$": {
                             "description": "Unique identifier.",
                             "type": "object",
+                            "additionalProperties": false,
                             "required": [
                                 "fields",
                                 "is_enabled",
@@ -350,6 +351,7 @@
             "title": "Subscription information",
             "description": "For subscription requests only.",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "id"
             ],

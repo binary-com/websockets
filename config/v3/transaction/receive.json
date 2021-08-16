@@ -12,6 +12,7 @@
             "title": "transaction",
             "description": "Realtime stream of user transaction updates.",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "action": {
                     "description": "The transaction type.",
@@ -138,6 +139,7 @@
             "title": "Subscription information",
             "description": "For subscription requests only.",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "id"
             ],

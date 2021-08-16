@@ -12,6 +12,7 @@
             "title": "proposal",
             "description": "Latest price and other details for a given contract",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "ask_price",
                 "date_start",
@@ -33,6 +34,7 @@
                 "cancellation": {
                     "description": "Contains information about contract cancellation option.",
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "ask_price": {
                             "description": "Ask price of contract cancellation option.",
@@ -82,10 +84,12 @@
                 "limit_order": {
                     "description": "Contains limit order information. (Only applicable for contract with limit order).",
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "stop_loss": {
                             "description": "Contains information where the contract will be closed automatically at the loss specified by the user.",
                             "type": "object",
+                            "additionalProperties": false,
                             "properties": {
                                 "display_name": {
                                     "description": "Localized display name",
@@ -114,6 +118,7 @@
                         "stop_out": {
                             "description": "Contains information where the contract will be closed automatically when the value of the contract is close to zero. This is set by the us.",
                             "type": "object",
+                            "additionalProperties": false,
                             "properties": {
                                 "display_name": {
                                     "description": "Localized display name",
@@ -136,6 +141,7 @@
                         "take_profit": {
                             "description": "Contains information where the contract will be closed automatically at the profit specified by the user.",
                             "type": "object",
+                            "additionalProperties": false,
                             "properties": {
                                 "display_name": {
                                     "description": "Localized display name",
@@ -198,6 +204,7 @@
             "title": "Subscription information",
             "description": "For subscription requests only.",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "id"
             ],

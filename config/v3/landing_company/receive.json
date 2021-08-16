@@ -12,14 +12,29 @@
             "title": "landing_company",
             "description": "Landing Company",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
+                "address_parseable": {
+                    "description": "Flag to indicate if address parseable or not",
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        0
+                    ]
+                },
+                "config": {
+                    "description": "Config structure with document types ,taxRequired ,tin format details.",
+                    "type": "object"
+                },
                 "dxtrade_financial_company": {
                     "description": "Available Deriv X financial account types (all except Synthetic Indices).",
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "standard": {
                             "description": "Landing Company details.",
                             "type": "object",
+                            "additionalProperties": false,
                             "properties": {
                                 "address": {
                                     "description": "Landing Company address",
@@ -31,9 +46,26 @@
                                         "type": "string"
                                     }
                                 },
+                                "changeable_fields": {
+                                    "description": "Special conditions for changing sensitive fields",
+                                    "type": "object"
+                                },
                                 "country": {
                                     "description": "Landing Company country of incorporation",
                                     "type": "string"
+                                },
+                                "currency_config": {
+                                    "title": "Currency Config Structure",
+                                    "description": "The configuration of each currency.",
+                                    "type": "object"
+                                },
+                                "has_reality_check": {
+                                    "description": "Flag to indicate whether reality check is applicable for this Landing Company. `1`: applicable, `0`: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 },
                                 "legal_allowed_contract_categories": {
                                     "description": "Allowed contract types",
@@ -79,10 +111,12 @@
                 "dxtrade_gaming_company": {
                     "description": "Available Deriv X gaming account types (Synthetic Indices).",
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "standard": {
                             "description": "Landing Company details.",
                             "type": "object",
+                            "additionalProperties": false,
                             "properties": {
                                 "address": {
                                     "description": "Landing Company address",
@@ -94,9 +128,26 @@
                                         "type": "string"
                                     }
                                 },
+                                "changeable_fields": {
+                                    "description": "Special conditions for changing sensitive fields",
+                                    "type": "object"
+                                },
                                 "country": {
                                     "description": "Landing Company country of incorporation",
                                     "type": "string"
+                                },
+                                "currency_config": {
+                                    "title": "Currency Config Structure",
+                                    "description": "The configuration of each currency.",
+                                    "type": "object"
+                                },
+                                "has_reality_check": {
+                                    "description": "Flag to indicate whether reality check is applicable for this Landing Company. `1`: applicable, `0`: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 },
                                 "legal_allowed_contract_categories": {
                                     "description": "Allowed contract types",
@@ -145,6 +196,7 @@
                         "null",
                         "object"
                     ],
+                    "additionalProperties": false,
                     "properties": {
                         "address": {
                             "description": "Landing Company address",
@@ -163,6 +215,11 @@
                         "country": {
                             "description": "Landing Company country of incorporation",
                             "type": "string"
+                        },
+                        "currency_config": {
+                            "title": "Currency Config Structure",
+                            "description": "The configuration of each currency.",
+                            "type": "object"
                         },
                         "has_reality_check": {
                             "description": "Flag to indicate whether reality check is applicable for this Landing Company. `1`: applicable, `0`: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
@@ -203,11 +260,19 @@
                             "description": "Landing Company legal name",
                             "type": "string"
                         },
+                        "requirements": {
+                            "description": "Legal requirements for the Landing Company",
+                            "type": "object"
+                        },
                         "shortcode": {
                             "description": "Landing Company short code",
                             "type": "string"
                         }
                     }
+                },
+                "forbidden_postcode_pattern": {
+                    "description": "Forbidden postcode pattern",
+                    "type": "string"
                 },
                 "gaming_company": {
                     "description": "Landing Company for gaming contracts (Synthetic Indices)",
@@ -215,6 +280,7 @@
                         "null",
                         "object"
                     ],
+                    "additionalProperties": false,
                     "properties": {
                         "address": {
                             "description": "Landing Company address",
@@ -233,6 +299,19 @@
                         "country": {
                             "description": "Landing Company country of incorporation",
                             "type": "string"
+                        },
+                        "currency_config": {
+                            "title": "Currency Config Structure",
+                            "description": "The configuration of each currency.",
+                            "type": "object"
+                        },
+                        "has_reality_check": {
+                            "description": "Flag to indicate whether reality check is applicable for this Landing Company. `1`: applicable, `0`: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
                         },
                         "legal_allowed_contract_categories": {
                             "description": "Allowed contract types",
@@ -263,15 +342,58 @@
                             "description": "Landing Company legal name",
                             "type": "string"
                         },
+                        "requirements": {
+                            "description": "Legal requirements for the Landing Company",
+                            "type": "object"
+                        },
                         "shortcode": {
                             "description": "Landing Company short code",
                             "type": "string"
                         }
                     }
                 },
+                "gamstop_company": {
+                    "description": "Gamestop company details.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "has_proveid": {
+                    "description": "Flag to indicate if proveid is present or not",
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        0
+                    ]
+                },
                 "id": {
                     "description": "Country code",
                     "type": "string"
+                },
+                "is_idv_supported": {
+                    "description": "Flag to indicate if idv is supported or not",
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        0
+                    ]
+                },
+                "lc_to_open_mf_account": {
+                    "description": "Open mf account lc details.",
+                    "type": "string"
+                },
+                "minimum_age": {
+                    "description": "Minimum age",
+                    "type": "integer"
+                },
+                "mt5_age_verification": {
+                    "description": "Flag to indicate if mt5 age verification detail.",
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        0
+                    ]
                 },
                 "mt_financial_company": {
                     "description": "Landing Company for MT5 financial contracts (all except Synthetic Indices), currently divided into Financial STP, Financial (standard), and Swap-Free as subtypes.",
@@ -279,6 +401,7 @@
                         "null",
                         "object"
                     ],
+                    "additionalProperties": false,
                     "properties": {
                         "financial": {
                             "description": "Contain details for landing company for financial subtype. The Financial account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market.",
@@ -286,6 +409,7 @@
                                 "null",
                                 "object"
                             ],
+                            "additionalProperties": false,
                             "properties": {
                                 "address": {
                                     "description": "Landing Company address",
@@ -297,9 +421,18 @@
                                         "type": "string"
                                     }
                                 },
+                                "changeable_fields": {
+                                    "description": "Special conditions for changing sensitive fields",
+                                    "type": "object"
+                                },
                                 "country": {
                                     "description": "Landing Company country of incorporation",
                                     "type": "string"
+                                },
+                                "currency_config": {
+                                    "title": "Currency Config Structure",
+                                    "description": "The configuration of each currency.",
+                                    "type": "object"
                                 },
                                 "has_reality_check": {
                                     "description": "Flag to indicate whether reality check is applicable for this Landing Company. `1`: applicable, `0`: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
@@ -337,6 +470,10 @@
                                 "name": {
                                     "description": "Landing Company legal name",
                                     "type": "string"
+                                },
+                                "requirements": {
+                                    "description": "Legal requirements for the Landing Company",
+                                    "type": "object"
                                 },
                                 "shortcode": {
                                     "description": "Landing Company short code",
@@ -350,6 +487,7 @@
                                 "null",
                                 "object"
                             ],
+                            "additionalProperties": false,
                             "properties": {
                                 "address": {
                                     "description": "Landing Company address",
@@ -361,9 +499,18 @@
                                         "type": "string"
                                     }
                                 },
+                                "changeable_fields": {
+                                    "description": "Special conditions for changing sensitive fields",
+                                    "type": "object"
+                                },
                                 "country": {
                                     "description": "Landing Company country of incorporation",
                                     "type": "string"
+                                },
+                                "currency_config": {
+                                    "title": "Currency Config Structure",
+                                    "description": "The configuration of each currency.",
+                                    "type": "object"
                                 },
                                 "has_reality_check": {
                                     "description": "Flag to indicate whether reality check is applicable for this Landing Company. `1`: applicable, `0`: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
@@ -401,6 +548,10 @@
                                 "name": {
                                     "description": "Landing Company legal name",
                                     "type": "string"
+                                },
+                                "requirements": {
+                                    "description": "Legal requirements for the Landing Company",
+                                    "type": "object"
                                 },
                                 "shortcode": {
                                     "description": "Landing Company short code",
@@ -414,6 +565,7 @@
                                 "null",
                                 "object"
                             ],
+                            "additionalProperties": false,
                             "properties": {
                                 "address": {
                                     "description": "Landing Company address",
@@ -425,9 +577,18 @@
                                         "type": "string"
                                     }
                                 },
+                                "changeable_fields": {
+                                    "description": "Special conditions for changing sensitive fields",
+                                    "type": "object"
+                                },
                                 "country": {
                                     "description": "Landing Company country of incorporation",
                                     "type": "string"
+                                },
+                                "currency_config": {
+                                    "title": "Currency Config Structure",
+                                    "description": "The configuration of each currency.",
+                                    "type": "object"
                                 },
                                 "has_reality_check": {
                                     "description": "Flag to indicate whether reality check is applicable for this Landing Company. `1`: applicable, `0`: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
@@ -465,6 +626,10 @@
                                 "name": {
                                     "description": "Landing Company legal name",
                                     "type": "string"
+                                },
+                                "requirements": {
+                                    "description": "Legal requirements for the Landing Company",
+                                    "type": "object"
                                 },
                                 "shortcode": {
                                     "description": "Landing Company short code",
@@ -480,6 +645,7 @@
                         "null",
                         "object"
                     ],
+                    "additionalProperties": false,
                     "properties": {
                         "financial": {
                             "description": "Landing Company for MT5 gaming contracts (Synthetic Indices)",
@@ -487,6 +653,7 @@
                                 "null",
                                 "object"
                             ],
+                            "additionalProperties": false,
                             "properties": {
                                 "address": {
                                     "description": "Landing Company address",
@@ -498,9 +665,26 @@
                                         "type": "string"
                                     }
                                 },
+                                "changeable_fields": {
+                                    "description": "Special conditions for changing sensitive fields",
+                                    "type": "object"
+                                },
                                 "country": {
                                     "description": "Landing Company country of incorporation",
                                     "type": "string"
+                                },
+                                "currency_config": {
+                                    "title": "Currency Config Structure",
+                                    "description": "The configuration of each currency.",
+                                    "type": "object"
+                                },
+                                "has_reality_check": {
+                                    "description": "Flag to indicate whether reality check is applicable for this Landing Company. `1`: applicable, `0`: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 },
                                 "legal_allowed_contract_categories": {
                                     "description": "Allowed contract types",
@@ -547,6 +731,7 @@
                                 "null",
                                 "object"
                             ],
+                            "additionalProperties": false,
                             "properties": {
                                 "address": {
                                     "description": "Landing Company address",
@@ -558,9 +743,26 @@
                                         "type": "string"
                                     }
                                 },
+                                "changeable_fields": {
+                                    "description": "Special conditions for changing sensitive fields",
+                                    "type": "object"
+                                },
                                 "country": {
                                     "description": "Landing Company country of incorporation",
                                     "type": "string"
+                                },
+                                "currency_config": {
+                                    "title": "Currency Config Structure",
+                                    "description": "The configuration of each currency.",
+                                    "type": "object"
+                                },
+                                "has_reality_check": {
+                                    "description": "Flag to indicate whether reality check is applicable for this Landing Company. `1`: applicable, `0`: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 },
                                 "legal_allowed_contract_categories": {
                                     "description": "Allowed contract types",
@@ -605,6 +807,74 @@
                 },
                 "name": {
                     "description": "Country name",
+                    "type": "string"
+                },
+                "need_set_max_turnover_limit": {
+                    "description": "Flag to indicate whether max turnover limit settings.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "no_province": {
+                    "description": "Flag to indicate province settings.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "require_address_postcode": {
+                    "description": "Flag to indicate whether address postcode is required or not.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "require_age_verified_for_synthetic": {
+                    "description": "Flag to indicate whether age verification required ofr synthetic or not.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "require_poi": {
+                    "description": "Flag to indicate whether poi is required.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "require_verification_when_not_age_verified": {
+                    "description": "Flag to indicate whether verification required if age not verified.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "skip_deposit_verification": {
+                    "description": "Flag to indicate whether to skip deposit verifcation or not.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "ukgc_funds_protection": {
+                    "description": "Flag to indicate ukgc funds protection setting.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "virtual_company": {
+                    "description": "Virtual Company",
                     "type": "string"
                 }
             }

@@ -12,6 +12,7 @@
             "title": "portfolio",
             "description": "Current account's open positions.",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "contracts"
             ],
@@ -24,6 +25,7 @@
                         "title": "Portfolio",
                         "description": "The details of each open position.",
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "app_id": {
                                 "description": "ID of the application where this contract was purchased.",
@@ -67,6 +69,10 @@
                             "purchase_time": {
                                 "description": "Epoch of purchase time",
                                 "type": "integer"
+                            },
+                            "shortcode": {
+                                "description": "Contract short code description",
+                                "type": "string"
                             },
                             "symbol": {
                                 "description": "Symbol code",

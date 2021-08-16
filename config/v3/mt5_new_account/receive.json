@@ -12,6 +12,7 @@
             "title": "mt5_new_account",
             "description": "New MT5 account details",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "account_type": {
                     "description": "Account type.",
@@ -20,6 +21,13 @@
                         "demo",
                         "gaming",
                         "financial"
+                    ]
+                },
+                "agent": {
+                    "description": "Agent Details.",
+                    "type": [
+                        "null",
+                        "string"
                     ]
                 },
                 "balance": {

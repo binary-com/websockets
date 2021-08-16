@@ -15,6 +15,7 @@
             "items": {
                 "title": "Application object",
                 "type": "object",
+                "additionalProperties": false,
                 "required": [
                     "app_id",
                     "app_markup_percentage",
@@ -27,6 +28,10 @@
                     "verification_uri"
                 ],
                 "properties": {
+                    "active": {
+                        "description": "Active.",
+                        "type": "integer"
+                    },
                     "app_id": {
                         "description": "Application ID.",
                         "type": "integer"
@@ -70,6 +75,13 @@
                     "redirect_uri": {
                         "description": "The URL to redirect to after a successful login.",
                         "type": "string"
+                    },
+                    "scopes": {
+                        "description": "Scope Details.",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "verification_uri": {
                         "description": "Used when `verify_email` called. If available, a URL containing the verification token will send to the client's email, otherwise only the token will be sent.",

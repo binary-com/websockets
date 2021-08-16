@@ -15,6 +15,7 @@
             "items": {
                 "description": "Contains the changed parameter.",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "display_name": {
                         "description": "Display name of the changed parameter.",

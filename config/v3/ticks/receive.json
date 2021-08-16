@@ -12,6 +12,7 @@
             "title": "TickSpotData",
             "description": "Tick by tick list of streamed data",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "pip_size"
             ],
@@ -53,6 +54,7 @@
             "title": "Subscription information",
             "description": "For subscription requests only.",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "id"
             ],

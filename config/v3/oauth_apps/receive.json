@@ -15,6 +15,7 @@
             "items": {
                 "title": "Application object",
                 "type": "object",
+                "additionalProperties": false,
                 "required": [
                     "app_id",
                     "app_markup_percentage",

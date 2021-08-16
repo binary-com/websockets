@@ -12,6 +12,7 @@
             "title": "p2p_advert_list",
             "description": "P2P adverts list.",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "list"
             ],
