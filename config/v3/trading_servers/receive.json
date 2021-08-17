@@ -17,6 +17,14 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
+                    "account_type": {
+                        "description": "Supported trading account type.",
+                        "type": "string",
+                        "enum": [
+                            "demo",
+                            "real"
+                        ]
+                    },
                     "disabled": {
                         "description": "Flag to represent if this server is currently disabled or not",
                         "type": "integer",

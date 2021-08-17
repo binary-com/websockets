@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Server list (request)",
-    "description": "Get the list of servers for platform. Currently, only mt5 is supported",
+    "description": "Get the list of servers for a trading platform.",
     "type": "object",
     "auth_required": 1,
     "auth_scopes": [
@@ -22,7 +22,6 @@
         "account_type": {
             "description": "[Optional] Trading account type.",
             "type": "string",
-            "default": "real",
             "enum": [
                 "demo",
                 "real"
@@ -53,7 +52,8 @@
             "type": "string",
             "default": "mt5",
             "enum": [
-                "mt5"
+                "mt5",
+                "dxtrade"
             ]
         },
         "passthrough": {
