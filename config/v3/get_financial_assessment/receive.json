@@ -12,6 +12,7 @@
             "title": "get_financial_assessment",
             "description": "Client's financial assessment details",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "account_turnover": {
                     "description": "The anticipated account turnover",

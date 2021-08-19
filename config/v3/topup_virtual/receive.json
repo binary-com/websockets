@@ -12,6 +12,7 @@
             "title": "topup_virtual",
             "description": "The information regarding a successful top up for a virtual money account",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "amount": {
                     "description": "Top up amount",

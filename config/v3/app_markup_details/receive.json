@@ -12,12 +12,14 @@
             "title": "app_markup_details",
             "description": "App Markup transaction details",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "transactions": {
                     "description": "Array of returned transactions",
                     "type": "array",
                     "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "app_id": {
                                 "description": "ID of the application where this contract was purchased.",

@@ -15,7 +15,16 @@
             "items": {
                 "title": "Details of each server.",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
+                    "account_type": {
+                        "description": "Supported trading account type.",
+                        "type": "string",
+                        "enum": [
+                            "demo",
+                            "real"
+                        ]
+                    },
                     "disabled": {
                         "description": "Flag to represent if this server is currently disabled or not",
                         "type": "integer",
@@ -36,6 +45,7 @@
                     "geolocation": {
                         "description": "Object containing geolocation information of the server.",
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "location": {
                                 "description": "Geolocation country or place where server is located.",
@@ -61,6 +71,10 @@
                             "p01_ts04",
                             "p02_ts02"
                         ]
+                    },
+                    "market_type": {
+                        "description": "Market type",
+                        "type": "string"
                     },
                     "message_to_client": {
                         "description": "Error message to client when server is disabled",

@@ -12,6 +12,7 @@
             "title": "get_settings",
             "description": "User information and settings.",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "account_opening_reason": {
                     "description": "Purpose and reason for requesting the account opening. Only applicable for real money account.",

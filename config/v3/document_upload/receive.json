@@ -12,6 +12,7 @@
             "title": "document_upload",
             "description": "Details of the uploaded documents.",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "call_type",
                 "upload_id"

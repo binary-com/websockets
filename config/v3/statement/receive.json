@@ -12,6 +12,7 @@
             "title": "statement",
             "description": "Account statement.",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "count": {
                     "description": "Number of transactions returned in this call",
@@ -22,6 +23,7 @@
                     "type": "array",
                     "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "action_type": {
                                 "description": "It is the type of action.",
@@ -72,6 +74,7 @@
                             "fees": {
                                 "description": "Contains details about fees used for transfer. It is present only when action type is transfer.",
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "amount": {
                                         "description": "Fees amount",
@@ -94,6 +97,7 @@
                             "from": {
                                 "description": "Contains details of account from which amount was transferred. It is present only when action type is transfer.",
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "loginid": {
                                         "description": "Login id of the account from which money was transferred.",
@@ -133,6 +137,7 @@
                             "to": {
                                 "description": "Contains details of account to which amount was transferred. It is present only when action type is transfer.",
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "loginid": {
                                         "description": "Login id of the account to which money was transferred.",

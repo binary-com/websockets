@@ -12,6 +12,7 @@
             "title": "get_self_exclusion",
             "description": "List of values set for self exclusion.",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "exclude_until": {
                     "description": "Exclude me from the website (for a minimum of 6 months, up to a maximum of 5 years). Note: uplifting this self-exclusion may require contacting the company.",

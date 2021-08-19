@@ -12,6 +12,7 @@
             "title": "set_financial_assessment",
             "description": "The financial assessment score assigned to the submitted financial assessment",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "cfd_score": {
                     "description": "CFD score based on answers",

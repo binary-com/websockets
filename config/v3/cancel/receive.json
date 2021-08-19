@@ -12,6 +12,7 @@
             "title": "cancel",
             "description": "Receipt for the transaction",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "balance_after": {
                     "description": "New account balance after completion of the sale",

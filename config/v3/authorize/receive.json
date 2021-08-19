@@ -12,12 +12,14 @@
             "title": "authorize",
             "description": "Account information for the holder of the token.",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "account_list": {
                     "description": "List of accounts for current user.",
                     "type": "array",
                     "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "account_type": {
                                 "description": "Account type.",
@@ -62,12 +64,14 @@
                             "trading": {
                                 "description": "Details of the Trading account.",
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "linked_to": {
                                         "description": "Details of the Wallet account linked to the Trading account.",
                                         "type": "array",
                                         "items": {
                                             "type": "object",
+                                            "additionalProperties": false,
                                             "properties": {
                                                 "account_id": {
                                                     "description": "Wallet account ID.",
@@ -93,6 +97,7 @@
                             "wallet": {
                                 "description": "Details of the Wallet account.",
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "account_id": {
                                         "description": "Wallet account ID.",
@@ -111,6 +116,7 @@
                                         "type": "array",
                                         "items": {
                                             "type": "object",
+                                            "additionalProperties": false,
                                             "properties": {
                                                 "account_id": {
                                                     "description": "Trading account ID.",
@@ -190,6 +196,7 @@
                         "^[a-zA-Z0-9]{2,20}$": {
                             "description": "Currency code",
                             "type": "object",
+                            "additionalProperties": false,
                             "required": [
                                 "fractional_digits"
                             ],
@@ -224,12 +231,14 @@
                 "trading": {
                     "description": "Details of the Trading account.",
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "linked_to": {
                             "description": "Details of the Wallet account linked to the Trading account.",
                             "type": "array",
                             "items": {
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "account_id": {
                                         "description": "Wallet account ID.",
@@ -263,6 +272,7 @@
                 "wallet": {
                     "description": "Details of the Wallet account.",
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "account_id": {
                             "description": "Wallet account ID.",
@@ -281,6 +291,7 @@
                             "type": "array",
                             "items": {
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "account_id": {
                                         "description": "Trading account ID.",

@@ -12,6 +12,7 @@
             "title": "paymentagent_list",
             "description": "Payment Agent List",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "list"
             ],
@@ -35,6 +36,7 @@
                     "type": "array",
                     "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "currencies": {
                                 "description": "Currencies that are accepted by this payment agent.",

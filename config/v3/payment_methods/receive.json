@@ -42,6 +42,7 @@
                                 "title": "Currency limits",
                                 "description": "Deposit limits for this method.",
                                 "type": "object",
+                                "additionalProperties": false,
                                 "required": [
                                     "max",
                                     "min"
@@ -166,6 +167,7 @@
                                 "title": "Currency limits",
                                 "description": "Withdrawal limits for this currency.",
                                 "type": "object",
+                                "additionalProperties": false,
                                 "required": [
                                     "max",
                                     "min"

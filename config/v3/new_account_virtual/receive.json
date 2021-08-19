@@ -12,6 +12,7 @@
             "title": "new_account_virtual",
             "description": "New virtual-money account details",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "balance",
                 "client_id",

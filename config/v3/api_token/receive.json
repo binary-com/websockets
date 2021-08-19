@@ -12,6 +12,7 @@
             "title": "api_token",
             "description": "Contains the result of API token according to the type of request.",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "delete_token": {
                     "description": "Token deleted.",
@@ -33,6 +34,7 @@
                     "items": {
                         "description": "The information for each token.",
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "display_name": {
                                 "description": "The token name specified when creating.",

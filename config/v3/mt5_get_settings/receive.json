@@ -12,6 +12,7 @@
             "title": "mt5_get_settings",
             "description": "MT5 user account details",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "account_type": {
                     "description": "Account type.",

@@ -15,6 +15,7 @@
             "items": {
                 "description": "The information about each symbol.",
                 "type": "object",
+                "additionalProperties": false,
                 "required": [
                     "display_name",
                     "exchange_is_open",

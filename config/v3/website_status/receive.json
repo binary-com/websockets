@@ -12,6 +12,7 @@
             "title": "website_status",
             "description": "Server status and other information regarding general settings",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "api_call_limits",
                 "crypto_config",
@@ -22,6 +23,7 @@
                 "api_call_limits": {
                     "description": "Maximum number of API calls during specified period of time.",
                     "type": "object",
+                    "additionalProperties": false,
                     "required": [
                         "max_proposal_subscription",
                         "max_requestes_general",
@@ -32,6 +34,7 @@
                         "max_proposal_subscription": {
                             "description": "Maximum subscription to proposal calls.",
                             "type": "object",
+                            "additionalProperties": false,
                             "required": [
                                 "applies_to",
                                 "max"
@@ -50,6 +53,7 @@
                         "max_requestes_general": {
                             "description": "Maximum number of general requests allowed during specified period of time.",
                             "type": "object",
+                            "additionalProperties": false,
                             "required": [
                                 "applies_to",
                                 "hourly",
@@ -73,6 +77,7 @@
                         "max_requests_outcome": {
                             "description": "Maximum number of outcome requests allowed during specified period of time.",
                             "type": "object",
+                            "additionalProperties": false,
                             "required": [
                                 "applies_to",
                                 "hourly",
@@ -96,6 +101,7 @@
                         "max_requests_pricing": {
                             "description": "Maximum number of pricing requests allowed during specified period of time.",
                             "type": "object",
+                            "additionalProperties": false,
                             "required": [
                                 "applies_to",
                                 "hourly",
@@ -130,6 +136,7 @@
                         "^[a-zA-Z0-9]{2,20}$": {
                             "description": "Crypto-currency code",
                             "type": "object",
+                            "additionalProperties": false,
                             "required": [
                                 "minimum_withdrawal"
                             ],
@@ -150,6 +157,7 @@
                         "^[a-zA-Z0-9]{2,20}$": {
                             "description": "Currency code",
                             "type": "object",
+                            "additionalProperties": false,
                             "required": [
                                 "fractional_digits",
                                 "is_deposit_suspended",
@@ -188,6 +196,10 @@
                                         1
                                     ]
                                 },
+                                "name": {
+                                    "description": "Name of the currency.",
+                                    "type": "string"
+                                },
                                 "stake_default": {
                                     "description": "Default stake value for the currency.",
                                     "type": "number",
@@ -196,6 +208,7 @@
                                 "transfer_between_accounts": {
                                     "description": "Fees and range of allowed amount for transfer between accounts with different types of currencies.",
                                     "type": "object",
+                                    "additionalProperties": false,
                                     "required": [
                                         "fees",
                                         "limits"
@@ -238,6 +251,14 @@
                                                     "type": "null"
                                                 }
                                             ]
+                                        },
+                                        "limits_dxtrade": {
+                                            "description": "Range of allowed amount for transfer between dxtrade accounts.",
+                                            "type": "object"
+                                        },
+                                        "limits_mt5": {
+                                            "description": "Range of allowed amount for transfer between mt5 accounts.",
+                                            "type": "object"
                                         }
                                     }
                                 },
@@ -260,6 +281,7 @@
                 "p2p_config": {
                     "description": "Peer-to-peer payment system settings.",
                     "type": "object",
+                    "additionalProperties": false,
                     "required": [
                         "adverts_active_limit",
                         "cancellation_block_duration",
@@ -349,6 +371,7 @@
             "title": "Subscription information",
             "description": "For subscription requests only.",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "id"
             ],

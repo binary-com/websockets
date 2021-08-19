@@ -12,6 +12,7 @@
             "title": "exchange_rates",
             "description": "Exchange rate values from base to all other currencies",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "base_currency": {
                     "description": "Base currency",

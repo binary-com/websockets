@@ -22,6 +22,7 @@
                     "type": "array",
                     "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "required": [
                             "account_currency",
                             "advert_details",
@@ -293,6 +294,7 @@
             "title": "Subscription information",
             "description": "For subscription requests only.",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "id"
             ],

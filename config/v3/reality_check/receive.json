@@ -12,6 +12,7 @@
             "title": "reality_check",
             "description": "Reality check summary of trades.",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "buy_amount": {
                     "description": "Total amount of contract purchased.",

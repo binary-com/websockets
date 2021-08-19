@@ -12,16 +12,19 @@
             "title": "economic_calendar",
             "description": "Economic calendar.",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "events": {
                     "description": "Array of economic events",
                     "type": "array",
                     "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "actual": {
                                 "description": "Actual value.",
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "display_value": {
                                         "description": "Actual value.",
@@ -40,6 +43,7 @@
                             "forecast": {
                                 "description": "Forecasted value.",
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "display_value": {
                                         "description": "Forecasted value.",
@@ -56,6 +60,7 @@
                             "previous": {
                                 "description": "Previous value.",
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "display_value": {
                                         "description": "Previous value.",

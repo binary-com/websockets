@@ -12,6 +12,7 @@
             "title": "contracts_for",
             "description": "List of available contracts. Note: if the user is authenticated, then only contracts allowed under his account will be returned.",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "available"
             ],
@@ -21,6 +22,7 @@
                     "type": "array",
                     "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "required": [
                             "barrier_category",
                             "barriers",
@@ -43,6 +45,13 @@
                                 "type": "array",
                                 "minItems": 1
                             },
+                            "barrier": {
+                                "description": "Barrier Details.",
+                                "type": [
+                                    "null",
+                                    "string"
+                                ]
+                            },
                             "barrier_category": {
                                 "description": "Category of barrier.",
                                 "type": "string",
@@ -61,6 +70,10 @@
                                     1,
                                     2
                                 ]
+                            },
+                            "cancellation_range": {
+                                "description": "Cancellation range",
+                                "type": "array"
                             },
                             "contract_category": {
                                 "description": "Category of contract.",
@@ -119,6 +132,7 @@
                                 "type": "array",
                                 "items": {
                                     "type": "object",
+                                    "additionalProperties": false,
                                     "properties": {
                                         "close": {
                                             "description": "The epoch value for the closing date of forward starting session.",
@@ -135,6 +149,24 @@
                                     }
                                 },
                                 "minItems": 1
+                            },
+                            "high_barrier": {
+                                "description": "High barrier Details.",
+                                "type": [
+                                    "null",
+                                    "string"
+                                ]
+                            },
+                            "last_digit_range": {
+                                "description": "Last digit range",
+                                "type": "array"
+                            },
+                            "low_barrier": {
+                                "description": "Low barrier Details.",
+                                "type": [
+                                    "null",
+                                    "string"
+                                ]
                             },
                             "market": {
                                 "description": "Type of market.",
@@ -158,6 +190,10 @@
                                 "examples": [
                                     "5"
                                 ]
+                            },
+                            "multiplier_range": {
+                                "description": "Multiplier range.",
+                                "type": "array"
                             },
                             "payout_limit": {
                                 "description": "Maximum payout.",

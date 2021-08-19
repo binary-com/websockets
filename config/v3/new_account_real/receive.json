@@ -12,6 +12,7 @@
             "title": "new_account_real",
             "description": "New real money account details",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "client_id",
                 "landing_company",
@@ -22,11 +23,19 @@
                     "description": "Client ID of new real money account",
                     "type": "string"
                 },
+                "currency": {
+                    "description": "Currency of an account",
+                    "type": "string"
+                },
                 "landing_company": {
                     "description": "Landing company full name",
                     "type": "string"
                 },
                 "landing_company_short": {
+                    "description": "Landing company shortcode",
+                    "type": "string"
+                },
+                "landing_company_shortcode": {
                     "description": "Landing company shortcode",
                     "type": "string"
                 },

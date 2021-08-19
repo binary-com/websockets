@@ -15,6 +15,7 @@
             "items": {
                 "description": "User login history",
                 "type": "object",
+                "additionalProperties": false,
                 "required": [
                     "action",
                     "environment",

@@ -15,6 +15,7 @@
             "items": {
                 "title": "Details of each MT5 loginid.",
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "account_type": {
                         "description": "Account type.",
@@ -89,6 +90,7 @@
                     "server_info": {
                         "description": "Trade server information.",
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                             "environment": {
                                 "description": "The environment. E.g. Deriv-Server.",
@@ -102,6 +104,7 @@
                             "geolocation": {
                                 "description": "Geographical location of the server.",
                                 "type": "object",
+                                "additionalProperties": false,
                                 "properties": {
                                     "location": {
                                         "description": "Sever location.",

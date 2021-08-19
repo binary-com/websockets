@@ -14,6 +14,7 @@
             "type": "array",
             "items": {
                 "type": "object",
+                "additionalProperties": false,
                 "properties": {
                     "data": {
                         "title": "data",
@@ -21,10 +22,12 @@
                         "type": "array",
                         "items": {
                             "type": "object",
+                            "additionalProperties": false,
                             "properties": {
                                 "market": {
                                     "description": "The market in which the underlyings listed in `symbol` located.",
                                     "type": "object",
+                                    "additionalProperties": false,
                                     "properties": {
                                         "display_name": {
                                             "description": "Translated market name.",
@@ -39,6 +42,7 @@
                                 "submarket": {
                                     "description": "The submarket in which the underlyings listed in `symbol` located.",
                                     "type": "object",
+                                    "additionalProperties": false,
                                     "properties": {
                                         "display_name": {
                                             "description": "Translated submarket name.",
@@ -55,6 +59,7 @@
                                     "type": "array",
                                     "items": {
                                         "type": "object",
+                                        "additionalProperties": false,
                                         "properties": {
                                             "display_name": {
                                                 "description": "Translated symbol name.",
@@ -72,12 +77,14 @@
                                     "type": "array",
                                     "items": {
                                         "type": "object",
+                                        "additionalProperties": false,
                                         "properties": {
                                             "durations": {
                                                 "description": "List of trade durations available for the symbols.",
                                                 "type": "array",
                                                 "items": {
                                                     "type": "object",
+                                                    "additionalProperties": false,
                                                     "properties": {
                                                         "display_name": {
                                                             "description": "Translated duration type name.",
@@ -101,6 +108,7 @@
                                             "trade_type": {
                                                 "description": "List of trade types available for the symbols.",
                                                 "type": "object",
+                                                "additionalProperties": false,
                                                 "properties": {
                                                     "display_name": {
                                                         "description": "Translated trade type name.",
@@ -115,6 +123,36 @@
                                         }
                                     }
                                 }
+                            }
+                        }
+                    },
+                    "market": {
+                        "description": "The market in which the underlyings listed in `symbol` located.",
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "display_name": {
+                                "description": "Translated market name.",
+                                "type": "string"
+                            },
+                            "name": {
+                                "description": "Market name.",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "submarket": {
+                        "description": "The submarket in which the underlyings listed in `symbol` located.",
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "display_name": {
+                                "description": "Translated submarket name.",
+                                "type": "string"
+                            },
+                            "name": {
+                                "description": "Submarket name.",
+                                "type": "string"
                             }
                         }
                     }

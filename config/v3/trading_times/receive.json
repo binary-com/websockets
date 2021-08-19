@@ -12,6 +12,7 @@
             "title": "trading_times",
             "description": "The trading times structure is a hierarchy as follows: Market -> SubMarket -> Underlyings",
             "type": "object",
+            "additionalProperties": false,
             "required": [
                 "markets"
             ],
@@ -21,6 +22,7 @@
                     "type": "array",
                     "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "required": [
                             "name"
                         ],
@@ -34,6 +36,7 @@
                                 "type": "array",
                                 "items": {
                                     "type": "object",
+                                    "additionalProperties": false,
                                     "required": [
                                         "name"
                                     ],
@@ -47,6 +50,7 @@
                                             "type": "array",
                                             "items": {
                                                 "type": "object",
+                                                "additionalProperties": false,
                                                 "required": [
                                                     "name",
                                                     "symbol"

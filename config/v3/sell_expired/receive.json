@@ -12,6 +12,7 @@
             "title": "sell_expired",
             "description": "Sell expired contract object containing count of contracts sold",
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "count": {
                     "description": "The number of contracts that has been sold.",
