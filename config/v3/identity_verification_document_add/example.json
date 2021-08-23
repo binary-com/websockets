@@ -1,6 +1,6 @@
 {
     "identity_verification_document_add": 1,
     "document_number": "12345678912",
-    "document_type": "bvn",
+    "document_type": "nin_slip",
     "issuing_country": "ng"
 }
