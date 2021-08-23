@@ -30,6 +30,15 @@
             "type": "number",
             "minimum": 0
         },
+        "dry_run": {
+            "description": "[Optional] If set to `1`, only validation is performed. Only applicable for `withdraw` using `crypto` provider and `api` type.",
+            "type": "integer",
+            "default": 0,
+            "enum": [
+                0,
+                1
+            ]
+        },
         "provider": {
             "description": "[Optional] Cashier provider. `crypto` will be default option for crypto currency accounts.",
             "type": "string",

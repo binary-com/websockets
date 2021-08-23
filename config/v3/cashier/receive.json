@@ -19,6 +19,9 @@
                 {
                     "description": "Response for type `api'.",
                     "type": "object",
+                    "required": [
+                        "action"
+                    ],
                     "properties": {
                         "action": {
                             "description": "Type of operation, which is requested.",
@@ -29,8 +32,11 @@
                             ]
                         },
                         "deposit": {
-                            "description": "[Optional] Result for deposit operation.",
+                            "description": "[Optional] Result for `deposit` action.",
                             "type": "object",
+                            "required": [
+                                "address"
+                            ],
                             "properties": {
                                 "address": {
                                     "description": "Address for crypto deposit.",
@@ -39,25 +45,53 @@
                             }
                         },
                         "withdraw": {
-                            "description": "[Optional] Result for withdraw operation.",
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "description": "The unique identifier for the transaction.",
-                                    "type": "string"
+                            "description": "[Optional] Result for `withdraw` action.",
+                            "oneOf": [
+                                {
+                                    "title": "Withdraw operation",
+                                    "description": "Result for withdraw operation.",
+                                    "type": "object",
+                                    "required": [
+                                        "id",
+                                        "status_code",
+                                        "status_message"
+                                    ],
+                                    "properties": {
+                                        "id": {
+                                            "description": "The unique identifier for the transaction.",
+                                            "type": "string"
+                                        },
+                                        "status_code": {
+                                            "description": "The status code of the withdrawal.",
+                                            "type": "string",
+                                            "enum": [
+                                                "LOCKED"
+                                            ]
+                                        },
+                                        "status_message": {
+                                            "description": "The status message of the withdrawal.",
+                                            "type": "string"
+                                        }
+                                    }
                                 },
-                                "status_code": {
-                                    "description": "The status code of the withdrawal.",
-                                    "type": "string",
-                                    "enum": [
-                                        "LOCKED"
-                                    ]
-                                },
-                                "status_message": {
-                                    "description": "The status message of the withdrawal.",
-                                    "type": "string"
+                                {
+                                    "title": "Dry-run validation",
+                                    "description": "Result for `dry_run` validation.",
+                                    "type": "object",
+                                    "required": [
+                                        "dry_run"
+                                    ],
+                                    "properties": {
+                                        "dry_run": {
+                                            "description": "The `dry_run` was successful.",
+                                            "type": "integer",
+                                            "enum": [
+                                                1
+                                            ]
+                                        }
+                                    }
                                 }
-                            }
+                            ]
                         }
                     }
                 }
