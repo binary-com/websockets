@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Identity Verification Add Document (request)",
-    "description": "Add document information such as issuing country, type and id for IDV processing.",
+    "description": "Adds document information such as issuing country, id and type for identity verification processes.",
     "type": "object",
     "auth_required": 1,
     "auth_scopes": [
@@ -23,15 +23,15 @@
             ]
         },
         "document_number": {
-            "description": "The unique identification number on the provided document.",
+            "description": "The identification number of the document.",
             "type": "string"
         },
         "document_type": {
-            "description": "Type of the document provided by the user, e.g. national_id, passport, etc (obtained from `residence_list` call).",
+            "description": "The type of the document based on provided `issuing_country` (can obtained from `residence_list` call).",
             "type": "string"
         },
         "issuing_country": {
-            "description": "2-letter country code (obtained from `residence_list` call).",
+            "description": "2-letter country code (can obtained from `residence_list` call).",
             "type": "string",
             "pattern": "^[a-z]{2}$"
         },
