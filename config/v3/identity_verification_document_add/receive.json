@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Identity Verification Add Document (response)",
-    "description": "Add user information with document type, document id, and country that has issued the document.",
+    "description": "Adds document information such as issuing country, id and type for identity verification processes.",
     "type": "object",
     "required": [
         "echo_req",
@@ -11,7 +11,10 @@
         "identity_verification_document_add": {
             "title": "identity_verification_document_add",
             "description": "1 on success",
-            "type": "integer"
+            "type": "integer",
+            "enum": [
+                1
+            ]
         },
         "echo_req": {
             "description": "Echo of the request made.",

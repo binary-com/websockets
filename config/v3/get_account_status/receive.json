@@ -123,6 +123,10 @@
                                             "type": "object",
                                             "additionalProperties": false,
                                             "properties": {
+                                                "expiry_date": {
+                                                    "description": "This is the epoch of the document expiry date.",
+                                                    "type": "integer"
+                                                },
                                                 "last_rejected": {
                                                     "description": "Show the last IDV reported reasons for the rejected cases",
                                                     "type": "array",
@@ -141,9 +145,7 @@
                                                         "none",
                                                         "pending",
                                                         "rejected",
-                                                        "verified",
-                                                        "expired",
-                                                        "suspected"
+                                                        "verified"
                                                     ]
                                                 },
                                                 "submissions_left": {
