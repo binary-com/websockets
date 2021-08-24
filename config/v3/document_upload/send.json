@@ -39,6 +39,11 @@
             "type": "string",
             "pattern": "^[\\w\\s-]{0,30}$"
         },
+        "document_issuing_country": {
+            "description": "[Optional] 2-letter country code",
+            "type": "string",
+            "pattern": "^[a-z]{2}$"
+        },
         "document_type": {
             "description": "Document type",
             "type": "string",

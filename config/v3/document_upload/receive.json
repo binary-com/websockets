@@ -26,6 +26,11 @@
                     "description": "Hex encoded SHA-1 checksum of the file",
                     "type": "string"
                 },
+                "document_issuing_country": {
+                    "description": "2-letter country code",
+                    "type": "string",
+                    "pattern": "^[a-z]{2}$"
+                },
                 "size": {
                     "description": "File size",
                     "type": "number"
