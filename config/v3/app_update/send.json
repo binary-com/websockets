@@ -11,7 +11,6 @@
     "required": [
         "app_update",
         "name",
-        "redirect_uri",
         "scopes"
     ],
     "properties": {
@@ -51,7 +50,7 @@
             "pattern": "^[\\w\\s-]{1,48}$"
         },
         "redirect_uri": {
-            "description": "The URL to redirect to after a successful login.",
+            "description": "[Optional] The URL to redirect to after a successful login. Required if charging markup percentage.",
             "type": "string",
             "pattern": "^[a-z][a-z0-9.+\\-]*://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
         },
