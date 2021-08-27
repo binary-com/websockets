@@ -39,6 +39,7 @@
             "enum": [
                 "balance",
                 "candles",
+                "cashier_payments",
                 "p2p_advert",
                 "p2p_advertiser",
                 "p2p_order",
