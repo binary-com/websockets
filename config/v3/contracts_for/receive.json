@@ -134,6 +134,10 @@
                                     "type": "object",
                                     "additionalProperties": false,
                                     "properties": {
+                                        "blackouts": {
+                                            "description": "The epoch value for the blackouts of forward starting session.",
+                                            "type": "array"
+                                        },
                                         "close": {
                                             "description": "The epoch value for the closing date of forward starting session.",
                                             "type": "string"
