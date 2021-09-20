@@ -38,6 +38,14 @@
                     "description": "CFDs trading frequency",
                     "type": "string"
                 },
+                "commodities_trading_experience": {
+                    "description": "Commodities trading experience",
+                    "type": "string"
+                },
+                "commodities_trading_frequency": {
+                    "description": "Commodities trading frequency",
+                    "type": "string"
+                },
                 "education_level": {
                     "description": "Level of Education",
                     "type": "string"
@@ -70,12 +78,28 @@
                     "description": "Income Source",
                     "type": "string"
                 },
+                "indices_trading_experience": {
+                    "description": "Indices trading experience",
+                    "type": "string"
+                },
+                "indices_trading_frequency": {
+                    "description": "Indices trading frequency",
+                    "type": "string"
+                },
                 "net_income": {
                     "description": "Net Annual Income",
                     "type": "string"
                 },
                 "occupation": {
                     "description": "Occupation",
+                    "type": "string"
+                },
+                "other_derivatives_trading_experience": {
+                    "description": "Trading experience in other financial derivatives",
+                    "type": "string"
+                },
+                "other_derivatives_trading_frequency": {
+                    "description": "Trading frequency in other financial derivatives",
                     "type": "string"
                 },
                 "other_instruments_trading_experience": {
@@ -88,6 +112,14 @@
                 },
                 "source_of_wealth": {
                     "description": "Source of wealth",
+                    "type": "string"
+                },
+                "stocks_trading_experience": {
+                    "description": "Stocks trading experience",
+                    "type": "string"
+                },
+                "stocks_trading_frequency": {
+                    "description": "Stocks trading frequency",
                     "type": "string"
                 },
                 "total_score": {
