@@ -22,8 +22,7 @@
                 "champion",
                 "champion-virtual",
                 "samoa",
-                "samoa-virtual",
-                "dsl"
+                "samoa-virtual"
             ]
         },
         "passthrough": {
