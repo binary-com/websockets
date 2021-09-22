@@ -145,7 +145,8 @@
                                                         "none",
                                                         "pending",
                                                         "rejected",
-                                                        "verified"
+                                                        "verified",
+                                                        "expired"
                                                     ]
                                                 },
                                                 "submissions_left": {
