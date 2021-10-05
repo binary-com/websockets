@@ -19,6 +19,13 @@
                 1
             ]
         },
+        "affiliate_coc_agreement": {
+            "description": "[Optional] For Affiliate's Code of Conduct Agreement.",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
         "ukgc_funds_protection": {
             "description": "[Optional] For `ASK_UK_FUNDS_PROTECTION` in `cashier`.",
             "type": "integer",
