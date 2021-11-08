@@ -90,12 +90,12 @@
                                                 "type": "object",
                                                 "additionalProperties": false,
                                                 "properties": {
-                                                    "location": {
-                                                        "description": "Sever location.",
-                                                        "type": "string"
-                                                    },
                                                     "group": {
                                                         "description": "Internal server grouping.",
+                                                        "type": "string"
+                                                    },
+                                                    "location": {
+                                                        "description": "Sever location.",
                                                         "type": "string"
                                                     },
                                                     "region": {
@@ -183,12 +183,12 @@
                                 "type": "object",
                                 "additionalProperties": false,
                                 "properties": {
-                                    "location": {
-                                        "description": "Sever location.",
-                                        "type": "string"
-                                    },
                                     "group": {
                                         "description": "Internal server grouping.",
+                                        "type": "string"
+                                    },
+                                    "location": {
+                                        "description": "Sever location.",
                                         "type": "string"
                                     },
                                     "region": {
