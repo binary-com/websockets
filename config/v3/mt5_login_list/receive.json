@@ -94,6 +94,10 @@
                                                         "description": "Sever location.",
                                                         "type": "string"
                                                     },
+                                                    "group": {
+                                                        "description": "Internal server grouping.",
+                                                        "type": "string"
+                                                    },
                                                     "region": {
                                                         "description": "Sever region.",
                                                         "type": "string"
@@ -181,6 +185,10 @@
                                 "properties": {
                                     "location": {
                                         "description": "Sever location.",
+                                        "type": "string"
+                                    },
+                                    "group": {
+                                        "description": "Internal server grouping.",
                                         "type": "string"
                                     },
                                     "region": {
