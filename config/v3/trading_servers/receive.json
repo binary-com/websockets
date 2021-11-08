@@ -51,6 +51,10 @@
                                 "description": "Geolocation country or place where server is located.",
                                 "type": "string"
                             },
+                            "group": {
+                                "description": "Internal server grouping.",
+                                "type": "string"
+                            },
                             "region": {
                                 "description": "Geolocation region where server is located.",
                                 "type": "string"
