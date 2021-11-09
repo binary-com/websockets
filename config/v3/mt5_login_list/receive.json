@@ -90,10 +90,6 @@
                                                 "type": "object",
                                                 "additionalProperties": false,
                                                 "properties": {
-                                                    "group": {
-                                                        "description": "Internal server grouping.",
-                                                        "type": "string"
-                                                    },
                                                     "location": {
                                                         "description": "Sever location.",
                                                         "type": "string"
@@ -183,10 +179,6 @@
                                 "type": "object",
                                 "additionalProperties": false,
                                 "properties": {
-                                    "group": {
-                                        "description": "Internal server grouping.",
-                                        "type": "string"
-                                    },
                                     "location": {
                                         "description": "Sever location.",
                                         "type": "string"
