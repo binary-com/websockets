@@ -47,6 +47,10 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
+                            "group": {
+                                "description": "Internal server grouping.",
+                                "type": "string"
+                            },
                             "location": {
                                 "description": "Geolocation country or place where server is located.",
                                 "type": "string"
