@@ -345,26 +345,6 @@
                         }
                     }
                 },
-                "payment_agents": {
-                    "description": "Payments Agents system settings.",
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                        "initial_deposit_per_country"
-                    ],
-                    "properties": {
-                        "initial_deposit_per_country": {
-                            "description": "Initial deposit requirement per country.",
-                            "type": "object",
-                            "patternProperties": {
-                                "^([a-z]{2}|default)$": {
-                                    "description": "Country code or default setting",
-                                    "type": "number"
-                                }
-                            }
-                        }
-                    }
-                },
                 "site_status": {
                     "description": "The current status of the website.",
                     "type": "string",
