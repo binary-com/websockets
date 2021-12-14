@@ -103,6 +103,14 @@
                                 "shortcode": {
                                     "description": "Landing Company short code",
                                     "type": "string"
+                                },
+                                "support_professional_client": {
+                                    "description": "Flag that indicates whether the landing company supports professional accounts or not",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 }
                             }
                         }
@@ -185,6 +193,14 @@
                                 "shortcode": {
                                     "description": "Landing Company short code",
                                     "type": "string"
+                                },
+                                "support_professional_client": {
+                                    "description": "Flag that indicates whether the landing company supports professional accounts or not",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 }
                             }
                         }
@@ -267,6 +283,14 @@
                         "shortcode": {
                             "description": "Landing Company short code",
                             "type": "string"
+                        },
+                        "support_professional_client": {
+                            "description": "Flag that indicates whether the landing company supports professional accounts or not",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
                         }
                     }
                 },
@@ -349,6 +373,14 @@
                         "shortcode": {
                             "description": "Landing Company short code",
                             "type": "string"
+                        },
+                        "support_professional_client": {
+                            "description": "Flag that indicates whether the landing company supports professional accounts or not",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
                         }
                     }
                 },
@@ -478,6 +510,14 @@
                                 "shortcode": {
                                     "description": "Landing Company short code",
                                     "type": "string"
+                                },
+                                "support_professional_client": {
+                                    "description": "Flag that indicates whether the landing company supports professional accounts or not",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 }
                             }
                         },
@@ -556,6 +596,14 @@
                                 "shortcode": {
                                     "description": "Landing Company short code",
                                     "type": "string"
+                                },
+                                "support_professional_client": {
+                                    "description": "Flag that indicates whether the landing company supports professional accounts or not",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 }
                             }
                         },
@@ -634,6 +682,14 @@
                                 "shortcode": {
                                     "description": "Landing Company short code",
                                     "type": "string"
+                                },
+                                "support_professional_client": {
+                                    "description": "Flag that indicates whether the landing company supports professional accounts or not",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 }
                             }
                         }
@@ -722,6 +778,14 @@
                                 "shortcode": {
                                     "description": "Landing Company short code",
                                     "type": "string"
+                                },
+                                "support_professional_client": {
+                                    "description": "Flag that indicates whether the landing company supports professional accounts or not",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 }
                             }
                         },
@@ -800,6 +864,14 @@
                                 "shortcode": {
                                     "description": "Landing Company short code",
                                     "type": "string"
+                                },
+                                "support_professional_client": {
+                                    "description": "Flag that indicates whether the landing company supports professional accounts or not",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 }
                             }
                         }
