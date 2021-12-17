@@ -45,6 +45,8 @@ groups:
         title: 'Copy Trading: List'
       - name: copytrading_statistics
         title: 'Copy Trading: Statistics'
+      - name: crypto_config
+        title: Cryptocurrency configurations
       - name: document_upload
         title: Document Upload
       - name: economic_calendar
