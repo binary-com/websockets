@@ -27,10 +27,12 @@
         },
         "amount": {
             "description": "The total amount of the advert, in advertiser's account currency.",
-            "type": "number"
+            "type": "number",
+            "exclusiveMinimum": true,
+            "minimum": 0
         },
         "contact_info": {
-            "description": "[Optional] Advertiser contact information. Only applicable for 'sell adverts'.",
+            "description": "[Optional] Advertiser contact information.",
             "type": "string",
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
         },
@@ -48,37 +50,51 @@
             ]
         },
         "max_order_amount": {
-            "description": "Maximum allowed amount for the orders of this advert, in advertiser's `account_currency`. Should be less than or equal to total `amount` of the advert.",
-            "type": "number"
+            "description": "Maximum allowed amount for the orders of this advert, in advertiser's `account_currency`. Should be more than or equal to `min_order_amount`",
+            "type": "number",
+            "exclusiveMinimum": true,
+            "minimum": 0
         },
         "min_order_amount": {
-            "description": "Minimum allowed amount for the orders of this advert, in advertiser's `account_currency`. Should be less than `max_order_amount`.",
-            "type": "number"
+            "description": "Minimum allowed amount for the orders of this advert, in advertiser's `account_currency`. Should be less than or equal to `max_order_amount`.",
+            "type": "number",
+            "exclusiveMinimum": true,
+            "minimum": 0
         },
         "payment_info": {
-            "description": "[Optional] Payment instructions. Only applicable for 'sell adverts'.",
+            "description": "[Optional] Payment instructions.",
             "type": "string",
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
         },
         "payment_method": {
-            "description": "Supported payment methods. Separate multiple values with a comma, maximum 3.",
-            "type": "string",
-            "pattern": "^([a-z0-9_]+)(,[a-z0-9_]+)?(,[a-z0-9_]+)?$"
+            "description": "[Optional] Payment method name (deprecated).",
+            "type": "string"
         },
         "payment_method_ids": {
-            "description": "IDs of payment methods, only applicable for sell ads.",
+            "description": "IDs of previously saved payment methods as returned from p2p_advertiser_payment_methods, only applicable for sell ads.",
             "type": "array",
             "items": {
                 "type": "integer"
             },
             "maxItems": 3
         },
+        "payment_method_names": {
+            "description": "Payment method identifiers as returned from p2p_payment_methods, only applicable for buy ads.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "pattern": "^[a-z0-9_]+$"
+            },
+            "maxItems": 3
+        },
         "rate": {
             "description": "Conversion rate from advertiser's account currency to `local_currency`.",
-            "type": "number"
+            "type": "number",
+            "exclusiveMinimum": true,
+            "minimum": 0
         },
         "type": {
-            "description": "Whether this is a buy or a sell.",
+            "description": "The advertisement represents the intention to perform this action on your Deriv account funds.",
             "type": "string",
             "enum": [
                 "buy",

@@ -241,7 +241,8 @@
                             "required": [
                                 "fields",
                                 "is_enabled",
-                                "method"
+                                "method",
+                                "type"
                             ],
                             "properties": {
                                 "display_name": {
@@ -300,6 +301,15 @@
                                 "method": {
                                     "description": "Payment method identifier.",
                                     "type": "string"
+                                },
+                                "type": {
+                                    "description": "Payment method type.",
+                                    "type": "string",
+                                    "enum": [
+                                        "bank",
+                                        "ewallet",
+                                        "other"
+                                    ]
                                 }
                             }
                         }

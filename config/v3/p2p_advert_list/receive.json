@@ -54,6 +54,10 @@
                                     "USD"
                                 ]
                             },
+                            "active_orders": {
+                                "description": "The number of active orders against this advert.",
+                                "type": "integer"
+                            },
                             "advertiser_details": {
                                 "title": "Advertiser Details",
                                 "description": "Details of the advertiser for this advert.",
@@ -200,7 +204,7 @@
                                 "type": "string"
                             },
                             "payment_method": {
-                                "description": "Supported payment methods. Comma separated list of identifiers.",
+                                "description": "Payment method name (deprecated).",
                                 "type": [
                                     "null",
                                     "string"

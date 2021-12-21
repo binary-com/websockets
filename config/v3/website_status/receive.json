@@ -292,7 +292,8 @@
                         "maximum_advert_amount",
                         "maximum_order_amount",
                         "order_daily_limit",
-                        "order_payment_period"
+                        "order_payment_period",
+                        "payment_methods_enabled"
                     ],
                     "properties": {
                         "adverts_active_limit": {
@@ -342,6 +343,14 @@
                         "order_payment_period": {
                             "description": "Time allowed for order payment, in minutes after order creation.",
                             "type": "integer"
+                        },
+                        "payment_methods_enabled": {
+                            "description": "Indicates if the payment methods feature is enabled.",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
                         }
                     }
                 },

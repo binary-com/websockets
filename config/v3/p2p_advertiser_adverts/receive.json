@@ -25,6 +25,7 @@
                         "additionalProperties": false,
                         "required": [
                             "account_currency",
+                            "active_orders",
                             "advertiser_details",
                             "amount",
                             "amount_display",
@@ -63,6 +64,10 @@
                                 "examples": [
                                     "USD"
                                 ]
+                            },
+                            "active_orders": {
+                                "description": "The number of active orders against this advert.",
+                                "type": "integer"
                             },
                             "advertiser_details": {
                                 "title": "Advertiser Details",
@@ -203,7 +208,7 @@
                                 "type": "string"
                             },
                             "payment_method": {
-                                "description": "Supported payment methods. Comma separated list of identifiers.",
+                                "description": "Payment method name (deprecated).",
                                 "type": [
                                     "null",
                                     "string"

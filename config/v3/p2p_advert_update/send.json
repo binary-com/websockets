@@ -21,6 +21,11 @@
                 1
             ]
         },
+        "contact_info": {
+            "description": "[Optional] Advertiser contact information.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
+        },
         "delete": {
             "description": "[Optional] If set to 1, permanently deletes the advert.",
             "type": "integer",
@@ -28,6 +33,11 @@
                 0,
                 1
             ]
+        },
+        "description": {
+            "description": "[Optional] General information about the advert.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
         },
         "id": {
             "description": "The unique identifier for this advert.",
@@ -41,18 +51,58 @@
                 1
             ]
         },
-        "payment_method": {
-            "description": "[Optional] Supported payment methods. Separate multiple values with a comma, maximum 3.",
+        "local_currency": {
+            "description": "[Optional] Local currency for this advert.",
             "type": "string",
-            "pattern": "^([a-z0-9_]+)(,[a-z0-9_]+)?(,[a-z0-9_]+)?$"
+            "pattern": "^[a-zA-Z0-9]{2,20}$",
+            "examples": [
+                "USD"
+            ]
+        },
+        "max_order_amount": {
+            "description": "[Optional] Maximum allowed amount for the orders of this advert, in advertiser's `account_currency`. Should be more than or equal to `min_order_amount`.",
+            "type": "number",
+            "exclusiveMinimum": true,
+            "minimum": 0
+        },
+        "min_order_amount": {
+            "description": "[Optional] Minimum allowed amount for the orders of this advert, in advertiser's `account_currency`. Should be less than or equal to `max_order_amount`.",
+            "type": "number",
+            "exclusiveMinimum": true,
+            "minimum": 0
+        },
+        "payment_info": {
+            "description": "[Optional] Payment instructions.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
         },
         "payment_method_ids": {
-            "description": "[Optional] IDs of payment methods, only applicable for sell ads. Will replace exisiting methods.",
+            "description": "[Optional] IDs of previously saved payment methods as returned from p2p_advertiser_payment_methods, only applicable for sell ads. Exisiting methods will be replaced.",
             "type": "array",
             "items": {
                 "type": "integer"
             },
             "maxItems": 3
+        },
+        "payment_method_names": {
+            "description": "[Optional] Payment method identifiers as returned from p2p_payment_methods, only applicable for buy ads. Exisiting methods will be replaced.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "pattern": "^[a-z0-9_]+$"
+            },
+            "maxItems": 3
+        },
+        "rate": {
+            "description": "[Optional] Conversion rate from advertiser's account currency to `local_currency`.",
+            "type": "number",
+            "exclusiveMinimum": true,
+            "minimum": 0
+        },
+        "remaining_amount": {
+            "description": "[Optional] The total available amount of the advert, in advertiser's account currency.",
+            "type": "number",
+            "minimum": 0
         },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
