@@ -132,14 +132,14 @@ commands:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.2.10
+      - image: circleci/ruby:3.0.3-buster
     steps:
       - git_checkout_from_cache
       - bundle_install
       - build
   release_production:
     docker:
-      - image: circleci/ruby:2.2.10
+      - image: circleci/ruby:3.0.3-buster
     steps:
       - git_checkout_from_cache
       - bundle_install
@@ -149,7 +149,7 @@ jobs:
       - notify_slack
   release_aws_production:
     docker:
-      - image: circleci/ruby:2.2.10
+      - image: circleci/ruby:3.0.3-buster
     steps:
       - git_checkout_from_cache
       - bundle_install
