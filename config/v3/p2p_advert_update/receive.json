@@ -35,11 +35,16 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
+                        "completed_orders_count",
                         "id",
                         "name",
                         "total_completion_rate"
                     ],
                     "properties": {
+                        "completed_orders_count": {
+                            "description": "The total number of orders completed in the past 30 days.",
+                            "type": "integer"
+                        },
                         "first_name": {
                             "description": "The advertiser's first name.",
                             "type": "string"
