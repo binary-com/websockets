@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Cryptocurrency configurations (request)",
+    "description": "The request for cryptocurrencies configuration.",
+    "type": "object",
+    "auth_required": 0,
+    "additionalProperties": false,
+    "required": [
+        "crypto_config"
+    ],
+    "properties": {
+        "crypto_config": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "currency_code": {
+            "description": "[Optional] Cryptocurrency code. Sending request with currency_code provides crypto config for the sent cryptocurrency code only.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{2,20}$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

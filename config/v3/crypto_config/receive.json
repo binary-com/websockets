@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Cryptocurrency configurations (response)",
+    "description": "The response will display the configuration details related to cryptocurrencies",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "crypto_config": {
+            "title": "crypto_config",
+            "description": "Provides cryptocurrencies configuration.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "currencies_config"
+            ],
+            "properties": {
+                "currencies_config": {
+                    "description": "Provides minimum withdrawal for all cryptocurrencies in USD",
+                    "type": "object",
+                    "minProperties": 0,
+                    "patternProperties": {
+                        "^[a-zA-Z0-9]{2,20}$": {
+                            "description": "Cryptocurrency code",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "minimum_withdrawal": {
+                                    "description": "Minimum withdrawal for the cryptocurrency in USD.",
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "crypto_config"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

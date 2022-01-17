@@ -49,14 +49,6 @@
                     "description": "Information about payment agent and their proposed service.",
                     "type": "string"
                 },
-                "is_authenticated": {
-                    "description": "Indicates if client is authenticated by Deriv.",
-                    "type": "integer",
-                    "enum": [
-                        0,
-                        1
-                    ]
-                },
                 "is_listed": {
                     "description": "Wether or not the client should be listed among available agents in the FE.",
                     "type": "integer",
@@ -80,6 +72,24 @@
                 "phone": {
                     "description": "Payment agent's phone number with country code.",
                     "type": "string"
+                },
+                "status": {
+                    "description": "Indicates the status of the Payment Agent.",
+                    "anyOf": [
+                        {
+                            "type": "string",
+                            "enum": [
+                                "applied",
+                                "verified",
+                                "authorized",
+                                "suspended",
+                                "rejected"
+                            ]
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
                 },
                 "supported_payment_methods": {
                     "description": "A list of supported payment methods.",

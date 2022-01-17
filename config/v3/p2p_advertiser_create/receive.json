@@ -14,27 +14,45 @@
             "type": "object",
             "additionalProperties": false,
             "required": [
+                "advert_rates",
+                "balance_available",
+                "basic_verification",
                 "buy_completion_rate",
+                "buy_orders_amount",
                 "buy_orders_count",
+                "buy_time_avg",
                 "cancel_time_avg",
                 "cancels_remaining",
                 "chat_token",
                 "chat_user_id",
                 "contact_info",
                 "created_time",
+                "default_advert_description",
                 "favourited",
+                "full_verification",
                 "id",
                 "is_approved",
                 "is_listed",
                 "name",
+                "partner_count",
                 "payment_info",
                 "release_time_avg",
                 "sell_completion_rate",
+                "sell_orders_amount",
                 "sell_orders_count",
+                "show_name",
                 "total_completion_rate",
-                "total_orders_count"
+                "total_orders_count",
+                "total_turnover"
             ],
             "properties": {
+                "advert_rates": {
+                    "description": "Average difference of advert rate compared to the market rate over the past 30 days.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                },
                 "balance_available": {
                     "description": "Amount of funds available to sell on P2P. May be less than account balance according to deposit methods used.",
                     "type": "number"
@@ -54,9 +72,20 @@
                         "number"
                     ]
                 },
+                "buy_orders_amount": {
+                    "description": "Buy order volume in the past 30 days.",
+                    "type": "string"
+                },
                 "buy_orders_count": {
                     "description": "The number of buy order completed within the past 30 days.",
                     "type": "integer"
+                },
+                "buy_time_avg": {
+                    "description": "The average time in seconds taken to make payment as a buyer within the past 30 days.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
                 },
                 "cancel_time_avg": {
                     "description": "The average time in seconds taken to cancel orders as a buyer within the past 30 days.",
@@ -142,6 +171,10 @@
                     "description": "The advertiser's displayed name.",
                     "type": "string"
                 },
+                "partner_count": {
+                    "description": "Number of different users the advertiser has traded with since registration.",
+                    "type": "integer"
+                },
                 "payment_info": {
                     "description": "Advertiser's payment information.",
                     "type": "string"
@@ -159,6 +192,10 @@
                         "null",
                         "number"
                     ]
+                },
+                "sell_orders_amount": {
+                    "description": "Sell order volume in the past 30 days.",
+                    "type": "string"
                 },
                 "sell_orders_count": {
                     "description": "The number of sell order orders completed within the past 30 days.",
@@ -182,6 +219,10 @@
                 "total_orders_count": {
                     "description": "The total number of orders completed since advertiser registration.",
                     "type": "integer"
+                },
+                "total_turnover": {
+                    "description": "Total order volume since advertiser registration.",
+                    "type": "string"
                 }
             }
         },

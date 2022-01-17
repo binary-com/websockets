@@ -22,17 +22,26 @@
                         "USD"
                     ]
                 },
+                "active_orders": {
+                    "description": "The number of active orders against this advert.",
+                    "type": "integer"
+                },
                 "advertiser_details": {
                     "title": "Advertiser Details",
                     "description": "Details of the advertiser for this advert.",
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
+                        "completed_orders_count",
                         "id",
                         "name",
                         "total_completion_rate"
                     ],
                     "properties": {
+                        "completed_orders_count": {
+                            "description": "The total number of orders completed in the past 30 days.",
+                            "type": "integer"
+                        },
                         "first_name": {
                             "description": "The advertiser's first name.",
                             "type": "string"
@@ -182,14 +191,14 @@
                     "type": "string"
                 },
                 "payment_method": {
-                    "description": "Supported payment methods. Comma separated list of identifiers.",
+                    "description": "Payment method name (deprecated).",
                     "type": [
                         "null",
                         "string"
                     ]
                 },
                 "payment_method_details": {
-                    "description": "Details of available payment methods.",
+                    "description": "Details of available payment methods (sell adverts only).",
                     "type": "object",
                     "additionalProperties": false,
                     "patternProperties": {
@@ -200,7 +209,8 @@
                             "required": [
                                 "fields",
                                 "is_enabled",
-                                "method"
+                                "method",
+                                "type"
                             ],
                             "properties": {
                                 "display_name": {
@@ -259,6 +269,15 @@
                                 "method": {
                                     "description": "Payment method identifier.",
                                     "type": "string"
+                                },
+                                "type": {
+                                    "description": "Payment method type.",
+                                    "type": "string",
+                                    "enum": [
+                                        "bank",
+                                        "ewallet",
+                                        "other"
+                                    ]
                                 }
                             }
                         }
