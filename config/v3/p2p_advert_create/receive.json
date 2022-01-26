@@ -327,6 +327,24 @@
                         "buy",
                         "sell"
                     ]
+                },
+                "visibility_status": {
+                    "description": "Reasons why an advert is not visible. Possible values: \n- `advert_inactive`: the advert is set inactive. \n- `advert_max_limit`: the minimum order amount exceeds the system maximum order. \n- `advert_min_limit`: the maximum order amount is too small to be shown on the advert list. \n- `advert_remaining`: the remaining amount of the advert is below the minimum order. \n- `advertiser_ads_paused`: the advertiser has paused all adverts. \n- `advertiser_approval`: the advertiser's proof of identity is not verified. \n- `advertiser_balance`: the advertiser's P2P balance is less than the minimum order. \n- `advertiser_daily_limit`: the advertiser's remaining daily limit is less than the minimum order. \n- `advertiser_temp_ban`: the advertiser is temporarily banned from P2P.",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "advert_inactive",
+                            "advert_max_limit",
+                            "advert_min_limit",
+                            "advert_remaining",
+                            "advertiser_ads_paused",
+                            "advertiser_approval",
+                            "advertiser_balance",
+                            "advertiser_daily_limit",
+                            "advertiser_temp_ban"
+                        ]
+                    }
                 }
             }
         },
