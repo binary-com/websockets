@@ -1,8 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "P2P Advert List (request)",
-    "description": "Returns available adverts for use with `p2p_order_create`. **This API call is still in Beta.**",
-    "beta": 1,
+    "description": "Returns available adverts for use with `p2p_order_create` .",
     "type": "object",
     "auth_required": 1,
     "auth_scopes": [

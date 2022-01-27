@@ -1,8 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "P2P Advertiser Update (request)",
-    "description": "Update the information of the P2P advertiser for the current account. Can only be used by an approved P2P advertiser. **This API call is still in Beta.**",
-    "beta": 1,
+    "description": "Update the information of the P2P advertiser for the current account. Can only be used by an approved P2P advertiser.",
     "type": "object",
     "auth_required": 1,
     "auth_scopes": [

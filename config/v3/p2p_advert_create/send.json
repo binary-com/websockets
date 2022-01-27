@@ -1,8 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "P2P Advert Create (request)",
-    "description": "Creates a P2P (Peer to Peer) advert. Can only be used by an approved P2P advertiser. **This API call is still in Beta.**",
-    "beta": 1,
+    "description": "Creates a P2P (Peer to Peer) advert. Can only be used by an approved P2P advertiser.",
     "type": "object",
     "auth_required": 1,
     "auth_scopes": [

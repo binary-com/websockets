@@ -2,7 +2,6 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "P2P Advertiser Relations (request)",
     "description": "Updates and returns favourite and blocked advertisers of the current user.",
-    "beta": 1,
     "type": "object",
     "auth_required": 1,
     "auth_scopes": [

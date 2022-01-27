@@ -115,6 +115,8 @@ groups:
         title: P2P Advertiser Create
       - name: p2p_advertiser_info
         title: P2P Advertiser Information
+      - name: p2p_advertiser_payment_methods
+        title: P2P Advertiser Payment Methods
       - name: p2p_advertiser_relations
         title: P2P Advertiser Relations
       - name: p2p_advertiser_update
@@ -127,10 +129,14 @@ groups:
         title: P2P Order Confirm
       - name: p2p_order_create
         title: P2P Order Create
+      - name: p2p_order_dispute
+        title: P2P Order Dispute
       - name: p2p_order_info
         title: P2P Order Information
       - name: p2p_order_list
         title: P2P Order List
+      - name: p2p_payment_methods
+        title: P2P Payment Methods
       - name: payment_methods
         title: Payment Methods
       - name: paymentagent_create
