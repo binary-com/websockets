@@ -1,8 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "P2P Order List (request)",
-    "description": "List active orders. **This API call is still in Beta.**",
-    "beta": 1,
+    "description": "List active orders.",
     "type": "object",
     "auth_required": 1,
     "auth_scopes": [

@@ -1,8 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "P2P Advertiser Adverts (request)",
-    "description": "Returns all P2P adverts created by the authorized client. Can only be used by a registered P2P advertiser. **This API call is still in Beta.**",
-    "beta": 1,
+    "description": "Returns all P2P adverts created by the authorized client. Can only be used by a registered P2P advertiser.",
     "type": "object",
     "auth_required": 1,
     "auth_scopes": [

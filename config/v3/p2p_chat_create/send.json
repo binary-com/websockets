@@ -1,8 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "P2P Chat Create (request)",
-    "description": "Creates a P2P chat for the specified order. **This API call is still in Beta.**",
-    "beta": 1,
+    "description": "Creates a P2P chat for the specified order.",
     "type": "object",
     "auth_required": 1,
     "auth_scopes": [

@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "P2P Order Confirm (request)",
-    "description": "Confirm a P2P order.",
+    "title": "P2P Payment Methods (request)",
+    "description": "List all P2P payment methods.",
     "type": "object",
     "auth_required": 1,
     "auth_scopes": [
@@ -9,21 +9,15 @@
     ],
     "additionalProperties": false,
     "required": [
-        "p2p_order_confirm",
-        "id"
+        "p2p_payment_methods"
     ],
     "properties": {
-        "p2p_order_confirm": {
+        "p2p_payment_methods": {
             "description": "Must be 1",
             "type": "integer",
             "enum": [
                 1
             ]
-        },
-        "id": {
-            "description": "The unique identifier for this order.",
-            "type": "string",
-            "pattern": "^[0-9]+$"
         },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
