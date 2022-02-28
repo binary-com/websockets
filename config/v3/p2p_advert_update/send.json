@@ -93,10 +93,16 @@
             "maxItems": 3
         },
         "rate": {
-            "description": "[Optional] Conversion rate from advertiser's account currency to `local_currency`.",
-            "type": "number",
-            "exclusiveMinimum": true,
-            "minimum": 0
+            "description": "[Optional] Conversion rate from advertiser's account currency to `local_currency`. An absolute rate value (fixed), or percentage offset from current market rate (floating).",
+            "type": "number"
+        },
+        "rate_type": {
+            "description": "[Optional] Type of rate, fixed or floating.",
+            "type": "string",
+            "enum": [
+                "fixed",
+                "float"
+            ]
         },
         "remaining_amount": {
             "description": "[Optional] The total available amount of the advert, in advertiser's account currency.",

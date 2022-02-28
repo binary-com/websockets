@@ -87,10 +87,17 @@
             "maxItems": 3
         },
         "rate": {
-            "description": "Conversion rate from advertiser's account currency to `local_currency`.",
-            "type": "number",
-            "exclusiveMinimum": true,
-            "minimum": 0
+            "description": "Conversion rate from advertiser's account currency to `local_currency`. An absolute rate value (fixed), or percentage offset from current market rate (floating).",
+            "type": "number"
+        },
+        "rate_type": {
+            "description": "Type of rate, fixed or floating.",
+            "type": "string",
+            "default": "fixed",
+            "enum": [
+                "fixed",
+                "float"
+            ]
         },
         "type": {
             "description": "The advertisement represents the intention to perform this action on your Deriv account funds.",

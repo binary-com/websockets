@@ -16,8 +16,7 @@
             "required": [
                 "api_call_limits",
                 "crypto_config",
-                "currencies_config",
-                "p2p_config"
+                "currencies_config"
             ],
             "properties": {
                 "api_call_limits": {
@@ -289,6 +288,9 @@
                         "cancellation_grace_period",
                         "cancellation_limit",
                         "disabled",
+                        "fixed_rate_adverts",
+                        "float_rate_adverts",
+                        "float_rate_offset_limit",
                         "maximum_advert_amount",
                         "maximum_order_amount",
                         "order_daily_limit",
@@ -327,6 +329,32 @@
                                 0,
                                 1
                             ]
+                        },
+                        "fixed_rate_adverts": {
+                            "description": "Availability of fixed rate adverts.",
+                            "type": "string",
+                            "enum": [
+                                "disabled",
+                                "enabled",
+                                "list_only"
+                            ]
+                        },
+                        "fixed_rate_adverts_end_date": {
+                            "description": "Date on which fixed rate adverts will be deactivated.",
+                            "type": "string"
+                        },
+                        "float_rate_adverts": {
+                            "description": "Availability of floating rate adverts.",
+                            "type": "string",
+                            "enum": [
+                                "disabled",
+                                "enabled",
+                                "list_only"
+                            ]
+                        },
+                        "float_rate_offset_limit": {
+                            "description": "Maximum rate offset for floating rate adverts.",
+                            "type": "number"
                         },
                         "maximum_advert_amount": {
                             "description": "Maximum amount of an advert, in USD.",
