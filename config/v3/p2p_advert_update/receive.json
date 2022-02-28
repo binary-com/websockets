@@ -114,6 +114,20 @@
                     "description": "General information about the advert.",
                     "type": "string"
                 },
+                "effective_rate": {
+                    "description": "Conversion rate from account currency to local currency, using current market rate if applicable.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                },
+                "effective_rate_display": {
+                    "description": "Conversion rate from account currency to local currency, using current market rate if applicable, formatted to appropriate decimal places.",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
                 "id": {
                     "description": "The unique identifier for this advert.",
                     "type": "string"
@@ -281,19 +295,33 @@
                 },
                 "price": {
                     "description": "Cost of the advert in local currency.",
-                    "type": "number"
+                    "type": [
+                        "null",
+                        "number"
+                    ]
                 },
                 "price_display": {
                     "description": "Cost of the advert in local currency, formatted to appropriate decimal places.",
-                    "type": "string"
+                    "type": [
+                        "null",
+                        "string"
+                    ]
                 },
                 "rate": {
-                    "description": "Conversion rate from account currency to local currency.",
+                    "description": "Conversion rate from advertiser's account currency to `local_currency`. An absolute rate value (fixed), or percentage offset from current market rate (floating).",
                     "type": "number"
                 },
                 "rate_display": {
-                    "description": "Conversion rate from account currency to local currency, formatted to appropriate decimal places.",
+                    "description": "Conversion rate formatted to appropriate decimal places.",
                     "type": "string"
+                },
+                "rate_type": {
+                    "description": "Type of rate, fixed or floating.",
+                    "type": "string",
+                    "enum": [
+                        "fixed",
+                        "float"
+                    ]
                 },
                 "remaining_amount": {
                     "description": "Amount currently available for orders, in `account_currency`.",

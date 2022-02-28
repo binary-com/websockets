@@ -48,6 +48,10 @@
             },
             "maxItems": 3
         },
+        "rate": {
+            "description": "[Optional] Conversion rate from account currency to local currency, only applicable for floating rate adverts.",
+            "type": "number"
+        },
         "subscribe": {
             "description": "[Optional] If set to 1, will send updates whenever there is an update to the order.",
             "type": "integer",
