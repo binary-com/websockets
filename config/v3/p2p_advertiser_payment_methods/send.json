@@ -41,7 +41,7 @@
                     "^[a-z0-9_]{1,30}$": {
                         "description": "Payment method field value.",
                         "type": "string",
-                        "maxLength": 300
+                        "pattern": "^[\\p{L}\\p{Nd}\\s'.,_:;()@#/+-]{0,300}$"
                     }
                 }
             },
@@ -74,7 +74,7 @@
                         "^[a-z0-9_]{1,30}$": {
                             "description": "Payment field to value to update.",
                             "type": "string",
-                            "maxLength": 300
+                            "pattern": "^[\\p{L}\\p{Nd}\\s'._,:;()@#/+-]{0,300}$"
                         }
                     }
                 }
