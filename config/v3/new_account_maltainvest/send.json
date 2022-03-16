@@ -145,6 +145,11 @@
                 "retail"
             ]
         },
+        "currency": {
+            "description": "[Optional] To set currency of the account. List of supported currencies can be acquired with `payout_currencies` call.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{2,20}$"
+        },
         "date_of_birth": {
             "description": "Date of birth format: yyyy-mm-dd.",
             "type": "string",
