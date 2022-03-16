@@ -260,49 +260,8 @@
                             "description": "An array containing the list of required authentication.",
                             "type": "array",
                             "items": {
-                                "description": "This represents the current type of authentication required, possible values are identity, document and ownership.",
+                                "description": "This represents the current type of authentication required, possible values are identity and document.",
                                 "type": "string"
-                            }
-                        },
-                        "ownership": {
-                            "description": "The current state of the proof of ownership.",
-                            "type": "object",
-                            "additionalProperties": false,
-                            "properties": {
-                                "requests": {
-                                    "description": "The list of proof of ownership requests to fullfil",
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "additionalProperties": false,
-                                        "properties": {
-                                            "creation_time": {
-                                                "description": "The request timestamp of creation",
-                                                "type": "string"
-                                            },
-                                            "id": {
-                                                "description": "The Id of the proof of ownership request",
-                                                "type": "number"
-                                            },
-                                            "payment_method": {
-                                                "description": "The display name of the payment method being requested",
-                                                "type": "string"
-                                            },
-                                            "payment_method_identifier": {
-                                                "description": "The identifier of the payment method being requested",
-                                                "type": "string"
-                                            }
-                                        }
-                                    }
-                                },
-                                "status": {
-                                    "description": "This represents the current status of the proof of ownership",
-                                    "type": "string",
-                                    "enum": [
-                                        "none",
-                                        "pending"
-                                    ]
-                                }
                             }
                         }
                     }
