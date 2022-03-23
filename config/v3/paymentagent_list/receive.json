@@ -76,24 +76,66 @@
                                 "description": "Payment agent's loginid.",
                                 "type": "string"
                             },
+                            "phone_numbers": {
+                                "description": "Payment agent's phone number(s) with country code.",
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "phone_number": {
+                                            "description": "A phone number",
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
                             "summary": {
                                 "description": "A summary about payment agent.",
                                 "type": "string"
                             },
                             "supported_banks": {
-                                "description": "Comma separated list of supported banks.",
+                                "description": "Comma separated list of supported banks. (deprecated; use `supported_payment_methods` instead)",
                                 "type": [
                                     "null",
                                     "string"
                                 ]
                             },
+                            "supported_payment_methods": {
+                                "description": "A list of supported payment methods.",
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "payment_method": {
+                                            "description": "A payment method's name",
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
                             "telephone": {
-                                "description": "Payment agent's phone number.",
+                                "description": "Payment agent's phone number with country code (deprecated; use `phone_numbers` instead)",
                                 "type": "string"
                             },
                             "url": {
-                                "description": "Payment agent's website URL.",
+                                "description": "Payment agent's website URL. (deprecated; use `urls` instead)",
                                 "type": "string"
+                            },
+                            "urls": {
+                                "description": "The URL(s) of payment agent's website(s).",
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "url": {
+                                            "description": "A webpage or website's URL.",
+                                            "type": "string"
+                                        }
+                                    }
+                                }
                             },
                             "withdrawal_commission": {
                                 "description": "Commission amount applied on withdrawals made through this payment agent.",

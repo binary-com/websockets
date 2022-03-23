@@ -18,7 +18,7 @@
         "information",
         "payment_agent_name",
         "supported_payment_methods",
-        "url"
+        "urls"
     ],
     "properties": {
         "paymentagent_create": {
@@ -67,25 +67,59 @@
             "type": "string",
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,100}$"
         },
-        "phone": {
-            "description": "Payment agent's phone number with coutry code.",
-            "type": "string",
-            "pattern": "^\\+[\\-\\ 0-9]{8,40}$"
+        "phone_numbers": {
+            "description": "Payment agent's phone number(s) with country code.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "phone_number"
+                ],
+                "properties": {
+                    "phone_number": {
+                        "description": "A phone number",
+                        "type": "string",
+                        "pattern": "^\\+[\\-\\ 0-9]{8,40}$"
+                    }
+                }
+            }
         },
         "supported_payment_methods": {
             "description": "A list of supported payment methods.",
             "type": "array",
             "items": {
-                "description": "A payment method's name",
-                "type": "string",
-                "pattern": "^[\\w \\-]{2,30}$"
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "payment_method"
+                ],
+                "properties": {
+                    "payment_method": {
+                        "description": "A payment method's name",
+                        "type": "string",
+                        "pattern": "^[\\w \\-]{2,30}$"
+                    }
+                }
             }
         },
-        "url": {
-            "description": "The URL of payment agent's website.",
-            "type": "string",
-            "pattern": "^[a-z][a-z0-9.+\\-]*://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$",
-            "maxLength": 100
+        "urls": {
+            "description": "The URL(s) of payment agent's website(s).",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "url"
+                ],
+                "properties": {
+                    "url": {
+                        "description": "A webpage or website's URL.",
+                        "type": "string",
+                        "pattern": "^[a-z][a-z0-9.+\\-]*://[0-9a-zA-Z\\.-]+[\\%\\/\\w \\.-]*$"
+                    }
+                }
+            }
         },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
