@@ -69,9 +69,19 @@
                     "description": "The name with which the payment agent is going to be identified.",
                     "type": "string"
                 },
-                "phone": {
-                    "description": "Payment agent's phone number with country code.",
-                    "type": "string"
+                "phone_numbers": {
+                    "description": "Payment agent's phone number(s) with country code.",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "phone_number": {
+                                "description": "A phone number.",
+                                "type": "string"
+                            }
+                        }
+                    }
                 },
                 "status": {
                     "description": "Indicates the status of the Payment Agent.",
@@ -95,17 +105,33 @@
                     "description": "A list of supported payment methods.",
                     "type": "array",
                     "items": {
-                        "description": "A payment method's name",
-                        "type": "string"
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "payment_method": {
+                                "description": "A payment method's name",
+                                "type": "string"
+                            }
+                        }
                     }
                 },
                 "target_country": {
                     "description": "Client's target country.",
                     "type": "string"
                 },
-                "url": {
-                    "description": "The URL of payment agent's website.",
-                    "type": "string"
+                "urls": {
+                    "description": "The URL(s) of payment agent's website(s).",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "url": {
+                                "description": "A website url.",
+                                "type": "string"
+                            }
+                        }
+                    }
                 }
             }
         },
