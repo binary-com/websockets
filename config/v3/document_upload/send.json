@@ -71,7 +71,8 @@
                 "insurance_bill",
                 "tax_receipt",
                 "phone_bill",
-                "poa_others"
+                "poa_others",
+                "proof_of_ownership"
             ]
         },
         "expected_checksum": {
@@ -104,6 +105,25 @@
                 "back",
                 "photo"
             ]
+        },
+        "proof_of_ownership": {
+            "description": "[Optional] It contains info about the proof of ownership being uploaded (mandatory for proof_of_ownership document type)",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "details",
+                "id"
+            ],
+            "properties": {
+                "details": {
+                    "description": "A collection of unspecific information related to the proof of ownership being uploaded",
+                    "type": "object"
+                },
+                "id": {
+                    "description": "The id of the proof of ownership as shown in the /get_account_status proof of ownership list",
+                    "type": "number"
+                }
+            }
         },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
