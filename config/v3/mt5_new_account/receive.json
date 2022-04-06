@@ -51,8 +51,7 @@
                     "description": "With default value of conventional, unavailable for `financial_stp` sub account type.",
                     "type": "string",
                     "enum": [
-                        "conventional",
-                        "swap_free"
+                        "conventional"
                     ]
                 },
                 "mt5_account_type": {
