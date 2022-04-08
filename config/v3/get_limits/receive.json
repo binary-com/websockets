@@ -34,7 +34,7 @@
                     "description": "Contains limitation information for each market.",
                     "type": "object",
                     "patternProperties": {
-                        "^(commodities|forex|indices|synthetic_index)$": {
+                        "^(commodities|forex|indices|synthetic_index|basket_index)$": {
                             "description": "List of limitation profiles for each market",
                             "type": "array",
                             "items": {
