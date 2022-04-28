@@ -277,6 +277,22 @@
                     "description": "Text for site status banner, contains problem description. shown only if set by the system.",
                     "type": "string"
                 },
+                "mt5_status": {
+                    "description": "Suspension status of MT5 API calls",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "minProperties": 2,
+                    "properties": {
+                        "demo": {
+                            "description": "Suspension of MT5 API calls on demo servers.",
+                            "type": "array"
+                        },
+                        "real": {
+                            "description": "Suspension of MT5 API calls on real trading servers.",
+                            "type": "array"
+                        }
+                    }
+                },
                 "p2p_config": {
                     "description": "Peer-to-peer payment system settings.",
                     "type": "object",
