@@ -86,7 +86,7 @@
         "address_state": {
             "description": "[Optional] Possible value receive from `states_list` call.",
             "type": "string",
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,35}$"
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,100}$"
         },
         "affiliate_token": {
             "description": "[Optional] Affiliate token, within 32 characters.",

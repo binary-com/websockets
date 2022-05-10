@@ -55,7 +55,7 @@
         "address_state": {
             "description": "[Optional] Note: not applicable for virtual account. Optional field for real money account.",
             "type": "string",
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,-;]{0,35}$"
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,-;]{0,100}$"
         },
         "allow_copiers": {
             "description": "[Optional] Boolean value 1 or 0, indicating permission to allow others to follow your trades. Note: not applicable for Virtual account. Only allow for real money account.",
