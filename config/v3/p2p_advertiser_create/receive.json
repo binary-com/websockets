@@ -28,7 +28,6 @@
                 "contact_info",
                 "created_time",
                 "default_advert_description",
-                "favourited",
                 "full_verification",
                 "id",
                 "is_approved",
@@ -36,6 +35,10 @@
                 "name",
                 "partner_count",
                 "payment_info",
+                "rating_average",
+                "rating_count",
+                "recommended_average",
+                "recommended_count",
                 "release_time_avg",
                 "sell_completion_rate",
                 "sell_orders_amount",
@@ -135,10 +138,6 @@
                     "description": "Default description that can be used every time an advert is created.",
                     "type": "string"
                 },
-                "favourited": {
-                    "description": "Number of other users who have favourited this advertiser.",
-                    "type": "integer"
-                },
                 "full_verification": {
                     "description": "Boolean value: 1 or 0, indicating whether the advertiser's address has been verified.",
                     "type": "integer",
@@ -178,6 +177,33 @@
                 "payment_info": {
                     "description": "Advertiser's payment information.",
                     "type": "string"
+                },
+                "rating_average": {
+                    "description": "Average rating of the advertiser, range is 1-5.",
+                    "type": [
+                        "null",
+                        "number"
+                    ],
+                    "maximum": 5,
+                    "minimum": 1
+                },
+                "rating_count": {
+                    "description": "Number of ratings given to the advertiser.",
+                    "type": "integer"
+                },
+                "recommended_average": {
+                    "description": "Percentage of users who have recommended the advertiser.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                },
+                "recommended_count": {
+                    "description": "Number of times the advertiser has been recommended.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
                 },
                 "release_time_avg": {
                     "description": "The average time in seconds taken to release funds as a seller within the past 30 days.",

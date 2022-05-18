@@ -35,6 +35,10 @@
                         "completed_orders_count",
                         "id",
                         "name",
+                        "rating_average",
+                        "rating_count",
+                        "recommended_average",
+                        "recommended_count",
                         "total_completion_rate"
                     ],
                     "properties": {
@@ -54,6 +58,7 @@
                             "description": "Indicates that the advertiser is blocked by the current user.",
                             "type": "integer",
                             "enum": [
+                                0,
                                 1
                             ]
                         },
@@ -61,6 +66,19 @@
                             "description": "Indicates that the advertiser is a favourite of the current user.",
                             "type": "integer",
                             "enum": [
+                                0,
+                                1
+                            ]
+                        },
+                        "is_recommended": {
+                            "description": "Indicates that the advertiser was recommended in the most recent review by the current user.",
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "enum": [
+                                null,
+                                0,
                                 1
                             ]
                         },
@@ -71,6 +89,33 @@
                         "name": {
                             "description": "The advertiser's displayed name.",
                             "type": "string"
+                        },
+                        "rating_average": {
+                            "description": "Average rating of the advertiser, range is 1-5.",
+                            "type": [
+                                "null",
+                                "number"
+                            ],
+                            "maximum": 5,
+                            "minimum": 1
+                        },
+                        "rating_count": {
+                            "description": "Number of ratings given to the advertiser.",
+                            "type": "integer"
+                        },
+                        "recommended_average": {
+                            "description": "Percentage of users who have recommended the advertiser.",
+                            "type": [
+                                "null",
+                                "number"
+                            ]
+                        },
+                        "recommended_count": {
+                            "description": "Number of times the advertiser has been recommended.",
+                            "type": [
+                                "integer",
+                                "null"
+                            ]
                         },
                         "total_completion_rate": {
                             "description": "The percentage of successfully completed orders made by or placed against the advertiser within the past 30 days.",

@@ -36,6 +36,7 @@
                             "expiry_time",
                             "id",
                             "is_incoming",
+                            "is_reviewable",
                             "local_currency",
                             "payment_info",
                             "price",
@@ -110,6 +111,18 @@
                                         "description": "The advertiser's unique identifier.",
                                         "type": "string"
                                     },
+                                    "is_recommended": {
+                                        "description": "Indicates that the advertiser was recommended in the most recent review by the current user.",
+                                        "type": [
+                                            "integer",
+                                            "null"
+                                        ],
+                                        "enum": [
+                                            null,
+                                            0,
+                                            1
+                                        ]
+                                    },
                                     "last_name": {
                                         "description": "The advertiser's last name.",
                                         "type": "string"
@@ -154,6 +167,18 @@
                                     "id": {
                                         "description": "The client's unique P2P identifier.",
                                         "type": "string"
+                                    },
+                                    "is_recommended": {
+                                        "description": "Indicates that the client was recommended in the most recent review by the current user.",
+                                        "type": [
+                                            "integer",
+                                            "null"
+                                        ],
+                                        "enum": [
+                                            null,
+                                            0,
+                                            1
+                                        ]
                                     },
                                     "last_name": {
                                         "description": "The client's last name.",
@@ -219,6 +244,14 @@
                                     1
                                 ]
                             },
+                            "is_reviewable": {
+                                "description": "`1` if a review can be given, otherwise `0`.",
+                                "type": "integer",
+                                "enum": [
+                                    0,
+                                    1
+                                ]
+                            },
                             "local_currency": {
                                 "description": "Local currency for this order.",
                                 "type": "string",
@@ -260,6 +293,41 @@
                             "rate_display": {
                                 "description": "Conversion rate of the order, formatted to appropriate decimal places.",
                                 "type": "string"
+                            },
+                            "review_details": {
+                                "title": "Review Details",
+                                "description": "Details of the review you gave for this order, if any.",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                    "created_time",
+                                    "rating",
+                                    "recommended"
+                                ],
+                                "properties": {
+                                    "created_time": {
+                                        "description": "The epoch time of the review.",
+                                        "type": "integer"
+                                    },
+                                    "rating": {
+                                        "description": "Rating for the transaction, 1 to 5.",
+                                        "type": "integer",
+                                        "maximum": 5,
+                                        "minimum": 1
+                                    },
+                                    "recommended": {
+                                        "description": "`1` if the advertiser is recommended, `0` if not recommended.",
+                                        "type": [
+                                            "integer",
+                                            "null"
+                                        ],
+                                        "enum": [
+                                            null,
+                                            0,
+                                            1
+                                        ]
+                                    }
+                                }
                             },
                             "status": {
                                 "description": "Current order status.",

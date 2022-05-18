@@ -72,12 +72,14 @@
             }
         },
         "sort_by": {
-            "description": "[Optional] How the results are sorted: best rate, or advertiser completion rate.",
+            "description": "[Optional] How the results are sorted.",
             "type": "string",
             "default": "rate",
             "enum": [
                 "completion",
-                "rate"
+                "rate",
+                "rating",
+                "recommended"
             ]
         },
         "use_client_limits": {

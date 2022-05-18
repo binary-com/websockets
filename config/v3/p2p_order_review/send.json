@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Order Review (request)",
+    "description": "Creates a review for the specified order.",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "payments"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "p2p_order_review",
+        "order_id",
+        "rating"
+    ],
+    "properties": {
+        "p2p_order_review": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "order_id": {
+            "description": "The order identification number.",
+            "type": "string"
+        },
+        "rating": {
+            "description": "Rating for the transaction, 1 to 5.",
+            "type": "integer",
+            "maximum": 5,
+            "minimum": 1
+        },
+        "recommended": {
+            "description": "[Optional] `1` if the counterparty is recommendable to others, otherwise `0`.",
+            "type": [
+                "integer",
+                "null"
+            ],
+            "enum": [
+                null,
+                0,
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

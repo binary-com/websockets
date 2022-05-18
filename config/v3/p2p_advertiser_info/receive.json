@@ -23,13 +23,16 @@
                 "cancel_time_avg",
                 "created_time",
                 "default_advert_description",
-                "favourited",
                 "full_verification",
                 "id",
                 "is_approved",
                 "is_listed",
                 "name",
                 "partner_count",
+                "rating_average",
+                "rating_count",
+                "recommended_average",
+                "recommended_count",
                 "release_time_avg",
                 "sell_completion_rate",
                 "sell_orders_amount",
@@ -132,10 +135,6 @@
                     "description": "Default description that can be used every time an advert is created.",
                     "type": "string"
                 },
-                "favourited": {
-                    "description": "Number of other users who have favourited this advertiser.",
-                    "type": "integer"
-                },
                 "first_name": {
                     "description": "The advertiser's first name.",
                     "type": "string"
@@ -164,6 +163,7 @@
                     "description": "Indicates that the advertiser is blocked by the current user.",
                     "type": "integer",
                     "enum": [
+                        0,
                         1
                     ]
                 },
@@ -171,6 +171,7 @@
                     "description": "Indicates that the advertiser is a favourite of the current user",
                     "type": "integer",
                     "enum": [
+                        0,
                         1
                     ]
                 },
@@ -178,6 +179,18 @@
                     "description": "Indicates if the advertiser's active adverts are listed. When `0`, adverts won't be listed regardless if they are active or not.",
                     "type": "integer",
                     "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "is_recommended": {
+                    "description": "Indicates that the advertiser was recommended in the most recent review by the current user.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "enum": [
+                        null,
                         0,
                         1
                     ]
@@ -209,6 +222,33 @@
                 "payment_info": {
                     "description": "Advertiser's payment information.",
                     "type": "string"
+                },
+                "rating_average": {
+                    "description": "Average rating of the advertiser, range is 1-5.",
+                    "type": [
+                        "null",
+                        "number"
+                    ],
+                    "maximum": 5,
+                    "minimum": 1
+                },
+                "rating_count": {
+                    "description": "Number of ratings given to the advertiser.",
+                    "type": "integer"
+                },
+                "recommended_average": {
+                    "description": "Percentage of users who have recommended the advertiser.",
+                    "type": [
+                        "null",
+                        "number"
+                    ]
+                },
+                "recommended_count": {
+                    "description": "Number of times the advertiser has been recommended.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
                 },
                 "release_time_avg": {
                     "description": "The average time in seconds taken to release funds as a seller within the past 30 days.",
