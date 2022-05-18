@@ -27,6 +27,7 @@
                 "expiry_time",
                 "id",
                 "is_incoming",
+                "is_reviewable",
                 "local_currency",
                 "payment_info",
                 "price",
@@ -204,6 +205,14 @@
                 },
                 "is_incoming": {
                     "description": "`1` if the order is created for the advert of the current client, otherwise `0`.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "is_reviewable": {
+                    "description": "`1` if a review can be given, otherwise `0`.",
                     "type": "integer",
                     "enum": [
                         0,

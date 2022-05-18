@@ -1,0 +1,72 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Order Review (response)",
+    "description": "Response for creating a P2P order review.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "p2p_order_review": {
+            "title": "p2p_order_review",
+            "description": "Details of the created order review.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "advertiser_id",
+                "created_time",
+                "order_id",
+                "rating",
+                "recommended"
+            ],
+            "properties": {
+                "advertiser_id": {
+                    "description": "The reviewed advertiser's identification number.",
+                    "type": "string"
+                },
+                "created_time": {
+                    "description": "The epoch time of the review.",
+                    "type": "integer"
+                },
+                "order_id": {
+                    "description": "The order identification number.",
+                    "type": "string"
+                },
+                "rating": {
+                    "description": "Rating for the transaction, 1 to 5.",
+                    "type": "integer",
+                    "maximum": 5,
+                    "minimum": 1
+                },
+                "recommended": {
+                    "description": "`1` if the advertiser is recommended, `0` if not recommended.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "enum": [
+                        null,
+                        0,
+                        1
+                    ]
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "p2p_order_review"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}
