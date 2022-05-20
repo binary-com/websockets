@@ -49,6 +49,14 @@
                 "total_turnover"
             ],
             "properties": {
+                "active_fixed_ads": {
+                    "description": "Number of active fixed rate adverts belonging to the advertiser.",
+                    "type": "integer"
+                },
+                "active_float_ads": {
+                    "description": "Number of active floating rate adverts belonging to the advertiser.",
+                    "type": "integer"
+                },
                 "advert_rates": {
                     "description": "Average difference of advert rate compared to the market rate over the past 30 days.",
                     "type": [
