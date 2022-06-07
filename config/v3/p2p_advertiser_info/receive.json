@@ -69,6 +69,10 @@
                         0
                     ]
                 },
+                "blocked_by_count": {
+                    "description": "The number of P2P users who have blocked this advertiser.",
+                    "type": "integer"
+                },
                 "blocked_until": {
                     "description": "If a temporary bar was placed, this is the epoch time at which it will end.",
                     "type": "integer"
