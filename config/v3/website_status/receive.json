@@ -311,7 +311,8 @@
                         "maximum_order_amount",
                         "order_daily_limit",
                         "order_payment_period",
-                        "payment_methods_enabled"
+                        "payment_methods_enabled",
+                        "supported_currencies"
                     ],
                     "properties": {
                         "adverts_active_limit": {
@@ -399,6 +400,14 @@
                                 0,
                                 1
                             ]
+                        },
+                        "supported_currencies": {
+                            "description": "List of currencies for which P2P is available",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "uniqueItems": true
                         }
                     }
                 },
