@@ -27,6 +27,8 @@
                 "id",
                 "is_approved",
                 "is_listed",
+                "is_online",
+                "last_online_time",
                 "name",
                 "partner_count",
                 "rating_average",
@@ -195,6 +197,14 @@
                         1
                     ]
                 },
+                "is_online": {
+                    "description": "Indicates if the advertiser is currently online.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
                 "is_recommended": {
                     "description": "Indicates that the advertiser was recommended in the most recent review by the current user.",
                     "type": [
@@ -210,6 +220,13 @@
                 "last_name": {
                     "description": "The advertiser's last name.",
                     "type": "string"
+                },
+                "last_online_time": {
+                    "description": "Epoch of the latest time the advertiser was online, up to 6 months.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
                 },
                 "max_order_amount": {
                     "description": "Maximum order amount for adverts.",
