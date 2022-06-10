@@ -139,6 +139,8 @@ groups:
         title: P2P Order Review
       - name: p2p_payment_methods
         title: P2P Payment Methods
+      - name: p2p_ping
+        title: P2P Ping
       - name: payment_methods
         title: Payment Methods
       - name: paymentagent_create

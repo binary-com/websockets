@@ -33,6 +33,8 @@
                 "id",
                 "is_approved",
                 "is_listed",
+                "is_online",
+                "last_online_time",
                 "name",
                 "partner_count",
                 "payment_info",
@@ -169,6 +171,21 @@
                     "enum": [
                         0,
                         1
+                    ]
+                },
+                "is_online": {
+                    "description": "Indicates if the advertiser is currently online.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "last_online_time": {
+                    "description": "Epoch of the latest time the advertiser was online, up to 6 months.",
+                    "type": [
+                        "integer",
+                        "null"
                     ]
                 },
                 "name": {
