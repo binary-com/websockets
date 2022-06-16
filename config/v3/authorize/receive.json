@@ -29,6 +29,10 @@
                                     "wallet"
                                 ]
                             },
+                            "created_at": {
+                                "description": "Creation time of the account as epoch.",
+                                "type": "integer"
+                            },
                             "currency": {
                                 "description": "Currency of specified account.",
                                 "type": "string"
