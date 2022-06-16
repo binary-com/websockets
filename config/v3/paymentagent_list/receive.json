@@ -37,6 +37,21 @@
                     "items": {
                         "type": "object",
                         "additionalProperties": false,
+                        "required": [
+                            "currencies",
+                            "deposit_commission",
+                            "email",
+                            "further_information",
+                            "max_withdrawal",
+                            "min_withdrawal",
+                            "name",
+                            "paymentagent_loginid",
+                            "phone_numbers",
+                            "summary",
+                            "supported_payment_methods",
+                            "urls",
+                            "withdrawal_commission"
+                        ],
                         "properties": {
                             "currencies": {
                                 "description": "Currencies that are accepted by this payment agent.",
@@ -94,13 +109,6 @@
                                 "description": "A summary about payment agent.",
                                 "type": "string"
                             },
-                            "supported_banks": {
-                                "description": "Comma separated list of supported banks. (deprecated; use `supported_payment_methods` instead)",
-                                "type": [
-                                    "null",
-                                    "string"
-                                ]
-                            },
                             "supported_payment_methods": {
                                 "description": "A list of supported payment methods.",
                                 "type": "array",
@@ -114,14 +122,6 @@
                                         }
                                     }
                                 }
-                            },
-                            "telephone": {
-                                "description": "Payment agent's phone number with country code (deprecated; use `phone_numbers` instead)",
-                                "type": "string"
-                            },
-                            "url": {
-                                "description": "Payment agent's website URL. (deprecated; use `urls` instead)",
-                                "type": "string"
                             },
                             "urls": {
                                 "description": "The URL(s) of payment agent's website(s).",
