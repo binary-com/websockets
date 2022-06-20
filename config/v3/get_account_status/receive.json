@@ -300,7 +300,9 @@
                                     "type": "string",
                                     "enum": [
                                         "none",
-                                        "pending"
+                                        "pending",
+                                        "rejected",
+                                        "verified"
                                     ]
                                 }
                             }
