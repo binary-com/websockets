@@ -213,8 +213,6 @@ groups:
         title: Transactions Stream
       - name: transfer_between_accounts
         title: Transfer Between Accounts
-      - name: unsubscribe_email
-        title: Unsubscribe Email
       - name: verify_email
         title: Verify Email
       - name: website_status
