@@ -19,6 +19,7 @@
             "description": "Purpose of the email verification call.",
             "type": "string",
             "enum": [
+                "partner_account_opening",
                 "account_opening",
                 "reset_password",
                 "paymentagent_withdraw",
