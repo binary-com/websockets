@@ -303,6 +303,13 @@
                 "total_turnover": {
                     "description": "Total order volume since advertiser registration.",
                     "type": "string"
+                },
+                "withdrawal_limit": {
+                    "description": "Remaining withdrawal_limit of a non-fully authenticated advertiser.",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
                 }
             }
         },
