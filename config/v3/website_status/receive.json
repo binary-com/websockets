@@ -312,6 +312,7 @@
                         "order_daily_limit",
                         "order_payment_period",
                         "payment_methods_enabled",
+                        "review_period",
                         "supported_currencies"
                     ],
                     "properties": {
@@ -400,6 +401,10 @@
                                 0,
                                 1
                             ]
+                        },
+                        "review_period": {
+                            "description": "Time after successful order completion during which reviews can be created, in hours.",
+                            "type": "number"
                         },
                         "supported_currencies": {
                             "description": "List of currencies for which P2P is available",
