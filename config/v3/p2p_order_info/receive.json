@@ -185,6 +185,10 @@
                         }
                     }
                 },
+                "completion_time": {
+                    "description": "The epoch time of the order completion.",
+                    "type": "integer"
+                },
                 "contact_info": {
                     "description": "Seller contact information.",
                     "type": "string"
