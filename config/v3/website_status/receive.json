@@ -273,6 +273,26 @@
                         }
                     }
                 },
+                "dxtrade_status": {
+                    "description": "Suspension status of Dxtrade/DerivX API calls",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "minProperties": 3,
+                    "properties": {
+                        "all": {
+                            "description": "Suspension of Dxtrade/DerivX API calls on all servers.",
+                            "type": "integer"
+                        },
+                        "demo": {
+                            "description": "Suspension of Dxtrade/DerivX API calls on demo servers.",
+                            "type": "integer"
+                        },
+                        "real": {
+                            "description": "Suspension of Dxtrade/DerivX API calls on real trading servers.",
+                            "type": "integer"
+                        }
+                    }
+                },
                 "message": {
                     "description": "Text for site status banner, contains problem description. shown only if set by the system.",
                     "type": "string"
