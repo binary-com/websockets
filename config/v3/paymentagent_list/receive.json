@@ -91,7 +91,7 @@
                                 "description": "Payment agent's loginid.",
                                 "type": "string"
                             },
-                            "phone_numbers": {
+                            "phones": {
                                 "description": "Payment agent's phone number(s) with country code.",
                                 "type": "array",
                                 "items": {
