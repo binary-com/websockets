@@ -391,14 +391,6 @@
                         "type": "string"
                     }
                 },
-                "has_proveid": {
-                    "description": "Flag to indicate if proveid is present or not",
-                    "type": "integer",
-                    "enum": [
-                        1,
-                        0
-                    ]
-                },
                 "id": {
                     "description": "Country code",
                     "type": "string"
