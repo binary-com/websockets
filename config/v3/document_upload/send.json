@@ -72,7 +72,12 @@
                 "tax_receipt",
                 "phone_bill",
                 "poa_others",
-                "proof_of_ownership"
+                "proof_of_ownership",
+                "tax_return",
+                "employment_contract",
+                "brokerage statement",
+                "payslip",
+                "edd_others"
             ]
         },
         "expected_checksum": {
