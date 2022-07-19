@@ -256,11 +256,33 @@
                                 }
                             }
                         },
+                        "income": {
+                            "description": "The authentication status for source of income document.",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "expiry_date": {
+                                    "description": "Epoch of the source of income document expiry date.",
+                                    "type": "integer"
+                                },
+                                "status": {
+                                    "description": "Current status of the proof of income document submitted for authentication.",
+                                    "type": "string",
+                                    "enum": [
+                                        "none",
+                                        "pending",
+                                        "rejected",
+                                        "verified",
+                                        "locked"
+                                    ]
+                                }
+                            }
+                        },
                         "needs_verification": {
                             "description": "An array containing the list of required authentication.",
                             "type": "array",
                             "items": {
-                                "description": "This represents the current type of authentication required, possible values are identity, document and ownership.",
+                                "description": "This represents the current type of authentication required, possible values are identity, document, income, and ownership.",
                                 "type": "string"
                             }
                         },
