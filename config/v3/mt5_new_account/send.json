@@ -37,12 +37,12 @@
         "address": {
             "description": "[Optional] The address of the user. The maximum length of this address field is 128 characters.",
             "type": "string",
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,@/-]{0,128}$"
+            "pattern": "^[\\p{L}\\p{Nd}'.,:;()\\x{b0}@#/-][\\p{L}\\p{Nd}\\s'.,:;()\\x{b0}@#/-]{0,128}$"
         },
         "city": {
             "description": "[Optional] User's city of residence.",
             "type": "string",
-            "pattern": "^[\\p{L}\\s'.-]{0,50}$"
+            "pattern": "^\\p{L}[\\p{L}\\s'.-]{0,99}$"
         },
         "company": {
             "description": "[Optional] Name of the client's company. The maximum length of the company name is 64 characters.",
@@ -111,8 +111,10 @@
         },
         "phone": {
             "description": "[Optional] User's phone number.",
-            "type": "string",
-            "pattern": "^\\+?[0-9]{0,50}$"
+            "type": [
+                "null",
+                "string"
+            ]
         },
         "phonePassword": {
             "description": "[Optional] The user's phone password.",
