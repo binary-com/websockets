@@ -13,10 +13,16 @@
             "type": "object",
             "additionalProperties": false,
             "required": [
-                "id",
-                "status"
+                "id"
             ],
             "properties": {
+                "dry_run": {
+                    "description": "The `dry_run` was successful.",
+                    "type": "integer",
+                    "enum": [
+                        1
+                    ]
+                },
                 "id": {
                     "description": "The unique identifier for the order.",
                     "type": "string"
