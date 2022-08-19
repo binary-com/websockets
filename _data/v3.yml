@@ -13,6 +13,8 @@ groups:
         title: 'Application: List'
       - name: app_markup_details
         title: 'Application: Markup Details'
+      - name: app_markup_statistics
+        title: 'Application: Markup Statistics'
       - name: app_register
         title: 'Application: Register'
       - name: app_update
