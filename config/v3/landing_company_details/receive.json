@@ -135,7 +135,80 @@
                 },
                 "requirements": {
                     "description": "Legal requirements for the given Landing Company.",
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "after_first_deposit": {
+                            "description": "After first deposit requirements",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "financial_assessment": {
+                                    "description": "Financial assessment requirements",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "examples": [
+                                            "financial_information",
+                                            "trading_experience"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "compliance": {
+                            "description": "Compliance requirements",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "mt5": {
+                                    "description": "Compliance MT5 requirements",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "examples": [
+                                            "expiration_check",
+                                            "fully_authenticated"
+                                        ]
+                                    }
+                                },
+                                "tax_information": {
+                                    "description": "Compliance tax information requirements",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "examples": [
+                                            "tax_identification_number",
+                                            "tax_residence"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "signup": {
+                            "description": "Sign up requirements",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "examples": [
+                                    "first_name",
+                                    "residence",
+                                    "salutation"
+                                ]
+                            }
+                        },
+                        "withdrawal": {
+                            "description": "Withdrawal requirements",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "examples": [
+                                    "address_city",
+                                    "address_line_1"
+                                ]
+                            }
+                        }
+                    }
                 },
                 "shortcode": {
                     "description": "Landing Company shortcode.",

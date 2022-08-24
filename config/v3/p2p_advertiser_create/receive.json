@@ -188,6 +188,18 @@
                         "null"
                     ]
                 },
+                "max_order_amount": {
+                    "description": "Maximum order amount for adverts.",
+                    "type": "string"
+                },
+                "min_balance": {
+                    "description": "Sell ads will be hidden when your available balance or remaining daily sell limit falls beneath this value.",
+                    "type": "string"
+                },
+                "min_order_amount": {
+                    "description": "Minimum order amount for adverts.",
+                    "type": "string"
+                },
                 "name": {
                     "description": "The advertiser's displayed name.",
                     "type": "string"

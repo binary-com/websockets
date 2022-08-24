@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Application: Markup Statistics (request)",
+    "description": "Retrieve statistics of `app_markup`.",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "app_markup_statistics",
+        "date_from",
+        "date_to"
+    ],
+    "properties": {
+        "app_markup_statistics": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "date_from": {
+            "description": "Start date (epoch or YYYY-MM-DD HH:MM:SS). Results are inclusive of this time.",
+            "type": "string",
+            "pattern": "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01]) ([01]?[0-9]|2[0-3]):([0-5]?[0-9]):([0-5]?[0-9])|[0-9]{1,10})$"
+        },
+        "date_to": {
+            "description": "End date (epoch or YYYY-MM-DD HH::MM::SS). Results are inclusive of this time.",
+            "type": "string",
+            "pattern": "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01]) ([01]?[0-9]|2[0-3]):([0-5]?[0-9]):([0-5]?[0-9])|[0-9]{1,10})$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

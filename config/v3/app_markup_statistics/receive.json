@@ -1,0 +1,73 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Application: Markup Statistics (response)",
+    "description": "Per application reporting of app_markup",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "app_markup_statistics": {
+            "title": "app_markup_statistics",
+            "description": "App Markup transaction statistics",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "breakdown": {
+                    "description": "Array of summed app markups grouped by app_id",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "app_id": {
+                                "description": "ID of the application where this contract was purchased.",
+                                "type": "integer"
+                            },
+                            "app_markup_usd": {
+                                "description": "The sum of markup the client paid in USD",
+                                "type": "number"
+                            },
+                            "app_markup_value": {
+                                "description": "The sum of markup the client paid in developer's currency",
+                                "type": "number"
+                            },
+                            "dev_currcode": {
+                                "description": "Currency code of the app developer",
+                                "type": "string"
+                            },
+                            "transactions_count": {
+                                "description": "The count of app transactions",
+                                "type": "number"
+                            }
+                        }
+                    }
+                },
+                "total_app_markup_usd": {
+                    "description": "The sum of markup the client paid in USD",
+                    "type": "number"
+                },
+                "total_transactions_count": {
+                    "description": "The total count of transactions",
+                    "type": "number"
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "app_markup_statistics"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}
