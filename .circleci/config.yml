@@ -129,6 +129,27 @@ commands:
           failure_message: "Release failed for developers.binary.com with version *$(cat _site/version)*"
           success_message: "Release succeeded for developers.binary.com with version *$(cat _site/version)*"
           webhook: ${SLACK_WEBHOOK}
+          
+  publish_to_pages_staging:
+    description: "Publish to cloudflare pages"
+    steps:
+      - run:
+          name: "Publish to cloudflare pages (staging)"
+          command: |
+            cd _site
+            npx wrangler pages publish . --project-name=websockets-pages --branch=staging
+            echo "New staging website - http://staging.cf-pages-websockets.binary.com"
+            
+  publish_to_pages_production:
+    description: "Publish to cloudflare pages"
+    steps:
+      - run:
+          name: "Publish to cloudflare pages (production)"
+          command: |
+            cd _site
+            npx wrangler pages publish . --project-name=websockets-pages --branch=main
+            echo "New website - http://cf-pages-websockets.binary.com"
+            
 jobs:
   build:
     docker:
@@ -137,6 +158,17 @@ jobs:
       - git_checkout_from_cache
       - bundle_install
       - build
+  release_staging:
+    docker:
+      - image: circleci/ruby:2.7-buster
+    steps:
+      - git_checkout_from_cache
+      - bundle_install
+      - build
+      - persist_to_workspace:
+          root: _site
+          paths:
+            - .
   release_production:
     docker:
       - image: circleci/ruby:2.7-buster
@@ -144,6 +176,10 @@ jobs:
       - git_checkout_from_cache
       - bundle_install
       - build
+      - persist_to_workspace:
+          root: _site
+          paths:
+            - .
       - deploy:
           target_branch: "production"
       - notify_slack
@@ -156,13 +192,36 @@ jobs:
       - build
       - docker_build_push
       - k8s_deploy
+  
+  publish_cloudflare_staging:
+    docker:
+      - image: cimg/node:18.4.0
+    steps:
+      - attach_workspace:
+          at: _site
+      - publish_to_pages_staging
+
+  publish_cloudflare_production:
+    docker:
+      - image: cimg/node:18.4.0
+    steps:
+      - attach_workspace:
+          at: _site
+      - publish_to_pages_production
       
 workflows:
   build:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              ignore: /^gh-pages$/
   release:
     jobs:
+      - release_staging:
+          filters:
+            branches:
+              only: /^gh-pages$/
       - release_production:
           filters:
             branches:
@@ -172,3 +231,19 @@ workflows:
             branches:
               only: /^gh-pages$/
           context: binary-frontend-artifact-upload
+      - publish_cloudflare_staging:
+          requires:
+            - release_staging
+          filters:
+            branches:
+              only: /^gh-pages$/
+          context: binary-frontend-artifact-upload
+      - publish_cloudflare_production:
+          requires:
+            - release_production
+          filters:
+            branches:
+              only: /^gh-pages$/
+          context: binary-frontend-artifact-upload
+
+          
