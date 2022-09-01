@@ -77,7 +77,14 @@
                 "employment_contract",
                 "brokerage statement",
                 "payslip",
-                "edd_others"
+                "edd_others",
+                "coi",
+                "business_poa",
+                "article_of_association",
+                "memorandum",
+                "authorisation_letter",
+                "declarations",
+                "business_documents_others"
             ]
         },
         "expected_checksum": {
