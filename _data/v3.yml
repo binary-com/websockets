@@ -217,5 +217,7 @@ groups:
         title: Transfer Between Accounts
       - name: verify_email
         title: Verify Email
+      - name: verify_email_cellxpert
+        title: Verify Email
       - name: website_status
         title: Server Status
