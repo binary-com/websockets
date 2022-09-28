@@ -324,9 +324,11 @@
                         "cancellation_grace_period",
                         "cancellation_limit",
                         "disabled",
+                        "feature_level",
                         "fixed_rate_adverts",
                         "float_rate_adverts",
                         "float_rate_offset_limit",
+                        "local_currencies",
                         "maximum_advert_amount",
                         "maximum_order_amount",
                         "order_daily_limit",
@@ -368,6 +370,10 @@
                                 1
                             ]
                         },
+                        "feature_level": {
+                            "description": "Indicates the availbility of certain backend features.",
+                            "type": "integer"
+                        },
                         "fixed_rate_adverts": {
                             "description": "Availability of fixed rate adverts.",
                             "type": "string",
@@ -393,6 +399,45 @@
                         "float_rate_offset_limit": {
                             "description": "Maximum rate offset for floating rate adverts.",
                             "type": "number"
+                        },
+                        "local_currencies": {
+                            "description": "Available local currencies for p2p_advert_list request.",
+                            "type": "array",
+                            "items": {
+                                "description": "Local currency details.",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                    "display_name",
+                                    "has_adverts",
+                                    "symbol"
+                                ],
+                                "properties": {
+                                    "display_name": {
+                                        "description": "Local currency name",
+                                        "type": "string"
+                                    },
+                                    "has_adverts": {
+                                        "description": "Indicates that there are adverts available for this currency.",
+                                        "type": "integer",
+                                        "enum": [
+                                            0,
+                                            1
+                                        ]
+                                    },
+                                    "is_default": {
+                                        "description": "Indicates that this is local currency for the current country.",
+                                        "type": "integer",
+                                        "enum": [
+                                            1
+                                        ]
+                                    },
+                                    "symbol": {
+                                        "description": "Local currency symbol",
+                                        "type": "string"
+                                    }
+                                }
+                            }
                         },
                         "maximum_advert_amount": {
                             "description": "Maximum amount of an advert, in USD.",
