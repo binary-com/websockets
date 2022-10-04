@@ -76,6 +76,16 @@
                         "examples": [
                             "real\\vanuatu_financial"
                         ]
+                    },
+                    "status": {
+                        "description": "The status of account.",
+                        "type": [
+                            "null",
+                            "string"
+                        ],
+                        "examples": [
+                            "poa_failed"
+                        ]
                     }
                 }
             }
