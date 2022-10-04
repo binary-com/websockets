@@ -207,6 +207,13 @@
                             }
                         }
                     },
+                    "status": {
+                        "description": "MT5 account status.",
+                        "type": [
+                            "null",
+                            "string"
+                        ]
+                    },
                     "sub_account_type": {
                         "description": "Sub account type",
                         "type": "string",
