@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Unsubscribe Email (response)",
+    "description": "The result of the unsubscribe email request.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "binary_user_id": {
+            "description": "Customer User ID.",
+            "type": "number"
+        },
+        "email_unsubscribe_status": {
+            "title": "Email Unsubscription Status",
+            "description": "`1`: email notification unsubscribed sucssesfully, `0`: failed to unsubscribed email notification",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "unsubscribe_email"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

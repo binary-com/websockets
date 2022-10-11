@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Unsubscribe Email (request)",
+    "description": "It unsubscribe user from the email subscription.",
+    "type": "object",
+    "auth_required": 0,
+    "additionalProperties": false,
+    "required": [
+        "unsubscribe_email",
+        "binary_user_id",
+        "checksum"
+    ],
+    "properties": {
+        "unsubscribe_email": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "binary_user_id": {
+            "description": "Customer User ID.",
+            "type": "number"
+        },
+        "checksum": {
+            "description": "The generated checksum for the customer.",
+            "type": "string"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}
