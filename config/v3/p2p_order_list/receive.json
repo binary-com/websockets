@@ -257,6 +257,14 @@
                                     1
                                 ]
                             },
+                            "is_seen": {
+                                "description": "`1` if the latest order changes have been seen by the current client, otherwise `0`.",
+                                "type": "integer",
+                                "enum": [
+                                    1,
+                                    0
+                                ]
+                            },
                             "local_currency": {
                                 "description": "Local currency for this order.",
                                 "type": "string",
