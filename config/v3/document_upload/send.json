@@ -129,7 +129,10 @@
             "properties": {
                 "details": {
                     "description": "A collection of unspecific information related to the proof of ownership being uploaded",
-                    "type": "object"
+                    "type": "object",
+                    "required": [
+                        "payment_identifier"
+                    ]
                 },
                 "id": {
                     "description": "The id of the proof of ownership as shown in the /get_account_status proof of ownership list",
