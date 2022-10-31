@@ -302,16 +302,16 @@
                                                 "description": "The request timestamp of creation",
                                                 "type": "string"
                                             },
+                                            "documents_required": {
+                                                "description": "Number of documents required to be uploaded for proof of ownership",
+                                                "type": "number"
+                                            },
                                             "id": {
                                                 "description": "The identifier of the proof of ownership request",
                                                 "type": "number"
                                             },
                                             "payment_method": {
                                                 "description": "The display name of the payment method being requested",
-                                                "type": "string"
-                                            },
-                                            "payment_method_identifier": {
-                                                "description": "The identifier of the payment method being requested",
                                                 "type": "string"
                                             }
                                         }
