@@ -18,11 +18,14 @@
                 "additionalProperties": false,
                 "required": [
                     "display_name",
+                    "display_order",
                     "exchange_is_open",
                     "is_trading_suspended",
                     "market",
                     "market_display_name",
                     "pip",
+                    "subgroup",
+                    "subgroup_display_name",
                     "submarket",
                     "submarket_display_name",
                     "symbol",
@@ -44,6 +47,10 @@
                     "display_name": {
                         "description": "Display name.",
                         "type": "string"
+                    },
+                    "display_order": {
+                        "description": "Display order.",
+                        "type": "integer"
                     },
                     "exchange_is_open": {
                         "description": "`1` if market is currently open, `0` if closed.",
@@ -96,8 +103,20 @@
                         "description": "Number of seconds elapsed since the last spot price. Only returned on `full` active symbols call.",
                         "type": "string"
                     },
+                    "spot_percentage_change": {
+                        "description": "Daily percentage for a symbol. Only returned on 'full' active symbols call.",
+                        "type": "string"
+                    },
                     "spot_time": {
                         "description": "Latest spot epoch time. Only returned on `full` active symbols call.",
+                        "type": "string"
+                    },
+                    "subgroup": {
+                        "description": "Subgroup name.",
+                        "type": "string"
+                    },
+                    "subgroup_display_name": {
+                        "description": "Translated subgroup name.",
                         "type": "string"
                     },
                     "submarket": {

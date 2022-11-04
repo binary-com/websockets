@@ -38,11 +38,6 @@
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
-                        "basket_index": {
-                            "title": "Basket Indices",
-                            "description": "Name of basket_index.",
-                            "type": "object"
-                        },
                         "commodities": {
                             "title": "Commodities",
                             "description": "Name of commodities.",

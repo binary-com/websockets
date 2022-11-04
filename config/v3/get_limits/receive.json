@@ -34,15 +34,19 @@
                     "description": "Contains limitation information for each market.",
                     "type": "object",
                     "patternProperties": {
-                        "^(commodities|forex|indices|synthetic_index|basket_index)$": {
+                        "^(commodities|forex|indices|synthetic_index)$": {
                             "description": "List of limitation profiles for each market",
                             "type": "array",
                             "items": {
                                 "type": "object",
                                 "additionalProperties": false,
                                 "properties": {
+                                    "level": {
+                                        "description": "The group the profile belong to.",
+                                        "type": "string"
+                                    },
                                     "name": {
-                                        "description": "The submarket display name.",
+                                        "description": "The market or submarket display name.",
                                         "type": "string"
                                     },
                                     "payout_limit": {
