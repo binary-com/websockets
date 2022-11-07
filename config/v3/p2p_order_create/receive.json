@@ -329,6 +329,26 @@
                                         "ewallet",
                                         "other"
                                     ]
+                                },
+                                "used_by_adverts": {
+                                    "description": "IDs of adverts that use this payment method.",
+                                    "type": [
+                                        "array",
+                                        "null"
+                                    ],
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "used_by_orders": {
+                                    "description": "IDs of orders that use this payment method.",
+                                    "type": [
+                                        "array",
+                                        "null"
+                                    ],
+                                    "items": {
+                                        "type": "string"
+                                    }
                                 }
                             }
                         }

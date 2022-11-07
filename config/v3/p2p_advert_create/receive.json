@@ -264,7 +264,9 @@
                                 "fields",
                                 "is_enabled",
                                 "method",
-                                "type"
+                                "type",
+                                "used_by_adverts",
+                                "used_by_orders"
                             ],
                             "properties": {
                                 "display_name": {
@@ -332,6 +334,26 @@
                                         "ewallet",
                                         "other"
                                     ]
+                                },
+                                "used_by_adverts": {
+                                    "description": "IDs of adverts that use this payment method.",
+                                    "type": [
+                                        "array",
+                                        "null"
+                                    ],
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "used_by_orders": {
+                                    "description": "IDs of orders that use this payment method.",
+                                    "type": [
+                                        "array",
+                                        "null"
+                                    ],
+                                    "items": {
+                                        "type": "string"
+                                    }
                                 }
                             }
                         }
