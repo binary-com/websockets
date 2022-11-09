@@ -92,6 +92,8 @@
                     "additionalProperties": false,
                     "required": [
                         "id",
+                        "is_online",
+                        "last_online_time",
                         "loginid",
                         "name"
                     ],
@@ -107,11 +109,26 @@
                             "description": "The advertiser's unique identifier.",
                             "type": "string"
                         },
+                        "is_online": {
+                            "description": "Indicates if the advertiser is currently online.",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        },
                         "last_name": {
                             "description": "The advertiser's last name.",
                             "type": [
                                 "null",
                                 "string"
+                            ]
+                        },
+                        "last_online_time": {
+                            "description": "Epoch of the latest time the advertiser was online, up to 6 months.",
+                            "type": [
+                                "integer",
+                                "null"
                             ]
                         },
                         "loginid": {
@@ -143,6 +160,8 @@
                     "additionalProperties": false,
                     "required": [
                         "id",
+                        "is_online",
+                        "last_online_time",
                         "loginid",
                         "name"
                     ],
@@ -158,11 +177,26 @@
                             "description": "The client's unique P2P identifier.",
                             "type": "string"
                         },
+                        "is_online": {
+                            "description": "Indicates if the advertiser is currently online.",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        },
                         "last_name": {
                             "description": "The client's last name.",
                             "type": [
                                 "null",
                                 "string"
+                            ]
+                        },
+                        "last_online_time": {
+                            "description": "Epoch of the latest time the advertiser was online, up to 6 months.",
+                            "type": [
+                                "integer",
+                                "null"
                             ]
                         },
                         "loginid": {

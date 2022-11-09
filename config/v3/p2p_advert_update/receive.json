@@ -37,6 +37,8 @@
                     "required": [
                         "completed_orders_count",
                         "id",
+                        "is_online",
+                        "last_online_time",
                         "name",
                         "rating_average",
                         "rating_count",
@@ -57,9 +59,24 @@
                             "description": "The advertiser's unique identifier.",
                             "type": "string"
                         },
+                        "is_online": {
+                            "description": "Indicates if the advertiser is currently online.",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        },
                         "last_name": {
                             "description": "The advertiser's last name.",
                             "type": "string"
+                        },
+                        "last_online_time": {
+                            "description": "Epoch of the latest time the advertiser was online, up to 6 months.",
+                            "type": [
+                                "integer",
+                                "null"
+                            ]
                         },
                         "name": {
                             "description": "The advertiser's displayed name.",
