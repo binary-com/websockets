@@ -100,6 +100,8 @@
                                 "additionalProperties": false,
                                 "required": [
                                     "id",
+                                    "is_online",
+                                    "last_online_time",
                                     "loginid",
                                     "name"
                                 ],
@@ -111,6 +113,14 @@
                                     "id": {
                                         "description": "The advertiser's unique identifier.",
                                         "type": "string"
+                                    },
+                                    "is_online": {
+                                        "description": "Indicates if the advertiser is currently online.",
+                                        "type": "integer",
+                                        "enum": [
+                                            0,
+                                            1
+                                        ]
                                     },
                                     "is_recommended": {
                                         "description": "Indicates that the advertiser was recommended in the most recent review by the current user.",
@@ -127,6 +137,13 @@
                                     "last_name": {
                                         "description": "The advertiser's last name.",
                                         "type": "string"
+                                    },
+                                    "last_online_time": {
+                                        "description": "Epoch of the latest time the advertiser was online, up to 6 months.",
+                                        "type": [
+                                            "integer",
+                                            "null"
+                                        ]
                                     },
                                     "loginid": {
                                         "description": "The advertiser's account identifier.",
@@ -157,6 +174,8 @@
                                 "additionalProperties": false,
                                 "required": [
                                     "id",
+                                    "is_online",
+                                    "last_online_time",
                                     "loginid",
                                     "name"
                                 ],
@@ -168,6 +187,14 @@
                                     "id": {
                                         "description": "The client's unique P2P identifier.",
                                         "type": "string"
+                                    },
+                                    "is_online": {
+                                        "description": "Indicates if the advertiser is currently online.",
+                                        "type": "integer",
+                                        "enum": [
+                                            0,
+                                            1
+                                        ]
                                     },
                                     "is_recommended": {
                                         "description": "Indicates that the client was recommended in the most recent review by the current user.",
@@ -184,6 +211,13 @@
                                     "last_name": {
                                         "description": "The client's last name.",
                                         "type": "string"
+                                    },
+                                    "last_online_time": {
+                                        "description": "Epoch of the latest time the advertiser was online, up to 6 months.",
+                                        "type": [
+                                            "integer",
+                                            "null"
+                                        ]
                                     },
                                     "loginid": {
                                         "description": "The client's account identifier.",
