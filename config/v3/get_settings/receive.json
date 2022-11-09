@@ -203,6 +203,10 @@
                         "string"
                     ]
                 },
+                "trading_hub": {
+                    "description": "Boolean value 1 or 0, indicating if client has enabled the Trading Hub dashboard",
+                    "type": "integer"
+                },
                 "user_hash": {
                     "description": "Hash generated using user details to verify whether the user is legitimate for our customer support system.",
                     "type": [
