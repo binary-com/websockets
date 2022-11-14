@@ -18,7 +18,7 @@
             ],
             "properties": {
                 "currencies_config": {
-                    "description": "Provides minimum withdrawal for all cryptocurrencies in USD",
+                    "description": "Currency configuration including limitiations for each crypto currency.",
                     "type": "object",
                     "minProperties": 0,
                     "patternProperties": {
@@ -27,6 +27,10 @@
                             "type": "object",
                             "additionalProperties": false,
                             "properties": {
+                                "minimum_deposit": {
+                                    "description": "Minimum deposit amount in corresponding cryptocurrency value.",
+                                    "type": "number"
+                                },
                                 "minimum_withdrawal": {
                                     "description": "Minimum withdrawal for the cryptocurrency in USD.",
                                     "type": "number"
