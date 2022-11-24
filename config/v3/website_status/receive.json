@@ -15,7 +15,6 @@
             "additionalProperties": false,
             "required": [
                 "api_call_limits",
-                "crypto_config",
                 "currencies_config"
             ],
             "properties": {
@@ -126,27 +125,6 @@
                 "clients_country": {
                     "description": "Country code of connected IP",
                     "type": "string"
-                },
-                "crypto_config": {
-                    "description": "Provides minimum withdrawal for all crypto currency in USD",
-                    "type": "object",
-                    "minProperties": 0,
-                    "patternProperties": {
-                        "^[a-zA-Z0-9]{2,20}$": {
-                            "description": "Crypto-currency code",
-                            "type": "object",
-                            "additionalProperties": false,
-                            "required": [
-                                "minimum_withdrawal"
-                            ],
-                            "properties": {
-                                "minimum_withdrawal": {
-                                    "description": "Minimum withdrawal for the currency in USD.",
-                                    "type": "number"
-                                }
-                            }
-                        }
-                    }
                 },
                 "currencies_config": {
                     "description": "Available currencies and their information",
