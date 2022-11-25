@@ -1,20 +1,36 @@
 {
     "set_financial_assessment": 1,
-    "account_turnover": "Less than $25,000",
-    "binary_options_trading_experience": "1-2 years",
-    "binary_options_trading_frequency": "40 transactions or more in the past 12 months",
-    "cfd_trading_experience": "Over 3 years",
-    "cfd_trading_frequency": "6-10 transactions in the past 12 months",
-    "education_level": "Secondary",
-    "employment_industry": "Finance",
-    "employment_status": "Self-Employed",
-    "estimated_worth": "$100,000 - $250,000",
-    "forex_trading_experience": "Over 3 years",
-    "forex_trading_frequency": "0-5 transactions in the past 12 months",
-    "income_source": "Self-Employed",
-    "net_income": "$25,000 - $50,000",
-    "occupation": "Managers",
-    "other_instruments_trading_experience": "Over 3 years",
-    "other_instruments_trading_frequency": "6-10 transactions in the past 12 months",
-    "source_of_wealth": "Company Ownership"
+    "financial_information": {
+        "account_turnover": "Less than $25,000",
+        "education_level": "Secondary",
+        "employment_industry": "Finance",
+        "employment_status": "Self-Employed",
+        "estimated_worth": "$100,000 - $250,000",
+        "income_source": "Self-Employed",
+        "net_income": "$25,000 - $50,000",
+        "occupation": "Managers",
+        "source_of_wealth": "Company Ownership"
+    },
+    "trading_experience": {
+        "binary_options_trading_experience": "1-2 years",
+        "binary_options_trading_frequency": "40 transactions or more in the past 12 months",
+        "cfd_trading_experience": "Over 3 years",
+        "cfd_trading_frequency": "6-10 transactions in the past 12 months",
+        "forex_trading_experience": "Over 3 years",
+        "forex_trading_frequency": "0-5 transactions in the past 12 months",
+        "other_instruments_trading_experience": "Over 3 years",
+        "other_instruments_trading_frequency": "6-10 transactions in the past 12 months"
+    },
+    "trading_experience_regulated": {
+        "cfd_experience": "Less than a year",
+        "cfd_frequency": "1 - 5 transactions in the past 12 months",
+        "cfd_trading_definition": "Speculate on the price movement.",
+        "leverage_impact_trading": "Leverage lets you open larger positions for a fraction of the trade's value.",
+        "leverage_trading_high_risk_stop_loss": "Close your trade automatically when the loss is more than or equal to a specific amount.",
+        "required_initial_margin": "When opening a Leveraged CFD trade.",
+        "risk_tolerance": "Yes",
+        "source_of_experience": "I have an academic degree, professional certification, and/or work experience.",
+        "trading_experience_financial_instruments": "Less than a year",
+        "trading_frequency_financial_instruments": "1 - 5 transactions in the past 12 months"
+    }
 }

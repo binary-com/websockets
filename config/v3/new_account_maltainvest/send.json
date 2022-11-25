@@ -10,18 +10,12 @@
     "additionalProperties": false,
     "required": [
         "new_account_maltainvest",
-        "accept_risk",
         "address_city",
         "address_line_1",
         "date_of_birth",
-        "education_level",
-        "employment_industry",
-        "estimated_worth",
+        "employment_status",
         "first_name",
-        "income_source",
         "last_name",
-        "net_income",
-        "occupation",
         "residence",
         "salutation",
         "tax_identification_number",
@@ -93,42 +87,35 @@
             "type": "string",
             "pattern": "^[\\w-]{0,32}$"
         },
-        "binary_options_trading_experience": {
-            "description": "[Optional] Binary options trading experience.",
+        "cfd_experience": {
+            "description": "How much experience do you have in CFD trading?",
             "type": "string",
             "enum": [
-                "0-1 year",
-                "1-2 years",
+                "No experience",
+                "Less than a year",
+                "1 - 2 years",
                 "Over 3 years"
             ]
         },
-        "binary_options_trading_frequency": {
-            "description": "[Optional] Binary options trading frequency.",
+        "cfd_frequency": {
+            "description": "How many CFD trades have you placed in the past 12 months?",
             "type": "string",
             "enum": [
-                "0-5 transactions in the past 12 months",
-                "6-10 transactions in the past 12 months",
-                "11-39 transactions in the past 12 months",
+                "No transactions in the past 12 months",
+                "1 - 5 transactions in the past 12 months",
+                "6 - 10 transactions in the past 12 months",
+                "11 - 39 transactions in the past 12 months",
                 "40 transactions or more in the past 12 months"
             ]
         },
-        "cfd_trading_experience": {
-            "description": "[Optional] CFDs trading experience.",
+        "cfd_trading_definition": {
+            "description": "In your understanding, CFD trading allows you to:",
             "type": "string",
             "enum": [
-                "0-1 year",
-                "1-2 years",
-                "Over 3 years"
-            ]
-        },
-        "cfd_trading_frequency": {
-            "description": "[Optional] CFDs trading frequency.",
-            "type": "string",
-            "enum": [
-                "0-5 transactions in the past 12 months",
-                "6-10 transactions in the past 12 months",
-                "11-39 transactions in the past 12 months",
-                "40 transactions or more in the past 12 months"
+                "Purchase shares of a company or physical commodities.",
+                "Place a bet on the price movement.",
+                "Speculate on the price movement.",
+                "Make a long-term investment."
             ]
         },
         "citizen": {
@@ -185,7 +172,7 @@
             ]
         },
         "employment_status": {
-            "description": "[Optional] Employment Status.",
+            "description": "Employment Status.",
             "type": "string",
             "enum": [
                 "Employed",
@@ -211,25 +198,6 @@
             "type": "string",
             "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$"
         },
-        "forex_trading_experience": {
-            "description": "[Optional] Forex trading experience.",
-            "type": "string",
-            "enum": [
-                "0-1 year",
-                "1-2 years",
-                "Over 3 years"
-            ]
-        },
-        "forex_trading_frequency": {
-            "description": "[Optional] Forex trading frequency.",
-            "type": "string",
-            "enum": [
-                "0-5 transactions in the past 12 months",
-                "6-10 transactions in the past 12 months",
-                "11-39 transactions in the past 12 months",
-                "40 transactions or more in the past 12 months"
-            ]
-        },
         "income_source": {
             "description": "Income Source.",
             "type": "string",
@@ -246,6 +214,26 @@
             "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
             "type": "string",
             "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$"
+        },
+        "leverage_impact_trading": {
+            "description": "How does leverage affect CFD trading?",
+            "type": "string",
+            "enum": [
+                "Leverage is a risk mitigation technique.",
+                "Leverage prevents you from opening large positions.",
+                "Leverage guarantees profits.",
+                "Leverage lets you open larger positions for a fraction of the trade's value."
+            ]
+        },
+        "leverage_trading_high_risk_stop_loss": {
+            "description": "Leverage trading is high-risk, so it's a good idea to use risk management features such as stop loss. Stop loss allows you to",
+            "type": "string",
+            "enum": [
+                "Cancel your trade at any time within a chosen timeframe.",
+                "Close your trade automatically when the loss is more than or equal to a specific amount.",
+                "Close your trade automatically when the profit is more than or equal to a specific amount.",
+                "Make a guaranteed profit on your trade."
+            ]
         },
         "net_income": {
             "description": "Net Annual Income.",
@@ -284,25 +272,6 @@
                 "Unemployed"
             ]
         },
-        "other_instruments_trading_experience": {
-            "description": "[Optional] Trading experience in other financial instruments.",
-            "type": "string",
-            "enum": [
-                "0-1 year",
-                "1-2 years",
-                "Over 3 years"
-            ]
-        },
-        "other_instruments_trading_frequency": {
-            "description": "[Optional] Trading frequency in other financial instruments.",
-            "type": "string",
-            "enum": [
-                "0-5 transactions in the past 12 months",
-                "6-10 transactions in the past 12 months",
-                "11-39 transactions in the past 12 months",
-                "40 transactions or more in the past 12 months"
-            ]
-        },
         "phone": {
             "description": "[Optional] Starting with `+` followed by 9-35 digits, hyphens or space.",
             "type": [
@@ -315,10 +284,28 @@
             "type": "string",
             "pattern": "^[a-z]{2}$"
         },
+        "required_initial_margin": {
+            "description": "When would you be required to pay an initial margin?",
+            "type": "string",
+            "enum": [
+                "When opening a Leveraged CFD trade.",
+                "When trading Multipliers.",
+                "When buying shares of a company.",
+                "All of the above."
+            ]
+        },
         "residence": {
             "description": "2-letter country code, possible value receive from `residence_list` call.",
             "type": "string",
             "pattern": "^[a-z]{2}$"
+        },
+        "risk_tolerance": {
+            "description": "Do you understand that you could potentially lose 100% of the money you use to trade?",
+            "type": "string",
+            "enum": [
+                "Yes",
+                "No"
+            ]
         },
         "salutation": {
             "description": "Accept any value in enum list.",
@@ -350,6 +337,17 @@
                 "Favourite artist"
             ]
         },
+        "source_of_experience": {
+            "description": "How much knowledge and experience do you have in relation to online trading?",
+            "type": "string",
+            "enum": [
+                "I have an academic degree, professional certification, and/or work experience.",
+                "I trade forex CFDs and other complex financial instruments.",
+                "I have attended seminars, training, and/or workshops.",
+                "I have little experience.",
+                "I have no knowledge."
+            ]
+        },
         "source_of_wealth": {
             "description": "[Optional] Source of wealth.",
             "type": "string",
@@ -372,6 +370,27 @@
             "description": "Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for `maltainvest` landing company.",
             "type": "string",
             "pattern": "^[a-z]{0,2}(?:,[a-z]{2})*$"
+        },
+        "trading_experience_financial_instruments": {
+            "description": "How much experience do you have with other financial instruments?",
+            "type": "string",
+            "enum": [
+                "No experience",
+                "Less than a year",
+                "1 - 2 years",
+                "Over 3 years"
+            ]
+        },
+        "trading_frequency_financial_instruments": {
+            "description": "How many trades have you placed with other financial instruments in the past 12 months?",
+            "type": "string",
+            "enum": [
+                "No transactions in the past 12 months",
+                "1 - 5 transactions in the past 12 months",
+                "6 - 10 transactions in the past 12 months",
+                "11 - 39 transactions in the past 12 months",
+                "40 transactions or more in the past 12 months"
+            ]
         },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
