@@ -9,13 +9,7 @@
     ],
     "additionalProperties": false,
     "required": [
-        "set_financial_assessment",
-        "education_level",
-        "employment_industry",
-        "estimated_worth",
-        "income_source",
-        "net_income",
-        "occupation"
+        "set_financial_assessment"
     ],
     "properties": {
         "set_financial_assessment": {
@@ -75,7 +69,7 @@
             ]
         },
         "education_level": {
-            "description": "Level of Education.",
+            "description": "[Optional] Level of Education.",
             "type": "string",
             "enum": [
                 "Primary",
@@ -84,7 +78,7 @@
             ]
         },
         "employment_industry": {
-            "description": "Industry of Employment.",
+            "description": "[Optional] Industry of Employment.",
             "type": "string",
             "enum": [
                 "Construction",
@@ -115,7 +109,7 @@
             ]
         },
         "estimated_worth": {
-            "description": "Estimated Net Worth.",
+            "description": "[Optional] Estimated Net Worth.",
             "type": "string",
             "enum": [
                 "Less than $100,000",
@@ -124,6 +118,139 @@
                 "$500,001 - $1,000,000",
                 "Over $1,000,000"
             ]
+        },
+        "financial_information": {
+            "description": "[Optional] The financial information of a client",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "education_level",
+                "employment_industry",
+                "estimated_worth",
+                "income_source",
+                "net_income",
+                "occupation"
+            ],
+            "properties": {
+                "account_turnover": {
+                    "description": "[Optional] The anticipated account turnover.",
+                    "type": "string",
+                    "enum": [
+                        "Less than $25,000",
+                        "$25,000 - $50,000",
+                        "$50,001 - $100,000",
+                        "$100,001 - $500,000",
+                        "Over $500,000"
+                    ]
+                },
+                "education_level": {
+                    "description": "Level of Education.",
+                    "type": "string",
+                    "enum": [
+                        "Primary",
+                        "Secondary",
+                        "Tertiary"
+                    ]
+                },
+                "employment_industry": {
+                    "description": "Industry of Employment.",
+                    "type": "string",
+                    "enum": [
+                        "Construction",
+                        "Education",
+                        "Finance",
+                        "Health",
+                        "Tourism",
+                        "Information & Communications Technology",
+                        "Science & Engineering",
+                        "Legal",
+                        "Social & Cultural",
+                        "Agriculture",
+                        "Real Estate",
+                        "Food Services",
+                        "Manufacturing",
+                        "Unemployed"
+                    ]
+                },
+                "employment_status": {
+                    "description": "[Optional] Employment Status.",
+                    "type": "string",
+                    "enum": [
+                        "Employed",
+                        "Pensioner",
+                        "Self-Employed",
+                        "Student",
+                        "Unemployed"
+                    ]
+                },
+                "estimated_worth": {
+                    "description": "Estimated Net Worth.",
+                    "type": "string",
+                    "enum": [
+                        "Less than $100,000",
+                        "$100,000 - $250,000",
+                        "$250,001 - $500,000",
+                        "$500,001 - $1,000,000",
+                        "Over $1,000,000"
+                    ]
+                },
+                "income_source": {
+                    "description": "Income Source.",
+                    "type": "string",
+                    "enum": [
+                        "Salaried Employee",
+                        "Self-Employed",
+                        "Investments & Dividends",
+                        "Pension",
+                        "State Benefits",
+                        "Savings & Inheritance"
+                    ]
+                },
+                "net_income": {
+                    "description": "Net Annual Income.",
+                    "type": "string",
+                    "enum": [
+                        "Less than $25,000",
+                        "$25,000 - $50,000",
+                        "$50,001 - $100,000",
+                        "$100,001 - $500,000",
+                        "Over $500,000"
+                    ]
+                },
+                "occupation": {
+                    "description": "Occupation.",
+                    "type": "string",
+                    "enum": [
+                        "Chief Executives, Senior Officials and Legislators",
+                        "Managers",
+                        "Professionals",
+                        "Clerks",
+                        "Personal Care, Sales and Service Workers",
+                        "Agricultural, Forestry and Fishery Workers",
+                        "Craft, Metal, Electrical and Electronics Workers",
+                        "Plant and Machine Operators and Assemblers",
+                        "Cleaners and Helpers",
+                        "Mining, Construction, Manufacturing and Transport Workers",
+                        "Armed Forces",
+                        "Government Officers",
+                        "Students",
+                        "Unemployed"
+                    ]
+                },
+                "source_of_wealth": {
+                    "description": "[Optional] Source of wealth.",
+                    "type": "string",
+                    "enum": [
+                        "Accumulation of Income/Savings",
+                        "Cash Business",
+                        "Company Ownership",
+                        "Divorce Settlement",
+                        "Inheritance",
+                        "Investment Income",
+                        "Sale of Property"
+                    ]
+                }
+            }
         },
         "forex_trading_experience": {
             "description": "[Optional] Forex trading experience.",
@@ -145,7 +272,7 @@
             ]
         },
         "income_source": {
-            "description": "Income Source.",
+            "description": "[Optional] Income Source.",
             "type": "string",
             "enum": [
                 "Salaried Employee",
@@ -157,7 +284,7 @@
             ]
         },
         "net_income": {
-            "description": "Net Annual Income.",
+            "description": "[Optional] Net Annual Income.",
             "type": "string",
             "enum": [
                 "Less than $25,000",
@@ -168,7 +295,7 @@
             ]
         },
         "occupation": {
-            "description": "Occupation.",
+            "description": "[Optional] Occupation.",
             "type": "string",
             "enum": [
                 "Chief Executives, Senior Officials and Legislators",
@@ -218,6 +345,209 @@
                 "Investment Income",
                 "Sale of Property"
             ]
+        },
+        "trading_experience": {
+            "description": "[Optional] The trading experience of a client",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "binary_options_trading_experience": {
+                    "description": "[Optional] Binary options trading experience.",
+                    "type": "string",
+                    "enum": [
+                        "0-1 year",
+                        "1-2 years",
+                        "Over 3 years"
+                    ]
+                },
+                "binary_options_trading_frequency": {
+                    "description": "[Optional] Binary options trading frequency.",
+                    "type": "string",
+                    "enum": [
+                        "0-5 transactions in the past 12 months",
+                        "6-10 transactions in the past 12 months",
+                        "11-39 transactions in the past 12 months",
+                        "40 transactions or more in the past 12 months"
+                    ]
+                },
+                "cfd_trading_experience": {
+                    "description": "[Optional] CFDs trading experience.",
+                    "type": "string",
+                    "enum": [
+                        "0-1 year",
+                        "1-2 years",
+                        "Over 3 years"
+                    ]
+                },
+                "cfd_trading_frequency": {
+                    "description": "[Optional] CFDs trading frequency.",
+                    "type": "string",
+                    "enum": [
+                        "0-5 transactions in the past 12 months",
+                        "6-10 transactions in the past 12 months",
+                        "11-39 transactions in the past 12 months",
+                        "40 transactions or more in the past 12 months"
+                    ]
+                },
+                "forex_trading_experience": {
+                    "description": "[Optional] Forex trading experience.",
+                    "type": "string",
+                    "enum": [
+                        "0-1 year",
+                        "1-2 years",
+                        "Over 3 years"
+                    ]
+                },
+                "forex_trading_frequency": {
+                    "description": "[Optional] Forex trading frequency.",
+                    "type": "string",
+                    "enum": [
+                        "0-5 transactions in the past 12 months",
+                        "6-10 transactions in the past 12 months",
+                        "11-39 transactions in the past 12 months",
+                        "40 transactions or more in the past 12 months"
+                    ]
+                },
+                "other_instruments_trading_experience": {
+                    "description": "[Optional] Trading experience in other financial instruments.",
+                    "type": "string",
+                    "enum": [
+                        "0-1 year",
+                        "1-2 years",
+                        "Over 3 years"
+                    ]
+                },
+                "other_instruments_trading_frequency": {
+                    "description": "[Optional] Trading frequency in other financial instruments.",
+                    "type": "string",
+                    "enum": [
+                        "0-5 transactions in the past 12 months",
+                        "6-10 transactions in the past 12 months",
+                        "11-39 transactions in the past 12 months",
+                        "40 transactions or more in the past 12 months"
+                    ]
+                }
+            }
+        },
+        "trading_experience_regulated": {
+            "description": "[Optional] The trading experience of a `maltainvest` client",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "cfd_experience",
+                "cfd_frequency",
+                "cfd_trading_definition",
+                "leverage_impact_trading",
+                "leverage_trading_high_risk_stop_loss",
+                "required_initial_margin",
+                "risk_tolerance",
+                "source_of_experience",
+                "trading_experience_financial_instruments",
+                "trading_frequency_financial_instruments"
+            ],
+            "properties": {
+                "cfd_experience": {
+                    "description": "How much experience do you have in CFD trading?",
+                    "type": "string",
+                    "enum": [
+                        "No experience",
+                        "Less than a year",
+                        "1 - 2 years",
+                        "Over 3 years"
+                    ]
+                },
+                "cfd_frequency": {
+                    "description": "How many CFD trades have you placed in the past 12 months?",
+                    "type": "string",
+                    "enum": [
+                        "No transactions in the past 12 months",
+                        "1 - 5 transactions in the past 12 months",
+                        "6 - 10 transactions in the past 12 months",
+                        "11 - 39 transactions in the past 12 months",
+                        "40 transactions or more in the past 12 months"
+                    ]
+                },
+                "cfd_trading_definition": {
+                    "description": "In your understanding, CFD trading allows you to:",
+                    "type": "string",
+                    "enum": [
+                        "Purchase shares of a company or physical commodities.",
+                        "Place a bet on the price movement.",
+                        "Speculate on the price movement.",
+                        "Make a long-term investment."
+                    ]
+                },
+                "leverage_impact_trading": {
+                    "description": "How does leverage affect CFD trading?",
+                    "type": "string",
+                    "enum": [
+                        "Leverage is a risk mitigation technique.",
+                        "Leverage prevents you from opening large positions.",
+                        "Leverage guarantees profits.",
+                        "Leverage lets you open larger positions for a fraction of the trade's value."
+                    ]
+                },
+                "leverage_trading_high_risk_stop_loss": {
+                    "description": "Leverage trading is high-risk, so it's a good idea to use risk management features such as stop loss. Stop loss allows you to",
+                    "type": "string",
+                    "enum": [
+                        "Cancel your trade at any time within a chosen timeframe.",
+                        "Close your trade automatically when the loss is more than or equal to a specific amount.",
+                        "Close your trade automatically when the profit is more than or equal to a specific amount.",
+                        "Make a guaranteed profit on your trade."
+                    ]
+                },
+                "required_initial_margin": {
+                    "description": "When would you be required to pay an initial margin?",
+                    "type": "string",
+                    "enum": [
+                        "When opening a Leveraged CFD trade.",
+                        "When trading Multipliers.",
+                        "When buying shares of a company.",
+                        "All of the above."
+                    ]
+                },
+                "risk_tolerance": {
+                    "description": "Do you understand that you could potentially lose 100% of the money you use to trade?",
+                    "type": "string",
+                    "enum": [
+                        "Yes",
+                        "No"
+                    ]
+                },
+                "source_of_experience": {
+                    "description": "How much knowledge and experience do you have in relation to online trading?",
+                    "type": "string",
+                    "enum": [
+                        "I have an academic degree, professional certification, and/or work experience.",
+                        "I trade forex CFDs and other complex financial instruments.",
+                        "I have attended seminars, training, and/or workshops.",
+                        "I have little experience.",
+                        "I have no knowledge."
+                    ]
+                },
+                "trading_experience_financial_instruments": {
+                    "description": "How much experience do you have with other financial instruments?",
+                    "type": "string",
+                    "enum": [
+                        "No experience",
+                        "Less than a year",
+                        "1 - 2 years",
+                        "Over 3 years"
+                    ]
+                },
+                "trading_frequency_financial_instruments": {
+                    "description": "How many trades have you placed with other financial instruments in the past 12 months?",
+                    "type": "string",
+                    "enum": [
+                        "No transactions in the past 12 months",
+                        "1 - 5 transactions in the past 12 months",
+                        "6 - 10 transactions in the past 12 months",
+                        "11 - 39 transactions in the past 12 months",
+                        "40 transactions or more in the past 12 months"
+                    ]
+                }
+            }
         },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",

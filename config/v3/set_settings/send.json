@@ -86,6 +86,17 @@
                 1
             ]
         },
+        "employment_status": {
+            "description": "[Optional] Employment Status.",
+            "type": "string",
+            "enum": [
+                "Employed",
+                "Pensioner",
+                "Self-Employed",
+                "Student",
+                "Unemployed"
+            ]
+        },
         "feature_flag": {
             "description": "[Optional] Enable or disable one or multiple features.",
             "type": "object",

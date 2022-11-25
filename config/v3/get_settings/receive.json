@@ -60,6 +60,13 @@
                         "string"
                     ]
                 },
+                "cooling_off_expiration_date": {
+                    "description": "Cooldown expiration epoch date when a client fails appropriateness tests",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "country": {
                     "description": "User Country (same as residence field) - deprecated",
                     "type": [
@@ -92,6 +99,17 @@
                     "enum": [
                         0,
                         1
+                    ]
+                },
+                "employment_status": {
+                    "description": "Employment Status.",
+                    "type": "string",
+                    "enum": [
+                        "Employed",
+                        "Pensioner",
+                        "Self-Employed",
+                        "Student",
+                        "Unemployed"
                     ]
                 },
                 "feature_flag": {

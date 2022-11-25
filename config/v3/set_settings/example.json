@@ -7,6 +7,7 @@
     "address_postcode": "123456",
     "allow_copiers": 1,
     "email_consent": 0,
+    "employment_status": "Employed",
     "phone": "+15417543010",
     "place_of_birth": "ar",
     "preferred_language": "EN",
