@@ -46,7 +46,8 @@
                 }
             },
             "maxItems": 100,
-            "minItems": 1
+            "minItems": 1,
+            "sensitive": 1
         },
         "delete": {
             "description": "Contains payment methods to delete.",
@@ -78,7 +79,8 @@
                         }
                     }
                 }
-            }
+            },
+            "sensitive": 1
         },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",

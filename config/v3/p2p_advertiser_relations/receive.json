@@ -36,7 +36,8 @@
                             },
                             "name": {
                                 "description": "Advertiser displayed name.",
-                                "type": "string"
+                                "type": "string",
+                                "sensitive": 1
                             }
                         }
                     }
@@ -59,7 +60,8 @@
                             },
                             "name": {
                                 "description": "Advertiser displayed name.",
-                                "type": "string"
+                                "type": "string",
+                                "sensitive": 1
                             }
                         }
                     }

@@ -33,12 +33,14 @@
         "contact_info": {
             "description": "[Optional] Advertiser contact information.",
             "type": "string",
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$",
+            "sensitive": 1
         },
         "description": {
             "description": "[Optional] General information about the advert.",
             "type": "string",
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$",
+            "sensitive": 1
         },
         "local_currency": {
             "description": "[Optional] Local currency for this advert. If not provided, will use the currency of client's residence by default.",
@@ -63,7 +65,8 @@
         "payment_info": {
             "description": "[Optional] Payment instructions.",
             "type": "string",
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$",
+            "sensitive": 1
         },
         "payment_method": {
             "description": "[Optional] Payment method name (deprecated).",

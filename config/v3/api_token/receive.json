@@ -61,15 +61,16 @@
                             },
                             "token": {
                                 "description": "The token that can be used to `authorize` with.",
-                                "type": "string"
+                                "type": "string",
+                                "sensitive": 1
                             },
                             "valid_for_ip": {
                                 "description": "The IP restriction for the token. No restriction if empty.",
-                                "type": "string"
+                                "type": "string",
+                                "sensitive": 1
                             }
                         }
-                    },
-                    "sensitive": 1
+                    }
                 }
             }
         },

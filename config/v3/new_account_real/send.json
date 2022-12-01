@@ -100,12 +100,14 @@
         "first_name": {
             "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
             "type": "string",
-            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$"
+            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$",
+            "sensitive": 1
         },
         "last_name": {
             "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
             "type": "string",
-            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$"
+            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$",
+            "sensitive": 1
         },
         "non_pep_declaration": {
             "description": "[Optional] Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates).",
@@ -118,7 +120,8 @@
             "type": [
                 "null",
                 "string"
-            ]
+            ],
+            "sensitive": 1
         },
         "place_of_birth": {
             "description": "[Optional] Place of birth, 2-letter country code.",

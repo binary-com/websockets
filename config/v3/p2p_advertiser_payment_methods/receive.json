@@ -65,7 +65,8 @@
                                         },
                                         "value": {
                                             "description": "Current value of payment method field.",
-                                            "type": "string"
+                                            "type": "string",
+                                            "sensitive": 1
                                         }
                                     }
                                 }
