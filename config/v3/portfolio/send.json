@@ -58,7 +58,9 @@
                     "RUNLOW",
                     "TICKHIGH",
                     "TICKLOW",
-                    "UPORDOWN"
+                    "UPORDOWN",
+                    "VANILLALONGCALL",
+                    "VANILLALONGPUT"
                 ],
                 "uniqueItems": true
             }
