@@ -105,7 +105,9 @@
                         "CALLSPREAD",
                         "PUTSPREAD",
                         "RUNHIGH",
-                        "RUNLOW"
+                        "RUNLOW",
+                        "VANILLALONGCALL",
+                        "VANILLALONGPUT"
                     ]
                 },
                 "currency": {
