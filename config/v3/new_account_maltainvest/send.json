@@ -196,7 +196,8 @@
         "first_name": {
             "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
             "type": "string",
-            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$"
+            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$",
+            "sensitive": 1
         },
         "income_source": {
             "description": "Income Source.",
@@ -213,7 +214,8 @@
         "last_name": {
             "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
             "type": "string",
-            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$"
+            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$",
+            "sensitive": 1
         },
         "leverage_impact_trading": {
             "description": "How does leverage affect CFD trading?",
@@ -277,7 +279,8 @@
             "type": [
                 "null",
                 "string"
-            ]
+            ],
+            "sensitive": 1
         },
         "place_of_birth": {
             "description": "[Optional] Place of birth, 2-letter country code.",

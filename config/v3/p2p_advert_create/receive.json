@@ -84,7 +84,8 @@
                         },
                         "first_name": {
                             "description": "The advertiser's first name.",
-                            "type": "string"
+                            "type": "string",
+                            "sensitive": 1
                         },
                         "id": {
                             "description": "The advertiser's unique identifier.",
@@ -100,7 +101,8 @@
                         },
                         "last_name": {
                             "description": "The advertiser's last name.",
-                            "type": "string"
+                            "type": "string",
+                            "sensitive": 1
                         },
                         "last_online_time": {
                             "description": "Epoch of the latest time the advertiser was online, up to 6 months.",
@@ -111,7 +113,8 @@
                         },
                         "name": {
                             "description": "The advertiser's displayed name.",
-                            "type": "string"
+                            "type": "string",
+                            "sensitive": 1
                         },
                         "rating_average": {
                             "description": "Average rating of the advertiser, range is 1-5.",
@@ -159,7 +162,8 @@
                 },
                 "contact_info": {
                     "description": "Advertiser contact information. Only applicable for 'sell adverts'.",
-                    "type": "string"
+                    "type": "string",
+                    "sensitive": 1
                 },
                 "counterparty_type": {
                     "description": "Type of transaction from the opposite party's perspective.",
@@ -180,7 +184,8 @@
                 },
                 "description": {
                     "description": "General information about the advert.",
-                    "type": "string"
+                    "type": "string",
+                    "sensitive": 1
                 },
                 "effective_rate": {
                     "description": "Conversion rate from account currency to local currency, using current market rate if applicable.",
@@ -259,7 +264,8 @@
                 },
                 "payment_info": {
                     "description": "Payment instructions. Only applicable for 'sell adverts'.",
-                    "type": "string"
+                    "type": "string",
+                    "sensitive": 1
                 },
                 "payment_method": {
                     "description": "Payment method name (deprecated).",
@@ -325,7 +331,8 @@
                                                 },
                                                 "value": {
                                                     "description": "Current value of payment method field.",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "sensitive": 1
                                                 }
                                             }
                                         }

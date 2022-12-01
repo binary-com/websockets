@@ -23,7 +23,8 @@
         "contact_info": {
             "description": "[Optional] Advertiser contact information.",
             "type": "string",
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$"
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{1,300}$",
+            "sensitive": 1
         },
         "delete": {
             "description": "[Optional] If set to 1, permanently deletes the advert.",
@@ -36,7 +37,8 @@
         "description": {
             "description": "[Optional] General information about the advert.",
             "type": "string",
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{0,300}$"
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{0,300}$",
+            "sensitive": 1
         },
         "id": {
             "description": "The unique identifier for this advert.",
@@ -73,7 +75,8 @@
         "payment_info": {
             "description": "[Optional] Payment instructions.",
             "type": "string",
-            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{0,300}$"
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{0,300}$",
+            "sensitive": 1
         },
         "payment_method_ids": {
             "description": "[Optional] IDs of previously saved payment methods as returned from p2p_advertiser_payment_methods, only applicable for sell ads. Exisiting methods will be replaced.",

@@ -61,7 +61,8 @@
                     "properties": {
                         "description": {
                             "description": "General information about the advert.",
-                            "type": "string"
+                            "type": "string",
+                            "sensitive": 1
                         },
                         "id": {
                             "description": "The unique identifier for the advert.",
@@ -99,7 +100,8 @@
                     "properties": {
                         "first_name": {
                             "description": "The advertiser's first name.",
-                            "type": "string"
+                            "type": "string",
+                            "sensitive": 1
                         },
                         "id": {
                             "description": "The advertiser's unique identifier.",
@@ -127,7 +129,8 @@
                         },
                         "last_name": {
                             "description": "The advertiser's last name.",
-                            "type": "string"
+                            "type": "string",
+                            "sensitive": 1
                         },
                         "last_online_time": {
                             "description": "Epoch of the latest time the advertiser was online, up to 6 months.",
@@ -142,7 +145,8 @@
                         },
                         "name": {
                             "description": "The advertiser's displayed name.",
-                            "type": "string"
+                            "type": "string",
+                            "sensitive": 1
                         }
                     }
                 },
@@ -171,7 +175,8 @@
                     "properties": {
                         "first_name": {
                             "description": "The client's first name.",
-                            "type": "string"
+                            "type": "string",
+                            "sensitive": 1
                         },
                         "id": {
                             "description": "The client's unique P2P identifier.",
@@ -199,7 +204,8 @@
                         },
                         "last_name": {
                             "description": "The client's last name.",
-                            "type": "string"
+                            "type": "string",
+                            "sensitive": 1
                         },
                         "last_online_time": {
                             "description": "Epoch of the latest time the advertiser was online, up to 6 months.",
@@ -214,7 +220,8 @@
                         },
                         "name": {
                             "description": "The client's displayed name.",
-                            "type": "string"
+                            "type": "string",
+                            "sensitive": 1
                         }
                     }
                 },
@@ -224,7 +231,8 @@
                 },
                 "contact_info": {
                     "description": "Seller contact information.",
-                    "type": "string"
+                    "type": "string",
+                    "sensitive": 1
                 },
                 "created_time": {
                     "description": "The epoch time of the order creation.",
@@ -298,7 +306,8 @@
                 },
                 "payment_info": {
                     "description": "Payment instructions.",
-                    "type": "string"
+                    "type": "string",
+                    "sensitive": 1
                 },
                 "payment_method": {
                     "description": "Supported payment methods. Comma separated list.",
@@ -362,7 +371,8 @@
                                                 },
                                                 "value": {
                                                     "description": "Current value of payment method field.",
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "sensitive": 1
                                                 }
                                             }
                                         }

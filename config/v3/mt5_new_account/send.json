@@ -114,7 +114,8 @@
             "type": [
                 "null",
                 "string"
-            ]
+            ],
+            "sensitive": 1
         },
         "phonePassword": {
             "description": "[Optional] The user's phone password.",

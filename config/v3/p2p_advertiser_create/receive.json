@@ -119,7 +119,8 @@
                 },
                 "contact_info": {
                     "description": "Advertiser's contact information.",
-                    "type": "string"
+                    "type": "string",
+                    "sensitive": 1
                 },
                 "created_time": {
                     "description": "The epoch time that the client became an advertiser.",
@@ -143,7 +144,8 @@
                 },
                 "default_advert_description": {
                     "description": "Default description that can be used every time an advert is created.",
-                    "type": "string"
+                    "type": "string",
+                    "sensitive": 1
                 },
                 "full_verification": {
                     "description": "Boolean value: 1 or 0, indicating whether the advertiser's address has been verified.",
@@ -202,7 +204,8 @@
                 },
                 "name": {
                     "description": "The advertiser's displayed name.",
-                    "type": "string"
+                    "type": "string",
+                    "sensitive": 1
                 },
                 "partner_count": {
                     "description": "Number of different users the advertiser has traded with since registration.",
@@ -210,7 +213,8 @@
                 },
                 "payment_info": {
                     "description": "Advertiser's payment information.",
-                    "type": "string"
+                    "type": "string",
+                    "sensitive": 1
                 },
                 "rating_average": {
                     "description": "Average rating of the advertiser, range is 1-5.",

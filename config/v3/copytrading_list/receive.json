@@ -69,7 +69,8 @@
                             },
                             "token": {
                                 "description": "The token provided for the trader.",
-                                "type": "string"
+                                "type": "string",
+                                "sensitive": 1
                             },
                             "trade_types": {
                                 "description": "The type of trades set.",
