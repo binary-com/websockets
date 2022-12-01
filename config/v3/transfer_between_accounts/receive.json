@@ -32,6 +32,7 @@
                             "mt5",
                             "wallet",
                             "dxtrade",
+                            "derivez",
                             "binary"
                         ]
                     },
@@ -52,6 +53,13 @@
                         "enum": [
                             0,
                             1
+                        ]
+                    },
+                    "derivez_group": {
+                        "description": "The group of derivez account.",
+                        "type": "string",
+                        "examples": [
+                            "real\\svg_ez_usd"
                         ]
                     },
                     "loginid": {
