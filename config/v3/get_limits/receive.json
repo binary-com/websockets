@@ -16,7 +16,10 @@
             "properties": {
                 "account_balance": {
                     "description": "Maximum account cash balance",
-                    "type": "number"
+                    "type": [
+                        "null",
+                        "number"
+                    ]
                 },
                 "daily_transfers": {
                     "description": "Daily transfers",
