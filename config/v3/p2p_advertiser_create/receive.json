@@ -110,12 +110,18 @@
                 },
                 "chat_token": {
                     "description": "The token to be used for authenticating the client for chat.",
-                    "type": "string",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
                     "sensitive": 1
                 },
                 "chat_user_id": {
                     "description": "The unique identifier for the chat user.",
-                    "type": "string"
+                    "type": [
+                        "null",
+                        "string"
+                    ]
                 },
                 "contact_info": {
                     "description": "Advertiser's contact information.",
