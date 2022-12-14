@@ -345,6 +345,10 @@
                         1446629000
                     ]
                 },
+                "growth_rate": {
+                    "description": "[Only for accumulator] Growth rate of an accumulator contract.",
+                    "type": "number"
+                },
                 "high_barrier": {
                     "description": "High barrier of the contract (if any).",
                     "type": "string",
@@ -612,6 +616,13 @@
                 "tick_count": {
                     "description": "Only for tick trades, number of ticks",
                     "type": "integer"
+                },
+                "tick_passed": {
+                    "description": "[Only for accumulator] Number of ticks passed since entry_tick",
+                    "type": "integer",
+                    "examples": [
+                        500
+                    ]
                 },
                 "tick_stream": {
                     "description": "Tick stream from entry to end time.",

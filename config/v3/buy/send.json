@@ -106,6 +106,7 @@
                         "PUTSPREAD",
                         "RUNHIGH",
                         "RUNLOW",
+                        "ACCU",
                         "VANILLALONGCALL",
                         "VANILLALONGPUT"
                     ]
@@ -144,8 +145,12 @@
                         "t"
                     ]
                 },
+                "growth_rate": {
+                    "description": "[Optional] Growth rate of an accumulator contract.",
+                    "type": "number"
+                },
                 "limit_order": {
-                    "description": "Add an order to close the contract once the order condition is met (only for `MULTUP` and `MULTDOWN` contracts).",
+                    "description": "Add an order to close the contract once the order condition is met (only for `MULTUP` and `MULTDOWN` and `ACCU` contracts).",
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {

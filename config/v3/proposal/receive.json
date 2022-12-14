@@ -57,6 +57,62 @@
                         "number"
                     ]
                 },
+                "contract_details": {
+                    "description": "Contains contract information. (Only applicable for accumulator).",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "high_barrier": {
+                            "description": "High barrier calculated based on current spot",
+                            "type": "number",
+                            "examples": [
+                                4.9358253e-05
+                            ]
+                        },
+                        "last_tick_epoch": {
+                            "description": "Epoch of last tick considered for stat chart",
+                            "type": "integer"
+                        },
+                        "low_barrier": {
+                            "description": "Low barrier calculated based on current spot",
+                            "type": "number",
+                            "examples": [
+                                4.9358253e-05
+                            ]
+                        },
+                        "maximum_payout": {
+                            "description": "Maximum payout that user can get out of a contract, contract will close automatically if payout reaches this number",
+                            "type": "number",
+                            "examples": [
+                                1000.59
+                            ]
+                        },
+                        "maximum_ticks": {
+                            "description": "Maximum duration that a contract can last, contract will close automatically after this number of ticks",
+                            "type": "integer",
+                            "examples": [
+                                500
+                            ]
+                        },
+                        "tick_size_barrier": {
+                            "description": "Tick size barrier for Accumulator contracts",
+                            "type": "number",
+                            "examples": [
+                                4.9358253e-05
+                            ]
+                        },
+                        "ticks_stayed_in": {
+                            "description": "An array of numbers  to build a stat chart - each number represents the duration that spot stayed between barries",
+                            "type": "array",
+                            "items": {
+                                "type": "integer",
+                                "examples": [
+                                    50
+                                ]
+                            }
+                        }
+                    }
+                },
                 "date_expiry": {
                     "description": "The end date of the contract.",
                     "type": "integer",
