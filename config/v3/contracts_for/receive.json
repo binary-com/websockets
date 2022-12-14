@@ -154,6 +154,10 @@
                                 },
                                 "minItems": 1
                             },
+                            "growth_rate_range": {
+                                "description": "Growth rate range.",
+                                "type": "array"
+                            },
                             "high_barrier": {
                                 "description": "High barrier Details.",
                                 "type": [
