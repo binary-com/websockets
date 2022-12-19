@@ -22,6 +22,10 @@
                 1
             ]
         },
+        "document_additional": {
+            "description": "[Optional] Additional info required by some document types.",
+            "type": "string"
+        },
         "document_number": {
             "description": "The identification number of the document.",
             "type": "string"

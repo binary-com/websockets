@@ -1,6 +1,7 @@
 {
     "identity_verification_document_add": 1,
-    "document_number": "12345678912",
-    "document_type": "nin_slip",
-    "issuing_country": "ng"
+    "document_additional": "123456789ABCDEF",
+    "document_number": "12345678",
+    "document_type": "passport",
+    "issuing_country": "in"
 }

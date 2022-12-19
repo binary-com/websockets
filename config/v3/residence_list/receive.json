@@ -44,6 +44,21 @@
                                                         "type": "object",
                                                         "additionalProperties": false,
                                                         "properties": {
+                                                            "additional": {
+                                                                "description": "[Optional] Additional input required from the user",
+                                                                "type": "object",
+                                                                "additionalProperties": false,
+                                                                "properties": {
+                                                                    "display_name": {
+                                                                        "description": "The localized display name",
+                                                                        "type": "string"
+                                                                    },
+                                                                    "format": {
+                                                                        "description": "[Optional] Regex pattern to validate documents",
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            },
                                                             "display_name": {
                                                                 "description": "The localized display name",
                                                                 "type": "string"
