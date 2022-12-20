@@ -16,10 +16,24 @@
             "description": "The payment agent details.",
             "type": "object",
             "additionalProperties": false,
+            "required": [
+                "can_apply"
+            ],
             "properties": {
                 "affiliate_id": {
                     "description": "Client's My Affiliate id, if exists.",
-                    "type": "string"
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "can_apply": {
+                    "description": "If 1, the client may apply using paymentagent_create.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
                 },
                 "code_of_conduct_approval": {
                     "description": "Indicates client's agreement with the Code of Conduct document.",
@@ -41,6 +55,13 @@
                     "description": "Currency supported by the payment agent. It's usually the same as agent's Deriv account currency.",
                     "type": "string"
                 },
+                "eligibilty_validation": {
+                    "description": "Contains a list of error codes that would prevent a successful payment agent application.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "email": {
                     "description": "Payment agent's email address.",
                     "type": "string"
@@ -49,14 +70,6 @@
                     "description": "Information about payment agent and their proposed service.",
                     "type": "string"
                 },
-                "is_listed": {
-                    "description": "Wether or not the client should be listed among available agents in the FE.",
-                    "type": "integer",
-                    "enum": [
-                        0,
-                        1
-                    ]
-                },
                 "max_withdrawal": {
                     "description": "Maximum amount allowed for withdrawals",
                     "type": "number"
@@ -64,6 +77,14 @@
                 "min_withdrawal": {
                     "description": "Minimum amount allowed for withdrawals",
                     "type": "number"
+                },
+                "newly_authorized": {
+                    "description": "Indicates if the payment agent was recently approved with no transactions yet.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
                 },
                 "payment_agent_name": {
                     "description": "The name with which the payment agent is going to be identified.",
@@ -92,8 +113,8 @@
                                 "applied",
                                 "verified",
                                 "authorized",
-                                "suspended",
-                                "rejected"
+                                "rejected",
+                                "suspended"
                             ]
                         },
                         {
