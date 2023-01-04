@@ -62,6 +62,10 @@
                                     "euro_non_atm"
                                 ]
                             },
+                            "barrier_choices": {
+                                "description": "[Only for Vanilla] Barrier Choices",
+                                "type": "array"
+                            },
                             "barriers": {
                                 "description": "Number of barriers.",
                                 "type": "number",
