@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Advertiser List (request)",
+    "description": "Retrieve advertisers has/had trade with the current advertiser.",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "payments"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "p2p_advertiser_list"
+    ],
+    "properties": {
+        "p2p_advertiser_list": {
+            "description": "Must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "advertiser_name": {
+            "description": "[Optional] Search for advertiser by name. Partial matches will be returned.",
+            "type": "string"
+        },
+        "is_blocked": {
+            "description": "[Optional] Used to return only blocked or unblocked partners",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "limit": {
+            "description": "[Optional] Used for paging.",
+            "type": "integer",
+            "default": 50
+        },
+        "offset": {
+            "description": "[Optional] Used for paging.",
+            "type": "integer",
+            "default": 0
+        },
+        "sort_by": {
+            "description": "[Optional] How the results are sorted.",
+            "type": "string",
+            "default": "created_time",
+            "enum": [
+                "name",
+                "id"
+            ]
+        },
+        "trade_partners": {
+            "description": "[Optional] Get all advertisers has/had trade.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

@@ -117,6 +117,8 @@ groups:
         title: P2P Advertiser Create
       - name: p2p_advertiser_info
         title: P2P Advertiser Information
+      - name: p2p_advertiser_list
+        title: P2P Advertiser List
       - name: p2p_advertiser_payment_methods
         title: P2P Advertiser Payment Methods
       - name: p2p_advertiser_relations
