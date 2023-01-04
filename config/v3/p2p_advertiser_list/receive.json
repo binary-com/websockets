@@ -1,0 +1,281 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Advertiser List (response)",
+    "description": "Retrieve advertisers has/had trade with the current advertiser.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "p2p_advertiser_list": {
+            "title": "p2p_advertiser_list",
+            "description": "P2P advertiser list.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "list"
+            ],
+            "properties": {
+                "list": {
+                    "description": "List of advertisers.",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                            "advert_rates",
+                            "basic_verification",
+                            "buy_completion_rate",
+                            "buy_orders_amount",
+                            "buy_orders_count",
+                            "buy_time_avg",
+                            "cancel_time_avg",
+                            "created_time",
+                            "default_advert_description",
+                            "full_verification",
+                            "id",
+                            "is_approved",
+                            "is_blocked",
+                            "is_listed",
+                            "is_online",
+                            "last_online_time",
+                            "name",
+                            "partner_count",
+                            "rating_average",
+                            "rating_count",
+                            "recommended_average",
+                            "recommended_count",
+                            "release_time_avg",
+                            "sell_completion_rate",
+                            "sell_orders_amount",
+                            "sell_orders_count",
+                            "total_completion_rate",
+                            "total_orders_count",
+                            "total_turnover"
+                        ],
+                        "properties": {
+                            "advert_rates": {
+                                "description": "Average difference of advert rate compared to the market rate over the past 30 days.",
+                                "type": [
+                                    "null",
+                                    "number"
+                                ]
+                            },
+                            "basic_verification": {
+                                "description": "Boolean value: 1 or 0, indicating whether the advertiser's identify has been verified.",
+                                "type": "integer",
+                                "enum": [
+                                    1,
+                                    0
+                                ]
+                            },
+                            "buy_completion_rate": {
+                                "description": "The percentage of completed orders out of total orders as a buyer within the past 30 days.",
+                                "type": [
+                                    "null",
+                                    "number"
+                                ]
+                            },
+                            "buy_orders_amount": {
+                                "description": "Buy order volume in the past 30 days.",
+                                "type": "string"
+                            },
+                            "buy_orders_count": {
+                                "description": "The number of buy order completed within the past 30 days.",
+                                "type": "integer"
+                            },
+                            "buy_time_avg": {
+                                "description": "The average time in seconds taken to make payment as a buyer within the past 30 days.",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "cancel_time_avg": {
+                                "description": "The average time in seconds taken to cancel orders as a buyer within the past 30 days.",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "created_time": {
+                                "description": "The epoch time that the trade partner became an advertiser.",
+                                "type": "integer"
+                            },
+                            "default_advert_description": {
+                                "description": "Default description that can be used every time an advert is created.",
+                                "type": "string"
+                            },
+                            "first_name": {
+                                "description": "The advertiser's first name.",
+                                "type": "string",
+                                "sensitive": 1
+                            },
+                            "full_verification": {
+                                "description": "Boolean value: 1 or 0, indicating whether the advertiser's address has been verified.",
+                                "type": "integer",
+                                "enum": [
+                                    1,
+                                    0
+                                ]
+                            },
+                            "id": {
+                                "description": "The advertiser's identification number.",
+                                "type": "string"
+                            },
+                            "is_approved": {
+                                "description": "The approval status of the advertiser.",
+                                "type": "integer",
+                                "enum": [
+                                    0,
+                                    1
+                                ]
+                            },
+                            "is_blocked": {
+                                "description": "Indicates that the advertiser is blocked by the current user.",
+                                "type": "integer",
+                                "enum": [
+                                    0,
+                                    1
+                                ]
+                            },
+                            "is_favourite": {
+                                "description": "Indicates if the trade partner is favourited by requester.",
+                                "type": "integer",
+                                "enum": [
+                                    0,
+                                    1
+                                ]
+                            },
+                            "is_listed": {
+                                "description": "Indicates if the advertiser's active adverts are listed. When `0`, adverts won't be listed regardless if they are active or not.",
+                                "type": "integer",
+                                "enum": [
+                                    0,
+                                    1
+                                ]
+                            },
+                            "is_online": {
+                                "description": "Indicates if the advertiser is currently online.",
+                                "type": "integer",
+                                "enum": [
+                                    0,
+                                    1
+                                ]
+                            },
+                            "is_recommended": {
+                                "description": "Indicates if the trade partner is recommended by requester.",
+                                "type": "integer",
+                                "enum": [
+                                    0,
+                                    1
+                                ]
+                            },
+                            "last_name": {
+                                "description": "The advertiser's last name.",
+                                "type": "string",
+                                "sensitive": 1
+                            },
+                            "last_online_time": {
+                                "description": "Epoch of the latest time the advertiser was online, up to 6 months.",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "name": {
+                                "description": "The advertiser's displayed name.",
+                                "type": "string",
+                                "sensitive": 1
+                            },
+                            "partner_count": {
+                                "description": "Number of different users the advertiser has traded with since registration.",
+                                "type": "integer"
+                            },
+                            "rating_average": {
+                                "description": "Average rating of the advertiser, range is 1-5.",
+                                "type": [
+                                    "null",
+                                    "number"
+                                ],
+                                "maximum": 5,
+                                "minimum": 1
+                            },
+                            "rating_count": {
+                                "description": "Number of ratings given to the advertiser.",
+                                "type": "integer"
+                            },
+                            "recommended_average": {
+                                "description": "Percentage of users who have recommended the advertiser.",
+                                "type": [
+                                    "null",
+                                    "number"
+                                ]
+                            },
+                            "recommended_count": {
+                                "description": "Number of times the advertiser has been recommended.",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "release_time_avg": {
+                                "description": "The average time in seconds taken to release funds as a seller within the past 30 days.",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "sell_completion_rate": {
+                                "description": "The percentage of completed orders out of total orders as a seller within the past 30 days.",
+                                "type": [
+                                    "null",
+                                    "number"
+                                ]
+                            },
+                            "sell_orders_amount": {
+                                "description": "Sell order volume in the past 30 days.",
+                                "type": "string"
+                            },
+                            "sell_orders_count": {
+                                "description": "The number of sell order orders completed within the past 30 days.",
+                                "type": "integer"
+                            },
+                            "total_completion_rate": {
+                                "description": "The percentage of completed orders out of all orders within the past 30 days.",
+                                "type": [
+                                    "null",
+                                    "number"
+                                ]
+                            },
+                            "total_orders_count": {
+                                "description": "The total number of orders completed since advertiser registration.",
+                                "type": "integer"
+                            },
+                            "total_turnover": {
+                                "description": "Total order volume since advertiser registration.",
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "p2p_advertiser_list"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}
