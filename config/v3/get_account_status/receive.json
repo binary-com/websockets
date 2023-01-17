@@ -62,7 +62,9 @@
                                                 "enum": [
                                                     "verified",
                                                     "rejected",
-                                                    "pending"
+                                                    "pending",
+                                                    "expired",
+                                                    "none"
                                                 ]
                                             },
                                             "timestamp": {
