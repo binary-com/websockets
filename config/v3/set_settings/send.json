@@ -78,6 +78,14 @@
             "type": "string",
             "pattern": "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
         },
+        "dxtrade_user_exception": {
+            "description": "Boolean value 1 or 0, indicating if user email belong to dxtrade exception list.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
         "email_consent": {
             "description": "[Optional] Boolean value 1 or 0, indicating permission to use email address for any contact which may include marketing",
             "type": "integer",
