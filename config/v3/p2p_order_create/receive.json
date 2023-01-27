@@ -36,8 +36,7 @@
                 "rate",
                 "rate_display",
                 "status",
-                "type",
-                "verification_pending"
+                "type"
             ],
             "properties": {
                 "account_currency": {
@@ -427,14 +426,6 @@
                     "enum": [
                         "buy",
                         "sell"
-                    ]
-                },
-                "verification_pending": {
-                    "description": "Indicates that an email has been sent to verify confirmation of the order.",
-                    "type": "integer",
-                    "enum": [
-                        0,
-                        1
                     ]
                 }
             }
