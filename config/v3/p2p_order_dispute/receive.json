@@ -36,8 +36,7 @@
                 "rate",
                 "rate_display",
                 "status",
-                "type",
-                "verification_pending"
+                "type"
             ],
             "properties": {
                 "account_currency": {
