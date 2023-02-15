@@ -24,7 +24,7 @@
         "advert_id": {
             "description": "The unique identifier for the advert to create an order against.",
             "type": "string",
-            "pattern": "^([0-9]+)$"
+            "pattern": "^[0-9]+$"
         },
         "amount": {
             "description": "The amount of currency to be bought or sold.",
