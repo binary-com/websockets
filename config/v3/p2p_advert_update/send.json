@@ -42,7 +42,8 @@
         },
         "id": {
             "description": "The unique identifier for this advert.",
-            "type": "string"
+            "type": "string",
+            "pattern": "^[0-9]+$"
         },
         "is_active": {
             "description": "[Optional] Activate or deactivate the advert.",

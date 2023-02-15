@@ -23,7 +23,8 @@
         },
         "order_id": {
             "description": "The order identification number.",
-            "type": "string"
+            "type": "string",
+            "pattern": "^[0-9]+$"
         },
         "rating": {
             "description": "Rating for the transaction, 1 to 5.",
