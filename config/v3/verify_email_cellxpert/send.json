@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Verify Email (request)",
-    "description": "Verify an email address for various purposes. The system will send an email to the address containing a security code for verification.",
+    "title": "Verify Email Cellxpert (request)",
+    "description": "Verify an email address for Cellxpert. The system will send an email to the address containing a security code for verification.",
     "type": "object",
     "auth_required": 0,
     "additionalProperties": false,
@@ -31,6 +31,10 @@
                     "description": "[Optional] Affiliate token, within 32 characters.",
                     "type": "string",
                     "pattern": "^[\\w-]{0,32}$"
+                },
+                "bta": {
+                    "description": "[Optional] Master affiliate Id.",
+                    "type": "integer"
                 },
                 "date_first_contact": {
                     "description": "[Optional] Date of first contact, format: yyyy-mm-dd in GMT timezone.",
