@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Verify Email (response)",
-    "description": "Verify Email Receive",
+    "title": "Verify Email Cellxpert (response)",
+    "description": "Verify Email Cellxpert Receive",
     "type": "object",
     "required": [
         "echo_req",
