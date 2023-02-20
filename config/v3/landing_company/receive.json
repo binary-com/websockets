@@ -870,13 +870,6 @@
                         }
                     }
                 },
-                "gamstop_company": {
-                    "description": "Gamestop company details.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
                 "id": {
                     "description": "Country code",
                     "type": "string"
