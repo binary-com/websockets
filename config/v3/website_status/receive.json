@@ -122,6 +122,14 @@
                         }
                     }
                 },
+                "broker_codes": {
+                    "description": "List of all available broker codes.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "uniqueItems": true
+                },
                 "clients_country": {
                     "description": "Country code of connected IP",
                     "type": "string"
