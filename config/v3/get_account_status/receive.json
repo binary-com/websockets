@@ -15,6 +15,7 @@
             "additionalProperties": false,
             "required": [
                 "currency_config",
+                "p2p_status",
                 "prompt_client_to_authenticate",
                 "risk_classification",
                 "status"
@@ -376,6 +377,16 @@
                             }
                         }
                     }
+                },
+                "p2p_status": {
+                    "description": "Current P2P status of client.",
+                    "type": "string",
+                    "enum": [
+                        "none",
+                        "active",
+                        "temp_ban",
+                        "perm_ban"
+                    ]
                 },
                 "prompt_client_to_authenticate": {
                     "description": "Indicates whether the client should be prompted to authenticate their account.",
