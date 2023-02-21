@@ -53,6 +53,13 @@
                 1
             ]
         },
+        "upgrade_limits": {
+            "description": "[Optional] Used to upgrade daily limits of advertiser if advertiser is eligible",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"

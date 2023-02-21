@@ -336,6 +336,25 @@
                     "description": "Total order volume since advertiser registration.",
                     "type": "string"
                 },
+                "upgradable_daily_limits": {
+                    "description": "New daily limits available.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "max_daily_buy",
+                        "max_daily_sell"
+                    ],
+                    "properties": {
+                        "max_daily_buy": {
+                            "description": "Upgradable daily buy limit.",
+                            "type": "string"
+                        },
+                        "max_daily_sell": {
+                            "description": "Upgradable daily sell limit.",
+                            "type": "string"
+                        }
+                    }
+                },
                 "withdrawal_limit": {
                     "description": "Remaining withdrawal_limit of a non-fully authenticated advertiser.",
                     "type": [

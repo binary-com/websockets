@@ -313,6 +313,7 @@
                         "cancellation_count_period",
                         "cancellation_grace_period",
                         "cancellation_limit",
+                        "cross_border_ads_enabled",
                         "disabled",
                         "feature_level",
                         "fixed_rate_adverts",
@@ -351,6 +352,14 @@
                         "cancellation_limit": {
                             "description": "A buyer will be temporarily barred after marking this number of cancellations within cancellation_period.",
                             "type": "integer"
+                        },
+                        "cross_border_ads_enabled": {
+                            "description": "When 0, only exchanges in local currency are allowed for P2P advertiser.",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
                         },
                         "disabled": {
                             "description": "When 1, the P2P service is unavailable.",
