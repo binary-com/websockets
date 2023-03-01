@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Payment Agent: Withdraw justification (request)",
+    "description": "Provide justification to perform withdrawal using a Payment Agent.",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "payments"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "paymentagent_withdraw_justification"
+    ],
+    "properties": {
+        "paymentagent_withdraw_justification": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "message": {
+            "description": "Reasons for needing to withdraw using a Payment Agent.",
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}
