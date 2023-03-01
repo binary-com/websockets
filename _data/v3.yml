@@ -157,6 +157,8 @@ groups:
         title: 'Payment Agent: Transfer'
       - name: paymentagent_withdraw
         title: 'Payment Agent: Withdraw'
+      - name: paymentagent_withdraw_justification
+        title: 'Payment Agent: Withdraw justification'
       - name: payout_currencies
         title: Payout Currencies
       - name: ping
