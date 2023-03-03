@@ -21,6 +21,10 @@
                         "number"
                     ]
                 },
+                "daily_cumulative_amount_transfers": {
+                    "description": "Cumulative daily transfer limits",
+                    "type": "object"
+                },
                 "daily_transfers": {
                     "description": "Daily transfers",
                     "type": "object"
