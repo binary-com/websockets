@@ -57,7 +57,8 @@
         },
         "offset": {
             "description": "[Optional] Number of transactions to skip.",
-            "type": "number"
+            "type": "integer",
+            "minimum": 0
         },
         "sort": {
             "description": "[Optional] Sort direction on `transaction_time`. Other fields sort order is ASC.",

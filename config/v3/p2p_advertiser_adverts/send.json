@@ -27,7 +27,8 @@
         "offset": {
             "description": "[Optional] Used for paging. This value will also apply to subsription responses.",
             "type": "integer",
-            "default": 0
+            "default": 0,
+            "minimum": 0
         },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",

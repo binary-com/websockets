@@ -39,7 +39,8 @@
         "offset": {
             "description": "[Optional] Used for paging.",
             "type": "integer",
-            "default": 0
+            "default": 0,
+            "minimum": 0
         },
         "sort_by": {
             "description": "[Optional] How the results are sorted.",
