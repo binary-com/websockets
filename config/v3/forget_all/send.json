@@ -47,6 +47,7 @@
                 "proposal_open_contract",
                 "ticks",
                 "transaction",
+                "trading_platform_asset_listing",
                 "website_status"
             ]
         }
