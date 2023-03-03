@@ -61,7 +61,8 @@
         "offset": {
             "description": "[Optional] Used for paging.",
             "type": "integer",
-            "default": 0
+            "default": 0,
+            "minimum": 0
         },
         "payment_method": {
             "description": "[Optional] Search by supported payment methods.",

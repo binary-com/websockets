@@ -63,7 +63,8 @@
         },
         "offset": {
             "description": "[Optional] Number of transactions to skip.",
-            "type": "number"
+            "type": "integer",
+            "minimum": 0
         },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",

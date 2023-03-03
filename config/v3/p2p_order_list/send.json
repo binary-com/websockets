@@ -40,7 +40,8 @@
         "offset": {
             "description": "[Optional] Used for paging.",
             "type": "integer",
-            "default": 0
+            "default": 0,
+            "minimum": 0
         },
         "subscribe": {
             "description": "[Optional] If set to 1, will send updates whenever there is a change to any order belonging to you.",
