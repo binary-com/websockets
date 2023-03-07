@@ -21,7 +21,22 @@
             "default": "USD"
         },
         "landing_company": {
-            "description": "[Optional] Indicates which landing company to get a list of contracts for. If you are logged in, your account's landing company will override this field.",
+            "description": "Deprecated - Replaced by landing_company_short.",
+            "type": "string",
+            "default": "virtual",
+            "enum": [
+                "iom",
+                "malta",
+                "maltainvest",
+                "svg",
+                "virtual",
+                "vanuatu",
+                "champion",
+                "champion-virtual"
+            ]
+        },
+        "landing_company_short": {
+            "description": "[Optional] Indicates which landing company to get a list of contracts for. If you are logged in, your account's landing company will override this field. Note that when landing_company_short is set to 'virtual', landing_company will take precendce until the deprecated field is removed from the api.",
             "type": "string",
             "default": "virtual",
             "enum": [

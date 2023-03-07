@@ -18,6 +18,20 @@
             ]
         },
         "landing_company": {
+            "description": "Deprecated - replaced by landing_company_short.",
+            "type": "string",
+            "enum": [
+                "iom",
+                "malta",
+                "maltainvest",
+                "svg",
+                "virtual",
+                "vanuatu",
+                "champion",
+                "champion-virtual"
+            ]
+        },
+        "landing_company_short": {
             "description": "[Optional] If you specify this field, only symbols available for trading by that landing company will be returned. If you are logged in, only symbols available for trading by your landing company will be returned regardless of what you specify in this field.",
             "type": "string",
             "enum": [
