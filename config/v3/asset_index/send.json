@@ -17,6 +17,20 @@
             ]
         },
         "landing_company": {
+            "description": "Deprecated - replaced by landing_company_short.",
+            "type": "string",
+            "enum": [
+                "iom",
+                "malta",
+                "maltainvest",
+                "svg",
+                "virtual",
+                "vanuatu",
+                "champion",
+                "champion-virtual"
+            ]
+        },
+        "landing_company_short": {
             "description": "[Optional] If specified, will return only the underlyings for the specified landing company.",
             "type": "string",
             "enum": [
