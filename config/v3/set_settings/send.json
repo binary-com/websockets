@@ -180,7 +180,9 @@
             "type": "string",
             "enum": [
                 "Mr",
-                "Ms"
+                "Ms",
+                "Miss",
+                "Mrs"
             ]
         },
         "secret_answer": {
