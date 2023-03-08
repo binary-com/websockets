@@ -60,7 +60,9 @@
                     "TICKLOW",
                     "UPORDOWN",
                     "VANILLALONGCALL",
-                    "VANILLALONGPUT"
+                    "VANILLALONGPUT",
+                    "TURBOSLONG",
+                    "TURBOSSHORT"
                 ],
                 "uniqueItems": true
             }

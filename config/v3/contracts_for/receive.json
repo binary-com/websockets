@@ -196,11 +196,25 @@
                                     "10"
                                 ]
                             },
+                            "max_stake": {
+                                "description": "[Only for turbos options] Maximum contract stake",
+                                "type": [
+                                    "null",
+                                    "number"
+                                ]
+                            },
                             "min_contract_duration": {
                                 "description": "Minimum contract duration.",
                                 "type": "string",
                                 "examples": [
                                     "5"
+                                ]
+                            },
+                            "min_stake": {
+                                "description": "[Only for turbos options] Minimum contract stake",
+                                "type": [
+                                    "null",
+                                    "number"
                                 ]
                             },
                             "multiplier_range": {

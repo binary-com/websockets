@@ -108,7 +108,9 @@
                         "RUNLOW",
                         "ACCU",
                         "VANILLALONGCALL",
-                        "VANILLALONGPUT"
+                        "VANILLALONGPUT",
+                        "TURBOSLONG",
+                        "TURBOSSHORT"
                     ]
                 },
                 "currency": {
