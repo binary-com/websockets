@@ -34,6 +34,29 @@
                     "description": "Config structure with document types ,taxRequired ,tin format details.",
                     "type": "object"
                 },
+                "ctrader": {
+                    "description": "Available CTrader accounts.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "all": {
+                            "description": "CTrader all account types (Synthetic Indices and Financials).",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "standard": {
+                                    "description": "For standard client",
+                                    "type": "string",
+                                    "enum": [
+                                        "svg",
+                                        "none"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            }
+                        }
+                    }
+                },
                 "derivez": {
                     "description": "Available DerivEZ accounts.",
                     "type": "object",
