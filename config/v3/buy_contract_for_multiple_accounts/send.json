@@ -94,7 +94,9 @@
                         "RUNHIGH",
                         "RUNLOW",
                         "VANILLALONGCALL",
-                        "VANILLALONGPUT"
+                        "VANILLALONGPUT",
+                        "TURBOSLONG",
+                        "TURBOSSHORT"
                     ]
                 },
                 "currency": {

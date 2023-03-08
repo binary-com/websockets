@@ -236,11 +236,11 @@
                     "type": "string"
                 },
                 "max_stake": {
-                    "description": "[Only for vanilla options] Maximum stakes allowed",
+                    "description": "[Only for vanilla options and turbos options] Maximum stakes allowed",
                     "type": "number"
                 },
                 "min_stake": {
-                    "description": "[Only for vanilla options] Minimum stakes allowed",
+                    "description": "[Only for vanilla options and turbos options] Minimum stakes allowed",
                     "type": "number"
                 },
                 "multiplier": {
@@ -248,7 +248,7 @@
                     "type": "number"
                 },
                 "number_of_contracts": {
-                    "description": "[Only for vanilla options] The implied number of contracts",
+                    "description": "[Only for vanilla or turbos options] The implied number of contracts",
                     "type": "number"
                 },
                 "payout": {
