@@ -682,6 +682,10 @@
                 "validation_error": {
                     "description": "Error message if validation fails",
                     "type": "string"
+                },
+                "validation_error_code": {
+                    "description": "Error code if validation fails",
+                    "type": "string"
                 }
             }
         },
