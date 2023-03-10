@@ -10,31 +10,8 @@
     "properties": {
         "set_settings": {
             "title": "set_settings",
-            "description": "Returns notification with proper code and message_to_client",
-            "type": "object",
-            "additionalProperties": false,
-            "required": [
-                "notification"
-            ],
-            "properties": {
-                "notification": {
-                    "description": "Notification message to display on special occasions",
-                    "type": [
-                        "null",
-                        "object"
-                    ],
-                    "properties": {
-                        "code": {
-                            "description": "Code which is unique for certain scenarios",
-                            "type": "string"
-                        },
-                        "message_to_client": {
-                            "description": "Message to show to client",
-                            "type": "string"
-                        }
-                    }
-                }
-            }
+            "description": "1 on success",
+            "type": "integer"
         },
         "echo_req": {
             "description": "Echo of the request made.",
