@@ -45,10 +45,11 @@
         "sort_by": {
             "description": "[Optional] How the results are sorted.",
             "type": "string",
-            "default": "created_time",
+            "default": "relation_time",
             "enum": [
                 "name",
-                "id"
+                "created_time",
+                "relation_time"
             ]
         },
         "trade_partners": {
