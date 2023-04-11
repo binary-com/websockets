@@ -31,7 +31,8 @@
             "enum": [
                 "demo",
                 "gaming",
-                "financial"
+                "financial",
+                "all"
             ]
         },
         "address": {
@@ -90,10 +91,11 @@
             "sensitive": 1
         },
         "mt5_account_category": {
-            "description": "[Optional] To choose whether account is conventional or not. Unavailable for financial_stp MT5_account_type",
+            "description": "[Optional] To choose whether account is conventional or swap_free. Unavailable for financial_stp MT5_account_type",
             "type": "string",
             "enum": [
-                "conventional"
+                "conventional",
+                "swap_free"
             ]
         },
         "mt5_account_type": {
@@ -141,6 +143,14 @@
             "description": "[Optional] User's state (region) of residence.",
             "type": "string",
             "pattern": "^.{0,50}$"
+        },
+        "sub_account_category": {
+            "description": "[Optional] Indicate the sub account category that we have in the cfd group naming convention.",
+            "type": "string",
+            "enum": [
+                "swap_free",
+                "swap_free_high_risk"
+            ]
         },
         "zipCode": {
             "description": "[Optional] User's zip code.",
