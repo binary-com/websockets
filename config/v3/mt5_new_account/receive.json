@@ -20,7 +20,8 @@
                     "enum": [
                         "demo",
                         "gaming",
-                        "financial"
+                        "financial",
+                        "all"
                     ]
                 },
                 "agent": {
@@ -51,15 +52,17 @@
                     "description": "With default value of conventional, unavailable for `financial_stp` sub account type.",
                     "type": "string",
                     "enum": [
-                        "conventional"
+                        "conventional",
+                        "swap_free"
                     ]
                 },
                 "mt5_account_type": {
-                    "description": "Sub account type, present only when account type is either `demo` or `financial`.",
+                    "description": "Sub account type for classic MT5 account.",
                     "type": "string",
                     "enum": [
                         "financial",
-                        "financial_stp"
+                        "financial_stp",
+                        "standard"
                     ]
                 }
             }
