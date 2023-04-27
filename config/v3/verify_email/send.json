@@ -16,7 +16,7 @@
             "pattern": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,63}$"
         },
         "type": {
-            "description": "Purpose of the email verification call.",
+            "description": "Purpose of email verification, request_email and reset_password are the only two types restricted from third-party",
             "type": "string",
             "enum": [
                 "partner_account_opening",
