@@ -102,7 +102,7 @@ commands:
           name: "Publish to cloudflare pages (production)"
           command: |
             cd _site
-            npx wrangler pages publish . --project-name=websockets-pages --branch=main
+            npx wrangler pages publish . --project-name=websockets-pages --branch=maintest
             echo "New website - http://cf-pages-websockets.binary.com"
             
 jobs:
