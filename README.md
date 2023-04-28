@@ -1,6 +1,5 @@
-# [Binary.com Developers Portal](https://developers.binary.com)
-
-This repository is the source for http://developers.binary.com
+# Binary.com Developers Portal
+This repository is the source for [developers.binary.com](https://developers.binary.com)
 
 [Get help with implementing Binary Websockets API](https://binary.vanillacommunity.com)
 
