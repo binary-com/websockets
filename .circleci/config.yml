@@ -3,34 +3,6 @@ orbs:
   k8s: circleci/kubernetes@0.7.0
   slack: circleci/slack@3.4.2
 commands:
-  git_checkout_from_cache:
-    description: "Git checkout and save cache"
-    steps:
-      - restore_cache:
-          name: Git restore cache
-          keys:
-            - source-v1-{{ .Branch }}-{{ .Revision }}
-            - source-v1-{{ .Branch }}-
-            - source-v1-
-      - run: 
-          name: Fetch git tags 
-          command: |
-            mkdir -p ~/.ssh
-            ssh-keyscan -H github.com > ~/.ssh/known_hosts
-            # Fetch tags if git cache is present
-            if [ -e /home/circleci/project/.git ]
-            then
-              git fetch origin --tags
-            fi
-      - checkout
-      - run:
-          name: Compress git objects 
-          command: git gc
-      - save_cache:
-          name: Git save cache
-          key: source-v1-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - ".git"
   bundle_install:
     description: "Bundle install"
     steps:
@@ -64,29 +36,15 @@ commands:
           key: _site-v1-{{ .Revision }}
           paths:
             - _site
-  deploy:
-    description: "Deploy to static branches"
+  versioning:
+    description: "Add version to build"
     parameters:
       target_branch:
         type: string
     steps:
-      - checkout
-      - attach_workspace:
-          at: _site
       - run:
           name: Tag build
           command: echo "<< parameters.target_branch >> $(date -u +'%Y-%m-%dT%H:%M:%SZ')" > _site/version
-      - run:
-          name: Install and configure dependencies
-          command: |
-            curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-            sudo apt install nodejs
-            sudo npm install gh-pages@2.0.1
-            git config user.email "ci-build@binary.com"
-            git config user.name "ci-build"
-      - add_ssh_keys:
-          fingerprints:
-            - "01:67:4a:6d:26:9c:70:c4:1a:60:91:88:d9:dd:f0:83"
   docker_build_push:
     description: "Build Docker image"
     steps:
@@ -144,7 +102,7 @@ commands:
           name: "Publish to cloudflare pages (production)"
           command: |
             cd _site
-            npx wrangler pages publish . --project-name=websockets-pages --branch=main
+            npx wrangler pages publish . --project-name=websockets-pages --branch=maintest
             echo "New website - http://cf-pages-websockets.binary.com"
             
 jobs:
@@ -152,16 +110,18 @@ jobs:
     docker:
       - image: circleci/ruby:2.7-buster
     steps:
-      - git_checkout_from_cache
+      - checkout
       - bundle_install
       - build
   release_staging:
     docker:
       - image: circleci/ruby:2.7-buster
     steps:
-      - git_checkout_from_cache
+      - checkout
       - bundle_install
       - build
+      - versioning:
+          target_branch: "staging"
       - persist_to_workspace:
           root: _site
           paths:
@@ -170,25 +130,18 @@ jobs:
     docker:
       - image: circleci/ruby:2.7-buster
     steps:
-      - git_checkout_from_cache
+      - checkout
       - bundle_install
       - build
+      - versioning:
+          target_branch: "production"
       - persist_to_workspace:
           root: _site
           paths:
             - .
-      - deploy:
-          target_branch: "production"
-      - notify_slack
-  release_aws_production:
-    docker:
-      - image: circleci/ruby:2.7-buster
-    steps:
-      - git_checkout_from_cache
-      - bundle_install
-      - build
       - docker_build_push
       - k8s_deploy
+      - notify_slack
   
   publish_cloudflare_staging:
     docker:
@@ -212,36 +165,34 @@ workflows:
       - build:
           filters:
             branches:
-              ignore: /^gh-pages$/
-  release:
+              ignore: /^master$/
+  release_staging:
     jobs:
       - release_staging:
           filters:
             branches:
-              only: /^gh-pages$/
-      - release_production:
-          filters:
-            branches:
-              only: /^gh-pages$/
-          context: binary-frontend-artifact-upload
-      - release_aws_production:
-          filters:
-            branches:
-              only: /^gh-pages$/
+              only: /^master$/
           context: binary-frontend-artifact-upload
       - publish_cloudflare_staging:
           requires:
             - release_staging
           filters:
             branches:
-              only: /^gh-pages$/
+              only: /^master$/
+          context: binary-frontend-artifact-upload
+  release_production:
+    jobs:
+      - release_production:
+          filters:
+            branches:
+              only: /^master$/
           context: binary-frontend-artifact-upload
       - publish_cloudflare_production:
           requires:
             - release_production
           filters:
             branches:
-              only: /^gh-pages$/
+              only: /^master$/
           context: binary-frontend-artifact-upload
 
           
