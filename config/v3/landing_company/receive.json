@@ -238,6 +238,14 @@
                                         0,
                                         1
                                     ]
+                                },
+                                "tin_not_mandatory": {
+                                    "description": "Flag that indicates whether tax identifier number is not mandatory for the current country and landing company.",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 }
                             }
                         }
@@ -396,6 +404,14 @@
                                 },
                                 "support_professional_client": {
                                     "description": "Flag that indicates whether the landing company supports professional accounts or not",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
+                                },
+                                "tin_not_mandatory": {
+                                    "description": "Flag that indicates whether tax identifier number is not mandatory for the current country and landing company.",
                                     "type": "integer",
                                     "enum": [
                                         0,
@@ -564,6 +580,14 @@
                                         0,
                                         1
                                     ]
+                                },
+                                "tin_not_mandatory": {
+                                    "description": "Flag that indicates whether tax identifier number is not mandatory for the current country and landing company.",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 }
                             }
                         }
@@ -727,6 +751,14 @@
                                 0,
                                 1
                             ]
+                        },
+                        "tin_not_mandatory": {
+                            "description": "Flag that indicates whether tax identifier number is not mandatory for the current country and landing company.",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
                         }
                     }
                 },
@@ -885,6 +917,14 @@
                         },
                         "support_professional_client": {
                             "description": "Flag that indicates whether the landing company supports professional accounts or not",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        },
+                        "tin_not_mandatory": {
+                            "description": "Flag that indicates whether tax identifier number is not mandatory for the current country and landing company.",
                             "type": "integer",
                             "enum": [
                                 0,
@@ -1085,6 +1125,14 @@
                                         0,
                                         1
                                     ]
+                                },
+                                "tin_not_mandatory": {
+                                    "description": "Flag that indicates whether tax identifier number is not mandatory for the current country and landing company.",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 }
                             }
                         }
@@ -1254,6 +1302,14 @@
                                         0,
                                         1
                                     ]
+                                },
+                                "tin_not_mandatory": {
+                                    "description": "Flag that indicates whether tax identifier number is not mandatory for the current country and landing company.",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
                                 }
                             }
                         },
@@ -1408,6 +1464,14 @@
                                 },
                                 "support_professional_client": {
                                     "description": "Flag that indicates whether the landing company supports professional accounts or not",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
+                                },
+                                "tin_not_mandatory": {
+                                    "description": "Flag that indicates whether tax identifier number is not mandatory for the current country and landing company.",
                                     "type": "integer",
                                     "enum": [
                                         0,
@@ -1577,6 +1641,14 @@
                                 },
                                 "support_professional_client": {
                                     "description": "Flag that indicates whether the landing company supports professional accounts or not",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
+                                },
+                                "tin_not_mandatory": {
+                                    "description": "Flag that indicates whether tax identifier number is not mandatory for the current country and landing company.",
                                     "type": "integer",
                                     "enum": [
                                         0,

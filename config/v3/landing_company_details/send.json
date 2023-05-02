@@ -23,8 +23,14 @@
                 "champion-virtual",
                 "samoa",
                 "samoa-virtual",
-                "dsl"
+                "dsl",
+                "bvi",
+                "labuan"
             ]
+        },
+        "country": {
+            "description": "[Optional] Will return an extra field `tin_not_mandatory` indicating if the landing company does not require tax identification number for the provided country.",
+            "type": "string"
         },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
