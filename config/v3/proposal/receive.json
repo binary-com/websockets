@@ -58,10 +58,18 @@
                     ]
                 },
                 "contract_details": {
-                    "description": "Contains contract information. (Only applicable for accumulator).",
+                    "description": "Contains contract information.",
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
+                        "barrier": {
+                            "description": "Barrier of the contract.",
+                            "type": "string",
+                            "pattern": "^[+-]?[0-9]+\\.?[0-9]*$",
+                            "examples": [
+                                "42.123"
+                            ]
+                        },
                         "high_barrier": {
                             "description": "High barrier calculated based on current spot",
                             "type": "string",

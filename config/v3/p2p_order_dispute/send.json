@@ -28,7 +28,8 @@
                 "seller_not_released",
                 "buyer_underpaid",
                 "buyer_overpaid",
-                "buyer_not_paid"
+                "buyer_not_paid",
+                "buyer_third_party_payment_method"
             ]
         },
         "id": {
