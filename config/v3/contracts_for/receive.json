@@ -285,6 +285,10 @@
                     "description": "Count of contracts available",
                     "type": "number"
                 },
+                "non_available": {
+                    "description": "Array of non_available contracts details",
+                    "type": "array"
+                },
                 "open": {
                     "description": "Symbol's next market-open time as an epoch value",
                     "type": [
