@@ -246,6 +246,22 @@
                         "9874.520"
                     ]
                 },
+                "current_spot_high_barrier": {
+                    "description": "[Applicable for accumulator] High barrier based on current spot.",
+                    "type": "string",
+                    "pattern": "^[+-]?[0-9]+\\.?[0-9]*$",
+                    "examples": [
+                        "42.123"
+                    ]
+                },
+                "current_spot_low_barrier": {
+                    "description": "[Applicable for accumulator] Low barrier based on current spot.",
+                    "type": "string",
+                    "pattern": "^[+-]?[0-9]+\\.?[0-9]*$",
+                    "examples": [
+                        "42.123"
+                    ]
+                },
                 "current_spot_time": {
                     "description": "The corresponding time of the current spot.",
                     "type": "integer",

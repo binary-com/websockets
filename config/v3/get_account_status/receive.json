@@ -49,6 +49,10 @@
                                                 "description": "2-letter country code used to request the attempt.",
                                                 "type": "string"
                                             },
+                                            "document_type": {
+                                                "description": "The document type of the attempt.",
+                                                "type": "string"
+                                            },
                                             "id": {
                                                 "description": "The id of the attempt.",
                                                 "type": "string"
