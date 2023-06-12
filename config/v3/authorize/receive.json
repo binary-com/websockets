@@ -21,14 +21,6 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "account_category": {
-                                "description": "Account category.",
-                                "type": "string",
-                                "enum": [
-                                    "trading",
-                                    "wallet"
-                                ]
-                            },
                             "account_type": {
                                 "description": "Account type.",
                                 "type": "string"
@@ -65,34 +57,96 @@
                                 "description": "Landing company shortcode the account belongs to.",
                                 "type": "string"
                             },
-                            "linked_to": {
-                                "description": "Details of the list of Trading accounts linked to the Wallet account.",
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "additionalProperties": false,
-                                    "properties": {
-                                        "loginid": {
-                                            "description": "Account ID.",
-                                            "type": "string"
-                                        },
-                                        "platform": {
-                                            "description": "Account platform name.",
-                                            "type": "string",
-                                            "enum": [
-                                                "derivez",
-                                                "dtrade",
-                                                "dwallet",
-                                                "dxtrade",
-                                                "mt5"
-                                            ]
+                            "loginid": {
+                                "description": "The account ID of specified account.",
+                                "type": "string"
+                            },
+                            "trading": {
+                                "description": "Details of the Trading account.",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "linked_to": {
+                                        "description": "Details of the Wallet account linked to the Trading account.",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "properties": {
+                                                "account_id": {
+                                                    "description": "Wallet account ID.",
+                                                    "type": "string"
+                                                },
+                                                "balance": {
+                                                    "description": "Wallet account balance.",
+                                                    "type": "string"
+                                                },
+                                                "currency": {
+                                                    "description": "Wallet account currency.",
+                                                    "type": "string"
+                                                },
+                                                "payment_method": {
+                                                    "description": "Wallet account payment method.",
+                                                    "type": "string"
+                                                }
+                                            }
                                         }
                                     }
                                 }
                             },
-                            "loginid": {
-                                "description": "The account ID of specified account.",
-                                "type": "string"
+                            "wallet": {
+                                "description": "Details of the Wallet account.",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "account_id": {
+                                        "description": "Wallet account ID.",
+                                        "type": "string"
+                                    },
+                                    "balance": {
+                                        "description": "Wallet account balance.",
+                                        "type": "number"
+                                    },
+                                    "currency": {
+                                        "description": "Wallet account currency.",
+                                        "type": "string"
+                                    },
+                                    "linked_to": {
+                                        "description": "Details of the list of Trading accounts linked to the Wallet account.",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "properties": {
+                                                "account_id": {
+                                                    "description": "Trading account ID.",
+                                                    "type": "string"
+                                                },
+                                                "balance": {
+                                                    "description": "Trading account balance.",
+                                                    "type": "string"
+                                                },
+                                                "currency": {
+                                                    "description": "Trading account currency.",
+                                                    "type": "string"
+                                                },
+                                                "platform": {
+                                                    "description": "Trading account platform name.",
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "deriv",
+                                                        "dxtrade",
+                                                        "mt5"
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "payment_method": {
+                                        "description": "Wallet account payment method.",
+                                        "type": "string"
+                                    }
+                                }
                             }
                         }
                     }
@@ -134,31 +188,6 @@
                     "description": "Landing company shortcode the account belongs to.",
                     "type": "string"
                 },
-                "linked_to": {
-                    "description": "Details of the list of Trading accounts linked to the Wallet account.",
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                            "loginid": {
-                                "description": "Account ID.",
-                                "type": "string"
-                            },
-                            "platform": {
-                                "description": "Account platform name.",
-                                "type": "string",
-                                "enum": [
-                                    "derivez",
-                                    "dtrade",
-                                    "dwallet",
-                                    "dxtrade",
-                                    "mt5"
-                                ]
-                            }
-                        }
-                    }
-                },
                 "local_currencies": {
                     "description": "Currencies in client's residence country",
                     "type": "object",
@@ -199,6 +228,39 @@
                         "type": "string"
                     }
                 },
+                "trading": {
+                    "description": "Details of the Trading account.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "linked_to": {
+                            "description": "Details of the Wallet account linked to the Trading account.",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "account_id": {
+                                        "description": "Wallet account ID.",
+                                        "type": "string"
+                                    },
+                                    "balance": {
+                                        "description": "Wallet account balance.",
+                                        "type": "string"
+                                    },
+                                    "currency": {
+                                        "description": "Wallet account currency.",
+                                        "type": "string"
+                                    },
+                                    "payment_method": {
+                                        "description": "Wallet account payment method.",
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "upgradeable_landing_companies": {
                     "description": "List of landing company shortcodes the account can upgrade to.",
                     "type": "array"
@@ -206,6 +268,60 @@
                 "user_id": {
                     "description": "The internal user ID for this account.",
                     "type": "integer"
+                },
+                "wallet": {
+                    "description": "Details of the Wallet account.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "account_id": {
+                            "description": "Wallet account ID.",
+                            "type": "string"
+                        },
+                        "balance": {
+                            "description": "Wallet account balance.",
+                            "type": "number"
+                        },
+                        "currency": {
+                            "description": "Wallet account currency.",
+                            "type": "string"
+                        },
+                        "linked_to": {
+                            "description": "Details of the list of Trading accounts linked to the Wallet account.",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "account_id": {
+                                        "description": "Trading account ID.",
+                                        "type": "string"
+                                    },
+                                    "balance": {
+                                        "description": "Trading account balance.",
+                                        "type": "string"
+                                    },
+                                    "currency": {
+                                        "description": "Trading account currency.",
+                                        "type": "string"
+                                    },
+                                    "platform": {
+                                        "description": "Trading account platform name.",
+                                        "type": "string",
+                                        "enum": [
+                                            "deriv",
+                                            "dxtrade",
+                                            "mt5"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "payment_method": {
+                            "description": "Wallet account payment method.",
+                            "type": "string"
+                        }
+                    }
                 }
             }
         },
