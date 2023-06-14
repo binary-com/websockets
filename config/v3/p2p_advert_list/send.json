@@ -32,6 +32,15 @@
             "description": "[Optional] How much to buy or sell, used to calculate prices.",
             "type": "number"
         },
+        "block_trade": {
+            "description": "[Optional] Return block trade adverts when 1, non-block trade adverts when 0 (default).",
+            "type": "integer",
+            "default": 0,
+            "enum": [
+                0,
+                1
+            ]
+        },
         "counterparty_type": {
             "description": "[Optional] Filter the adverts by `counterparty_type`.",
             "type": "string",

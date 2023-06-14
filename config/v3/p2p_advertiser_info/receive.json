@@ -71,6 +71,25 @@
                         0
                     ]
                 },
+                "block_trade": {
+                    "description": "Block trading limits, if block trading is allowed.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "max_order_amount",
+                        "min_order_amount"
+                    ],
+                    "properties": {
+                        "max_order_amount": {
+                            "description": "Maximum order amount for block trade adverts.",
+                            "type": "string"
+                        },
+                        "min_order_amount": {
+                            "description": "Minimum order amount for block trade adverts.",
+                            "type": "string"
+                        }
+                    }
+                },
                 "blocked_by_count": {
                     "description": "The number of P2P users who have blocked this advertiser.",
                     "type": "integer"
@@ -345,6 +364,14 @@
                         "max_daily_sell"
                     ],
                     "properties": {
+                        "block_trade": {
+                            "description": "When `1`, upgrade will provide block trading.",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        },
                         "max_daily_buy": {
                             "description": "Upgradable daily buy limit.",
                             "type": "string"

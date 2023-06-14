@@ -53,12 +53,21 @@
                     "type": "object",
                     "additionalProperties": false,
                     "required": [
+                        "block_trade",
                         "description",
                         "id",
                         "payment_method",
                         "type"
                     ],
                     "properties": {
+                        "block_trade": {
+                            "description": "Indicates if this is block trade advert or not.",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        },
                         "description": {
                             "description": "General information about the advert.",
                             "type": "string",

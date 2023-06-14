@@ -30,6 +30,15 @@
             "exclusiveMinimum": true,
             "minimum": 0
         },
+        "block_trade": {
+            "description": "[Optional] Indicates if this is block trade ad or not. Default: 0.",
+            "type": "integer",
+            "default": 0,
+            "enum": [
+                0,
+                1
+            ]
+        },
         "contact_info": {
             "description": "[Optional] Advertiser contact information.",
             "type": "string",

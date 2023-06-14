@@ -313,6 +313,7 @@
                     "additionalProperties": false,
                     "required": [
                         "adverts_active_limit",
+                        "block_trade",
                         "cancellation_block_duration",
                         "cancellation_count_period",
                         "cancellation_grace_period",
@@ -340,6 +341,25 @@
                         "adverts_archive_period": {
                             "description": "Adverts will be deactivated if no activity occurs within this period, in days.",
                             "type": "integer"
+                        },
+                        "block_trade": {
+                            "description": "Block trading settings",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "disabled": {
+                                    "description": "When 1, Block trading is unavailable.",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
+                                },
+                                "maximum_advert_amount": {
+                                    "description": "Maximum amount of a block trade advert, in USD.",
+                                    "type": "number"
+                                }
+                            }
                         },
                         "cancellation_block_duration": {
                             "description": "A buyer will be blocked for this duration after exceeding the cancellation limit, in hours.",

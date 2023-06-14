@@ -54,7 +54,7 @@
             ]
         },
         "upgrade_limits": {
-            "description": "[Optional] Used to upgrade daily limits of advertiser if advertiser is eligible",
+            "description": "[Optional] Used to upgrade daily limits of eligible advertiser.",
             "type": "integer",
             "enum": [
                 1

@@ -26,6 +26,7 @@
                         "required": [
                             "account_currency",
                             "advertiser_details",
+                            "block_trade",
                             "counterparty_type",
                             "country",
                             "created_time",
@@ -187,6 +188,14 @@
                             "amount_display": {
                                 "description": "The total amount specified in advert, in `account_currency`, formatted to appropriate decimal places. It is only visible to the advert owner.",
                                 "type": "string"
+                            },
+                            "block_trade": {
+                                "description": "Indicates if this is block trade advert or not.",
+                                "type": "integer",
+                                "enum": [
+                                    0,
+                                    1
+                                ]
                             },
                             "contact_info": {
                                 "description": "Advertiser contact information. Only applicable for 'sell adverts'.",
@@ -361,7 +370,7 @@
                                 ]
                             },
                             "visibility_status": {
-                                "description": "Reasons why an advert is not visible, only visible to the advert owner. Possible values: \n- `advert_inactive`: the advert is set inactive. \n- `advert_max_limit`: the minimum order amount exceeds the system maximum order. \n- `advert_min_limit`: the maximum order amount is too small to be shown on the advert list. \n- `advert_remaining`: the remaining amount of the advert is below the minimum order. \n- `advertiser_ads_paused`: the advertiser has paused all adverts. \n- `advertiser_approval`: the advertiser's proof of identity is not verified. \n- `advertiser_balance`: the advertiser's P2P balance is less than the minimum order. \n- `advertiser_daily_limit`: the advertiser's remaining daily limit is less than the minimum order. \n- `advertiser_temp_ban`: the advertiser is temporarily banned from P2P.",
+                                "description": "Reasons why an advert is not visible, only visible to the advert owner. Possible values: \n- `advert_inactive`: the advert is set inactive. \n- `advert_max_limit`: the minimum order amount exceeds the system maximum order. \n- `advert_min_limit`: the maximum order amount is too small to be shown on the advert list. \n- `advert_remaining`: the remaining amount of the advert is below the minimum order. \n- `advertiser_ads_paused`: the advertiser has paused all adverts. \n- `advertiser_approval`: the advertiser's proof of identity is not verified. \n- `advertiser_balance`: the advertiser's P2P balance is less than the minimum order. \n- `advertiser_block_trade_ineligible`: the advertiser is not currently eligible for block trading. \n- `advertiser_daily_limit`: the advertiser's remaining daily limit is less than the minimum order. \n- `advertiser_temp_ban`: the advertiser is temporarily banned from P2P.",
                                 "type": "array",
                                 "items": {
                                     "type": "string",
@@ -373,6 +382,7 @@
                                         "advertiser_ads_paused",
                                         "advertiser_approval",
                                         "advertiser_balance",
+                                        "advertiser_block_trade_ineligible",
                                         "advertiser_daily_limit",
                                         "advertiser_temp_ban"
                                     ]
