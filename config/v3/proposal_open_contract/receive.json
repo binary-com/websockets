@@ -302,6 +302,10 @@
                     "description": "Display name of underlying",
                     "type": "string"
                 },
+                "display_number_of_contracts": {
+                    "description": "[Only for vanilla or turbos options] The implied number of contracts",
+                    "type": "string"
+                },
                 "display_value": {
                     "description": "The `bid_price` with the correct precision",
                     "type": "string"
@@ -557,7 +561,7 @@
                     "type": "number"
                 },
                 "number_of_contracts": {
-                    "description": "[Only for vanilla options] The implied number of contracts",
+                    "description": "[Only for vanilla or turbos options] The implied number of contracts",
                     "type": "number"
                 },
                 "payout": {
