@@ -19,9 +19,9 @@
             "type": "integer"
         },
         "app_markup_percentage": {
-            "description": "[Optional] Markup to be added to contract prices (as a percentage of contract payout). Max markup: 3%.",
+            "description": "[Optional] Markup to be added to contract prices (as a percentage of contract payout).",
             "type": "number",
-            "maximum": 3,
+            "maximum": 5,
             "minimum": 0
         },
         "appstore": {
