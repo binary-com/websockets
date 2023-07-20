@@ -5,20 +5,4 @@ permalink: websockets/
 
 <h1>Quickstart</h1>
 
-<p>The <a href="https://www.binary.com">Binary.com</a> Websockets API uses the state-of-the-art <a target=_blank href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSockets</a> protocol to allow fast, two-way messaging between client programs and Binary.com trading services.</p>
-
-<p>To open a connection to Binary.com WebSocket service (in Javascript), do:
-
-<pre data-language="javascript">var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=XXX');</pre>
-
-where <code>app_id</code> is your Application ID obtained as described in the <a href="/guide">API guide</a>.</p>
-
-<p>For languages other than JavaScript, view <a href="/demos">code samples</a>.</p>
-
-<p>You can now send data up and down the websocket using any of the messages described in the <a href="/api">API playground</a>.</p>
-
-<p><strong>Note:</strong> to receive responses where English text has been translated to another language, append the language code to the connection URL as follows:</p>
-
-<pre data-language="javascript">var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=XXX&l=RU');</pre>
-
-<p>Data transfer in both directions is done with structured JSON-encoded data. All field name identifiers, and most field values, will be double-quoted in the encoded data. The same applies to receiving messages: each message is a serialized JSON-encoded string.</p>
+<p> Please refer to <a href="https://api.deriv.com/docs/core-concepts/websocket">https://api.deriv.com/docs/core-concepts/websocket.</a> </p>
