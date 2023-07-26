@@ -40,7 +40,7 @@
             "pattern": "^[\\w\\s-]{0,30}$"
         },
         "document_issuing_country": {
-            "description": "[Optional] 2-letter country code",
+            "description": "2-letter country code, mandatory for POI only",
             "type": "string",
             "pattern": "^[a-z]{2}$"
         },
