@@ -33,7 +33,8 @@
                             "wallet",
                             "dxtrade",
                             "derivez",
-                            "binary"
+                            "binary",
+                            "ctrader"
                         ]
                     },
                     "balance": {
