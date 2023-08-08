@@ -24,7 +24,6 @@
                 "reset_password",
                 "paymentagent_withdraw",
                 "payment_withdraw",
-                "trading_platform_password_reset",
                 "trading_platform_dxtrade_password_reset",
                 "trading_platform_mt5_password_reset",
                 "trading_platform_investor_password_reset",
