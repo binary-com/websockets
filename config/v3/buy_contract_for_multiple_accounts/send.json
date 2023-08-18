@@ -165,8 +165,9 @@
             "sensitive": 1
         },
         "passthrough": {
-            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
-            "type": "object"
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field. Maximum size is 3500 bytes.",
+            "type": "object",
+            "maxSize": 3500
         },
         "req_id": {
             "description": "[Optional] Used to map request to response.",
