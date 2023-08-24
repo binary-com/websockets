@@ -71,6 +71,8 @@ groups:
         title: Get Account Settings
       - name: identity_verification_document_add
         title: Identity Verification Add Document
+      - name: kyc_auth_status
+        title: KYC Authentication Status
       - name: landing_company
         title: Landing Company
       - name: landing_company_details
