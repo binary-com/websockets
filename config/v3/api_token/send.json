@@ -42,7 +42,8 @@
                     "payments",
                     "admin"
                 ]
-            }
+            },
+            "uniqueItems": true
         },
         "valid_for_current_ip_only": {
             "description": "[Optional] If you set this parameter during token creation, then the token created will only work for the IP address that was used to create the token",
