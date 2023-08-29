@@ -43,6 +43,7 @@
             "type": "string",
             "default": "synthetic",
             "enum": [
+                "all",
                 "financial",
                 "synthetic"
             ]

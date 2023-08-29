@@ -109,7 +109,8 @@
         "name": {
             "description": "Client's name. The maximum length here is 101 characters.",
             "type": "string",
-            "pattern": "^.{1,101}$"
+            "maxLength": 101,
+            "minLength": 1
         },
         "phone": {
             "description": "[Optional] User's phone number.",

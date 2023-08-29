@@ -27,8 +27,8 @@
                     "type": "string"
                 },
                 "balance": {
-                    "description": "Account balance.",
-                    "type": "string"
+                    "description": "Balance of the Trading account.",
+                    "type": "number"
                 },
                 "city": {
                     "description": "User's city of residence.",
@@ -44,6 +44,10 @@
                 },
                 "currency": {
                     "description": "MT5 account currency (`USD` or `EUR`) that depends on the MT5 company (`vanuatu`, `svg`, `malta`).",
+                    "type": "string"
+                },
+                "display_balance": {
+                    "description": "Account balance, formatted to appropriate decimal places.",
                     "type": "string"
                 },
                 "email": {
@@ -63,6 +67,7 @@
                         "labuan",
                         "malta",
                         "maltainvest",
+                        "seychelles",
                         "svg",
                         "vanuatu"
                     ]
@@ -80,6 +85,7 @@
                     "description": "Market type",
                     "type": "string",
                     "enum": [
+                        "all",
                         "financial",
                         "synthetic"
                     ]
@@ -98,16 +104,77 @@
                     "type": "string",
                     "sensitive": 1
                 },
+                "server": {
+                    "description": "Trade server name of the MT5 account.",
+                    "type": "string"
+                },
+                "server_info": {
+                    "description": "Trade server information.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "environment": {
+                            "description": "The environment. E.g. Deriv-Server.",
+                            "type": "string",
+                            "enum": [
+                                "Deriv-Demo",
+                                "Deriv-Server",
+                                "Deriv-Server-02"
+                            ]
+                        },
+                        "geolocation": {
+                            "description": "Geographical location of the server.",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "group": {
+                                    "description": "Internal server grouping.",
+                                    "type": "string"
+                                },
+                                "location": {
+                                    "description": "Server location.",
+                                    "type": "string"
+                                },
+                                "region": {
+                                    "description": "Server region.",
+                                    "type": "string"
+                                },
+                                "sequence": {
+                                    "description": "Server sequence.",
+                                    "type": "integer"
+                                }
+                            }
+                        },
+                        "id": {
+                            "description": "Server id.",
+                            "type": "string"
+                        }
+                    }
+                },
                 "state": {
                     "description": "User's state (region) of residence.",
                     "type": "string"
+                },
+                "sub_account_category": {
+                    "description": "Sub account category.",
+                    "type": "string",
+                    "enum": [
+                        "",
+                        "ibt",
+                        "lim",
+                        "stp",
+                        "swap_free",
+                        "swap_free_high_risk"
+                    ]
                 },
                 "sub_account_type": {
                     "description": "Sub account type",
                     "type": "string",
                     "enum": [
+                        "derivez",
                         "financial",
-                        "financial_stp"
+                        "financial_stp",
+                        "standard"
                     ]
                 },
                 "zipCode": {
