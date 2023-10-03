@@ -32,6 +32,16 @@
             "type": "string",
             "pattern": "^[0-9]+$"
         },
+        "date_from": {
+            "description": "[Optional] Filter the orders created after this date(included) format(epoch or YYYY-MM-DD)",
+            "type": "string",
+            "pattern": "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|[0-9]{10})$"
+        },
+        "date_to": {
+            "description": "[Optional] Filter the orders created before this date(included) format(epoch or YYYY-MM-DD)",
+            "type": "string",
+            "pattern": "^([0-9]{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])|[0-9]{10})$"
+        },
         "limit": {
             "description": "[Optional] Used for paging.",
             "type": "integer",
