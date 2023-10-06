@@ -19,6 +19,28 @@
                 1
             ]
         },
+        "landing_companies": {
+            "description": "Indicates which landing companies to get the KYC authentication status for.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "iom",
+                    "malta",
+                    "maltainvest",
+                    "svg",
+                    "virtual",
+                    "vanuatu",
+                    "labuan",
+                    "champion",
+                    "champion-virtual",
+                    "samoa",
+                    "samoa-virtual",
+                    "bvi",
+                    "dsl"
+                ]
+            }
+        },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field. Maximum size is 3500 bytes.",
             "type": "object",

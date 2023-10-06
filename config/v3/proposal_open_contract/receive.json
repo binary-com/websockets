@@ -583,8 +583,18 @@
                     "description": "Epoch of purchase time, will be same as `date_start` for all contracts except forward starting contracts.",
                     "type": "integer"
                 },
+                "reset_barrier": {
+                    "description": "[Only for reset trades i.e. RESETCALL and RESETPUT] Reset barrier of the contract.",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "examples": [
+                        "42.123"
+                    ]
+                },
                 "reset_time": {
-                    "description": "[Only for reset trades] The epoch time of a barrier reset.",
+                    "description": "[Only for reset trades i.e. RESETCALL and RESETPUT] The epoch time of a barrier reset.",
                     "type": "integer",
                     "examples": [
                         1446629000

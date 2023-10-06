@@ -41,6 +41,28 @@
                         "description": "Account balance, formatted to appropriate decimal places.",
                         "type": "string"
                     },
+                    "eligible_to_migrate": {
+                        "description": "[Optional] Determines the eligibility status for migrating a client account based on verification and account type.",
+                        "type": "object",
+                        "items": {
+                            "financial": {
+                                "description": "Sub account category",
+                                "type": "string",
+                                "enum": [
+                                    "bvi",
+                                    "vanuatu"
+                                ]
+                            },
+                            "synthetic": {
+                                "description": "Sub account category",
+                                "type": "string",
+                                "enum": [
+                                    "bvi",
+                                    "vanuatu"
+                                ]
+                            }
+                        }
+                    },
                     "email": {
                         "description": "Email address of the MT5 account.",
                         "type": "string"
@@ -223,7 +245,8 @@
                             "swap_free",
                             "swap_free_high_risk",
                             "ibt",
-                            "stp"
+                            "stp",
+                            "lim"
                         ]
                     },
                     "sub_account_type": {

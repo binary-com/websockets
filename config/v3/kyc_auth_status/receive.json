@@ -12,88 +12,186 @@
             "title": "kyc_auth_status",
             "description": "Proof of Identity (POI) and Proof of Address (POA) authentication status details.",
             "type": "object",
-            "additionalProperties": false,
-            "required": [
-                "address",
-                "identity"
-            ],
-            "properties": {
-                "address": {
-                    "description": "POA authentication status details.",
+            "oneOf": [
+                {
+                    "description": "Proof of Identity (POI) and Proof of Address (POA) authentication status details.",
                     "type": "object",
                     "additionalProperties": false,
+                    "required": [
+                        "address",
+                        "identity"
+                    ],
                     "properties": {
-                        "status": {
-                            "description": "Current POA status.",
-                            "type": "string",
-                            "enum": [
-                                "none",
-                                "pending",
-                                "rejected",
-                                "verified",
-                                "expired"
-                            ]
-                        }
-                    }
-                },
-                "identity": {
-                    "description": "POI authentication status details.",
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                        "available_services": {
-                            "description": "Available services for the next POI attempt.",
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            }
-                        },
-                        "last_rejected": {
-                            "description": "Details on the rejected POI attempt.",
+                        "address": {
+                            "description": "POA authentication status details.",
                             "type": "object",
                             "additionalProperties": false,
                             "properties": {
-                                "document_type": {
-                                    "description": "Document type of the rejected POI attempt (IDV only).",
-                                    "type": [
-                                        "null",
-                                        "string"
+                                "status": {
+                                    "description": "Current POA status.",
+                                    "type": "string",
+                                    "enum": [
+                                        "none",
+                                        "pending",
+                                        "rejected",
+                                        "verified",
+                                        "expired"
                                     ]
-                                },
-                                "rejected_reasons": {
-                                    "description": "Reason(s) for the rejected POI attempt.",
+                                }
+                            }
+                        },
+                        "identity": {
+                            "description": "POI authentication status details.",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "available_services": {
+                                    "description": "Available services for the next POI attempt.",
                                     "type": "array",
                                     "items": {
                                         "type": "string"
                                     }
+                                },
+                                "last_rejected": {
+                                    "description": "Details on the rejected POI attempt.",
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "document_type": {
+                                            "description": "Document type of the rejected POI attempt (IDV only).",
+                                            "type": [
+                                                "null",
+                                                "string"
+                                            ]
+                                        },
+                                        "rejected_reasons": {
+                                            "description": "Reason(s) for the rejected POI attempt.",
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "service": {
+                                    "description": "Service used for the current POI status.",
+                                    "type": "string",
+                                    "enum": [
+                                        "none",
+                                        "idv",
+                                        "onfido",
+                                        "manual"
+                                    ]
+                                },
+                                "status": {
+                                    "description": "Current POI status.",
+                                    "type": "string",
+                                    "enum": [
+                                        "none",
+                                        "pending",
+                                        "rejected",
+                                        "verified",
+                                        "expired",
+                                        "suspected"
+                                    ]
                                 }
                             }
-                        },
-                        "service": {
-                            "description": "Service used for the current POI status.",
-                            "type": "string",
-                            "enum": [
-                                "none",
-                                "idv",
-                                "onfido",
-                                "manual"
-                            ]
-                        },
-                        "status": {
-                            "description": "Current POI status.",
-                            "type": "string",
-                            "enum": [
-                                "none",
-                                "pending",
-                                "rejected",
-                                "verified",
-                                "expired",
-                                "suspected"
-                            ]
                         }
                     }
+                },
+                {
+                    "description": "Proof of Identity (POI) and Proof of Address (POA) authentication status details per Landing Company.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                            "address",
+                            "identity"
+                        ],
+                        "properties": {
+                            "address": {
+                                "description": "POA authentication status details.",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "status": {
+                                        "description": "Current POA status.",
+                                        "type": "string",
+                                        "enum": [
+                                            "none",
+                                            "pending",
+                                            "rejected",
+                                            "verified",
+                                            "expired"
+                                        ]
+                                    }
+                                }
+                            },
+                            "identity": {
+                                "description": "POI authentication status details.",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "available_services": {
+                                        "description": "Available services for the next POI attempt.",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "last_rejected": {
+                                        "description": "Details on the rejected POI attempt.",
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "document_type": {
+                                                "description": "Document type of the rejected POI attempt (IDV only).",
+                                                "type": [
+                                                    "null",
+                                                    "string"
+                                                ]
+                                            },
+                                            "rejected_reasons": {
+                                                "description": "Reason(s) for the rejected POI attempt.",
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "service": {
+                                        "description": "Service used for the current POI status.",
+                                        "type": "string",
+                                        "enum": [
+                                            "none",
+                                            "idv",
+                                            "onfido",
+                                            "manual"
+                                        ]
+                                    },
+                                    "status": {
+                                        "description": "Current POI status.",
+                                        "type": "string",
+                                        "enum": [
+                                            "none",
+                                            "pending",
+                                            "rejected",
+                                            "verified",
+                                            "expired",
+                                            "suspected"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "propertyNames": {
+                        "type": "string"
+                    }
                 }
-            }
+            ]
         },
         "echo_req": {
             "description": "Echo of the request made.",
