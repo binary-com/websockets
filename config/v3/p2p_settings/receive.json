@@ -1,0 +1,243 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Settings (response)",
+    "description": "Information of the P2P settings.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "p2p_settings": {
+            "title": "p2p_settings",
+            "description": "Peer-to-peer payment system settings.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "adverts_active_limit",
+                "block_trade",
+                "cancellation_block_duration",
+                "cancellation_count_period",
+                "cancellation_grace_period",
+                "cancellation_limit",
+                "cross_border_ads_enabled",
+                "disabled",
+                "feature_level",
+                "fixed_rate_adverts",
+                "float_rate_adverts",
+                "float_rate_offset_limit",
+                "local_currencies",
+                "maximum_advert_amount",
+                "maximum_order_amount",
+                "order_daily_limit",
+                "order_payment_period",
+                "payment_methods_enabled",
+                "review_period",
+                "supported_currencies"
+            ],
+            "properties": {
+                "adverts_active_limit": {
+                    "description": "Maximum number of active ads allowed by an advertiser per currency pair and advert type (buy or sell).",
+                    "type": "integer"
+                },
+                "adverts_archive_period": {
+                    "description": "Adverts will be deactivated if no activity occurs within this period, in days.",
+                    "type": "integer"
+                },
+                "block_trade": {
+                    "description": "Block trading settings",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "disabled": {
+                            "description": "When 1, Block trading is unavailable.",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        },
+                        "maximum_advert_amount": {
+                            "description": "Maximum amount of a block trade advert, in USD.",
+                            "type": "number"
+                        }
+                    }
+                },
+                "cancellation_block_duration": {
+                    "description": "A buyer will be blocked for this duration after exceeding the cancellation limit, in hours.",
+                    "type": "integer"
+                },
+                "cancellation_count_period": {
+                    "description": "The period within which to count buyer cancellations, in hours.",
+                    "type": "integer"
+                },
+                "cancellation_grace_period": {
+                    "description": "A buyer may cancel an order within this period without negative consequences, in minutes after order creation.",
+                    "type": "integer"
+                },
+                "cancellation_limit": {
+                    "description": "A buyer will be temporarily barred after marking this number of cancellations within cancellation_period.",
+                    "type": "integer"
+                },
+                "cross_border_ads_enabled": {
+                    "description": "When 0, only exchanges in local currency are allowed for P2P advertiser.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "disabled": {
+                    "description": "When 1, the P2P service is unavailable.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "feature_level": {
+                    "description": "Indicates the availbility of certain backend features.",
+                    "type": "integer"
+                },
+                "fixed_rate_adverts": {
+                    "description": "Availability of fixed rate adverts.",
+                    "type": "string",
+                    "enum": [
+                        "disabled",
+                        "enabled",
+                        "list_only"
+                    ]
+                },
+                "fixed_rate_adverts_end_date": {
+                    "description": "Date on which fixed rate adverts will be deactivated.",
+                    "type": "string"
+                },
+                "float_rate_adverts": {
+                    "description": "Availability of floating rate adverts.",
+                    "type": "string",
+                    "enum": [
+                        "disabled",
+                        "enabled",
+                        "list_only"
+                    ]
+                },
+                "float_rate_offset_limit": {
+                    "description": "Maximum rate offset for floating rate adverts.",
+                    "type": "number"
+                },
+                "local_currencies": {
+                    "description": "Available local currencies for p2p_advert_list request.",
+                    "type": "array",
+                    "items": {
+                        "description": "Local currency details.",
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                            "display_name",
+                            "has_adverts",
+                            "symbol"
+                        ],
+                        "properties": {
+                            "display_name": {
+                                "description": "Local currency name",
+                                "type": "string"
+                            },
+                            "has_adverts": {
+                                "description": "Indicates that there are adverts available for this currency.",
+                                "type": "integer",
+                                "enum": [
+                                    0,
+                                    1
+                                ]
+                            },
+                            "is_default": {
+                                "description": "Indicates that this is local currency for the current country.",
+                                "type": "integer",
+                                "enum": [
+                                    1
+                                ]
+                            },
+                            "symbol": {
+                                "description": "Local currency symbol",
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "maximum_advert_amount": {
+                    "description": "Maximum amount of an advert, in USD.",
+                    "type": "number"
+                },
+                "maximum_order_amount": {
+                    "description": "Maximum amount of an order, in USD.",
+                    "type": "number"
+                },
+                "order_daily_limit": {
+                    "description": "Maximum number of orders a user may create per day.",
+                    "type": "integer"
+                },
+                "order_payment_period": {
+                    "description": "Time allowed for order payment, in minutes after order creation.",
+                    "type": "integer"
+                },
+                "override_exchange_rate": {
+                    "description": "Local P2P exchange rate which should be used instead of those obtained from the `exchange_rates` call.",
+                    "type": "string"
+                },
+                "payment_methods_enabled": {
+                    "description": "Indicates if the payment methods feature is enabled.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "review_period": {
+                    "description": "Time after successful order completion during which reviews can be created, in hours.",
+                    "type": "number"
+                },
+                "supported_currencies": {
+                    "description": "List of currencies for which P2P is available",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "uniqueItems": true
+                }
+            }
+        },
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the `forget` API call to unsubscribe.",
+                    "type": "string",
+                    "examples": [
+                        "c84a793b-8a87-7999-ce10-9b22f7ceead3"
+                    ]
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "p2p_settings"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

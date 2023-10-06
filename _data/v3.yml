@@ -147,6 +147,8 @@ groups:
         title: P2P Payment Methods
       - name: p2p_ping
         title: P2P Ping
+      - name: p2p_settings
+        title: P2P Settings
       - name: payment_methods
         title: Payment Methods
       - name: paymentagent_create
