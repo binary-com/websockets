@@ -50,7 +50,8 @@
                 "transaction",
                 "trading_platform_asset_listing",
                 "website_status",
-                "p2p_settings"
+                "p2p_settings",
+                "crypto_estimations"
             ]
         }
     }

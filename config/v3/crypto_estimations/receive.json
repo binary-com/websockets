@@ -1,0 +1,87 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Cryptocurrency Estimations (response)",
+    "description": "Latest cryptocurrency estimations.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "crypto_estimations": {
+            "title": "crypto_estimations",
+            "description": "Cryptocurrency estimations. E.g. Withdrawal fee estimations.",
+            "type": "object",
+            "additionalProperties": false,
+            "patternProperties": {
+                "^[a-zA-Z0-9]{2,20}$": {
+                    "description": "Cryptocurrency code",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "minProperties": 0,
+                    "properties": {
+                        "withdrawal_fee": {
+                            "description": "Estimated fee for crypto withdrawal calculated based on the current network conditions.",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "expiry_time": {
+                                    "description": "Expiry time for the estimated fee in epoch.",
+                                    "type": "integer",
+                                    "examples": [
+                                        1589380800
+                                    ]
+                                },
+                                "unique_id": {
+                                    "description": "Unique identifier for the estimated fee which allows locking the fee for a client.",
+                                    "type": "string",
+                                    "examples": [
+                                        "c84a793b-8a87-7999-ce10-9b22f7ceead3"
+                                    ]
+                                },
+                                "value": {
+                                    "description": "Value of current estimated fee.",
+                                    "type": "number",
+                                    "examples": 0.0005
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the `forget` API call to unsubscribe.",
+                    "type": "string",
+                    "examples": [
+                        "c84a793b-8a87-7999-ce10-9b22f7ceead3"
+                    ]
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "crypto_estimations"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}
