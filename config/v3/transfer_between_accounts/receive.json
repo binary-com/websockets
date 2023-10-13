@@ -24,17 +24,30 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "account_type": {
-                        "description": "Type of the account. Please note that `binary` is deprecated and replaced by `trading`",
+                    "account_category": {
+                        "description": "Category of the account.",
                         "type": "string",
                         "enum": [
                             "trading",
-                            "mt5",
-                            "wallet",
+                            "wallet"
+                        ]
+                    },
+                    "account_type": {
+                        "description": "Type of the account.",
+                        "type": "string",
+                        "enum": [
+                            "binary",
+                            "crypto",
+                            "ctrader",
+                            "doughflow",
                             "dxtrade",
                             "derivez",
-                            "binary",
-                            "ctrader"
+                            "mt5",
+                            "p2p",
+                            "paymentagent",
+                            "paymentagent_client",
+                            "standard",
+                            "virtual"
                         ]
                     },
                     "balance": {
@@ -74,9 +87,9 @@
                         "description": "Market type of account.",
                         "type": "string",
                         "enum": [
+                            "all",
                             "financial",
-                            "synthetic",
-                            "all"
+                            "synthetic"
                         ]
                     },
                     "mt5_group": {
@@ -94,6 +107,16 @@
                         ],
                         "examples": [
                             "poa_failed"
+                        ]
+                    },
+                    "transfers": {
+                        "description": "Type of transfers allowed between the account and the currently authorized account.",
+                        "type": "string",
+                        "enum": [
+                            "all",
+                            "deposit",
+                            "none",
+                            "withdrawal"
                         ]
                     }
                 }
