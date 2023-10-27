@@ -90,6 +90,10 @@
             "pattern": "^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])[ -~]{8,25}$",
             "sensitive": 1
         },
+        "migrate": {
+            "description": "[Optional] Indicates whether the user would like to migrate his account to other jurisdiction.",
+            "type": "boolean"
+        },
         "mt5_account_category": {
             "description": "[Optional] To choose whether account is conventional or swap_free. Unavailable for financial_stp MT5_account_type",
             "type": "string",

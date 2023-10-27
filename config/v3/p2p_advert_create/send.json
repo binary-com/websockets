@@ -71,6 +71,18 @@
             "exclusiveMinimum": true,
             "minimum": 0
         },
+        "order_expiry_period": {
+            "description": "[Optional] Expiry period (seconds) for order created against this ad.",
+            "type": "integer",
+            "enum": [
+                900,
+                1800,
+                2700,
+                3600,
+                5400,
+                7200
+            ]
+        },
         "payment_info": {
             "description": "[Optional] Payment instructions.",
             "type": "string",

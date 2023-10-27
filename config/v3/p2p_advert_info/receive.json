@@ -275,6 +275,18 @@
                     "description": "Minimum order amount at this time, in `account_currency`, formatted to appropriate decimal places.",
                     "type": "string"
                 },
+                "order_expiry_period": {
+                    "description": "Expiry period (seconds) for order created against this ad.",
+                    "type": "integer",
+                    "enum": [
+                        900,
+                        1800,
+                        2700,
+                        3600,
+                        5400,
+                        7200
+                    ]
+                },
                 "payment_info": {
                     "description": "Payment instructions. Only applicable for 'sell adverts'.",
                     "type": "string",
