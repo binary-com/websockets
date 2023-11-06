@@ -187,6 +187,11 @@
             "description": "[Optional] Required only for multi-barrier trading. Defines the epoch value of the trading period start time.",
             "type": "integer"
         },
+        "loginid": {
+            "description": "[Optional] The login id of the user. If left unspecified, it defaults to the initial authorized token's login id.",
+            "type": "string",
+            "pattern": "^[A-Za-z]+[0-9]+$"
+        },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field. Maximum size is 3500 bytes.",
             "type": "object"

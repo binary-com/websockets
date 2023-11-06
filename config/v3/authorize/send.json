@@ -24,6 +24,16 @@
                 0
             ]
         },
+        "tokens": {
+            "description": "Additional Authentication tokens of authorized user that may be used in this session. Upto 10 tokens.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "pattern": "^[\\w\\-]{1,128}$"
+            },
+            "maxItems": 10,
+            "sensitive": 1
+        },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field. Maximum size is 3500 bytes.",
             "type": "object"
