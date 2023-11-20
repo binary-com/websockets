@@ -423,7 +423,7 @@
                     }
                 },
                 "dxtrade_gaming_company": {
-                    "description": "Available Deriv X gaming account types (Synthetic Indices).",
+                    "description": "Available Deriv X derived account types (Synthetic Indices).",
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
@@ -767,7 +767,7 @@
                     "type": "string"
                 },
                 "gaming_company": {
-                    "description": "Landing Company for gaming contracts (Synthetic Indices)",
+                    "description": "Landing Company for derived contracts (Synthetic Indices)",
                     "type": [
                         "null",
                         "object"
@@ -1483,7 +1483,7 @@
                     }
                 },
                 "mt_gaming_company": {
-                    "description": "Landing Company for MT5 standard gaming contracts (Synthetic Indices), currently has Financial as subtype.",
+                    "description": "Landing Company for MT5 standard derived contracts (Synthetic Indices), currently has Financial as subtype.",
                     "type": [
                         "null",
                         "object"
@@ -1491,7 +1491,7 @@
                     "additionalProperties": false,
                     "properties": {
                         "financial": {
-                            "description": "Landing Company for MT5 gaming contracts (Synthetic Indices)",
+                            "description": "Landing Company for MT5 derived contracts (Synthetic Indices)",
                             "type": [
                                 "null",
                                 "object"
