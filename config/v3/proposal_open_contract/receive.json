@@ -600,20 +600,6 @@
                         1446629000
                     ]
                 },
-                "selected_spot": {
-                    "description": "Spot value at the selected tick for the contract.",
-                    "type": "number",
-                    "examples": [
-                        86.63
-                    ]
-                },
-                "selected_tick": {
-                    "description": "[Only for highlowticks trades i.e. TICKHIGH and TICKLOW] Selected tick for the contract.",
-                    "type": "integer",
-                    "examples": [
-                        3
-                    ]
-                },
                 "sell_price": {
                     "description": "Price at which contract was sold, only available when contract has been sold.",
                     "type": "number"
