@@ -39,6 +39,13 @@
                 1
             ]
         },
+        "estimated_fee_unique_id": {
+            "description": "[Optional] The `unique_id` of the estimated fee received from `crypto_estimations` call in case the client is willing to pay the returned fee in order to prioritise their withdrawal request.",
+            "type": "string",
+            "examples": [
+                "ltc-c84a793b-8a87-7999-ce10-9b22f7ceead3"
+            ]
+        },
         "provider": {
             "description": "[Optional] Cashier provider. `crypto` will be default option for crypto currency accounts.",
             "type": "string",
