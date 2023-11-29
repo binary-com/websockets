@@ -80,6 +80,7 @@
                                             "description": "Account platform name.",
                                             "type": "string",
                                             "enum": [
+                                                "ctrader",
                                                 "derivez",
                                                 "dtrade",
                                                 "dwallet",
@@ -149,6 +150,7 @@
                                 "description": "Account platform name.",
                                 "type": "string",
                                 "enum": [
+                                    "ctrader",
                                     "derivez",
                                     "dtrade",
                                     "dwallet",
