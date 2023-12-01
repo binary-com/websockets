@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Exchange Rates (request)",
-    "description": "Retrieves the exchange rates from a base currency to all currencies supported by the system.",
+    "description": "Retrieves the exchange rate from a base currency to a target currency supported by the system.",
     "type": "object",
     "auth_required": 0,
     "additionalProperties": false,
@@ -30,7 +30,7 @@
             ]
         },
         "target_currency": {
-            "description": "[Optional] Local currency",
+            "description": "[Optional] Target currency for the exchange rate. If subscribe is set, target_currency must be specified as well.",
             "type": "string",
             "pattern": "^[a-zA-Z0-9]{2,20}$"
         },

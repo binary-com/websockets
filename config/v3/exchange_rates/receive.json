@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Exchange Rates (response)",
-    "description": "The exchange rate values from the specified base currency to all currencies supported by the system.",
+    "description": "The exchange rate values from the specified base currency to the specified target currency supported by the system.",
     "type": "object",
     "required": [
         "echo_req",
@@ -10,7 +10,7 @@
     "properties": {
         "exchange_rates": {
             "title": "exchange_rates",
-            "description": "Exchange rate values from base to all other currencies",
+            "description": "Exchange rate values from base to target currency",
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -24,7 +24,7 @@
                     "type": "integer"
                 },
                 "rates": {
-                    "description": "Rates of exchanging a unit of base currency into the target currencies",
+                    "description": "Rate of exchanging a unit of base currency into a target currency",
                     "type": "object",
                     "patternProperties": {
                         "^[a-zA-Z0-9]{2,20}$": {
