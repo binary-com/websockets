@@ -56,7 +56,7 @@
             ]
         },
         "type": {
-            "description": "[Optional] Data need to be returned from cashier. `api` is supported only for `crypto` provider.",
+            "description": "[Optional] Data is returned from the cashier. The `crypto` provider only supports `api` (not `url`) for crypto accounts.",
             "type": "string",
             "default": "url",
             "enum": [
