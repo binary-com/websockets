@@ -37,6 +37,58 @@
                     "description": "Lifetime withdrawal limit",
                     "type": "number"
                 },
+                "lifetime_transfers": {
+                    "description": "Lifetime transfer limits. Only present when applicable to the current accout.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "crypto_to_crypto": {
+                            "description": "Lifetime transfer limit for crypto to crypto currencies.",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "allowed": {
+                                    "description": "Total limit in client's currency.",
+                                    "type": "number"
+                                },
+                                "available": {
+                                    "description": "Remaining limit in client's currency.",
+                                    "type": "number"
+                                }
+                            }
+                        },
+                        "crypto_to_fiat": {
+                            "description": "Lifetime transfer limit for crypto to fiat currencies.",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "allowed": {
+                                    "description": "Total limit in client's currency.",
+                                    "type": "number"
+                                },
+                                "available": {
+                                    "description": "Remaining limit in client's currency.",
+                                    "type": "number"
+                                }
+                            }
+                        },
+                        "fiat_to_crypto": {
+                            "description": "Lifetime transfer limit for fiat to crypto currencies.",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "allowed": {
+                                    "description": "Total limit in client's currency.",
+                                    "type": "number"
+                                },
+                                "available": {
+                                    "description": "Remaining limit in client's currency.",
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                },
                 "market_specific": {
                     "description": "Contains limitation information for each market.",
                     "type": "object",
