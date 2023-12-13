@@ -15,7 +15,7 @@
             "additionalProperties": false,
             "properties": {
                 "account_list": {
-                    "description": "List of accounts for current user.",
+                    "description": "List of accounts for current user. This is also available from the `account_list` call.",
                     "type": "array",
                     "items": {
                         "type": "object",
@@ -31,6 +31,10 @@
                             },
                             "account_type": {
                                 "description": "Account type.",
+                                "type": "string"
+                            },
+                            "broker": {
+                                "description": "2 letter broker code.",
                                 "type": "string"
                             },
                             "created_at": {

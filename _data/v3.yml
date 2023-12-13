@@ -1,6 +1,8 @@
 groups:
   - label: All Calls
     methods:
+      - name: account_list
+        title: Account List
       - name: active_symbols
         title: Active Symbols
       - name: api_token

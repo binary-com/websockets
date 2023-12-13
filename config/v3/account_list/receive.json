@@ -1,0 +1,123 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Account List (response)",
+    "description": "Returns all accounts belonging to the authorized user.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "account_list": {
+            "description": "List of accounts for current user. This is also available from the `authroize` call.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "account_category",
+                    "account_type",
+                    "broker_code",
+                    "created_at",
+                    "currency",
+                    "is_disabled",
+                    "is_virtual",
+                    "landing_company_name",
+                    "linked_to",
+                    "loginid"
+                ],
+                "properties": {
+                    "account_category": {
+                        "description": "Account category.",
+                        "type": "string",
+                        "enum": [
+                            "trading",
+                            "wallet"
+                        ]
+                    },
+                    "account_type": {
+                        "description": "Account type.",
+                        "type": "string"
+                    },
+                    "broker": {
+                        "description": "2 letter broker code.",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Creation time of the account as epoch.",
+                        "type": "integer"
+                    },
+                    "currency": {
+                        "description": "Currency of specified account.",
+                        "type": "string"
+                    },
+                    "is_disabled": {
+                        "description": "Boolean value: 1 or 0, indicating whether the account is marked as disabled or not.",
+                        "type": "integer",
+                        "enum": [
+                            1,
+                            0
+                        ]
+                    },
+                    "is_virtual": {
+                        "description": "Boolean value: 1 or 0, indicating whether the account is a virtual-money account.",
+                        "type": "integer",
+                        "enum": [
+                            1,
+                            0
+                        ]
+                    },
+                    "landing_company_name": {
+                        "description": "Landing company shortcode the account belongs to.",
+                        "type": "string"
+                    },
+                    "linked_to": {
+                        "description": "Details of the list of Trading accounts linked to the Wallet account.",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "loginid": {
+                                    "description": "Account ID.",
+                                    "type": "string"
+                                },
+                                "platform": {
+                                    "description": "Account platform name.",
+                                    "type": "string",
+                                    "enum": [
+                                        "ctrader",
+                                        "derivez",
+                                        "dtrade",
+                                        "dwallet",
+                                        "dxtrade",
+                                        "mt5"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "loginid": {
+                        "description": "The account ID of specified account.",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "account_list"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}
