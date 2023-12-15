@@ -15,6 +15,7 @@
             "additionalProperties": false,
             "required": [
                 "currency_config",
+                "p2p_poa_required",
                 "p2p_status",
                 "prompt_client_to_authenticate",
                 "risk_classification",
@@ -381,6 +382,14 @@
                             }
                         }
                     }
+                },
+                "p2p_poa_required": {
+                    "description": "P2P requires proof of address.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
                 },
                 "p2p_status": {
                     "description": "Current P2P status of client.",
