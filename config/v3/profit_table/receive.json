@@ -46,15 +46,35 @@
                                     4867502908
                                 ]
                             },
+                            "contract_type": {
+                                "description": "[Optional] The contract type for the transaction if description is set to 1.",
+                                "type": "string",
+                                "examples": [
+                                    "ASIANU",
+                                    "CALL"
+                                ]
+                            },
+                            "deal_cancellation_duration": {
+                                "description": "[Optional] Duration set for deal cancellation for Multiplier contracts in synthetic indices if description is set to 1.",
+                                "type": "string"
+                            },
                             "duration_type": {
-                                "description": "The duration type of the contract.",
+                                "description": "[Optional] The duration type of the contract if description is set to 1.",
                                 "type": [
                                     "null",
                                     "string"
                                 ]
                             },
+                            "growth_rate": {
+                                "description": "[Optional] The growth rate for Accumulators contract if description is set to 1.",
+                                "type": "string"
+                            },
                             "longcode": {
-                                "description": "The description of contract purchased if description is set to 1",
+                                "description": "[Optional] The description of contract purchased if description is set to 1",
+                                "type": "string"
+                            },
+                            "multiplier": {
+                                "description": "[Optional] The multiplier for Multiplier contracts if description is set to 1.",
                                 "type": "string"
                             },
                             "payout": {
@@ -77,7 +97,7 @@
                                 ]
                             },
                             "shortcode": {
-                                "description": "Compact description of the contract purchased if description is set to 1",
+                                "description": "[Optional] Compact description of the contract purchased if description is set to 1",
                                 "type": "string"
                             },
                             "transaction_id": {
@@ -85,6 +105,14 @@
                                 "type": "integer",
                                 "examples": [
                                     10867502908
+                                ]
+                            },
+                            "underlying_symbol": {
+                                "description": "[Optional] Symbol code if description is set to 1",
+                                "type": "string",
+                                "examples": [
+                                    "R_50",
+                                    "frxEURUSD"
                                 ]
                             }
                         }
