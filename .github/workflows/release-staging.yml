@@ -1,0 +1,25 @@
+name: SmartTrader Staging Workflow
+
+on:
+    push:
+      branches:
+      - master
+jobs:
+  build_and_test:
+    name: Build, Test and Publish to Staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js environment
+        uses: ./.github/actions/setup_node
+      - name: Cache dependencies
+        uses: ./.github/actions/npm_install_from_cache
+      - name: Save dependencies cache
+        uses: ./.github/actions/invalidate_master_cache
+      - name: Build
+        run: npm run build
+      - name: Test
+        run: npm run test
+      - name: Publish to Cloudflare Staging
+        uses: ./.github/actions/publish_to_cloudflare_staging

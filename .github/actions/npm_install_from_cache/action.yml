@@ -1,0 +1,15 @@
+name: npm_install_from_cache
+description: Install npm packages from cache
+runs:
+  using: composite
+  steps:
+    - name: Cache dependencies
+      id: cache-node-modules
+      uses: actions/cache/restore@v3
+      with:
+        key: v1-deps-{{ checksum "package-lock.json" }}
+        path: node_modules
+    - name: Install npm dependencies
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'
+      run: npm install
+      shell: bash

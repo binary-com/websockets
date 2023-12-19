@@ -1,0 +1,41 @@
+name: SmartTrader Production Workflow
+on:
+  push:
+    tags:
+    - production_*
+jobs:
+    build_test_and_publish:
+        name: Build, Test and Publish to Production
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Setup Node.js environment
+          uses: ./.github/actions/setup_node
+        - name: Cache dependencies
+          uses: ./.github/actions/npm_install_from_cache
+        - name: Build
+          run: npm run build
+        - name: Test
+          run: npm run test
+        - name: Publish to Cloudflare Staging
+          uses: ./.github/actions/publish_to_cloudflare_production
+
+    send_slack_notification:
+        name: Send Slack notification
+        runs-on: Runner_16cores_Deriv-app
+        environment: Production
+        if: always()
+        needs: [build_test_and_publish]
+        steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Conclusion
+          uses: technote-space/workflow-conclusion-action@v3
+        - name: Send Slack Notification
+          uses: "./.github/actions/send_slack_notifications"
+          with:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+            status: ${{ env.WORKFLOW_CONCLUSION }}
+            release_type: Production 
+            version: $GITHUB_REF_NAME
