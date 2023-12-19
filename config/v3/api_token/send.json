@@ -22,7 +22,7 @@
         "delete_token": {
             "description": "[Optional] The token to remove.",
             "type": "string",
-            "pattern": "^\\w+$"
+            "pattern": "^[A-Za-z0-9\\s_*]+$"
         },
         "new_token": {
             "description": "[Optional] The name of the created token.",
