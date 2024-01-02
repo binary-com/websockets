@@ -1,25 +1,36 @@
-name: SmartTrader Staging Workflow
-
+name: Websocket Staging Workflow
 on:
     push:
       branches:
       - master
 jobs:
-  build_and_test:
+  build_test_and_publish:
     name: Build, Test and Publish to Staging
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js environment
-        uses: ./.github/actions/setup_node
-      - name: Cache dependencies
-        uses: ./.github/actions/npm_install_from_cache
-      - name: Save dependencies cache
-        uses: ./.github/actions/invalidate_master_cache
-      - name: Build
-        run: npm run build
-      - name: Test
-        run: npm run test
-      - name: Publish to Cloudflare Staging
-        uses: ./.github/actions/publish_to_cloudflare_staging
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Bundle Install
+      uses: ./.github/actions/bundle_install
+    - name: Build Jekyll site
+      uses: ./.github/actions/build
+    - name: Versioning
+      uses: ./.github/actions/versioning
+      with:
+        release_type: staging
+    - name: Publish to Cloudflare Pages Staging
+      uses: "./.github/actions/publish_to_pages_staging"
+      with:
+        CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    - name: Build Docker image and push to Docker hub and K8S
+      uses: "./.github/actions/build_and_push_docker_image"
+      with:
+        DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+        DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+        DOCKERHUB_ORGANISATION: ${{ secrets.DOCKERHUB_ORGANISATION }}
+        K8S_NAMESPACE: "developers-binary-com-staging"
+        KUBE_SERVER: ${{ secrets.KUBE_SERVER }}
+        SERVICEACCOUNT_TOKEN: ${{ secrets.SERVICEACCOUNT_TOKEN }}
+        CA_CRT: ${{ secrets.CA_CRT }}
+        APP_VERSION: latest-staging

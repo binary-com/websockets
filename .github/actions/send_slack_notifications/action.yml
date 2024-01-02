@@ -7,7 +7,7 @@ inputs:
   status:
     description: 'Job status'
     required: true
-  release_type:
+  RELEASE_TYPE:
     description: 'Release type'
     required: true
   version:
@@ -27,7 +27,7 @@ runs:
         }' \
           ${{ inputs.SLACK_WEBHOOK_URL }}
     shell: bash
-  
+
   - name: Send Slack Notification on Failure
     if: inputs.status == 'failure'
     run: |

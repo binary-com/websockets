@@ -7,7 +7,7 @@ runs:
       id: cache-node-modules
       uses: actions/cache/restore@v3
       with:
-        key: v1-deps-{{ checksum "package-lock.json" }}
+        key: v1-deps-{{ checksum "Gemfile" }}
         path: node_modules
     - name: Install npm dependencies
       if: steps.cache-node-modules.outputs.cache-hit != 'true'

@@ -15,7 +15,7 @@ runs:
       CLOUDFLARE_ACCOUNT_ID: ${{ inputs.CLOUDFLARE_ACCOUNT_ID }}
       CLOUDFLARE_API_TOKEN: ${{ inputs.CLOUDFLARE_API_TOKEN }}
     run: |
-      npm i wrangler@3.1.0
-      npx wrangler pages deploy dist/ --project-name=deriv-smarttrader --branch=main
-      echo "New website - https://dsmarttrader.deriv.com"
+      cd _site
+      npx wrangler pages publish . --project-name=websockets-pages --branch=main
+      echo "New website - http://cf-pages-websockets.binary.com"
     shell: bash

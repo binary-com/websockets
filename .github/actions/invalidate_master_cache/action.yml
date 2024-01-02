@@ -7,4 +7,4 @@ runs:
     uses: actions/cache/save@v3
     with:
       path: ./node_modules
-      key: v1-deps-{{ checksum "package-lock.json" }}
+      key: v1-deps-{{ checksum "Gemfile" }}
