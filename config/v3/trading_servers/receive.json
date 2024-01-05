@@ -39,7 +39,8 @@
                         "enum": [
                             "Deriv-Demo",
                             "Deriv-Server",
-                            "Deriv-Server-02"
+                            "Deriv-Server-02",
+                            "Deriv-Server-03"
                         ]
                     },
                     "geolocation": {
@@ -73,7 +74,8 @@
                             "p01_ts02",
                             "p01_ts03",
                             "p01_ts04",
-                            "p02_ts02"
+                            "p02_ts02",
+                            "p03_ts01"
                         ]
                     },
                     "market_type": {
