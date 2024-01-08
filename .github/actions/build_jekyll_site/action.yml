@@ -1,0 +1,20 @@
+name: build
+description: "Build Jekyll site"
+runs:
+  using: composite
+  steps:
+  - restore_cache:
+    name: "Build cache restore"
+    keys:
+      - _site-v1-{{ .Revision }}
+      - _site-v1-
+  - build_site:
+    name: Building Jekyll site
+    run: |
+          bundle exec jekyll build --incremental
+  - save_cache:
+    name: Build cache save
+    key: _site-v1-{{ .Revision }}
+    with:
+     paths:
+       - _site
