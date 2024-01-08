@@ -3,18 +3,15 @@ description: Bundle Install
 runs:
   using: composite
   steps:
-  - restore_cache:
-    name: Bundle modules cache restore
-    keys:
-      - bundle-v1-{{ checksum "Gemfile" }}
-      - bundle-v1-
-  - bundle_install:
-    name: Bundle install
-    run: |
-          bundle install --path ./modules
-  - save_cache:
-    name: Bundle modules cache save
-    key: bundle-v1-{{ checksum "Gemfile" }}
-    with:
-      paths:
-        - "modules"
+  - name: Bundle modules cache restore
+    id: cache-modules
+    uses: actions/cache/restore@v3
+    with: 
+      path: ./modules
+      key: bundle-v1-{{ checksum "Gemfile" }}
+
+  - name: Bundle install
+    if: steps.cache-modules.outputs.cache-hit != 'true'
+    shell: bash
+    run: bundle install --path ./modules
+
