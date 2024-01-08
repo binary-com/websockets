@@ -16,7 +16,7 @@ jobs:
       - name: Bundle Install
         uses: ./.github/actions/bundle_install
       - name: Build Jekyll site
-        uses: ./.github/actions/build
+        uses: ./.github/actions/build_jekyll_site
       - name: invalidate master cache
         uses: ./.github/actions/invalidate_master_cache
       - name: Versioning
