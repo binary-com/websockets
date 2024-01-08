@@ -12,5 +12,5 @@ runs:
   steps:
     - run:
         name: Tag build
-        run: echo "<< parameters.target_branch >> $(date -u +'%Y-%m-%dT%H:%M:%SZ')" > _site/version
+        run: echo "${GITHUB_REF#refs/heads/} $(date -u +'%Y-%m-%dT%H:%M:%SZ')" > _site/version
       shell: bash
