@@ -1,0 +1,19 @@
+name: Websocket Build Workflow
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build_test_and_publish:
+    name: Build Websocket Application
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+      - name: Bundle Install
+        uses: ./.github/actions/bundle_install
+      - name: Build Jekyll site
+        uses: ./.github/actions/build_jekyll_site
