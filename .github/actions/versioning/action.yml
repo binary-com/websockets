@@ -17,5 +17,5 @@ runs:
     - name: Set Version
       id: set_version
       run: |
-       echo "version=${GITHUB_REF#refs/heads/} $(date -u +'%Y-%m-%dT%H:%M:%SZ')" >>$GITHUB_OUTPUT
+       echo "version=${GITHUB_REF#refs/heads/} $(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
       shell: bash
