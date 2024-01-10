@@ -23,7 +23,7 @@ runs:
     run: |
         curl -X POST -H 'Content-type: application/json' \
         --data '{
-        "text": "${{ inputs.RELEASE_TYPE }} Release succeeded for dsmarttrader.deriv.com with version ${{ inputs.VERSION }}"
+        "text": "${{ inputs.RELEASE_TYPE }} Release succeeded for developers.binary.com with version ${{ inputs.VERSION }}"
         }' \
           ${{ inputs.SLACK_WEBHOOK_URL }}
     shell: bash
@@ -33,7 +33,7 @@ runs:
     run: |
           curl -X POST -H 'Content-type: application/json' \
           --data '{
-            "text": "${{ inputs.RELEASE_TYPE }} Release failed for dsmarttrader.deriv.com with version ${{ inputs.VERSION }}"
+            "text": "${{ inputs.RELEASE_TYPE }} Release failed for developers.binary.com with version ${{ inputs.VERSION }}"
           }' \
           ${{ inputs.SLACK_WEBHOOK_URL }}
     shell: bash

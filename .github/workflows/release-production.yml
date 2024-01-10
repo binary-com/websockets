@@ -7,6 +7,8 @@ jobs:
   build_test_and_publish:
     name: Build, Test and Publish to Production
     runs-on: ubuntu-latest
+    outputs:
+      RELEASE_VERSION: ${{ steps.extract_version.outputs.RELEASE_VERSION }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,6 +25,9 @@ jobs:
         uses: ./.github/actions/versioning
         with:
           release_type: production
+      - name: Extract version
+        id: extract_version
+        run: echo "RELEASE_VERSION=${version}" >> $GITHUB_OUTPUT
       - name: Publish to Cloudflare Pages Production
         uses: "./.github/actions/publish_to_pages_production"
         with:
@@ -39,7 +44,7 @@ jobs:
           SERVICEACCOUNT_TOKEN: ${{ secrets.SERVICEACCOUNT_TOKEN }}
           CA_CRT: ${{ secrets.CA_CRT }}
           APP_VERSION: latest
-      
+
 
   send_slack_notification:
     name: Send Slack notification
@@ -57,4 +62,4 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           status: ${{ env.WORKFLOW_CONCLUSION }}
           release_type: Production
-          version: $GITHUB_REF_NAME
+          version: ${{ needs.build_test_and_publish.outputs.RELEASE_VERSION }}

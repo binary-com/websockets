@@ -4,10 +4,18 @@ inputs:
   RELEASE_TYPE:
     description: Release Type
     required: false
+outputs:
+  version:
+    description: Version
 
 runs:
   using: composite
   steps:
     - name: Tag build
       run: echo "${GITHUB_REF#refs/heads/} $(date -u +'%Y-%m-%dT%H:%M:%SZ')" > _site/version
+      shell: bash
+    - name: Set Version
+      id: set_version
+      run: |
+       echo "version=${GITHUB_REF#refs/heads/} $(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
       shell: bash
