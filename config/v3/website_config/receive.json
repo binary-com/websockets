@@ -1,0 +1,227 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Server Config (response)",
+    "description": "All config related settings.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "website_config": {
+            "title": "website_config",
+            "description": "Server status and other information regarding general settings",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "currencies_config"
+            ],
+            "properties": {
+                "currencies_config": {
+                    "description": "Available currencies and their information",
+                    "type": "object",
+                    "minProperties": 1,
+                    "patternProperties": {
+                        "^[a-zA-Z0-9]{2,20}$": {
+                            "description": "Currency code",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": [
+                                "fractional_digits",
+                                "is_deposit_suspended",
+                                "is_suspended",
+                                "is_withdrawal_suspended",
+                                "stake_default",
+                                "transfer_between_accounts",
+                                "type"
+                            ],
+                            "properties": {
+                                "fractional_digits": {
+                                    "description": "Number of fractional digits.",
+                                    "type": "number"
+                                },
+                                "is_deposit_suspended": {
+                                    "description": "Current status for payment deposit for the currency",
+                                    "type": "number",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
+                                },
+                                "is_suspended": {
+                                    "description": "Current status for the currency",
+                                    "type": "number",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
+                                },
+                                "is_withdrawal_suspended": {
+                                    "description": "Current status for payment withdrawal for the currency",
+                                    "type": "number",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
+                                },
+                                "name": {
+                                    "description": "Name of the currency.",
+                                    "type": "string"
+                                },
+                                "stake_default": {
+                                    "description": "Default stake value for the currency.",
+                                    "type": "number",
+                                    "minimum": 0
+                                },
+                                "transfer_between_accounts": {
+                                    "description": "Fees and range of allowed amount for transfer between accounts with different types of currencies.",
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "required": [
+                                        "fees",
+                                        "limits"
+                                    ],
+                                    "properties": {
+                                        "fees": {
+                                            "description": "The fee that applies for transfer between accounts with different types of currencies.",
+                                            "type": "object",
+                                            "patternProperties": {
+                                                "^[a-zA-Z0-9]{2,20}$": {
+                                                    "description": "Currency code.",
+                                                    "type": "number",
+                                                    "maximum": 7,
+                                                    "minimum": 0
+                                                }
+                                            }
+                                        },
+                                        "limits": {
+                                            "description": "Range of allowed amount for transfer between accounts.",
+                                            "oneOf": [
+                                                {
+                                                    "type": "object",
+                                                    "required": [
+                                                        "min"
+                                                    ],
+                                                    "properties": {
+                                                        "max": {
+                                                            "description": "Maximum allowed amount for transfer between accounts with different types of currencies.",
+                                                            "type": "number",
+                                                            "minimum": 0
+                                                        },
+                                                        "min": {
+                                                            "description": "Minimum allowed amount for transfer between accounts with different types of currencies.",
+                                                            "type": "number",
+                                                            "minimum": 0
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "type": "null"
+                                                }
+                                            ]
+                                        },
+                                        "limits_ctrader": {
+                                            "description": "Range of allowed amount for transfer between ctrader accounts.",
+                                            "type": "object"
+                                        },
+                                        "limits_derivez": {
+                                            "description": "Range of allowed amount for transfer between derivez accounts.",
+                                            "type": "object"
+                                        },
+                                        "limits_dxtrade": {
+                                            "description": "Range of allowed amount for transfer between dxtrade accounts.",
+                                            "type": "object"
+                                        },
+                                        "limits_mt5": {
+                                            "description": "Range of allowed amount for transfer between mt5 accounts.",
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "type": {
+                                    "description": "Type of the currency.",
+                                    "type": "string",
+                                    "enum": [
+                                        "fiat",
+                                        "crypto"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "feature_flags": {
+                    "description": "Feature flags related to the website/server for various features and options: \n - 'signup_with_optional_email_verification': Allow signup with optional email verification.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "payment_agents": {
+                    "description": "Payments Agents system settings.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "initial_deposit_per_country"
+                    ],
+                    "properties": {
+                        "initial_deposit_per_country": {
+                            "description": "Initial deposit requirement per country.",
+                            "type": "object",
+                            "patternProperties": {
+                                "^([a-z]{2}|default)$": {
+                                    "description": "Country code or default setting",
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                },
+                "supported_languages": {
+                    "description": "Provides codes for languages supported.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "terms_conditions_version": {
+                    "description": "Latest terms and conditions version.",
+                    "type": "string"
+                }
+            }
+        },
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the `forget` API call to unsubscribe.",
+                    "type": "string",
+                    "examples": [
+                        "c84a793b-8a87-7999-ce10-9b22f7ceead3"
+                    ]
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "website_config"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

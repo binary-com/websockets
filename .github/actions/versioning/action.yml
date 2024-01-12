@@ -11,3 +11,4 @@ runs:
     - name: Tag build
       run: echo "${GITHUB_REF#refs/heads/} $(date -u +'%Y-%m-%dT%H:%M:%SZ')" > _site/version
       shell: bash
+

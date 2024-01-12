@@ -8,7 +8,7 @@ jobs:
     name: Build, Test and Publish to Production
     runs-on: ubuntu-latest
     outputs:
-      RELEASE_VERSION: ${{ steps.extract_version.outputs.RELEASE_VERSION }}
+      RELEASE_VERSION: ${{ steps.extract_version.outputs.version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,6 +22,7 @@ jobs:
       - name: invalidate master cache
         uses: ./.github/actions/invalidate_master_cache
       - name: Versioning
+        id: extract_version
         uses: ./.github/actions/versioning
         with:
           release_type: production
