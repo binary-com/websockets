@@ -128,8 +128,7 @@
                 "employment_industry",
                 "estimated_worth",
                 "income_source",
-                "net_income",
-                "occupation"
+                "net_income"
             ],
             "properties": {
                 "account_turnover": {
