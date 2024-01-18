@@ -94,6 +94,48 @@
                                         "expired",
                                         "suspected"
                                     ]
+                                },
+                                "supported_documents": {
+                                    "description": "Supported documents per service.",
+                                    "type": "object",
+                                    "properties": {
+                                        "idv": {
+                                            "type": "object",
+                                            "additionalProperties": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "additional": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "display_name": {
+                                                                "type": "string"
+                                                            },
+                                                            "format": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    },
+                                                    "display_name": {
+                                                        "type": "string"
+                                                    },
+                                                    "format": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "onfido": {
+                                            "type": "object",
+                                            "additionalProperties": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "display_name": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -182,6 +224,48 @@
                                             "expired",
                                             "suspected"
                                         ]
+                                    },
+                                    "supported_documents": {
+                                        "description": "Supported documents per service.",
+                                        "type": "object",
+                                        "properties": {
+                                            "idv": {
+                                                "type": "object",
+                                                "additionalProperties": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "additional": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "display_name": {
+                                                                    "type": "string"
+                                                                },
+                                                                "format": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        },
+                                                        "display_name": {
+                                                            "type": "string"
+                                                        },
+                                                        "format": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "onfido": {
+                                                "type": "object",
+                                                "additionalProperties": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "display_name": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }

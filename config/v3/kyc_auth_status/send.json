@@ -19,6 +19,11 @@
                 1
             ]
         },
+        "country": {
+            "description": "The country for which service availability is being verified, 2-letter country code",
+            "type": "string",
+            "pattern": "^[a-z]{2}$"
+        },
         "landing_companies": {
             "description": "Indicates which landing companies to get the KYC authentication status for.",
             "type": "array",
