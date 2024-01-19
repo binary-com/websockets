@@ -214,6 +214,26 @@
                         "string"
                     ]
                 },
+                "eligibility_status": {
+                    "description": "Reasons why the counterparty terms do not allow the current user to place orders against this advert. Possible values: \n- `completion_rate`: current user's 30 day completion rate is less than `min_completion_rate`. \n- `country`: current user's residence is not in `eligible_countries`. \n- `join_date`: current user registered on P2P less than `min_join_days` in the past. \n- `rating`: current user's average review rating is less than `min_rating`.",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "completion_rate",
+                            "country",
+                            "join_date",
+                            "rating_average"
+                        ]
+                    }
+                },
+                "eligible_countries": {
+                    "description": "2 letter country codes. Counterparties who do not live in these countries are not allowed to place orders against this advert.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "id": {
                     "description": "The unique identifier for this advert.",
                     "type": "string"
@@ -221,6 +241,15 @@
                 "is_active": {
                     "description": "The activation status of the advert.",
                     "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "is_eligible": {
+                    "description": "Indicates that the current user meets the counterparty terms for placing orders against this advert.",
+                    "type": "integer",
+                    "default": 0,
                     "enum": [
                         0,
                         1
@@ -259,6 +288,14 @@
                     "description": "Maximum order amount at this time, in `account_currency`, formatted to appropriate decimal places.",
                     "type": "string"
                 },
+                "min_completion_rate": {
+                    "description": "Counterparties who have a 30 day completion rate less than this value are not allowed to place orders against this advert.",
+                    "type": "number"
+                },
+                "min_join_days": {
+                    "description": "Counterparties who joined less than this number of days ago are not allowed to place orders against this advert.",
+                    "type": "integer"
+                },
                 "min_order_amount": {
                     "description": "Minimum order amount specified in advert, in `account_currency`. It is only visible for advertisers.",
                     "type": "number"
@@ -274,6 +311,10 @@
                 "min_order_amount_limit_display": {
                     "description": "Minimum order amount at this time, in `account_currency`, formatted to appropriate decimal places.",
                     "type": "string"
+                },
+                "min_rating": {
+                    "description": "Counterparties who have an average rating less than this value are not allowed to place orders against this advert.",
+                    "type": "number"
                 },
                 "order_expiry_period": {
                     "description": "Expiry period (seconds) for order created against this ad.",

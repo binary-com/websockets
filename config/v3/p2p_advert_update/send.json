@@ -40,6 +40,19 @@
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{0,300}$",
             "sensitive": 1
         },
+        "eligible_countries": {
+            "description": "[Optional] 2 letter country codes. Counterparties who do not live in these countries will not be allowed to place orders against this advert. An empty array or null value will clear the condition.",
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "type": "string",
+                "pattern": "^[a-z]{2}$"
+            },
+            "maxItems": 250,
+            "uniqueItems": true
+        },
         "id": {
             "description": "The unique identifier for this advert.",
             "type": "string",
@@ -67,11 +80,38 @@
             "exclusiveMinimum": true,
             "minimum": 0
         },
+        "min_completion_rate": {
+            "description": "[Optional] Counterparties who have a 30 day completion rate less than this value will not be allowed to place orders against this advert. A an empty array or null value will clear the condition.",
+            "type": [
+                "null",
+                "number"
+            ],
+            "maximum": 100,
+            "minimum": 0
+        },
+        "min_join_days": {
+            "description": "[Optional] Counterparties who joined less than this number of days ago will not be allowed to place orders against this advert. A null value will clear the condition.",
+            "type": [
+                "integer",
+                "null"
+            ],
+            "maximum": 999,
+            "minimum": 0
+        },
         "min_order_amount": {
             "description": "[Optional] Minimum allowed amount for the orders of this advert, in advertiser's `account_currency`. Should be less than or equal to `max_order_amount`.",
             "type": "number",
             "exclusiveMinimum": true,
             "minimum": 0
+        },
+        "min_rating": {
+            "description": "[Optional] Counterparties who have an average rating less than this value will not be allowed to place orders against this advert. A null value will clear the condition.",
+            "type": [
+                "null",
+                "number"
+            ],
+            "maximum": 5,
+            "minimum": 1
         },
         "order_expiry_period": {
             "description": "[Optional] Expiry period (seconds) for order created against this ad.",

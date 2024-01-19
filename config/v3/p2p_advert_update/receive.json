@@ -189,6 +189,13 @@
                         "string"
                     ]
                 },
+                "eligible_countries": {
+                    "description": "2 letter country codes. Counterparties who do not live in these countries are not allowed to place orders against this advert",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "id": {
                     "description": "The unique identifier for this advert.",
                     "type": "string"
@@ -234,6 +241,14 @@
                     "description": "Maximum order amount at this time, in `account_currency`, formatted to appropriate decimal places.",
                     "type": "string"
                 },
+                "min_completion_rate": {
+                    "description": "Counterparties who have a 30 day completion rate less than this value are not allowed to place orders against this advert.",
+                    "type": "number"
+                },
+                "min_join_days": {
+                    "description": "Counterparties who joined less than this number of days ago are not allowed to place orders against this advert.",
+                    "type": "integer"
+                },
                 "min_order_amount": {
                     "description": "Minimum order amount specified in advert, in `account_currency`. It is only visible to the advert owner.",
                     "type": "number"
@@ -249,6 +264,10 @@
                 "min_order_amount_limit_display": {
                     "description": "Minimum order amount at this time, in `account_currency`, formatted to appropriate decimal places.",
                     "type": "string"
+                },
+                "min_rating": {
+                    "description": "Counterparties who have an average rating less than this value are not allowed to place orders against this advert.",
+                    "type": "number"
                 },
                 "order_expiry_period": {
                     "description": "Expiry period (seconds) for order created against this ad.",

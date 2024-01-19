@@ -79,6 +79,39 @@
                     "description": "A buyer will be temporarily barred after marking this number of cancellations within cancellation_period.",
                     "type": "integer"
                 },
+                "counterparty_term_steps": {
+                    "description": "Recommended step values for choosing advert counterparty terms.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "completion_rate",
+                        "join_days",
+                        "rating"
+                    ],
+                    "properties": {
+                        "completion_rate": {
+                            "description": "Values for minimum 30 day completion rate.",
+                            "type": "array",
+                            "items": {
+                                "type": "number"
+                            }
+                        },
+                        "join_days": {
+                            "description": "Values for minimum joined days.",
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            }
+                        },
+                        "rating": {
+                            "description": "Values for minimum average rating.",
+                            "type": "array",
+                            "items": {
+                                "type": "number"
+                            }
+                        }
+                    }
+                },
                 "cross_border_ads_enabled": {
                     "description": "When 0, only exchanges in local currency are allowed for P2P advertiser.",
                     "type": "integer",
