@@ -149,6 +149,10 @@
                         "description": "Group type of the MT5 account, e.g. `demo\\svg_financial`",
                         "type": "string"
                     },
+                    "landing_company": {
+                        "description": "Broker name",
+                        "type": "string"
+                    },
                     "landing_company_short": {
                         "description": "Landing company shortcode of the MT5 account.",
                         "type": "string",
