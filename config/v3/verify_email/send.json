@@ -21,6 +21,7 @@
             "enum": [
                 "partner_account_opening",
                 "account_opening",
+                "account_verification",
                 "reset_password",
                 "paymentagent_withdraw",
                 "payment_withdraw",
