@@ -269,22 +269,33 @@
                         "description": "MT5 webtrader url for each mt5 platform",
                         "type": "string"
                     },
-                    "white_label_download_links": {
-                        "description": "Links to download the MT5 application for different platforms.",
+                    "white_label": {
+                        "description": "White label settings",
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "android": {
-                                "description": "Download link for Android.",
-                                "type": "string"
+                            "download_links": {
+                                "description": "Links to download the MT5 application for different platforms.",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "android": {
+                                        "description": "Download link for Android.",
+                                        "type": "string"
+                                    },
+                                    "ios": {
+                                        "description": "Download link for iOS.",
+                                        "type": "string"
+                                    },
+                                    "windows": {
+                                        "description": "Download link for Windows.",
+                                        "type": "string"
+                                    }
+                                }
                             },
-                            "ios": {
-                                "description": "Download link for iOS.",
-                                "type": "string"
-                            },
-                            "windows": {
-                                "description": "Download link for Windows.",
-                                "type": "string"
+                            "notification": {
+                                "description": "A flag indicating whether the white label notification feature is enabled or disabled.",
+                                "type": "boolean"
                             }
                         }
                     }
