@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Confirm Email Through Verification Code (request)",
+    "description": "Verifies the email for the user using verification code passed in the request object",
+    "type": "object",
+    "auth_required": 0,
+    "additionalProperties": false,
+    "required": [
+        "confirm_email",
+        "email_consent",
+        "verification_code"
+    ],
+    "properties": {
+        "confirm_email": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "email_consent": {
+            "description": "Boolean value: 1 or 0, indicating whether the client has given consent for marketing emails.",
+            "type": "integer",
+            "enum": [
+                1,
+                0
+            ]
+        },
+        "verification_code": {
+            "description": "Email verification code (received from a `verify_email` call, which must be done first).",
+            "type": "string",
+            "pattern": "^\\w{8,128}$",
+            "sensitive": 1
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

@@ -35,6 +35,8 @@ groups:
         title: Cancel a Contract
       - name: cashier
         title: Cashier Information
+      - name: confirm_email
+        title: Confirm Email Through Verification Code
       - name: contract_update
         title: Update Contract
       - name: contract_update_history
