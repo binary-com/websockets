@@ -105,7 +105,22 @@
                                                     "Deriv-Demo",
                                                     "Deriv-Server",
                                                     "Deriv-Server-02",
-                                                    "Deriv-Server-03"
+                                                    "Deriv-Server-03",
+                                                    "DerivFX-Server",
+                                                    "DerivFX-Server-02",
+                                                    "DerivFX-Server-03",
+                                                    "DerivVU-Server",
+                                                    "DerivVU-Server-02",
+                                                    "DerivVU-Server-03",
+                                                    "DerivSVG-Server",
+                                                    "DerivSVG-Server-02",
+                                                    "DerivSVG-Server-03",
+                                                    "DerivMT-Server",
+                                                    "DerivMT-Server-02",
+                                                    "DerivMT-Server-03",
+                                                    "DerivBVI-Server",
+                                                    "DerivBVI-Server-02",
+                                                    "DerivBVI-Server-03"
                                                 ]
                                             },
                                             "geolocation": {
@@ -204,7 +219,22 @@
                                     "Deriv-Demo",
                                     "Deriv-Server",
                                     "Deriv-Server-02",
-                                    "Deriv-Server-03"
+                                    "Deriv-Server-03",
+                                    "DerivFX-Server",
+                                    "DerivFX-Server-02",
+                                    "DerivFX-Server-03",
+                                    "DerivVU-Server",
+                                    "DerivVU-Server-02",
+                                    "DerivVU-Server-03",
+                                    "DerivSVG-Server",
+                                    "DerivSVG-Server-02",
+                                    "DerivSVG-Server-03",
+                                    "DerivMT-Server",
+                                    "DerivMT-Server-02",
+                                    "DerivMT-Server-03",
+                                    "DerivBVI-Server",
+                                    "DerivBVI-Server-02",
+                                    "DerivBVI-Server-03"
                                 ]
                             },
                             "geolocation": {
