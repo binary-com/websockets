@@ -50,6 +50,7 @@
             "enum": [
                 "passport",
                 "national_identity_card",
+                "identification_number_document",
                 "driving_licence",
                 "utility_bill",
                 "bankstatement",
