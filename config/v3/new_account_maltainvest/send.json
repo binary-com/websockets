@@ -193,6 +193,14 @@
                 "Over $1,000,000"
             ]
         },
+        "fatca_declaration": {
+            "description": "[Optional] Indicates client's self-declaration of FATCA.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
         "first_name": {
             "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
             "type": "string",

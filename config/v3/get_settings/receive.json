@@ -121,6 +121,13 @@
                         "Unemployed"
                     ]
                 },
+                "fatca_declaration": {
+                    "description": "Indicates client's self-declaration for FATCA.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "feature_flag": {
                     "description": "Contains features that are enabled or disabled for this user",
                     "type": "object",
