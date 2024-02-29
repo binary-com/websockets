@@ -26,6 +26,9 @@ jobs:
         uses: ./.github/actions/versioning
         with:
           release_type: production
+      - name: Extract version
+        id: extract_version
+        run: echo "RELEASE_VERSION=$(cat _site/version)" >> $GITHUB_OUTPUT
       - name: Publish to Cloudflare Pages Production
         uses: "./.github/actions/publish_to_pages_production"
         with:
