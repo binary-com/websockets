@@ -133,6 +133,13 @@
                                 4.9358253e-05
                             ]
                         },
+                        "tick_size_barrier_percentage": {
+                            "description": "[Accumulator] Tick size barrier in percentage, rounded off to 5 decimal places",
+                            "type": "string",
+                            "examples": [
+                                "0.00546%"
+                            ]
+                        },
                         "ticks_stayed_in": {
                             "description": "An array of numbers  to build a stat chart - each number represents the duration that spot stayed between barries",
                             "type": "array",
