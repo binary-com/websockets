@@ -105,11 +105,25 @@
                                 1000.59
                             ]
                         },
+                        "maximum_stake": {
+                            "description": "Maximum stake that user can set to buy a contract",
+                            "type": "string",
+                            "examples": [
+                                "1000.00"
+                            ]
+                        },
                         "maximum_ticks": {
                             "description": "Maximum duration that a contract can last, contract will close automatically after this number of ticks",
                             "type": "integer",
                             "examples": [
                                 500
+                            ]
+                        },
+                        "minimum_stake": {
+                            "description": "Minimum stake that user can set to buy a contract",
+                            "type": "string",
+                            "examples": [
+                                "1.00"
                             ]
                         },
                         "tick_size_barrier": {
