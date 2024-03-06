@@ -28,9 +28,9 @@
             "type": "string"
         },
         "new_password": {
-            "description": "New password of the account. For validation (Accepts any printable ASCII character. Must be within 8-25 characters, and include numbers, lowercase and uppercase letters. Must not be the same as the user's email address).",
+            "description": "New password of the account. For validation (Accepts any printable ASCII character. Must be within 8-16 characters, include numbers, lowercase, uppercase letters and special characters. Must not be the same as the user's email address).",
             "type": "string",
-            "pattern": "^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])[ -~]{8,25}$",
+            "pattern": "^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*()+\\-=\\[\\]{};':\"|,\\.<>\\?_~])[ -~]{8,16}$",
             "sensitive": 1
         },
         "platform": {
