@@ -203,6 +203,32 @@
                         "description": "Name of the owner of the MT5 account.",
                         "type": "string"
                     },
+                    "rights": {
+                        "description": "Rights assigned to the MT5 account.",
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "api",
+                                "api_deprecated",
+                                "confirmed",
+                                "enabled",
+                                "exclude_reports",
+                                "expert",
+                                "investor",
+                                "otp_enabled",
+                                "password",
+                                "push",
+                                "readonly",
+                                "reports",
+                                "reset_pass",
+                                "sponsored",
+                                "technical",
+                                "trade_disabled",
+                                "trailing"
+                            ]
+                        }
+                    },
                     "server": {
                         "description": "Trade server name of the MT5 account.",
                         "type": "string"
