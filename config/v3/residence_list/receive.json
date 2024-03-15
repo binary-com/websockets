@@ -16,6 +16,14 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
+                    "account_opening_self_declaration_required": {
+                        "description": "Flag which indicates whether self declaration is required for account opening",
+                        "type": "integer",
+                        "enum": [
+                            0,
+                            1
+                        ]
+                    },
                     "disabled": {
                         "description": "Disabled.",
                         "type": "string"

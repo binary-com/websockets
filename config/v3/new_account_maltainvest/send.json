@@ -310,6 +310,13 @@
             "type": "string",
             "pattern": "^[a-z]{2}$"
         },
+        "resident_self_declaration": {
+            "description": "[Optional] Indicates client's self declaration for opening account under own initiative, must be 1",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
         "risk_tolerance": {
             "description": "Do you understand that you could potentially lose 100% of the money you use to trade?",
             "type": "string",
