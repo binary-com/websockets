@@ -45,6 +45,10 @@
                                 "description": "Currency of specified account.",
                                 "type": "string"
                             },
+                            "currency_type": {
+                                "description": "Currency type for the corresponding currency.",
+                                "type": "string"
+                            },
                             "excluded_until": {
                                 "description": "Epoch of date till client has excluded him/herself from the website, only present if client is self excluded.",
                                 "type": "integer"
