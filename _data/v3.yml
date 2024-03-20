@@ -135,6 +135,8 @@ groups:
         title: P2P Advertiser Update
       - name: p2p_chat_create
         title: P2P Chat Create
+      - name: p2p_country_list
+        title: P2P Country List
       - name: p2p_order_cancel
         title: P2P Order Cancel
       - name: p2p_order_confirm

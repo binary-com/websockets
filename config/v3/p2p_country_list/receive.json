@@ -1,0 +1,155 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "P2P Country List (response)",
+    "description": "List all or specific country and its payment methods.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "p2p_country_list": {
+            "description": "Country identified by country code",
+            "type": "object",
+            "additionalProperties": true,
+            "patternProperties": {
+                "^([a-z]{2})?$": {
+                    "description": "Country code identifier.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "country_name",
+                        "cross_border_ads_enabled",
+                        "fixed_rate_adverts",
+                        "float_rate_adverts",
+                        "float_rate_offset_limit",
+                        "local_currency",
+                        "payment_methods"
+                    ],
+                    "properties": {
+                        "country_name": {
+                            "description": "Display name of country.",
+                            "type": "string"
+                        },
+                        "cross_border_ads_enabled": {
+                            "description": "When 1, users in this country may place orders on ads in other countries.",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        },
+                        "fixed_rate_adverts": {
+                            "description": "Availability of fixed rate adverts.",
+                            "type": "string",
+                            "enum": [
+                                "disabled",
+                                "enabled",
+                                "list_only"
+                            ]
+                        },
+                        "float_rate_adverts": {
+                            "description": "Availability of floating rate adverts.",
+                            "type": "string",
+                            "enum": [
+                                "disabled",
+                                "enabled",
+                                "list_only"
+                            ]
+                        },
+                        "float_rate_offset_limit": {
+                            "description": "Maximum rate offset for floating rate adverts.",
+                            "type": "number"
+                        },
+                        "local_currency": {
+                            "description": "Local currency of the country.",
+                            "type": "string",
+                            "pattern": "^[a-zA-Z0-9]{2,20}$",
+                            "examples": [
+                                "USD"
+                            ]
+                        },
+                        "payment_methods": {
+                            "description": "Payment method identifier.",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "patternProperties": {
+                                "^[a-z0-9_]{1,30}$": {
+                                    "description": "Payment method identifier.",
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "display_name": {
+                                            "description": "Display name of payment method.",
+                                            "type": "string"
+                                        },
+                                        "fields": {
+                                            "description": "Payment method field definitions.",
+                                            "type": "object",
+                                            "additionalProperties": false,
+                                            "minProperties": 1,
+                                            "patternProperties": {
+                                                "^[a-z0-9_]{1,30}$": {
+                                                    "description": "Field identifier.",
+                                                    "type": "object",
+                                                    "additionalProperties": false,
+                                                    "required": [
+                                                        "display_name",
+                                                        "required",
+                                                        "type"
+                                                    ],
+                                                    "properties": {
+                                                        "display_name": {
+                                                            "description": "Display name of payment method field.",
+                                                            "type": "string"
+                                                        },
+                                                        "required": {
+                                                            "description": "Is field required or optional.",
+                                                            "type": "integer"
+                                                        },
+                                                        "type": {
+                                                            "description": "Field type.",
+                                                            "type": "string",
+                                                            "enum": [
+                                                                "text",
+                                                                "memo"
+                                                            ]
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "type": {
+                                            "description": "Payment method type.",
+                                            "type": "string",
+                                            "enum": [
+                                                "bank",
+                                                "ewallet",
+                                                "other"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "p2p_country_list"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}
