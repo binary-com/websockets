@@ -18,7 +18,6 @@
         "last_name",
         "residence",
         "salutation",
-        "tax_identification_number",
         "tax_residence"
     ],
     "properties": {
