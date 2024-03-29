@@ -237,6 +237,14 @@
                                                         "type": "string"
                                                     }
                                                 },
+                                                "report_available": {
+                                                    "description": "Indicate if the verification report was returned by the provider",
+                                                    "type": "integer",
+                                                    "enum": [
+                                                        0,
+                                                        1
+                                                    ]
+                                                },
                                                 "reported_properties": {
                                                     "description": "Shows the latest document properties detected and reported by IDVS",
                                                     "type": "object"

@@ -70,6 +70,14 @@
                                             "items": {
                                                 "type": "string"
                                             }
+                                        },
+                                        "report_available": {
+                                            "description": "Indicate if the verification report was returned by the provider (IDV only).",
+                                            "type": "integer",
+                                            "enum": [
+                                                0,
+                                                1
+                                            ]
                                         }
                                     }
                                 },
@@ -200,6 +208,14 @@
                                                 "items": {
                                                     "type": "string"
                                                 }
+                                            },
+                                            "report_available": {
+                                                "description": "Indicate if the verification report was returned by the provider (IDV only).",
+                                                "type": "integer",
+                                                "enum": [
+                                                    0,
+                                                    1
+                                                ]
                                             }
                                         }
                                     },
