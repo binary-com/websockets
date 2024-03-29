@@ -354,6 +354,29 @@
                                 "type": "boolean"
                             }
                         }
+                    },
+                    "white_label_links": {
+                        "description": "Links to access MT5 application for different platforms.",
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "android": {
+                                "description": "Download link for Android.",
+                                "type": "string"
+                            },
+                            "ios": {
+                                "description": "Download link for iOS.",
+                                "type": "string"
+                            },
+                            "webtrader_url": {
+                                "description": "MT5 webtrader url based on jurisdiction and platform",
+                                "type": "string"
+                            },
+                            "windows": {
+                                "description": "Download link for Windows.",
+                                "type": "string"
+                            }
+                        }
                     }
                 }
             }
