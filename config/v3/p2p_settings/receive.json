@@ -30,6 +30,7 @@
                 "maximum_advert_amount",
                 "maximum_order_amount",
                 "order_daily_limit",
+                "order_expiry_options",
                 "order_payment_period",
                 "payment_methods_enabled",
                 "review_period",
@@ -208,6 +209,14 @@
                 "order_daily_limit": {
                     "description": "Maximum number of orders a user may create per day.",
                     "type": "integer"
+                },
+                "order_expiry_options": {
+                    "description": "List of order expiry values available for adverts, in seconds.",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "uniqueItems": true
                 },
                 "order_payment_period": {
                     "description": "Time allowed for order payment, in minutes after order creation.",

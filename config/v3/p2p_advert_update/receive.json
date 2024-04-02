@@ -271,15 +271,7 @@
                 },
                 "order_expiry_period": {
                     "description": "Expiry period (seconds) for order created against this ad.",
-                    "type": "integer",
-                    "enum": [
-                        900,
-                        1800,
-                        2700,
-                        3600,
-                        5400,
-                        7200
-                    ]
+                    "type": "integer"
                 },
                 "payment_info": {
                     "description": "Payment instructions. Only applicable for 'sell adverts'.",
