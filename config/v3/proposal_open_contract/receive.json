@@ -560,10 +560,6 @@
                     "description": "[Only for lookback trades] Multiplier applies when calculating the final payoff for each type of lookback. e.g. (Exit spot - Lowest historical price) * multiplier = Payout",
                     "type": "number"
                 },
-                "number_of_contracts": {
-                    "description": "[Only for vanilla or turbos options] The implied number of contracts",
-                    "type": "number"
-                },
                 "payout": {
                     "description": "Payout value of the contract.",
                     "type": "number",
