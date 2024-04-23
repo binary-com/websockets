@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Authorize (request)",
-    "description": "Authorize current WebSocket session to act on behalf of the owner of a given token. Must precede requests that need to access client account, for example purchasing and selling contracts or viewing portfolio.[test]",
+    "description": "Authorize current WebSocket session to act on behalf of the owner of a given token. Must precede requests that need to access client account, for example purchasing and selling contracts or viewing portfolio.",
     "type": "object",
     "auth_required": 0,
     "additionalProperties": false,
@@ -10,7 +10,7 @@
     ],
     "properties": {
         "authorize": {
-            "description": "Authentication token. May be retrieved from https://www.binary.com/en/user/security/api_tokenws.html[test]",
+            "description": "Authentication token. May be retrieved from https://www.binary.com/en/user/security/api_tokenws.html",
             "type": "string",
             "pattern": "^[\\w\\-]{1,128}$",
             "sensitive": 1
