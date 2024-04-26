@@ -192,6 +192,28 @@
                     ],
                     "sensitive": 1
                 },
+                "phone_number_verification": {
+                    "description": "The status of the Phone Number Verification.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "verified"
+                    ],
+                    "properties": {
+                        "next_attempt": {
+                            "description": "(Optional) Indicates the timestamp for the next verification attempt",
+                            "type": "integer"
+                        },
+                        "verified": {
+                            "description": "Indicates the verification status of the client's phone number.",
+                            "type": "integer",
+                            "enum": [
+                                0,
+                                1
+                            ]
+                        }
+                    }
+                },
                 "place_of_birth": {
                     "description": "Place of birth, 2-letter country code.",
                     "type": [

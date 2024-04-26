@@ -76,6 +76,10 @@
                             "real\\svg_ez_usd"
                         ]
                     },
+                    "landing_company_short": {
+                        "description": "Landing company shortcode of the Trading account.",
+                        "type": "string"
+                    },
                     "loginid": {
                         "description": "Account identifier used for system transfers.",
                         "type": "string",
@@ -107,6 +111,16 @@
                         ],
                         "examples": [
                             "poa_failed"
+                        ]
+                    },
+                    "sub_account_type": {
+                        "description": "Sub account type",
+                        "type": "string",
+                        "enum": [
+                            "financial",
+                            "financial_stp",
+                            "standard",
+                            "swap_free"
                         ]
                     },
                     "transfers": {

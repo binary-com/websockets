@@ -204,6 +204,101 @@
                                         "expired",
                                         "suspected"
                                     ]
+                                },
+                                "verified_jurisdiction": {
+                                    "description": "This represents the current status of authentication for each mt5 jurisdiction.",
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "bvi": {
+                                            "description": "This represents whether the client is allowed or not to create an account under this jurisdiction",
+                                            "type": "integer",
+                                            "enum": [
+                                                0,
+                                                1
+                                            ]
+                                        },
+                                        "dsl": {
+                                            "description": "This represents whether the client is allowed or not to create an account under this jurisdiction",
+                                            "type": "integer",
+                                            "enum": [
+                                                0,
+                                                1
+                                            ]
+                                        },
+                                        "iom": {
+                                            "description": "This represents whether the client is allowed or not to create an account under this jurisdiction",
+                                            "type": "integer",
+                                            "enum": [
+                                                0,
+                                                1
+                                            ]
+                                        },
+                                        "labuan": {
+                                            "description": "This represents whether the client is allowed or not to create an account under this jurisdiction",
+                                            "type": "integer",
+                                            "enum": [
+                                                0,
+                                                1
+                                            ]
+                                        },
+                                        "malta": {
+                                            "description": "This represents whether the client is allowed or not to create an account under this jurisdiction",
+                                            "type": "integer",
+                                            "enum": [
+                                                0,
+                                                1
+                                            ]
+                                        },
+                                        "maltainvest": {
+                                            "description": "This represents whether the client is allowed or not to create an account under this jurisdiction",
+                                            "type": "integer",
+                                            "enum": [
+                                                0,
+                                                1
+                                            ]
+                                        },
+                                        "samoa": {
+                                            "description": "This represents whether the client is allowed or not to create an account under this jurisdiction",
+                                            "type": "integer",
+                                            "enum": [
+                                                0,
+                                                1
+                                            ]
+                                        },
+                                        "samoa-virtual": {
+                                            "description": "This represents whether the client is allowed or not to create an account under this jurisdiction",
+                                            "type": "integer",
+                                            "enum": [
+                                                0,
+                                                1
+                                            ]
+                                        },
+                                        "svg": {
+                                            "description": "This represents whether the client is allowed or not to create an account under this jurisdiction",
+                                            "type": "integer",
+                                            "enum": [
+                                                0,
+                                                1
+                                            ]
+                                        },
+                                        "vanuatu": {
+                                            "description": "This represents whether the client is allowed or not to create an account under this jurisdiction",
+                                            "type": "integer",
+                                            "enum": [
+                                                0,
+                                                1
+                                            ]
+                                        },
+                                        "virtual": {
+                                            "description": "This represents whether the client is allowed or not to create an account under this jurisdiction",
+                                            "type": "integer",
+                                            "enum": [
+                                                0,
+                                                1
+                                            ]
+                                        }
+                                    }
                                 }
                             }
                         },
