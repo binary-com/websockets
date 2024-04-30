@@ -29,7 +29,37 @@
                     "patternProperties": {
                         "^[a-zA-Z0-9]{2,20}$": {
                             "description": "The rate of exchanging a unit of the base currency into a target currency (represented by the key)",
-                            "type": "number"
+                            "type": [
+                                "number",
+                                "object"
+                            ],
+                            "oneOf": [
+                                {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "required": [
+                                        "spot_rate"
+                                    ],
+                                    "properties": {
+                                        "ask_rate": {
+                                            "description": "[Optional] The ask rate of exchanging a unit of the base currency into a target currency",
+                                            "type": "number"
+                                        },
+                                        "bid_rate": {
+                                            "description": "[Optional] The bid rate of exchanging a unit of the base currency into a target currency",
+                                            "type": "number"
+                                        },
+                                        "spot_rate": {
+                                            "description": "The spot rate of exchanging a unit of the base currency into a target currency",
+                                            "type": "number"
+                                        }
+                                    }
+                                },
+                                {
+                                    "description": "The rate of exchanging a unit of the base currency into a target currency (represented by the key)",
+                                    "type": "number"
+                                }
+                            ]
                         }
                     }
                 }
