@@ -205,28 +205,77 @@
                     },
                     "rights": {
                         "description": "Rights assigned to the MT5 account.",
-                        "type": "array",
-                        "items": {
-                            "type": "string",
-                            "enum": [
-                                "api",
-                                "api_deprecated",
-                                "confirmed",
-                                "enabled",
-                                "exclude_reports",
-                                "expert",
-                                "investor",
-                                "otp_enabled",
-                                "password",
-                                "push",
-                                "readonly",
-                                "reports",
-                                "reset_pass",
-                                "sponsored",
-                                "technical",
-                                "trade_disabled",
-                                "trailing"
-                            ]
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "api": {
+                                "description": "User is allowed to connect via MT5 Web API",
+                                "type": "boolean"
+                            },
+                            "api_deprecated": {
+                                "description": "This flag is obsolete and not used",
+                                "type": "boolean"
+                            },
+                            "confirmed": {
+                                "description": "User's certificate is confirmed",
+                                "type": "boolean"
+                            },
+                            "enabled": {
+                                "description": "The User is allowed to connect",
+                                "type": "boolean"
+                            },
+                            "exclude_reports": {
+                                "description": "User is not allowed to view reports",
+                                "type": "boolean"
+                            },
+                            "expert": {
+                                "description": "User is allowed to use Expert Advisors",
+                                "type": "boolean"
+                            },
+                            "investor": {
+                                "description": "For internal mt5 usage",
+                                "type": "boolean"
+                            },
+                            "otp_enabled": {
+                                "description": "User is allowed to use OTP",
+                                "type": "boolean"
+                            },
+                            "password_change": {
+                                "description": "User is allowed to change password",
+                                "type": "boolean"
+                            },
+                            "push": {
+                                "description": "User has enabled push notifications",
+                                "type": "boolean"
+                            },
+                            "readonly": {
+                                "description": "Value for internal mt5 usage",
+                                "type": "boolean"
+                            },
+                            "reports": {
+                                "description": "User is allowed to receive daily reports",
+                                "type": "boolean"
+                            },
+                            "reset_pass": {
+                                "description": "User must change password during next connection",
+                                "type": "boolean"
+                            },
+                            "sponsored": {
+                                "description": "VPS is enabled for user",
+                                "type": "boolean"
+                            },
+                            "technical": {
+                                "description": "User can view technical accounts in manager/admin terminal",
+                                "type": "boolean"
+                            },
+                            "trade_disabled": {
+                                "description": "Trading is disabled for user",
+                                "type": "boolean"
+                            },
+                            "trailing": {
+                                "description": "User is allowed to use trailing stops",
+                                "type": "boolean"
+                            }
                         }
                     },
                     "server": {
