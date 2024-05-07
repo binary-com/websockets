@@ -201,9 +201,9 @@
             ]
         },
         "first_name": {
-            "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+            "description": "Within 1-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
             "type": "string",
-            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$",
+            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{1,50}$",
             "sensitive": 1
         },
         "income_source": {
@@ -219,9 +219,9 @@
             ]
         },
         "last_name": {
-            "description": "Within 2-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+            "description": "Within 1-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
             "type": "string",
-            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$",
+            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{1,50}$",
             "sensitive": 1
         },
         "leverage_impact_trading": {
