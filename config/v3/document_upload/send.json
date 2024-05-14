@@ -51,6 +51,7 @@
                 "passport",
                 "national_identity_card",
                 "identification_number_document",
+                "service_id_card",
                 "driving_licence",
                 "utility_bill",
                 "bankstatement",
