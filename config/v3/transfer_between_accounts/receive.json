@@ -103,6 +103,19 @@
                             "real\\vanuatu_financial"
                         ]
                     },
+                    "product": {
+                        "description": "Product name that Deriv offer",
+                        "type": "string",
+                        "enum": [
+                            "",
+                            "synthetic",
+                            "financial",
+                            "swap_free",
+                            "zero_spread",
+                            "standard",
+                            "stp"
+                        ]
+                    },
                     "status": {
                         "description": "The status of account.",
                         "type": [

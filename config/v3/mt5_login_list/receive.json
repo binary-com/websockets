@@ -203,6 +203,19 @@
                         "description": "Name of the owner of the MT5 account.",
                         "type": "string"
                     },
+                    "product": {
+                        "description": "Product name that Deriv offer",
+                        "type": "string",
+                        "enum": [
+                            "",
+                            "synthetic",
+                            "financial",
+                            "swap_free",
+                            "zero_spread",
+                            "standard",
+                            "stp"
+                        ]
+                    },
                     "rights": {
                         "description": "Rights assigned to the MT5 account.",
                         "type": "object",

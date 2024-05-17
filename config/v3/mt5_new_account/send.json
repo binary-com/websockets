@@ -130,6 +130,19 @@
             "maxLength": 50,
             "sensitive": 1
         },
+        "product": {
+            "description": "Product name that Deriv offer",
+            "type": "string",
+            "enum": [
+                "",
+                "synthetic",
+                "financial",
+                "swap_free",
+                "zero_spread",
+                "standard",
+                "stp"
+            ]
+        },
         "server": {
             "description": "[Optional] Trade server.",
             "type": [

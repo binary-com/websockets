@@ -37,6 +37,13 @@
                                         "verified",
                                         "expired"
                                     ]
+                                },
+                                "supported_documents": {
+                                    "description": "Supported documents per document_type.",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
                                 }
                             }
                         },
@@ -132,6 +139,17 @@
                                                 }
                                             }
                                         },
+                                        "manual": {
+                                            "type": "object",
+                                            "additionalProperties": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "display_name": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
                                         "onfido": {
                                             "type": "object",
                                             "additionalProperties": {
@@ -175,6 +193,13 @@
                                             "verified",
                                             "expired"
                                         ]
+                                    },
+                                    "supported_documents": {
+                                        "description": "Supported documents per document_type.",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
                                     }
                                 }
                             },
@@ -265,6 +290,17 @@
                                                             "type": "string"
                                                         },
                                                         "format": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "manual": {
+                                                "type": "object",
+                                                "additionalProperties": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "display_name": {
                                                             "type": "string"
                                                         }
                                                     }
