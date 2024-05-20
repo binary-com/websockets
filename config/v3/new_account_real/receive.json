@@ -27,6 +27,10 @@
                     "description": "Currency of an account",
                     "type": "string"
                 },
+                "currency_type": {
+                    "description": "Currency type against the currency",
+                    "type": "string"
+                },
                 "landing_company": {
                     "description": "Landing company full name",
                     "type": "string"

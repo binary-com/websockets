@@ -33,6 +33,10 @@
                     "description": "Account currency",
                     "type": "string"
                 },
+                "currency_type": {
+                    "description": "Currency type against the currency",
+                    "type": "string"
+                },
                 "email": {
                     "description": "Email of the new virtual-money account",
                     "type": "string"
