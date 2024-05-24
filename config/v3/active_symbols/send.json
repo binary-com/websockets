@@ -17,6 +17,23 @@
                 "full"
             ]
         },
+        "barrier_category": {
+            "description": "[Optional] Category of barrier.",
+            "type": "array",
+            "items": {
+                "description": "",
+                "type": "string",
+                "enum": [
+                    "american",
+                    "asian",
+                    "euro_atm",
+                    "euro_non_atm",
+                    "non_financial",
+                    "lookback",
+                    "reset"
+                ]
+            }
+        },
         "contract_type": {
             "description": "[Optional] The proposed contract type",
             "type": "array",
