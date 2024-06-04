@@ -204,6 +204,14 @@
                             "description": "(Optional) Indicates the timestamp for the next verification attempt",
                             "type": "integer"
                         },
+                        "next_email_attempt": {
+                            "description": "(Optional) Indicates the timestamp for the next email verification attempt",
+                            "type": "integer"
+                        },
+                        "next_verify_attempt": {
+                            "description": "(Optional) Indicates the timestamp for the next verify attempt",
+                            "type": "integer"
+                        },
                         "verified": {
                             "description": "Indicates the verification status of the client's phone number.",
                             "type": "integer",
