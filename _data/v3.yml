@@ -223,8 +223,6 @@ groups:
         title: 'Trading Platform: Investor Password Reset'
       - name: trading_platform_password_reset
         title: 'Trading Platform: Password Reset'
-      - name: trading_platform_status
-        title: Trading Platform Status
       - name: trading_servers
         title: Server list
       - name: trading_times
