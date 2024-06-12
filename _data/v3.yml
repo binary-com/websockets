@@ -43,8 +43,6 @@ groups:
         title: Update Contract History
       - name: contracts_for
         title: Contracts For Symbol
-      - name: contracts_for_company
-        title: Contracts For Company
       - name: copy_start
         title: 'Copy Trading: Start'
       - name: copy_stop
