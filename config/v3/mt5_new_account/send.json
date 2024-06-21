@@ -164,11 +164,26 @@
             "pattern": "^.{0,50}$"
         },
         "sub_account_category": {
-            "description": "[Optional] Indicate the sub account category that we have in the cfd group naming convention.",
+            "description": "[Optional] Indicate the additional risk management for each account",
             "type": "string",
             "enum": [
+                "",
                 "swap_free",
-                "swap_free_high_risk"
+                "ab",
+                "ba",
+                "lim",
+                "hr"
+            ]
+        },
+        "sub_account_type": {
+            "description": "[Optional] Indicate the different offerings for mt5 account",
+            "type": "string",
+            "enum": [
+                "standard",
+                "stp",
+                "ibt",
+                "swap_free",
+                "zero_spread"
             ]
         },
         "zipCode": {

@@ -133,7 +133,8 @@
                             "financial",
                             "financial_stp",
                             "standard",
-                            "swap_free"
+                            "swap_free",
+                            "zero_spread"
                         ]
                     },
                     "transfers": {
