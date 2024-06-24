@@ -164,11 +164,26 @@
             "pattern": "^.{0,50}$"
         },
         "sub_account_category": {
-            "description": "[Optional] Indicate the sub account category that we have in the cfd group naming convention.",
+            "description": "[Optional] Indicate the additional risk management for each account",
             "type": "string",
             "enum": [
+                "",
                 "swap_free",
-                "swap_free_high_risk"
+                "ab",
+                "ba",
+                "lim",
+                "hr"
+            ]
+        },
+        "sub_account_type": {
+            "description": "[Optional] Indicate the different offerings for mt5 account",
+            "type": "string",
+            "enum": [
+                "standard",
+                "stp",
+                "ibt",
+                "swap_free",
+                "zero_spread"
             ]
         },
         "zipCode": {
@@ -177,7 +192,7 @@
             "maxLength": 50
         },
         "loginid": {
-            "description": "[Optional] The login id of the user. If left unspecified, it defaults to the initial authorized token's login id.",
+            "description": "[Optional] The login id of the user. Mandatory when multiple tokens were provided during authorize.",
             "type": "string",
             "pattern": "^[A-Za-z]+[0-9]+$"
         },

@@ -362,25 +362,30 @@
                         ]
                     },
                     "sub_account_category": {
-                        "description": "Sub account category",
+                        "description": "Sub account category refer to the additional risk management",
                         "type": "string",
                         "enum": [
                             "",
                             "swap_free",
                             "swap_free_high_risk",
-                            "ibt",
-                            "stp",
-                            "lim"
+                            "lim",
+                            "hr",
+                            "ab",
+                            "ba",
+                            "stp"
                         ]
                     },
                     "sub_account_type": {
-                        "description": "Sub account type refer to classic MT5 account",
+                        "description": "Sub account type refer to different offerings that we have for mt5",
                         "type": "string",
                         "enum": [
                             "standard",
                             "financial",
                             "financial_stp",
-                            "swap_free"
+                            "swap_free",
+                            "ibt",
+                            "stp",
+                            "zero_spread"
                         ]
                     },
                     "webtrader_url": {
