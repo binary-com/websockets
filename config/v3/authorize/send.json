@@ -10,7 +10,7 @@
     ],
     "properties": {
         "authorize": {
-            "description": "Authentication token. May be retrieved from https://www.binary.com/en/user/security/api_tokenws.html. Set to MULTI when using multiple tokens.",
+            "description": "Authentication token. May be retrieved from https://www.binary.com/en/user/security/api_tokenws.html",
             "type": "string",
             "pattern": "^[\\w\\-]{1,128}$",
             "sensitive": 1
@@ -25,13 +25,13 @@
             ]
         },
         "tokens": {
-            "description": "Additional Authentication tokens of authorized user that may be used in this session. Upto 25 tokens.",
+            "description": "Additional Authentication tokens of authorized user that may be used in this session. Upto 10 tokens.",
             "type": "array",
             "items": {
                 "type": "string",
                 "pattern": "^[\\w\\-]{1,128}$"
             },
-            "maxItems": 25,
+            "maxItems": 10,
             "sensitive": 1
         },
         "passthrough": {
