@@ -45,7 +45,7 @@
                     }
                 }
             },
-            "maxItems": 100,
+            "maxItems": 5,
             "minItems": 1,
             "sensitive": 1
         },
@@ -56,7 +56,7 @@
                 "description": "Advertiser payment method ID.",
                 "type": "number"
             },
-            "maxItems": 100,
+            "maxItems": 5,
             "minItems": 1
         },
         "update": {
@@ -64,13 +64,14 @@
             "type": "object",
             "additionalProperties": false,
             "minProperties": 1,
+            "maxProperties": 5,
             "patternProperties": {
                 "^[0-9]{1,8}$": {
                     "description": "Advertiser payment method ID.",
                     "type": "object",
                     "additionalProperties": false,
                     "minProperties": 1,
-                    "maxProperties": 100,
+                    "maxProperties": 7,
                     "patternProperties": {
                         "^[a-z0-9_]{1,30}$": {
                             "description": "Payment field to value to update.",
