@@ -30,7 +30,7 @@
         "advert_id": {
             "description": "[Optional] If present, lists orders applying to a specific advert.",
             "type": "string",
-            "pattern": "^[0-9]+$"
+            "pattern": "^[0-9]{1,18}$"
         },
         "date_from": {
             "description": "[Optional] Filter the orders created after this date(included) format(epoch or YYYY-MM-DD)",

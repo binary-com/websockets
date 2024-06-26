@@ -23,7 +23,7 @@
         "id": {
             "description": "The unique identifier for the order.",
             "type": "string",
-            "pattern": "^[0-9]+$"
+            "pattern": "^[0-9]{1,18}$"
         },
         "subscribe": {
             "description": "[Optional] If set to 1, will send updates whenever there is an update to order",

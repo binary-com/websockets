@@ -22,7 +22,7 @@
         "advertiser_id": {
             "description": "[Optional] ID of the advertiser to list adverts for.",
             "type": "string",
-            "pattern": "^[0-9]+$"
+            "pattern": "^[0-9]{1,18}$"
         },
         "advertiser_name": {
             "description": "[Optional] Search for advertiser by name. Partial matches will be returned.",

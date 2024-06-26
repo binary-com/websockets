@@ -24,7 +24,9 @@
             "type": "array",
             "items": {
                 "description": "Advertiser unique identifier.",
-                "type": "number"
+                "type": "number",
+                "maximum": 999999999999999999,
+                "minimum": 1
             },
             "maxItems": 100
         },
@@ -33,7 +35,9 @@
             "type": "array",
             "items": {
                 "description": "Advertiser unique identifier.",
-                "type": "number"
+                "type": "number",
+                "maximum": 999999999999999999,
+                "minimum": 1
             },
             "maxItems": 100
         },
@@ -42,7 +46,9 @@
             "type": "array",
             "items": {
                 "description": "Advertiser unique identifier.",
-                "type": "number"
+                "type": "number",
+                "maximum": 999999999999999999,
+                "minimum": 1
             },
             "maxItems": 100
         },
@@ -51,7 +57,9 @@
             "type": "array",
             "items": {
                 "description": "Advertiser unique identifier.",
-                "type": "number"
+                "type": "number",
+                "maximum": 999999999999999999,
+                "minimum": 1
             },
             "maxItems": 100
         },

@@ -32,7 +32,7 @@
         "id": {
             "description": "The unique identifier for this order.",
             "type": "string",
-            "pattern": "^[0-9]+$"
+            "pattern": "^[0-9]{1,18}$"
         },
         "verification_code": {
             "description": "[Optional] Verification code received from email.",

@@ -22,7 +22,7 @@
         "id": {
             "description": "[Optional] The unique identifier for this advertiser. If not provided, returns advertiser information about the current account.",
             "type": "string",
-            "pattern": "^[0-9]+$"
+            "pattern": "^[0-9]{1,18}$"
         },
         "subscribe": {
             "description": "[Optional] If set to 1, will send updates whenever there is an update to advertiser",

@@ -22,7 +22,7 @@
         "id": {
             "description": "[Optional] The unique identifier for this advert. Optional when subscribe is 1. If not provided, all advertiser adverts will be subscribed.",
             "type": "string",
-            "pattern": "^[0-9]+$"
+            "pattern": "^[0-9]{1,18}$"
         },
         "subscribe": {
             "description": "[Optional] If set to 1, will send updates when changes occur. Optional when id is provided.",
