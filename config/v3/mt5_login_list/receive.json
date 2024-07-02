@@ -216,6 +216,10 @@
                             "stp"
                         ]
                     },
+                    "request_timestamp": {
+                        "description": "Timestamp of the latest MT5 request.",
+                        "type": "integer"
+                    },
                     "rights": {
                         "description": "Rights assigned to the MT5 account.",
                         "type": "object",
