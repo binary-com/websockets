@@ -163,6 +163,13 @@
                         "description": "2-letter country code",
                         "type": "string",
                         "pattern": "^\\w\\w$"
+                    },
+                    "wallet_signup": {
+                        "description": "Flag which indicates whether wallet signup is available in this country",
+                        "type": "integer",
+                        "enum": [
+                            1
+                        ]
                     }
                 }
             }
