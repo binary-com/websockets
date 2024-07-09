@@ -171,6 +171,10 @@
                     "type": "number",
                     "minimum": 0
                 },
+                "payout_per_point": {
+                    "description": "[Optional] Clients can provide payout_per_point directly, and the barrier will be calculated based on this payout_per_point value.",
+                    "type": "number"
+                },
                 "product_type": {
                     "description": "[Optional] The product type.",
                     "type": "string",

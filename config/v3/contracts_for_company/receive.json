@@ -75,6 +75,10 @@
                                     "CALL"
                                 ]
                             },
+                            "default_stake": {
+                                "description": "Default stake for the contract",
+                                "type": "number"
+                            },
                             "sentiment": {
                                 "description": "Type of sentiment.",
                                 "type": "string",

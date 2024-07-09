@@ -111,6 +111,19 @@
                                     "CALL"
                                 ]
                             },
+                            "default_stake": {
+                                "description": "Default stake for the contract",
+                                "type": "number"
+                            },
+                            "display_number_of_contracts": {
+                                "description": "[Only for Turbos] Its selected payout per point",
+                                "type": "number",
+                                "examples": [
+                                    0,
+                                    1,
+                                    2
+                                ]
+                            },
                             "exchange_name": {
                                 "description": "Name of exchange",
                                 "type": "string",
@@ -219,6 +232,10 @@
                             },
                             "multiplier_range": {
                                 "description": "Multiplier range.",
+                                "type": "array"
+                            },
+                            "payout_choices": {
+                                "description": "[Only for Turbos] Payout Choices",
                                 "type": "array"
                             },
                             "payout_limit": {
