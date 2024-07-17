@@ -83,6 +83,7 @@
                                     "completed_orders_count",
                                     "id",
                                     "is_online",
+                                    "is_schedule_available",
                                     "last_online_time",
                                     "name",
                                     "rating_average",
@@ -107,6 +108,14 @@
                                     },
                                     "is_online": {
                                         "description": "Indicates if the advertiser is currently online.",
+                                        "type": "integer",
+                                        "enum": [
+                                            0,
+                                            1
+                                        ]
+                                    },
+                                    "is_schedule_available": {
+                                        "description": "Inidcates whether the advertiser's schedule has availability between now and now + order_expiry_period.",
                                         "type": "integer",
                                         "enum": [
                                             0,
@@ -377,7 +386,7 @@
                                 ]
                             },
                             "visibility_status": {
-                                "description": "Reasons why an advert is not visible. Possible values: \n- `advert_fixed_rate_disabled`: fixed rate adverts are no longer available in the advert's country. \n- `advert_float_rate_disabled`: floating rate adverts are no longer available in the advert's country. \n- `advert_inactive`: the advert is set inactive. \n- `advert_max_limit`: the minimum order amount exceeds the system maximum order. \n- `advert_min_limit`: the maximum order amount is too small to be shown on the advert list. \n- `advert_remaining`: the remaining amount of the advert is below the minimum order. \n- `advert_no_payment_methods`: the advert has no valid payment methods. \n- `advertiser_ads_paused`: the advertiser has paused all adverts. \n- `advertiser_approval`: the advertiser's proof of identity is not verified. \n- `advertiser_balance`: the advertiser's P2P balance is less than the minimum order. \n- `advertiser_block_trade_ineligible`: the advertiser is not currently eligible for block trading. \n- `advertiser_daily_limit`: the advertiser's remaining daily limit is less than the minimum order. \n- `advertiser_temp_ban`: the advertiser is temporarily banned from P2P.",
+                                "description": "Reasons why an advert is not visible. Possible values: \n- `advert_fixed_rate_disabled`: fixed rate adverts are no longer available in the advert's country.\n- `advert_float_rate_disabled`: floating rate adverts are no longer available in the advert's country. \n- `advert_inactive`: the advert is set inactive. \n- `advert_max_limit`: the minimum order amount exceeds the system maximum order. \n- `advert_min_limit`: the maximum order amount is too small to be shown on the advert list. \n- `advert_remaining`: the remaining amount of the advert is below the minimum order. \n- `advert_no_payment_methods`: the advert has no valid payment methods. \n- `advertiser_ads_paused`: the advertiser has paused all adverts. \n- `advertiser_approval`: the advertiser's proof of identity is not verified. \n- `advertiser_balance`: the advertiser's P2P balance is less than the minimum order. \n- `advertiser_schedule`: the advertiser's schedule does not have availability between now and now + order_expiry_period. \n- `advertiser_block_trade_ineligible`: the advertiser is not currently eligible for block trading. \n- `advertiser_daily_limit`: the advertiser's remaining daily limit is less than the minimum order. \n- `advertiser_temp_ban`: the advertiser is temporarily banned from P2P.",
                                 "type": "array",
                                 "items": {
                                     "type": "string",
@@ -394,6 +403,7 @@
                                         "advertiser_balance",
                                         "advertiser_block_trade_ineligible",
                                         "advertiser_daily_limit",
+                                        "advertiser_schedule",
                                         "advertiser_temp_ban"
                                     ]
                                 }

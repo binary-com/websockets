@@ -45,6 +45,43 @@
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,:;()@#/+-]{0,300}$",
             "sensitive": 1
         },
+        "schedule": {
+            "description": "[Optional] Weekly availability schedule. Ads are visible and orders can be created only during available periods.",
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "description": "Periods of availabily. A null value will clear the existing schedule.",
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "end_min",
+                    "start_min"
+                ],
+                "properties": {
+                    "end_min": {
+                        "description": "Minute of week when availablility ends. Zero is Sunday 00:00 UST.",
+                        "type": [
+                            "integer",
+                            "null"
+                        ],
+                        "maximum": 10080,
+                        "minimum": 1
+                    },
+                    "start_min": {
+                        "description": "Minute of week when availablility starts. Zero is Sunday 00:00 UST.",
+                        "type": [
+                            "integer",
+                            "null"
+                        ],
+                        "maximum": 10079,
+                        "minimum": 0
+                    }
+                }
+            },
+            "maxItems": 50
+        },
         "show_name": {
             "description": "[Optional] When `1`, the advertiser's real name will be displayed on to other users on adverts and orders.",
             "type": "integer",

@@ -34,6 +34,7 @@
                 "is_approved",
                 "is_listed",
                 "is_online",
+                "is_schedule_available",
                 "last_online_time",
                 "name",
                 "partner_count",
@@ -225,6 +226,14 @@
                         1
                     ]
                 },
+                "is_schedule_available": {
+                    "description": "Inidcates whether the advertiser's schedule allows P2P transactions at the current time.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
                 "last_name": {
                     "description": "The advertiser's last name.",
                     "type": "string",
@@ -296,6 +305,38 @@
                         "integer",
                         "null"
                     ]
+                },
+                "schedule": {
+                    "description": "[Optional] Weekly availability schedule. Ads are visible and orders can be created only during available periods.",
+                    "type": [
+                        "array",
+                        "null"
+                    ],
+                    "items": {
+                        "description": "Periods of availabily.",
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                            "end_min",
+                            "start_min"
+                        ],
+                        "properties": {
+                            "end_min": {
+                                "description": "Minute of week when availablility ends. Zero is Sunday 00:00 UST.",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "start_min": {
+                                "description": "Minute of week when availablility starts. Zero is Sunday 00:00 UST.",
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            }
+                        }
+                    }
                 },
                 "sell_completion_rate": {
                     "description": "The percentage of completed orders out of total orders as a seller within the past 30 days.",

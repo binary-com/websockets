@@ -16,6 +16,7 @@
             "required": [
                 "adverts_active_limit",
                 "block_trade",
+                "business_hours_minutes_interval",
                 "cancellation_block_duration",
                 "cancellation_count_period",
                 "cancellation_grace_period",
@@ -63,6 +64,10 @@
                             "type": "number"
                         }
                     }
+                },
+                "business_hours_minutes_interval": {
+                    "description": "Advertiser schedule start and end times must be exact multiples of this value, unless it is zero.",
+                    "type": "integer"
                 },
                 "cancellation_block_duration": {
                     "description": "A buyer will be blocked for this duration after exceeding the cancellation limit, in hours.",

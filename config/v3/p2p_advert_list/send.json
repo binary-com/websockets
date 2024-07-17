@@ -57,6 +57,15 @@
                 1
             ]
         },
+        "hide_client_schedule_unavailable": {
+            "description": "[Optional] If set to 1, adverts for which the current user's shcedule does not have availability from now until the full possible order expiry are not returned.",
+            "type": "integer",
+            "default": 0,
+            "enum": [
+                0,
+                1
+            ]
+        },
         "hide_ineligible": {
             "description": "[Optional] If set to 1, adverts for which the current user does not meet counteryparty terms are not returned.",
             "type": "integer",
