@@ -19,7 +19,6 @@
             "description": "Purpose of email verification, request_email and reset_password are the only two types restricted from all unoffical apps",
             "type": "string",
             "enum": [
-                "partner_account_opening",
                 "account_opening",
                 "account_verification",
                 "reset_password",

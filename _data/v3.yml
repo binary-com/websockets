@@ -241,8 +241,6 @@ groups:
         title: Unsubscribe Email
       - name: verify_email
         title: Verify Email
-      - name: verify_email_cellxpert
-        title: Verify Email Cellxpert
       - name: website_config
         title: Server Config
       - name: website_status
