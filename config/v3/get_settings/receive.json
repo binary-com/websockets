@@ -200,6 +200,10 @@
                         "verified"
                     ],
                     "properties": {
+                        "carriers": {
+                            "description": "A list of available carriers (if empty assume Phone Number Verification is not available at the moment)",
+                            "type": "array"
+                        },
                         "next_attempt": {
                             "description": "(Optional) Indicates the timestamp for the next verification attempt",
                             "type": "integer"
