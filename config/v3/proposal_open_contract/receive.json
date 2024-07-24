@@ -777,6 +777,74 @@
                 "validation_error_code": {
                     "description": "Error code if validation fails",
                     "type": "string"
+                },
+                "validation_params": {
+                    "description": "Contains contract validation information.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "max_payout": {
+                            "description": "[Only for Accumulators] Maximum payout for the contract.",
+                            "type": "string",
+                            "examples": "4000.00"
+                        },
+                        "max_ticks": {
+                            "description": "[Only for Accumulators] Maximum ticks for the contract.",
+                            "type": "integer",
+                            "examples": 75
+                        },
+                        "stake": {
+                            "description": "Contains information for minimum and maximum stake amount for the contract.",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "max": {
+                                    "description": "Maximum stakes allowed",
+                                    "type": "string",
+                                    "examples": "1000.00"
+                                },
+                                "min": {
+                                    "description": "Minimum stakes allowed",
+                                    "type": "string",
+                                    "examples": "0.01"
+                                }
+                            }
+                        },
+                        "stop_loss": {
+                            "description": "[Only for Multipliers] Contains information for minimum and maximum stop loss amount for the contract.",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "max": {
+                                    "description": "Maximum stop loss amount",
+                                    "type": "string",
+                                    "examples": "1000.00"
+                                },
+                                "min": {
+                                    "description": "Minimum stop loss amount",
+                                    "type": "string",
+                                    "examples": "0.51"
+                                }
+                            }
+                        },
+                        "take_profit": {
+                            "description": "Contains information for minimum and maximum take profit amount for the contract.",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "max": {
+                                    "description": "Maximum take profit amount",
+                                    "type": "string",
+                                    "examples": "1000.00"
+                                },
+                                "min": {
+                                    "description": "Minimum take profit amount",
+                                    "type": "string",
+                                    "examples": "0.10"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
