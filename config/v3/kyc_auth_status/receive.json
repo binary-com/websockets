@@ -162,6 +162,23 @@
                                             }
                                         }
                                     }
+                                },
+                                "supported_documents_override": {
+                                    "description": "Supported documents override per service.",
+                                    "type": "object",
+                                    "properties": {
+                                        "manual": {
+                                            "type": "object",
+                                            "additionalProperties": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "display_name": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -307,6 +324,23 @@
                                                 }
                                             },
                                             "onfido": {
+                                                "type": "object",
+                                                "additionalProperties": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "display_name": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "supported_documents_override": {
+                                        "description": "Supported documents override per service.",
+                                        "type": "object",
+                                        "properties": {
+                                            "manual": {
                                                 "type": "object",
                                                 "additionalProperties": {
                                                     "type": "object",
