@@ -137,6 +137,14 @@
                             }
                         }
                     },
+                    "partner_signup": {
+                        "description": "Flag which indicates whether partner signup is available in this country",
+                        "type": "integer",
+                        "enum": [
+                            0,
+                            1
+                        ]
+                    },
                     "phone_idd": {
                         "description": "IDD code of country",
                         "type": [
