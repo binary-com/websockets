@@ -62,6 +62,10 @@
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
+                        "app_markup_amount": {
+                            "description": "The markup amount charged on a client's stake amount",
+                            "type": "string"
+                        },
                         "barrier": {
                             "description": "Barrier of the contract.",
                             "type": "string",

@@ -17,6 +17,10 @@
                     "description": "Account Id",
                     "type": "number"
                 },
+                "app_markup_amount": {
+                    "description": "The markup amount charged on a client's stake amount",
+                    "type": "string"
+                },
                 "audit_details": {
                     "title": "Audit details for expired contract.",
                     "description": "Tick details around contract start and end time.",
