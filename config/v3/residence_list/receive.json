@@ -24,6 +24,77 @@
                             1
                         ]
                     },
+                    "common_reporting_standard": {
+                        "description": "Common Reporting Standard",
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "non_participating_jurisdictions": {
+                                "description": "NPJ configuration",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "default": {
+                                        "description": "Default NPJ flag",
+                                        "type": "boolean"
+                                    },
+                                    "landing_company": {
+                                        "description": "Flags for specific landing companies",
+                                        "type": "object",
+                                        "patternProperties": {
+                                            "^[a-z]{1,10}$": {
+                                                "description": "Landing company NPJ flag",
+                                                "type": "boolean"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "postcode": {
+                                "description": "Postcode configuration",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "invalid_pattern": {
+                                        "description": "Invalid regex patterns for postcode validation",
+                                        "type": [
+                                            "null",
+                                            "string"
+                                        ]
+                                    }
+                                }
+                            },
+                            "tax": {
+                                "description": "Tax configuration",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "mandatory": {
+                                        "description": "Mandatory TIN flag",
+                                        "type": "boolean"
+                                    },
+                                    "tin_cleaner": {
+                                        "description": "Cleanup regex",
+                                        "type": "string"
+                                    },
+                                    "tin_format": {
+                                        "description": "Country tax identifier format",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "tin_format_description": {
+                                        "description": "Description of the TIN format",
+                                        "type": [
+                                            "null",
+                                            "string"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
                     "disabled": {
                         "description": "Disabled.",
                         "type": "string"
@@ -132,6 +203,60 @@
                                                 ]
                                             }
                                         }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "jurisdiction_risk_assessment": {
+                        "description": "Jurisdiction Risk Assessment",
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "disclaimer": {
+                                "description": "Disclaimer configuration",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "accept": {
+                                        "description": "Disclaimer flag",
+                                        "type": "boolean"
+                                    },
+                                    "message": {
+                                        "description": "Disclaimer message",
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "risk_level": {
+                                "description": "Risk level configuration",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "default": {
+                                        "description": "Default risk level flag",
+                                        "type": "string"
+                                    },
+                                    "landing_company": {
+                                        "description": "Flags for specific landing companies",
+                                        "type": "object",
+                                        "patternProperties": {
+                                            "^[a-z]{1,10}$": {
+                                                "description": "Landing company risk level flag",
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "turnover": {
+                                "description": "Turnover configuration",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "max_limit": {
+                                        "description": "Max limit",
+                                        "type": "boolean"
                                     }
                                 }
                             }
