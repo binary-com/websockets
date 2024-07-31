@@ -39,7 +39,7 @@
                 "affiliate_token": {
                     "description": "[Optional] Affiliate token, within 32 characters.",
                     "type": "string",
-                    "pattern": "^[\\w-]{0,32}$"
+                    "pattern": "^[\\w-]{0,100}$"
                 },
                 "date_first_contact": {
                     "description": "[Optional] Date of first contact, format: yyyy-mm-dd in GMT timezone.",
