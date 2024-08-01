@@ -16,6 +16,27 @@
                 1
             ]
         },
+        "query": {
+            "description": "[Optional] Specific keys from the response that you want. If not passed, it will return all the keys.",
+            "type": "array",
+            "items": {
+                "description": "Keys that you need back in response.",
+                "type": "string",
+                "enum": [
+                    "account_opening_self_declaration_required",
+                    "common_reporting_standard",
+                    "disabled",
+                    "identity",
+                    "jurisdiction_risk_assessment",
+                    "phone_idd",
+                    "selected",
+                    "text",
+                    "tin_format",
+                    "value",
+                    "wallet_signup"
+                ]
+            }
+        },
         "passthrough": {
             "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
             "type": "object"
