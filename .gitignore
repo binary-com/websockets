@@ -3,3 +3,6 @@ _site/
 .sass-cache
 .idea/
 Gemfile.lock
+.env
+.env.*
+*.env
