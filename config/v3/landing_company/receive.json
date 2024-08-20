@@ -1560,14 +1560,6 @@
                         1
                     ]
                 },
-                "ukgc_funds_protection": {
-                    "description": "Flag to indicate ukgc funds protection setting.",
-                    "type": "integer",
-                    "enum": [
-                        0,
-                        1
-                    ]
-                },
                 "virtual_company": {
                     "description": "Virtual Company",
                     "type": "string"
