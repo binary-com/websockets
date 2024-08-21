@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Get Partner-Specific Account Settings (request)",
+    "description": "Get Partner Settings (Partner Type, Company Details etc)",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "read"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "partner_settings"
+    ],
+    "properties": {
+        "partner_settings": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "loginid": {
+            "description": "[Optional] The login id of the partner account. Mandatory when multiple tokens were provided during authorize.",
+            "type": "string",
+            "pattern": "^[A-Za-z]+[0-9]+$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}
