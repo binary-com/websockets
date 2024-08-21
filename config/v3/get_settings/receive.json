@@ -216,6 +216,10 @@
                             "description": "(Optional) Indicates the timestamp for the next verify attempt",
                             "type": "integer"
                         },
+                        "session_timestamp": {
+                            "description": "(Optional) Indicates the timestamp for the current's session email code expiry",
+                            "type": "integer"
+                        },
                         "verified": {
                             "description": "Indicates the verification status of the client's phone number.",
                             "type": "integer",
