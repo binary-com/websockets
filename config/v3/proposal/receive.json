@@ -35,6 +35,10 @@
                     "description": "[Only for vanilla options] The choices of predefined strike price for client to choose",
                     "type": "array"
                 },
+                "barrier_spot_distance": {
+                    "description": "[Only for Turbos] The relative distance between current spot and the barrier.",
+                    "type": "string"
+                },
                 "cancellation": {
                     "description": "Contains information about contract cancellation option.",
                     "type": "object",
@@ -298,6 +302,13 @@
                     "examples": [
                         10
                     ]
+                },
+                "payout_choices": {
+                    "description": "[Only for Turbos] The choices of predefined payout per point for client to choose",
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
                 },
                 "spot": {
                     "description": "Spot value (if there are no Exchange data-feed licensing restrictions for the underlying symbol).",
