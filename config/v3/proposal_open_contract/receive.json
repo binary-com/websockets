@@ -517,8 +517,15 @@
                                     "description": "Localized display name",
                                     "type": "string"
                                 },
+                                "display_order_amount": {
+                                    "description": "Stop loss amount for display purpose.",
+                                    "type": [
+                                        "null",
+                                        "string"
+                                    ]
+                                },
                                 "order_amount": {
-                                    "description": "Stop loss amount",
+                                    "description": "Stop loss amount. Will be deprecated soon. Please use [display_order_amount].",
                                     "type": [
                                         "null",
                                         "number"
@@ -546,9 +553,19 @@
                                     "description": "Localized display name",
                                     "type": "string"
                                 },
+                                "display_order_amount": {
+                                    "description": "Stop out amount for display purpose.",
+                                    "type": [
+                                        "null",
+                                        "string"
+                                    ]
+                                },
                                 "order_amount": {
-                                    "description": "Stop out amount",
-                                    "type": "number"
+                                    "description": "Stop out amount. Will be deprecated soon. Please use [display_order_amount].",
+                                    "type": [
+                                        "null",
+                                        "number"
+                                    ]
                                 },
                                 "order_date": {
                                     "description": "Stop out order epoch",
@@ -569,8 +586,15 @@
                                     "description": "Localized display name",
                                     "type": "string"
                                 },
+                                "display_order_amount": {
+                                    "description": "Take profit amount for display purpose.",
+                                    "type": [
+                                        "null",
+                                        "string"
+                                    ]
+                                },
                                 "order_amount": {
-                                    "description": "Take profit amount",
+                                    "description": "Take profit amount. Will be deprecated soon. Please use [display_order_amount].",
                                     "type": [
                                         "null",
                                         "number"
