@@ -363,6 +363,18 @@
                             "type": "integer",
                             "examples": 75
                         },
+                        "payout": {
+                            "description": "Contains information for minimum and maximum payout amount for the contract.",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "max": {
+                                    "description": "Maximum payout allowed",
+                                    "type": "string",
+                                    "examples": "1000.00"
+                                }
+                            }
+                        },
                         "stake": {
                             "description": "Contains information for minimum and maximum stake amount for the contract.",
                             "type": "object",
