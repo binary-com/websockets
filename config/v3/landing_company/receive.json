@@ -57,29 +57,6 @@
                         }
                     }
                 },
-                "derivez": {
-                    "description": "Available DerivEZ accounts.",
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                        "all": {
-                            "description": "DerivEZ all account types (Synthetic Indices and Financials).",
-                            "type": "object",
-                            "additionalProperties": false,
-                            "properties": {
-                                "standard": {
-                                    "description": "For standard client",
-                                    "type": "string",
-                                    "enum": [
-                                        "svg",
-                                        "none"
-                                    ],
-                                    "additionalProperties": false
-                                }
-                            }
-                        }
-                    }
-                },
                 "dxtrade_all_company": {
                     "description": "Available Deriv X all account types (Synthetic Indices and Financials).",
                     "type": "object",

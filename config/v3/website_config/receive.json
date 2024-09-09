@@ -143,10 +143,6 @@
                                             "description": "Range of allowed amount for transfer between ctrader accounts.",
                                             "type": "object"
                                         },
-                                        "limits_derivez": {
-                                            "description": "Range of allowed amount for transfer between derivez accounts.",
-                                            "type": "object"
-                                        },
                                         "limits_dxtrade": {
                                             "description": "Range of allowed amount for transfer between dxtrade accounts.",
                                             "type": "object"

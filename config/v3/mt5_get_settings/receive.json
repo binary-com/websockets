@@ -172,7 +172,6 @@
                     "description": "Sub account type",
                     "type": "string",
                     "enum": [
-                        "derivez",
                         "financial",
                         "financial_stp",
                         "standard"

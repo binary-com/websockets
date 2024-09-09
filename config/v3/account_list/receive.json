@@ -87,7 +87,6 @@
                                     "type": "string",
                                     "enum": [
                                         "ctrader",
-                                        "derivez",
                                         "dtrade",
                                         "dwallet",
                                         "dxtrade",

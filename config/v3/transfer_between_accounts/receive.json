@@ -41,7 +41,6 @@
                             "ctrader",
                             "doughflow",
                             "dxtrade",
-                            "derivez",
                             "mt5",
                             "p2p",
                             "paymentagent",
@@ -67,13 +66,6 @@
                         "enum": [
                             0,
                             1
-                        ]
-                    },
-                    "derivez_group": {
-                        "description": "The group of derivez account.",
-                        "type": "string",
-                        "examples": [
-                            "real\\svg_ez_usd"
                         ]
                     },
                     "landing_company_short": {
