@@ -28,7 +28,9 @@
                 "maximum": 999999999999999999,
                 "minimum": 1
             },
-            "maxItems": 100
+            "maxItems": 5,
+            "minItems": 1,
+            "uniqueItems": true
         },
         "add_favourites": {
             "description": "IDs of advertisers to add as favourites.",
@@ -39,7 +41,9 @@
                 "maximum": 999999999999999999,
                 "minimum": 1
             },
-            "maxItems": 100
+            "maxItems": 5,
+            "minItems": 1,
+            "uniqueItems": true
         },
         "remove_blocked": {
             "description": "IDs of advertisers to remove from blocked.",
@@ -50,7 +54,9 @@
                 "maximum": 999999999999999999,
                 "minimum": 1
             },
-            "maxItems": 100
+            "maxItems": 5,
+            "minItems": 1,
+            "uniqueItems": true
         },
         "remove_favourites": {
             "description": "IDs of advertisers to remove from favourites.",
@@ -61,7 +67,9 @@
                 "maximum": 999999999999999999,
                 "minimum": 1
             },
-            "maxItems": 100
+            "maxItems": 5,
+            "minItems": 1,
+            "uniqueItems": true
         },
         "loginid": {
             "description": "[Optional] The login id of the user. Mandatory when multiple tokens were provided during authorize.",
