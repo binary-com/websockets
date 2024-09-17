@@ -69,7 +69,8 @@
             "default": "trading",
             "enum": [
                 "trading",
-                "wallet"
+                "wallet",
+                "dynamic"
             ]
         },
         "utm_ad_id": {
