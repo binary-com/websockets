@@ -965,338 +965,12 @@
                     "additionalProperties": false,
                     "properties": {
                         "financial": {
-                            "description": "Contain details for landing company for financial subtype. The Financial account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market.",
-                            "type": [
-                                "null",
-                                "object"
-                            ],
-                            "additionalProperties": false,
-                            "properties": {
-                                "address": {
-                                    "description": "Landing Company address",
-                                    "type": [
-                                        "array",
-                                        "null"
-                                    ],
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "changeable_fields": {
-                                    "description": "Special conditions for changing sensitive fields",
-                                    "type": "object"
-                                },
-                                "country": {
-                                    "description": "Landing Company country of incorporation",
-                                    "type": "string"
-                                },
-                                "currency_config": {
-                                    "title": "Currency Config Structure",
-                                    "description": "The configuration of each currency.",
-                                    "type": "object"
-                                },
-                                "has_reality_check": {
-                                    "description": "Flag to indicate whether reality check is applicable for this Landing Company. `1`: applicable, `0`: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
-                                    "type": "integer",
-                                    "enum": [
-                                        0,
-                                        1
-                                    ]
-                                },
-                                "legal_allowed_contract_categories": {
-                                    "description": "Allowed contract types for this Landing Company",
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "legal_allowed_currencies": {
-                                    "description": "Allowed account currencies for this Landing Company",
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "legal_allowed_markets": {
-                                    "description": "Allowed markets for this Landing Company",
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "legal_default_currency": {
-                                    "description": "Default account currency",
-                                    "type": "string"
-                                },
-                                "name": {
-                                    "description": "Landing Company legal name",
-                                    "type": "string"
-                                },
-                                "requirements": {
-                                    "description": "Legal requirements for the Landing Company",
-                                    "type": "object",
-                                    "additionalProperties": false,
-                                    "properties": {
-                                        "after_first_deposit": {
-                                            "description": "After first deposit requirements",
-                                            "type": "object",
-                                            "additionalProperties": false,
-                                            "properties": {
-                                                "financial_assessment": {
-                                                    "description": "Financial assessment requirements",
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "string",
-                                                        "examples": [
-                                                            "financial_information",
-                                                            "trading_experience"
-                                                        ]
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "compliance": {
-                                            "description": "Compliance requirements",
-                                            "type": "object",
-                                            "additionalProperties": false,
-                                            "properties": {
-                                                "mt5": {
-                                                    "description": "Compliance MT5 requirements",
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "string",
-                                                        "examples": [
-                                                            "expiration_check",
-                                                            "fully_authenticated"
-                                                        ]
-                                                    }
-                                                },
-                                                "tax_information": {
-                                                    "description": "Compliance tax information requirements",
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "string",
-                                                        "examples": [
-                                                            "tax_identification_number",
-                                                            "tax_residence"
-                                                        ]
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "signup": {
-                                            "description": "Sign up requirements",
-                                            "type": "array",
-                                            "items": {
-                                                "type": "string",
-                                                "examples": [
-                                                    "first_name",
-                                                    "residence",
-                                                    "salutation"
-                                                ]
-                                            }
-                                        },
-                                        "withdrawal": {
-                                            "description": "Withdrawal requirements",
-                                            "type": "array",
-                                            "items": {
-                                                "type": "string",
-                                                "examples": [
-                                                    "address_city",
-                                                    "address_line_1"
-                                                ]
-                                            }
-                                        }
-                                    }
-                                },
-                                "shortcode": {
-                                    "description": "Landing Company short code",
-                                    "type": "string"
-                                },
-                                "support_professional_client": {
-                                    "description": "Flag that indicates whether the landing company supports professional accounts or not",
-                                    "type": "integer",
-                                    "enum": [
-                                        0,
-                                        1
-                                    ]
-                                },
-                                "tin_not_mandatory": {
-                                    "description": "Flag that indicates whether tax identifier number is not mandatory for the current country and landing company.",
-                                    "type": "integer",
-                                    "enum": [
-                                        0,
-                                        1
-                                    ]
-                                }
-                            }
+                            "$ref": "#/$defs/landingCompanyDetails",
+                            "description": "Contain details for landing company for financial subtype. The Financial account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market."
                         },
                         "financial_stp": {
-                            "description": "Contain details for landing company for Financial STP subtype. The Financial STP account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers.",
-                            "type": [
-                                "null",
-                                "object"
-                            ],
-                            "additionalProperties": false,
-                            "properties": {
-                                "address": {
-                                    "description": "Landing Company address",
-                                    "type": [
-                                        "array",
-                                        "null"
-                                    ],
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "changeable_fields": {
-                                    "description": "Special conditions for changing sensitive fields",
-                                    "type": "object"
-                                },
-                                "country": {
-                                    "description": "Landing Company country of incorporation",
-                                    "type": "string"
-                                },
-                                "currency_config": {
-                                    "title": "Currency Config Structure",
-                                    "description": "The configuration of each currency.",
-                                    "type": "object"
-                                },
-                                "has_reality_check": {
-                                    "description": "Flag to indicate whether reality check is applicable for this Landing Company. `1`: applicable, `0`: not applicable. The Reality Check is a feature that gives a summary of the client's trades and account balances on a regular basis throughout his session, and is a regulatory requirement for certain Landing Companies.",
-                                    "type": "integer",
-                                    "enum": [
-                                        0,
-                                        1
-                                    ]
-                                },
-                                "legal_allowed_contract_categories": {
-                                    "description": "Allowed contract types for this Landing Company",
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "legal_allowed_currencies": {
-                                    "description": "Allowed account currencies for this Landing Company",
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "legal_allowed_markets": {
-                                    "description": "Allowed markets for this Landing Company",
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
-                                    }
-                                },
-                                "legal_default_currency": {
-                                    "description": "Default account currency",
-                                    "type": "string"
-                                },
-                                "name": {
-                                    "description": "Landing Company legal name",
-                                    "type": "string"
-                                },
-                                "requirements": {
-                                    "description": "Legal requirements for the Landing Company",
-                                    "type": "object",
-                                    "additionalProperties": false,
-                                    "properties": {
-                                        "after_first_deposit": {
-                                            "description": "After first deposit requirements",
-                                            "type": "object",
-                                            "additionalProperties": false,
-                                            "properties": {
-                                                "financial_assessment": {
-                                                    "description": "Financial assessment requirements",
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "string",
-                                                        "examples": [
-                                                            "financial_information",
-                                                            "trading_experience"
-                                                        ]
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "compliance": {
-                                            "description": "Compliance requirements",
-                                            "type": "object",
-                                            "additionalProperties": false,
-                                            "properties": {
-                                                "mt5": {
-                                                    "description": "Compliance MT5 requirements",
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "string",
-                                                        "examples": [
-                                                            "expiration_check",
-                                                            "fully_authenticated"
-                                                        ]
-                                                    }
-                                                },
-                                                "tax_information": {
-                                                    "description": "Compliance tax information requirements",
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "string",
-                                                        "examples": [
-                                                            "tax_identification_number",
-                                                            "tax_residence"
-                                                        ]
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "signup": {
-                                            "description": "Sign up requirements",
-                                            "type": "array",
-                                            "items": {
-                                                "type": "string",
-                                                "examples": [
-                                                    "first_name",
-                                                    "residence",
-                                                    "salutation"
-                                                ]
-                                            }
-                                        },
-                                        "withdrawal": {
-                                            "description": "Withdrawal requirements",
-                                            "type": "array",
-                                            "items": {
-                                                "type": "string",
-                                                "examples": [
-                                                    "address_city",
-                                                    "address_line_1"
-                                                ]
-                                            }
-                                        }
-                                    }
-                                },
-                                "shortcode": {
-                                    "description": "Landing Company short code",
-                                    "type": "string"
-                                },
-                                "support_professional_client": {
-                                    "description": "Flag that indicates whether the landing company supports professional accounts or not",
-                                    "type": "integer",
-                                    "enum": [
-                                        0,
-                                        1
-                                    ]
-                                },
-                                "tin_not_mandatory": {
-                                    "description": "Flag that indicates whether tax identifier number is not mandatory for the current country and landing company.",
-                                    "type": "integer",
-                                    "enum": [
-                                        0,
-                                        1
-                                    ]
-                                }
-                            }
+                            "$ref": "#/$defs/landingCompanyDetails",
+                            "description": "Contain details for landing company for Financial STP subtype. The Financial STP account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers."
                         }
                     }
                 },
@@ -1578,6 +1252,49 @@
                 }
             }
         },
+        "clientKycStatusRequirements": {
+            "description": "[Optional] Pertains to client KYC. Returned only if the client fails to meet the requirements, including proof of identity (POI), validity of the tax identification number (TIN), and proof of address (POA).",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "poa_status",
+                "poi_status",
+                "valid_tin"
+            ],
+            "properties": {
+                "poa_status": {
+                    "description": "Status of proof of address (POA).",
+                    "type": "string",
+                    "enum": [
+                        "none",
+                        "pending",
+                        "expired",
+                        "verified",
+                        "rejected"
+                    ]
+                },
+                "poi_status": {
+                    "description": "Status of proof of identity (POI).",
+                    "type": "string",
+                    "enum": [
+                        "none",
+                        "pending",
+                        "verified",
+                        "suspected",
+                        "rejected",
+                        "expired"
+                    ]
+                },
+                "valid_tin": {
+                    "description": "Indicates whether the tax identification number (TIN) is valid (1) or not (0).",
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        0
+                    ]
+                }
+            }
+        },
         "complianceRequirements": {
             "description": "Compliance requirements",
             "type": "object",
@@ -1627,6 +1344,10 @@
                 "changeable_fields": {
                     "description": "Special conditions for changing sensitive fields",
                     "type": "object"
+                },
+                "client_kyc_status": {
+                    "$ref": "#/$defs/clientKycStatusRequirements",
+                    "description": "Client kyc statusequirements"
                 },
                 "country": {
                     "description": "Landing Company country of incorporation",

@@ -29,6 +29,44 @@
                         "description": "Balance of the MT5 account.",
                         "type": "number"
                     },
+                    "client_kyc_status": {
+                        "description": "[Optional] Pertains to client KYC. Returned only if the client fails to meet the requirements, including proof of identity (POI), validity of the tax identification number (TIN), and proof of address (POA).",
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "poa_status": {
+                                "description": "Status of proof of address (POA).",
+                                "type": "string",
+                                "enum": [
+                                    "none",
+                                    "pending",
+                                    "expired",
+                                    "verified",
+                                    "rejected"
+                                ]
+                            },
+                            "poi_status": {
+                                "description": "Status of proof of identity (POI).",
+                                "type": "string",
+                                "enum": [
+                                    "none",
+                                    "pending",
+                                    "verified",
+                                    "suspected",
+                                    "rejected",
+                                    "expired"
+                                ]
+                            },
+                            "valid_tin": {
+                                "description": "Indicates whether the tax identification number (TIN) is valid (1) or not (0).",
+                                "type": "integer",
+                                "enum": [
+                                    1,
+                                    0
+                                ]
+                            }
+                        }
+                    },
                     "country": {
                         "description": "Residence of the MT5 account.",
                         "type": "string"
