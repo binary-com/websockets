@@ -47,7 +47,7 @@
             ]
         },
         "provider": {
-            "description": "[Optional] Cashier provider. `crypto` will be default option for crypto currency accounts.",
+            "description": "[Optional] Cashier provider.",
             "type": "string",
             "default": "doughflow",
             "enum": [
