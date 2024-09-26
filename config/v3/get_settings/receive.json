@@ -278,6 +278,10 @@
                         "string"
                     ]
                 },
+                "tnc_status": {
+                    "description": "Terms and condition status tells us whether all the accounts of this user has accepted the latest T&C version.",
+                    "type": "object"
+                },
                 "trading_hub": {
                     "description": "Boolean value 1 or 0, indicating if client has enabled the Trading Hub dashboard",
                     "type": "integer"

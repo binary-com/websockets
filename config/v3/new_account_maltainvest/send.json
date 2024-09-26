@@ -390,6 +390,14 @@
             "type": "string",
             "pattern": "^[a-z]{0,2}(?:,[a-z]{2})*$"
         },
+        "tnc_acceptance": {
+            "description": "The tnc acceptance status of the user.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
         "trading_experience_financial_instruments": {
             "description": "How much experience do you have with other financial instruments?",
             "type": "string",

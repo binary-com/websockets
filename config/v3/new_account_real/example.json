@@ -19,5 +19,6 @@
     "secret_answer": "Jones",
     "secret_question": "Mother's maiden name",
     "tax_identification_number": "012142545",
-    "tax_residence": "ar,sg"
+    "tax_residence": "ar,sg",
+    "tnc_acceptance": 1
 }
