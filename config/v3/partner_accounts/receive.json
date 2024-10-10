@@ -45,10 +45,6 @@
                                     "company"
                                 ]
                             },
-                            "platform_url": {
-                                "description": "Platform URL for Dynamic works dashboard to be redirected from Partners Hub which will be set in BackOffice.",
-                                "type": "string"
-                            },
                             "provider": {
                                 "description": "Defines the provider platform.",
                                 "type": "string",
@@ -61,6 +57,18 @@
                                 "description": "Partner's Website URI/Promotional Platform",
                                 "type": "string"
                             }
+                        }
+                    }
+                },
+                "platform_url": {
+                    "description": "Platform URL for Dynamic works dashboard to be redirected from Partners Hub which will be set in BackOffice.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "patternProperties": {
+                        "^[a-zA-Z_]+$": {
+                            "description": "Partner's provider as key and platform URL as value",
+                            "type": "string",
+                            "pattern": "^[\\w_@./:#&+-]*$"
                         }
                     }
                 }
