@@ -97,6 +97,17 @@
             "type": "string",
             "pattern": "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
         },
+        "employment_status": {
+            "description": "Employment Status.",
+            "type": "string",
+            "enum": [
+                "Employed",
+                "Pensioner",
+                "Self-Employed",
+                "Student",
+                "Unemployed"
+            ]
+        },
         "fatca_declaration": {
             "description": "[Optional] Indicates client's self-declaration of FATCA.",
             "type": "integer",
@@ -182,6 +193,14 @@
             "description": "[Optional] Residence for tax purpose. Comma separated iso country code if multiple jurisdictions. Only applicable for real money account. Required for `maltainvest` landing company.",
             "type": "string",
             "pattern": "^[a-z]{0,2}(?:,[a-z]{2})*$"
+        },
+        "tin_skipped": {
+            "description": "[Optional] Whether the client has skipped the TIN form. Only applicable for real money account.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
         },
         "tnc_acceptance": {
             "description": "The tnc acceptance status of the user.",

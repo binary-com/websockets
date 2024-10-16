@@ -278,6 +278,14 @@
                         "string"
                     ]
                 },
+                "tin_skipped": {
+                    "description": "[Optional] Whether the client has skipped the TIN form. Only applicable for real money account.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
                 "tnc_status": {
                     "description": "Terms and condition status tells us whether all the accounts of this user has accepted the latest T&C version.",
                     "type": "object"

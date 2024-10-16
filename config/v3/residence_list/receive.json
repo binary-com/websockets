@@ -73,6 +73,10 @@
                                         "description": "Mandatory TIN flag",
                                         "type": "boolean"
                                     },
+                                    "poi_equivalent": {
+                                        "description": "POI equivalent flag",
+                                        "type": "boolean"
+                                    },
                                     "tin_cleaner": {
                                         "description": "Cleanup regex",
                                         "type": "string"

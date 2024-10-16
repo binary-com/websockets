@@ -390,6 +390,14 @@
             "type": "string",
             "pattern": "^[a-z]{0,2}(?:,[a-z]{2})*$"
         },
+        "tin_skipped": {
+            "description": "[Optional] Whether the client has skipped the TIN form. Only applicable for real money account.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
         "tnc_acceptance": {
             "description": "The tnc acceptance status of the user.",
             "type": "integer",
