@@ -27,6 +27,14 @@
                             "type": "object",
                             "additionalProperties": false,
                             "properties": {
+                                "is_priority_withdrawal_enabled": {
+                                    "description": "Indicates whether Priority Withdrawal is enabled for the cryptocurrency.",
+                                    "type": "integer",
+                                    "enum": [
+                                        0,
+                                        1
+                                    ]
+                                },
                                 "minimum_deposit": {
                                     "description": "Minimum deposit amount in corresponding cryptocurrency value.",
                                     "type": "number"
