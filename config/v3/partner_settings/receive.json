@@ -42,7 +42,7 @@
                     "description": "Defines the provider platform.",
                     "type": "string",
                     "enum": [
-                        "myaffiliates",
+                        "myaffiliate",
                         "dynamicworks"
                     ]
                 },
