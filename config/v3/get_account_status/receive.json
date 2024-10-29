@@ -123,6 +123,14 @@
                                                 1
                                             ]
                                         },
+                                        "dml": {
+                                            "description": "This represents whether the client is allowed or not to create an account under this jurisdiction",
+                                            "type": "integer",
+                                            "enum": [
+                                                0,
+                                                1
+                                            ]
+                                        },
                                         "dsl": {
                                             "description": "This represents whether the client is allowed or not to create an account under this jurisdiction",
                                             "type": "integer",
@@ -156,14 +164,6 @@
                                             ]
                                         },
                                         "maltainvest": {
-                                            "description": "This represents whether the client is allowed or not to create an account under this jurisdiction",
-                                            "type": "integer",
-                                            "enum": [
-                                                0,
-                                                1
-                                            ]
-                                        },
-                                        "mu": {
                                             "description": "This represents whether the client is allowed or not to create an account under this jurisdiction",
                                             "type": "integer",
                                             "enum": [
