@@ -204,6 +204,10 @@
                             "description": "A list of available carriers (if empty assume Phone Number Verification is not available at the moment)",
                             "type": "array"
                         },
+                        "challenge_attempts_remaining": {
+                            "description": "Indicates the attempts remaining for /phone_number_challenge",
+                            "type": "integer"
+                        },
                         "next_attempt": {
                             "description": "(Optional) Indicates the timestamp for the next verification attempt",
                             "type": "integer"
@@ -227,6 +231,10 @@
                                 0,
                                 1
                             ]
+                        },
+                        "verify_attempts_remaining": {
+                            "description": "Indicates the attempts remaining for /phone_number_verification",
+                            "type": "integer"
                         }
                     }
                 },
