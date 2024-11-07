@@ -34,6 +34,8 @@
                 "order_expiry_options",
                 "order_payment_period",
                 "payment_methods_enabled",
+                "pnv_required",
+                "poa_required",
                 "review_period",
                 "supported_currencies"
             ],
@@ -233,6 +235,22 @@
                 },
                 "payment_methods_enabled": {
                     "description": "Indicates if the payment methods feature is enabled.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "pnv_required": {
+                    "description": "Indicates if phone number verification is required to become a P2P advertiser.",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "poa_required": {
+                    "description": "Indicates if proof of address is required to become a P2P advertiser.",
                     "type": "integer",
                     "enum": [
                         0,
