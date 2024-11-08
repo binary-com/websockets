@@ -217,6 +217,8 @@ groups:
         title: States List
       - name: ticks
         title: Ticks Stream
+      - name: ticks_batch
+        title: Ticks Batch Stream
       - name: ticks_history
         title: Ticks History
       - name: time

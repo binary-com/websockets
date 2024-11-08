@@ -1,0 +1,88 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Ticks Batch Stream (response)",
+    "description": "Latest spot price for a group symbols. Continuous responses with a frequency of up to one second.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "ticks_batch": {
+            "title": "ticks_batch",
+            "description": "Tick by tick list of streamed data for a group of symbols",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "ask",
+                    "bid",
+                    "change",
+                    "epoch",
+                    "quote",
+                    "symbol"
+                ],
+                "properties": {
+                    "ask": {
+                        "description": "Market ask at the epoch",
+                        "type": "string"
+                    },
+                    "bid": {
+                        "description": "Market bid at the epoch",
+                        "type": "string"
+                    },
+                    "change": {
+                        "description": "Daily percentage change",
+                        "type": "string"
+                    },
+                    "epoch": {
+                        "description": "Epoch time of the tick",
+                        "type": "integer"
+                    },
+                    "quote": {
+                        "description": "Market value at the epoch",
+                        "type": "string"
+                    },
+                    "symbol": {
+                        "description": "Symbol",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "subscription": {
+            "title": "Subscription information",
+            "description": "For subscription requests only.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "description": "A per-connection unique identifier. Can be passed to the `forget` API call to unsubscribe.",
+                    "type": "string",
+                    "examples": [
+                        "c84a793b-8a87-7999-ce10-9b22f7ceead3"
+                    ]
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "ticks_batch"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}
