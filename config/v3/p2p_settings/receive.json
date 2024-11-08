@@ -198,6 +198,14 @@
                                     1
                                 ]
                             },
+                            "is_floating_rate_ad_supported": {
+                                "description": "Indicates that floating rate adverts are available for this currency.",
+                                "type": "integer",
+                                "enum": [
+                                    0,
+                                    1
+                                ]
+                            },
                             "symbol": {
                                 "description": "Local currency symbol",
                                 "type": "string"
