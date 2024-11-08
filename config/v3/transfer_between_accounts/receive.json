@@ -105,7 +105,8 @@
                             "swap_free",
                             "zero_spread",
                             "standard",
-                            "stp"
+                            "stp",
+                            "gold"
                         ]
                     },
                     "status": {
@@ -126,7 +127,8 @@
                             "financial_stp",
                             "standard",
                             "swap_free",
-                            "zero_spread"
+                            "zero_spread",
+                            "gold"
                         ]
                     },
                     "transfers": {

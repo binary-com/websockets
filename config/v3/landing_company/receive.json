@@ -971,6 +971,10 @@
                         "financial_stp": {
                             "$ref": "#/$defs/landingCompanyDetails",
                             "description": "Contain details for landing company for Financial STP subtype. The Financial STP account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers."
+                        },
+                        "gold": {
+                            "$ref": "#/$defs/landingCompanyDetails",
+                            "description": "Contain details for landing company for gold sub account type."
                         }
                     }
                 },

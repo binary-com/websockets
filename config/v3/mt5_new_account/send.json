@@ -99,7 +99,8 @@
             "type": "string",
             "enum": [
                 "conventional",
-                "swap_free"
+                "swap_free",
+                "gold"
             ]
         },
         "mt5_account_type": {
@@ -107,7 +108,8 @@
             "type": "string",
             "enum": [
                 "financial",
-                "financial_stp"
+                "financial_stp",
+                "gold"
             ]
         },
         "name": {
@@ -140,7 +142,8 @@
                 "swap_free",
                 "zero_spread",
                 "standard",
-                "stp"
+                "stp",
+                "gold"
             ]
         },
         "server": {
@@ -173,7 +176,8 @@
                 "ab",
                 "ba",
                 "lim",
-                "hr"
+                "hr",
+                "gold"
             ]
         },
         "sub_account_type": {
@@ -184,7 +188,8 @@
                 "stp",
                 "ibt",
                 "swap_free",
-                "zero_spread"
+                "zero_spread",
+                "gold"
             ]
         },
         "zipCode": {

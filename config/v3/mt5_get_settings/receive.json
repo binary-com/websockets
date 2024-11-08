@@ -178,7 +178,8 @@
                         "swap_free",
                         "ibt",
                         "stp",
-                        "zero_spread"
+                        "zero_spread",
+                        "gold"
                     ]
                 },
                 "zipCode": {

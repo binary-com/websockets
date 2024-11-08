@@ -255,7 +255,8 @@
                             "swap_free",
                             "zero_spread",
                             "standard",
-                            "stp"
+                            "stp",
+                            "gold"
                         ]
                     },
                     "request_timestamp": {
@@ -418,7 +419,8 @@
                             "hr",
                             "ab",
                             "ba",
-                            "stp"
+                            "stp",
+                            "gold"
                         ]
                     },
                     "sub_account_type": {
@@ -431,7 +433,8 @@
                             "swap_free",
                             "ibt",
                             "stp",
-                            "zero_spread"
+                            "zero_spread",
+                            "gold"
                         ]
                     },
                     "webtrader_url": {

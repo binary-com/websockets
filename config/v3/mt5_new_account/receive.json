@@ -53,7 +53,8 @@
                     "type": "string",
                     "enum": [
                         "conventional",
-                        "swap_free"
+                        "swap_free",
+                        "gold"
                     ]
                 },
                 "mt5_account_type": {
@@ -62,7 +63,8 @@
                     "enum": [
                         "financial",
                         "financial_stp",
-                        "standard"
+                        "standard",
+                        "gold"
                     ]
                 },
                 "product": {
@@ -75,7 +77,8 @@
                         "swap_free",
                         "zero_spread",
                         "standard",
-                        "stp"
+                        "stp",
+                        "gold"
                     ]
                 },
                 "sub_account_type": {
@@ -86,7 +89,8 @@
                         "stp",
                         "ibt",
                         "swap_free",
-                        "zero_spread"
+                        "zero_spread",
+                        "gold"
                     ]
                 }
             }
