@@ -19,7 +19,8 @@
                     "additionalProperties": false,
                     "required": [
                         "address",
-                        "identity"
+                        "identity",
+                        "risk_classification"
                     ],
                     "properties": {
                         "address": {
@@ -111,76 +112,91 @@
                                     ]
                                 },
                                 "supported_documents": {
-                                    "description": "Supported documents per service.",
-                                    "type": "object",
-                                    "properties": {
-                                        "idv": {
-                                            "type": "object",
-                                            "additionalProperties": {
+                                    "description": "Supported documents.",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "additional": {
+                                                "description": "Additional information required by the document type.",
                                                 "type": "object",
                                                 "properties": {
-                                                    "additional": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "display_name": {
-                                                                "type": "string"
-                                                            },
-                                                            "format": {
-                                                                "type": "string"
-                                                            }
-                                                        }
-                                                    },
                                                     "display_name": {
+                                                        "description": "Additional display name.",
+                                                        "type": "string"
+                                                    },
+                                                    "document_type": {
+                                                        "description": "Additional document type.",
+                                                        "type": "string"
+                                                    },
+                                                    "example_format": {
+                                                        "description": "Additional example format.",
                                                         "type": "string"
                                                     },
                                                     "format": {
+                                                        "description": "Additional document format.",
                                                         "type": "string"
+                                                    },
+                                                    "sides": {
+                                                        "description": "Additional document sides.",
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string"
+                                                        }
                                                     }
                                                 }
-                                            }
-                                        },
-                                        "manual": {
-                                            "type": "object",
-                                            "additionalProperties": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "display_name": {
-                                                        "type": "string"
-                                                    }
+                                            },
+                                            "available_services": {
+                                                "description": "Services that support this document type.",
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
                                                 }
-                                            }
-                                        },
-                                        "onfido": {
-                                            "type": "object",
-                                            "additionalProperties": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "display_name": {
-                                                        "type": "string"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                },
-                                "supported_documents_override": {
-                                    "description": "Supported documents override per service.",
-                                    "type": "object",
-                                    "properties": {
-                                        "manual": {
-                                            "type": "object",
-                                            "additionalProperties": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "display_name": {
-                                                        "type": "string"
-                                                    }
+                                            },
+                                            "display_name": {
+                                                "description": "Display name of the document type.",
+                                                "type": "string"
+                                            },
+                                            "document_type": {
+                                                "description": "The document type.",
+                                                "type": "string"
+                                            },
+                                            "example_format": {
+                                                "description": "Example format.",
+                                                "type": "string"
+                                            },
+                                            "format": {
+                                                "description": "Document format.",
+                                                "type": "string"
+                                            },
+                                            "has_visual_sample": {
+                                                "description": "A flag to indicate if the document has a visual sample.",
+                                                "type": "boolean"
+                                            },
+                                            "lifetime_valid": {
+                                                "description": "Flag to indicate if the document expires or not. Documents that expire have an expiration date",
+                                                "type": "boolean"
+                                            },
+                                            "sides": {
+                                                "description": "Document sides.",
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
                                                 }
                                             }
                                         }
                                     }
                                 }
                             }
+                        },
+                        "risk_classification": {
+                            "description": "Risk classification of the client.",
+                            "type": "string",
+                            "enum": [
+                                "low",
+                                "standard",
+                                "high"
+                            ]
                         }
                     }
                 },
@@ -192,7 +208,8 @@
                         "additionalProperties": false,
                         "required": [
                             "address",
-                            "identity"
+                            "identity",
+                            "risk_classification"
                         ],
                         "properties": {
                             "address": {
@@ -284,76 +301,91 @@
                                         ]
                                     },
                                     "supported_documents": {
-                                        "description": "Supported documents per service.",
-                                        "type": "object",
-                                        "properties": {
-                                            "idv": {
-                                                "type": "object",
-                                                "additionalProperties": {
+                                        "description": "Supported documents.",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "additional": {
+                                                    "description": "Additional information required by the document type.",
                                                     "type": "object",
                                                     "properties": {
-                                                        "additional": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "display_name": {
-                                                                    "type": "string"
-                                                                },
-                                                                "format": {
-                                                                    "type": "string"
-                                                                }
-                                                            }
-                                                        },
                                                         "display_name": {
+                                                            "description": "Additional display name.",
+                                                            "type": "string"
+                                                        },
+                                                        "document_type": {
+                                                            "description": "Additional document type.",
+                                                            "type": "string"
+                                                        },
+                                                        "example_format": {
+                                                            "description": "Additional example format.",
                                                             "type": "string"
                                                         },
                                                         "format": {
+                                                            "description": "Additional document format.",
                                                             "type": "string"
+                                                        },
+                                                        "sides": {
+                                                            "description": "Additional document sides.",
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
                                                         }
                                                     }
-                                                }
-                                            },
-                                            "manual": {
-                                                "type": "object",
-                                                "additionalProperties": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "display_name": {
-                                                            "type": "string"
-                                                        }
+                                                },
+                                                "available_services": {
+                                                    "description": "Services that support this document type.",
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
                                                     }
-                                                }
-                                            },
-                                            "onfido": {
-                                                "type": "object",
-                                                "additionalProperties": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "display_name": {
-                                                            "type": "string"
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "supported_documents_override": {
-                                        "description": "Supported documents override per service.",
-                                        "type": "object",
-                                        "properties": {
-                                            "manual": {
-                                                "type": "object",
-                                                "additionalProperties": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "display_name": {
-                                                            "type": "string"
-                                                        }
+                                                },
+                                                "display_name": {
+                                                    "description": "Display name of the document type.",
+                                                    "type": "string"
+                                                },
+                                                "document_type": {
+                                                    "description": "The document type.",
+                                                    "type": "string"
+                                                },
+                                                "example_format": {
+                                                    "description": "Example format.",
+                                                    "type": "string"
+                                                },
+                                                "format": {
+                                                    "description": "Document format.",
+                                                    "type": "string"
+                                                },
+                                                "has_visual_sample": {
+                                                    "description": "A flag to indicate if the document has a visual sample.",
+                                                    "type": "boolean"
+                                                },
+                                                "lifetime_valid": {
+                                                    "description": "Flag to indicate if the document expires or not. Documents that expire have an expiration date",
+                                                    "type": "boolean"
+                                                },
+                                                "sides": {
+                                                    "description": "Document sides.",
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
                                                     }
                                                 }
                                             }
                                         }
                                     }
                                 }
+                            },
+                            "risk_classification": {
+                                "description": "Risk classification of the client.",
+                                "type": "string",
+                                "enum": [
+                                    "low",
+                                    "standard",
+                                    "high"
+                                ]
                             }
                         }
                     },
