@@ -98,6 +98,13 @@
                                     "description": "This is the epoch of the document expiry date.",
                                     "type": "integer"
                                 },
+                                "last_rejected": {
+                                    "description": "Show the last reported reasons for the rejected poa cases",
+                                    "type": [
+                                        "null",
+                                        "string"
+                                    ]
+                                },
                                 "status": {
                                     "description": "This represents the current status of the proof of address document submitted for authentication.",
                                     "type": "string",

@@ -28,6 +28,27 @@
                             "type": "object",
                             "additionalProperties": false,
                             "properties": {
+                                "last_rejected": {
+                                    "description": "Details on the rejected POA attempt.",
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "document_type": {
+                                            "description": "Document type of the rejected POA attempt.",
+                                            "type": [
+                                                "null",
+                                                "string"
+                                            ]
+                                        },
+                                        "rejected_reasons": {
+                                            "description": "Reason(s) for the rejected POA attempt.",
+                                            "type": [
+                                                "null",
+                                                "string"
+                                            ]
+                                        }
+                                    }
+                                },
                                 "status": {
                                     "description": "Current POA status.",
                                     "type": "string",
@@ -217,6 +238,27 @@
                                 "type": "object",
                                 "additionalProperties": false,
                                 "properties": {
+                                    "last_rejected": {
+                                        "description": "Details on the rejected POA attempt.",
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "document_type": {
+                                                "description": "Document type of the rejected POA attempt.",
+                                                "type": [
+                                                    "null",
+                                                    "string"
+                                                ]
+                                            },
+                                            "rejected_reasons": {
+                                                "description": "Reason(s) for the rejected POA attempt.",
+                                                "type": [
+                                                    "null",
+                                                    "string"
+                                                ]
+                                            }
+                                        }
+                                    },
                                     "status": {
                                         "description": "Current POA status.",
                                         "type": "string",
