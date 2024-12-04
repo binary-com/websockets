@@ -158,7 +158,10 @@
                                                     "DerivMT-Server-03",
                                                     "DerivBVI-Server",
                                                     "DerivBVI-Server-02",
-                                                    "DerivBVI-Server-03"
+                                                    "DerivBVI-Server-03",
+                                                    "DerivMU-Server",
+                                                    "DerivMU-Server-02",
+                                                    "DerivMU-Server-03"
                                                 ]
                                             },
                                             "geolocation": {
@@ -370,7 +373,10 @@
                                     "DerivMT-Server-03",
                                     "DerivBVI-Server",
                                     "DerivBVI-Server-02",
-                                    "DerivBVI-Server-03"
+                                    "DerivBVI-Server-03",
+                                    "DerivMU-Server",
+                                    "DerivMU-Server-02",
+                                    "DerivMU-Server-03"
                                 ]
                             },
                             "geolocation": {
