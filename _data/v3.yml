@@ -111,6 +111,8 @@ groups:
         title: 'New Real-Money Account: Default Landing Company'
       - name: new_account_virtual
         title: New Virtual-Money Account
+      - name: new_partner_account
+        title: 'New Real-Partner Account: Default Landing Company'
       - name: oauth_apps
         title: OAuth Applications
       - name: p2p_advert_create

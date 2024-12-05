@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "New Real-Partner Account: Default Landing Company (response)",
+    "description": "Create real partner account - Receive",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "new_partner_account": {
+            "title": "new_partner_account",
+            "description": "New real partner account details",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "client_id",
+                "landing_company",
+                "oauth_token"
+            ],
+            "properties": {
+                "client_id": {
+                    "description": "Client ID of new real partner account",
+                    "type": "string"
+                },
+                "currency": {
+                    "description": "Currency of an account",
+                    "type": "string"
+                },
+                "currency_type": {
+                    "description": "Currency type against the currency",
+                    "type": "string"
+                },
+                "landing_company": {
+                    "description": "Landing company full name",
+                    "type": "string"
+                },
+                "landing_company_shortcode": {
+                    "description": "Landing company shortcode",
+                    "type": "string"
+                },
+                "oauth_token": {
+                    "description": "OAuth token for client's login session",
+                    "type": "string"
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "new_partner_account"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}
