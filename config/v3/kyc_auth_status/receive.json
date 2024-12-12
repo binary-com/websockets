@@ -168,10 +168,24 @@
                                                 }
                                             },
                                             "available_services": {
-                                                "description": "Services that support this document type.",
+                                                "description": "Services that support this document type and the specific name expected by the service.",
                                                 "type": "array",
                                                 "items": {
-                                                    "type": "string"
+                                                    "type": "object",
+                                                    "required": [
+                                                        "document_type",
+                                                        "service"
+                                                    ],
+                                                    "properties": {
+                                                        "document_type": {
+                                                            "description": "The specific document type name expected by the service.",
+                                                            "type": "string"
+                                                        },
+                                                        "service": {
+                                                            "description": "The name of the service supporting this document type.",
+                                                            "type": "string"
+                                                        }
+                                                    }
                                                 }
                                             },
                                             "display_name": {
@@ -378,10 +392,24 @@
                                                     }
                                                 },
                                                 "available_services": {
-                                                    "description": "Services that support this document type.",
+                                                    "description": "Services that support this document type and the specific name expected by the service.",
                                                     "type": "array",
                                                     "items": {
-                                                        "type": "string"
+                                                        "type": "object",
+                                                        "required": [
+                                                            "document_type",
+                                                            "service"
+                                                        ],
+                                                        "properties": {
+                                                            "document_type": {
+                                                                "description": "The specific document type name expected by the service.",
+                                                                "type": "string"
+                                                            },
+                                                            "service": {
+                                                                "description": "The name of the service supporting this document type.",
+                                                                "type": "string"
+                                                            }
+                                                        }
                                                     }
                                                 },
                                                 "display_name": {
