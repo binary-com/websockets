@@ -124,6 +124,18 @@
                                 1
                             ]
                         },
+                        "is_recommended": {
+                            "description": "Optional field, indicates if the advertiser is recommended.",
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "enum": [
+                                0,
+                                1,
+                                null
+                            ]
+                        },
                         "last_name": {
                             "description": "The advertiser's last name.",
                             "type": "string",
