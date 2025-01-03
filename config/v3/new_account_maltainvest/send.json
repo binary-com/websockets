@@ -42,7 +42,9 @@
             "enum": [
                 "Speculative",
                 "Income Earning",
-                "Hedging"
+                "Hedging",
+                "Additional revenue",
+                "Savings"
             ]
         },
         "account_turnover": {
