@@ -18,9 +18,17 @@
                 "additionalProperties": false,
                 "required": [
                     "action",
+                    "browser",
+                    "country",
+                    "datetime",
+                    "device",
                     "environment",
+                    "ip",
+                    "language",
+                    "os",
                     "status",
-                    "time"
+                    "time",
+                    "version"
                 ],
                 "properties": {
                     "action": {
@@ -31,8 +39,36 @@
                             "logout"
                         ]
                     },
+                    "browser": {
+                        "description": "Browser used",
+                        "type": "string"
+                    },
+                    "country": {
+                        "description": "Country the login originated (IP Based))",
+                        "type": "string"
+                    },
+                    "datetime": {
+                        "description": "ISO6801 timestame of the activity",
+                        "type": "string"
+                    },
+                    "device": {
+                        "description": "Client device",
+                        "type": "string"
+                    },
                     "environment": {
                         "description": "Provides details about browser, device used during login or logout",
+                        "type": "string"
+                    },
+                    "ip": {
+                        "description": "IP Address the login was from",
+                        "type": "string"
+                    },
+                    "language": {
+                        "description": "Browser language",
+                        "type": "string"
+                    },
+                    "os": {
+                        "description": "Operating system",
                         "type": "string"
                     },
                     "status": {
@@ -46,6 +82,10 @@
                     "time": {
                         "description": "Epoch time of the activity",
                         "type": "integer"
+                    },
+                    "version": {
+                        "description": "Version of the browser",
+                        "type": "string"
                     }
                 }
             }
