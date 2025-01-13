@@ -46,7 +46,8 @@
                             "paymentagent",
                             "paymentagent_client",
                             "standard",
-                            "virtual"
+                            "virtual",
+                            "partner"
                         ]
                     },
                     "balance": {
