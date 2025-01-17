@@ -124,6 +124,19 @@
                                     2
                                 ]
                             },
+                            "duration_choices": {
+                                "description": "[Only for Snowball] Available contract durations in seconds.",
+                                "type": "array",
+                                "items": {
+                                    "type": "integer",
+                                    "examples": [
+                                        300,
+                                        600,
+                                        1200
+                                    ]
+                                },
+                                "minItems": 1
+                            },
                             "exchange_name": {
                                 "description": "Name of exchange",
                                 "type": "string",
@@ -270,6 +283,19 @@
                                     "major_pairs",
                                     "random_index"
                                 ]
+                            },
+                            "trade_risk_profile_choices": {
+                                "description": "[Only for Snowball] Available risk profile options.",
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "examples": [
+                                        "low",
+                                        "medium",
+                                        "high"
+                                    ]
+                                },
+                                "minItems": 1
                             },
                             "trading_period": {
                                 "description": "A hash of predefined trading period",

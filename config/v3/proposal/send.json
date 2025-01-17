@@ -89,6 +89,8 @@
                 "TICKLOW",
                 "RESETCALL",
                 "RESETPUT",
+                "SNOWDOWN",
+                "SNOWUP",
                 "CALLSPREAD",
                 "PUTSPREAD",
                 "RUNHIGH",
@@ -186,6 +188,15 @@
             "description": "The short symbol name (obtained from `active_symbols` call).",
             "type": "string",
             "pattern": "^\\w{2,30}$"
+        },
+        "trade_risk_profile": {
+            "description": "[Only for Snowball] The trade risk profile for the Snowball contract. Higher risk profile offers higher coupon rate at the expense of higher probability of breaching caution price",
+            "type": "string",
+            "enum": [
+                "low",
+                "medium",
+                "high"
+            ]
         },
         "trading_period_start": {
             "description": "[Optional] Required only for multi-barrier trading. Defines the epoch value of the trading period start time.",

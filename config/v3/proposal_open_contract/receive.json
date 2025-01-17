@@ -211,6 +211,14 @@
                         }
                     }
                 },
+                "caution_price": {
+                    "description": "The caution price for the Snowball contract. Breaching this price will reset the coupons accrued to 0.",
+                    "type": "string",
+                    "pattern": "^[+-]?[0-9]+\\.?[0-9]*$",
+                    "examples": [
+                        "10001.2"
+                    ]
+                },
                 "commision": {
                     "description": "Commission in payout currency amount.",
                     "type": [
@@ -235,6 +243,21 @@
                     "examples": [
                         "CALL",
                         "PUT"
+                    ]
+                },
+                "coupon_collection_epochs": {
+                    "description": "The epoch times at which the coupons will be accrued for the Snowball contract.",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "coupon_rate": {
+                    "description": "The coupon rate for the Snowball contract at which the stake will grow for each coupon accrued.",
+                    "type": "string",
+                    "pattern": "^[+-]?[0-9]+\\.?[0-9]*$",
+                    "examples": [
+                        "0.0132"
                     ]
                 },
                 "currency": {
@@ -631,6 +654,13 @@
                     "description": "[Only for lookback trades] Multiplier applies when calculating the final payoff for each type of lookback. e.g. (Exit spot - Lowest historical price) * multiplier = Payout",
                     "type": "number"
                 },
+                "num_of_coupons": {
+                    "description": "The maximum number of coupons available for the Snowball contract.",
+                    "type": "integer",
+                    "examples": [
+                        5
+                    ]
+                },
                 "payout": {
                     "description": "Payout value of the contract.",
                     "type": "number",
@@ -645,6 +675,14 @@
                 "profit_percentage": {
                     "description": "Profit in percentage.",
                     "type": "number"
+                },
+                "profit_price": {
+                    "description": "The profit price for the Snowball contract. Breaching this price will close the contract immediately.",
+                    "type": "string",
+                    "pattern": "^[+-]?[0-9]+\\.?[0-9]*$",
+                    "examples": [
+                        "10005.2"
+                    ]
                 },
                 "purchase_time": {
                     "description": "Epoch of purchase time, will be same as `date_start` for all contracts except forward starting contracts.",
@@ -774,6 +812,15 @@
                             }
                         }
                     }
+                },
+                "trade_risk_profile": {
+                    "description": "The trade risk profile for the Snowball contract.",
+                    "type": "string",
+                    "enum": [
+                        "low",
+                        "medium",
+                        "high"
+                    ]
                 },
                 "transaction_ids": {
                     "title": "Transaction ids for contract",
