@@ -88,6 +88,15 @@
             "type": "string",
             "pattern": "^[\\w-]{0,32}$"
         },
+        "calling_country_code": {
+            "description": "[Optional] The phone's calling country code. Don't include the `+` sign. Up to 4 digits.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "pattern": "^\\d{1,4}$",
+            "sensitive": 1
+        },
         "cfd_experience": {
             "description": "How much experience do you have in CFD trading?",
             "type": "string",
@@ -284,7 +293,7 @@
             ]
         },
         "phone": {
-            "description": "[Optional] Starting with `+` followed by 9-35 digits, hyphens or space.",
+            "description": "[Optional] The phone's national format, don't include the `+` sign nor the calling country code. Up to 15 digits are allowed.",
             "type": [
                 "null",
                 "string"

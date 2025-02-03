@@ -49,6 +49,14 @@
                         1
                     ]
                 },
+                "calling_country_code": {
+                    "description": "The phone's calling country code.",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "sensitive": 1
+                },
                 "citizen": {
                     "description": "Country of legal citizenship, 2-letter country code.",
                     "type": "string"
@@ -185,7 +193,7 @@
                     ]
                 },
                 "phone": {
-                    "description": "Telephone (note: Only available for users who have at least one real account)",
+                    "description": "The phone's national format phone.",
                     "type": [
                         "null",
                         "string"
