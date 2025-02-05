@@ -179,6 +179,18 @@
                                                 }
                                             }
                                         },
+                                        "partner": {
+                                            "description": "Sign up requirements for partners",
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "examples": [
+                                                    "first_name",
+                                                    "residence",
+                                                    "salutation"
+                                                ]
+                                            }
+                                        },
                                         "signup": {
                                             "description": "Sign up requirements",
                                             "type": "array",
@@ -692,6 +704,18 @@
                                         }
                                     }
                                 },
+                                "partner": {
+                                    "description": "Sign up requirements for partners",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "examples": [
+                                            "first_name",
+                                            "residence",
+                                            "salutation"
+                                        ]
+                                    }
+                                },
                                 "signup": {
                                     "description": "Sign up requirements",
                                     "type": "array",
@@ -861,6 +885,18 @@
                                                 ]
                                             }
                                         }
+                                    }
+                                },
+                                "partner": {
+                                    "description": "Sign up requirements for partners",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "examples": [
+                                            "first_name",
+                                            "residence",
+                                            "salutation"
+                                        ]
                                     }
                                 },
                                 "signup": {
@@ -1104,6 +1140,18 @@
                                                         ]
                                                     }
                                                 }
+                                            }
+                                        },
+                                        "partner": {
+                                            "description": "Sign up requirements for partners",
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "examples": [
+                                                    "first_name",
+                                                    "residence",
+                                                    "salutation"
+                                                ]
                                             }
                                         },
                                         "signup": {
@@ -1437,6 +1485,10 @@
                 "compliance": {
                     "$ref": "#/$defs/complianceRequirements",
                     "description": "Compliance requirements"
+                },
+                "partner": {
+                    "$ref": "#/$defs/signUpRequirements",
+                    "description": "Sign up requirements"
                 },
                 "signup": {
                     "$ref": "#/$defs/signUpRequirements",
