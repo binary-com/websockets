@@ -161,6 +161,10 @@ groups:
         title: P2P Ping
       - name: p2p_settings
         title: P2P Settings
+      - name: partner_account_creation
+        title: Partner Account Creation
+      - name: partner_account_creation_status
+        title: Partner Account Creation Status
       - name: partner_accounts
         title: Get Partner Account Details
       - name: partner_settings

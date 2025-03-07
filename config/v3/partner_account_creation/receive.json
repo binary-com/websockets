@@ -1,0 +1,59 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Partner Account Creation (response)",
+    "description": "Create partner accounts - Receive",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "partner_account_creation": {
+            "title": "partner_account_creation",
+            "description": "New partner account creation details for real partner wallet",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "client_id": {
+                    "description": "Client ID of new real partner account",
+                    "type": "string"
+                },
+                "currency": {
+                    "description": "Currency of an account",
+                    "type": "string"
+                },
+                "currency_type": {
+                    "description": "Currency type against the currency",
+                    "type": "string"
+                },
+                "landing_company": {
+                    "description": "Landing company full name",
+                    "type": "string"
+                },
+                "landing_company_shortcode": {
+                    "description": "Landing company shortcode",
+                    "type": "string"
+                },
+                "oauth_token": {
+                    "description": "OAuth token for client's login session",
+                    "type": "string"
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "partner_account_creation"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

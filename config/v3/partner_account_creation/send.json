@@ -1,0 +1,198 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Partner Account Creation (request)",
+    "description": "This call initiates the state machine for account creation process",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "partner_account_creation",
+        "salutation"
+    ],
+    "properties": {
+        "partner_account_creation": {
+            "description": "Must be `1`",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "account_type": {
+            "description": "Account type. If set to 'financial', setting 'mt5_account_type' is also required.",
+            "type": "string",
+            "enum": [
+                "demo",
+                "gaming",
+                "financial",
+                "all"
+            ]
+        },
+        "address_city": {
+            "description": "[Optional] Within 100 characters.",
+            "type": "string",
+            "pattern": "^\\p{L}[\\p{L}\\s'.-]{0,99}$"
+        },
+        "address_line_1": {
+            "description": "Within 70 characters, with no leading whitespaces and may contain letters/numbers and/or any of following characters '.,:;()@#/-",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}'.,:;()\\x{b0}@#/-][\\p{L}\\p{Nd}\\s'’.,:;()\\x{b0}@#/-]{0,69}$"
+        },
+        "address_line_2": {
+            "description": "[Optional] Within 70 characters.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'’.,:;()\\x{b0}@#/-]{0,70}$"
+        },
+        "address_postcode": {
+            "description": "[Optional] Within 20 characters and may not contain '+'.",
+            "type": "string",
+            "pattern": "^([A-Za-z0-9][A-Za-z0-9\\s-]{0,20})?$"
+        },
+        "address_state": {
+            "description": "[Optional] Possible value receive from `states_list` call.",
+            "type": "string",
+            "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,100}$"
+        },
+        "calling_country_code": {
+            "description": "[Optional] The phone's calling country code.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "sensitive": 1
+        },
+        "citizen": {
+            "description": "[Optional] Country of legal citizenship, 2-letter country code.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "pattern": "^([a-z]{2})?$"
+        },
+        "company_name": {
+            "description": "[Optional] Company name. Only applicable for partners of type company.",
+            "type": "string",
+            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$",
+            "sensitive": 1
+        },
+        "company_registration_no": {
+            "description": "[Optional] Company registration number. Only applicable for partners of type company.",
+            "type": "string",
+            "pattern": "^(?!^$|\\s+)[A-Za-z0-9.\\/\\s-]{0,25}$"
+        },
+        "currency": {
+            "description": "[Optional] To set currency of the account. List of supported currencies can be acquired with `payout_currencies` call.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{2,20}$"
+        },
+        "date_of_birth": {
+            "description": "Date of birth format: `yyyy-mm-dd`.",
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
+        },
+        "email": {
+            "description": "Email address",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,63}$"
+        },
+        "fatca_declaration": {
+            "description": "[Optional] Indicates client's self-declaration of FATCA.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "first_name": {
+            "description": "Within 1-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+            "type": "string",
+            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{1,50}$",
+            "sensitive": 1
+        },
+        "landing_company_short": {
+            "description": "[Optional] If specified, will return only the underlyings for the specified landing company.",
+            "type": "string",
+            "enum": [
+                "maltainvest",
+                "svg"
+            ]
+        },
+        "last_name": {
+            "description": "Within 1-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",
+            "type": "string",
+            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{1,50}$",
+            "sensitive": 1
+        },
+        "non_pep_declaration": {
+            "description": "[Optional] Indicates client's self-declaration of not being a PEP/RCA (Politically Exposed Person/Relatives and Close Associates).",
+            "type": "integer",
+            "maximum": 1,
+            "minimum": 0
+        },
+        "partner_type": {
+            "description": "Defines whether this partner is an individual or a company. Only applicable for partners",
+            "type": "string",
+            "enum": [
+                "individual",
+                "company"
+            ]
+        },
+        "phone": {
+            "description": "[Optional] Starting with `+` followed by 8-35 digits, allowing hyphens or space.",
+            "type": "string",
+            "pattern": "^\\d{6,20}$",
+            "sensitive": 1
+        },
+        "provider": {
+            "description": "[Optional] Name  of the provider platform.",
+            "type": "string",
+            "enum": [
+                "myaffiliate",
+                "dynamicworks"
+            ]
+        },
+        "residence": {
+            "description": "2-letter country code, possible value receive from `residence_list` call.",
+            "type": "string",
+            "pattern": "^[a-z]{2}$"
+        },
+        "salutation": {
+            "description": "Accept any value in enum list.",
+            "type": "string",
+            "enum": [
+                "Mr",
+                "Ms",
+                "Miss",
+                "Mrs"
+            ]
+        },
+        "tnc_acceptance": {
+            "description": "The tnc acceptance status of the user.",
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "website": {
+            "description": "Partner's Website URI/Promotional Platform",
+            "type": "string",
+            "pattern": "^[\\w_@./:#&+-]*$"
+        },
+        "loginid": {
+            "description": "[Optional] The login id of the user. If left unspecified, it defaults to the initial authorized token's login id.",
+            "type": "string",
+            "pattern": "^[A-Za-z]+[0-9]+$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}
