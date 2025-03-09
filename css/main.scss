@@ -573,4 +573,110 @@ code {
     }
 }
 
+.deriv-banner {
+    display: flex;
+    justify-content: center;
+    padding: 0 4rem;
+    margin-bottom: 2rem;
+    border-radius: 6px;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(90.22deg, #FF6444 4.32%, #FF6444 48.13%, #FF444F 95.64%);
+    overflow: hidden;
+    
+    &:hover {
+        text-decoration: none;
+    }
+
+    .text-container {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+
+        .title {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold
+        }
+        .subtitle {
+            color: #fff;
+            font-size: 16px;
+            margin-top: 0.5rem;
+            font-weight: normal;
+        }
+    }
+
+    .button {
+        color: #FF6444;
+        background-color: #fff;
+        padding: 0.8rem 1rem;
+        border-radius: 3px;
+        margin-right: 3rem;
+        margin-bottom: 0;
+        align-self: center;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .image {
+        height: 150%;
+        margin-top: 0.5rem;
+        width: auto;
+        align-self: center;
+        transform: rotate(-17deg)
+
+    }
+}
+
+@media (min-width: 760px) {
+    .mobile-only {
+        display: none;
+    }
+}
+
+@media (max-width: 760px) {
+    .desktop-only {
+        display: none;
+    }
+    .deriv-banner {
+        flex-direction: column;
+        position: relative;
+        padding: 0 1rem;
+        width: auto;
+        height: 540px;
+        background: linear-gradient(160.96deg, #FF6444 21.46%, #FF6444 53.19%, #FF444F 87.6%);
+    
+        .text-container {
+            justify-content: flex-start;
+            z-index: 1;
+        }
+        .button {
+            padding: 1.2rem 1rem;
+            margin-right: 0;
+            width: 90%;
+            text-align: center;
+            margin-bottom: 1rem;
+            z-index: 1;
+        }
+    
+        .image {
+            height: 330px;
+            width: auto;
+            transform: none;
+    
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 250px;
+            transform: rotate(-180deg);
+            background: linear-gradient(180.04deg, #FF444F 80.87%, rgba(255, 100, 68, 0) 99.56%);
+        }
+    }
+}
+
 @import "monokai.css";
