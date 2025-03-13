@@ -14,16 +14,16 @@
             "type": "object",
             "additionalProperties": false,
             "required": [
+                "create_CFD_account",
                 "create_eu_partner",
-                "create_mt5_account",
                 "create_row_partner",
                 "create_third_party_provider_user",
                 "link_partner_eu",
                 "link_partner_row"
             ],
             "properties": {
-                "create_eu_partner": {
-                    "description": "Status of EU partner account creation",
+                "create_CFD_account": {
+                    "description": "Status of CFD account creation",
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
@@ -37,8 +37,8 @@
                         }
                     }
                 },
-                "create_mt5_account": {
-                    "description": "Status of MT5 account creation",
+                "create_eu_partner": {
+                    "description": "Status of EU partner account creation",
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {

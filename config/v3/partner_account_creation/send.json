@@ -20,16 +20,6 @@
                 1
             ]
         },
-        "account_type": {
-            "description": "Account type. If set to 'financial', setting 'mt5_account_type' is also required.",
-            "type": "string",
-            "enum": [
-                "demo",
-                "gaming",
-                "financial",
-                "all"
-            ]
-        },
         "address_city": {
             "description": "[Optional] Within 100 characters.",
             "type": "string",
@@ -74,7 +64,7 @@
         "company_name": {
             "description": "[Optional] Company name. Only applicable for partners of type company.",
             "type": "string",
-            "pattern": "^(?!.*\\s{2,})[\\p{L}\\s'.-]{2,50}$",
+            "pattern": "^(?!.*\\s{2,})[\\p{L}0-9\\s'.-]{2,50}$",
             "sensitive": 1
         },
         "company_registration_no": {
@@ -178,8 +168,7 @@
         },
         "website": {
             "description": "Partner's Website URI/Promotional Platform",
-            "type": "string",
-            "pattern": "^[\\w_@./:#&+-]*$"
+            "type": "string"
         },
         "loginid": {
             "description": "[Optional] The login id of the user. If left unspecified, it defaults to the initial authorized token's login id.",
