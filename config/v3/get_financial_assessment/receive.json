@@ -14,161 +14,27 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-                "account_turnover": {
-                    "description": "The anticipated account turnover",
-                    "type": "string"
-                },
-                "binary_options_trading_experience": {
-                    "description": "Binary options trading experience",
-                    "type": "string"
-                },
-                "binary_options_trading_frequency": {
-                    "description": "Binary options trading frequency",
-                    "type": "string"
-                },
-                "cfd_experience": {
-                    "description": "How much experience do you have in CFD trading?",
-                    "type": "string"
-                },
-                "cfd_frequency": {
-                    "description": "How many CFD trades have you placed in the past 12 months?",
-                    "type": "string"
-                },
                 "cfd_score": {
                     "description": "CFD Score",
                     "type": "integer"
-                },
-                "cfd_trading_definition": {
-                    "description": "In your understanding, CFD trading allows you to:",
-                    "type": "string"
-                },
-                "cfd_trading_experience": {
-                    "description": "CFDs trading experience",
-                    "type": "string"
-                },
-                "cfd_trading_frequency": {
-                    "description": "CFDs trading frequency",
-                    "type": "string"
-                },
-                "commodities_trading_experience": {
-                    "description": "Commodities trading experience",
-                    "type": "string"
-                },
-                "commodities_trading_frequency": {
-                    "description": "Commodities trading frequency",
-                    "type": "string"
-                },
-                "education_level": {
-                    "description": "Level of Education",
-                    "type": "string"
-                },
-                "employment_industry": {
-                    "description": "Industry of Employment",
-                    "type": "string"
-                },
-                "employment_status": {
-                    "description": "Employment Status",
-                    "type": "string"
-                },
-                "estimated_worth": {
-                    "description": "Estimated Net Worth",
-                    "type": "string"
                 },
                 "financial_information_score": {
                     "description": "Financial Information Score",
                     "type": "integer"
                 },
-                "forex_trading_experience": {
-                    "description": "Forex trading experience",
-                    "type": "string"
-                },
-                "forex_trading_frequency": {
-                    "description": "Forex trading frequency",
-                    "type": "string"
-                },
-                "income_source": {
-                    "description": "Income Source",
-                    "type": "string"
-                },
-                "indices_trading_experience": {
-                    "description": "Indices trading experience",
-                    "type": "string"
-                },
-                "indices_trading_frequency": {
-                    "description": "Indices trading frequency",
-                    "type": "string"
-                },
-                "leverage_impact_trading": {
-                    "description": "How does leverage affect CFD trading?",
-                    "type": "string"
-                },
-                "leverage_trading_high_risk_stop_loss": {
-                    "description": "Leverage trading is high-risk, so it's a good idea to use risk management features such as stop loss. Stop loss allows you to",
-                    "type": "string"
-                },
-                "net_income": {
-                    "description": "Net Annual Income",
-                    "type": "string"
-                },
-                "occupation": {
-                    "description": "Occupation",
-                    "type": "string"
-                },
-                "other_derivatives_trading_experience": {
-                    "description": "Trading experience in other financial derivatives",
-                    "type": "string"
-                },
-                "other_derivatives_trading_frequency": {
-                    "description": "Trading frequency in other financial derivatives",
-                    "type": "string"
-                },
-                "other_instruments_trading_experience": {
-                    "description": "Trading experience in other financial instruments",
-                    "type": "string"
-                },
-                "other_instruments_trading_frequency": {
-                    "description": "Trading frequency in other financial instruments",
-                    "type": "string"
-                },
-                "required_initial_margin": {
-                    "description": "When would you be required to pay an initial margin?",
-                    "type": "string"
-                },
-                "risk_tolerance": {
-                    "description": "Do you understand that you could potentially lose 100% of the money you use to trade?",
-                    "type": "string"
-                },
-                "source_of_experience": {
-                    "description": "How much knowledge and experience do you have in relation to online trading?",
-                    "type": "string"
-                },
-                "source_of_wealth": {
-                    "description": "Source of wealth",
-                    "type": "string"
-                },
-                "stocks_trading_experience": {
-                    "description": "Stocks trading experience",
-                    "type": "string"
-                },
-                "stocks_trading_frequency": {
-                    "description": "Stocks trading frequency",
-                    "type": "string"
-                },
                 "total_score": {
                     "description": "Total Score",
                     "type": "integer"
                 },
-                "trading_experience_financial_instruments": {
-                    "description": "How much experience do you have with other financial instruments?",
-                    "type": "string"
-                },
-                "trading_frequency_financial_instruments": {
-                    "description": "How many trades have you placed with other financial instruments in the past 12 months?",
-                    "type": "string"
-                },
                 "trading_score": {
                     "description": "Trading Experience Score",
                     "type": "integer"
+                }
+            },
+            "patternProperties": {
+                ".*": {
+                    "description": "Any property with a non-empty string or integer value",
+                    "type": "string"
                 }
             }
         },

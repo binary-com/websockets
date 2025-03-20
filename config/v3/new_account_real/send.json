@@ -110,14 +110,7 @@
         },
         "employment_status": {
             "description": "Employment Status.",
-            "type": "string",
-            "enum": [
-                "Employed",
-                "Pensioner",
-                "Self-Employed",
-                "Student",
-                "Unemployed"
-            ]
+            "type": "string"
         },
         "fatca_declaration": {
             "description": "[Optional] Indicates client's self-declaration of FATCA.",
@@ -126,6 +119,10 @@
                 0,
                 1
             ]
+        },
+        "financial_information_version": {
+            "description": "[Optional] The version of the financial information form.",
+            "type": "string"
         },
         "first_name": {
             "description": "Within 1-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes.",

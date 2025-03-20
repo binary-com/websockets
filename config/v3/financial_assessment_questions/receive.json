@@ -1,0 +1,117 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Financial Assessment Questions (response)",
+    "description": "Returns the questionnaire structure defining the financial assessment questions and logic",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "financial_assessment_questions": {
+            "title": "financial_assessment_questions",
+            "description": "The financial assessment questionnaire structure",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "questions": {
+                    "description": "Object containing the questions and possible answers",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "patternProperties": {
+                        "^[a-z_]+$": {
+                            "description": "Question object containing the question details and possible answers",
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": [
+                                "answers",
+                                "hide_if",
+                                "question",
+                                "type"
+                            ],
+                            "properties": {
+                                "answers": {
+                                    "description": "Array of possible answers for this question",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "required": [
+                                            "hide_if",
+                                            "key",
+                                            "next_node",
+                                            "value"
+                                        ],
+                                        "properties": {
+                                            "hide_if": {
+                                                "description": "Array of conditions that determine if this answer should be hidden",
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "key": {
+                                                "description": "The key for the answer option",
+                                                "type": "string"
+                                            },
+                                            "next_node": {
+                                                "description": "The next question to show after this answer is selected",
+                                                "type": [
+                                                    "null",
+                                                    "string"
+                                                ]
+                                            },
+                                            "value": {
+                                                "description": "Display text for this answer option",
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "hide_if": {
+                                    "description": "Conditions that determine if this question should be hidden",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "question": {
+                                    "description": "The question text to display",
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "description": "The type of input required for this question",
+                                    "type": "string",
+                                    "enum": [
+                                        "free_text",
+                                        "single_choice",
+                                        "multiple_choice"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "version": {
+                    "description": "The version of the financial assessment questionnaire.",
+                    "type": "string"
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "financial_assessment_questions"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}

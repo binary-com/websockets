@@ -107,14 +107,7 @@
         },
         "employment_status": {
             "description": "[Optional] Employment Status.",
-            "type": "string",
-            "enum": [
-                "Employed",
-                "Pensioner",
-                "Self-Employed",
-                "Student",
-                "Unemployed"
-            ]
+            "type": "string"
         },
         "feature_flag": {
             "description": "[Optional] Enable or disable one or multiple features.",
@@ -130,6 +123,10 @@
                     ]
                 }
             }
+        },
+        "financial_information_version": {
+            "description": "[Optional] The version of the financial information",
+            "type": "string"
         },
         "first_name": {
             "description": "[Optional] Within 1-50 characters, use only letters, spaces, hyphens, full-stops or apostrophes (can only be changed on unauthenticated svg accounts).",

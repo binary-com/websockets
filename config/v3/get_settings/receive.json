@@ -120,14 +120,7 @@
                 },
                 "employment_status": {
                     "description": "Employment Status.",
-                    "type": "string",
-                    "enum": [
-                        "Employed",
-                        "Pensioner",
-                        "Self-Employed",
-                        "Student",
-                        "Unemployed"
-                    ]
+                    "type": "string"
                 },
                 "fatca_declaration": {
                     "description": "Indicates client's self-declaration for FATCA.",
