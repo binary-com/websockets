@@ -18,6 +18,15 @@
                 1
             ]
         },
+        "created_for": {
+            "description": "[Optional] Purpose of the email verification. If set to 'account_opening', the API will only return the verification response without updating the user's email verification status.",
+            "type": "string",
+            "default": "account_verification",
+            "enum": [
+                "account_verification",
+                "account_opening"
+            ]
+        },
         "email_consent": {
             "description": "Boolean value: 1 or 0, indicating whether the client has given consent for marketing emails.",
             "type": "integer",
