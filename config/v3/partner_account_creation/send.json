@@ -46,11 +46,12 @@
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,100}$"
         },
         "calling_country_code": {
-            "description": "[Optional] The phone's calling country code.",
+            "description": "[Optional] The phone's calling country code. Don't include the `+` sign. Up to 4 digits.",
             "type": [
                 "null",
                 "string"
             ],
+            "pattern": "^\\d{1,4}$",
             "sensitive": 1
         },
         "citizen": {
@@ -130,9 +131,9 @@
             ]
         },
         "phone": {
-            "description": "[Optional] Starting with `+` followed by 8-35 digits, allowing hyphens or space.",
+            "description": "[Optional] The phone's national format, don't include the `+` sign nor the calling country code. Up to 15 digits are allowed.",
             "type": "string",
-            "pattern": "^\\d{6,20}$",
+            "pattern": "^\\d{6,15}$",
             "sensitive": 1
         },
         "provider": {
