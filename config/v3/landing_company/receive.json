@@ -362,6 +362,18 @@
                                                 }
                                             }
                                         },
+                                        "partner": {
+                                            "description": "Sign up requirements for partners",
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "examples": [
+                                                    "first_name",
+                                                    "residence",
+                                                    "salutation"
+                                                ]
+                                            }
+                                        },
                                         "signup": {
                                             "description": "Sign up requirements",
                                             "type": "array",
