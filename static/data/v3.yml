@@ -63,6 +63,8 @@ groups:
         title: Economic Calendar
       - name: exchange_rates
         title: Exchange Rates
+      - name: exchange_verification_code
+        title: Exchange Verification Code
       - name: financial_assessment_questions
         title: Financial Assessment Questions
       - name: forget

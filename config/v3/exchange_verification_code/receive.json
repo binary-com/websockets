@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Exchange Verification Code (response)",
+    "description": "Exchange Verification Code Response",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "exchange_verification_code": {
+            "title": "exchange_verification_code",
+            "description": "Exchange Verification Code details",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "new_verification_code"
+            ],
+            "properties": {
+                "new_verification_code": {
+                    "description": "The new code generated after successful verification",
+                    "type": "string"
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "exchange_verification_code"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}
