@@ -42,6 +42,10 @@
                     "items": {
                         "type": "string"
                     }
+                },
+                "tin_format_description": {
+                    "description": "Human-readable description of the TIN format for the selected country",
+                    "type": "string"
                 }
             }
         },
