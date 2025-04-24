@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Check for duplicate name and date of birth (request)",
+    "description": "Check if name and date of birth match an existing account.",
+    "type": "object",
+    "auth_required": 1,
+    "auth_scopes": [
+        "admin"
+    ],
+    "additionalProperties": false,
+    "required": [
+        "new_account_wallet_check_duplicate_phone_and_dob",
+        "date_of_birth",
+        "phone_number"
+    ],
+    "properties": {
+        "new_account_wallet_check_duplicate_phone_and_dob": {
+            "description": "Set to 1 to check for duplicate phone number and date of birth.",
+            "type": "integer",
+            "enum": [
+                1
+            ]
+        },
+        "date_of_birth": {
+            "description": "Date of birth format: yyyy-mm-dd",
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$"
+        },
+        "phone_number": {
+            "description": "Phone number starts with + sign and country code with digits",
+            "type": "string",
+            "pattern": "^\\+[\\-\\ 0-9]{8,40}$",
+            "sensitive": 1
+        },
+        "loginid": {
+            "description": "[Optional] The login id of the user. Mandatory when multiple tokens were provided during authorize.",
+            "type": "string",
+            "pattern": "^[A-Za-z]+[0-9]+$"
+        },
+        "passthrough": {
+            "description": "[Optional] Used to pass data through the websocket, which may be retrieved via the `echo_req` output field.",
+            "type": "object"
+        },
+        "req_id": {
+            "description": "[Optional] Used to map request to response.",
+            "type": "integer"
+        }
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Check for duplicate name and date of birth (response)",
+    "description": "Response for checking if name and date of birth match an existing account.",
+    "type": "object",
+    "required": [
+        "echo_req",
+        "msg_type"
+    ],
+    "properties": {
+        "new_account_wallet_check_duplicate_phone_and_dob": {
+            "title": "new_account_wallet_check_duplicate_phone_and_dob",
+            "description": "The result of checking for duplicate name and date of birth",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "has_duplicate"
+            ],
+            "properties": {
+                "has_duplicate": {
+                    "description": "1 if a matching account was found, 0 if not",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                }
+            }
+        },
+        "echo_req": {
+            "description": "Echo of the request made.",
+            "type": "object"
+        },
+        "msg_type": {
+            "description": "Action name of the request made.",
+            "type": "string",
+            "enum": [
+                "new_account_wallet_check_duplicate_phone_and_dob"
+            ]
+        },
+        "req_id": {
+            "description": "Optional field sent in request to map to response, present only when request contains `req_id`.",
+            "type": "integer"
+        }
+    }
+}
