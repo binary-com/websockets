@@ -9,7 +9,7 @@
     "payment_agent_name": "Joe Joy",
     "phone_numbers": [
         {
-            "phone_number": "+923-22-23-13"
+            "phone_number": "923222313"
         }
     ],
     "supported_payment_methods": [

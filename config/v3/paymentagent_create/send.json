@@ -80,7 +80,7 @@
                     "phone_number": {
                         "description": "A phone number",
                         "type": "string",
-                        "pattern": "^\\+[\\-\\ 0-9]{8,40}$"
+                        "pattern": "^(\\+)?[\\-\\0-9]{8,40}$"
                     }
                 }
             }

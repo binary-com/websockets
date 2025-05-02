@@ -58,11 +58,12 @@
             "pattern": "^[\\p{L}\\p{Nd}\\s'.,-]{0,100}$"
         },
         "calling_country_code": {
-            "description": "[Optional] The phone's calling country code.",
+            "description": "[Optional] The phone's calling country code. Don't include the `+` sign. Up to 4 digits.",
             "type": [
                 "null",
                 "string"
             ],
+            "pattern": "^\\d{1,4}$",
             "sensitive": 1
         },
         "citizen": {
@@ -146,9 +147,12 @@
             ]
         },
         "phone": {
-            "description": "[Optional] Starting with `+` followed by 8-35 digits, allowing hyphens or space.",
-            "type": "string",
-            "pattern": "^\\+((-|\\s)*[0-9]){8,35}$",
+            "description": "[Optional] The phone's national format in 8-35 digits, don't include the `+` sign nor the calling country code.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "pattern": "^(\\+)?([-\\s]*\\d){8,35}$",
             "sensitive": 1
         },
         "provider": {
