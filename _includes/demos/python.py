@@ -1,3 +1,5 @@
+# install "websocket-client" (instead of "websocket") for using "websocket" package
+
 import websocket
 import json
 
