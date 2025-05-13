@@ -9,12 +9,12 @@
     ],
     "additionalProperties": false,
     "required": [
-        "new_account_wallet_check_duplicate_phone_and_dob",
+        "new_account_check_duplicate_phone_and_dob",
         "date_of_birth",
         "phone_number"
     ],
     "properties": {
-        "new_account_wallet_check_duplicate_phone_and_dob": {
+        "new_account_check_duplicate_phone_and_dob": {
             "description": "Set to 1 to check for duplicate phone number and date of birth.",
             "type": "integer",
             "enum": [

@@ -9,13 +9,13 @@
     ],
     "additionalProperties": false,
     "required": [
-        "new_account_wallet_check_duplicate_name_and_dob",
+        "new_account_check_duplicate_name_and_dob",
         "date_of_birth",
         "first_name",
         "last_name"
     ],
     "properties": {
-        "new_account_wallet_check_duplicate_name_and_dob": {
+        "new_account_check_duplicate_name_and_dob": {
             "description": "Set to 1 to check for duplicate name and date of birth.",
             "type": "integer",
             "enum": [

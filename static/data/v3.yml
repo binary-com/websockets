@@ -111,16 +111,16 @@ groups:
         title: 'MT5: Password Reset'
       - name: mt5_withdrawal
         title: 'MT5: Withdrawal'
+      - name: new_account_check_duplicate_name_and_dob
+        title: Check for duplicate name and date of birth
+      - name: new_account_check_duplicate_phone_and_dob
+        title: Check for duplicate name and date of birth
       - name: new_account_maltainvest
         title: 'New Real-Money Account: Deriv Investment (Europe) Ltd'
       - name: new_account_real
         title: 'New Real-Money Account: Default Landing Company'
       - name: new_account_virtual
         title: New Virtual-Money Account
-      - name: new_account_wallet_check_duplicate_name_and_dob
-        title: Check for duplicate name and date of birth
-      - name: new_account_wallet_check_duplicate_phone_and_dob
-        title: Check for duplicate name and date of birth
       - name: new_partner_account
         title: 'New Real-Partner Account: Default Landing Company'
       - name: oauth_apps

@@ -8,8 +8,8 @@
         "msg_type"
     ],
     "properties": {
-        "new_account_wallet_check_duplicate_name_and_dob": {
-            "title": "new_account_wallet_check_duplicate_name_and_dob",
+        "new_account_check_duplicate_name_and_dob": {
+            "title": "new_account_check_duplicate_name_and_dob",
             "description": "The result of checking for duplicate name and date of birth",
             "type": "object",
             "additionalProperties": false,
@@ -35,7 +35,7 @@
             "description": "Action name of the request made.",
             "type": "string",
             "enum": [
-                "new_account_wallet_check_duplicate_name_and_dob"
+                "new_account_check_duplicate_name_and_dob"
             ]
         },
         "req_id": {

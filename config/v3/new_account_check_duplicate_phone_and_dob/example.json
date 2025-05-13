@@ -1,5 +1,5 @@
 {
-    "new_account_wallet_check_duplicate_phone_and_dob": 1,
+    "new_account_check_duplicate_phone_and_dob": 1,
     "date_of_birth": "1980-01-31",
     "phone_number": "+67212312312"
 }
